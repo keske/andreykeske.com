@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import {  Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import Main from './Main';
 import * as reducers from 'reducers';
 import thunkMiddleware from 'redux-thunk';
@@ -9,7 +9,7 @@ import logger from 'redux-logger';
 import { Router, Route } from 'react-router';
 import { history } from 'react-router/lib/HashHistory';
 
-import { Items, SimpleComponent } from './components/';
+import { Travel, Works } from './components/';
 
 const reducersApp = combineReducers(reducers);
 const createStoreWithMiddleware = applyMiddleware(logger, thunkMiddleware)(createStore);
@@ -22,8 +22,8 @@ export default class App extends Component {
           {() =>
             <Router history={ history }>
               <Route path="/" component={ Main }>
-                <Route path="simple" component={ SimpleComponent } />
-                <Route path="items" component={ Items } />
+                <Route path="travel" component={ Travel } />
+                <Route path="works" component={ Works } />
               </Route>
             </Router>
           }

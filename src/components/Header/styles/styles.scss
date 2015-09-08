@@ -2,8 +2,24 @@
   Header styles 
 */
 :local(.styles) {
-  background: #000;
-  color: #FFF;
+  position: fixed;
+  z-index: 1;
 
-  padding: 10px 20px;
+  top: 0;
+
+  width: 100%;
+
+  padding: 20px 0;
+
+  .header-nav {
+
+    span.nav {
+      margin-right: 40px;
+      display: inline-block
+    }
+  }
+
+  &:hover {
+    opacity: 1 !important;
+  }
 }

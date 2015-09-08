@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 // Component styles
-import styles from './SimpleComponent.styles.js';
+import styles from './Works.styles.js';
 
-export default class SimpleComponent extends Component {
+export default class Works extends Component {
   render() {
     return (
       <div className={ styles }>
         <h2>
-          SimpleComponent
+          Works
         </h2>
       </div>
     );

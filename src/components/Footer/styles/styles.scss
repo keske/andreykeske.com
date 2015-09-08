@@ -1,10 +1,32 @@
 /* 
   Footer styles 
 */
-:local(.styles) {
-  text-align: center;
-  padding: 10px 20px;
 
-  margin-top: 70px;
-  margin-bottom: 100px;
+@import '../../../styles/pallete';
+@import '../../../styles/typography';
+@import '../../../styles/screens';
+
+:local(.styles) {
+  @include light();
+
+  text-align: center;
+  font-size: 12px;
+
+  margin-bottom: 30px;
+
+  a {
+    margin: 0 5px;
+  }
+}
+
+@media (#{$desktop}) {
+  .bottom-on-photo {
+    position: relative;
+
+    margin-top: -310px;
+
+    a, p, span {
+      color: #FFF !important;
+    }
+  }
 }
