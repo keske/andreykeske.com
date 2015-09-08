@@ -1,1 +1,1 @@
-export { items } from './items.js';
+export { places } from './places.js';
