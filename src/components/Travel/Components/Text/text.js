@@ -18,7 +18,7 @@ export default class Card extends Component {
 
     return (
       <div className={ styles + ' no-cover-no-link year-' + place.year }>
-        <div className="data">
+        <div className={ 'data big-type year-' + place.year }>
           <p className="city">
             { place.city }
             <NewLabel place={ place } />

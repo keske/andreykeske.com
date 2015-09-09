@@ -22,13 +22,15 @@ export default class Travel extends Component {
     return (
       <div className={ styles }>
         <div className="container">
-          {
-            places.map((place) => {
-              return (
-                card ? <Card place={ place } /> : <Text place={ place } />
-              );
-            })
-          }
+          <div className="row">
+            {
+              places.map((place) => {
+                return (
+                  card ? <Card place={ place } /> : <Text place={ place } />
+                );
+              })
+            }
+          </div>
         </div>
       </div>
     );
