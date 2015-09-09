@@ -17,7 +17,7 @@ export default class Travel extends Component {
 
   render() {
     const { places } = this.props;
-    const card = true;
+    const card = false;
 
     return (
       <div className={ styles }>
