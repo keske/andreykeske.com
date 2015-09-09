@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // View mode, card or text
-import Card from './Card/card.js';
+import Card from './Components/Card/card.js';
+import Text from './Components/Text/text.js';
 
 // Component styles
 import styles from './Travel.styles.js';
@@ -16,19 +17,19 @@ export default class Travel extends Component {
 
   render() {
     const { places } = this.props;
+    const card = true;
 
     return (
       <div className={ styles }>
-        <h2>
-          Travel
-        </h2>
-        {
-          places.map((place) => {
-            return (
-              <Card place={ place } />
-            );
-          })
-        }
+        <div className="container">
+          {
+            places.map((place) => {
+              return (
+                card ? <Card place={ place } /> : <Text place={ place } />
+              );
+            })
+          }
+        </div>
       </div>
     );
   }

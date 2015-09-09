@@ -1,18 +1,20 @@
-const data = [{
-  'city': 'Tallin',
-  'country': 'Estonia',
-  'start': '1 August',
-  'end': '2 August',
+const data = [
+// {
+//   'city': 'Tallin',
+//   'country': 'Estonia',
+//   'start': '1 August',
+//   'end': '2 August',
 
-  'month': 'august',
-  'year': 2015,
+//   'month': 'august',
+//   'year': 2015,
 
-  'date': new Date('8/1/2015'),
+//   'date': new Date('8/1/2015'),
 
-  'class': '',
+//   'class': '',
 
-  'cover': true,
-}, {
+//   'cover': true,
+// }, 
+{
   'city': 'Pushkin',
   'country': 'Russia',
   'start': 'June',
@@ -35,7 +37,7 @@ const data = [{
   'month': 'may',
   'year': 2015,
 
-  'date': new Date('5/12/2015'),
+  'date': new Date('9/12/2015'),
 
   'class': 'white',
 
