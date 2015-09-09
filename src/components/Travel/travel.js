@@ -23,6 +23,9 @@ export default class Travel extends Component {
       <div className={ styles }>
         <div className="container">
           <div className="row">
+            <h2>
+              Travel stories
+            </h2>
             {
               places.map((place) => {
                 return (

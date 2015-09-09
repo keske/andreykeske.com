@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 // Component styles
 import styles from './Text.styles.js';
@@ -7,7 +8,7 @@ import styles from './Text.styles.js';
 import NewLabel from './../Card/NewLabel.js';
 import VisitedDate from './../Card/VisitedDate.js';
 
-export default class Card extends Component {
+export default class Text extends Component {
 
   static propTypes = {
     place: React.PropTypes.object,
@@ -17,7 +18,27 @@ export default class Card extends Component {
     const { place } = this.props;
 
     return (
-      <div className={ styles + ' no-cover-no-link year-' + place.year }>
+      place.cover ?
+        <Link to={ `/travel/` }>
+          <Inner place={ place } />
+        </Link> : <Inner place={ place } />
+
+    );
+  }
+}
+
+class Inner extends Component {
+
+  static propTypes = {
+    place: React.PropTypes.object,
+  }
+
+  render() {
+    const { place } = this.props;
+
+    return (
+
+      <div className={ styles + ' year-' + place.year }>
         <div className={ 'data big-type year-' + place.year }>
           <p className="city">
             { place.city }
