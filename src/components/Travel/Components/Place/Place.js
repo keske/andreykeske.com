@@ -16,17 +16,21 @@ export default class Place extends React.Component {
 
   componentDidMount() {
     const { year, month, city } = this.props.params;
+
+    const img = `./images/${year}/${month}/${city}`;
     const url = `./places/${year}/${month}/${city}/index.html`;
 
     $.get(url).done((data) => {
-      this.setState({data: data});
+      this.setState({data: this.insertDataToTemplate(data, img, city)});
     }.bind(this));
   }
 
   render() {
-    if (this.state.data) {
+    const { data } = this.state;
+
+    if (data) {
       return (<div className={ styles }>
-        <div dangerouslySetInnerHTML={{__html: this.state.data}} />
+        <div dangerouslySetInnerHTML={{ __html: data }} />
       </div>);
     }
 
@@ -39,5 +43,9 @@ export default class Place extends React.Component {
 
   state = {
     data: null,
+  }
+
+  insertDataToTemplate(data, img, city) {
+    return data.replace(/{{url}}/g, img).replace(/{{city}}/g, city);
   }
 }
