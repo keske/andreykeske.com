@@ -19,7 +19,7 @@ export default class Text extends Component {
 
     return (
       place.cover ?
-        <Link to={ `/travel/` }>
+        <Link to={ `/places/${ place.year }/${ place.month }/${ place.city }` }>
           <Inner place={ place } />
         </Link> : <Inner place={ place } />
 
@@ -37,7 +37,6 @@ class Inner extends Component {
     const { place } = this.props;
 
     return (
-
       <div className={ styles + ' year-' + place.year }>
         <div className={ 'data big-type year-' + place.year }>
           <p className="city">
