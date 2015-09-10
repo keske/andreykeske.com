@@ -18,13 +18,7 @@ export default class Main extends Component {
     return (
       <section>
         <Header />
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 col-lg-12">
-              { this.props.children }
-            </div>
-          </div>
-        </div>
+        { this.props.children }
         <Footer />
       </section>
     );
