@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import $ from 'jquery';
 
 // Component styles
 import styles from './Place.styles.js';
 
-export default class Place extends Component {
+export default class Place extends React.Component {
 
   static propTypes = {
     params: React.PropTypes.object,
@@ -14,23 +15,29 @@ export default class Place extends Component {
   }
 
   componentDidMount() {
-    // from the path `/inbox/messages/:id`
-    const year = this.props.params.year;
-    const month = this.props.params.month;
-    const city = this.props.params.city;
-    console.log(year);
-    console.log(month);
-    console.log(city);
-    // fetchMessage(id, function (err, message) {
-    //   this.setState({ message: message });
-    // })
+    const { year, month, city } = this.props.params;
+    const url = `./places/${year}/${month}/${city}/index.html`;
+
+    $.get(url).done((data) => {
+      this.setState({data: data});
+    }.bind(this));
   }
 
   render() {
+    if (this.state.data) {
+      return (<div className={ styles }>
+        <div dangerouslySetInnerHTML={{__html: this.state.data}} />
+      </div>);
+    }
+
     return (
       <div className={ styles }>
-        asd
+        <h2>Loading...</h2>
       </div>
     );
+  }
+
+  state = {
+    data: null,
   }
 }
