@@ -16,10 +16,11 @@ export default class Text extends Component {
 
   render() {
     const { place } = this.props;
+    const city = place.city.replace(/ /g, '');
 
     return (
       place.cover ?
-        <Link to={ `/places/${ place.year }/${ place.month }/${ place.city }` }>
+        <Link to={ `/places/${ place.year }/${ place.month }/${ city }` }>
           <Inner place={ place } />
         </Link> : <Inner place={ place } />
 

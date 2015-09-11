@@ -6,7 +6,7 @@ import styles from './Place.styles.js';
 // Places
 import {
   // August 2015
-  TalllinInAugust2015,
+  TallinInAugust2015,
 
   // May 2015
   VeniceInMay2015,
@@ -15,12 +15,15 @@ import {
 
   // January 2015
   PragueInJanuary2015,
-  MunichInJanuary2015
+  MunichInJanuary2015,
+
+  // December 2014
+  SpindleruvMlynInDecember2014,
 } from './places/index.js';
 
 const data = {
   // August
-  'TalllinInAugust2015': TalllinInAugust2015,
+  'TallinInAugust2015': TallinInAugust2015,
 
   // May 2015
   'VeniceInMay2015': VeniceInMay2015,
@@ -30,6 +33,9 @@ const data = {
   // January 2015
   'PragueInJanuary2015': PragueInJanuary2015,
   'MunichInJanuary2015': MunichInJanuary2015,
+
+  // December 2014
+  'SpindleruvMlynInDecember2014': SpindleruvMlynInDecember2014,
 };
 
 export default class Place extends Component {
