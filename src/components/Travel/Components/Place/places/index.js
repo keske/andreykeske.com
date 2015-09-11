@@ -10,8 +10,11 @@ export { default as RomeInMay2015 } from './2015/May/Rome/index.js';
 export { default as PragueInJanuary2015 } from './2015/January/Prague/index.js';
 export { default as MunichInJanuary2015 } from './2015/January/Munich/index.js';
 
-// December 2014
-export { default as SpindleruvMlynInDecember2014 } from './2014/December/SpindleruvMlyn/index.js';
-
 // March 2014
 export { default as TallinInMarch2014 } from './2014/March/Tallin/index.js';
+
+// October 2014
+export { default as HelsinkiInOctober2014 } from './2014/October/Helsinki/index.js';
+
+// December 2014
+export { default as SpindleruvMlynInDecember2014 } from './2014/December/SpindleruvMlyn/index.js';
