@@ -4,7 +4,10 @@ import React, { Component } from 'react';
 import styles from './Place.styles.js';
 
 // Places
-import { VeniceInMay2015 } from './places/index.js';
+import {
+  VeniceInMay2015,
+  RomeInMay2015
+} from './places/index.js';
 
 export default class Place extends Component {
 
@@ -14,12 +17,14 @@ export default class Place extends Component {
 
   render() {
     // React.createElement(window['VeniceInMay2015'], {name: 'VeniceInMay2015'});
-    // const { year, month, city } = this.props.params;
-    // const place = eval(`${ city }In${ month }${ year }`);
+    const { year, month, city } = this.props.params;
+    const place = `${ city }In${ month }${ year }`;
+    console.log(place);
     // const Comp = window['VeniceInMay2015'];
     return (
       <div className={ styles }>
-        { React.createElement(VeniceInMay2015) }
+        <VeniceInMay2015 />
+        { React.createElement(RomeInMay2015) }
       </div>
     );
   }
