@@ -10,8 +10,10 @@ const placeInsertTemplate = {
     // Template url
     const url = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city }/index.html`;
 
+    // Get html template
     $.get(url).done((data) => {
       this.setState({
+        // Insert photos url and city name
         data: this.replaceDataInTemplate(data, img, city),
       });
     }.bind(this));
