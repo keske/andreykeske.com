@@ -17,6 +17,9 @@ import {
   PragueInJanuary2015,
   MunichInJanuary2015,
 
+  // March 2014
+  TallinInMarch2014,
+
   // December 2014
   SpindleruvMlynInDecember2014,
 } from './places/index.js';
@@ -33,6 +36,9 @@ const data = {
   // January 2015
   'PragueInJanuary2015': PragueInJanuary2015,
   'MunichInJanuary2015': MunichInJanuary2015,
+
+  // March 2014
+  'TallinInMarch2014': TallinInMarch2014,
 
   // December 2014
   'SpindleruvMlynInDecember2014': SpindleruvMlynInDecember2014,
