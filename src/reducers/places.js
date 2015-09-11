@@ -5,7 +5,7 @@ const data = [
 //   'start': '1 August',
 //   'end': '2 August',
 
-//   'month': 'august',
+//   'month': 'August',
 //   'year': 2015,
 
 //   'date': new Date('8/1/2015'),
@@ -20,7 +20,7 @@ const data = [
   'start': 'June',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2015,
 
   'date': new Date('6/1/2015'),
@@ -34,7 +34,7 @@ const data = [
   'start': '12 may',
   'end': '',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2015,
 
   'date': new Date('9/12/2015'),
@@ -48,7 +48,7 @@ const data = [
   'start': '11 may',
   'end': '',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2015,
 
   'date': new Date('5/11/2015'),
@@ -62,7 +62,7 @@ const data = [
   'start': '10 may',
   'end': '',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2015,
 
   'date': new Date('5/10/2015'),
@@ -76,7 +76,7 @@ const data = [
   'start': '6 may',
   'end': '',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2015,
 
   'date': new Date('5/6/2015'),
@@ -90,7 +90,7 @@ const data = [
   'start': '5 may',
   'end': '15 may',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2015,
 
   'date': new Date('5/5/2015'),
@@ -104,7 +104,7 @@ const data = [
   'start': '4 Jan',
   'end': '6 Jan',
 
-  'month': 'january',
+  'month': 'January',
   'year': 2015,
 
   'date': new Date('1/4/2015'),
@@ -118,7 +118,7 @@ const data = [
   'start': '2 Jan',
   'end': '3 Jan',
 
-  'month': 'january',
+  'month': 'January',
   'year': 2015,
 
   'date': new Date('1/2/2015'),
@@ -134,7 +134,7 @@ const data = [
   'start': '26 Dec',
   'end': '28 Dec',
 
-  'month': 'december',
+  'month': 'December',
   'year': 2014,
 
   'date': new Date('12/26/2014'),
@@ -148,7 +148,7 @@ const data = [
   'start': '9 Sep',
   'end': '10 Sep',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2014,
 
   'date': new Date('9/9/2014'),
@@ -162,7 +162,7 @@ const data = [
   'start': '7 Sep',
   'end': '18 Sep',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2014,
 
   'date': new Date('9/7/2014'),
@@ -176,7 +176,7 @@ const data = [
   'start': '13 Sep',
   'end': '14 Sep',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2014,
 
   'date': new Date('9/13/2014'),
@@ -190,7 +190,7 @@ const data = [
   'start': '17 Oct',
   'end': '',
 
-  'month': 'october',
+  'month': 'October',
   'year': 2014,
 
   'date': new Date('10/17/2014'),
@@ -204,7 +204,7 @@ const data = [
   'start': '1 May',
   'end': '1 May',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2014,
 
   'date': new Date('5/1/2014'),
@@ -220,7 +220,7 @@ const data = [
 
   'date': new Date('5/3/2014'),
 
-  'month': 'may',
+  'month': 'May',
   'year': 2014,
 
   'class': '',
@@ -232,7 +232,7 @@ const data = [
   'start': '9 Mar',
   'end': '10 Mar',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2014,
 
   'date': new Date('5/5/2014'),
@@ -246,7 +246,7 @@ const data = [
   'start': '9 Mar',
   'end': '10 Mar',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2014,
 
   'date': new Date('5/8/2014'),
@@ -260,7 +260,7 @@ const data = [
   'start': '9 Mar',
   'end': '10 Mar',
 
-  'month': 'march',
+  'month': 'March',
   'year': 2014,
 
   'date': new Date('3/9/2014'),
@@ -274,7 +274,7 @@ const data = [
   'start': '13 Jul',
   'end': '13 Jul',
 
-  'month': 'july',
+  'month': 'July',
   'year': 2014,
 
   'date': new Date('6/13/2014'),
@@ -288,7 +288,7 @@ const data = [
   'start': '21 Jul',
   'end': '23 Jul',
 
-  'month': 'july',
+  'month': 'July',
   'year': 2014,
 
   'date': new Date('7/21/2014'),
@@ -302,7 +302,7 @@ const data = [
   'start': '4 Aug',
   'end': '6 Aug',
 
-  'month': 'august',
+  'month': 'August',
   'year': 2014,
 
   'date': new Date('8/4/2014'),
@@ -316,7 +316,7 @@ const data = [
   'start': '18 Aug',
   'end': '20 Aug',
 
-  'month': 'august',
+  'month': 'August',
   'year': 2014,
 
   'date': new Date('8/18/2014'),
@@ -330,7 +330,7 @@ const data = [
   'start': '29 Sep',
   'end': '2 Oct',
 
-  'month': 'october',
+  'month': 'October',
   'year': 2014,
 
   'date': new Date('10/29/2014'),
@@ -346,7 +346,7 @@ const data = [
   'start': '1 Jan',
   'end': '12 Apr',
 
-  'month': 'january',
+  'month': 'January',
   'year': 2013,
 
   'date': new Date('1/1/2013'),
@@ -360,7 +360,7 @@ const data = [
   'start': '21 may',
   'end': '23 may',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2013,
 
   'date': new Date('5/21/2013'),
@@ -376,7 +376,7 @@ const data = [
   'start': '29 Aug',
   'end': '29 Aug',
 
-  'month': 'august',
+  'month': 'August',
   'year': 2012,
 
   'date': new Date('8/29/2013'),
@@ -390,7 +390,7 @@ const data = [
   'start': '19 Sep',
   'end': '25 Sep',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2012,
 
   'date': new Date('19/10/2013'),
@@ -404,7 +404,7 @@ const data = [
   'start': '25 Jan',
   'end': '28 Jan',
 
-  'month': 'january',
+  'month': 'January',
   'year': 2013,
 
   'date': new Date('1/25/2013'),
@@ -418,7 +418,7 @@ const data = [
   'start': '21 April',
   'end': '21 April',
 
-  'month': 'april',
+  'month': 'April',
   'year': 2012,
 
   'date': new Date('4/21/2013'),
@@ -434,7 +434,7 @@ const data = [
 
   'date': new Date('4/24/2013'),
 
-  'month': 'april',
+  'month': 'April',
   'year': 2012,
 
   'class': '',
@@ -446,7 +446,7 @@ const data = [
   'start': '8 May',
   'end': '15 June',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2012,
 
   'date': new Date('5/8/2013'),
@@ -460,7 +460,7 @@ const data = [
   'start': '6 may',
   'end': '7 may',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2012,
 
   'date': new Date('5/6/2013'),
@@ -474,7 +474,7 @@ const data = [
   'start': '4 may',
   'end': '5 may',
 
-  'month': 'may',
+  'month': 'May',
   'year': 2012,
 
   'date': new Date('5/4/2013'),
@@ -490,7 +490,7 @@ const data = [
   'start': 'Autumn',
   'end': '',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2011,
 
   'date': new Date('9/4/2011'),
@@ -504,7 +504,7 @@ const data = [
   'start': 'Autumn',
   'end': '',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2011,
 
   'date': new Date('9/1/2011'),
@@ -518,7 +518,7 @@ const data = [
   'start': 'Autumn',
   'end': '',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2011,
 
   'date': new Date('9/2/2011'),
@@ -532,7 +532,7 @@ const data = [
   'start': 'Autumn',
   'end': '',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2011,
 
   'date': new Date('9/3/2011'),
@@ -546,7 +546,7 @@ const data = [
   'start': 'Autumn',
   'end': '',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2011,
 
   'date': new Date('9/4/2011'),
@@ -560,7 +560,7 @@ const data = [
   'start': 'Autumn',
   'end': '',
 
-  'month': 'september',
+  'month': 'September',
   'year': 2011,
 
   'date': new Date('9/4/2011'),
@@ -576,7 +576,7 @@ const data = [
   'start': '1 Jan',
   'end': '2 Jan',
 
-  'month': 'january',
+  'month': 'January',
   'year': 2010,
 
   'date': new Date('1/1/2010'),
@@ -590,7 +590,7 @@ const data = [
   'start': 'Winter',
   'end': '',
 
-  'month': 'january',
+  'month': 'January',
   'year': 2010,
 
   'date': new Date('1/1/2010'),
@@ -604,7 +604,7 @@ const data = [
   'start': 'Winter',
   'end': '',
 
-  'month': 'january',
+  'month': 'January',
   'year': 2010,
 
   'date': new Date('1/1/2010'),
@@ -620,7 +620,7 @@ const data = [
   'start': '1 Jan',
   'end': '2 Jan',
 
-  'month': 'january',
+  'month': 'January',
   'year': 2009,
 
   'date': new Date('1/1/2009'),
@@ -634,7 +634,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -648,7 +648,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -662,7 +662,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -676,7 +676,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -690,7 +690,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -704,7 +704,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -718,7 +718,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -732,7 +732,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -746,7 +746,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2009,
 
   'date': new Date('6/6/2009'),
@@ -762,7 +762,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2008,
 
   'date': new Date('6/6/2008'),
@@ -776,7 +776,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2008,
 
   'date': new Date('6/6/2008'),
@@ -790,7 +790,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2008,
 
   'date': new Date('6/6/2008'),
@@ -804,7 +804,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2008,
 
   'date': new Date('6/6/2008'),
@@ -818,7 +818,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2008,
 
   'date': new Date('6/6/2008'),
@@ -832,7 +832,7 @@ const data = [
   'start': 'Summer',
   'end': '',
 
-  'month': 'june',
+  'month': 'June',
   'year': 2008,
 
   'date': new Date('6/6/2008'),

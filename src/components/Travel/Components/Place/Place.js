@@ -9,6 +9,11 @@ import {
   RomeInMay2015
 } from './places/index.js';
 
+const data = {
+  'VeniceInMay2015': VeniceInMay2015,
+  'RomeInMay2015': RomeInMay2015,
+};
+
 export default class Place extends Component {
 
   static propTypes = {
@@ -16,15 +21,12 @@ export default class Place extends Component {
   }
 
   render() {
-    // React.createElement(window['VeniceInMay2015'], {name: 'VeniceInMay2015'});
     const { year, month, city } = this.props.params;
     const place = `${ city }In${ month }${ year }`;
-    console.log(place);
-    // const Comp = window['VeniceInMay2015'];
+
     return (
       <div className={ styles }>
-        <VeniceInMay2015 />
-        { React.createElement(RomeInMay2015) }
+        { React.createElement(data[place], this.props) }
       </div>
     );
   }
