@@ -7,11 +7,13 @@ export default class Image extends Component {
   }
 
   render() {
+
     const { place } = this.props;
+    let city = place.city.replace(/ /g, '');
 
     return (
       <span className="img-wrap">
-        <img src={ `images/${ place.year }/${ place.month }/${ place.city }/thumb.jpg` } />
+        <img src={ `./src/components/Travel/components/Place/places/${ place.year }/${ place.month }/${ city }/images/thumb.jpg` } />
       </span>
     );
   }
