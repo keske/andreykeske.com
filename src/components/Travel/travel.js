@@ -35,14 +35,14 @@ export default class Travel extends Component {
                 Travel stories
               </h2>
             </div>
-              {
-                places.map((place) => {
-                  return (
-                    mode === 'card' ? <Card place={ place } language={ language } /> : <Text place={ place } language={ language } />
-                  );
-                })
-              }
-            </div>
+            {
+              places.map((place) => {
+                return (
+                  mode === 'card' ? <Card place={ place } language={ language } /> : <Text place={ place } language={ language } />
+                );
+              })
+            }
+          </div>
         </div>
       </div>
     );

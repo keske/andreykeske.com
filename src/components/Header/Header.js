@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
+import $ from 'jquery';
+
 // Component styles
 import styles from './styles.js';
 
 export default class Header extends Component {
+
+  componentDidMount() {
+    this.hideHeaderWhenScrolling();
+  }
+
   render() {
     return (
-      <div className={ `${ styles }` }>
+      <div className={ `${ styles }` } ref="header">
         <div className="container">
           <div className="row">
             <div className="col-xs-4 col-sm-4 col-md-2 col-lg-2">
@@ -27,5 +34,15 @@ export default class Header extends Component {
         </div>
       </div>
     );
+  }
+
+  hideHeaderWhenScrolling() {
+    let opacity = 0;
+
+    $(window).scroll(() => {
+      opacity = 1 - ($(window).scrollTop() / 50).toFixed(1);
+
+      $(this.refs.header.getDOMNode()).css('opacity', opacity);
+    });
   }
 }
