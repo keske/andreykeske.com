@@ -39,7 +39,7 @@ class Inner extends Component {
     const { place } = this.props;
 
     return (
-      <div className={ styles + ' year-' + place.year }>
+      <div className={ styles + ' year-' + place.year + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' }>
         <div className={ 'data big-type year-' + place.year }>
           <p className="city">
             { place.city }

@@ -4,9 +4,8 @@
 
 
 :local(.styles) {
-  margin: 20px 0 30px 0;
 
-  div {
+  a {
     @include ui-active();
     
     display: inline-block;
