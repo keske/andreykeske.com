@@ -22,9 +22,10 @@ export default class App extends Component {
           {() =>
             <Router history={ history }>
               <Route path="/" component={ Main }>
-                <Route path="travel" component={ Travel } />
-                <Route path="works" component={ Works } />
-                <Route path="places/:year/:month/:city" component={ Place } />
+                <Route path="/:language" component={ Main } />
+                <Route path=":language/travel" component={ Travel } />
+                <Route path=":language/works" component={ Works } />
+                <Route path=":language/places/:year/:month/:city" component={ Place } />
               </Route>
             </Router>
           }

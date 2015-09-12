@@ -11,15 +11,15 @@ export default class Header extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-4 col-sm-4 col-md-2 col-lg-2">
-              <a href="/#/">
+              <a href="/">
                   Andrey Keske
               </a>
             </div>
             <div className="col-xs-8 col-sm-8 col-md-10 col-lg-10 header-nav">
-              <Link to={ `/travel/` }>
+              <Link to={ `ru/travel/` }>
                 <span className="nav">Travel</span>
               </Link>
-              <Link to={ `/works/` }>
+              <Link to={ `ru/works/` }>
                 <span className="nav">Works</span>
               </Link>
             </div>

@@ -1,0 +1,21 @@
+@import '../../../../../styles/pallete';
+@import '../../../../../styles/typography';
+@import '../../../../../styles/screens';
+
+
+:local(.styles) {
+  margin: 20px 0 30px 0;
+
+  div {
+    @include ui-active();
+    
+    display: inline-block;
+    margin-right: 10px;
+
+    font-size: 12px;
+  }
+
+  &.filter-tags {
+    opacity: 0;
+  }
+}

@@ -11,16 +11,17 @@ import VisitedDate from './../Card/VisitedDate.js';
 export default class Text extends Component {
 
   static propTypes = {
+    params: React.PropTypes.object,
     place: React.PropTypes.object,
   }
 
   render() {
-    const { place } = this.props;
+    const { place, language } = this.props;
     const city = place.city.replace(/ /g, '');
 
     return (
       place.cover ?
-        <Link to={ `/places/${ place.year }/${ place.month }/${ city }` }>
+        <Link to={ `${ language }/places/${ place.year }/${ place.month }/${ city }` }>
           <Inner place={ place } />
         </Link> : <Inner place={ place } />
 
