@@ -78,7 +78,7 @@ export default class Place extends Component {
     return (
       <div className={ styles }>
         { React.createElement(data[place], this.props) }
-        <NavFooter year={ year } month={ month } city={ city } language={ language } />
+        <NavFooter year={ year } month={ month } city={ city } language={ language } place={ place } />
       </div>
     );
   }

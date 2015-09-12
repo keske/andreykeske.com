@@ -5,6 +5,9 @@ import { Link } from 'react-router';
 // Component styles
 import styles from './NavFooter.styles.js';
 
+// Components
+import NewLabel from './../../../Card/NewLabel.js';
+
 @connect(state => state.places)
 export default class NavFooter extends Component {
 
@@ -39,9 +42,7 @@ export default class NavFooter extends Component {
                         <div className="data">
                           <p className="city">
                             { place.city }
-                            <span className="new">
-                              New
-                            </span>
+                            <NewLabel place={ place } />
                           </p>
                         </div>
                         <img src={ `./src/components/Travel/Components/Place/places/${ place.year }/${ place.month }/${ city }/images/thumb.jpg` } />
