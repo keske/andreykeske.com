@@ -7,7 +7,7 @@ import placeInsertTemplate from './../../../../placeInsertTemplate.js';
 import styles from './styles.js';
 
 @reactMixin.decorate(placeInsertTemplate)
-export default class SpindleruvMlynInDecember2014 extends Component {
+export default class BudapestInSeptember2014 extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
