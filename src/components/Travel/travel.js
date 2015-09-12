@@ -29,16 +29,18 @@ export default class Travel extends Component {
             <Filter />
           </div>
           <div className="row">
-            <h2>
-              Travel stories
-            </h2>
-            {
-              places.map((place) => {
-                return (
-                  card ? <Card place={ place } language={ language } /> : <Text place={ place } language={ language } />
-                );
-              })
-            }
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <h2>
+                Travel stories
+              </h2>
+              {
+                places.map((place) => {
+                  return (
+                    card ? <Card place={ place } language={ language } /> : <Text place={ place } language={ language } />
+                  );
+                })
+              }
+            </div>
           </div>
         </div>
       </div>
