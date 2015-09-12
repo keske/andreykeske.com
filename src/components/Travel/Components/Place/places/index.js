@@ -13,6 +13,11 @@ export { default as MunichInJanuary2015 } from './2015/January/Munich/index.js';
 // March 2014
 export { default as TallinInMarch2014 } from './2014/March/Tallin/index.js';
 
+// September 2014
+export { default as BerlinInSeptember2014 } from './2014/September/Berlin/index.js';
+export { default as BudapestInSeptember2014 } from './2014/September/Budapest/index.js';
+export { default as PragueInSeptember2014 } from './2014/September/Prague/index.js';
+
 // October 2014
 export { default as HelsinkiInOctober2014 } from './2014/October/Helsinki/index.js';
 

@@ -17,6 +17,11 @@ import {
   PragueInJanuary2015,
   MunichInJanuary2015,
 
+  // September 2014
+  BerlinInSeptember2014,
+  BudapestInSeptember2014,
+  PragueInSeptember2014,
+
   // October 2014
   HelsinkiInOctober2014,
 
@@ -39,6 +44,11 @@ const data = {
   // January 2015
   'PragueInJanuary2015': PragueInJanuary2015,
   'MunichInJanuary2015': MunichInJanuary2015,
+
+  // September 2014
+  'BerlinInSeptember2014': BerlinInSeptember2014,
+  'BudapestInSeptember2014': BudapestInSeptember2014,
+  'PragueInSeptember2014': PragueInSeptember2014,
 
   // October 2014
   'HelsinkiInOctober2014': HelsinkiInOctober2014,
