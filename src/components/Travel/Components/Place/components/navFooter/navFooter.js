@@ -10,6 +10,7 @@ export default class NavFooter extends Component {
 
   static propTypes = {
     places: React.PropTypes.array,
+    language: React.PropTypes.string,
   }
 
   render() {
@@ -29,7 +30,8 @@ export default class NavFooter extends Component {
 
             {
               places.map((place) => {
-                let city = place.city.replace(/ /g, '');
+                const city = place.city.replace(/ /g, '');
+
                 return (
                   place.cover ?
                     <Link to={ `${ language }/places/${ place.year }/${ place.month }/${ city }` }>

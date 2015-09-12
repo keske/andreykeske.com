@@ -67,6 +67,7 @@ export default class Place extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
+    language: React.PropTypes.string,
   }
 
   render() {
