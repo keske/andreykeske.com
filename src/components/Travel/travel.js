@@ -18,9 +18,8 @@ export default class Travel extends Component {
   }
 
   render() {
-    const { language } = this.props.params;
+    const { language, mode } = this.props.params;
     const { places } = this.props;
-    const card = false;
 
     return (
       <div className={ styles }>
@@ -36,7 +35,7 @@ export default class Travel extends Component {
               {
                 places.map((place) => {
                   return (
-                    card ? <Card place={ place } language={ language } /> : <Text place={ place } language={ language } />
+                    mode === 'card' ? <Card place={ place } language={ language } /> : <Text place={ place } language={ language } />
                   );
                 })
               }

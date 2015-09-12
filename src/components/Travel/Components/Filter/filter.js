@@ -10,17 +10,13 @@ export default class Filter extends Component {
     return (
       <div className={ styles }>
         <div className="col-xs-3 col-sm-3 col-md-1 col-lg-1 filter">
-          <div
-            ng-click="mode = 'card'"
-            ng-className="{'active': mode == 'card'}">
+          <Link to={ `ru/travel/card` }>
             ☷
-          </div>
+          </Link>
 
-          <div
-            ng-click="mode = 'text'"
-            ng-className="{'active': mode == 'text'}">
+           <Link to={ `ru/travel/text` }>
             ☰
-          </div>
+          </Link>
         </div>
 
         <div className="col-xs-5 col-sm-5 col-md-3 col-lg-3 filter">
