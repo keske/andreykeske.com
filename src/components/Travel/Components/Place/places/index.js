@@ -23,3 +23,11 @@ export { default as HelsinkiInOctober2014 } from './2014/October/Helsinki/index.
 
 // December 2014
 export { default as SpindleruvMlynInDecember2014 } from './2014/December/SpindleruvMlyn/index.js';
+
+// TODO:
+// Autumn 2011
+// export { default as ParisInAutumn2011 } from './2011/Autumn/Paris/index.js';
+// export { default as AmsterdamInAutumn2011 } from './2011/Autumn/Amsterdam/index.js';
+// export { default as HelsinkiInAutumn2011 } from './2011/Autumn/Helsinki/index.js';
+// export { default as StockholmInAutumn2011 } from './2011/Autumn/Stockholm/index.js';
+// export { default as TunisInAutumn2011 } from './2011/Autumn/Tunis/index.js';

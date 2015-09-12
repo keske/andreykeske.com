@@ -497,7 +497,7 @@ const data = [
 
   'class': '',
 
-  'cover': true,
+  'cover': false,
 }, {
   'city': 'Helsinki',
   'country': 'Finland',
@@ -511,7 +511,7 @@ const data = [
 
   'class': 'white',
 
-  'cover': true,
+  'cover': false,
 }, {
   'city': 'Stockholm',
   'country': 'Sweden',
@@ -525,7 +525,7 @@ const data = [
 
   'class': '',
 
-  'cover': true,
+  'cover': false,
 }, {
   'city': 'Bruxelles',
   'country': 'Belgique',
@@ -553,7 +553,7 @@ const data = [
 
   'class': 'white',
 
-  'cover': true,
+  'cover': false,
 }, {
   'city': 'Tunis',
   'country': 'Tunis',
@@ -567,7 +567,7 @@ const data = [
 
   'class': 'white',
 
-  'cover': true,
+  'cover': false,
 },
 // 2010
 {
