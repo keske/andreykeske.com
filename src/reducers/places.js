@@ -58,7 +58,9 @@ const data = [
   'cover': false,
 }, {
   'city': 'Florence',
+  'city_ru': 'Флоренция',
   'country': 'Italy',
+  'country_ru': 'Италия',
   'start': '10 may',
   'end': '',
 
