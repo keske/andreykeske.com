@@ -5,6 +5,18 @@
 :local(.styles) {
   margin-top: 33px;
 
+  @media (#{$desktop}) {
+    &.bottom-on-photo {
+      position: relative;
+
+      margin-top: -310px;
+
+      a, p, span {
+        color: #FFF !important;
+      }
+    }
+  }
+  
   a.list-of-cities {
     @include light();
 

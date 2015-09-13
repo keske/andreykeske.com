@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 // Component styles
 import styles from './Place.styles.js';
 
-// Nav footer
-import NavFooter from './components/navFooter/navFooter.js';
-
 // Places
 import {
   // August 2015
@@ -71,13 +68,12 @@ export default class Place extends Component {
   }
 
   render() {
-    const { year, month, city, language } = this.props.params;
+    const { year, month, city } = this.props.params;
     const place = `${ city.replace(/ /g, '') }In${ month }${ year }`;
 
     return (
       <div className={ styles }>
         { React.createElement(data[place], this.props) }
-        <NavFooter year={ year * 1 } month={ month } city={ city } language={ language } />
       </div>
     );
   }

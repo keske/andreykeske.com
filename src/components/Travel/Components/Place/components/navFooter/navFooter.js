@@ -19,10 +19,11 @@ export default class NavFooter extends Component {
     year: React.PropTypes.number,
     month: React.PropTypes.string,
     city: React.PropTypes.string,
+    style: React.PropTypes.string,
   }
 
   render() {
-    const { places, language, year, month, city } = this.props;
+    const { style, places, language, year, month, city } = this.props;
 
     // Reduce places
     const reducedPlaces = _.reduceRight(places, (a, b) => {
@@ -64,7 +65,7 @@ export default class NavFooter extends Component {
     const placesRange = placesWithCover.slice(startPlace, endPlace);
 
     return (
-      <div className={ styles }>
+      <div className={ `${ styles } ${ style }` }>
         <div className="container">
 
           <div className="row">
