@@ -71,9 +71,7 @@ export default class Place extends Component {
   }
 
   render() {
-    const { language } = this.props;
-    const { year, month, city } = this.props.params;
-
+    const { year, month, city, language } = this.props.params;
     const place = `${ city.replace(/ /g, '') }In${ month }${ year }`;
 
     return (

@@ -35,13 +35,18 @@ export default class NavFooter extends Component {
     });
 
     // Get current index of places in the array
-    const currentPlaceIndex = _.indexOf(placesWithCover, _.findWhere(placesWithCover, { 'city': city, 'year': year, 'month': month }));
+    const currentPlaceIndex = _.indexOf(placesWithCover,
+      _.findWhere(placesWithCover, {
+        'city': city,
+        'year': year,
+        'month': month,
+      }));
 
     // Length of the places array
     let startPlace = currentPlaceIndex - 2;
     let endPlace = currentPlaceIndex + 4;
 
-    // Nav footer with cities
+    // Get range...
     if (startPlace === -2 || startPlace === -1 || startPlace === 0) {
       startPlace = 0;
       endPlace = 6;
@@ -57,9 +62,6 @@ export default class NavFooter extends Component {
     }
 
     const placesRange = placesWithCover.slice(startPlace, endPlace);
-    // console.log('startPlace: ' + startPlace);
-    // console.log('endPlace: ' + endPlace);
-    // console.log(currentPlaceIndex);
 
     return (
       <div className={ styles }>
@@ -68,7 +70,7 @@ export default class NavFooter extends Component {
           <div className="row">
 
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a href="/#/travel" className="list-of-cities">
+              <a href={ `${ language }/travel` } className="list-of-cities">
                 List of cities
               </a>
             </div>

@@ -18,7 +18,6 @@ export default class Card extends Component {
 
   render() {
     const { place, language } = this.props;
-    // const city = place.city.replace(/ /g, '');
 
     return (
       place.cover ?
