@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import reactMixin from 'react-mixin';
 
+// Components
 import placeInsertTemplate from './../../../../placeInsertTemplate.js';
 import NavFooter from './../../../../components/navFooter/navFooter.js';
 

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import reactMixin from 'react-mixin';
 
+// Components
 import placeInsertTemplate from './../../../../placeInsertTemplate.js';
+import NavFooter from './../../../../components/navFooter/navFooter.js';
 
 // Component styles
 import styles from './styles.js';
 
 @reactMixin.decorate(placeInsertTemplate)
-export default class VeniceInMay2015 extends Component {
+export default class FlorenceInMay2015 extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
@@ -15,10 +17,12 @@ export default class VeniceInMay2015 extends Component {
 
   render() {
     const { data } = this.state;
+    const { year, month, city, language } = this.props.params;
 
     if (data) {
       return (<div className={ styles }>
         <div dangerouslySetInnerHTML={{ __html: data }} />
+        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ language } />
       </div>);
     }
 
