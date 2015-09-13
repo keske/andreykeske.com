@@ -23,7 +23,7 @@ export default class Header extends Component {
               </a>
             </div>
             <div className="col-xs-8 col-sm-8 col-md-10 col-lg-10 header-nav">
-              <Link to={ `ru/travel/` }>
+              <Link to={ `ru/travel/card` }>
                 <span className="nav">Travel</span>
               </Link>
               <Link to={ `ru/works/` }>

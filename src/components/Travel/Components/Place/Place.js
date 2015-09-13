@@ -73,12 +73,13 @@ export default class Place extends Component {
   render() {
     const { language } = this.props;
     const { year, month, city } = this.props.params;
-    const place = `${ city }In${ month }${ year }`;
+
+    const place = `${ city.replace(/ /g, '') }In${ month }${ year }`;
 
     return (
       <div className={ styles }>
         { React.createElement(data[place], this.props) }
-        <NavFooter year={ year } month={ month } city={ city } language={ language } place={ place } />
+        <NavFooter year={ year * 1 } month={ month } city={ city } language={ language } />
       </div>
     );
   }

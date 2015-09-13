@@ -5,16 +5,16 @@ const placeInsertTemplate = {
     const { year, month, city } = this.props.params;
 
     // Path to photos
-    const img = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city }/images`;
+    const img = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
 
     // Template url
-    const url = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city }/index.html`;
+    const url = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/index.html`;
 
     // Get html template
     $.get(url).done((data) => {
       this.setState({
         // Insert photos url and city name
-        data: this.replaceDataInTemplate(data, img, city),
+        data: this.replaceDataInTemplate(data, img, city.replace(/ /g, '')),
       });
     }.bind(this));
   },

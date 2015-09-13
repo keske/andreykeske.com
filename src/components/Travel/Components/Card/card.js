@@ -18,11 +18,11 @@ export default class Card extends Component {
 
   render() {
     const { place, language } = this.props;
-    const city = place.city.replace(/ /g, '');
+    // const city = place.city.replace(/ /g, '');
 
     return (
       place.cover ?
-        <Link to={ `${ language }/places/${ place.year }/${ place.month }/${ city }` }>
+        <Link to={ `${ language }/places/${ place.year }/${ place.month }/${ place.city }` }>
           <div className={ styles + ' col-xs-12 col-md-12 col-md-6 col-lg-6 big-type' }>
             <div className={ 'data ' + place.class }>
               <p className="city">
