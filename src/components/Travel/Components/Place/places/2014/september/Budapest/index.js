@@ -7,7 +7,10 @@ import NavFooter from '../../../../components/navFooter/navFooter.js';
 // Component styles
 import styles from './styles.js';
 
-export default class PragueInDecember2014 extends Component {
+// Language
+import Language from './locale/';
+
+export default class City extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
@@ -19,9 +22,16 @@ export default class PragueInDecember2014 extends Component {
     // Path to photos
     const img = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
 
+    // Set language
+    Language.setLocale(language);
+
     return (
       <div className={ styles }>
         <LinkToImage url={ `${ img }/thumb.jpg` } />
+
+        <div className="top-page-city-name on-image">
+          { Language.translate('Budapest') }
+        </div>
 
         <LinkToImage url={ `${ img }/1.jpg` } />
 

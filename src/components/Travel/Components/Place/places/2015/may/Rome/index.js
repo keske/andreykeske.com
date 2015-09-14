@@ -10,7 +10,7 @@ import styles from './styles.js';
 // Language
 import Language from './locale/';
 
-export default class VeniceInMay2015 extends Component {
+export default class City extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
