@@ -47,6 +47,7 @@ export default class Header extends Component {
     );
   }
 
+  // Smooth hide header when scrolling
   hideHeaderWhenScrolling() {
     let opacity = 0;
 
