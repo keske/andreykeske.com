@@ -6,6 +6,9 @@ import $ from 'jquery';
 // Component styles
 import styles from './styles.js';
 
+// Language
+import Language from './locale/';
+
 export default class Header extends Component {
 
   componentDidMount() {
@@ -13,21 +16,29 @@ export default class Header extends Component {
   }
 
   render() {
+    // Set language
+    // TODO: from reducers
+    Language.setLocale('ru');
+
     return (
       <div className={ `${ styles }` } ref="header">
         <div className="container">
           <div className="row">
             <div className="col-xs-4 col-sm-4 col-md-2 col-lg-2">
               <a href="/">
-                  Andrey Keske
+                  { Language.translate('AndreyKeske') }
               </a>
             </div>
             <div className="col-xs-8 col-sm-8 col-md-10 col-lg-10 header-nav">
               <Link to={ `ru/travel/card` }>
-                <span className="nav">Travel</span>
+                <span className="nav">
+                  { Language.translate('Travel') }
+                </span>
               </Link>
               <Link to={ `ru/works/` }>
-                <span className="nav">Works</span>
+                <span className="nav">
+                  { Language.translate('Works') }
+                </span>
               </Link>
             </div>
           </div>
