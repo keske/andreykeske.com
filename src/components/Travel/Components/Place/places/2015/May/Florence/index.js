@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
+import { LinkToImage } from '../../../../../../../../components/';
 import NavFooter from './../../../../components/navFooter/navFooter.js';
 
 // Component styles
@@ -44,45 +45,31 @@ export default class FlorenceInMay2015 extends Component {
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a target="_blank" href={ `${ img }/cathedral-2.jpg` }>
-                <img src={ `${ img }/cathedral-2.jpg` } />
-              </a>
+              <LinkToImage url={ `${ img }/cathedral-2.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a target="_blank" href={ `${ img }/street-1.jpg` }>
-                <img src={ `${ img }/street-1.jpg` } />
-              </a>
+              <LinkToImage url={ `${ img }/street-1.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a target="_blank" href={ `${ img }/street.jpg` }>
-                <img src={ `${ img }/street.jpg` } />
-              </a>
+              <LinkToImage url={ `${ img }/street.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a target="_blank" href={ `${ img }/cathedral-3.jpg` }>
-                <img src={ `${ img }/cathedral-3.jpg` } />
-              </a>
+              <LinkToImage url={ `${ img }/cathedral-3.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <a target="_blank" href={ `${ img }/photobooth.jpg` }>
-                <img src={ `${ img }/photobooth.jpg` } />
-              </a>
+              <LinkToImage url={ `${ img }/photobooth.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <a target="_blank" href={ `${ img }/street-2.jpg` }>
-                <img src={ `${ img }/street-2.jpg` } />
-              </a>
+              <LinkToImage url={ `${ img }/street-2.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a target="_blank" href={ `${ img }/bar.jpg` }>
-                <img src={ `${ img }/bar.jpg` } />
-              </a>
+              <LinkToImage url={ `${ img }/bar.jpg` } />
             </div>
 
           </div>

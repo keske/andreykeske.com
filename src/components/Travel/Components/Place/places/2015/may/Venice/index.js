@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
-import LinkToImage from '../../../../../../../LinkToImage/index.js';
+import { LinkToImage } from '../../../../../../../../components/';
 import NavFooter from '../../../../components/navFooter/navFooter.js';
 
 // Component styles
