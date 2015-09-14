@@ -25,6 +25,12 @@
 
     display: inline-block;
   }
+
+  &.white {
+    a {
+      color: #FFF !important;
+    }
+  }
   
   a {
 

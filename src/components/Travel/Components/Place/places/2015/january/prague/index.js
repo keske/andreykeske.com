@@ -1,34 +1,30 @@
 import React, { Component } from 'react';
-import reactMixin from 'react-mixin';
 
 // Components
-import placeInsertTemplate from './../../../../placeInsertTemplate.js';
-import NavFooter from './../../../../components/navFooter/navFooter.js';
+import { LinkToImage } from '../../../../../../../../components/';
+import NavFooter from '../../../../components/navFooter/navFooter.js';
 
 // Component styles
 import styles from './styles.js';
 
-@reactMixin.decorate(placeInsertTemplate)
-export default class FlorenceInMay2015 extends Component {
+export default class PragueInDecember2014 extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
   }
 
   render() {
-    const { data } = this.state;
     const { year, month, city, language } = this.props.params;
 
-    if (data) {
-      return (<div className={ styles }>
-        <div dangerouslySetInnerHTML={{ __html: data }} />
-        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ language } />
-      </div>);
-    }
+    // Path to photos
+    const img = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
 
     return (
       <div className={ styles }>
-        <h2>Loading...</h2>
+        <LinkToImage url={ `${ img }/thumb.jpg` } />
+        <LinkToImage url={ `${ img }/1.jpg` } />
+
+        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ language } />
       </div>
     );
   }

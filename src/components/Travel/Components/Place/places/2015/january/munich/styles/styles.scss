@@ -1,3 +1,11 @@
 :local(.styles) {
-  position: relative;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc32d4+0,59fff9+10,000000+44,000000+100 */
+background: #fc32d4; /* Old browsers */
+background: -moz-linear-gradient(left, #fc32d4 0%, #59fff9 10%, #000000 44%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fc32d4), color-stop(10%,#59fff9), color-stop(44%,#000000), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, #fc32d4 0%,#59fff9 10%,#000000 44%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, #fc32d4 0%,#59fff9 10%,#000000 44%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, #fc32d4 0%,#59fff9 10%,#000000 44%,#000000 100%); /* IE10+ */
+background: linear-gradient(to right, #fc32d4 0%,#59fff9 10%,#000000 44%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc32d4', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
 }

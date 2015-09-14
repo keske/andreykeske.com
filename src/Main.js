@@ -6,7 +6,7 @@ import 'bootstrap-webpack';
 import 'style!./styles/main.scss';
 
 // Application components
-import { Header, Footer } from 'components';
+import { Header } from 'components';
 
 export default class Main extends Component {
 
@@ -19,7 +19,6 @@ export default class Main extends Component {
       <section>
         <Header />
         { this.props.children }
-        <Footer />
       </section>
     );
   }
