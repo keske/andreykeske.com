@@ -42,7 +42,4 @@ export default class PragueInDecember2014 extends Component {
     );
   }
 
-  state = {
-    data: null,
-  }
 }

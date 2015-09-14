@@ -411,7 +411,4 @@ export default class VeniceInMay2015 extends Component {
     );
   }
 
-  state = {
-    data: null,
-  }
 }

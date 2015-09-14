@@ -82,7 +82,4 @@ export default class FlorenceInMay2015 extends Component {
     );
   }
 
-  state = {
-    data: null,
-  }
 }
