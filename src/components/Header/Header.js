@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
-
 import $ from 'jquery';
+
+// Actions
+import { getLanguage, setLanguage } from '../../actions/application.js';
 
 // Component styles
 import styles from './styles.js';
@@ -9,16 +12,22 @@ import styles from './styles.js';
 // Language
 import Language from './locale/';
 
+@connect(state => state.application)
 export default class Header extends Component {
+
+  static propTypes = {
+    application: React.PropTypes.object,
+  }
 
   componentDidMount() {
     this.hideHeaderWhenScrolling();
   }
 
   render() {
+    const { dispatch, application } = this.props;
+
     // Set language
-    // TODO: from reducers
-    Language.setLocale('ru');
+    Language.setLocale(application.settings.language);
 
     return (
       <div className={ `${ styles }` } ref="header">
@@ -40,11 +49,19 @@ export default class Header extends Component {
                   { Language.translate('Works') }
                 </span>
               </Link>
+              <div onClick={ () => this.toggleLanguage() }>
+                set
+              </div>
             </div>
           </div>
         </div>
       </div>
     );
+  }
+
+  toggleLanguage() {
+    const { dispatch, application } = this.props;
+    dispatch(setLanguage('en'));
   }
 
   // Smooth hide header when scrolling
