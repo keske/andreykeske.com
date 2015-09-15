@@ -10,6 +10,9 @@ import styles from './NavFooter.styles.js';
 // Components
 import NewLabel from './../../../Card/NewLabel.js';
 
+// Language
+import Language from './locale/';
+
 @connect(state => state.places)
 export default class NavFooter extends Component {
 
@@ -65,6 +68,10 @@ export default class NavFooter extends Component {
     const placesRange = placesWithCover.slice(startPlace, endPlace);
     let currentCityClass = '';
 
+    // Set language
+    // TODO: from reducers
+    Language.setLocale('ru');
+
     return (
       <div className={ `${ styles } ${ style }` }>
         <div className="container">
@@ -73,12 +80,14 @@ export default class NavFooter extends Component {
 
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <a href={ `${ language }/travel` } className="list-of-cities">
-                List of cities
+                { Language.translate('List') }
               </a>
             </div>
 
             {
               placesRange.map((currentPlace) => {
+
+                // Set class `current` for current place
                 if (currentPlace.city === city && currentPlace.year === year &&
                     currentPlace.month === month) {
                     currentCityClass = ' current';
@@ -86,7 +95,6 @@ export default class NavFooter extends Component {
                   currentCityClass = '';
                 }
 
-                console.log(currentCityClass);
                 return (
                   currentPlace.cover ?
                     <Link to={ `${ language }/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }>
