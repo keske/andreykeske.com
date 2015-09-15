@@ -63,6 +63,7 @@ export default class NavFooter extends Component {
     }
 
     const placesRange = placesWithCover.slice(startPlace, endPlace);
+    let currentCityClass = '';
 
     return (
       <div className={ `${ styles } ${ style }` }>
@@ -78,10 +79,18 @@ export default class NavFooter extends Component {
 
             {
               placesRange.map((currentPlace) => {
+                if (currentPlace.city === city && currentPlace.year === year &&
+                    currentPlace.month === month) {
+                    currentCityClass = ' current';
+                } else {
+                  currentCityClass = '';
+                }
+
+                console.log(currentCityClass);
                 return (
                   currentPlace.cover ?
                     <Link to={ `${ language }/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }>
-                      <div className="col-md-2 col-lg-2 nav-block">
+                      <div className={ `col-md-2 col-lg-2 nav-block + ${ currentCityClass }` }>
                         <div className="data">
                           <p className="city">
                             { currentPlace.city }

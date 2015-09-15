@@ -71,6 +71,8 @@
       overflow: hidden;
       height: 230px;
 
+      border-radius: 2px;
+
       @media (#{$phone}) {
         height: 100px;
 
@@ -79,7 +81,9 @@
         }
       }
 
-      border-radius: 2px;
+      &.current {
+        opacity: .3;
+      }
 
       // Information on card
       .data {
