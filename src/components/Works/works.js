@@ -24,7 +24,7 @@ export default class Works extends Component {
           {
             works.map((work) => {
               return (
-                <Link to={ `${ language }/works/${ work.title }` }>
+                <Link to={ `${ language }/works/${ work.link }` }>
                   <div className="row">
                     <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2">
                       <img src="." />

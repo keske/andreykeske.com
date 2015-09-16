@@ -26,7 +26,7 @@ export default class App extends Component {
                 <Route path=":language/travel/:mode" component={ Travel } />
                 <Route path=":language/places/:year/:month/:city" component={ Place } />
                 <Route path=":language/works" component={ Works } />
-                <Route path=":language/works/:name" component={ Work } />
+                <Route path=":language/works/:work" component={ Work } />
               </Route>
             </Router>
           }
