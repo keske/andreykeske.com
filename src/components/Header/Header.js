@@ -40,12 +40,12 @@ export default class Header extends Component {
               </a>
             </div>
             <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9 header-nav">
-              <Link to={ `ru/travel/card` }>
+              <Link to={ `${ application.language }/travel/card` }>
                 <span className="nav">
                   { Language.translate('Travel') }
                 </span>
               </Link>
-              <Link to={ `ru/works/` }>
+              <Link to={ `${ application.language }/works/` }>
                 <span className="nav">
                   { Language.translate('Works') }
                 </span>

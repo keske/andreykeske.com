@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { Link } from 'react-router';
+
 // Component styles
 import styles from './Works.styles.js';
 
@@ -13,14 +15,34 @@ export default class Works extends Component {
   }
 
   render() {
+    const { language } = this.props.params;
     const { works } = this.props;
-    console.log(works)
-    return (
 
+    return (
       <div className={ styles }>
-        <h2>
-          Works
-        </h2>
+        <div className="container">
+          {
+            works.map((work) => {
+              return (
+                <Link to={ `${ language }/works/${ work.title }` }>
+                  <div className="row">
+                    <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2">
+                      <img src="." />
+                    </div>
+                    <div className="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                      <h2>
+                        { work.title }
+                      </h2>
+                      <p>
+                        { work.info }
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })
+          }
+        </div>
       </div>
     );
   }

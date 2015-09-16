@@ -9,6 +9,7 @@ export { default as Place } from './Travel/components/Place/Place.js';
 
 // Works
 export { default as Works } from './Works/Works.js';
+export { default as Work } from './Works/Work/Work.js';
 
 // Helpers
 export { default as LinkToImage } from './LinkToImage/LinkToImage.js';

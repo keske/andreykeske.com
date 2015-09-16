@@ -1,3 +1,21 @@
+@import '../../../styles/pallete';
+@import '../../../styles/typography';
+
 :local(.styles) {
-  position: relative;
+  margin: 70px 0;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    @include light();
+
+    color: $black;
+
+    $size: 14px;
+
+    font-size: $size;
+    line-height: $size + 6;
+  }
 }
