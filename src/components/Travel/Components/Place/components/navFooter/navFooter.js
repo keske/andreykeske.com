@@ -88,7 +88,7 @@ export default class NavFooter extends Component {
                 return (
                   currentPlace.cover ?
                     <Link to={ `${ language }/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }>
-                      <div className={ `col-md-2 col-lg-2 nav-block + ${ currentCityClass }` }>
+                      <div className={ `col-md-2 col-lg-2 nav-block` }>
                         <div className="data">
                           <p className="city">
                             { currentPlace.city }

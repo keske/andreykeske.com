@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { Link } from 'react-router';
 
 // Actions
@@ -64,6 +65,9 @@ export default class Header extends Component {
   // Togle language between `ru` and `en`
   toggleLanguage() {
     const { dispatch, application } = this.props;
+
+    // router.replaceWith('/users/123');
+
     application.language === 'ru' ? dispatch(setLanguage('en')) : dispatch(setLanguage('ru'));
   }
 
