@@ -44,11 +44,11 @@ export default class Work extends Component {
                 { Language.translate('Text') }
               </p>
 
-              <a target="_blank" href={ ` ${path}/index.html` }>
+              <a target="_blank" href={ `${path}/index.html` }>
                 <img src={ ` ${path}/work.jpg` } />
               </a>
               <h4>
-                <a target="_blank" href={ ` ${path}/index.html` }>Open page</a>
+                <a target="_blank" href={ `${path}/index.html` }>Open page</a>
               </h4>
 
             </div>

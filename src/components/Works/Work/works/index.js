@@ -2,6 +2,7 @@ export { default as Catch } from './catch/index.js';
 export { default as Theshellgame } from './the-shell-game/index.js';
 export { default as Footballfanstrolling } from './football-fans-trolling/index.js';
 export { default as Tellmewhatyouwant } from './money/index.js';
+export { default as Browsertabsasthepianokeys } from './tabs-piano/index.js';
 
 export { default as CensorshipintheiOS7 } from './censorship-in-ios7/index.js';
 export { default as Graphicworks } from './graphics/index.js';
@@ -11,7 +12,6 @@ export { default as MacOSUIGames } from './mac-os-ui-games/index.js';
 export { default as IfoundthewaterontheMars } from './mars/index.js';
 export { default as PolicesirenalarmanimationinOSXFinder } from './police-car/index.js';
 export { default as Spectrumatthebrowserbar } from './spectrum/index.js';
-export { default as Browsertabsasthepianokeys } from './tabs-piano/index.js';
 export { default as Thehairpin } from './the-hairpin/index.js';
 export { default as Fridaydock } from './friday-dock/index.js';
 export { default as Theshadowsofthewindow } from './shadow/index.js';

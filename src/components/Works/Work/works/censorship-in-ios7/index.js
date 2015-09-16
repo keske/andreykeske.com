@@ -42,6 +42,52 @@ export default class Work extends Component {
               </p>
 
             </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
+              <h4>
+                { Language.translate('Home') }
+              </h4>
+              <img src={ ` ${path}/dock-phone.png` } />
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
+              <h4>
+                { Language.translate('Sound') }
+              </h4>
+              <img src={ ` ${path}/ringer-phone.png` } />
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
+              <h4>
+                { Language.translate('Group') }
+              </h4>
+              <img src={ ` ${path}/group-phone.png` } />
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
+              <h4>
+                { Language.translate('Multitask') }
+              </h4>
+              <img src={ ` ${path}/task-phone.png` } />
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
+              <h4>
+                { Language.translate('Drag') }
+              </h4>
+              <img src={ ` ${path}/icon-phone.png` } />
+            </div>
+
+            <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 images-block">
+              <h2>
+                { Language.translate('Bonus') }
+              </h2>
+              <div className="responsive-container">
+                <iframe width="960" height="720"
+                  src="//www.youtube.com/embed/n5X8ANp04b8"
+                  frameBorder="0" allowFullScreen></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
