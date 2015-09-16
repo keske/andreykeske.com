@@ -1,6 +1,7 @@
 export { default as Catch } from './catch/index.js';
-export { default as CensorshipintheiOS7 } from './censorship-in-ios7/index.js';
+export { default as Theshellgame } from './the-shell-game/index.js';
 export { default as Footballfanstrolling } from './football-fans-trolling/index.js';
+export { default as CensorshipintheiOS7 } from './censorship-in-ios7/index.js';
 export { default as Graphicworks } from './graphics/index.js';
 export { default as HedgehogintheFog } from './hedgehog-in-the-fog/index.js';
 export { default as InvisibleiconsontheiPad } from './invisible-icons/index.js';
@@ -17,4 +18,3 @@ export { default as Like } from './like/index.js';
 export { default as Thekeyhole } from './like/index.js';
 export { default as Volumeexperiments } from './volume/index.js';
 export { default as Desktopbackgroundinthebrowser } from './chrome/index.js';
-export { default as Theshellgame } from './the-shell-game/index.js';
