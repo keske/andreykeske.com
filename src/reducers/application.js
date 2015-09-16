@@ -1,23 +1,22 @@
 const initialState = {
   application: {
-    settings: {
-      language: 'ru',
-    },
+    language: 'ru',
   },
 };
-export function application(state = initialState, action) {
-  const newState = {...state};
 
+export function application(state = initialState, action) {
   switch (action.type) {
 
-  case 'GETLANGUAGE':
-    return newState;
-
   case 'SETLANGUAGE':
-    newState.application.settings.language = action.language;
-    return newState;
+    return {
+      ...state,
+      application: {
+        language: action.language,
+      },
+    };
+
 
   default:
-    return newState;
+    return state;
   }
 }

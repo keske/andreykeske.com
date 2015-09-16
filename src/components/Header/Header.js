@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import $ from 'jquery';
 
 // Actions
-import { getLanguage, setLanguage } from '../../actions/application.js';
+import { setLanguage } from '../../actions/application.js';
 
 // Component styles
 import styles from './styles.js';
@@ -17,6 +17,7 @@ export default class Header extends Component {
 
   static propTypes = {
     application: React.PropTypes.object,
+    dispatch: React.PropTypes.func,
   }
 
   componentDidMount() {
@@ -24,10 +25,10 @@ export default class Header extends Component {
   }
 
   render() {
-    const { dispatch, application } = this.props;
+    const { application } = this.props;
 
     // Set language
-    Language.setLocale(application.settings.language);
+    Language.setLocale(application.language);
 
     return (
       <div className={ `${ styles }` } ref="header">
@@ -38,7 +39,7 @@ export default class Header extends Component {
                   { Language.translate('AndreyKeske') }
               </a>
             </div>
-            <div className="col-xs-8 col-sm-8 col-md-10 col-lg-10 header-nav">
+            <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9 header-nav">
               <Link to={ `ru/travel/card` }>
                 <span className="nav">
                   { Language.translate('Travel') }
@@ -49,8 +50,10 @@ export default class Header extends Component {
                   { Language.translate('Works') }
                 </span>
               </Link>
+            </div>
+            <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
               <div onClick={ () => this.toggleLanguage() }>
-                set
+                { application.language }
               </div>
             </div>
           </div>
@@ -59,9 +62,10 @@ export default class Header extends Component {
     );
   }
 
+  // Togle language between `ru` and `en`
   toggleLanguage() {
     const { dispatch, application } = this.props;
-    dispatch(setLanguage('en'));
+    application.language === 'ru' ? dispatch(setLanguage('en')) : dispatch(setLanguage('ru'));
   }
 
   // Smooth hide header when scrolling
