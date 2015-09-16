@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import $ from 'jquery';
 
 // Actions
 import { setLanguage } from '../../actions/application.js';
@@ -72,10 +71,9 @@ export default class Header extends Component {
   hideHeaderWhenScrolling() {
     let opacity = 0;
 
-    $(window).scroll(() => {
-      opacity = 1 - ($(window).scrollTop() / 50).toFixed(1);
-
-      $(this.refs.header.getDOMNode()).css('opacity', opacity);
-    });
+    window.onscroll = () => {
+      opacity = 1 - (window.pageYOffset / 50).toFixed(1);
+      this.refs.header.getDOMNode().style.opacity = opacity;
+    };
   }
 }

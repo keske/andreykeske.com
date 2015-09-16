@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // Components
 import { LinkToImage } from '../../../../../../../../components/';
@@ -10,20 +11,24 @@ import styles from './styles.js';
 // Language
 import Language from './locale/';
 
+@connect(state => state.application)
 export default class City extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
+    application: React.PropTypes.object,
   }
 
   render() {
-    const { year, month, city, language } = this.props.params;
+    const { year, month, city } = this.props.params;
 
     // Path to photos
     const img = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
 
+    const { application } = this.props;
+
     // Set language
-    Language.setLocale(language);
+    Language.setLocale(application.language);
 
     return (
       <div className={ styles }>
@@ -406,7 +411,7 @@ export default class City extends Component {
         <img src={ `${ img }/bottom.jpg` } className="photo-margin-top" />
 
 
-        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ language } />
+        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ application.language } />
       </div>
     );
   }
