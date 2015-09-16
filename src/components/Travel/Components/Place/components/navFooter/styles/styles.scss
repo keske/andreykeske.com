@@ -34,6 +34,10 @@
   
   a {
 
+    &.active {
+      opacity: .3;
+    }
+
     &.current-city {
       
       .data p, .data .country {
@@ -79,10 +83,6 @@
         img {
           opacity: 0;
         }
-      }
-
-      &.current {
-        opacity: .3;
       }
 
       // Information on card

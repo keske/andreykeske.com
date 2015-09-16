@@ -66,7 +66,6 @@ export default class NavFooter extends Component {
     }
 
     const placesRange = placesWithCover.slice(startPlace, endPlace);
-    let currentCityClass = '';
 
     // Set language
     // TODO: from reducers
@@ -86,15 +85,6 @@ export default class NavFooter extends Component {
 
             {
               placesRange.map((currentPlace) => {
-
-                // Set class `current` for current place
-                if (currentPlace.city === city && currentPlace.year === year &&
-                    currentPlace.month === month) {
-                    currentCityClass = ' current';
-                } else {
-                  currentCityClass = '';
-                }
-
                 return (
                   currentPlace.cover ?
                     <Link to={ `${ language }/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }>
