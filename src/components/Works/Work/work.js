@@ -30,6 +30,7 @@ import {
 const data = {
   'catch': Catch,
   'the-shell-game': Theshellgame,
+  'the-hairpin': Thehairpin,
   // '': CensorshipintheiOS7,
   // '': Footballfanstrolling,
   // '': Graphicworks,
@@ -41,7 +42,6 @@ const data = {
   // '': PolicesirenalarmanimationinOSXFinder,
   // '': Spectrumatthebrowserbar,
   // '': Browsertabsasthepianokeys,
-  // '': Thehairpin,
   // '': Fridaydock,
   // '': Theshadowsofthewindow,
   // '': Like,
