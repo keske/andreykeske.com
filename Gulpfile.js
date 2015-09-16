@@ -11,12 +11,14 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-var createComponent = function(simpleComponent) {
+var createComponent = function(type) {
   var component;
 
-  if (simpleComponent) {
+  if (type === 'works') {
+    component = path.join(__dirname, 'generator', 'work/**/*.**');
+  } else if (type === 'simple-component') {
     component = path.join(__dirname, 'generator', 'simple-component/**/*.**');
-  } else {
+  } else if (type === 'component') {
     component = path.join(__dirname, 'generator', 'component/**/*.**');
   }
 
@@ -26,7 +28,7 @@ var createComponent = function(simpleComponent) {
 
   var name = yargs.name,
     parentPath = yargs.parent || '',
-    destPath = path.join(path.join(root, 'src/components/'), parentPath, capitalizeFirstLetter(name));
+    destPath = path.join(path.join(root, 'src/components/Works/Work/works/'), parentPath, capitalizeFirstLetter(name));
 
   console.log('\n\n\tCongratulations!\n' +
     '\tJust now you\'ve created a `' + name + '` component.\n\n');
@@ -57,12 +59,16 @@ var createTemplate = function(type, folder, file) {
     .pipe(gulp.dest(destPath));
 };
 
+gulp.task('work', function() {
+  createComponent('work');
+});
+
 gulp.task('simple-component', function() {
-  createComponent(true);
+  createComponent('simple-component');
 });
 
 gulp.task('component', function() {
-  createComponent(false);
+  createComponent('component');
   createTemplate('action', 'src/actions/', 'action/*.js');
   createTemplate('reducer', 'src/reducers/', 'reducer/*.js');
 });

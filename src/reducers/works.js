@@ -144,7 +144,7 @@ const data = [
   },
 
   {
-    'title': 'I found the water on  the Mars',
+    'title': 'I found the water on the Mars',
     'link': 'mars',
     'img': 'assets/images/works/research/water-on-mars/water-on-mars.jpg',
     'info': 'The windows composition',

@@ -6,10 +6,48 @@ import styles from './Work.styles.js';
 // Works
 import {
   Catch,
+  CensorshipintheiOS7,
+  Footballfanstrolling,
+  Graphicworks,
+  HedgehogintheFog,
+  InvisibleiconsontheiPad,
+  MacOSUIGames,
+  IfoundthewaterontheMars,
+  Tellmewhatyouwant,
+  PolicesirenalarmanimationinOSXFinder,
+  Spectrumatthebrowserbar,
+  Browsertabsasthepianokeys,
+  Thehairpin,
+  Fridaydock,
+  Theshadowsofthewindow,
+  Like,
+  Thekeyhole,
+  Volumeexperiments,
+  Desktopbackgroundinthebrowser,
+  Theshellgame
 } from './works/index.js';
 
 const data = {
   'catch': Catch,
+  'the-shell-game': Theshellgame,
+  // '': CensorshipintheiOS7,
+  // '': Footballfanstrolling,
+  // '': Graphicworks,
+  // '': HedgehogintheFog,
+  // '': InvisibleiconsontheiPad,
+  // '': MacOSUIGames,
+  // '': IfoundthewaterontheMars,
+  // '': Tellmewhatyouwant,
+  // '': PolicesirenalarmanimationinOSXFinder,
+  // '': Spectrumatthebrowserbar,
+  // '': Browsertabsasthepianokeys,
+  // '': Thehairpin,
+  // '': Fridaydock,
+  // '': Theshadowsofthewindow,
+  // '': Like,
+  // '': Thekeyhole,
+  // '': Volumeexperiments,
+  // 'chrome': Desktopbackgroundinthebrowser,
 };
 
 export default class Works extends Component {
