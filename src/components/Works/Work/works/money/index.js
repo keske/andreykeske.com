@@ -38,8 +38,18 @@ export default class Work extends Component {
                 { Language.translate('Title') }
               </h1>
               <p>
+                { Language.translate('About') }
+              </p>
+              <p>
                 { Language.translate('Text') }
               </p>
+
+              <a target="_blank" href={ ` ${path}/index.html` }>
+                <img src={ ` ${path}/work.jpg` } />
+              </a>
+              <h4>
+                <a target="_blank" href={ ` ${path}/index.html` }>Open page</a>
+              </h4>
 
             </div>
           </div>

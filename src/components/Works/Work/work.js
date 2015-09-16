@@ -32,6 +32,7 @@ const data = {
   'the-shell-game': Theshellgame,
   'the-hairpin': Thehairpin,
   'football-fans-trolling': Footballfanstrolling,
+  'money': Tellmewhatyouwant,
   // '': CensorshipintheiOS7,
   // '': Graphicworks,
   // '': HedgehogintheFog,
