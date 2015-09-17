@@ -6,25 +6,25 @@ import styles from './Work.styles.js';
 // Works
 import {
   Catch,
-  CensorshipintheiOS7,
+  Theshellgame,
+  Thehairpin,
   Footballfanstrolling,
-  Graphicworks,
+  Tellmewhatyouwant,
+  Browsertabsasthepianokeys,
+  CensorshipintheiOS7,
   HedgehogintheFog,
+  Graphicworks,
   InvisibleiconsontheiPad,
   MacOSUIGames,
   IfoundthewaterontheMars,
-  Tellmewhatyouwant,
   PolicesirenalarmanimationinOSXFinder,
   Spectrumatthebrowserbar,
-  Browsertabsasthepianokeys,
-  Thehairpin,
   Fridaydock,
   Theshadowsofthewindow,
   Like,
   Thekeyhole,
   Volumeexperiments,
-  Desktopbackgroundinthebrowser,
-  Theshellgame
+  Desktopbackgroundinthebrowser
 } from './works/index.js';
 
 const data = {
@@ -35,8 +35,8 @@ const data = {
   'money': Tellmewhatyouwant,
   'tabs-piano': Browsertabsasthepianokeys,
   'censorship-in-ios7': CensorshipintheiOS7,
+  'hedgehog-in-the-fog': HedgehogintheFog,
   // '': Graphicworks,
-  // '': HedgehogintheFog,
   // '': InvisibleiconsontheiPad,
   // '': MacOSUIGames,
   // '': IfoundthewaterontheMars,
