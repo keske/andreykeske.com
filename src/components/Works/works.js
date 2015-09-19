@@ -23,11 +23,12 @@ export default class Works extends Component {
         <div className="container">
           {
             works.map((work) => {
+              console.log(work)
               return (
                 <Link to={ `${ language }/works/${ work.link }` }>
                   <div className="row">
                     <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2">
-                      <img src="." />
+                      <img src={ `./src/components/Works/Work/works/${ work.link }/files/${ work.img }` } />
                     </div>
                     <div className="col-xs-9 col-sm-9 col-md-5 col-lg-5">
                       <h2>

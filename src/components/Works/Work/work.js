@@ -41,7 +41,7 @@ const data = {
   // '': MacOSUIGames,
   // '': IfoundthewaterontheMars,
   // '': Tellmewhatyouwant,
-  // '': PolicesirenalarmanimationinOSXFinder,
+  'police-car': PolicesirenalarmanimationinOSXFinder,
   // '': Spectrumatthebrowserbar,
   // '': Browsertabsasthepianokeys,
   // '': Fridaydock,
