@@ -38,8 +38,47 @@ export default class Work extends Component {
                 { Language.translate('Title') }
               </h1>
               <p>
-                { Language.translate('Text') }
+                { Language.translate('Intro') }
               </p>
+
+              <h2>{ Language.translate('How') }</h2>
+
+              <p>
+                { Language.translate('HowText') }
+              </p>
+
+              <div className="responsive-container">
+                <iframe width="960" height="720" src="//www.youtube.com/embed/WrUCOit8adQ" frameborder="0" allowfullscreen></iframe>
+              </div>
+
+              <h2>
+                { Language.translate('Repeat') }
+              </h2>
+
+              <ul>
+                <li>
+                  { Language.translate('li_1') }
+                </li>
+                <li>
+                  { Language.translate('li_2') }
+                </li>
+                <li>
+                  { Language.translate('li_3') }
+                </li>
+                <li>
+                  { Language.translate('li_4') }
+                </li>
+                <li>
+                  { Language.translate('li_5') }
+                </li>
+                <li>
+                  { Language.translate('li_6') }
+                </li>
+              </ul>
+
+              <i>
+                { Language.translate('System') }
+              </i>
 
             </div>
           </div>

@@ -23,7 +23,6 @@ export default class Works extends Component {
         <div className="container">
           {
             works.map((work) => {
-              console.log(work)
               return (
                 <Link to={ `${ language }/works/${ work.link }` }>
                   <div className="row">
