@@ -1,3 +1,6 @@
+// September 2015
+export { default as BarcelonaInSeptember2015 } from './2015/September/Barcelona/index.js';
+
 // August 2015
 export { default as TallinInAugust2015 } from './2015/August/Tallin/index.js';
 

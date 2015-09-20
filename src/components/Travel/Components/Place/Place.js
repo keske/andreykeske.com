@@ -5,6 +5,9 @@ import styles from './Place.styles.js';
 
 // Places
 import {
+  // September 2015
+  BarcelonaInSeptember2015,
+
   // August 2015
   TallinInAugust2015,
 
@@ -33,7 +36,10 @@ import {
 } from './places/index.js';
 
 const data = {
-  // August
+  // September 2015
+  'BarcelonaInSeptember2015': BarcelonaInSeptember2015,
+
+  // August 2015
   'TallinInAugust2015': TallinInAugust2015,
 
   // May 2015

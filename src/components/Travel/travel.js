@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // View mode, card or text
-import Filter from './components/Filter/filter.js';
-import Card from './components/Card/card.js';
-import Text from './components/Text/text.js';
+import Filter from './components/filter/Filter.js';
+import Card from './components/card/Card.js';
+import Text from './components/text/Text.js';
 
 // Component styles
 import styles from './Travel.styles.js';

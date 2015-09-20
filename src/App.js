@@ -9,7 +9,7 @@ import logger from 'redux-logger';
 import { Router, Route } from 'react-router';
 import { history } from 'react-router/lib/HashHistory';
 
-import { Travel, Place, Works, Work } from './components/';
+import { Travel, Works, Work, Place } from './components/';
 
 const reducersApp = combineReducers(reducers);
 const createStoreWithMiddleware = applyMiddleware(logger, thunkMiddleware)(createStore);

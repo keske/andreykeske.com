@@ -8,7 +8,7 @@ import _ from 'underscore';
 import styles from './NavFooter.styles.js';
 
 // Components
-import NewLabel from './../../../Card/NewLabel.js';
+import NewLabel from './../../../card/NewLabel.js';
 
 // Language
 import Language from './locale/';

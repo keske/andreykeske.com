@@ -5,8 +5,8 @@ import { Link } from 'react-router';
 import styles from './Text.styles.js';
 
 // Components
-import NewLabel from './../Card/NewLabel.js';
-import VisitedDate from './../Card/VisitedDate.js';
+import NewLabel from './../card/NewLabel.js';
+import VisitedDate from './../card/VisitedDate.js';
 
 export default class Text extends Component {
 
