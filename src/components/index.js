@@ -1,14 +1,14 @@
-export { default as Header } from './header/Header.js';
+export { default as Header } from './header/';
 
 // Travel
-export { default as Travel } from './travel/Travel.js';
-export { default as Place } from './travel/components/place/Place.js';
+export { default as Travel } from './travel/';
+export { default as Place } from './travel/_place/';
 
 // Works
-export { default as Works } from './works/Works.js';
-export { default as Work } from './works/work/Work.js';
+export { default as Works } from './works/';
+export { default as Work } from './works/work/';
 
 // Helpers
-export { default as LinkToImage } from './LinkToImage/LinkToImage.js';
+export { default as LinkToImage } from './linkToImage/';
 
-export { default as Footer } from './footer/Footer.js';
+export { default as Footer } from './footer/';
