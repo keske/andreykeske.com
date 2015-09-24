@@ -25,7 +25,6 @@ export default class Works extends Component {
     const metaData = {
       title: Language.translate('Works'),
       description: Language.translate('Works'),
-      canonical: 'http://to.do/',
       meta: {
         charset: 'utf-8',
         name: {

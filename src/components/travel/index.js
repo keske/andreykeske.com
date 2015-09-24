@@ -28,7 +28,6 @@ export default class Travel extends Component {
     const metaData = {
       title: Language.translate('Travel'),
       description: Language.translate('Travel'),
-      canonical: 'http://to.do/',
       meta: {
         charset: 'utf-8',
         name: {

@@ -81,7 +81,6 @@ export default class Place extends Component {
     const metaData = {
       title: `${ city } ${ year } ${ month }`,
       description: `${ year } ${ month } ${ city }`,
-      canonical: 'http://to.do/',
       meta: {
         charset: 'utf-8',
         name: {
