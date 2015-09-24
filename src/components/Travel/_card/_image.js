@@ -13,7 +13,7 @@ export default class Image extends Component {
 
     return (
       <span className="img-wrap">
-        <img src={ `./src/components/Travel/components/Place/places/${ place.year }/${ place.month }/${ city }/images/thumb.jpg` } />
+        <img src={ `./src/components/travel/_place/places/${ place.year }/${ place.month }/${ city }/images/thumb.jpg` } />
       </span>
     );
   }
