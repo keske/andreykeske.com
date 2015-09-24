@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery'; // remove
+
+import DocumentMeta from 'react-document-meta';
+
 // Component styles
 import styles from './styles.js';
 
@@ -26,8 +29,20 @@ export default class Work extends Component {
     // Set language
     Language.setLocale(application.language);
 
+    const metaData = {
+      title: `${ Language.translate('Title') }`,
+      description: Language.translate('Title'),
+      meta: {
+        charset: 'utf-8',
+        name: {
+          keywords: Language.translate('Title'),
+        },
+      },
+    };
+
     return (
       <div className={ styles } onMouseMove={ () => this.move() }>
+        <DocumentMeta {...metaData} />
         <div className="show-fog-text">
           <div className="wrap"></div>
         </div>

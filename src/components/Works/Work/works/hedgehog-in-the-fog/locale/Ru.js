@@ -1,6 +1,5 @@
 module.exports = {
 
-  Title: 'Заголовок',
-  Text: 'Текст',
+  Title: 'Ежик в тумане',
 
 };

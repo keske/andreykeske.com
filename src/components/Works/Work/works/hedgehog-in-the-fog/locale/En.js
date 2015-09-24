@@ -1,6 +1,5 @@
 module.exports = {
 
-  Title: 'Title',
-  Text: 'Text',
+  Title: 'Hedgehog in the fog',
 
 };
