@@ -20,7 +20,7 @@ export default class VeniceInMay2015 extends Component {
     const { year, month, city, language } = this.props.params;
 
     // Path to photos
-    const img = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
+    const img = `./src/components/travel/_place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
 
     // Set language
     Language.setLocale(language);
