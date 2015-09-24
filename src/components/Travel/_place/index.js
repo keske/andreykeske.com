@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DocumentMeta from 'react-document-meta';
 
 // Component styles
 import styles from './Place.styles.js';
@@ -77,8 +78,21 @@ export default class Place extends Component {
     const { year, month, city } = this.props.params;
     const place = `${ city.replace(/ /g, '') }In${ month }${ year }`;
 
+    const metaData = {
+      title: `${ city } ${ year } ${ month }`,
+      description: `${ year } ${ month } ${ city }`,
+      canonical: 'http://to.do/',
+      meta: {
+        charset: 'utf-8',
+        name: {
+          keywords: `${ year }, ${ month }, ${ city },`,
+        },
+      },
+    };
+
     return (
       <div className={ styles }>
+        <DocumentMeta {...metaData} />
         { React.createElement(data[place], this.props) }
       </div>
     );

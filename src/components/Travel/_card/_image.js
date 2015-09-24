@@ -7,9 +7,8 @@ export default class Image extends Component {
   }
 
   render() {
-
     const { place } = this.props;
-    let city = place.city.replace(/ /g, '');
+    const city = place.city.replace(/ /g, '');
 
     return (
       <span className="img-wrap">

@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import DocumentMeta from 'react-document-meta';
 
 import { Link } from 'react-router';
 
 // Component styles
 import styles from './Works.styles.js';
+
+// Language
+import Language from '../header/locale/';
 
 @connect(state => state.works)
 export default class Works extends Component {
@@ -18,8 +22,21 @@ export default class Works extends Component {
     const { language } = this.props.params;
     const { works } = this.props;
 
+    const metaData = {
+      title: Language.translate('Works'),
+      description: Language.translate('Works'),
+      canonical: 'http://to.do/',
+      meta: {
+        charset: 'utf-8',
+        name: {
+          keywords: Language.translate('Works'),
+        },
+      },
+    };
+
     return (
       <div className={ styles }>
+        <DocumentMeta {...metaData} />
         <div className="container">
           {
             works.map((work) => {
