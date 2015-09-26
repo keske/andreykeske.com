@@ -65,5 +65,8 @@
     "webpack-dev-server": "^1.8.2",
     "whatwg-fetch": "^0.9.0",
     "yargs": "^3.18.0"
+  },
+  "dependencies": {
+    "react-mixin": "^2.0.2"
   }
 }

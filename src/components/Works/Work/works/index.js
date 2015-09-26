@@ -16,6 +16,6 @@ export { default as Thehairpin } from './the-hairpin/index.js';
 export { default as Fridaydock } from './friday-dock/index.js';
 export { default as Theshadowsofthewindow } from './shadows/index.js';
 export { default as Like } from './like/index.js';
-export { default as Thekeyhole } from './like/index.js';
+export { default as Thekeyhole } from './keyhole/index.js';
 export { default as Volumeexperiments } from './volume/index.js';
 export { default as Desktopbackgroundinthebrowser } from './chrome/index.js';

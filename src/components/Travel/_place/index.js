@@ -79,12 +79,12 @@ export default class Place extends Component {
     const place = `${ city.replace(/ /g, '') }In${ month }${ year }`;
 
     const metaData = {
-      title: `${ city } ${ year } ${ month }`,
+      title: `${ city } In ${ month } ${ year }`,
       description: `${ year } ${ month } ${ city }`,
       meta: {
         charset: 'utf-8',
         name: {
-          keywords: `${ year }, ${ month }, ${ city },`,
+          keywords: `${ year }, ${ month }, ${ city }`,
         },
       },
     };

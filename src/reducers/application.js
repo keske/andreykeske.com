@@ -1,6 +1,6 @@
 const initialState = {
   application: {
-    language: 'ru',
+    language: 'en',
   },
 };
 

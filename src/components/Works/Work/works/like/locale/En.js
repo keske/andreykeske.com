@@ -1,6 +1,8 @@
 module.exports = {
 
-  Title: 'Title',
-  Text: 'Text',
+  Title: 'Like',
+  EmpiteStateBuilding: 'Empire State Building',
+  SpaceInvaders: 'Space invaders',
+  Open: 'Open page',
 
 };

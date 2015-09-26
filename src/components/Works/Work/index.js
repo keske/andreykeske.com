@@ -24,7 +24,7 @@ import {
   Like,
   Thekeyhole,
   Volumeexperiments,
-  Desktopbackgroundinthebrowser
+  Desktopbackgroundinthebrowser,
 } from './works/index.js';
 
 const data = {
@@ -36,20 +36,18 @@ const data = {
   'tabs-piano': Browsertabsasthepianokeys,
   'censorship-in-ios7': CensorshipintheiOS7,
   'hedgehog-in-the-fog': HedgehogintheFog,
-  // '': Graphicworks,
-  // '': InvisibleiconsontheiPad,
-  // '': MacOSUIGames,
-  // '': IfoundthewaterontheMars,
-  // '': Tellmewhatyouwant,
+  'graphics': Graphicworks,
+  'ipad-invisible-icons': InvisibleiconsontheiPad,
+  'mac-os-ui-games': MacOSUIGames,
+  'mars': IfoundthewaterontheMars,
   'police-car': PolicesirenalarmanimationinOSXFinder,
-  // '': Spectrumatthebrowserbar,
-  // '': Browsertabsasthepianokeys,
-  // '': Fridaydock,
-  // '': Theshadowsofthewindow,
-  // '': Like,
-  // '': Thekeyhole,
-  // '': Volumeexperiments,
-  // 'chrome': Desktopbackgroundinthebrowser,
+  'spectrum': Spectrumatthebrowserbar,
+  'friday-dock': Fridaydock,
+  'shadows': Theshadowsofthewindow,
+  'like': Like,
+  'keyhole': Thekeyhole,
+  'volume': Volumeexperiments,
+  'chrome': Desktopbackgroundinthebrowser,
 };
 
 export default class Works extends Component {

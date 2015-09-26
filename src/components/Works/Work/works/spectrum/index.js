@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import DocumentMeta from 'react-document-meta';
 
 // Component styles
 import styles from './styles.js';
@@ -27,8 +28,20 @@ export default class Work extends Component {
     // Set language
     Language.setLocale(application.language);
 
+    const metaData = {
+      title: `${ Language.translate('Title') } — ${ Language.translate('Text') }`,
+      description: Language.translate('Text'),
+      meta: {
+        charset: 'utf-8',
+        name: {
+          keywords: Language.translate('Title'),
+        },
+      },
+    };
+
     return (
       <div className={ styles }>
+        <DocumentMeta {...metaData} />
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
@@ -39,6 +52,18 @@ export default class Work extends Component {
               </h1>
               <p>
                 { Language.translate('Text') }
+              </p>
+
+              <div className="responsive-container">
+                <iframe width="960" height="720" src="//www.youtube.com/embed/I1nMNR8ntHM"
+                  frameBorder="0"
+                  allowFullScreen></iframe>
+              </div>
+
+              <p>
+                <i>
+                  { Language.translate('Now') }
+                </i>
               </p>
 
             </div>

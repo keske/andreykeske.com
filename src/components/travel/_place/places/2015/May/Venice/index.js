@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DocumentMeta from 'react-document-meta';
 
 // Components
 import { LinkToImage } from '../../../../../../../components/';
@@ -21,25 +20,13 @@ export default class City extends Component {
     const { year, month, city, language } = this.props.params;
 
     // Path to photos
-    const img = `./src/components/travel/_place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
+    const img = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
 
     // Set language
     Language.setLocale(language);
 
-    const metaData = {
-      title: `${ Language.translate('Venice') } ${ year } ${ month }`,
-      description: `${ year } ${ month } ${ city }`,
-      meta: {
-        charset: 'utf-8',
-        name: {
-          keywords: `${ year }, ${ month }, ${ city },`,
-        },
-      },
-    };
-
     return (
       <div className={ styles }>
-        <DocumentMeta {...metaData} />
         <img src={ `${ img }/top.jpg` } />
 
         <div className="top-page-city-name on-image">

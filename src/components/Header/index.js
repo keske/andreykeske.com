@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+// import reactMixin from 'react-mixin';
+import { Link, History } from 'react-router';
 
 // Actions
 import { setLanguage } from '../../actions/application.js';
@@ -11,6 +12,7 @@ import styles from './styles.js';
 // Language
 import Language from './locale/';
 
+// @reactMixin.decorate(History)
 @connect(state => state.application)
 export default class Header extends Component {
 
@@ -50,11 +52,15 @@ export default class Header extends Component {
                 </span>
               </Link>
             </div>
-            <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-              <div onClick={ () => this.toggleLanguage() }>
-                { application.language }
+            {
+              /*
+              <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                <div onClick={ () => this.toggleLanguage() }>
+                  { application.language }
+                </div>
               </div>
-            </div>
+              */
+            }
           </div>
         </div>
       </div>
