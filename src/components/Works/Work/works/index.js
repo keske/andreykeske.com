@@ -9,7 +9,7 @@ export { default as Graphicworks } from './graphics/index.js';
 export { default as HedgehogintheFog } from './hedgehog-in-the-fog/index.js';
 export { default as InvisibleiconsontheiPad } from './ipad-invisible-icons/index.js';
 export { default as MacOSUIGames } from './mac-os-ui-games/index.js';
-export { default as IfoundthewaterontheMars } from './mars/index.js';
+export { default as IfoundthewaterontheMars } from './water-on-mars/index.js';
 export { default as PolicesirenalarmanimationinOSXFinder } from './police-car/index.js';
 export { default as Spectrumatthebrowserbar } from './spectrum/index.js';
 export { default as Thehairpin } from './the-hairpin/index.js';

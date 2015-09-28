@@ -39,7 +39,7 @@ const data = {
   'graphics': Graphicworks,
   'ipad-invisible-icons': InvisibleiconsontheiPad,
   'mac-os-ui-games': MacOSUIGames,
-  'mars': IfoundthewaterontheMars,
+  'water-on-mars': IfoundthewaterontheMars,
   'police-car': PolicesirenalarmanimationinOSXFinder,
   'spectrum': Spectrumatthebrowserbar,
   'friday-dock': Fridaydock,

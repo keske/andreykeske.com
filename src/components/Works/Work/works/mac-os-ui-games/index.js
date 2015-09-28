@@ -74,16 +74,21 @@ export default class Work extends Component {
               <ul>
                 <li>
                   { Language.translate('SlotMachinesHowOpen') }
+                  <br />
                   { Language.translate('SlotMachinesHowCd') }
                 </li>
                 <li>
                   { Language.translate('SlotMachinesHowOpenFolders') }
+                  <br />
                   { Language.translate('SlotMachinesHowOpenFolders1') }
+                  <br />
                   { Language.translate('SlotMachinesHowOpenFolders2') }
+                  <br />
                   { Language.translate('SlotMachinesHowOpenFolders3') }
                 </li>
                 <li>
                   { Language.translate('SlotMachinesHowRun') }
+                  <br />
                   { Language.translate('SlotMachinesHowStart') }
                 </li>
               </ul>
@@ -122,6 +127,7 @@ export default class Work extends Component {
                 </li>
                 <li>
                   { Language.translate('DiceGameNowOpenTerminal') }
+                  <br />
                   { Language.translate('DiceGameNowTerminalCommand') }
                 </li>
                 <li>

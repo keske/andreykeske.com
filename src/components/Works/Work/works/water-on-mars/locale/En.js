@@ -1,6 +1,6 @@
 module.exports = {
 
-  Title: 'Title',
-  Text: 'Text',
+  Title: 'I Found Water On Mars',
+  Text: 'The windows composition',
 
 };

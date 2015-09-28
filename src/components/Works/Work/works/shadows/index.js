@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import DocumentMeta from 'react-document-meta';
 
 // Component styles
 import styles from './styles.js';
@@ -16,19 +17,26 @@ export default class Work extends Component {
   }
 
   render() {
-    const { work } = this.props.params;
-
-    // Path to photos
-    const path = `./src/components/Works/Work/works/${ work }/files`;
-
     // Application settings
     const { application } = this.props;
 
     // Set language
     Language.setLocale(application.language);
 
+    const metaData = {
+      title: `${ Language.translate('Title') } — ${ Language.translate('Text') }`,
+      description: Language.translate('Text'),
+      meta: {
+        charset: 'utf-8',
+        name: {
+          keywords: Language.translate('Title'),
+        },
+      },
+    };
+
     return (
       <div className={ styles }>
+        <DocumentMeta {...metaData} />
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
@@ -39,7 +47,23 @@ export default class Work extends Component {
               </h1>
               <p>
                 { Language.translate('Text') }
+                <br />
+                { Language.translate('Slider') }
               </p>
+
+              { /*
+              <h4>
+                <a href="#" onClick={ this.openWindows() }>
+                  { Language.translate('Try') }
+                </a>
+              </h4>
+              */ }
+
+              <div className="responsive-container">
+                <iframe width="960" height="720"
+                  src="//www.youtube.com/embed/gPrZHOOw8R0"
+                  frameBorder="0" allowFullScreen />
+              </div>
 
             </div>
           </div>
