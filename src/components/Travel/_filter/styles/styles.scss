@@ -4,6 +4,7 @@
 
 
 :local(.styles) {
+  margin-bottom: 40px;
 
   a {
     @include ui-active();

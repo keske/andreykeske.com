@@ -44,6 +44,8 @@ $thumb-height-large-desktop: 700px;
 
   overflow: hidden;
 
+  color: #000;
+
   @include paragraph();
 
   // Set height size for desktop
@@ -56,41 +58,9 @@ $thumb-height-large-desktop: 700px;
     height: $thumb-height-large-desktop;
   }
 
-  a {
-    color: $black;
 
-    &:hover {
-      color: $red;
-    }
-
-    // White color of text
-    // white for dark photos
-    // default: black for light photos
-    // Only in `card` $scope.mode
-    &.white {
-      color: #FFF;
-
-      &:hover {
-        color: $red;
-      }
-    }
-
-    &.pink {
-      color: $pink;
-    }
-
-    &.shadow {
-      color: #FFF;
-      text-shadow: 0 0 1px rgba(0, 0, 0, .7),
-        0 0 3px rgba(0, 0, 0, .7),
-        0 0 10px rgba(0, 0, 0, .3),
-        0 0 30px rgba(0, 0, 0, .8);
-
-      &:hover {
-        text-shadow: none;
-        color: $red;
-      }
-    }
+  &.white {
+    color: #FFF !important;
   }
 
   // Information on card

@@ -76,7 +76,7 @@ export default class Place extends Component {
 
   render() {
     const { year, month, city } = this.props.params;
-    const place = `${ city.replace(/ /g, '') }In${ month }${ year }`;
+    const component = `${ city.replace(/ /g, '') }In${ month }${ year }`;
 
     const metaData = {
       title: `${ city } In ${ month } ${ year }`,
@@ -90,9 +90,9 @@ export default class Place extends Component {
     };
 
     return (
-      <div className={ styles }>
+      <div className={ `${ styles } place.class` }>
         <DocumentMeta {...metaData} />
-        { React.createElement(data[place], this.props) }
+        { React.createElement(data[component], this.props) }
       </div>
     );
   }

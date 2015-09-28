@@ -197,7 +197,7 @@ const data = [
 
     'date': new Date('9/7/2014'),
 
-    'class': 'shadow',
+    'class': 'white',
 
     'cover': true,
   }, {
