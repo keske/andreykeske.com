@@ -95,7 +95,7 @@ export default class NavFooter extends Component {
                             <NewLabel place={ currentPlace } />
                           </p>
                         </div>
-                        <img src={ `./src/components/Travel/Components/Place/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city.replace(/ /g, '') }/images/thumb.jpg` } />
+                        <img src={ `./src/components/travel/_place/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city.replace(/ /g, '') }/images/thumb.jpg` } />
                       </div>
                     </Link> : null
                 );
