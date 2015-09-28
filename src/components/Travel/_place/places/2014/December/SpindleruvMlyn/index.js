@@ -117,7 +117,7 @@ export default class VeniceInMay2015 extends Component {
         </div>
 
 
-        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ language } />
+        <NavFooter year={ year * 1 } month={ month } city={ city } language={ language } />
       </div>
     );
   }

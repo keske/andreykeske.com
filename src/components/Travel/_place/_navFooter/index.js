@@ -14,6 +14,7 @@ import NewLabel from './../../_card/_newLabel.js';
 import Language from './locale/';
 
 @connect(state => state.places)
+@connect(state => state.application)
 export default class NavFooter extends Component {
 
   static propTypes = {
@@ -26,7 +27,7 @@ export default class NavFooter extends Component {
   }
 
   render() {
-    const { style, places, language, year, month, city } = this.props;
+    const { style, places, language, year, month, city, application } = this.props;
 
     // Reduce places
     const reducedPlaces = _.reduceRight(places, (a, b) => {
@@ -68,8 +69,7 @@ export default class NavFooter extends Component {
     const placesRange = placesWithCover.slice(startPlace, endPlace);
 
     // Set language
-    // TODO: from reducers
-    Language.setLocale('ru');
+    Language.setLocale(application.language);
 
     return (
       <div className={ `${ styles } ${ style }` }>
