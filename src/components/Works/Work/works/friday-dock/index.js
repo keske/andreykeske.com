@@ -29,8 +29,8 @@ export default class Work extends Component {
     Language.setLocale(application.language);
 
     const metaData = {
-      title: `${ Language.translate('Title') } }`,
-      description: `${ Language.translate('Title') } }`,
+      title: `${ Language.translate('Title') }`,
+      description: `${ Language.translate('Title') }`,
       meta: {
         charset: 'utf-8',
         name: {

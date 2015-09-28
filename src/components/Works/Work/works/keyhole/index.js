@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
+import $ from 'jquery';
 
 // Component styles
 import styles from './styles.js';
@@ -56,11 +57,31 @@ export default class Work extends Component {
                 { Language.translate('Text2') }
               </p>
 
+              <div className="keyhole-girl keyhole-girl-center">
+                <img src={ `${ path }/girl.png` } alt="Girl" ref="girl" />
+              </div>
+
+              <div className="keyhole keyhole-center"
+                onMouseMove={ () => this.move() }>
+                <img src={ `${ path }/keyhole.png` } alt="Keyhole" />
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     );
+  }
+
+  move() {
+    // This is old code with jQuery.
+    // TODO: jQuery -> JS
+    const x = (event.pageX - $(event.target).offset().left) / ($(event.target).innerWidth()) * 100;
+    const y = (event.pageY - $(event.target).offset().top) / ($(event.target).innerHeight()) * 100;
+
+    $('.keyhole-girl img')
+      .css('marginLeft', x * -0.9)
+      .css('marginTop', y * -0.1);
   }
 
 }

@@ -1,3 +1,29 @@
 :local(.styles) {
-  position: relative;
+  $width: 330px;
+
+  .keyhole {
+    margin-top: -260px;
+
+    width: $width;
+  }
+
+  .keyhole-girl {
+    overflow: hidden;
+
+    width: $width;
+    height: $width;
+  }
+
+  .keyhole-center {
+    position: relative;
+
+    margin-top: -$width;
+  }
+
+  .keyhole-girl-center {
+    overflow: hidden;
+
+    width: $width;
+    height: $width;
+  }
 }

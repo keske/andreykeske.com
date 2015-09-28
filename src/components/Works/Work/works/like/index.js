@@ -62,7 +62,7 @@ export default class Work extends Component {
               </h4>
 
               <a href={ `${ path }/empire.andreykeske.com/index.html` }>
-                <img src={ `${ path }/empire.andreykeske.com/empire-state.jpg` } />
+                <img src={ `${ path }/empire-state.jpg` } />
               </a>
 
               <h2>
@@ -76,7 +76,7 @@ export default class Work extends Component {
               </h4>
 
               <a href={ `${ path }/spaceinvaders.andreykeske.com/index.html` }>
-                <img src={ `${ path }/spaceinvaders.andreykeske.com/spaceinvaders.jpg` } />
+                <img src={ `${ path }/spaceinvaders.jpg` } />
               </a>
 
             </div>

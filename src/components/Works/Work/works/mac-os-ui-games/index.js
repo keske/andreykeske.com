@@ -89,7 +89,7 @@ export default class Work extends Component {
               </ul>
 
               <p>
-                { Language.translate('SlotMachinesHowNow') }
+                { Language.translate('SlotMachinesNow') }
               </p>
 
               <h4>

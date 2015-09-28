@@ -29,8 +29,8 @@ export default class Work extends Component {
     Language.setLocale(application.language);
 
     const metaData = {
-      title: `${ Language.translate('Title') } }`,
-      description: `${ Language.translate('Title') } }`,
+      title: `${ Language.translate('Title') }`,
+      description: `${ Language.translate('Title') }`,
       meta: {
         charset: 'utf-8',
         name: {
@@ -54,7 +54,7 @@ export default class Work extends Component {
               <h2>
                 { Language.translate('Emojii') }
               </h2>
-              <img src={ `${ path }/emojii.jpg` } />
+              <img src={ `${ path }/emojii.jpeg` } />
 
               <hr />
 
