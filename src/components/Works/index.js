@@ -11,15 +11,16 @@ import styles from './Works.styles.js';
 import Language from '../header/locale/';
 
 @connect(state => state.works)
+@connect(state => state.application)
 export default class Works extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
+    application: React.PropTypes.object,
     works: React.PropTypes.array,
   }
 
   render() {
-    const { language } = this.props.params;
+    const { application } = this.props;
     const { works } = this.props;
 
     const metaData = {
@@ -40,7 +41,7 @@ export default class Works extends Component {
           {
             works.map((work) => {
               return (
-                <Link to={ `${ language }/works/${ work.link }` }>
+                <Link to={ `${ application.language }/works/${ work.link }` }>
                   <div className="row">
                     <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2">
                       <img src={ `./src/components/Works/Work/works/${ work.link }/files/${ work.img }` } />
