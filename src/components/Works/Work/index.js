@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 // Component styles
 import styles from './Work.styles.js';
 
+// Components
+import NavFooter from './_navFooter.js';
+
 // Works
 import {
   BlackHole,
@@ -65,6 +68,7 @@ export default class Works extends Component {
     return (
       <div className={ styles }>
         { React.createElement(data[work], this.props) }
+        <NavFooter work={ work } />
       </div>
     );
   }

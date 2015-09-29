@@ -21,7 +21,7 @@ export default class App extends Component {
         <Provider store={ store }>
           {() =>
             <Router history={ history }>
-              <Route path="/" component={ Works }>
+              <Route path="/" component={ Main }>
                 <Route path="/:language" component={ Main } />
                 <Route path=":language/travel/:mode" component={ Travel } />
                 <Route path=":language/places/:year/:month/:city" component={ Place } />
