@@ -5,6 +5,7 @@ import styles from './Work.styles.js';
 
 // Works
 import {
+  BlackHole,
   Catch,
   Theshellgame,
   Thehairpin,
@@ -28,6 +29,7 @@ import {
 } from './works/index.js';
 
 const data = {
+  'black-hole': BlackHole,
   'catch': Catch,
   'the-shell-game': Theshellgame,
   'the-hairpin': Thehairpin,

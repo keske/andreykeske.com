@@ -1,5 +1,10 @@
-const data = [
-  {
+const data = [{
+    'title': 'Black hole on my Desktop',
+    'link': 'black-hole',
+    'img': 'cover.png',
+    'info': 'In the space of my Desktop was noticed a black hole where the any information or object will be removed forever.',
+    'count': '',
+  }, {
     'title': 'The Shell Game',
     'link': 'the-shell-game',
     'img': 'cover.png',
@@ -190,12 +195,12 @@ const initialState = {
 
 export function works(state = initialState, action) {
   switch (action.type) {
-  case 'GET':
-    return {
-      data,
-    };
+    case 'GET':
+      return {
+        data,
+      };
 
-  default:
-    return state;
+    default:
+      return state;
   }
 }
