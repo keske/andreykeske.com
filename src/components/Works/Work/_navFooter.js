@@ -11,20 +11,18 @@ export default class Works extends Component {
   static propTypes = {
     application: React.PropTypes.object,
     works: React.PropTypes.array,
+    work: React.PropTypes.string,
   }
 
   render() {
     const { application, works, work } = this.props;
     const workIndex = _.indexOf(works, _.findWhere(works, { 'link': work }));
 
-    console.log(works.length);
-    console.log(_.indexOf(works, _.findWhere(works, { 'link': work })));
-
     return (
       <div className={ `container nav-between-works` }>
         <div className="row">
 
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2 text-right">
+            <div className="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2 text-right">
               {
                 workIndex > 0 ? (
                   <Link to={ `${ application.language }/works/${ works[workIndex - 1].link }` }>
@@ -37,12 +35,13 @@ export default class Works extends Component {
                     <p>
                       { works[workIndex - 1].info }
                     </p>
+                    <img src={ `./src/components/Works/Work/works/${ works[workIndex - 1].link }/files/${ works[workIndex - 1].img }` } />
                   </Link>
                 ) : null
               }
             </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div className="col-xs-6 col-sm-6 col-md-4 col-lg-4">
               {
                 workIndex < works.length - 1 ? (
                   <Link to={ `${ application.language }/works/${ works[workIndex + 1].link }` }>
@@ -55,6 +54,7 @@ export default class Works extends Component {
                     <p>
                       { works[workIndex + 1].info }
                     </p>
+                    <img src={ `./src/components/Works/Work/works/${ works[workIndex + 1].link }/files/${ works[workIndex + 1].img }` } />
                   </Link>
                 ) : null
               }

@@ -57,11 +57,18 @@
   }
 
   .nav-between-works {
+    margin-top: 100px;
     margin-bottom: 300px;
 
-    @media (max-width: 992px) {
-      h3, p {
-        text-align: left !important;
+    border-top: 1px solid rgba(0, 0, 0, .13);
+
+    img {
+      width: 20%;
+    }
+
+    @media (max-width: 768px) {
+      img {
+        display: none;
       }
     }
     
