@@ -41,7 +41,7 @@ export default class Header extends Component {
               </a>
             </div>
             <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9 header-nav">
-              <Link to={ `${ application.language }/travel/card` } className="nav">
+              <Link to={ `${ application.language }/travel/${ application.mode }` } className="nav">
                 { Language.translate('Travel') }
               </Link>
 

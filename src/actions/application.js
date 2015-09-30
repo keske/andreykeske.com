@@ -10,3 +10,10 @@ export function setLanguage(language) {
     language,
   };
 }
+
+export function setTravelViewMode(mode) {
+  return {
+    type: 'SETTRAVELVIEWMODE',
+    mode,
+  };
+}
