@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 // Component styles
@@ -8,6 +9,7 @@ import styles from './Text.styles.js';
 import NewLabel from './../_card/_newLabel.js';
 import VisitedDate from './../_card/_visitedDate.js';
 
+@connect(state => state.application)
 export default class Text extends Component {
 
   static propTypes = {
@@ -16,12 +18,12 @@ export default class Text extends Component {
   }
 
   render() {
-    const { place, language } = this.props;
+    const { place, application } = this.props;
     const city = place.city.replace(/ /g, '');
 
     return (
       place.cover ?
-        <Link to={ `${ language }/places/${ place.year }/${ place.month }/${ city }` }>
+        <Link to={ `${ application.language }/places/${ place.year }/${ place.month }/${ city }` }>
           <Inner place={ place } />
         </Link> : <Inner place={ place } />
 
