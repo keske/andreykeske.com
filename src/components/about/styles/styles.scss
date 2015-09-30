@@ -1,25 +1,10 @@
-/* 
-  Header styles 
-*/
 :local(.styles) {
-  position: fixed;
-  z-index: 1;
+  margin-top: 70px;
 
-  top: 0;
+  img.face {
+    width: 200px;
+    border-radius: 100%;
 
-  width: 100%;
-
-  padding: 20px 0;
-
-  .header-nav {
-
-    span.nav {
-      margin-right: 40px;
-      display: inline-block
-    }
-  }
-
-  &:hover {
-    opacity: 1 !important;
+    margin-bottom: 40px;
   }
 }

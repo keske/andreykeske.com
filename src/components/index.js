@@ -1,4 +1,5 @@
 export { default as Header } from './header/';
+export { default as About } from './about/';
 
 // Travel
 export { default as Travel } from './travel/';

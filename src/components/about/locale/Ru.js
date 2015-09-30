@@ -1,7 +1,7 @@
 module.exports = {
 
-  AndreyKeske: 'Андрей Кеске',
-  Travel: 'Места',
-  Works: 'Дела',
+  AndreyKeske: 'Andrey Keske',
+  Do: 'I am Andrey Keske designer and front-end developer.',
+  Touch: 'Get in touch with me',
 
 };
