@@ -1,4 +1,10 @@
 const data = [{
+    'title': 'Daft Punk - Technologic',
+    'link': 'daft-punk',
+    'img': 'cover.jpg',
+    'info': 'New clip for legendary composition.',
+    'count': '',
+  }, {
     'title': 'Black hole on my Desktop',
     'link': 'black-hole',
     'img': 'cover.png',

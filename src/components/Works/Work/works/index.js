@@ -1,3 +1,4 @@
+export { default as DaftPunk } from './daft-punk';
 export { default as BlackHole } from './black-hole';
 
 export { default as Catch } from './catch';

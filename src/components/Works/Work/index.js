@@ -8,6 +8,7 @@ import NavFooter from './_navFooter.js';
 
 // Works
 import {
+  DaftPunk,
   BlackHole,
   Catch,
   Theshellgame,
@@ -32,6 +33,7 @@ import {
 } from './works/index.js';
 
 const data = {
+  'daft-punk': DaftPunk,
   'black-hole': BlackHole,
   'catch': Catch,
   'the-shell-game': Theshellgame,
