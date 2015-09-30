@@ -65,7 +65,7 @@ const data = [
     'month': 'May',
     'year': 2015,
 
-    'date': new Date('9/12/2015'),
+    'date': new Date('5/12/2015'),
 
     'class': 'white',
 

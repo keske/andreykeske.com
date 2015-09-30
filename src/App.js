@@ -6,7 +6,7 @@ import * as reducers from 'reducers';
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
 
-import { Router, Route } from 'react-router';
+import { Router, Route, Redirect } from 'react-router';
 import { history } from 'react-router/lib/HashHistory';
 
 import { Travel, Works, Work, Place, About } from './components/';
@@ -28,6 +28,7 @@ export default class App extends Component {
                 <Route path=":language/places/:year/:month/:city" component={ Place } />
                 <Route path=":language/works" component={ Works } />
                 <Route path=":language/works/:work" component={ Work } />
+                <Redirect from="/en/works/" to="/en/travel/" />
               </Route>
             </Router>
           }
