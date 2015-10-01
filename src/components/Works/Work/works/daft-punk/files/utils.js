@@ -1,69 +1,61 @@
-export function song() {
-  const text = [
-    'Buy it',
-    'use it',
-    'break it',
-    'fix it',
-    'Trash it',
-    'change it',
-    'mail',
-    'upgrade it',
-    'Charge it',
-    'point it',
-    'zoom it',
-    'press it',
-    'Snap it',
-    'work it',
-    'quick',
-    'erase it',
-    'Write it',
-    'cut it',
-    'paste it',
-    'save it',
-    'Load it',
-    'check it',
-    'quick',
-    'rewrite it',
-    'Plug it',
-    'play it',
-    'burn it',
-    'rip it',
-    'Drag and drop it',
-    'zip',
-    'unzip it',
-    'Lock it',
-    'fill it',
-    'call it',
-    'find it',
-    'View it',
-    'code it',
-    'jam',
-    'unlock it',
-    'Surf it',
-    'scroll it',
-    'pause it',
-    'click it',
-    'Cross it',
-    'crack it',
-    'switch',
-    'update it',
-    'Name it',
-    'rate it',
-    'tune it',
-    'print it',
-    'Scan it',
-    'send it',
-    'fax',
-    'rename it',
-    'Touch it',
-    'bring it',
-    'pay it',
-    'watch it',
-    'Turn it',
-    'leave it',
-    'start',
-    'format it',
-  ];
+// Song text
+import { song } from './song.js';
 
-  return text;
+// End of song parts in seconds
+const firstVerseEnd = 29;
+const secondVerseEnd = 60;
+
+export function getCurrentWord(second, word) {
+  switch (true) {
+  case (second < firstVerseEnd):
+    return word;
+  case (second < firstVerseEnd && second < secondVerseEnd):
+    return word - song().length;
+  default:
+    return word;
+  }
+}
+
+export function getWindowTop(second, word) {
+  switch (true) {
+  case (second < firstVerseEnd):
+    return 0;
+  case (second > firstVerseEnd && second < secondVerseEnd):
+    return word % 1 || word % 2 ? 0 : screen.height / 2;
+  default:
+    return 0;
+  }
+}
+
+export function getWindowLeft(second, word) {
+  switch (true) {
+  case (second < firstVerseEnd):
+    return 0;
+  case (second > firstVerseEnd && second < secondVerseEnd):
+    return word % 3 || word % 4 ? 0 : screen.width / 2;
+  default:
+    return 0;
+  }
+}
+
+export function getWindowWidth(second) {
+  switch (true) {
+  case (second < firstVerseEnd):
+    return screen.width;
+  case (second > firstVerseEnd && second < secondVerseEnd):
+    return screen.width / 2;
+  default:
+    return 0;
+  }
+}
+
+export function getWindowHeight(second) {
+  switch (true) {
+  case (second < firstVerseEnd):
+    return screen.height;
+  case (second > firstVerseEnd && second < secondVerseEnd):
+    return screen.height / 2;
+  default:
+    return 0;
+  }
 }
