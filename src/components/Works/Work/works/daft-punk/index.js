@@ -25,7 +25,7 @@ export default class Work extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ready: 0,
+      ready: false,
       windows: [],
     };
   }
@@ -106,22 +106,18 @@ export default class Work extends Component {
               <audio ref="audio"
                 src={ `${ path }/technologic.mp3`}
                 ontimeupdate={ () => this.playScene() }
-                controls= { ready === 100 ? 'controls' : '' }
+                controls= { ready ? 'controls' : '' }
                 muted="false"
                 disabled="disabled" />
 
-              <div className="progressbar">
-                <div className="inner" style={{ width: ready + '%' }} />
-              </div>
-
               {
-                ready !== 100 ? (
+                !ready ? (
                   <div className="button inline blur medium blue"
                     onClick={ () => this.openAllWindows() }>
                     Start
                   </div>
                   ) : (
-                  <div className="button outline inline blur medium blue"
+                  <div className="button outline inline blur small blue"
                     onClick={ () => this.closeAllWindows() }>
                     Close all windows
                   </div>
@@ -142,14 +138,6 @@ export default class Work extends Component {
     );
   }
 
-  updateProgressBar(index) {
-    console.log(index);
-    this.setState({
-      ready: (index + 1) / song().length * 100,
-    });
-    console.log((index + 1) / song().length * 100);
-  }
-
   openAllWindows() {
     const { windows } = this.state;
 
@@ -159,21 +147,11 @@ export default class Work extends Component {
         word,
         'toolbar=yes,scrollbars=yes, resizable=yes, top=0, left=0, width=400, height=400'
       );
-      // windows[index].onload = () => {
-      //   console.log('te')
-      //   this.setState({
-      //     ready: (index + 1) / song().length * 100,
-      //   });
-      // };
-      // windows[index] = () => {
-      //   this.setState({
-      //     ready: (index + 1) / song().length * 100,
-      //   });
-      // };
-      $(windows[index]).ready(() => {
-        this.setState({
-          ready: (index + 1) / song().length * 100,
-        });
+    });
+
+    $(windows[song().length]).ready(() => {
+      this.setState({
+        ready: true,
       });
     });
   }
