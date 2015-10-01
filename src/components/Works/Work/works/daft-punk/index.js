@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
-import $ from 'jquery';
+
 // Component styles
 import styles from './styles.js';
 
@@ -10,6 +10,10 @@ import Language from './locale/';
 
 // Song text
 import { song } from './files/song.js';
+
+// End of song parts in seconds
+const firstVerseEnd = 29;
+const secondVerseEnd = 60;
 
 @connect(state => state.application)
 export default class Work extends Component {
@@ -38,12 +42,16 @@ export default class Work extends Component {
     this.refs.audio.getDOMNode().addEventListener('timeupdate', () => {
       const second = event.target.currentTime.toFixed(0);
       const word = ((event.target.currentTime * 1000).toFixed(0) / 475).toFixed(0);
-      const currentWord = second < 30 ? word : word - song().length;
-      const width = second < 30 ? screen.width : screen.width / 2;
-      const height = second < 30 ? screen.height : screen.height / 2;
+      // const currentWord = second < 30 ? word : word - song().length;
+      const currentWord = this.getCurrentWord(second, word);
+      const width = this.getWindowWidth(second);
+      const height = this.getWindowHeight(second);
 
-      const top = word % 1 || word % 2 ? 0 : screen.height / 2;
-      const left = word % 3 || word % 4 ? 0 : screen.width / 2;
+      // const top = word % 1 || word % 2 ? 0 : screen.height / 2;
+      // const left = word % 3 || word % 4 ? 0 : screen.width / 2;
+
+      const top = this.getWindowTop(second, word);
+      const left = this.getWindowLeft(second, word);
 
       // console.log(top);
       // console.log(left);
@@ -57,8 +65,63 @@ export default class Work extends Component {
       // console.log(currentWord);
 
       // console.log(width);
-      // console.log(height);
+      console.log(height);
     });
+  }
+
+  getCurrentWord(second, word) {
+    switch (true) {
+    case (second < firstVerseEnd):
+      return word;
+    case (second < firstVerseEnd && second < secondVerseEnd):
+      return word - song().length;
+    default:
+      return word;
+    }
+  }
+
+  getWindowTop(second, word) {
+    switch (true) {
+    case (second < firstVerseEnd):
+      return 0;
+    case (second > firstVerseEnd && second < secondVerseEnd):
+      return word % 1 || word % 2 ? 0 : screen.height / 2;
+    default:
+      return 0;
+    }
+  }
+
+  getWindowLeft(second, word) {
+    switch (true) {
+    case (second < firstVerseEnd):
+      return 0;
+    case (second > firstVerseEnd && second < secondVerseEnd):
+      return word % 3 || word % 4 ? 0 : screen.width / 2;
+    default:
+      return 0;
+    }
+  }
+
+  getWindowWidth(second) {
+    switch (true) {
+    case (second < firstVerseEnd):
+      return screen.width;
+    case (second > firstVerseEnd && second < secondVerseEnd):
+      return screen.width / 2;
+    default:
+      return 0;
+    }
+  }
+
+  getWindowHeight(second) {
+    switch (true) {
+    case (second < firstVerseEnd):
+      return screen.height;
+    case (second > firstVerseEnd && second < secondVerseEnd):
+      return screen.height / 2;
+    default:
+      return 0;
+    }
   }
 
   render() {
@@ -102,7 +165,7 @@ export default class Work extends Component {
               <audio ref="audio"
                 src={ `${ path }/technologic.mp3`}
                 ontimeupdate={ () => this.playScene() }
-                controls />
+                controls muted="true" />
 
               { /*
                 <div className="responsive-container">
@@ -117,23 +180,5 @@ export default class Work extends Component {
       </div>
     );
   }
-
-  playScene() {
-    console.log('time uodate');
-    // console.log(event.target.currentTime);
-    // song().map((word, index) => {
-    //   setInterval(() => {
-    //     console.log(word);
-    //     console.log(windows);
-    //   }, 1500);
-    // });
-    // windows[0].focus();
-    // this.refs.audio.getDOMNode().play();
-  }
-
-  // myOnLoadedData() {
-  //   const a = this.refs.audio.getDOMNode();
-  //   a.play();
-  // }
 
 }
