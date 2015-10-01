@@ -1,7 +1,25 @@
+@import '../../../../../../styles/pallete';
+
 :local(.styles) {
   position: relative;
 
   audio {
     width: 100%;
+  }
+
+  .progressbar {
+    $height: 3px;
+
+    height: $height;
+    border: 1px solid $blue;
+
+    display: none;
+
+    margin-bottom: 20px;
+
+    .inner {
+      height: $height;
+      background: $blue;
+    }
   }
 }

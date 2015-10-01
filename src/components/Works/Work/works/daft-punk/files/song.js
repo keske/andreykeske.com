@@ -69,6 +69,8 @@ export function song() {
     'Buy it',
     'use it',
     'break it',
+    'fix it',
+    'Trash it',
   ];
 
   return text;
