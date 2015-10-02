@@ -12,7 +12,16 @@ import Language from './locale/';
 // Song text
 import { song } from './files/song.js';
 // Utils
-import { getCurrentWord, getWindowTop, getWindowLeft, getWindowWidth, getWindowHeight } from './files/Utils.js';
+import {
+  getSecond,
+  getWord,
+  getWordIndex,
+  getWindowTop,
+  getWindowLeft,
+  getWindowWidth,
+  getWindowHeight,
+  debug,
+} from './files/Utils.js';
 
 @connect(state => state.application)
 export default class Work extends Component {
@@ -31,36 +40,25 @@ export default class Work extends Component {
   }
 
   componentDidMount() {
-    // const { windows } = this.state;
-    // $(windows[windows.length]).ready(() => {
-    //   // windows[0].focus();
-    //   setTimeout(() => { this.playScene(windows); }, 0);
-    // });
+    const { windows } = this.state;
 
     this.refs.audio.getDOMNode().addEventListener('timeupdate', () => {
-      const second = event.target.currentTime.toFixed(0);
-      const word = ((event.target.currentTime * 1000).toFixed(0) / 475).toFixed(0);
+      const second = getSecond();
 
-      const currentWord = getCurrentWord(second, word);
+      const word = getWord();
+      const wordIndex = getWordIndex(second, word);
+
       const width = getWindowWidth(second);
       const height = getWindowHeight(second);
 
       const top = getWindowTop(second, word);
       const left = getWindowLeft(second, word);
 
-      // console.log(top);
-      // console.log(left);
-      // console.log(word % 1);
-      // console.log(word % 2);
-      // console.log(word % 3);
-      // console.log(word % 4);
-      // console.log(song()[word]);
-      // console.log(song()[currentWord]);
-      // console.log(second);
-      // console.log(currentWord);
+      // windows[wordIndex].resizeTo(width, height);
+      // windows[wordIndex].moveTo(top, left);
+      // windows[wordIndex].focus();
 
-      // console.log(width);
-      console.log(height);
+      debug(top, left, word, wordIndex, second, width, height);
     });
   }
 
@@ -141,18 +139,22 @@ export default class Work extends Component {
   openAllWindows() {
     const { windows } = this.state;
 
-    song().map((word, index) => {
-      windows[index] = window.open(
-        `empty`,
-        word,
-        'toolbar=yes,scrollbars=yes, resizable=yes, top=0, left=0, width=400, height=400'
-      );
-    });
+    // song().map((word, index) => {
+    //   windows[index] = window.open(
+    //     word,
+    //     word,
+    //     'toolbar=yes,scrollbars=yes, resizable=yes, top=0, left=0, width=400, height=400'
+    //   );
+    // });
 
-    $(windows[song().length]).ready(() => {
-      this.setState({
-        ready: true,
-      });
+    // $(windows[song().length]).ready(() => {
+    //   this.setState({
+    //     ready: true,
+    //   });
+    // });
+
+    this.setState({
+      ready: true,
     });
   }
 
