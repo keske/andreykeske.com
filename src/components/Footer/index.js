@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // Component styles
-import styles from './styles.js';
+import styles from './styles';
 
-export default class Footer extends Component {
-  render() {
-    return (
-      <div className={ `${ styles }` } />
-    );
-  }
-}
+export const Footer = () => (
+  <div className={ `${ styles }` } />
+);
