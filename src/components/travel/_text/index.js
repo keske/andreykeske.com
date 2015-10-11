@@ -23,7 +23,7 @@ export default class Text extends Component {
 
     return (
       place.cover ?
-        <Link to={ `${ application.language }/places/${ place.year }/${ place.month }/${ city }` }>
+        <Link to={ `/${ application.language }/places/${ place.year }/${ place.month }/${ city }` }>
           <Inner place={ place } />
         </Link> : <Inner place={ place } />
 

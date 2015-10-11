@@ -1,4 +1,16 @@
 import React from 'react';
-import App from './App.js';
+import ReactDOM from 'react-dom';
+import createHistory from 'history/lib/createHashHistory';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router';
+import configureStore from './store/configureStore';
+import routes from './routes';
 
-React.render(<App />, document.getElementById('App'));
+const store = configureStore();
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={createHistory()} children={routes} />
+  </Provider>,
+  document.getElementById('root')
+);

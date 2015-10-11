@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var autoprefixer = require('autoprefixer-core');
+var autoprefixer = require('autoprefixer');
 var csswring = require('csswring');
 
 module.exports = {
@@ -29,8 +29,8 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['', '.jsx', '.js'],
-    modulesDirectories: ['src', 'node_modules']
+    extensions: ['', '.jsx', '.js', '.json'],
+    modulesDirectories: ['node_modules', 'src']
   },
 
   module: {
@@ -54,7 +54,7 @@ module.exports = {
       loader: "url?limit=10000&minetype=image/svg+xml"
     }, {
       test: /\.js$/,
-      loaders: ['react-hot', 'babel-loader?optional[]=runtime&stage=0&plugins=jsx-control-statements/babel'],
+      loaders: ['react-hot', 'babel-loader?optional[]=runtime&stage=0'],
       exclude: /node_modules/
     }, {
       test: /\.scss$/,

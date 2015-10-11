@@ -23,7 +23,8 @@ export default class Card extends Component {
 
     return (
       place.cover ?
-        <Link to={ `${ application.language }/places/${ place.year }/${ place.month }/${ place.city }` }>
+        <Link
+          to={ `/${ application.language }/places/${ place.year }/${ place.month }/${ place.city }` }>
           <div className={ `${ styles } col-xs-12 col-md-12 col-md-6 col-lg-6 big-type ${ place.class }` }>
             <div className={ 'data ' + place.class }>
               <p className="city">

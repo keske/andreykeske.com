@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import reactMixin from 'react-mixin';
-import { Link, History } from 'react-router';
+import { Link } from 'react-router';
 
 // Actions
 import { setLanguage } from '../../actions/application.js';
@@ -12,7 +11,6 @@ import styles from './styles.js';
 // Language
 import Language from './locale/';
 
-// @reactMixin.decorate(History)
 @connect(state => state.application)
 export default class Header extends Component {
 
@@ -41,15 +39,15 @@ export default class Header extends Component {
               </a>
             </div>
             <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9 header-nav">
-              <Link to={ `${ application.language }/works/` } className="nav">
+              <Link to={ `/${ application.language }/works` } className="nav">
                 { Language.translate('Works') }
               </Link>
 
-              <Link to={ `${ application.language }/travel/${ application.mode }` } className="nav">
+              <Link to={ `/${ application.language }/travel/${ application.mode }` } className="nav">
                 { Language.translate('Travel') }
               </Link>
 
-              <Link to={ `${ application.language }/about/` } className="nav">
+              <Link to={ `/${ application.language }/about` } className="nav">
                 { Language.translate('About') }
               </Link>
             </div>
@@ -85,7 +83,7 @@ export default class Header extends Component {
 
     window.onscroll = () => {
       opacity = 1 - (window.pageYOffset / 50).toFixed(1);
-      this.refs.header.getDOMNode().style.opacity = opacity;
+      this.refs.header.style.opacity = opacity;
     };
   }
 }

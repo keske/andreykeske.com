@@ -9,7 +9,7 @@ import styles from './styles.js';
 import Language from './locale/';
 
 @connect(state => state.application)
-export default class Header extends Component {
+export default class About extends Component {
 
   static propTypes = {
     application: React.PropTypes.object,

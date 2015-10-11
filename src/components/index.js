@@ -1,15 +1,11 @@
-export { default as Header } from './header/';
-export { default as About } from './about/';
+export { default as Header } from './header';
+export { default as LinkToImage } from './linkToImage';
 
-// Travel
-export { default as Travel } from './travel/';
-export { default as Place } from './travel/_place/';
+export { default as Works } from './works';
+export { default as Work } from './work';
 
-// Works
-export { default as Works } from './works/';
-export { default as Work } from './works/work/';
+export { default as Travel } from './travel';
+export { default as Place } from './place';
 
-// Helpers
-export { default as LinkToImage } from './linkToImage/';
-
-export { default as Footer } from './footer/';
+export { default as About } from './about';
+// export { default as Footer } from './footer';

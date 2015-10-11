@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 import styles from './Works.styles.js';
 
 // Language
-import Language from '../header/locale/';
+import Language from '../../components/header/locale/';
 
 @connect(state => state.works)
 @connect(state => state.application)
@@ -41,10 +41,13 @@ export default class Works extends Component {
           {
             works.map((work) => {
               return (
-                <Link to={ `${ application.language }/works/${ work.link }` }>
+                <Link
+                  to={ `/${ application.language }/works/${ work.link }` }
+                  key={ `/${ application.language }/works/${ work.link }` }
+                >
                   <div className="row">
                     <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2">
-                      <img src={ `./src/components/Works/Work/works/${ work.link }/files/${ work.img }` } />
+                      <img src={ `./src/components/work/works/${ work.link }/files/${ work.img }` } />
                     </div>
                     <div className="col-xs-9 col-sm-9 col-md-5 col-lg-5">
                       <h2>

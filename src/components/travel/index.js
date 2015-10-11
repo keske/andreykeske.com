@@ -11,7 +11,7 @@ import Text from './_text/';
 import styles from './Travel.styles.js';
 
 // Language
-import Language from '../header/locale/';
+import Language from '../../components/header/locale/';
 
 @connect(state => state.places)
 export default class Travel extends Component {
@@ -47,9 +47,18 @@ export default class Travel extends Component {
           </div>
           <div className="row">
             {
-              places.map((place) => {
+              places.map((place, index) => {
                 return (
-                  mode === 'card' ? <Card place={ place } language={ language } /> : <Text place={ place } language={ language } />
+                  mode === 'card' ?
+                    <Card
+                      place={ place }
+                      language={ language }
+                      key={ `card-${ index }-${ place.city }` } />
+                    :
+                    <Text
+                      place={ place }
+                      language={ language }
+                      key={ `text-${ index }-${ place.city }` } />
                 );
               })
             }
