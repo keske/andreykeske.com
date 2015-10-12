@@ -1,13 +1,14 @@
-@import '../../../styles/pallete';
-@import '../../../styles/typography';
-@import '../../../styles/screens';
+@import '../../../containers/app/styles/typography';
+@import '../../../containers/app/styles/pallete';
+@import '../../../containers/app/styles/screens';
 
 :local(.styles) {
   @include light();
 
   text-align: center;
   font-size: 12px;
-
+  
+  margin-top: 170px;
   margin-bottom: 30px;
 
   a {

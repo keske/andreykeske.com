@@ -8,4 +8,4 @@ export { default as Travel } from './travel';
 export { default as Place } from './place';
 
 export { default as About } from './about';
-// export { default as Footer } from './footer';
+export { default as Footer } from './footer';

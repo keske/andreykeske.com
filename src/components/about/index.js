@@ -8,6 +8,8 @@ import styles from './styles.js';
 // Language
 import Language from './locale/';
 
+import Footer from '../footer';
+
 @connect(state => state.application)
 export default class About extends Component {
 
@@ -33,47 +35,50 @@ export default class About extends Component {
     };
 
     return (
-      <div className={ `${ styles } container` }>
-        <DocumentMeta {...metaData} />
-        <div className="row">
-          <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
-              col-md-offset-2 col-lg-offset-2">
+      <section>
+        <div className={ `${ styles } container` }>
+          <DocumentMeta {...metaData} />
+          <div className="row">
+            <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
+                col-md-offset-2 col-lg-offset-2">
 
-            <img src="me.jpg" className="face" alt="Andrey Keske" />
+              <img src="me.jpg" className="face" alt="Andrey Keske" />
 
-            <p>
-              { Language.translate('Do') }
-            </p>
+              <p>
+                { Language.translate('Do') }
+              </p>
 
-            <h2>
-              { Language.translate('Touch') }
-            </h2>
+              <h2>
+                { Language.translate('Touch') }
+              </h2>
 
-            <ul>
-              <li>
-                <a href="mailto:hello@andreykeske.com">
-                  hello@andreykeske.com
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/keske">
-                  Github
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/andrey.keske">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="https://instagram.com/andreykeske/">
-                  Instagram
-                </a>
-              </li>
-            </ul>
+              <ul>
+                <li>
+                  <a href="mailto:hello@andreykeske.com">
+                    hello@andreykeske.com
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/keske">
+                    Github
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/andrey.keske">
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a href="https://instagram.com/andreykeske/">
+                    Instagram
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </section>
     );
   }
 }
