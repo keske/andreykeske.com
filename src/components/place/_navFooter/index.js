@@ -85,11 +85,16 @@ export default class NavFooter extends Component {
 
             {
               placesRange.map((currentPlace) => {
+                const activeClass = city === currentPlace.city &&
+                  month === currentPlace.month &&
+                  year === currentPlace.year ? 'active' : '';
+
                 return (
                   currentPlace.cover ?
                     <Link
-                      to={ `${ language }/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }
+                      to={ `/${ language }/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }
                       key={ `${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }
+                      className={ `${ activeClass }` }
                     >
                       <div className={ `col-md-2 col-lg-2 nav-block` }>
                         <div className="data">

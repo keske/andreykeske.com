@@ -21,7 +21,7 @@ export default class Work extends Component {
     const { work } = this.props.params;
 
     // Path to photos
-    const path = `./src/components/Works/Work/works/${ work }/files`;
+    const path = `./src/components/work/works/${ work }/files`;
 
     // Application settings
     const { application } = this.props;
