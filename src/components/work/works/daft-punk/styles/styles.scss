@@ -1,0 +1,10 @@
+@import '../../../../../containers/app/styles/pallete';
+
+:local(.styles) {
+  position: relative;
+
+  audio {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

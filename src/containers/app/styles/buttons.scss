@@ -1,0 +1,94 @@
+@import 'pallete';
+
+$radius: 3px;
+$padding: 5px;
+
+.button {
+  cursor: pointer;
+
+  // Sizes
+  &.small {
+    font-size: 10px;
+    padding: $padding / 2 $padding;
+    margin-right: $padding / 2;
+    border-radius: $radius;
+
+    &.inline {
+      margin-bottom: $padding;
+    }
+  }
+
+  &.medium {
+    font-size: 14px;
+    padding: $padding $padding * 2;
+    margin-right: $padding;
+    border-radius: $radius * 1.8;
+
+    &.inline {
+      margin-bottom: $padding * 2;
+    }
+  }
+
+  &.big {
+    font-size: 16px;
+    padding: $padding * 3 $padding * 5.1;
+    margin-right: $padding * 2;
+    border-radius: $radius * 2.8;
+
+    &.inline {
+      margin-bottom: $padding * 3;
+    }
+  }
+
+  &.inline {
+    display: inline-block;
+  }
+
+  // Colors
+  @mixin color($bg, $color) {
+    background: $color;
+    color: $bg;
+
+    &.outline {
+      background: $bg;
+      color: $color;
+      border: 1px solid $color;
+
+      &:hover, &.active {
+        border: 1px solid $color;
+      }
+    }
+
+    &:hover, &.active {
+      background: $color;
+      color: #FFF;
+    }
+  }
+
+  &.white {
+    background: #FFF;
+    color: #000;
+
+    &.outline {
+      border: 1px solid $gray;
+    }
+
+    &:hover, &.active {
+      border: 1px solid $blue;
+      background: $blue;
+      color: #FFF;
+    }
+  }
+
+  &.blue {
+    @include color(#FFF, $blue);
+  }
+
+  &.green {
+    @include color(#FFF, $green);
+  }
+
+  &.red {
+    @include color(#FFF, $red);
+  }
+}

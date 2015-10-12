@@ -1,0 +1,17 @@
+/* global styles */
+
+@import 'fonts/roboto';
+@import 'typography';
+
+:global(body) {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .photo {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}

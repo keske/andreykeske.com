@@ -1,0 +1,23 @@
+@import '../../../containers/app/styles/typography';
+@import '../../../containers/app/styles/pallete';
+@import '../../../containers/app/styles/screens';
+
+:local(.styles) {
+  margin-top: 70px;
+
+  span.new {
+    font-size: 10px;
+
+    color: #FFF;
+    background: $green;
+
+    padding: 1px 4px;
+    position: relative;
+
+    @include open-sans();
+
+    border-radius: 2px;
+
+    top: -21px;
+  }
+}

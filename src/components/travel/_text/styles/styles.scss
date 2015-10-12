@@ -1,0 +1,64 @@
+@import '../../../../containers/app/styles/typography';
+@import '../../../../containers/app/styles/pallete';
+@import '../../../../containers/app/styles/screens';
+
+:local(.styles) {
+
+  // Information on card
+  .data {
+
+    p {
+      display: inline-block;
+    }
+
+    p.date {
+      opacity: .7;
+      position: relative;
+
+      $size: 10px;
+
+      margin-left: 10px;
+
+      font-size: $size;
+      line-height: $size + 2;
+    }
+  }
+  
+  .big-type {
+
+    @mixin fade-out-text-size($size) {
+
+      p.city {
+        font-size: $size;
+        line-height: $size;
+      }
+
+      p.date {
+        margin-left: $size - 24;
+      }
+    }
+
+    @for $i from 1 through 10 {
+      $size: 20 + $i; // 2
+      $year: 2005 + $i;
+
+      &.year-#{$year} {
+        @include fade-out-text-size(#{$size} + 'px');
+      }
+    }
+
+    transition: 0.3s;
+
+  }
+
+  .year-header {
+    @include open-sans();
+    @include light();
+
+    color: $gray;
+  }
+
+  img {
+    width: 100%;
+  }
+}
