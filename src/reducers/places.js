@@ -1,4 +1,32 @@
 const data = [{
+    'city': 'Madrid',
+    'country': 'Spain',
+    'start': '21 September',
+    'end': '23 September',
+
+    'month': 'September',
+    'year': 2015,
+
+    'date': new Date('9/21/2015'),
+
+    'class': '',
+
+    'cover': false,
+  }, {
+    'city': 'Valencia',
+    'country': 'Spain',
+    'start': '15 September',
+    'end': '21 September',
+
+    'month': 'September',
+    'year': 2015,
+
+    'date': new Date('9/15/2015'),
+
+    'class': '',
+
+    'cover': false,
+  }, {
     'city': 'Barcelona',
     'country': 'Spain',
     'start': '5 September',
@@ -14,7 +42,7 @@ const data = [{
     'cover': true,
   }, {
     'city': 'Prague',
-    'country': 'Czech',
+    'country': 'Czech Republic',
     'start': '29 August',
     'end': '5 September',
 
@@ -25,7 +53,7 @@ const data = [{
 
     'class': '',
 
-    'cover': true,
+    'cover': false,
   }, {
     'city': 'Tallin',
     'country': 'Estonia',
@@ -39,7 +67,7 @@ const data = [{
 
     'class': 'white',
 
-    'cover': true,
+    'cover': false,
   }, {
     'city': 'Pushkin',
     'country': 'Russia',
