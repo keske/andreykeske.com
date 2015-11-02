@@ -8,7 +8,7 @@ const placeInsertTemplate = {
     const img = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
 
     // Template url
-    const url = `./src/components/Travel/Components/Place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/index.html`;
+    const url = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/index.html`;
 
     // Get html template
     $.get(url).done((data) => {

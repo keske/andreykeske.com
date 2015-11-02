@@ -23,6 +23,27 @@ export default class Header extends Component {
     this.hideHeaderWhenScrolling();
   }
 
+  // Togle language between `ru` and `en`
+  toggleLanguage() {
+    const { dispatch, application } = this.props;
+
+    // router.replaceWith('/#/en/travel/card');
+    // console.log(this.context.router)
+    // Router.transitionTo('/');
+
+    application.language === 'ru' ? dispatch(setLanguage('en')) : dispatch(setLanguage('ru'));
+  }
+
+  // Smooth hide header when scrolling
+  hideHeaderWhenScrolling() {
+    let opacity = 0;
+
+    window.onscroll = () => {
+      opacity = 1 - (window.pageYOffset / 50).toFixed(1);
+      this.refs.header.style.opacity = opacity;
+    };
+  }
+
   render() {
     const { application } = this.props;
 
@@ -64,26 +85,5 @@ export default class Header extends Component {
         </div>
       </div>
     );
-  }
-
-  // Togle language between `ru` and `en`
-  toggleLanguage() {
-    const { dispatch, application } = this.props;
-
-    // router.replaceWith('/#/en/travel/card');
-    // console.log(this.context.router)
-    // Router.transitionTo('/');
-
-    application.language === 'ru' ? dispatch(setLanguage('en')) : dispatch(setLanguage('ru'));
-  }
-
-  // Smooth hide header when scrolling
-  hideHeaderWhenScrolling() {
-    let opacity = 0;
-
-    window.onscroll = () => {
-      opacity = 1 - (window.pageYOffset / 50).toFixed(1);
-      this.refs.header.style.opacity = opacity;
-    };
   }
 }

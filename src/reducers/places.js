@@ -1,48 +1,46 @@
-const data = [
-// {
-//     'city': 'Barcelona',
-//     'country': 'Spain',
-//     'start': '5 September',
-//     'end': '11 September',
+const data = [{
+    'city': 'Barcelona',
+    'country': 'Spain',
+    'start': '5 September',
+    'end': '11 September',
 
-//     'month': 'September',
-//     'year': 2015,
+    'month': 'September',
+    'year': 2015,
 
-//     'date': new Date('9/5/2015'),
+    'date': new Date('9/5/2015'),
 
-//     'class': '',
+    'class': '',
 
-//     'cover': true,
-//   }, {
-//     'city': 'Prague',
-//     'country': 'Czech',
-//     'start': '29 August',
-//     'end': '5 September',
+    'cover': true,
+  }, {
+    'city': 'Prague',
+    'country': 'Czech',
+    'start': '29 August',
+    'end': '5 September',
 
-//     'month': 'September',
-//     'year': 2015,
+    'month': 'September',
+    'year': 2015,
 
-//     'date': new Date('8/29/2015'),
+    'date': new Date('8/29/2015'),
 
-//     'class': '',
+    'class': '',
 
-//     'cover': true,
-//   }, {
-//     'city': 'Tallin',
-//     'country': 'Estonia',
-//     'start': '1 August',
-//     'end': '2 August',
+    'cover': true,
+  }, {
+    'city': 'Tallin',
+    'country': 'Estonia',
+    'start': '1 August',
+    'end': '2 August',
 
-//     'month': 'August',
-//     'year': 2015,
+    'month': 'August',
+    'year': 2015,
 
-//     'date': new Date('8/1/2015'),
+    'date': new Date('8/1/2015'),
 
-//     'class': '',
+    'class': 'white',
 
-//     'cover': true,
-//   },
-   {
+    'cover': true,
+  }, {
     'city': 'Pushkin',
     'country': 'Russia',
     'start': 'June',
@@ -870,7 +868,7 @@ const data = [
     'class': '',
 
     'cover': false,
-  }
+  },
 ];
 
 const initialState = {
