@@ -36,10 +36,8 @@ export default class Header extends Component {
 
   // Smooth hide header when scrolling
   hideHeaderWhenScrolling() {
-    let opacity = 0;
-
     window.onscroll = () => {
-      opacity = 1 - (window.pageYOffset / 50).toFixed(1);
+      const opacity = 1 - (window.pageYOffset / 50).toFixed(1);
       this.refs.header.style.opacity = opacity;
     };
   }
