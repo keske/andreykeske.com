@@ -60,7 +60,9 @@ export default class VeniceInMay2015 extends Component {
 
         </div>
 
-        <img src={ `${ img }/16.jpg` } />
+        <div className="photo">
+          <img src={ `${ img }/16.jpg` } />
+        </div>
 
         <div className="container">
           <div className="row">
@@ -76,7 +78,9 @@ export default class VeniceInMay2015 extends Component {
           </div>
         </div>
 
-        <img src={ `${ img }/17.jpg` } />
+        <div className="photo">
+          <img src={ `${ img }/17.jpg` } />
+        </div>
 
         <div className="container">
           <div className="row">

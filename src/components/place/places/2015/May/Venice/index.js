@@ -42,7 +42,7 @@ export default class City extends Component {
               </h2>
             </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <LinkToImage url={ `${ img }/linen/linen-3.jpg` } />
             </div>
 
@@ -66,11 +66,11 @@ export default class City extends Component {
               </h2>
             </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <LinkToImage url={ `${ img }/life/life-1.jpg` } />
             </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <LinkToImage url={ `${ img }/life/life-2.jpg` } />
             </div>
 
@@ -90,23 +90,23 @@ export default class City extends Component {
               </h2>
             </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <LinkToImage url={ `${ img }/streets/street-1.jpg` } />
             </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <LinkToImage url={ `${ img }/streets/street-2.jpg` } />
             </div>
 
-            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <LinkToImage url={ `${ img }/streets/street-5.jpg` } />
             </div>
 
-            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <LinkToImage url={ `${ img }/streets/street-6.jpg` } />
             </div>
 
-            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <img src={ `${ img }/streets/street-3.jpg` } />
             </div>
 
@@ -126,11 +126,11 @@ export default class City extends Component {
               </h2>
             </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <img src={ `${ img }/channels/channel-5.jpg` } />
             </div>
 
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <img src={ `${ img }/channels/channel-1.jpg` } />
             </div>
 

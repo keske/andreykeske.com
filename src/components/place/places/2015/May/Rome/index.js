@@ -191,7 +191,9 @@ export default class City extends Component {
           </div>
         </div>
 
-        <img src={ `${ img }/colosseum/pano-1.jpg` } />
+        <div className="photo">
+          <img src={ `${ img }/colosseum/pano-1.jpg` } />
+        </div>
 
         <div className="container">
           <div className="row">
@@ -227,7 +229,9 @@ export default class City extends Component {
           </div>
         </div>
 
-        <img src={ `${ img }/parks/pano.jpg` } />
+        <div className="photo">
+          <img src={ `${ img }/parks/pano.jpg` } />
+        </div>
 
         <div className="container">
           <div className="row">
@@ -243,7 +247,9 @@ export default class City extends Component {
           </div>
         </div>
 
-        <img src={ `${ img }/parks/nature-2.jpg` } />
+        <div className="photo">
+          <img src={ `${ img }/parks/nature-2.jpg` } />
+        </div>
 
         <div className="container">
           <div className="row">
@@ -273,7 +279,9 @@ export default class City extends Component {
 
         </div>
 
-        <img src={ `${ img }/parks/japan-1.jpg` } />
+        <div className="photo">
+          <img src={ `${ img }/parks/japan-1.jpg` } />
+        </div>
 
         <div className="container">
           <div className="row">
@@ -331,7 +339,9 @@ export default class City extends Component {
           </div>
         </div>
 
-        <img src={ `${ img }/underground/pano.jpg` } />
+        <div className="photo">
+          <img src={ `${ img }/underground/pano.jpg` } />
+        </div>
 
         <div className="container">
           <div className="row">
@@ -390,8 +400,13 @@ export default class City extends Component {
           </div>
         </div>
 
-        <img src={ `${ img }/graffiti/pano-1.jpg` } />
-        <img src={ `${ img }/graffiti/pano-2.jpg` } />
+        <div className="photo">
+          <img src={ `${ img }/graffiti/pano-1.jpg` } />
+        </div>
+
+        <div className="photo">
+          <img src={ `${ img }/graffiti/pano-2.jpg` } />
+        </div>
 
         <div className="container">
           <div className="row">
@@ -409,7 +424,6 @@ export default class City extends Component {
         </div>
 
         <img src={ `${ img }/bottom.jpg` } className="photo-margin-top" />
-
 
         <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ application.language } />
       </div>
