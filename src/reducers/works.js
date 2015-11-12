@@ -1,10 +1,17 @@
 const data = [
+  // {
+  //   'title': 'Straight Flush',
+  //   'link': 'straight-flush',
+  //   'img': 'cover.png',
+  //   'info': '',
+  //   'count': '',
+  // },
   {
     'title': 'Tmux Chess',
     'link': 'tmux-chess',
     'img': 'cover.png',
     'info': 'Play in Chess with tmux',
-    'count': 'new',
+    'count': '',
   },
   // {
   //   'title': 'Daft Punk - Technologic',

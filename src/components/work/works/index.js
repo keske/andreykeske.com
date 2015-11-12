@@ -1,4 +1,5 @@
 // Part II
+export { default as StraightFlush } from './straight-flush';
 export { default as TmuxChess } from './tmux-chess';
 export { default as DaftPunk } from './daft-punk'; // In process
 export { default as BlackHole } from './black-hole';

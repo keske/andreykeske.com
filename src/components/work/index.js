@@ -8,6 +8,7 @@ import NavFooter from './_navFooter.js';
 
 // Works
 import {
+  StraightFlush,
   TmuxChess,
   DaftPunk,
   BlackHole,
@@ -34,6 +35,7 @@ import {
 } from './works/index.js';
 
 const data = {
+  'straight-flush': StraightFlush,
   'tmux-chess': TmuxChess,
   'daft-punk': DaftPunk,
   'black-hole': BlackHole,

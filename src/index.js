@@ -9,8 +9,10 @@ import routes from './routes';
 const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={createHistory()} children={routes} />
+  <Provider store={ store }>
+    <Router onUpdate={ () => window.scrollTo(0, 0) }
+            history={ createHistory() }
+            children={ routes } />
   </Provider>,
   document.getElementById('root')
 );
