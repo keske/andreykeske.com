@@ -1,6 +1,9 @@
-export { default as DaftPunk } from './daft-punk';
+// Part II
+export { default as TmuxChess } from './tmux-chess';
+export { default as DaftPunk } from './daft-punk'; // In process
 export { default as BlackHole } from './black-hole';
 
+// Part I
 export { default as Catch } from './catch';
 export { default as Theshellgame } from './the-shell-game';
 export { default as Footballfanstrolling } from './football-fans-trolling';

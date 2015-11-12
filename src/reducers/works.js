@@ -1,4 +1,11 @@
 const data = [
+  {
+    'title': 'Tmux Chess',
+    'link': 'tmux-chess',
+    'img': 'cover.png',
+    'info': 'Play in Chess with tmux',
+    'count': 'new',
+  },
   // {
   //   'title': 'Daft Punk - Technologic',
   //   'link': 'daft-punk',

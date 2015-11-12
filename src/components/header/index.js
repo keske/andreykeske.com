@@ -19,27 +19,32 @@ export default class Header extends Component {
     dispatch: React.PropTypes.func,
   }
 
+  constructor(props) {
+    super(props);
+    this.hideHeader = this.hideHeader.bind(this);
+  }
+
   componentDidMount() {
-    this.hideHeaderWhenScrolling();
+    window.addEventListener('scroll', this.hideHeader);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.hideHeader);
+  }
+
+  // Smooth hide header when scrolling
+  hideHeader() {
+    const opacity = 1 - (window.pageYOffset / 50).toFixed(1);
+    this.refs.header.style.opacity = opacity;
   }
 
   // Togle language between `ru` and `en`
   toggleLanguage() {
     const { dispatch, application } = this.props;
 
-    // router.replaceWith('/#/en/travel/card');
-    // console.log(this.context.router)
-    // Router.transitionTo('/');
-
-    application.language === 'ru' ? dispatch(setLanguage('en')) : dispatch(setLanguage('ru'));
-  }
-
-  // Smooth hide header when scrolling
-  hideHeaderWhenScrolling() {
-    window.onscroll = () => {
-      const opacity = 1 - (window.pageYOffset / 50).toFixed(1);
-      this.refs.header.style.opacity = opacity;
-    };
+    application.language === 'ru'
+      ? dispatch(setLanguage('en'))
+      : dispatch(setLanguage('ru'));
   }
 
   render() {
