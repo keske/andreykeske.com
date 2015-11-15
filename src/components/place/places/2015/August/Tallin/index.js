@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { setParallax } from '../../../../../../utils/parallax';
 
 // Components
 import NavFooter from '../../../../_navFooter/';
@@ -15,10 +16,26 @@ export default class City extends Component {
     params: React.PropTypes.object,
   }
 
+  constructor(props) {
+    super(props);
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
   componentDidMount() {
-    window.onscroll = () => {
-      this.refs.photos.style.backgroundPositionY = window.pageYOffset * 0.9;
-    };
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    // setParallax(this.refs.parallax, -700);
+    const top = - (window.pageYOffset - this.refs.parallax.offsetTop) * 0.03;
+
+    this.refs.parallax.style.top = `${ top }px`;
+    this.refs.parallaxSecond.style.top = `${ top }px`;
+    // this.refs.parallax.style.backgroundPosition = `0px ${ top }px`;
   }
 
   render() {
@@ -30,19 +47,28 @@ export default class City extends Component {
     // Set language
     Language.setLocale(language);
 
+    const body = {
+      height: window.innerHeight * 30,
+    };
+
     const photos = {
       background: `url(${ img }/italy.jpg)`,
-      width: '100%',
+      width: '30%',
       height: window.innerHeight,
-      backgroundSize: 'cover',
+      position: 'fixed',
+      backgroundSize: '100% auto',
     };
 
     return (
-      <div className={ styles }>
+      <div className={ styles } style={ body }>
 
         <div
           style={ photos }
-          ref="photos"
+          ref="parallax"
+        />
+        <div
+          style={ photos }
+          ref="parallaxSecond"
         />
         <div className="top-page-city-name on-image">
           { Language.translate('City') }
