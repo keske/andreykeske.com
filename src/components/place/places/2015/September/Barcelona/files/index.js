@@ -99,7 +99,7 @@ function init(src) {
 	}, 100);
 }
 
-$(document).ready(function() {
+$(window).load(function() {
 	init('Barcelona');
 });
 
