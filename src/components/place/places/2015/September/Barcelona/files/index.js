@@ -83,7 +83,7 @@ function init(src) {
 	group.position.y = 150;
 	scene.add(group);
 
-	createSurface('images/' + src + '.jpg', 150, -300);
+	createSurface('images/barcelona-2015-' + src + '.jpg', 150, -300);
 
 	renderer = new THREE.WebGLRenderer({
 		antialias: true,
