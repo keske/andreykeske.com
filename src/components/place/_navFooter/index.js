@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-
 import _ from 'underscore';
+
+import { showNewLabel } from '../../../../src/utils/travel';
 
 // Component styles
 import styles from './navFooter.styles.js';
@@ -22,19 +23,6 @@ export default class NavFooter extends Component {
     city: React.PropTypes.string,
     style: React.PropTypes.string,
     application: React.PropTypes.object,
-  }
-
-  // If card date = current month
-  // then show label
-  showNewLabel(date) {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-
-    const _month = date.getMonth() + 1;
-    const _year = date.getFullYear();
-
-    return (_month === month && _year === year) ? true : false;
   }
 
   render() {
@@ -84,7 +72,7 @@ export default class NavFooter extends Component {
 
     const renderNewLabel = (place) => {
       return (
-        this.showNewLabel(place.date) ?
+        showNewLabel(place.date) ?
           <span className="new">
             New
           </span> : null
