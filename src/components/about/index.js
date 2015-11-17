@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 // Component styles
@@ -9,8 +8,6 @@ import styles from './styles.js';
 import Language from './locale/';
 
 import Footer from '../footer';
-
-@connect(state => state.application)
 export default class About extends Component {
 
   static propTypes = {

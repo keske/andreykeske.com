@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 import { About } from 'components';
@@ -15,6 +16,7 @@ const metaData = {
   },
 };
 
+@connect(state => state.application)
 export default class App extends Component {
 
   static propTypes = {
