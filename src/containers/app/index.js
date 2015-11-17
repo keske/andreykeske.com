@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 import 'bootstrap-webpack';
@@ -20,6 +21,7 @@ const metaData = {
   },
 };
 
+@connect(state => state.application)
 export default class App extends Component {
 
   static propTypes = {
@@ -30,7 +32,7 @@ export default class App extends Component {
     return (
       <section>
         <DocumentMeta { ...metaData } />
-        <Header />
+        <Header { ...this.props } />
         { this.props.children }
       </section>
     );

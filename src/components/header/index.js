@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 // Actions
@@ -11,7 +10,6 @@ import styles from './styles.js';
 // Language
 import Language from './locale/';
 
-@connect(state => state.application)
 export default class Header extends Component {
 
   static propTypes = {
