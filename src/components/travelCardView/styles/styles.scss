@@ -29,6 +29,7 @@ $thumb-height-large-desktop: 700px;
     p.date {
       @include caption();
       font-weight: 100;
+      opacity: .7;
 
       span.country {
         // font-weight: 400;

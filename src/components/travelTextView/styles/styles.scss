@@ -12,8 +12,9 @@
     }
 
     p.date {
+      @include caption();
+      font-weight: 100;
       opacity: .7;
-      position: relative;
 
       $size: 10px;
 
@@ -25,6 +26,7 @@
   }
   
   .big-type {
+    @include caption();
 
     @mixin fade-out-text-size($size) {
 
