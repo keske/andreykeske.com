@@ -7,9 +7,6 @@ import _ from 'underscore';
 // Component styles
 import styles from './navFooter.styles.js';
 
-// Components
-import NewLabel from 'components/travel/_card/_newLabel.js';
-
 // Language
 import Language from './locale/';
 
@@ -24,6 +21,20 @@ export default class NavFooter extends Component {
     month: React.PropTypes.string,
     city: React.PropTypes.string,
     style: React.PropTypes.string,
+    application: React.PropTypes.object,
+  }
+
+  // If card date = current month
+  // then show label
+  showNewLabel(date) {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+
+    const _month = date.getMonth() + 1;
+    const _year = date.getFullYear();
+
+    return (_month === month && _year === year) ? true : false;
   }
 
   render() {
@@ -71,6 +82,15 @@ export default class NavFooter extends Component {
     // Set language
     Language.setLocale(application.language);
 
+    const renderNewLabel = (place) => {
+      return (
+        this.showNewLabel(place.date) ?
+          <span className="new">
+            New
+          </span> : null
+      );
+    };
+
     return (
       <div className={ `${ styles } ${ style }` }>
         <div className="container">
@@ -100,7 +120,7 @@ export default class NavFooter extends Component {
                         <div className="data">
                           <p className="city">
                             { currentPlace.city }
-                            <NewLabel place={ currentPlace } />
+                            { renderNewLabel(currentPlace) }
                           </p>
                         </div>
                         <img src={ `./src/components/place/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city.replace(/ /g, '') }/images/thumb.jpg` } />
