@@ -40,7 +40,8 @@ export default class Travel extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <Filter mode={ mode } />
+              <Filter mode={ mode }
+                      { ...this.props } />
             </div>
           </div>
           <div className="row">
