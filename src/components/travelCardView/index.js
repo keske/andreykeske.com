@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-import { showNewLabel, showStartDateMonth } from '../../../../src/utils/travel';
+import { showNewLabel, showStartDateMonth } from '../../../src/utils/travel';
 
 // Component styles
 import styles from './Card.styles.js';

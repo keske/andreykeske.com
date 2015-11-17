@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
 
 // View mode, card or text
-import Filter from './_filter';
-import Card from './_card/';
-import Text from './_text/';
+import Filter from '../travelFilter';
+import Card from '../travelCardView';
+import Text from '../travelTextView';
 
 // Component styles
 import styles from './Travel.styles.js';

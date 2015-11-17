@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 // Actions
-import { setTravelViewMode } from '../../../actions/application.js';
+import { setTravelViewMode } from '../../actions/application.js';
 
 // Component styles
 import styles from './Filter.styles.js';
