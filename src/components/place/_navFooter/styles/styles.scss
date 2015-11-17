@@ -91,7 +91,7 @@
         margin: 20px;
 
         p.city {
-          @include serif-caption();
+          @include caption();
           @include light();
 
           $size: 18px;
@@ -108,7 +108,7 @@
           font-size: $size;
           line-height: $size + 4;
 
-          @include open-sans();
+          @include caption();
           @include light();
 
           span.country {
@@ -127,7 +127,7 @@
           padding: 1px 4px;
           position: relative;
 
-          @include open-sans();
+          @include caption();
 
           border-radius: 2px;
 

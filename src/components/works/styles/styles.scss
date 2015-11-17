@@ -5,8 +5,15 @@
   margin: 100px 0;
 
   h2 {
+    @include caption();
+    font-weight: 500;
+
+    $size: 30px;
+
+    font-size: $size;
+    line-height: $size;
+
     margin-top: 0;
-    font-weight: 300;
   }
 
   p {

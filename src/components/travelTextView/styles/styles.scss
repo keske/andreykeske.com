@@ -52,7 +52,7 @@
   }
 
   .year-header {
-    @include open-sans();
+    @include caption();
     @include light();
 
     color: $gray;

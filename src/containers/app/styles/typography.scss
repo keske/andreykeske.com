@@ -1,12 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600|Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic&subset=latin,cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic&subset=latin,latin-ext);
 
-@mixin serif-caption() {
-  font-family: 'Roboto Slab', serif;
+@mixin caption() {
+  font-family: 'Open Sans', sans-serif;
 }
 
-@mixin open-sans() {
-  font-family: 'Open Sans', sans-serif;
+@mixin paragraph() {
+  font-family: 'Merriweather', serif;
 }
 
 @mixin light() {
@@ -22,8 +22,7 @@
 }
 
 body {
-  // Default font
-  @include serif-caption();
+  @include paragraph();
 }
 
 h1,
@@ -31,24 +30,24 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
-  @include serif-caption();
+h6, {
+  @include caption();
+  font-weight: 800;
 }
 
 @mixin header($size) {
   font-size: $size;
 
-  margin-top: $size;
+  margin-top: $size * 2;
   margin-bottom: $size / 2;
 }
 
 h1 {
-  @include header(36px);
+  @include header(40px);
 }
 
 h2 {
-  @include header(28px);
+  @include header(36px);
 
   margin-top: 40px;
 }
@@ -68,12 +67,18 @@ h3 {
 
 p {
   @include paragraph();
+
+  font-size: 17px;
+  line-height: 27px;
 }
 
 ul {
 
   li {
-    @include paragraph();
+    @include caption();
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 26px;
   }
 }
 

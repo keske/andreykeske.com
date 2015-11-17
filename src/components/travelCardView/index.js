@@ -58,7 +58,7 @@ export default class Card extends Component {
                 { place.city }
                 { renderNewLabel() }
               </p>
-              { renderVisitedDate }
+              { renderVisitedDate() }
             </div>
             { renderImage() }
           </div>

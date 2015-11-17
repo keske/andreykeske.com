@@ -17,8 +17,8 @@ $thumb-height-large-desktop: 700px;
     }
 
     p.city {
-      @include serif-caption();
-      @include light();
+      @include caption();
+      font-weight: 500;
 
       $size: 38px;
 
@@ -27,11 +27,11 @@ $thumb-height-large-desktop: 700px;
     }
 
     p.date {
-      @include open-sans();
-      @include light();
+      @include caption();
+      font-weight: 100;
 
       span.country {
-        @include normal();
+        // font-weight: 400;
       }
     }
   }
