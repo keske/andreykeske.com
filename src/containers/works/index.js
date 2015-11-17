@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-/* meta */
 import DocumentMeta from 'react-document-meta';
 
-/* componants */
+// Components
 import { Works } from 'components';
 
 const metaData = {

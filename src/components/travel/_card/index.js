@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
 import { Link } from 'react-router';
 
 // Component styles
@@ -10,12 +10,12 @@ import NewLabel from './_newLabel.js';
 import VisitedDate from './_visitedDate.js';
 import Image from './_image.js';
 
-@connect(state => state.application)
 export default class Card extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
     place: React.PropTypes.object,
+    application: React.PropTypes.object,
   }
 
   render() {

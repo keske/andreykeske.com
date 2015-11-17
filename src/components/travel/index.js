@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 // View mode, card or text
@@ -13,7 +12,6 @@ import styles from './Travel.styles.js';
 // Language
 import Language from '../../components/header/locale/';
 
-@connect(state => state.places)
 export default class Travel extends Component {
 
   static propTypes = {
@@ -38,7 +36,7 @@ export default class Travel extends Component {
 
     return (
       <div className={ styles }>
-        <DocumentMeta {...metaData} />
+        <DocumentMeta { ...metaData } />
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -50,15 +48,15 @@ export default class Travel extends Component {
               places.map((place, index) => {
                 return (
                   mode === 'card' ?
-                    <Card
-                      place={ place }
-                      language={ language }
-                      key={ `card-${ index }-${ place.city }` } />
+                    <Card { ...this.props }
+                          place={ place }
+                          language={ language }
+                          key={ `card-${ index }-${ place.city }` } />
                     :
-                    <Text
-                      place={ place }
-                      language={ language }
-                      key={ `text-${ index }-${ place.city }` } />
+                    <Text { ...this.props }
+                          place={ place }
+                          language={ language }
+                          key={ `text-${ index }-${ place.city }` } />
                 );
               })
             }

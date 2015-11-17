@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
+// Components
 import { Travel } from 'components';
 
 const metaData = {
@@ -15,11 +17,9 @@ const metaData = {
   },
 };
 
+@connect(state => state.places)
+@connect(state => state.application)
 export default class App extends Component {
-
-  static propTypes = {
-    children: React.PropTypes.object,
-  }
 
   render() {
     return (
