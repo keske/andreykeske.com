@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 import { Link } from 'react-router';
@@ -10,8 +9,6 @@ import styles from './Works.styles.js';
 // Language
 import Language from '../../components/header/locale/';
 
-@connect(state => state.works)
-@connect(state => state.application)
 export default class Works extends Component {
 
   static propTypes = {
@@ -36,7 +33,7 @@ export default class Works extends Component {
 
     return (
       <div className={ styles }>
-        <DocumentMeta {...metaData} />
+        <DocumentMeta { ...metaData } />
         <div className="container">
           {
             works.map((work) => {

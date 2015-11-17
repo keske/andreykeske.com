@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+/* meta */
 import DocumentMeta from 'react-document-meta';
 
+/* componants */
 import { Works } from 'components';
 
 const metaData = {
@@ -15,17 +19,19 @@ const metaData = {
   },
 };
 
+@connect(state => state.works)
+@connect(state => state.application)
 export default class App extends Component {
 
-  static propTypes = {
-    children: React.PropTypes.object,
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
       <section>
         <DocumentMeta { ...metaData } />
-        <Works />
+        <Works { ...this.props } />
       </section>
     );
   }
