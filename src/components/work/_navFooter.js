@@ -24,7 +24,7 @@ export default class Works extends Component {
 
             <div className="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-md-offset-2 col-lg-offset-2 text-right">
               {
-                workIndex > 0 ? (
+                workIndex > 0 && (
                   <Link to={ `/${ application.language }/works/${ works[workIndex - 1].link }` }>
                     <p className="prevNextWorks">
                       ← Prev work
@@ -37,13 +37,13 @@ export default class Works extends Component {
                     </p>
                     <img src={ `./src/components/work/works/${ works[workIndex - 1].link }/files/${ works[workIndex - 1].img }` } />
                   </Link>
-                ) : null
+                )
               }
             </div>
 
             <div className="col-xs-6 col-sm-6 col-md-4 col-lg-4">
               {
-                workIndex < works.length - 1 ? (
+                workIndex < works.length - 1 && (
                   <Link to={ `/${ application.language }/works/${ works[workIndex + 1].link }` }>
                     <p className="prevNextWorks">
                       Next work →
@@ -56,7 +56,7 @@ export default class Works extends Component {
                     </p>
                     <img src={ `./src/components/work/works/${ works[workIndex + 1].link }/files/${ works[workIndex + 1].img }` } />
                   </Link>
-                ) : null
+                )
               }
             </div>
 

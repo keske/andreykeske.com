@@ -50,7 +50,7 @@ export default class Card extends Component {
     };
 
     return (
-      place.cover ?
+      place.cover &&
         <Link to={ `/${ application.language }/places/${ place.year }/${ place.month }/${ place.city }` }>
           <div className={ `${ styles } col-xs-12 col-md-12 col-md-6 col-lg-6 big-type ${ place.class }` }>
             <div className={ 'data ' + place.class }>
@@ -62,7 +62,7 @@ export default class Card extends Component {
             </div>
             { renderImage() }
           </div>
-        </Link> : null
+        </Link>
     );
   }
 }

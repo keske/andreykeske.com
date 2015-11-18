@@ -20,10 +20,10 @@ export default class Text extends Component {
 
     const renderNewLabel = () => {
       return (
-        showNewLabel(place.date) ?
+        showNewLabel(place.date) &&
           <span className="new">
             New
-          </span> : null
+          </span>
       );
     };
 
@@ -35,7 +35,7 @@ export default class Text extends Component {
           </span>
           <br />
           { showStartDateMonth(place.start, place.end) }
-          { place.end ? <span>&mdash; { place.end }</span> : null }
+          { place.end && <span>&mdash; { place.end }</span> }
         </p>
       );
     };

@@ -72,10 +72,10 @@ export default class NavFooter extends Component {
 
     const renderNewLabel = (place) => {
       return (
-        showNewLabel(place.date) ?
+        showNewLabel(place.date) &&
           <span className="new">
             New
-          </span> : null
+          </span>
       );
     };
 
@@ -98,7 +98,7 @@ export default class NavFooter extends Component {
                   year === currentPlace.year ? 'active' : '';
 
                 return (
-                  currentPlace.cover ?
+                  currentPlace.cover &&
                     <Link
                       to={ `/${ language }/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }
                       key={ `${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }
@@ -113,7 +113,7 @@ export default class NavFooter extends Component {
                         </div>
                         <img src={ `./src/components/place/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city.replace(/ /g, '') }/images/thumb.jpg` } />
                       </div>
-                    </Link> : null
+                    </Link>
                 );
               })
             }
