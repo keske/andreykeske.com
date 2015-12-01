@@ -33,6 +33,6 @@ $green: #32CD32;
   &.active {
     @include normal();
 
-    color: $black;
+    color: $red;
   }
 }

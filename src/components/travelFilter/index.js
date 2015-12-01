@@ -31,12 +31,14 @@ export default class Filter extends Component {
               View:
             </span>
             <Link to={ `/${ application.language }/travel/card` }
-                  onClick={ () => this.changeMode('card') }>
+                  onClick={ () => this.changeMode('card') }
+                  activeClassName="active">
               ☷
             </Link>
 
-             <Link to={ `/${ application.language }/travel/text` }
-                   onClick={ () => this.changeMode('text') }>
+            <Link to={ `/${ application.language }/travel/text` }
+                  onClick={ () => this.changeMode('text') }
+                  activeClassName="active">
               ☰
             </Link>
           </div>
