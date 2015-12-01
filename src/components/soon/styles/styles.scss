@@ -1,0 +1,60 @@
+@import '../../../containers/app/styles/typography';
+// @import '../../../containers/app/styles/pallete';
+@import '../../../containers/app/styles/screens';
+
+:local(.styles) {
+  margin-top: -5px;
+  margin-bottom: 30px;
+
+  height: 370px;
+  overflow: hidden;
+
+  background: #000;
+
+  img {
+    opacity: .7;
+
+    @media (#{$phone}) {
+      width: auto;
+      height: 370px;
+    }
+    @media (#{$tablet}) {
+      width: auto;
+      height: 470px;
+    }
+    @media (#{$large-desktop}) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .info {
+    position: absolute;
+    top: 170px;
+
+    width: 100%;
+
+    text-align: center;
+
+    p.title {
+      @include caption();
+
+      font-size: 48px;
+      color: #FFF;
+      font-weight: bold;
+    }
+
+    p.date {
+      @include caption();
+
+      font-size: 14px;
+      color: #FFF;
+    }
+
+    p.soon {
+      font-size: 22px;
+      font-style: italic;
+      color: #FFF;
+    }
+  }
+}

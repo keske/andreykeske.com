@@ -26,7 +26,10 @@ export default class Filter extends Component {
     return (
       <div className={ styles }>
         <div className="row">
-          <div className="col-xs-3 col-sm-3 col-md-1 col-lg-1">
+          <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+            <span className="title">
+              View:
+            </span>
             <Link to={ `/${ application.language }/travel/card` }
                   onClick={ () => this.changeMode('card') }>
               ☷

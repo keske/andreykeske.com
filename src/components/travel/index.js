@@ -5,6 +5,7 @@ import DocumentMeta from 'react-document-meta';
 import Filter from '../travelFilter';
 import Card from '../travelCardView';
 import Text from '../travelTextView';
+import Soon from '../soon';
 
 // Component styles
 import styles from './Travel.styles.js';
@@ -34,9 +35,15 @@ export default class Travel extends Component {
       },
     };
 
+    const soonData = {
+      title: 'New York',
+      date: '21—28 November',
+    };
+
     return (
       <div className={ styles }>
         <DocumentMeta { ...metaData } />
+        <Soon { ...soonData } />
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
