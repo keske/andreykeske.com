@@ -27,9 +27,7 @@ export default class City extends Component {
 
     return (
       <div className={ styles }>
-        <div className="photo">
-          <LinkToImage url={ `${ img }/thumb.jpg` } />
-        </div>
+        <LinkToImage url={ `${ img }/thumb.jpg` } />
 
         <div className="top-page-city-name on-image">
           { Language.translate('Tallin') }

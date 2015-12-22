@@ -10,7 +10,7 @@ import {
   BarcelonaInSeptember2015,
 
   // August 2015
-  TallinInAugust2015,
+  TallinnInAugust2015,
 
   // May 2015
   VeniceInMay2015,
@@ -30,7 +30,7 @@ import {
   HelsinkiInOctober2014,
 
   // March 2014
-  TallinInMarch2014,
+  TallinnInMarch2014,
 
   // December 2014
   SpindleruvMlynInDecember2014,
@@ -41,7 +41,7 @@ const data = {
   'BarcelonaInSeptember2015': BarcelonaInSeptember2015,
 
   // August 2015
-  'TallinInAugust2015': TallinInAugust2015,
+  'TallinnInAugust2015': TallinnInAugust2015,
 
   // May 2015
   'VeniceInMay2015': VeniceInMay2015,
@@ -61,7 +61,7 @@ const data = {
   'HelsinkiInOctober2014': HelsinkiInOctober2014,
 
   // March 2014
-  'TallinInMarch2014': TallinInMarch2014,
+  'TallinnInMarch2014': TallinnInMarch2014,
 
   // December 2014
   'SpindleruvMlynInDecember2014': SpindleruvMlynInDecember2014,

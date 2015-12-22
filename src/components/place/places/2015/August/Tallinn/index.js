@@ -36,42 +36,42 @@ export default class City extends Component {
         <div style={ wrap }>
 
           <ParallaxComponent speed={ `-${Math.random() * (0.02 - 0) + 0}` }
-                             width={ Math.floor(Math.random() * (700 - 300) + 300) }
-                             top={ Math.floor(Math.random() * (1000 - 0) + 0) }
+                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
+                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
                              left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
             <img src={`${ img }/top.jpg`} />
           </ParallaxComponent>
 
           <ParallaxComponent speed={ `-${Math.random() * (0.02 - 0) + 0}` }
-                             width={ Math.floor(Math.random() * (700 - 300) + 300) }
-                             top={ Math.floor(Math.random() * (1000 - 0) + 0) }
+                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
+                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
                              left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
             <img src={`${ img }/italy.jpg`} />
           </ParallaxComponent>
 
           <ParallaxComponent speed={ `-${Math.random() * (0.02 - 0) + 0}` }
-                             width={ Math.floor(Math.random() * (700 - 300) + 300) }
-                             top={ Math.floor(Math.random() * (1000 - 0) + 0) }
+                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
+                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
                              left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
             <img src={`${ img }/bird.jpg`} />
           </ParallaxComponent>
 
           <ParallaxComponent speed={ `-${Math.random() * (0.02 - 0) + 0}` }
-                             width={ Math.floor(Math.random() * (700 - 300) + 300) }
-                             top={ Math.floor(Math.random() * (1000 - 0) + 0) }
+                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
+                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
                              left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
             <img src={`${ img }/heads.jpg`} />
           </ParallaxComponent>
 
           <ParallaxComponent speed={ `-${Math.random() * (0.02 - 0) + 0}` }
-                             width={ Math.floor(Math.random() * (700 - 300) + 300) }
-                             top={ Math.floor(Math.random() * (1000 - 0) + 0) }
+                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
+                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
                              left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
             <img src={`${ img }/house.jpg`} />
           </ParallaxComponent>
 
           <ParallaxComponent speed={ `-${Math.random() * (0.02 - 0) + 0}` }
-                             width={ Math.floor(Math.random() * (700 - 300) + 300) }
+                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
                              top="100"
                              left="180">
             <div className="top-page-city-name">
@@ -80,7 +80,7 @@ export default class City extends Component {
           </ParallaxComponent>
 
           <ParallaxComponent speed={ `-${Math.random() * (0.02 - 0) + 0}` }
-                             width={ Math.floor(Math.random() * (700 - 300) + 300) }
+                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
                              top="200"
                              left="180">
             <p>
