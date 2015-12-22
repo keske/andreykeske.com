@@ -11,46 +11,31 @@
       display: inline-block;
     }
 
+    p.city {
+      @include caption();
+      font-size: 22px;
+      line-height: 30px;
+    }
+
     p.date {
       @include caption();
       font-weight: 100;
       opacity: .7;
 
-      $size: 10px;
-
-      margin-left: 10px;
+      $size: 12px;
 
       font-size: $size;
       line-height: $size + 2;
-    }
-  }
-  
-  .big-type {
-    @include caption();
 
-    @mixin fade-out-text-size($size) {
+      span.country {
+        display: inline-block;
 
-      p.city {
-        font-size: $size;
-        line-height: $size;
-      }
-
-      p.date {
-        margin-left: $size - 24;
-      }
-    }
-
-    @for $i from 1 through 10 {
-      $size: 20 + $i; // 2
-      $year: 2000 + $i;
-
-      &.year-#{$year} {
-        @include fade-out-text-size(#{$size} + 'px');
+        margin-left: 17px;
+        margin-right: 7px;
       }
     }
 
     transition: 0.3s;
-
   }
 
   .year-header {

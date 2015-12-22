@@ -31,11 +31,10 @@ export default class Text extends Component {
       return (
         <p className="date">
           <span className="country">
-            { place.country }
+            { place.country },
           </span>
-          <br />
           { showStartDateMonth(place.start, place.end) }
-          { place.end && <span>&mdash; { place.end }</span> }
+          { place.end && <span>&mdash;{ place.end }</span> }
         </p>
       );
     };
@@ -43,7 +42,7 @@ export default class Text extends Component {
     function renderInner() {
       return (
         <div className={ styles + ' year-' + place.year + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' }>
-          <div className={ 'data big-type year-' + place.year }>
+          <div className={ 'data' }>
             <p className="city">
               { place.city }
               { renderNewLabel() }

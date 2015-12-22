@@ -81,7 +81,7 @@ const data = [{
 
   'class': 'white',
 
-  'cover': false,
+  'cover': true,
 }, {
   'city': 'Pushkin',
   'country': 'Russia',
