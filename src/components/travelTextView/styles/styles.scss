@@ -42,7 +42,7 @@
 
     @for $i from 1 through 10 {
       $size: 20 + $i; // 2
-      $year: 2005 + $i;
+      $year: 2000 + $i;
 
       &.year-#{$year} {
         @include fade-out-text-size(#{$size} + 'px');

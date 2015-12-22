@@ -8,14 +8,16 @@ import routes from './routes';
 import { syncReduxAndRouter } from 'redux-simple-router';
 
 const store = configureStore();
-const history = createHistory();
+const history = createHistory({
+  queryKey: false,
+});
 
 syncReduxAndRouter(history, store);
 
 ReactDOM.render(
   <Provider store={ store }>
     <Router onUpdate={ () => window.scrollTo(0, 0) }
-            history={ history }>
+      history={ history }>
       <Redirect from="/" to="en/about" />
       { routes }
     </Router>
