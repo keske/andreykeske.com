@@ -69,7 +69,7 @@ const data = [{
 
   'cover': false,
 }, {
-  'city': 'Tallin',
+  'city': 'Tallinn',
   'country': 'Estonia',
   'start': '1 August',
   'end': '2 August',
@@ -323,7 +323,7 @@ const data = [{
 
   'cover': false,
 }, {
-  'city': 'Tallin',
+  'city': 'Tallinn',
   'country': 'Estonia',
   'start': '9 Mar',
   'end': '10 Mar',
