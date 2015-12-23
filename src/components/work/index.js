@@ -68,6 +68,14 @@ export default class Works extends Component {
     work: React.PropTypes.string,
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { work } = this.props.params;
 

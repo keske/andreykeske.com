@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-// import { setParallax } from '../../../../../../utils/parallax';
+import ParallaxComponent from 'react-parallax-component';
 
 // Components
 import NavFooter from '../../../../_navFooter/';
-import ParallaxComponent from '../../../../../parallax-component';
 
 // Component styles
 import styles from './styles.js';

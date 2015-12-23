@@ -20,6 +20,10 @@ export default class Travel extends Component {
     places: React.PropTypes.array,
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { language, mode } = this.props.params;
     const { places } = this.props;
