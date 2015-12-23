@@ -16,8 +16,7 @@ syncReduxAndRouter(history, store);
 
 ReactDOM.render(
   <Provider store={ store }>
-    <Router onUpdate={ () => window.scrollTo(0, 0) }
-      history={ history }>
+    <Router history={ history }>
       <Redirect from="/" to="en/about" />
       { routes }
     </Router>

@@ -74,6 +74,10 @@ export default class Place extends Component {
     language: React.PropTypes.string,
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { year, month, city } = this.props.params;
     const component = `${ city.replace(/ /g, '') }In${ month }${ year }`;
