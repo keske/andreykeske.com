@@ -78,10 +78,6 @@ export default class Place extends Component {
     window.scrollTo(0, 0);
   }
 
-  componentDidUpdate() {
-    window.scrollTo(0, 0);
-  }
-
   render() {
     const { year, month, city } = this.props.params;
     const component = `${ city.replace(/ /g, '') }In${ month }${ year }`;
