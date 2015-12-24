@@ -7,6 +7,12 @@ const data = [
   //   'count': '',
   // },
   {
+    'title': 'Google Street View in the beginning of the 20th century',
+    'link': 'google-street-view-20th-century',
+    'img': 'cover.png',
+    'info': 'Black and white with sepia like old photo cards',
+    'count': '',
+  }, {
     'title': 'Tmux Chess',
     'link': 'tmux-chess',
     'img': 'cover.png',

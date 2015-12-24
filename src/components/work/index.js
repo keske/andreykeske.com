@@ -9,6 +9,7 @@ import NavFooter from './_navFooter.js';
 // Works
 import {
   StraightFlush,
+  GoogleStreetView20thCentury,
   TmuxChess,
   DaftPunk,
   BlackHole,
@@ -36,6 +37,7 @@ import {
 
 const data = {
   'straight-flush': StraightFlush,
+  'google-street-view-20th-century': GoogleStreetView20thCentury,
   'tmux-chess': TmuxChess,
   'daft-punk': DaftPunk,
   'black-hole': BlackHole,
