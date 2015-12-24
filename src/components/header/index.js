@@ -69,9 +69,13 @@ export default class Header extends Component {
                 { Language.translate('Travel') }
               </Link>
 
-              <Link to={ `/${ application.language }/about` } className="nav">
-                { Language.translate('About') }
-              </Link>
+              {
+                /*
+                <Link to={ `/${ application.language }/about` } className="nav">
+                  { Language.translate('About') }
+                </Link>
+                */
+              }
             </div>
             {
               /*

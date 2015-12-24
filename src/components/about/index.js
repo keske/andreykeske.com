@@ -41,13 +41,13 @@ export default class About extends Component {
 
               <img src="me.jpg" className="face" alt="Andrey Keske" />
 
+              <h3>
+                { Language.translate('AndreyKeske') }
+              </h3>
+
               <p>
                 { Language.translate('Do') }
               </p>
-
-              <h2>
-                { Language.translate('Touch') }
-              </h2>
 
               <ul>
                 <li>
