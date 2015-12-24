@@ -1,6 +1,6 @@
 module.exports = {
 
-  Title: 'Google Street View in the beginning of the 20th century',
+  Title: 'Google Street View vintage style.',
   Text: 'Black and white with sepia like old photo cards.',
 
 };

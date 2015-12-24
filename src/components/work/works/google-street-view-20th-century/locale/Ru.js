@@ -1,6 +1,6 @@
 module.exports = {
 
-  Title: 'Черная дыра',
-  Text: 'В пространстве моего рабочего стола, была замечена черная дыра, где любая информация или объект будет удален навсегда.',
+  Title: 'Google Street View vintage style.',
+  Text: 'Black and white with sepia like old photo cards.',
 
 };
