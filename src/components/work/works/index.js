@@ -1,5 +1,6 @@
 // Part II
 export { default as StraightFlush } from './straight-flush';
+export { default as Globalization } from './globalization';
 export { default as GoogleStreetView20thCentury } from './google-street-view-20th-century';
 export { default as TmuxChess } from './tmux-chess';
 export { default as DaftPunk } from './daft-punk'; // In process

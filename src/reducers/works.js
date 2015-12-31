@@ -1,4 +1,11 @@
 const data = [
+  {
+    'title': 'Globalization',
+    'link': 'globalization',
+    'img': 'cover.png',
+    'info': 'The world when the boundaries are blurred.',
+    'count': '',
+  },
   // {
   //   'title': 'Straight Flush',
   //   'link': 'straight-flush',
@@ -10,7 +17,7 @@ const data = [
     'title': 'Google Street View in the beginning of the 20th century',
     'link': 'google-street-view-20th-century',
     'img': 'cover.png',
-    'info': 'Black and white with sepia like old photo cards',
+    'info': 'Black and white with sepia like old photo cards.',
     'count': '',
   }, {
     'title': 'Tmux Chess',
