@@ -35,7 +35,7 @@ module.exports = {
   Underground: 'Underground',
   UndergroundText: 'Dark and small',
   Trains: 'Trains is very dirty outside',
-  Elevetor: 'Elevator between station and street',
+  Elevator: 'Elevator between station and street',
 
   Graffiti: 'Graffiti',
 
