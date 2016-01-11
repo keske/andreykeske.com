@@ -15,7 +15,7 @@ export default class Header extends Component {
   static propTypes = {
     application: React.PropTypes.object,
     dispatch: React.PropTypes.func,
-  }
+  };
 
   constructor(props) {
     super(props);

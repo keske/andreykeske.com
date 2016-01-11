@@ -12,7 +12,7 @@ export default class About extends Component {
 
   static propTypes = {
     application: React.PropTypes.object,
-  }
+  };
 
   render() {
     const { application } = this.props;
