@@ -1,4 +1,46 @@
 const data = [{
+  'city': 'Revda',
+  'country': 'Russia',
+  'start': '6 January',
+  'end': '',
+
+  'month': 'January',
+  'year': 2015,
+
+  'date': new Date('1/6/2016'),
+
+  'class': '',
+
+  'cover': false,
+}, {
+  'city': 'Dvurechensk',
+  'country': 'Russia',
+  'start': '4 January',
+  'end': '',
+
+  'month': 'January',
+  'year': 2015,
+
+  'date': new Date('1/4/2016'),
+
+  'class': '',
+
+  'cover': false,
+}, {
+  'city': 'Yekaterinburg',
+  'country': 'Russia',
+  'start': '3 January',
+  'end': '11 January',
+
+  'month': 'January',
+  'year': 2015,
+
+  'date': new Date('1/3/2016'),
+
+  'class': '',
+
+  'cover': false,
+}, {
   'city': 'New York',
   'country': 'USA',
   'start': '21 November',

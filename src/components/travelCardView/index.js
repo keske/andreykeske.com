@@ -37,7 +37,7 @@ export default class Card extends Component {
           </span>
           <br />
           { showStartDateMonth(place.start, place.end) }
-          { place.end && <span>&mdash;{ place.end }</span> }
+          { place.end && <span>..{ place.end }</span> }
         </p>
       );
     };

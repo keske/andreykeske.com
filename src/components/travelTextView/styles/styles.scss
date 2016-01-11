@@ -13,12 +13,14 @@
 
     p.city {
       @include caption();
+      
       font-size: 22px;
       line-height: 30px;
     }
 
     p.date {
       @include caption();
+
       font-weight: 100;
       opacity: .7;
 

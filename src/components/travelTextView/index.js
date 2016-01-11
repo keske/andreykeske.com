@@ -21,9 +21,7 @@ export default class Text extends Component {
     const renderNewLabel = () => {
       return (
         showNewLabel(place.date) &&
-          <span className="new">
-            New
-          </span>
+          <span className="new-dot" />
       );
     };
 
@@ -34,7 +32,7 @@ export default class Text extends Component {
             { place.country },
           </span>
           { showStartDateMonth(place.start, place.end) }
-          { place.end && <span>&mdash;{ place.end }</span> }
+          { place.end && <span>..{ place.end }</span> }
         </p>
       );
     };
@@ -43,9 +41,9 @@ export default class Text extends Component {
       return (
         <div className={ styles + ' year-' + place.year + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' }>
           <div className={ 'data' }>
+            { renderNewLabel() }
             <p className="city">
               { place.city }
-              { renderNewLabel() }
             </p>
             { renderVisitedDate() }
           </div>
