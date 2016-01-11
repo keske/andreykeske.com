@@ -86,9 +86,9 @@ export default class NavFooter extends Component {
           <div className="row">
 
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a href={ `${ language }/travel` } className="list-of-cities">
+              <Link to={ `/${ application.language }/travel/card` } className="list-of-cities">
                 { Language.translate('List') }
-              </a>
+              </Link>
             </div>
 
             {

@@ -114,7 +114,7 @@ export default class Work extends Component {
               <div className="responsive-container">
                 <iframe src="//player.vimeo.com/video/40102765" width="500" height="313"
                   frameBorder="0"
-                  webkitallowfullscreen mozallowfullscreen alloWfullScreen />
+                  webkitallowfullscreen mozallowfullscreen allowFullScreen />
               </div>
 
               <h2>

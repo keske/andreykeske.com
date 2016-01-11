@@ -52,7 +52,8 @@ export default class Travel extends Component {
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <Filter mode={ mode }
-                      { ...this.props } />
+                { ...this.props }
+              />
             </div>
           </div>
           <div className="row">
@@ -61,14 +62,16 @@ export default class Travel extends Component {
                 return (
                   mode === 'card' ?
                     <Card { ...this.props }
-                          place={ place }
-                          language={ language }
-                          key={ `card-${ index }-${ place.city }` } />
+                      place={ place }
+                      language={ language }
+                      key={ `card-${ index }-${ place.city }` }
+                    />
                     :
                     <Text { ...this.props }
-                          place={ place }
-                          language={ language }
-                          key={ `text-${ index }-${ place.city }` } />
+                      place={ place }
+                      language={ language }
+                      key={ `text-${ index }-${ place.city }` }
+                    />
                 );
               })
             }
