@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 const image = require('./files/nyc.jpg');
 
@@ -10,7 +10,7 @@ export default class Soon extends Component {
   static propTypes = {
     title: React.PropTypes.string,
     date: React.PropTypes.string,
-  }
+  };
 
   render() {
     const { title, date } = this.props;

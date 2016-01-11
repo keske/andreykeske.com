@@ -4,7 +4,7 @@ export default class LinkToImage extends Component {
 
   static propTypes = {
     url: React.PropTypes.string,
-  }
+  };
 
   render() {
     const { url } = this.props;

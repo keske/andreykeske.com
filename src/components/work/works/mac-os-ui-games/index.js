@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';
@@ -14,7 +14,7 @@ export default class Work extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     application: React.PropTypes.object,
-  }
+  };
 
   render() {
     const { work } = this.props.params;
@@ -114,7 +114,7 @@ export default class Work extends Component {
               <div className="responsive-container">
                 <iframe src="//player.vimeo.com/video/40102765" width="500" height="313"
                   frameBorder="0"
-                  webkitallowfullscreen mozallowfullscreen alloWfullScreen />
+                  webkitallowfullscreen mozallowfullscreen allowFullScreen />
               </div>
 
               <h2>

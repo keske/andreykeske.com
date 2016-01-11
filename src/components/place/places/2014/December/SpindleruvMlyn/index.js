@@ -5,7 +5,7 @@ import { LinkToImage } from 'components/';
 import NavFooter from '../../../../_navFooter/';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';
@@ -14,7 +14,11 @@ export default class VeniceInMay2015 extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
-  }
+  };
+
+  state = {
+    data: null,
+  };
 
   render() {
     const { year, month, city, language } = this.props.params;
@@ -124,9 +128,5 @@ export default class VeniceInMay2015 extends Component {
         <NavFooter year={ year * 1 } month={ month } city={ city } language={ language } />
       </div>
     );
-  }
-
-  state = {
-    data: null,
   }
 }

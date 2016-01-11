@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';
@@ -14,7 +14,7 @@ export default class StraightFlush extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     application: React.PropTypes.object,
-  }
+  };
 
   render() {
     // Application settings

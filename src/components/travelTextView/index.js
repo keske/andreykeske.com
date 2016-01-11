@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { showNewLabel, showStartDateMonth } from '../../../src/utils/travel';
 
 // Component styles
-import styles from './Text.styles.js';
+import { styles } from './styles/styles.scss';
 
 export default class Text extends Component {
 
@@ -12,7 +12,7 @@ export default class Text extends Component {
     params: React.PropTypes.object,
     place: React.PropTypes.object,
     application: React.PropTypes.object,
-  }
+  };
 
   render() {
     const { place, application } = this.props;

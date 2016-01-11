@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
-import 'bootstrap-webpack';
-
 // Global styles
 import './styles/app.scss';
 
@@ -11,7 +9,7 @@ import { Header } from 'components';
 
 const metaData = {
   title: 'Andrey Keske',
-  description: 'Andrey Keske. Front End Developer, Designer.',
+  description: 'Front End Developer, Designer and Hacker',
   canonical: 'http://andreykeske.com/',
   meta: {
     charset: 'utf-8',
@@ -26,7 +24,7 @@ export default class App extends Component {
 
   static propTypes = {
     children: React.PropTypes.object,
-  }
+  };
 
   render() {
     return (

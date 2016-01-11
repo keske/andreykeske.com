@@ -6,7 +6,7 @@ import _ from 'underscore';
 import { showNewLabel } from '../../../../src/utils/travel';
 
 // Component styles
-import styles from './navFooter.styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';
@@ -23,7 +23,7 @@ export default class NavFooter extends Component {
     city: React.PropTypes.string,
     style: React.PropTypes.string,
     application: React.PropTypes.object,
-  }
+  };
 
   render() {
     const { style, places, language, year, month, city, application } = this.props;
@@ -41,9 +41,9 @@ export default class NavFooter extends Component {
     // Get current index of places in the array
     const currentPlaceIndex = _.indexOf(placesWithCover,
       _.findWhere(placesWithCover, {
-        'city': city,
-        'year': year,
-        'month': month,
+        city,
+        year,
+        month,
       }));
 
     // Length of the places array
@@ -86,9 +86,9 @@ export default class NavFooter extends Component {
           <div className="row">
 
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <a href={ `${ language }/travel` } className="list-of-cities">
+              <Link to={ `/${ application.language }/travel/card` } className="list-of-cities">
                 { Language.translate('List') }
-              </a>
+              </Link>
             </div>
 
             {

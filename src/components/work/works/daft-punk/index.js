@@ -4,7 +4,7 @@ import DocumentMeta from 'react-document-meta';
 import $ from 'jquery';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';
@@ -29,7 +29,7 @@ export default class Work extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     application: React.PropTypes.object,
-  }
+  };
 
   constructor(props) {
     super(props);

@@ -5,7 +5,7 @@ import { LinkToImage } from 'components/';
 import NavFooter from './../../../../_navFooter/';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';
@@ -14,7 +14,7 @@ export default class City extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
-  }
+  };
 
   render() {
     const { year, month, city, language } = this.props.params;

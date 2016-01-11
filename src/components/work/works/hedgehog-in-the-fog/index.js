@@ -5,7 +5,7 @@ import $ from 'jquery'; // remove
 import DocumentMeta from 'react-document-meta';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';
@@ -16,10 +16,23 @@ export default class Work extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     application: React.PropTypes.object,
-  }
+  };
 
   componentDidMount() {
     $('.show-fog-text .wrap').html($('.fog-text').html());
+  }
+
+  move() {
+    const x = event.pageX;
+    const y = event.pageY;
+
+    $('.show-fog-text')
+      .css('top', y - 100)
+      .css('left', x - 100);
+
+    $('.show-fog-text .wrap')
+      .css('top', (y * -1) + 100)
+      .css('left', (x * -1) + 100);
   }
 
   render() {
@@ -41,7 +54,7 @@ export default class Work extends Component {
     };
 
     return (
-      <div className={ styles } onMouseMove={ () => this.move() }>
+      <div className={ styles } onMouseMove={ (event) => this.move(event) }>
         <DocumentMeta {...metaData} />
         <div className="show-fog-text">
           <div className="wrap"></div>
@@ -49,7 +62,8 @@ export default class Work extends Component {
         <div className="container fog-text">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
-              col-md-offset-2 col-lg-offset-2">
+              col-md-offset-2 col-lg-offset-2"
+            >
 
               <h1>
                 Ежик в тумане
@@ -191,18 +205,4 @@ export default class Work extends Component {
       </div>
     );
   }
-
-  move() {
-    const x = event.pageX;
-    const y = event.pageY;
-
-    $('.show-fog-text')
-      .css('top', y - 100)
-      .css('left', x - 100);
-
-    $('.show-fog-text .wrap')
-      .css('top', (y * -1) + 100)
-      .css('left', (x * -1) + 100);
-  }
-
 }

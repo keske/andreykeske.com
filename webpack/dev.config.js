@@ -1,23 +1,39 @@
+<<<<<<< HEAD
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+=======
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+>>>>>>> update-all
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
+    'bootstrap-loader',
     'webpack-hot-middleware/client',
     './src/index',
   ],
-
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, '/dist/'),
     publicPath: '/dist/',
+  },
+
+  module: {
+    loaders: [{
+      test: /\.scss$/,
+      loader: 'style!css?localIdentName=[path][name]--[local]!postcss-loader!sass',
+    }],
   },
 
   plugins: [
     new webpack.DefinePlugin({
+<<<<<<< HEAD
+=======
+      'process.env': {
+        NODE_ENV: '"development"',
+      },
+>>>>>>> update-all
       __DEVELOPMENT__: true,
     }),
     new ExtractTextPlugin('bundle.css'),
@@ -28,6 +44,7 @@ module.exports = {
       jQuery: 'jquery',
     }),
   ],
+<<<<<<< HEAD
 
   resolve: {
     extensions: ['', '.jsx', '.js', '.json', '.scss'],
@@ -75,4 +92,6 @@ module.exports = {
   postcss: [
     autoprefixer({ browsers: ['last 2 versions'] }),
   ],
+=======
+>>>>>>> update-all
 };

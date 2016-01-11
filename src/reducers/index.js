@@ -7,7 +7,7 @@ import { works } from './works';
 
 const rootReducer = combineReducers({
   routing: routeReducer,
-
+  /* app reducers */
   application,
   places,
   works,

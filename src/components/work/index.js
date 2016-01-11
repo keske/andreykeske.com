@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Component styles
-import styles from './Work.styles.js';
+import { styles } from './styles/styles.scss';
 
 // Components
 import NavFooter from './_navFooter.js';
@@ -70,7 +70,7 @@ export default class Works extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     work: React.PropTypes.string,
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);

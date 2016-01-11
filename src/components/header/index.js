@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import { setLanguage } from '../../actions/application.js';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';
@@ -15,7 +15,7 @@ export default class Header extends Component {
   static propTypes = {
     application: React.PropTypes.object,
     dispatch: React.PropTypes.func,
-  }
+  };
 
   constructor(props) {
     super(props);
