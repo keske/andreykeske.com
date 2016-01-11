@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
-var csswring = require('csswring');
 
 module.exports = {
   devtool: 'source-map',
@@ -37,7 +36,7 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['', '.jsx', '.js', '.json'],
+    extensions: ['', '.jsx', '.js', '.json', '.scss'],
     modulesDirectories: ['node_modules', 'src'],
   },
 
@@ -65,11 +64,11 @@ module.exports = {
       loader: 'url?limit=10000&mimetype=image/svg+xml',
     }, {
       test: /\.js$/,
-      loaders: ['react-hot', 'babel?stage=0&loose[]=es6.modules'],
+      loaders: ['react-hot', 'babel-loader'],
       exclude: /node_modules/,
     }, {
       test: /\.scss$/,
-      loader: 'css!postcss-loader!sass',
+      loader: 'style!css!postcss-loader!sass',
     }, {
       test: /\.png$/,
       loader: 'file?name=[name].[ext]',
@@ -78,7 +77,8 @@ module.exports = {
       loader: 'file?name=[name].[ext]',
     }],
   },
-  postcss: function() {
-    return [autoprefixer({ browsers: ['last 2 versions', 'safari 5', 'ie 9', 'ios 6', 'android 4'] }), csswring];
-  },
+
+  postcss: [
+    autoprefixer({ browsers: ['last 2 versions'] }),
+  ],
 };
