@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
+import R from 'ramda';
 
 import { Link } from 'react-router';
 
@@ -31,34 +32,43 @@ export default class Works extends Component {
       },
     };
 
+    const renderWork = (index) => {
+      const work = works[index];
+
+      return (
+        <Link
+          to={ `/${ application.language }/works/${ work.link }` }
+          key={ `/${ application.language }/works/${ work.link }` }
+        >
+          <span className="card">
+            <img src={ `./src/components/work/works/${ work.link }/files/${ work.img }` } />
+            <h2>
+              { work.title }
+            </h2>
+            <p>
+              { work.info }
+            </p>
+          </span>
+        </Link>
+      );
+    };
+
     return (
       <div className={ styles }>
         <DocumentMeta { ...metaData } />
         <div className="container">
-          {
-            works.map((work) => {
-              return (
-                <Link
-                  to={ `/${ application.language }/works/${ work.link }` }
-                  key={ `/${ application.language }/works/${ work.link }` }
-                >
-                  <div className="row">
-                    <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2">
-                      <img src={ `./src/components/work/works/${ work.link }/files/${ work.img }` } />
-                    </div>
-                    <div className="col-xs-9 col-sm-9 col-md-5 col-lg-5">
-                      <h2>
-                        { work.title }
-                      </h2>
-                      <p>
-                        { work.info }
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })
-          }
+          <div className="row">
+              {
+                R.splitEvery(Object.keys(works).length / 3, Object.keys(works))
+                  .map((w) => {
+                    return (
+                      <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        { w.map((i) => renderWork(i)) }
+                      </div>
+                    );
+                  })
+              }
+          </div>
         </div>
       </div>
     );

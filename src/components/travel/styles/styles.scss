@@ -23,6 +23,8 @@
   }
 
   span.new {
+    @include caption();
+    
     font-size: 10px;
 
     color: #FFF;
@@ -30,8 +32,6 @@
 
     padding: 1px 4px;
     position: relative;
-
-    @include caption();
 
     border-radius: 2px;
 
