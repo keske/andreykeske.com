@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 const development = require('./dev.config.js');
 const production = require('./prod.config.js');
 
-require('babel-polyfill');
+require('babel-polyfill').default;
 
 const TARGET = process.env.npm_lifecycle_event;
 
