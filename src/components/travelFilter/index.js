@@ -14,7 +14,7 @@ export default class Filter extends Component {
     dispatch: React.PropTypes.func,
   };
 
-  changeMode(mode) {
+  handleViewMode(mode) {
     const { dispatch } = this.props;
 
     dispatch(setTravelViewMode(mode));
@@ -31,14 +31,16 @@ export default class Filter extends Component {
               View:
             </span>
             <Link to={ `/${ application.language }/travel/card` }
-                  onClick={ () => this.changeMode('card') }
-                  activeClassName="active">
+              onClick={ () => this.handleViewMode('card') }
+              activeClassName="active"
+            >
               ☷
             </Link>
 
             <Link to={ `/${ application.language }/travel/text` }
-                  onClick={ () => this.changeMode('text') }
-                  activeClassName="active">
+              onClick={ () => this.handleViewMode('text') }
+              activeClassName="active"
+            >
               ☰
             </Link>
           </div>

@@ -21,9 +21,11 @@ export default class Card extends Component {
       const city = place.city.replace(/ /g, '');
 
       return (
-        <span className="img-wrap">
-          <img src={ `./src/components/place/places/${ place.year }/${ place.month }/${ city }/images/thumb.jpg` } />
-        </span>
+        place.class !== 'soon'
+          ? <span className="img-wrap">
+              <img src={ `./src/components/place/places/${ place.year }/${ place.month }/${ city }/images/thumb.jpg` } />
+            </span>
+          : <span className="img-wrap soon" />
       );
     }
 
@@ -50,9 +52,9 @@ export default class Card extends Component {
     };
 
     return (
-      place.cover &&
+      (place.cover || place.class === 'soon') &&
         <Link to={ `/${ application.language }/places/${ place.year }/${ place.month }/${ place.city }` }>
-          <div className={ `${ styles } col-xs-12 col-md-12 col-md-6 col-lg-6 big-type ${ place.class }` }>
+          <div className={ `${ styles } col-xs-12 col-md-6 col-md-4 col-lg-4 big-type ${ place.class }` }>
             <div className={ 'data ' + place.class }>
               <p className="city">
                 { place.city }

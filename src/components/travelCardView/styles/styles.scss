@@ -3,8 +3,9 @@
 @import '../../../containers/app/styles/screens';
 
 // Vars
-$thumb-height-desktop: 600px;
-$thumb-height-large-desktop: 700px;
+$thumb-height-tablet: 530px;
+$thumb-height-desktop: 550px;
+$thumb-height-large-desktop: 470px;
 
 // Paragraph style
 @mixin paragraph() {
@@ -18,6 +19,7 @@ $thumb-height-large-desktop: 700px;
 
     p.city {
       @include caption();
+
       font-weight: 500;
 
       $size: 38px;
@@ -28,12 +30,9 @@ $thumb-height-large-desktop: 700px;
 
     p.date {
       @include caption();
+
       font-weight: 100;
       opacity: .7;
-
-      span.country {
-        // font-weight: 400;
-      }
     }
   }
 }
@@ -58,7 +57,6 @@ $thumb-height-large-desktop: 700px;
   @media (#{$large-desktop}) {
     height: $thumb-height-large-desktop;
   }
-
 
   &.white {
     color: #FFF !important;
@@ -86,6 +84,15 @@ $thumb-height-large-desktop: 700px;
     border-radius: 2px;
 
     margin-bottom: 30px;
+
+    &.soon {
+      display: block;
+      
+      width: 100%;
+      height: 100%;
+      
+      border: 1px solid rgba(0, 0, 0, .1);
+    }
 
     // Set height size for desktop
     @media (#{$desktop}) {

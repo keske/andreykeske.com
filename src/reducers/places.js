@@ -9,7 +9,7 @@ const data = [{
 
   'date': new Date('11/21/2015'),
 
-  'class': '',
+  'class': 'soon',
 
   'cover': false,
 }, {
