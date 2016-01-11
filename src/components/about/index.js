@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';

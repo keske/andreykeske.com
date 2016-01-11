@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Component styles
-import styles from './Work.styles.js';
+import { styles } from './styles/styles.scss';
 
 // Components
 import NavFooter from './_navFooter.js';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 export default class City extends Component {
 

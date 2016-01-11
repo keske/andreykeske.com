@@ -8,7 +8,7 @@ import Text from '../travelTextView';
 import Soon from '../soon';
 
 // Component styles
-import styles from './Travel.styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from '../../components/header/locale/';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Component styles
-import styles from './styles.js';
+import { styles } from './styles/styles.scss';
 
 const image = require('./files/nyc.jpg');
 

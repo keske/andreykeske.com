@@ -4,7 +4,7 @@ import DocumentMeta from 'react-document-meta';
 import { Link } from 'react-router';
 
 // Component styles
-import styles from './Works.styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from '../../components/header/locale/';

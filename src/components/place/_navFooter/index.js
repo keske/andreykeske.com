@@ -6,7 +6,7 @@ import _ from 'underscore';
 import { showNewLabel } from '../../../../src/utils/travel';
 
 // Component styles
-import styles from './navFooter.styles.js';
+import { styles } from './styles/styles.scss';
 
 // Language
 import Language from './locale/';

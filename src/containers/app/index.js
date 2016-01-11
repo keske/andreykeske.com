@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 // Global styles
-import 'style!./styles/app.scss';
+import './styles/app.scss';
 
 import { Header } from 'components';
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { showNewLabel, showStartDateMonth } from '../../../src/utils/travel';
 
 // Component styles
-import styles from './Card.styles.js';
+import { styles } from './styles/styles.scss';
 
 export default class Card extends Component {
 

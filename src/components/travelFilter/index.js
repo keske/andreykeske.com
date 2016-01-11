@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import { setTravelViewMode } from '../../actions/application.js';
 
 // Component styles
-import styles from './Filter.styles.js';
+import { styles } from './styles/styles.scss';
 
 export default class Filter extends Component {
 
