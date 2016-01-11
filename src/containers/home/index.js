@@ -5,7 +5,7 @@ import { About, Works } from 'components';
 
 const metaData = {
   title: 'Andrey Keske',
-  description: 'Andrey Keske. Front End Developer, Designer.',
+  description: 'Front End Developer, Designer and Hacker',
   canonical: 'http://andreykeske.com/',
   meta: {
     charset: 'utf-8',

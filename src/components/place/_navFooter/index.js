@@ -41,9 +41,9 @@ export default class NavFooter extends Component {
     // Get current index of places in the array
     const currentPlaceIndex = _.indexOf(placesWithCover,
       _.findWhere(placesWithCover, {
-        'city': city,
-        'year': year,
-        'month': month,
+        city,
+        year,
+        month,
       }));
 
     // Length of the places array

@@ -14,7 +14,7 @@ export default class Work extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     application: React.PropTypes.object,
-  };;
+  };
 
   render() {
     // Application settings
