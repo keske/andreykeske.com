@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
-import 'bootstrap-webpack';
-
 // Global styles
 import './styles/app.scss';
 
