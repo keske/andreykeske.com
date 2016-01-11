@@ -16,7 +16,7 @@ export default class Work extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     application: React.PropTypes.object,
-  }
+  };
 
   componentDidMount() {
     $('.show-fog-text .wrap').html($('.fog-text').html());

@@ -10,7 +10,7 @@ export default class Soon extends Component {
   static propTypes = {
     title: React.PropTypes.string,
     date: React.PropTypes.string,
-  }
+  };
 
   render() {
     const { title, date } = this.props;

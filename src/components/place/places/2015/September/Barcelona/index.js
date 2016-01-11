@@ -7,7 +7,7 @@ export default class City extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
-  }
+  };
 
   render() {
     const { year, month, city } = this.props.params;

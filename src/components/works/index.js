@@ -14,7 +14,7 @@ export default class Works extends Component {
   static propTypes = {
     application: React.PropTypes.object,
     works: React.PropTypes.array,
-  }
+  };
 
   render() {
     const { application } = this.props;

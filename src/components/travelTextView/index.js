@@ -12,7 +12,7 @@ export default class Text extends Component {
     params: React.PropTypes.object,
     place: React.PropTypes.object,
     application: React.PropTypes.object,
-  }
+  };
 
   render() {
     const { place, application } = this.props;

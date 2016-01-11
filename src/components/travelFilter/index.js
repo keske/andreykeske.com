@@ -12,7 +12,7 @@ export default class Filter extends Component {
   static propTypes = {
     application: React.PropTypes.object,
     dispatch: React.PropTypes.func,
-  }
+  };
 
   changeMode(mode) {
     const { dispatch } = this.props;

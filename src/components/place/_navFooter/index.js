@@ -23,7 +23,7 @@ export default class NavFooter extends Component {
     city: React.PropTypes.string,
     style: React.PropTypes.string,
     application: React.PropTypes.object,
-  }
+  };
 
   render() {
     const { style, places, language, year, month, city, application } = this.props;

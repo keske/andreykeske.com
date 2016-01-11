@@ -70,7 +70,7 @@ export default class Works extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     work: React.PropTypes.string,
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);

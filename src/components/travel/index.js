@@ -18,7 +18,7 @@ export default class Travel extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     places: React.PropTypes.array,
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);

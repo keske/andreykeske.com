@@ -14,7 +14,7 @@ export default class VeniceInMay2015 extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
-  }
+  };;
 
   render() {
     const { year, month, city, language } = this.props.params;
@@ -128,5 +128,5 @@ export default class VeniceInMay2015 extends Component {
 
   state = {
     data: null,
-  }
+  };
 }

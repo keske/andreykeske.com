@@ -12,7 +12,7 @@ export default class Works extends Component {
     application: React.PropTypes.object,
     works: React.PropTypes.array,
     work: React.PropTypes.string,
-  }
+  };
 
   render() {
     const { application, works, work } = this.props;
