@@ -13,7 +13,8 @@ from './containers';
 
 export default (
   <Route path="/" component={ App }>
-    <IndexRoute component={ About }/>
+    <IndexRoute component={ About } />
+    <Route status={404} path="*" component={ About } />
     <Route path=":language/about" component={ About } />
     <Route path=":language/travel/:mode" component={ Travel } />
     <Route path=":language/places/:year/:month/:city" component={ Place } />
