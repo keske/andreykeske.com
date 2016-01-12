@@ -3,6 +3,7 @@
 
 :local(.styles) {
   padding: 70px 0;
+  background: #FFF;
 
-  @import './card.scss';
+  @import '../../works/styles/card.scss';  
 }

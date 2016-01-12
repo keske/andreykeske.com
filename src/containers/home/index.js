@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
-import { About, Works } from 'components';
+import { Home } from 'components';
 
 const metaData = {
   title: 'Andrey Keske',
@@ -15,6 +16,9 @@ const metaData = {
   },
 };
 
+@connect(state => state.works)
+@connect(state => state.places)
+@connect(state => state.application)
 export default class App extends Component {
 
   static propTypes = {
@@ -25,8 +29,7 @@ export default class App extends Component {
     return (
       <section>
         <DocumentMeta { ...metaData } />
-        <About { ...this.props } />
-        <Works { ...this.props } />
+        <Home { ...this.props } />
       </section>
     );
   }

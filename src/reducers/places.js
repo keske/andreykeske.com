@@ -938,7 +938,7 @@ const data = [{
   'class': '',
 
   'cover': false,
-},];
+}];
 
 const initialState = {
   places: data,
@@ -946,12 +946,12 @@ const initialState = {
 
 export function places(state = initialState, action) {
   switch (action.type) {
-  case 'GET':
-    return {
-      data,
-    };
+    case 'GET':
+      return {
+        data,
+      };
 
-  default:
-    return state;
+    default:
+      return state;
   }
 }

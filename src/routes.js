@@ -3,6 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 
 import {
   App,
+  Home,
   About,
   Travel,
   Place,
@@ -13,12 +14,12 @@ from './containers';
 
 export default (
   <Route path="/" component={ App }>
-    <IndexRoute component={ About } />
-    <Route status={404} path="*" component={ About } />
+    <IndexRoute component={ Home } />
     <Route path=":language/about" component={ About } />
     <Route path=":language/travel/:mode" component={ Travel } />
     <Route path=":language/places/:year/:month/:city" component={ Place } />
     <Route path=":language/works" component={ Works } />
     <Route path=":language/works/:work" component={ Work } />
+    <Route status={404} path="*" component={ Home } />
   </Route>
 );
