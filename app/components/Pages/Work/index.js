@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -68,8 +68,8 @@ const data = {
 export default class Works extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
-    work: React.PropTypes.string,
+    params: PropTypes.object,
+    work: PropTypes.string,
   };
 
   componentDidMount() {
@@ -82,7 +82,7 @@ export default class Works extends Component {
     return (
       <div className={styles}>
         {React.createElement(data[work], this.props)}
-        <NavFooter work={work} />
+        <NavFooter {...this.props} work={work} />
       </div>
     );
   }

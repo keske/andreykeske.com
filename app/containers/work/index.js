@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 import Work from '../../components/Pages/Work';
@@ -15,10 +16,12 @@ const metaData = {
   },
 };
 
+@connect(state => state.works)
+@connect(state => state.application)
 export default class App extends Component {
 
   static propTypes = {
-    children: React.PropTypes.object,
+    children: PropTypes.object,
   };
 
   render() {

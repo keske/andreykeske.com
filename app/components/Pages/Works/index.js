@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
 
-import { Link } from 'react-router';
+// Components
+import Preview from '../../Helpers/Works/Preview';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -31,36 +32,18 @@ export default class Works extends Component {
       },
     };
 
-    const renderWork = work => (
-      <div className="row">
-        <Link
-          to={`/${application.language}/works/${work.link}`}
-          key={`/${application.language}/works/${work.link}`}
-          className="pin"
-        >
-          <div className="col-xs-12 col-md-6 col-md-4 col-lg-4">
-            <img src={`./app/components/Pages/Work/works/${work.link}/files/${work.img}`} />
-          </div>
-          <div className="col-xs-12 col-md-6 col-md-4 col-lg-4">
-            <span className="card">
-              <h2>
-                { work.title }
-              </h2>
-              <p>
-                { work.info }
-              </p>
-            </span>
-          </div>
-        </Link>
-      </div>
-    );
-
     return (
       <section className={styles}>
         <DocumentMeta {...metaData} />
         <div className="container">
           {
-            works.map(work => renderWork(work))
+            works.map((work, key) => {
+              const data = {
+                work,
+                application,
+              };
+              return <Preview {...data} key={key} />;
+            })
           }
         </div>
       </section>

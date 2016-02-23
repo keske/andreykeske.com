@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
 
-// View mode, card or text
+// Components
 import Filter from '../../Helpers/Travel/Filter';
 import Card from '../../Helpers/Travel/Card';
 import Text from '../../Helpers/Travel/Text';

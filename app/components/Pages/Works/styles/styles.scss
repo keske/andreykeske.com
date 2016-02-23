@@ -3,32 +3,4 @@
 
 :local(.styles) {
   padding: 70px 0;
-
-  .card {
-
-    h2 {
-      @include caption();
-
-      font-weight: 500;
-
-      $size: 20px;
-
-      font-size: $size;
-      line-height: $size + 4;
-
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      @include light();
-
-      color: $black;
-
-      $size: 14px;
-
-      font-size: $size;
-      line-height: $size + 6;
-    }
-  }
 }
