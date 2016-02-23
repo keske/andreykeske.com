@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
 
 // View mode, card or text
@@ -15,9 +15,9 @@ import Language from '../../Modules/Header/locale/';
 export default class Travel extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
-    places: React.PropTypes.array,
-    application: React.PropTypes.object,
+    params: PropTypes.object,
+    places: PropTypes.array,
+    application: PropTypes.object,
   };
 
   componentDidMount() {
@@ -45,9 +45,7 @@ export default class Travel extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <Filter mode={mode}
-                {...this.props}
-              />
+              <Filter {...this.props} />
             </div>
           </div>
           <div className="row">

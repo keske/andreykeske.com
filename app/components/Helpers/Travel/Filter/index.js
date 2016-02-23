@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 // Actions
@@ -7,44 +7,40 @@ import { setTravelViewMode } from '../../../../actions/application.js';
 // Component styles
 import { styles } from './styles.scss';
 
-export default class Filter extends Component {
+const Filter = props => {
 
-  static propTypes = {
-    application: React.PropTypes.object,
-    dispatch: React.PropTypes.func,
+  const handleViewMode = () => {
+    props.dispatch(setTravelViewMode(props.mode));
   };
 
-  handleViewMode = mode => {
-    const { dispatch } = this.props;
-    dispatch(setTravelViewMode(mode));
-  }
+  return (
+    <div className={styles}>
+      <div className="row">
+        <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+          <span className="title">
+            View:
+          </span>
+          <Link to={`/${props.application.language}/travel/card`}
+            onClick={() => handleViewMode('card')}
+            activeClassName="active"
+          >
+            ☷
+          </Link>
 
-  render() {
-    const { application } = this.props;
-
-    return (
-      <div className={styles}>
-        <div className="row">
-          <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-            <span className="title">
-              View:
-            </span>
-            <Link to={`/${application.language}/travel/card`}
-              onClick={() => this.handleViewMode('card')}
-              activeClassName="active"
-            >
-              ☷
-            </Link>
-
-            <Link to={`/${application.language}/travel/text`}
-              onClick={() => this.handleViewMode('text')}
-              activeClassName="active"
-            >
-              ☰
-            </Link>
-          </div>
+          <Link to={`/${props.application.language}/travel/text`}
+            onClick={() => handleViewMode('text')}
+            activeClassName="active"
+          >
+            ☰
+          </Link>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+Filter.propTypes = {
+  application: PropTypes.object,
+};
+
+export default Filter;
