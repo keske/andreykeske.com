@@ -1,9 +1,0 @@
-@import '../../../containers/app/styles/pallete';
-@import '../../../containers/app/styles/typography';
-
-:local(.styles) {
-  padding: 70px 0;
-  background: #FFF;
-
-  @import '../../works/styles/card.scss';  
-}

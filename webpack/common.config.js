@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
@@ -10,26 +11,17 @@ require('babel-polyfill').default;
 
 const TARGET = process.env.npm_lifecycle_event;
 
-const PATHS = {
-  app: path.join(__dirname, '../src'),
-  build: path.join(__dirname, '../dist'),
-};
-
 process.env.BABEL_ENV = TARGET;
 
 const common = {
-  entry: [
-    PATHS.app,
-  ],
-
   output: {
-    path: PATHS.build,
-    filename: 'bundle.js',
+    path: __dirname + '/dist/',
+    filename: '[name].js',
   },
 
   resolve: {
     extensions: ['', '.jsx', '.js', '.json', '.scss'],
-    modulesDirectories: ['node_modules', PATHS.app],
+    modulesDirectories: ['node_modules'],
   },
 
   module: {
@@ -66,6 +58,17 @@ const common = {
       loader: 'file?name=[name].[ext]',
     }],
   },
+
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: (module) => {
+        return module.resource &&
+          module.resource.indexOf('node_modules') !== -1 &&
+          module.resource.indexOf('.css') === -1;
+      },
+    }),
+  ],
 
   postcss: (webpack) => {
     return [
