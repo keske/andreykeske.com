@@ -7,7 +7,7 @@ import _ from 'underscore';
 import { showNewLabel } from '../../../../utils/travel';
 
 // Component styles
-import { styles } from './styles/styles.scss';
+import { styles } from './styles.scss';
 
 // Language
 import Language from './locale/';

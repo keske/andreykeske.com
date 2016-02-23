@@ -1,61 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
-import { showNewLabel, showStartDateMonth } from '../../../../utils/travel';
+// Utils
+import { showNewLabel } from '../../../../utils/travel';
+
+// Components
+import NewLabel from '../NewLabel';
+import VisitedDate from '../VisitedDate';
 
 // Component styles
-import { styles } from './styles/styles.scss';
+import { styles } from './styles.scss';
 
-export default class Card extends Component {
-
-  static propTypes = {
-    params: React.PropTypes.object,
-    place: React.PropTypes.object,
-    application: React.PropTypes.object,
-  };
-
-  render() {
-    const { place, application } = this.props;
-    const city = place.city.replace(/ /g, '');
-
-    const renderImage = () => (
-      <span className="img-wrap">
-        <img src={`./app/components/Pages/Place/places/${place.year}/${place.month}/${city}/images/thumb.jpg`} />
-      </span>
-    );
-
-    const renderVisitedDate = () => (
-      <p className="date">
-        <span className="country">
-          { place.country }
-        </span>
-        <br />
-        { showStartDateMonth(place.start, place.end) }
-        { place.end && <span>..{ place.end }</span> }
-      </p>
-    );
-
-    const renderNewLabel = () => (
-      showNewLabel(place.date) &&
-        <span className="new">
-          New
-        </span>
-    );
-
-    return (
-      (place.cover || place.class === 'soon') &&
-        <Link to={`/${application.language}/places/${place.year}/${place.month}/${place.city}`}>
-          <div className={`${styles} col-xs-12 col-md-6 col-md-4 col-lg-4 big-type ${place.class}`}>
-            <div className={`data ${place.class}`}>
+const Card = data => (
+  <section className={styles}>
+    {
+      data.place.cover &&
+        <Link to={`/${data.application.language}/places/${data.place.year}/${data.place.month}/${data.place.city}`}>
+          <div className={`
+              ${styles}
+              ${data.place.class}
+              col-xs-12
+              col-md-6
+              col-md-4
+              col-lg-4
+              big-type
+            `}
+          >
+            <div className={`data ${data.place.class}`}>
               <p className="city">
-                { place.city }
-                { renderNewLabel() }
+                {data.place.city}
+                {
+                  showNewLabel(data.place.date) &&
+                    <NewLabel />
+                }
               </p>
-              { renderVisitedDate() }
+              <VisitedDate {...data.place} />
             </div>
-            { renderImage() }
+            <span className="img-wrap">
+            <img src={`./app/components/Pages/Place/places/${data.place.year}/${data.place.month}/${data.place.city.replace(/ /g, '')}/images/thumb.jpg`} />
+          </span>
           </div>
         </Link>
-    );
-  }
-}
+    }
+  </section>
+);
+
+export default Card;

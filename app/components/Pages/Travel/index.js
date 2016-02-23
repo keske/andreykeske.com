@@ -17,6 +17,7 @@ export default class Travel extends Component {
   static propTypes = {
     params: React.PropTypes.object,
     places: React.PropTypes.array,
+    application: React.PropTypes.object,
   };
 
   componentDidMount() {
@@ -25,7 +26,7 @@ export default class Travel extends Component {
 
   render() {
     const { language, mode } = this.props.params;
-    const { places } = this.props;
+    const { places, application } = this.props;
 
     const metaData = {
       title: Language.translate('Travel'),
@@ -51,23 +52,25 @@ export default class Travel extends Component {
           </div>
           <div className="row">
             {
-              places.map((place, index) =>
-                mode === 'card'
+              places.map((place, index) => {
+                const data = {
+                  place,
+                  language,
+                  application,
+                };
+
+                return mode === 'card'
                   ?
                     <Card
-                      {...this.props}
-                      place={place}
-                      language={language}
+                      {...data}
                       key={`card-${index}-${place.city}`}
                     />
                   :
                     <Text
-                      {...this.props}
-                      place={place}
-                      language={language}
+                      {...data}
                       key={`text-${index}-${place.city}`}
-                    />
-              )
+                    />;
+              })
             }
           </div>
         </div>
