@@ -1,0 +1,40 @@
+@import '../../../../containers/App/styles/typography';
+@import '../../../../containers/App/styles/pallete';
+@import '../../../../containers/App/styles/screens';
+
+:local(.styles) {
+  margin-top: 70px;
+  margin-bottom: 100px;
+
+  span.new-dot {
+    $size: 5px;
+
+    background: $green;
+    border-radius: 100%;
+
+    top: 13px;
+    left: - $size;
+
+    display: inline-block;
+    position: absolute;
+
+    width: $size;
+    height: $size;
+  }
+
+  span.new {
+    @include caption();
+    
+    font-size: 10px;
+
+    color: #FFF;
+    background: $green;
+
+    padding: 1px 4px;
+    position: relative;
+
+    border-radius: 2px;
+
+    top: -21px;
+  }
+}

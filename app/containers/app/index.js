@@ -5,7 +5,7 @@ import DocumentMeta from 'react-document-meta';
 // Global styles
 import './styles/app.scss';
 
-import { Header } from '../../components';
+import Header from '../../components/Modules/Header';
 
 const metaData = {
   title: 'Andrey Keske',

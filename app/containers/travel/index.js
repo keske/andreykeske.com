@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
 // Components
-import { Travel } from '../../components';
+import Travel from '../../components/Pages/Travel';
 
 const metaData = {
   title: 'Andrey Keske',

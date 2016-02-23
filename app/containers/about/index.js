@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
-import { About } from '../../components';
+import About from '../../components/Pages/About';
 
 const metaData = {
   title: 'Andrey Keske',

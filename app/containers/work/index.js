@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
 
-import { Work } from '../../components';
+import Work from '../../components/Pages/Work';
 
 const metaData = {
   title: 'Andrey Keske',

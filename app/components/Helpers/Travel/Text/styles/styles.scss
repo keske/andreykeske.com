@@ -1,0 +1,53 @@
+@import '../../../../../containers/App/styles/typography';
+@import '../../../../../containers/App/styles/pallete';
+@import '../../../../../containers/App/styles/screens';
+
+:local(.styles) {
+
+  // Information on card
+  .data {
+
+    p {
+      display: inline-block;
+    }
+
+    p.city {
+      @include caption();
+      
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    p.date {
+      @include caption();
+
+      font-weight: 100;
+      opacity: .7;
+
+      $size: 12px;
+
+      font-size: $size;
+      line-height: $size + 2;
+
+      span.country {
+        display: inline-block;
+
+        margin-left: 17px;
+        margin-right: 7px;
+      }
+    }
+
+    transition: 0.3s;
+  }
+
+  .year-header {
+    @include caption();
+    @include light();
+
+    color: $gray;
+  }
+
+  img {
+    width: 100%;
+  }
+}

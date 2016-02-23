@@ -1,0 +1,30 @@
+@import '../../../../../containers/App/styles/typography';
+@import '../../../../../containers/App/styles/pallete';
+@import '../../../../../containers/App/styles/screens';
+
+:local(.styles) {
+  margin-top: 10px;
+  margin-bottom: 40px;
+
+  span.title {
+    display: inline-block;
+    margin-right: 20px;
+
+    font-style: italic;
+    font-size: 12px;
+    opacity: .7;
+  }
+
+  a {
+    @include ui-active();
+    
+    display: inline-block;
+    margin-right: 10px;
+
+    font-size: 12px;
+  }
+
+  &.filter-tags {
+    opacity: 0;
+  }
+}
