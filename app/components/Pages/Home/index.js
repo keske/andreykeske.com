@@ -100,15 +100,19 @@ export default class Home extends Component {
           <div className="row">
             {
               R.filter(R.propEq('cover', true), places)
-                .map((place, index) =>
-                  place.cover && index < MAX_PLACES &&
+                .map((place, index) => {
+                  const data = {
+                    place,
+                    language,
+                    application,
+                  };
+
+                  return place.cover && index < MAX_PLACES &&
                     <Card
-                      {...this.props}
-                      place={ place }
-                      language={ language }
+                      {...data}
                       key={`card-${index}-${place.city}`}
-                    />
-                )
+                    />;
+                })
             }
           </div>
           <div className="row">

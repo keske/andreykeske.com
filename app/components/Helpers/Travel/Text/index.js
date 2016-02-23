@@ -1,56 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
-import { showNewLabel, showStartDateMonth } from '../../../../utils/travel';
+import { showNewLabel } from '../../../../utils/travel';
+
+// Components
+import NewLabel from '../NewLabel';
+import VisitedDate from '../VisitedDate';
 
 // Component styles
 import { styles } from './styles.scss';
 
-export default class Text extends Component {
+const Text = data => {
 
-  static propTypes = {
-    params: React.PropTypes.object,
-    place: React.PropTypes.object,
-    application: React.PropTypes.object,
-  };
-
-  render() {
-    const { place, application } = this.props;
-    const city = place.city.replace(/ /g, '');
-
-    const renderNewLabel = () => (
-      showNewLabel(place.date) &&
-        <span className="new-dot" />
-    );
-
-    const renderVisitedDate = () => (
-      <p className="date">
-        <span className="country">
-          {place.country},
-        </span>
-        {showStartDateMonth(place.start, place.end)}
-        {place.end && <span>..{place.end}</span>}
-      </p>
-    );
-
-    const renderInner = () => (
-      <div className={`${styles} year-${place.year} col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
-        <div className={ 'data' }>
-          {renderNewLabel()}
-          <p className="city">
-            { place.city }
-          </p>
-          {renderVisitedDate()}
-        </div>
+  const renderInner = () => (
+    <div className={`
+      ${styles}
+      year-${data.place.year}
+      col-xs-12
+      col-sm-12
+      col-md-12
+      col-lg-12
+    `}
+    >
+      <div className={ 'data' }>
+        {
+          showNewLabel(data.place.date) &&
+            <NewLabel />
+        }
+        <p className="city">
+          { data.place.city }
+        </p>
+        <VisitedDate {...data.place} />
       </div>
-    );
+    </div>
+  );
 
-    return (
-      place.cover
-        ? <Link to={`/${application.language}/places/${place.year}/${place.month}/${city}`}>
-            {renderInner()}
-          </Link>
-        : renderInner()
-    );
-  }
-}
+  return (
+    data.place.cover
+      ? <Link to={`/${data.application.language}/places/${data.place.year}/${data.place.month}/${data.place.city}`}>
+          {renderInner()}
+        </Link>
+      : renderInner()
+  );
+};
+
+export default Text;

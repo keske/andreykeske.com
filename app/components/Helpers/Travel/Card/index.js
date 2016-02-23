@@ -17,14 +17,14 @@ const Card = data => (
       data.place.cover &&
         <Link to={`/${data.application.language}/places/${data.place.year}/${data.place.month}/${data.place.city}`}>
           <div className={`
-              ${styles}
-              ${data.place.class}
-              col-xs-12
-              col-md-6
-              col-md-4
-              col-lg-4
-              big-type
-            `}
+            ${styles}
+            ${data.place.class}
+            col-xs-12
+            col-md-6
+            col-md-4
+            col-lg-4
+            big-type
+          `}
           >
             <div className={`data ${data.place.class}`}>
               <p className="city">
