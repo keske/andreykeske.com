@@ -31,35 +31,31 @@ export default class Works extends Component {
       },
     };
 
-    const renderWork = (work) => {
-      // const work = works[index];
-
-      return (
-        <Link
-          to={ `/${ application.language }/works/${ work.link }` }
-          key={ `/${ application.language }/works/${ work.link }` }
-          className="pin"
-        >
-          <span className="card">
-            <img src={ `./src/components/work/works/${ work.link }/files/${ work.img }` } />
-            <h2>
-              { work.title }
-            </h2>
-            <p>
-              { work.info }
-            </p>
-          </span>
-        </Link>
-      );
-    };
+    const renderWork = work => (
+      <Link
+        to={`/${application.language}/works/${work.link}`}
+        key={`/${application.language}/works/${work.link}`}
+        className="pin"
+      >
+        <span className="card">
+          <img src={`./src/components/work/works/${work.link}/files/${work.img}`} />
+          <h2>
+            { work.title }
+          </h2>
+          <p>
+            { work.info }
+          </p>
+        </span>
+      </Link>
+    );
 
     return (
-      <div className={ styles }>
-        <DocumentMeta { ...metaData } />
+      <div className={styles}>
+        <DocumentMeta {...metaData} />
         <div className="container">
           <div className="row">
             {
-              works.map((work) => renderWork(work))
+              works.map(work => renderWork(work))
             }
           </div>
         </div>

@@ -18,44 +18,41 @@ export default class Text extends Component {
     const { place, application } = this.props;
     const city = place.city.replace(/ /g, '');
 
-    const renderNewLabel = () => {
-      return (
-        showNewLabel(place.date) &&
-          <span className="new-dot" />
-      );
-    };
+    const renderNewLabel = () => (
+      showNewLabel(place.date) &&
+        <span className="new-dot" />
+    );
 
-    const renderVisitedDate = () => {
-      return (
-        <p className="date">
-          <span className="country">
-            { place.country },
-          </span>
-          { showStartDateMonth(place.start, place.end) }
-          { place.end && <span>..{ place.end }</span> }
-        </p>
-      );
-    };
+    const renderVisitedDate = () => (
+      <p className="date">
+        <span className="country">
+          {place.country},
+        </span>
+        {showStartDateMonth(place.start, place.end)}
+        {place.end && <span>..{place.end}</span>}
+      </p>
+    );
 
     function renderInner() {
       return (
-        <div className={ styles + ' year-' + place.year + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' }>
+        <div className={`${styles} year-${place.year} col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
           <div className={ 'data' }>
-            { renderNewLabel() }
+            {renderNewLabel()}
             <p className="city">
               { place.city }
             </p>
-            { renderVisitedDate() }
+            {renderVisitedDate()}
           </div>
         </div>
       );
     }
 
     return (
-      place.cover ?
-        <Link to={ `/${ application.language }/places/${ place.year }/${ place.month }/${ city }` }>
-          { renderInner() }
-        </Link> : renderInner()
+      place.cover
+        ? <Link to={`/${application.language}/places/${place.year}/${place.month}/${city}`}>
+            { renderInner() }
+          </Link>
+        : renderInner()
     );
   }
 }

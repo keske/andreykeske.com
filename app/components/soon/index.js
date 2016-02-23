@@ -16,14 +16,14 @@ export default class Soon extends Component {
     const { title, date } = this.props;
 
     return (
-      <div className={ styles }>
-        <img src={ image } />
+      <div className={styles}>
+        <img src={image} />
         <div className="info">
           <p className="title">
-            { title }
+            {title}
           </p>
           <p className="date">
-            { date }
+            {date}
           </p>
           <p className="soon">
             Soon

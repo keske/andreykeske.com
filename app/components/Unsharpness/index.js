@@ -9,21 +9,17 @@ export default class Unsharpness extends Component {
     image: React.PropTypes.string,
   };
 
-  componentDidMount() {
-    console.log(this.refs.unsharpness.clientHeight);
-    console.log(this.refs.unsharpness.offsetHeight);
-  }
 
   render() {
     const { image } = this.props;
 
     return (
-      <div className={ styles } ref="unsharpness">
+      <div className={styles} ref="unsharpness">
         <div className="up">
-          <img src={ image } />
+          <img src={image} />
         </div>
         <div className="down">
-          <img src={ image } />
+          <img src={image} />
         </div>
       </div>
     );

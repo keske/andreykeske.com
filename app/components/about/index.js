@@ -33,7 +33,7 @@ export default class About extends Component {
 
     return (
       <section>
-        <div className={ `${ styles } container` }>
+        <div className={`${styles} container`}>
           <DocumentMeta {...metaData} />
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8

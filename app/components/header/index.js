@@ -52,7 +52,7 @@ export default class Header extends Component {
     Language.setLocale(application.language);
 
     return (
-      <div className={ `${ styles }` } ref="header">
+      <div className={`${styles}`} ref="header">
         <div className="container">
           <div className="row">
             <div className="col-xs-4 col-sm-4 col-md-2 col-lg-2">
@@ -61,18 +61,18 @@ export default class Header extends Component {
               </Link>
             </div>
             <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9 header-nav">
-              <Link to={ `/${ application.language }/works` } className="nav">
+              <Link to={`/${application.language}/works`} className="nav">
                 { Language.translate('Works') }
               </Link>
 
               <Link
-                to={ `/${ application.language }/travel/${ application.mode }` }
+                to={`/${application.language}/travel/${application.mode}` }
                 className="nav"
               >
                 { Language.translate('Travel') }
               </Link>
 
-              <Link to={ `/${ application.language }/about` } className="nav">
+              <Link to={`/${application.language}/about`} className="nav">
                 { Language.translate('About') }
               </Link>
             </div>

@@ -1,6 +1,9 @@
-const http = require('http');
-const express = require('express');
-const app = express();
+import Express from 'express';
+import http from 'http';
+
+const app = new Express();
+const server = new http.Server(app);
+const port = 3000;
 
 app.use(require('morgan')('short'));
 
@@ -17,16 +20,15 @@ app.use(require('morgan')('short'));
     log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000,
   }));
 
-  app.use(express.static(__dirname + '/'));
+  app.use(Express.static(__dirname + '/'));
 })();
 
 app.get(/.*/, function root(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-const server = http.createServer(app);
-server.listen(process.env.PORT || 3000, function onListen() {
-  const address = server.address();
-  console.log('Listening on: %j', address);
-  console.log(' -> that probably means: http://localhost:%d', address.port);
+server.listen(port, () => {
+  const host = server.address().address;
+
+  console.log('Server is listening on http://%s:%s', host, port);
 });

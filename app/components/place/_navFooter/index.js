@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import R from 'ramda';
 import _ from 'underscore';
 
 import { showNewLabel } from '../../../utils/travel';
@@ -29,17 +30,17 @@ export default class NavFooter extends Component {
     const { style, places, language, year, month, city, application } = this.props;
 
     // Reduce places
-    const reducedPlaces = _.reduceRight(places, (a, b) => {
+    const reducedPlaces = R.reduceRight(places, (a, b) => {
       return a.concat(b);
     }, []);
 
     // Get places with cover
-    const placesWithCover = _.filter(reducedPlaces, (place) => {
+    const placesWithCover = R.filter(reducedPlaces, (place) => {
       return place.cover ? place : null;
     });
 
     // Get current index of places in the array
-    const currentPlaceIndex = _.indexOf(placesWithCover,
+    const currentPlaceIndex = R.indexOf(placesWithCover,
       _.findWhere(placesWithCover, {
         city,
         year,

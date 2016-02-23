@@ -10,8 +10,8 @@ export default class LinkToImage extends Component {
     const { url } = this.props;
 
     return (
-      <a target="_blank" href={ url }>
-        <img src={ url } />
+      <a target="_blank" href={url}>
+        <img src={url} />
       </a>
     );
   }

@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require('path');
 const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
 const merge = require('webpack-merge');
@@ -62,7 +61,7 @@ const common = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: (module) => {
+      minChunks: module => {
         return module.resource &&
           module.resource.indexOf('node_modules') !== -1 &&
           module.resource.indexOf('.css') === -1;
@@ -70,13 +69,13 @@ const common = {
     }),
   ],
 
-  postcss: (webpack) => {
+  postcss: wp => {
     return [
       autoprefixer({
         browsers: ['last 2 versions'],
       }),
       postcssImport({
-        addDependencyTo: webpack,
+        addDependencyTo: wp,
       }),
     ];
   },
