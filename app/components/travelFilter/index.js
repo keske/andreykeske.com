@@ -30,14 +30,14 @@ export default class Filter extends Component {
               View:
             </span>
             <Link to={`/${application.language}/travel/card`}
-              onClick={this.handleViewMode('card')}
+              onClick={() => this.handleViewMode('card')}
               activeClassName="active"
             >
               ☷
             </Link>
 
             <Link to={`/${application.language}/travel/text`}
-              onClick={this.handleViewMode('text')}
+              onClick={() => this.handleViewMode('text')}
               activeClassName="active"
             >
               ☰

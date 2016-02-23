@@ -33,24 +33,22 @@ export default class Text extends Component {
       </p>
     );
 
-    function renderInner() {
-      return (
-        <div className={`${styles} year-${place.year} col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
-          <div className={ 'data' }>
-            {renderNewLabel()}
-            <p className="city">
-              { place.city }
-            </p>
-            {renderVisitedDate()}
-          </div>
+    const renderInner = () => (
+      <div className={`${styles} year-${place.year} col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
+        <div className={ 'data' }>
+          {renderNewLabel()}
+          <p className="city">
+            { place.city }
+          </p>
+          {renderVisitedDate()}
         </div>
-      );
-    }
+      </div>
+    );
 
     return (
       place.cover
         ? <Link to={`/${application.language}/places/${place.year}/${place.month}/${city}`}>
-            { renderInner() }
+            {renderInner()}
           </Link>
         : renderInner()
     );

@@ -80,7 +80,7 @@ export default class Works extends Component {
     const { work } = this.props.params;
 
     return (
-      <div>
+      <div className={styles}>
         {React.createElement(data[work], this.props)}
         <NavFooter work={work} />
       </div>

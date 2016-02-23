@@ -24,8 +24,8 @@ export default class App extends Component {
   render() {
     return (
       <section>
-        <DocumentMeta { ...metaData } />
-        <Travel { ...this.props } />
+        <DocumentMeta {...metaData} />
+        <Travel {...this.props} />
       </section>
     );
   }

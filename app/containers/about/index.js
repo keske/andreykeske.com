@@ -26,8 +26,8 @@ export default class App extends Component {
   render() {
     return (
       <section>
-        <DocumentMeta { ...metaData } />
-        <About { ...this.props } />
+        <DocumentMeta {...metaData} />
+        <About {...this.props} />
       </section>
     );
   }

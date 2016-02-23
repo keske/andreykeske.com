@@ -20,16 +20,11 @@ const metaData = {
 @connect(state => state.works)
 @connect(state => state.application)
 export default class App extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <section>
-        <DocumentMeta { ...metaData } />
-        <Works { ...this.props } />
+        <DocumentMeta {...metaData} />
+        <Works {...this.props} />
       </section>
     );
   }

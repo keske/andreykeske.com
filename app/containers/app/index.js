@@ -29,9 +29,9 @@ export default class App extends Component {
   render() {
     return (
       <section>
-        <DocumentMeta { ...metaData } />
-        <Header { ...this.props } />
-        { this.props.children }
+        <DocumentMeta {...metaData} />
+        <Header {...this.props} />
+        {this.props.children}
       </section>
     );
   }
