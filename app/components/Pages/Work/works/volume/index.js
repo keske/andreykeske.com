@@ -20,7 +20,7 @@ export default class Work extends Component {
     const { work } = this.props.params;
 
     // Path to photos
-    const path = `./src/components/work/works/${ work }/files`;
+    const path = `./app/components/Pages/Work/works/${work}/files`;
 
     // Application settings
     const { application } = this.props;
@@ -44,8 +44,13 @@ export default class Work extends Component {
         <DocumentMeta {...metaData} />
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
-              col-md-offset-2 col-lg-offset-2">
+            <div className={`
+                col-xs-12
+                col-sm-12
+                col-md-8 col-md-offset-2
+                col-lg-8 col-lg-offset-2
+            `}
+            >
 
               <h1>
                 { Language.translate('Title') }
@@ -62,15 +67,15 @@ export default class Work extends Component {
               </p>
 
               <h4>
-                <a href={ `${path}/volume.andreykeske.com/index.html` }>
+                <a href={`${path}/volume.andreykeske.com/index.html` }>
                   { Language.translate('OpenAndScroll') }
                 </a>
               </h4>
 
               <br />
 
-              <a href={ `${path}/volume.andreykeske.com/index.html` }>
-                <img src={ `${path}/fade.jpg` } />
+              <a href={`${path}/volume.andreykeske.com/index.html` }>
+                <img src={`${path}/fade.jpg` } />
               </a>
 
               <h2>
@@ -82,15 +87,15 @@ export default class Work extends Component {
               </p>
 
               <h4>
-                <a href={ `${path}/resize.andreykeske.com/index.html` }>
+                <a href={`${path}/resize.andreykeske.com/index.html` }>
                   { Language.translate('OpenAndResize') }
                 </a>
               </h4>
 
               <br />
 
-              <a href={ `${path}/resize.andreykeske.com/index.html` }>
-                <img src={ `${path}/resize.jpg` } />
+              <a href={`${path}/resize.andreykeske.com/index.html` }>
+                <img src={`${path}/resize.jpg` } />
               </a>
 
             </div>

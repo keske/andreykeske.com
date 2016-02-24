@@ -24,7 +24,7 @@ export default class TmuxChess extends Component {
     Language.setLocale(application.language);
 
     const metaData = {
-      title: `${ Language.translate('Title') } — ${ Language.translate('Text') }`,
+      title: `${Language.translate('Title')} — ${Language.translate('Text')}`,
       description: Language.translate('Text'),
       meta: {
         charset: 'utf-8',

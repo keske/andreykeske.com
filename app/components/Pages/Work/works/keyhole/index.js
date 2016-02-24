@@ -17,11 +17,22 @@ export default class Work extends Component {
     application: React.PropTypes.object,
   };
 
+  move() {
+    // This is old code with jQuery.
+    // TODO: jQuery -> JS
+    const x = (event.pageX - $(event.target).offset().left) / ($(event.target).innerWidth()) * 100;
+    const y = (event.pageY - $(event.target).offset().top) / ($(event.target).innerHeight()) * 100;
+
+    $('.keyhole-girl img')
+      .css('marginLeft', x * -0.9)
+      .css('marginTop', y * -0.1);
+  }
+
   render() {
     const { work } = this.props.params;
 
     // Path to photos
-    const path = `./src/components/work/works/${ work }/files`;
+    const path = `./app/components/Pages/Work/works/${work}/files`;
 
     // Application settings
     const { application } = this.props;
@@ -45,8 +56,13 @@ export default class Work extends Component {
         <DocumentMeta {...metaData} />
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
-              col-md-offset-2 col-lg-offset-2">
+            <div className={`
+                col-xs-12
+                col-sm-12
+                col-md-8 col-md-offset-2
+                col-lg-8 col-lg-offset-2
+            `}
+            >
 
               <h1>
                 { Language.translate('Title') }
@@ -58,12 +74,12 @@ export default class Work extends Component {
               </p>
 
               <div className="keyhole-girl keyhole-girl-center">
-                <img src={ `${ path }/girl.png` } alt="Girl" ref="girl" />
+                <img src={`${path}/girl.png` } alt="Girl" ref="girl" />
               </div>
 
               <div className="keyhole keyhole-center"
                 onMouseMove={ () => this.move() }>
-                <img src={ `${ path }/keyhole.png` } alt="Keyhole" />
+                <img src={`${path}/keyhole.png` } alt="Keyhole" />
               </div>
 
             </div>
@@ -72,16 +88,4 @@ export default class Work extends Component {
       </div>
     );
   }
-
-  move() {
-    // This is old code with jQuery.
-    // TODO: jQuery -> JS
-    const x = (event.pageX - $(event.target).offset().left) / ($(event.target).innerWidth()) * 100;
-    const y = (event.pageY - $(event.target).offset().top) / ($(event.target).innerHeight()) * 100;
-
-    $('.keyhole-girl img')
-      .css('marginLeft', x * -0.9)
-      .css('marginTop', y * -0.1);
-  }
-
 }

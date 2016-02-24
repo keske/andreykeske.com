@@ -20,7 +20,7 @@ export default class Work extends Component {
     const { work } = this.props.params;
 
     // Path to photos
-    const path = `./src/components/work/works/${ work }/files`;
+    const path = `./app/components/Pages/Work/works/${work}/files`;
 
     // Application settings
     const { application } = this.props;
@@ -44,8 +44,13 @@ export default class Work extends Component {
         <DocumentMeta {...metaData} />
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
-              col-md-offset-2 col-lg-offset-2">
+            <div className={`
+                col-xs-12
+                col-sm-12
+                col-md-8 col-md-offset-2
+                col-lg-8 col-lg-offset-2
+            `}
+            >
 
               <h1>
                 { Language.translate('Title') }
@@ -62,11 +67,11 @@ export default class Work extends Component {
 
           <div className="row images-block">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${path}/1.jpeg` } />
+              <img src={`${path}/1.jpeg` } />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${path}/2.jpeg` } />
+              <img src={`${path}/2.jpeg` } />
             </div>
           </div>
 
@@ -74,11 +79,11 @@ export default class Work extends Component {
 
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${path}/3.jpeg` } />
+              <img src={`${path}/3.jpeg` } />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${path}/4.jpeg` } />
+              <img src={`${path}/4.jpeg` } />
             </div>
           </div>
         </div>
