@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ParallaxComponent from 'react-parallax-component';
 
 // Components
-import { NavFooter } from '../../../../../../Helpers/Travel/NavFooter';
+import NavFooter from '../../../../../../Helpers/Travel/NavFooter';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -13,14 +13,14 @@ import Language from './locale';
 export default class City extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
+    routeParams: React.PropTypes.object,
   };
 
   render() {
-    const { year, month, city, language } = this.props.params;
+    const { year, month, city, language } = this.props.routeParams;
 
     // Path to photos
-    const img = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
+    const img = `./app/components/Pages/Place/places/${year}/${month}/${city.replace(/ /g, '')}/images`;
 
     // Set language
     Language.setLocale(language);
@@ -30,58 +30,72 @@ export default class City extends Component {
     };
 
     return (
-      <div className={ styles }>
+      <div className={styles}>
 
-        <div style={ wrap }>
+        <div style={wrap}>
 
-          <ParallaxComponent speed={ `${Math.random() * (0.02 - 0) + 0}` }
-                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
-                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
-                             left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
-            <img src={`${ img }/top.jpg`} />
+          <ParallaxComponent
+            speed={`${Math.random() * (0.02 - 0) + 0}`}
+            width={`${Math.floor(Math.random() * (700 - 300) + 300)}`}
+            top={`${Math.floor(Math.random() * (1000 - 0) + 0)}`}
+            left={`${Math.floor(Math.random() * (80 - 0) + 0)}%`}
+          >
+            <img src={`${img}/top.jpg`} />
           </ParallaxComponent>
 
-          <ParallaxComponent speed={ `${Math.random() * (0.02 - 0) + 0}` }
-                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
-                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
-                             left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
-            <img src={`${ img }/italy.jpg`} />
+          <ParallaxComponent
+            speed={`${Math.random() * (0.02 - 0) + 0}`}
+            width={`${Math.floor(Math.random() * (700 - 300) + 300)}`}
+            top={`${Math.floor(Math.random() * (1000 - 0) + 0)}`}
+            left={`${Math.floor(Math.random() * (80 - 0) + 0)}%`}
+          >
+            <img src={`${img}/italy.jpg`} />
           </ParallaxComponent>
 
-          <ParallaxComponent speed={ `${Math.random() * (0.02 - 0) + 0}` }
-                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
-                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
-                             left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
-            <img src={`${ img }/bird.jpg`} />
+          <ParallaxComponent
+            speed={`${Math.random() * (0.02 - 0) + 0}`}
+            width={`${Math.floor(Math.random() * (700 - 300) + 300)}`}
+            top={`${Math.floor(Math.random() * (1000 - 0) + 0)}`}
+            left={`${Math.floor(Math.random() * (80 - 0) + 0)}%`}
+          >
+            <img src={`${img}/bird.jpg`} />
           </ParallaxComponent>
 
-          <ParallaxComponent speed={ `${Math.random() * (0.02 - 0) + 0}` }
-                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
-                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
-                             left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
-            <img src={`${ img }/heads.jpg`} />
+          <ParallaxComponent
+            speed={`${Math.random() * (0.02 - 0) + 0}`}
+            width={`${Math.floor(Math.random() * (700 - 300) + 300)}`}
+            top={`${Math.floor(Math.random() * (1000 - 0) + 0)}`}
+            left={`${Math.floor(Math.random() * (80 - 0) + 0)}%`}
+          >
+            <img src={`${img}/heads.jpg`} />
           </ParallaxComponent>
 
-          <ParallaxComponent speed={ `${Math.random() * (0.02 - 0) + 0}` }
-                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
-                             top={`${ Math.floor(Math.random() * (1000 - 0) + 0) }`}
-                             left={ `${Math.floor(Math.random() * (80 - 0) + 0)}%` }>
-            <img src={`${ img }/house.jpg`} />
+          <ParallaxComponent
+            speed={`${Math.random() * (0.02 - 0) + 0}`}
+            width={`${Math.floor(Math.random() * (700 - 300) + 300)}`}
+            top={`${Math.floor(Math.random() * (1000 - 0) + 0)}`}
+            left={`${Math.floor(Math.random() * (80 - 0) + 0)}%`}
+          >
+            <img src={`${img}/house.jpg`} />
           </ParallaxComponent>
 
-          <ParallaxComponent speed={ `${Math.random() * (0.02 - 0) + 0}` }
-                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
-                             top="100"
-                             left="180">
+          <ParallaxComponent
+            speed={`${Math.random() * (0.02 - 0) + 0}`}
+            width={`${Math.floor(Math.random() * (700 - 300) + 300)}`}
+            top="100"
+            left="180"
+          >
             <div className="top-page-city-name">
               { Language.translate('City') }
             </div>
           </ParallaxComponent>
 
-          <ParallaxComponent speed={ `${Math.random() * (0.02 - 0) + 0}` }
-                             width={`${ Math.floor(Math.random() * (700 - 300) + 300)} `}
-                             top="200"
-                             left="180">
+          <ParallaxComponent
+            speed={`${Math.random() * (0.02 - 0) + 0}`}
+            width={`${Math.floor(Math.random() * (700 - 300) + 300)}`}
+            top="200"
+            left="180"
+          >
             <p>
               { Language.translate('Intro') }
             </p>
@@ -89,7 +103,7 @@ export default class City extends Component {
 
         </div>
 
-        <NavFooter style="" year={ year * 1 } month={ month } city={ city } language={ language } />
+        <NavFooter style="" year={year * 1} month={month} city={city} language={language} />
       </div>
     );
   }

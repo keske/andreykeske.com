@@ -19,7 +19,7 @@ const metaData = {
 
 @connect(state => state.places)
 @connect(state => state.application)
-export default class App extends Component {
+export default class TravelContainer extends Component {
 
   render() {
     return (

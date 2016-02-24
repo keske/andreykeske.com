@@ -75,7 +75,7 @@ const data = {
 export default class Place extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
+    routeParams: React.PropTypes.object,
     language: React.PropTypes.string,
   };
 
@@ -84,24 +84,27 @@ export default class Place extends Component {
   }
 
   render() {
-    const { year, month, city } = this.props.params;
-    const component = `${ city.replace(/ /g, '') }In${ month }${ year }`;
+    const { year, month, city } = this.props.routeParams;
+    const component = `${city.replace(/ /g, '')}In${month}${year}`;
 
     const metaData = {
-      title: `${ city } In ${ month } ${ year }`,
-      description: `${ year } ${ month } ${ city }`,
+      title: `${city} In ${month} ${year}`,
+      description: `${year} ${month} ${city}`,
       meta: {
         charset: 'utf-8',
         name: {
-          keywords: `${ year }, ${ month }, ${ city }`,
+          keywords: `${year}, ${month}, ${city}`,
         },
       },
     };
 
+    console.log(component)
+    console.log(data[component])
+
     return (
-      <div className={ `${ styles } place.class` }>
-        <DocumentMeta { ...metaData } />
-        { React.createElement(data[component], this.props) }
+      <div className={`${styles} place.class`}>
+        <DocumentMeta {...metaData} />
+        {React.createElement(data[component], this.props)}
       </div>
     );
   }

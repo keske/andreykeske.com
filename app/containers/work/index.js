@@ -18,7 +18,7 @@ const metaData = {
 
 @connect(state => state.works)
 @connect(state => state.application)
-export default class App extends Component {
+export default class WorkContainer extends Component {
 
   static propTypes = {
     children: PropTypes.object,

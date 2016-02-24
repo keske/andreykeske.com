@@ -19,7 +19,7 @@ const metaData = {
 @connect(state => state.works)
 @connect(state => state.places)
 @connect(state => state.application)
-export default class App extends Component {
+export default class HomeContainer extends Component {
 
   static propTypes = {
     children: React.PropTypes.object,
