@@ -13,7 +13,7 @@ export default class City extends Component {
     const { year, month, city } = this.props.params;
 
     return (
-      <div className={ styles }>
+      <div className={styles}>
         <iframe src={ `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/index.html` } />
       </div>);
   }

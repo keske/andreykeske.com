@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 // Components
-import { LinkToImage } from '../../../../../../Helpers/LinkToImage';
-import { NavFooter } from '../../../../../../Helpers/Travel/NavFooter';
+import LinkToImage from '../../../../../../Helpers/LinkToImage';
+import NavFooter from '../../../../../../Helpers/Travel/NavFooter';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -24,14 +24,14 @@ export default class VeniceInMay2015 extends Component {
     const { year, month, city, language } = this.props.params;
 
     // Path to photos
-    const img = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
+    const img = `./app/components/Pages/Place/places/${year}/${month}/${city.replace(/ /g, '')}/images`;
 
     // Set language
     Language.setLocale(language);
 
     return (
-      <div className={ styles }>
-        <img src={ `${ img }/15.jpg` } />
+      <div className={styles}>
+        <img src={ `${img}/15.jpg` } />
 
         <div className="top-page-city-name on-image">
           { Language.translate('SpindleruvMlyn') }
@@ -47,11 +47,11 @@ export default class VeniceInMay2015 extends Component {
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/2.jpg` } />
+              <LinkToImage url={ `${img}/2.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/4.jpg` } />
+              <LinkToImage url={ `${img}/4.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -65,67 +65,67 @@ export default class VeniceInMay2015 extends Component {
         </div>
 
         <div className="photo">
-          <img src={ `${ img }/16.jpg` } />
+          <img src={ `${img}/16.jpg` } />
         </div>
 
         <div className="container">
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/20.jpg` } />
+              <LinkToImage url={ `${img}/20.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/19.jpg` } />
+              <LinkToImage url={ `${img}/19.jpg` } />
             </div>
 
           </div>
         </div>
 
         <div className="photo">
-          <img src={ `${ img }/17.jpg` } />
+          <img src={ `${img}/17.jpg` } />
         </div>
 
         <div className="container">
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/23.jpg` } />
+              <LinkToImage url={ `${img}/23.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/24.jpg` } />
+              <LinkToImage url={ `${img}/24.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/25.jpg` } />
+              <LinkToImage url={ `${img}/25.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/26.jpg` } />
+              <LinkToImage url={ `${img}/26.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/27.jpg` } />
+              <LinkToImage url={ `${img}/27.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/28.jpg` } />
+              <LinkToImage url={ `${img}/28.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/29.jpg` } />
+              <LinkToImage url={ `${img}/29.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/3.jpg` } />
+              <LinkToImage url={ `${img}/3.jpg` } />
             </div>
 
           </div>
         </div>
 
 
-        <NavFooter year={ year * 1 } month={ month } city={ city } language={ language } />
+        <NavFooter year={year * 1} month={month} city={city} language={language} />
       </div>
     );
   }

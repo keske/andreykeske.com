@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 // Components
-import { LinkToImage } from '../../../../../../Helpers/LinkToImage';
-import { NavFooter } from '../../../../../../Helpers/Travel/NavFooter';
+import LinkToImage from '../../../../../../Helpers/LinkToImage';
+import NavFooter from '../../../../../../Helpers/Travel/NavFooter';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -20,22 +20,22 @@ export default class City extends Component {
     const { year, month, city, language } = this.props.params;
 
     // Path to photos
-    const img = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
+    const img = `./app/components/Pages/Place/places/${year}/${month}/${city.replace(/ /g, '')}/images`;
 
     // Set language
     Language.setLocale(language);
 
     return (
-      <div className={ styles }>
-        <LinkToImage url={ `${ img }/thumb.jpg` } />
+      <div className={styles}>
+        <LinkToImage url={ `${img}/thumb.jpg` } />
 
         <div className="top-page-city-name on-image">
           { Language.translate('Prague') }
         </div>
 
-        <LinkToImage url={ `${ img }/1.jpg` } />
+        <LinkToImage url={ `${img}/1.jpg` } />
 
-        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ language } />
+        <NavFooter style="white bottom-on-photo" year={year * 1} month={month} city={city} language={language} />
       </div>
     );
   }

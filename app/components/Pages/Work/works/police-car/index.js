@@ -35,7 +35,7 @@ export default class Work extends Component {
     };
 
     return (
-      <div className={ styles }>
+      <div className={styles}>
         <DocumentMeta {...metaData} />
         <div className="container">
           <div className="row">

@@ -1,76 +1,10 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
 
+import * as cities from './places/index.js';
+
 // Component styles
 import { styles } from './styles/styles.scss';
-
-// Places
-import {
-  // January 2016
-  YekaterinburgInJanuary2016,
-
-  // September 2015
-  BarcelonaInSeptember2015,
-
-  // August 2015
-  TallinnInAugust2015,
-
-  // May 2015
-  VeniceInMay2015,
-  FlorenceInMay2015,
-  RomeInMay2015,
-
-  // January 2015
-  PragueInJanuary2015,
-  MunichInJanuary2015,
-
-  // September 2014
-  BerlinInSeptember2014,
-  BudapestInSeptember2014,
-  PragueInSeptember2014,
-
-  // October 2014
-  HelsinkiInOctober2014,
-
-  // March 2014
-  TallinnInMarch2014,
-
-  // December 2014
-  SpindleruvMlynInDecember2014,
-} from './places/index.js';
-
-const data = {
-  // January 2016
-  YekaterinburgInJanuary2016,
-
-  // September 2015
-  BarcelonaInSeptember2015,
-  // August 2015
-  TallinnInAugust2015,
-
-  // May 2015
-  VeniceInMay2015,
-  FlorenceInMay2015,
-  RomeInMay2015,
-
-  // January 2015
-  PragueInJanuary2015,
-  MunichInJanuary2015,
-
-  // September 2014
-  BerlinInSeptember2014,
-  BudapestInSeptember2014,
-  PragueInSeptember2014,
-
-  // October 2014
-  HelsinkiInOctober2014,
-
-  // March 2014
-  TallinnInMarch2014,
-
-  // December 2014
-  SpindleruvMlynInDecember2014,
-};
 
 export default class Place extends Component {
 
@@ -98,13 +32,10 @@ export default class Place extends Component {
       },
     };
 
-    console.log(component)
-    console.log(data[component])
-
     return (
-      <div className={`${styles} place.class`}>
+      <div className={styles}>
         <DocumentMeta {...metaData} />
-        {React.createElement(data[component], this.props)}
+        {React.createElement(cities[component], this.props)}
       </div>
     );
   }

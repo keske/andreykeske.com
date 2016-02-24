@@ -5,7 +5,7 @@ const placeInsertTemplate = {
     const { year, month, city } = this.props.params;
 
     // Path to photos
-    const img = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
+    const img = `./app/components/Pages/Place/places/${year}/${month}/${city.replace(/ /g, '')}/images`;
 
     // Template url
     const url = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/index.html`;

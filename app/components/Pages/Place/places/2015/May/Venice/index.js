@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 // Components
-import { LinkToImage } from '../../../../../../Helpers/LinkToImage';
-import { NavFooter } from '../../../../../../Helpers/Travel/NavFooter';
+import LinkToImage from '../../../../../../Helpers/LinkToImage';
+import NavFooter from '../../../../../../Helpers/Travel/NavFooter';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -20,14 +20,14 @@ export default class City extends Component {
     const { year, month, city, language } = this.props.params;
 
     // Path to photos
-    const img = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
+    const img = `./app/components/Pages/Place/places/${year}/${month}/${city.replace(/ /g, '')}/images`;
 
     // Set language
     Language.setLocale(language);
 
     return (
-      <div className={ styles }>
-        <img src={ `${ img }/top.jpg` } />
+      <div className={styles}>
+        <img src={ `${img}/top.jpg` } />
 
         <div className="top-page-city-name on-image">
           { Language.translate('Venice') }
@@ -43,15 +43,15 @@ export default class City extends Component {
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <LinkToImage url={ `${ img }/linen/linen-3.jpg` } />
+              <LinkToImage url={ `${img}/linen/linen-3.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <LinkToImage url={ `${ img }/linen/linen-2.jpg` } />
+              <LinkToImage url={ `${img}/linen/linen-2.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <LinkToImage url={ `${ img }/linen/linen-1.jpg` } />
+              <LinkToImage url={ `${img}/linen/linen-1.jpg` } />
             </div>
 
           </div>
@@ -67,15 +67,15 @@ export default class City extends Component {
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/life/life-1.jpg` } />
+              <LinkToImage url={ `${img}/life/life-1.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/life/life-2.jpg` } />
+              <LinkToImage url={ `${img}/life/life-2.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <LinkToImage url={ `${ img }/life/life-3.jpg` } />
+              <LinkToImage url={ `${img}/life/life-3.jpg` } />
             </div>
 
           </div>
@@ -91,27 +91,27 @@ export default class City extends Component {
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/streets/street-1.jpg` } />
+              <LinkToImage url={ `${img}/streets/street-1.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/streets/street-2.jpg` } />
+              <LinkToImage url={ `${img}/streets/street-2.jpg` } />
             </div>
 
             <div className="photo photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/streets/street-5.jpg` } />
+              <LinkToImage url={ `${img}/streets/street-5.jpg` } />
             </div>
 
             <div className="photo photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${ img }/streets/street-6.jpg` } />
+              <LinkToImage url={ `${img}/streets/street-6.jpg` } />
             </div>
 
             <div className="photo photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${ img }/streets/street-3.jpg` } />
+              <img src={ `${img}/streets/street-3.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${ img }/streets/street-4.jpg` } />
+              <img src={ `${img}/streets/street-4.jpg` } />
             </div>
 
           </div>
@@ -127,63 +127,63 @@ export default class City extends Component {
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${ img }/channels/channel-5.jpg` } />
+              <img src={ `${img}/channels/channel-5.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${ img }/channels/channel-1.jpg` } />
+              <img src={ `${img}/channels/channel-1.jpg` } />
             </div>
 
             <div className="photo col-xs-6 col-sm-6 col-md-4 col-lg-4">
-              <img src={ `${ img }/channels/channel-3.jpg` } />
+              <img src={ `${img}/channels/channel-3.jpg` } />
             </div>
 
             <div className="photo col-xs-6 col-sm-6 col-md-4 col-lg-4">
-              <img src={ `${ img }/channels/channel-4.jpg` } />
+              <img src={ `${img}/channels/channel-4.jpg` } />
             </div>
 
             <div className="photo col-xs-6 col-sm-6 col-md-4 col-lg-4">
-              <img src={ `${ img }/channels/channel-2.jpg` } />
+              <img src={ `${img}/channels/channel-2.jpg` } />
             </div>
 
             <div className="photo col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <img src={ `${ img }/channels/channel-6.jpg` } />
+              <img src={ `${img}/channels/channel-6.jpg` } />
             </div>
 
             <div className="photo col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <img src={ `${ img }/channels/channel-7.jpg` } />
+              <img src={ `${img}/channels/channel-7.jpg` } />
             </div>
 
             <div className="photo col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <img src={ `${ img }/channels/channel-8.jpg` } />
+              <img src={ `${img}/channels/channel-8.jpg` } />
             </div>
 
             <div className="photo col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <img src={ `${ img }/channels/channel-9.jpg` } />
+              <img src={ `${img}/channels/channel-9.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${ img }/channels/channel-10.jpg` } />
+              <img src={ `${img}/channels/channel-10.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${ img }/channels/channel-11.jpg` } />
+              <img src={ `${img}/channels/channel-11.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${ img }/channels/channel-12.jpg` } />
+              <img src={ `${img}/channels/channel-12.jpg` } />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={ `${ img }/channels/channel-13.jpg` } />
+              <img src={ `${img}/channels/channel-13.jpg` } />
             </div>
 
           </div>
         </div>
 
-        <img src={ `${ img }/bottom.jpg` } className="photo-margin-top" />
+        <img src={ `${img}/bottom.jpg` } className="photo-margin-top" />
 
-        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ language } />
+        <NavFooter style="white bottom-on-photo" year={year * 1} month={month} city={city} language={language} />
       </div>
     );
   }

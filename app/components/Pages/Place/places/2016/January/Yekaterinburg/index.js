@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
-import { NavFooter } from '../../../../../../Helpers/Travel/NavFooter';
+import NavFooter from '../../../../../../Helpers/Travel/NavFooter';
 // import Unsharpness from '../../../../../Unsharpness/';
 
 // Component styles
@@ -20,13 +20,13 @@ export default class City extends Component {
     const { year, month, city, language } = this.props.params;
 
     // Path to photos
-    const img = `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/images`;
+    const img = `./app/components/Pages/Place/places/${year}/${month}/${city.replace(/ /g, '')}/images`;
 
     // Set language
     Language.setLocale(language);
 
     return (
-      <div className={ styles }>
+      <div className={styles}>
 
         YEK
 
@@ -38,7 +38,7 @@ export default class City extends Component {
           </div>
         </div>
 
-        <NavFooter style="" year={ year * 1 } month={ month } city={ city } language={ language } />
+        <NavFooter style="" year={year * 1} month={month} city={city} language={language} />
       </div>
     );
   }
