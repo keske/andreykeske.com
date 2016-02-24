@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
-
-import * as cities from './places/index.js';
+import * as Cities from './places/index.js';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -35,7 +34,7 @@ export default class Place extends Component {
     return (
       <div className={styles}>
         <DocumentMeta {...metaData} />
-        {React.createElement(cities[component], this.props)}
+        {React.createElement(Cities[component], this.props)}
       </div>
     );
   }

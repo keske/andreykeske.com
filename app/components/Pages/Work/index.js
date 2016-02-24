@@ -1,69 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+import R from 'ramda';
+import * as Hacks from './works/index.js';
 
 // Component styles
 import { styles } from './styles/styles.scss';
 
 // Components
 import NavFooter from '../../Helpers/Works/NavFooter';
-
-// Works
-import {
-  StraightFlush,
-  Globalization,
-  GoogleStreetView20thCentury,
-  TmuxChess,
-  DaftPunk,
-  BlackHole,
-  Catch,
-  Theshellgame,
-  Thehairpin,
-  Footballfanstrolling,
-  Tellmewhatyouwant,
-  Browsertabsasthepianokeys,
-  CensorshipintheiOS7,
-  HedgehogintheFog,
-  Graphicworks,
-  InvisibleiconsontheiPad,
-  MacOSUIGames,
-  IfoundthewaterontheMars,
-  PolicesirenalarmanimationinOSXFinder,
-  Spectrumatthebrowserbar,
-  Fridaydock,
-  Theshadowsofthewindow,
-  Like,
-  Thekeyhole,
-  Volumeexperiments,
-  Desktopbackgroundinthebrowser,
-} from './works/index.js';
-
-const data = {
-  'straight-flush': StraightFlush,
-  'globalization': Globalization,
-  'google-street-view-20th-century': GoogleStreetView20thCentury,
-  'tmux-chess': TmuxChess,
-  'daft-punk': DaftPunk,
-  'black-hole': BlackHole,
-  'catch': Catch,
-  'the-shell-game': Theshellgame,
-  'the-hairpin': Thehairpin,
-  'football-fans-trolling': Footballfanstrolling,
-  'money': Tellmewhatyouwant,
-  'tabs-piano': Browsertabsasthepianokeys,
-  'censorship-in-ios7': CensorshipintheiOS7,
-  'hedgehog-in-the-fog': HedgehogintheFog,
-  'graphics': Graphicworks,
-  'ipad-invisible-icons': InvisibleiconsontheiPad,
-  'mac-os-ui-games': MacOSUIGames,
-  'water-on-mars': IfoundthewaterontheMars,
-  'police-car': PolicesirenalarmanimationinOSXFinder,
-  'spectrum': Spectrumatthebrowserbar,
-  'friday-dock': Fridaydock,
-  'shadows': Theshadowsofthewindow,
-  'like': Like,
-  'keyhole': Thekeyhole,
-  'volume': Volumeexperiments,
-  'chrome': Desktopbackgroundinthebrowser,
-};
 
 export default class Works extends Component {
 
@@ -76,12 +19,19 @@ export default class Works extends Component {
     window.scrollTo(0, 0);
   }
 
+  capitalizeFirstLetter = string =>
+      string.charAt(0).toUpperCase() + string.slice(1);
+
   render() {
     const { work } = this.props.params;
+    const component = [];
+
+    work.split('-').map(word =>
+      component.push(this.capitalizeFirstLetter(word)));
 
     return (
       <div className={styles}>
-        {React.createElement(data[work], this.props)}
+        {React.createElement(Hacks[R.join('', component)], this.props)}
         <NavFooter {...this.props} work={work} />
       </div>
     );
