@@ -14,7 +14,7 @@ export default class City extends Component {
 
     return (
       <div className={styles}>
-        <iframe src={ `./src/components/place/places/${ year }/${ month }/${ city.replace(/ /g, '') }/index.html` } />
+        <iframe src={`./app/components/Content/Places/${year}/${month}/${city.replace(/ /g, '')}/index.html`} />
       </div>);
   }
 }
