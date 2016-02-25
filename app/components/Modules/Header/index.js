@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import { setLanguage } from '../../../actions/application.js';
 
 // Component styles
-import { styles } from './styles/styles.scss';
+import { styles } from './styles.scss';
 
 // Language
 import Language from './locale/';
