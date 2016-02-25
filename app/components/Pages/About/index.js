@@ -40,7 +40,7 @@ export default class About extends Component {
                 col-md-offset-2 col-lg-offset-2"
             >
 
-              <img src="me.jpg" className="face" alt="Andrey Keske" />
+              <img src={require('./files/me.jpg')} className="face" alt="Andrey Keske" />
 
               <h3>
                 { Language.translate('AndreyKeske') }
