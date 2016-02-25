@@ -33,7 +33,7 @@ export default class Home extends Component {
       >
         <div className="col-xs-6 col-sm-3 col-md-3 col-lg-3">
           <span className="card home-page">
-            <img src={`./src/components/work/works/${work.link}/files/${work.img}`} />
+            <img src={`./app/components/Content/Works/${work.link}/files/${work.img}`} />
             <h2>
               { work.title }
             </h2>

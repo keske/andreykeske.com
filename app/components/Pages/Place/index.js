@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
-import * as Cities from './places/index.js';
+import * as Cities from '../../Content/Places/index.js';
 
 // Component styles
 import { styles } from './styles/styles.scss';

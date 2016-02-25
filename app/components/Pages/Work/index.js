@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import R from 'ramda';
-import * as Hacks from './works/index.js';
+import * as Hacks from '../../Content/Works/index.js';
 
 // Component styles
 import { styles } from './styles/styles.scss';

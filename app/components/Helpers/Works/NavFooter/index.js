@@ -35,7 +35,7 @@ const NavFooter = data => {
                     <p>
                       {prevWork.info}
                     </p>
-                    <img src={`./app/components/Pages/Work/works/${prevWork.link}/files/${prevWork.img}`} />
+                    <img src={`./app/components/Content/Works/${prevWork.link}/files/${prevWork.img}`} />
                   </Link>
                 )
               }

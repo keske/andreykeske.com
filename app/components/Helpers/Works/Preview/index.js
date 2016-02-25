@@ -11,7 +11,7 @@ const Preview = data => (
       key={`/${data.application.language}/works/${data.work.link}`}
     >
       <div className="col-xs-12 col-md-6 col-md-4 col-lg-4">
-        <img src={`./app/components/Pages/Work/works/${data.work.link}/files/${data.work.img}`} />
+        <img src={`./app/components/Content/Works/${data.work.link}/files/${data.work.img}`} />
       </div>
       <div className="col-xs-12 col-md-6 col-md-4 col-lg-4">
         <span className="card">

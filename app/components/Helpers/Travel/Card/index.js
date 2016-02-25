@@ -37,7 +37,7 @@ const Card = data => (
               <VisitedDate {...data.place} />
             </div>
             <span className="img-wrap">
-            <img src={`./app/components/Pages/Place/places/${data.place.year}/${data.place.month}/${data.place.city.replace(/ /g, '')}/images/thumb.jpg`} />
+            <img src={`./app/components/Content/Places/${data.place.year}/${data.place.month}/${data.place.city.replace(/ /g, '')}/images/thumb.jpg`} />
           </span>
           </div>
         </Link>
