@@ -7,7 +7,7 @@ import Card from '../../Helpers/Travel/Card';
 import Text from '../../Helpers/Travel/Text';
 
 // Component styles
-import { styles } from './styles/styles.scss';
+import { styles } from './styles.scss';
 
 // Language
 import Language from '../../Modules/Header/locale/';

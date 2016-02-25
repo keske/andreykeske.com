@@ -3,7 +3,7 @@ import DocumentMeta from 'react-document-meta';
 import * as Cities from '../../Content/Places/index.js';
 
 // Component styles
-import { styles } from './styles/styles.scss';
+import { styles } from './styles.scss';
 
 export default class Place extends Component {
 

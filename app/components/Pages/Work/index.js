@@ -3,7 +3,7 @@ import R from 'ramda';
 import * as Hacks from '../../Content/Works/index.js';
 
 // Component styles
-import { styles } from './styles/styles.scss';
+import { styles } from './styles.scss';
 
 // Components
 import NavFooter from '../../Helpers/Works/NavFooter';
