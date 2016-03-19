@@ -50,7 +50,7 @@ export default class Travel extends Component {
           </div>
           <div className="row">
             {
-              places.map((place, index) => {
+              places.map((place, key) => {
                 const data = {
                   place,
                   language,
@@ -59,14 +59,15 @@ export default class Travel extends Component {
 
                 return mode === 'card'
                   ?
-                    <Card
-                      {...data}
-                      key={`card-${index}-${place.city}`}
-                    />
+                    place.cover &&
+                      <Card
+                        {...data}
+                        key={key}
+                      />
                   :
                     <Text
                       {...data}
-                      key={`text-${index}-${place.city}`}
+                      key={key}
                     />;
               })
             }
