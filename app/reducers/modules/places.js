@@ -1,4 +1,19 @@
 const data = [{
+  city: 'Yekaterinburg',
+  country: 'Russia',
+  start: '8 March',
+  end: '3 March',
+
+  month: 'March',
+  year: 2016,
+
+  date: new Date('3/3/2016'),
+
+  class: '',
+  chapter: 1,
+
+  cover: false,
+}, {
   city: 'Revda',
   country: 'Russia',
   start: '6 January',
@@ -94,6 +109,7 @@ const data = [{
   date: new Date('9/5/2015'),
 
   class: '',
+  viewMode: 'large',
 
   cover: true,
 }, {

@@ -1,4 +1,3 @@
-@import '../../../../containers/App/styles/typography';
 @import '../../../../containers/App/styles/pallete';
 @import '../../../../containers/App/styles/screens';
 
@@ -7,35 +6,6 @@ $thumb-height-tablet: 530px;
 $thumb-height-desktop: 550px;
 $thumb-height-large-desktop: 470px;
 
-// Paragraph style
-@mixin paragraph() {
-  
-  // Typography, size, font-weight
-  .data {
-
-    &.no-cover-no-link {
-      color: $gray;
-    }
-
-    p.city {
-      @include caption();
-
-      font-weight: 500;
-
-      $size: 38px;
-
-      font-size: $size;
-      line-height: $size;
-    }
-
-    p.date {
-      @include caption();
-
-      font-weight: 100;
-      opacity: .7;
-    }
-  }
-}
 
 :local(.styles) {
   transition: 0s;
@@ -43,10 +13,6 @@ $thumb-height-large-desktop: 470px;
   border-radius: 2px;
 
   overflow: hidden;
-
-  color: #000;
-
-  @include paragraph();
 
   // Set height size for desktop
   @media (#{$desktop}) {
@@ -58,25 +24,6 @@ $thumb-height-large-desktop: 470px;
     height: $thumb-height-large-desktop;
   }
 
-  &.white {
-    color: #FFF !important;
-  }
-
-  // Information on card
-  .data {
-    position: absolute;
-    margin: 20px;
-
-    p.date {
-      position: relative;
-
-      $size: 12px;
-
-      font-size: $size;
-      line-height: $size + 4;
-    }
-  }
-
   .img-wrap {
     overflow: hidden;
     display: inline-block;
@@ -84,15 +31,6 @@ $thumb-height-large-desktop: 470px;
     border-radius: 2px;
 
     margin-bottom: 30px;
-
-    &.soon {
-      display: block;
-      
-      width: 100%;
-      height: 100%;
-      
-      border: 1px solid rgba(0, 0, 0, .1);
-    }
 
     // Set height size for desktop
     @media (#{$desktop}) {
