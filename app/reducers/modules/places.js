@@ -73,7 +73,7 @@ const data = [{
   className: '',
   chapter: 'II',
 
-  cover: true,
+  cover: false,
 }, {
   city: 'New York',
   country: 'USA',

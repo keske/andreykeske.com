@@ -46,7 +46,7 @@ export default class Travel extends Component {
         : <Text {...data} />;
 
     const renderChapter = chapterPlaces =>
-      <Row>
+      <Row className="chapters-row">
         {
           // Create chapter component
           React.createElement(
