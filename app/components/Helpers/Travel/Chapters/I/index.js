@@ -20,9 +20,16 @@ const I = data => {
       lg={4}
       className={styles}
     >
-      {
-        Language.translate('title')
-      }
+      <p className="title">
+        {
+          Language.translate('title')
+        }
+      </p>
+      <p className="description">
+        {
+          Language.translate('description')
+        }
+      </p>
     </Col>
   );
 };

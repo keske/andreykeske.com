@@ -1,15 +1,18 @@
-// @import '../../../../containers/App/styles/typography';
-// @import '../../../../containers/App/styles/pallete';
-// @import '../../../../containers/App/styles/screens';
+@import '../../../../../containers/App/styles/typography';
 
 :local(.styles) {
   position: relative;
 
   .title {
-    //
+    @include caption();
+
+    font-size: 24px;
+    font-weight: bold;
   }
 
   .description {
-    //
+    @include paragraph();
+
+    font-size: 14px;
   }
 }
