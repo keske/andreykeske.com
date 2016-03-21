@@ -11,31 +11,31 @@ import VisitedDate from '../../VisitedDate';
 // Component styles
 import { styles } from './styles.scss';
 
-const Large = data =>
+const Large = place =>
   <section className={`
     ${styles}
-    ${data.place.class}
+    ${place.class}
     col-xs-12
     col-sm-12
     col-md-6
     col-lg-6
   `}
   >
-    <Link to={`/${data.application.language}/places/${data.place.year}/${data.place.month}/${data.place.city}`}>
-      <div className={`data ${data.place.class}`}>
+    <Link to={`/en/places/${place.year}/${place.month}/${place.city}`}>
+      <div className={`data ${place.class}`}>
         <p className="city">
           {
-            data.place.city
+            place.city
           }
           {
-            showNewLabel(data.place.date) &&
+            showNewLabel(place.date) &&
               <NewLabel />
           }
         </p>
-        <VisitedDate {...data.place} />
+        <VisitedDate {...place} />
       </div>
       <span className="img-wrap">
-        <img src={`./app/components/Content/Places/${data.place.year}/${data.place.month}/${data.place.city.replace(/ /g, '')}/images/thumb.jpg`} />
+        <img src={`./app/components/Content/Places/${place.year}/${place.month}/${place.city.replace(/ /g, '')}/images/thumb.jpg`} />
       </span>
     </Link>
   </section>;

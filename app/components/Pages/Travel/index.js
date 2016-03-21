@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
+import R from 'ramda';
 
 // Components
 import Filter from '../../Helpers/Travel/Filter';
+import I from '../../Helpers/Travel/Chapters/I';
+import II from '../../Helpers/Travel/Chapters/II';
 import Card from '../../Helpers/Travel/Card';
 import Text from '../../Helpers/Travel/Text';
 
@@ -25,8 +28,7 @@ export default class Travel extends Component {
   }
 
   render() {
-    const { language, mode } = this.props.params;
-    const { places, application } = this.props;
+    const { places, params: { language, mode } } = this.props;
 
     const metaData = {
       title: Language.translate('Travel'),
@@ -39,6 +41,19 @@ export default class Travel extends Component {
       },
     };
 
+    const renderPlace = (place, data = { ...place, language }) =>
+      mode === 'card'
+        ? place.cover && <Card {...data} />
+        : <Text {...data} />;
+
+    const renderChapter = chapterPlaces =>
+      <div className="row">
+        <h1>Chapter Name</h1>
+        {
+          R.map(renderPlace, chapterPlaces)
+        }
+      </div>;
+
     return (
       <div className={styles}>
         <DocumentMeta {...metaData} />
@@ -48,30 +63,14 @@ export default class Travel extends Component {
               <Filter {...this.props} />
             </div>
           </div>
-          <div className="row">
-            {
-              places.map((place, key) => {
-                const data = {
-                  place,
-                  language,
-                  application,
-                };
-
-                return mode === 'card'
-                  ?
-                    place.cover &&
-                      <Card
-                        {...data}
-                        key={key}
-                      />
-                  :
-                    <Text
-                      {...data}
-                      key={key}
-                    />;
-              })
-            }
-          </div>
+          {
+            R.values(
+              R.map(
+                renderChapter,
+                R.groupBy(R.prop('chapter'), places)
+              )
+            )
+          }
         </div>
       </div>
     );

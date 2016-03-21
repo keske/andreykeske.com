@@ -4,9 +4,9 @@ import React from 'react';
 import Large from './Large';
 import Medium from './Medium';
 
-const Card = data =>
-  data.place.viewMode === 'large'
-    ? <Large {...data} />
-    : <Medium {...data} />;
+const Card = place =>
+  place.viewMode === 'large'
+    ? <Large {...place} />
+    : <Medium {...place} />;
 
 export default Card;

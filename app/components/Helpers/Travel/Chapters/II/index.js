@@ -5,7 +5,7 @@ import { styles } from './styles.scss';
 
 const II = () =>
   <div className={styles}>
-    <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       Chapter II
     </div>
   </div>;
