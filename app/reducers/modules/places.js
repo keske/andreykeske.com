@@ -10,7 +10,7 @@ const data = [{
   date: new Date('3/10/2016'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
   viewMode: 'large',
 
   cover: true,
@@ -26,7 +26,7 @@ const data = [{
   date: new Date('3/3/2016'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: false,
 }, {
@@ -41,7 +41,7 @@ const data = [{
   date: new Date('1/6/2016'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: false,
 }, {
@@ -56,7 +56,7 @@ const data = [{
   date: new Date('1/4/2016'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: false,
 }, {
@@ -71,7 +71,7 @@ const data = [{
   date: new Date('1/3/2016'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: false,
 }, {
@@ -86,7 +86,7 @@ const data = [{
   date: new Date('11/21/2015'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: false,
 }, {
@@ -101,7 +101,7 @@ const data = [{
   date: new Date('9/21/2015'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: false,
 }, {
@@ -116,7 +116,7 @@ const data = [{
   date: new Date('9/15/2015'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: false,
 }, {
@@ -131,7 +131,7 @@ const data = [{
   date: new Date('9/5/2015'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
   viewMode: 'large',
 
   cover: true,
@@ -147,7 +147,7 @@ const data = [{
   date: new Date('8/29/2015'),
 
   className: '',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: false,
 }, {
@@ -162,7 +162,7 @@ const data = [{
   date: new Date('8/1/2015'),
 
   className: 'white',
-  chapter: 'II',
+  chapter: 'III',
 
   cover: true,
 }, {
@@ -177,7 +177,7 @@ const data = [{
   date: new Date('6/1/2015'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -192,7 +192,7 @@ const data = [{
   date: new Date('5/12/2015'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -207,7 +207,7 @@ const data = [{
   date: new Date('5/11/2015'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -222,7 +222,7 @@ const data = [{
   date: new Date('5/10/2015'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -237,7 +237,7 @@ const data = [{
   date: new Date('5/6/2015'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -252,7 +252,7 @@ const data = [{
   date: new Date('5/5/2015'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -267,7 +267,7 @@ const data = [{
   date: new Date('1/4/2015'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -282,7 +282,7 @@ const data = [{
   date: new Date('1/2/2015'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -297,7 +297,7 @@ const data = [{
   date: new Date('12/26/2014'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -312,7 +312,7 @@ const data = [{
   date: new Date('9/9/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -327,7 +327,7 @@ const data = [{
   date: new Date('9/7/2014'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -342,7 +342,7 @@ const data = [{
   date: new Date('9/13/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -357,7 +357,7 @@ const data = [{
   date: new Date('10/17/2014'),
 
   className: 'shadow',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -372,7 +372,7 @@ const data = [{
   date: new Date('5/1/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -387,7 +387,7 @@ const data = [{
   year: 2014,
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -402,7 +402,7 @@ const data = [{
   date: new Date('5/5/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -417,7 +417,7 @@ const data = [{
   date: new Date('5/8/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -432,7 +432,7 @@ const data = [{
   date: new Date('3/9/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {
@@ -447,7 +447,7 @@ const data = [{
   date: new Date('6/13/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -462,7 +462,7 @@ const data = [{
   date: new Date('7/21/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -477,7 +477,7 @@ const data = [{
   date: new Date('8/4/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -492,7 +492,7 @@ const data = [{
   date: new Date('8/18/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -507,7 +507,7 @@ const data = [{
   date: new Date('10/29/2014'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -522,7 +522,7 @@ const data = [{
   date: new Date('1/1/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -537,7 +537,7 @@ const data = [{
   date: new Date('5/21/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -552,7 +552,7 @@ const data = [{
   date: new Date('8/29/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -567,7 +567,7 @@ const data = [{
   date: new Date('19/10/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -582,7 +582,7 @@ const data = [{
   date: new Date('1/25/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -597,7 +597,7 @@ const data = [{
   date: new Date('4/21/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -612,7 +612,7 @@ const data = [{
   year: 2012,
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -627,7 +627,7 @@ const data = [{
   date: new Date('5/8/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -642,7 +642,7 @@ const data = [{
   date: new Date('5/6/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -657,7 +657,7 @@ const data = [{
   date: new Date('5/4/2013'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -672,7 +672,7 @@ const data = [{
   date: new Date('9/4/2011'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -687,7 +687,7 @@ const data = [{
   date: new Date('9/1/2011'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -702,7 +702,7 @@ const data = [{
   date: new Date('9/2/2011'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -717,7 +717,7 @@ const data = [{
   date: new Date('9/3/2011'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -732,7 +732,7 @@ const data = [{
   date: new Date('9/4/2011'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -747,7 +747,7 @@ const data = [{
   date: new Date('9/4/2011'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -762,7 +762,7 @@ const data = [{
   date: new Date('1/1/2010'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {

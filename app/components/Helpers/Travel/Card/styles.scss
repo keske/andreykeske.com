@@ -1,5 +1,6 @@
 @import '../../../../containers/App/styles/pallete';
 @import '../../../../containers/App/styles/screens';
+@import '../../../../containers/App/styles/typography';
 
 // Vars
 $thumb-height-tablet: 530px;
@@ -41,5 +42,15 @@ $thumb-height-large-desktop: 470px;
     @media (#{$large-desktop}) {
       max-height: $thumb-height-large-desktop - 20;
     }
+  }
+
+  .render-cities-as-text {
+    @include paragraph();
+
+    font-size: 12px;
+    line-height: 18px;
+
+    display: inline-block;
+    margin-right: 3px;
   }
 }

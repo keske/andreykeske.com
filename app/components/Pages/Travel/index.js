@@ -42,7 +42,8 @@ export default class Travel extends Component {
 
     const renderPlace = (place, data = { ...place, language }) =>
       R.equals(mode, 'card')
-        ? place.cover && <Card {...data} />
+        ? R.or(R.equals(place.cover, true), R.equals(place.chapter, 'I')) &&
+          <Card {...data} />
         : <Text {...data} />;
 
     const renderChapter = chapterPlaces =>
