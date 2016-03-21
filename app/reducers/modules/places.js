@@ -1,4 +1,20 @@
 const data = [{
+  city: 'Tel Aviv',
+  country: 'Israel',
+  start: '20 March',
+  end: '10 March',
+
+  month: 'March',
+  year: 2016,
+
+  date: new Date('3/10/2016'),
+
+  className: '',
+  chapter: 'II',
+  viewMode: 'large',
+
+  cover: true,
+}, {
   city: 'Yekaterinburg',
   country: 'Russia',
   start: '8 March',
@@ -131,7 +147,7 @@ const data = [{
   date: new Date('8/29/2015'),
 
   className: '',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: false,
 }, {
@@ -146,7 +162,7 @@ const data = [{
   date: new Date('8/1/2015'),
 
   className: 'white',
-  chapter: 'I',
+  chapter: 'II',
 
   cover: true,
 }, {

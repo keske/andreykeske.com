@@ -20,8 +20,8 @@ const Large = place =>
     `}
     xs={12}
     sm={12}
-    md={6}
-    lg={6}
+    md={8}
+    lg={8}
   >
     <Link to={`/${place.language}/places/${place.year}/${place.month}/${place.city}`}>
       <div className={`data ${place.className}`}>
