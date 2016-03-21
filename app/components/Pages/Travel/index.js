@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
+import { Grid, Row, Col } from 'react-bootstrap';
 import R from 'ramda';
 
 // Components
 import Filter from '../../Helpers/Travel/Filter';
-import I from '../../Helpers/Travel/Chapters/I';
-import II from '../../Helpers/Travel/Chapters/II';
+import * as Chapters from '../../Helpers/Travel/Chapters';
 import Card from '../../Helpers/Travel/Card';
 import Text from '../../Helpers/Travel/Text';
 
@@ -20,7 +20,6 @@ export default class Travel extends Component {
   static propTypes = {
     params: PropTypes.object,
     places: PropTypes.array,
-    application: PropTypes.object,
   };
 
   componentDidMount() {
@@ -47,22 +46,34 @@ export default class Travel extends Component {
         : <Text {...data} />;
 
     const renderChapter = chapterPlaces =>
-      <div className="row">
-        <h1>Chapter Name</h1>
+      <Row>
         {
+          // Create chapter component
+          React.createElement(
+            Chapters[R.find(R.prop('chapter'), chapterPlaces).chapter],
+            language
+          )
+        }
+        {
+          // After render places for each chapter
           R.map(renderPlace, chapterPlaces)
         }
-      </div>;
+      </Row>;
 
     return (
-      <div className={styles}>
+      <section className={styles}>
         <DocumentMeta {...metaData} />
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <Grid>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+            >
               <Filter {...this.props} />
-            </div>
-          </div>
+            </Col>
+          </Row>
           {
             R.values(
               R.map(
@@ -71,8 +82,8 @@ export default class Travel extends Component {
               )
             )
           }
-        </div>
-      </div>
+        </Grid>
+      </section>
     );
   }
 }
