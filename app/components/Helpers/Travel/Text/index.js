@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { Col } from 'react-bootstrap';
 
 import { showNewLabel } from '../../../../utils/travel';
 
@@ -10,35 +11,38 @@ import VisitedDate from '../VisitedDate';
 // Component styles
 import { styles } from './styles.scss';
 
-const Text = data => {
+const Text = place => {
 
   const renderInner = () => (
-    <div className={`
-      ${styles}
-      year-${data.place.year}
-      col-xs-12
-      col-sm-12
-      col-md-12
-      col-lg-12
-    `}
+    <Col
+      className={`
+        ${styles}
+        year-${place.year}
+      `}
+      xs={12}
+      sm={12}
+      md={12}
+      lg={12}
     >
-      <div className={ 'data' }>
+      <div className={'data'}>
         {
-          showNewLabel(data.place.date) &&
+          showNewLabel(place.date) &&
             <NewLabel />
         }
         <p className="city">
-          { data.place.city }
+          { place.city }
         </p>
-        <VisitedDate {...data.place} />
+        <VisitedDate {...place} />
       </div>
-    </div>
+    </Col>
   );
 
   return (
-    data.place.cover
-      ? <Link to={`/${data.application.language}/places/${data.place.year}/${data.place.month}/${data.place.city}`}>
-          {renderInner()}
+    place.cover
+      ? <Link to={`/${place.language}/places/${place.year}/${place.month}/${place.city}`}>
+          {
+            renderInner()
+          }
         </Link>
       : renderInner()
   );
