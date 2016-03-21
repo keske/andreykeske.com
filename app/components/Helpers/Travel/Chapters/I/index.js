@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col } from 'react-bootstrap';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -12,13 +13,17 @@ const I = data => {
   Language.setLocale(data.application.language);
 
   return (
-    <div className={styles}>
-      <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        {
-          Language.translate('title')
-        }
-      </div>
-    </div>
+    <Col
+      xs={12}
+      sm={12}
+      md={4}
+      lg={4}
+      className={styles}
+    >
+      {
+        Language.translate('title')
+      }
+    </Col>
   );
 };
 
