@@ -51,7 +51,7 @@ export default class Travel extends Component {
           // Create chapter component
           React.createElement(
             Chapters[R.find(R.prop('chapter'), chapterPlaces).chapter],
-            language
+            this.props
           )
         }
         {
