@@ -41,7 +41,7 @@ export default class Travel extends Component {
     };
 
     const renderPlace = (place, data = { ...place, language }) =>
-      mode === 'card'
+      R.equals(mode, 'card')
         ? place.cover && <Card {...data} />
         : <Text {...data} />;
 
@@ -50,7 +50,12 @@ export default class Travel extends Component {
         {
           // Create chapter component
           React.createElement(
-            Chapters[R.find(R.prop('chapter'), chapterPlaces).chapter],
+            Chapters[
+              R.compose(
+                R.view(R.lensProp('chapter')),
+                R.find(R.prop('chapter')),
+              )(chapterPlaces)
+            ],
             this.props
           )
         }
@@ -75,12 +80,10 @@ export default class Travel extends Component {
             </Col>
           </Row>
           {
-            R.values(
-              R.map(
-                renderChapter,
-                R.groupBy(R.prop('chapter'), places)
-              )
-            )
+            R.compose(
+              R.map(renderChapter),
+              R.values,
+            )(R.groupBy(R.prop('chapter'), places))
           }
         </Grid>
       </section>
