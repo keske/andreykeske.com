@@ -14,15 +14,15 @@ import { styles } from './styles.scss';
 const Medium = place =>
   <section className={`
     ${styles}
-    ${place.class}
+    ${place.className}
     col-xs-12
     col-sm-12
     col-md-4
     col-lg-4
   `}
   >
-    <Link to={`/en/places/${place.year}/${place.month}/${place.city}`}>
-      <div className={`data ${place.class}`}>
+    <Link to={`/${place.language}/places/${place.year}/${place.month}/${place.city}`}>
+      <div className={`data ${place.className}`}>
         <p className="city">
           {
             place.city
