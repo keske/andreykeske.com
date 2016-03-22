@@ -10,22 +10,6 @@
     margin-bottom: 100px;
   }
 
-  span.new-dot {
-    $size: 5px;
-
-    background: $green;
-    border-radius: 100%;
-
-    top: 13px;
-    left: - $size;
-
-    display: inline-block;
-    position: absolute;
-
-    width: $size;
-    height: $size;
-  }
-
   span.new {
     @include caption();
     

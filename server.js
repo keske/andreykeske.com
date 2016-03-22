@@ -3,7 +3,7 @@ import http from 'http';
 
 const app = new Express();
 const server = new http.Server(app);
-const port = 3000;
+const port = 31337;
 
 app.use(require('morgan')('short'));
 
@@ -21,7 +21,7 @@ app.use(require('morgan')('short'));
   }));
 
   app.use(Express.static(__dirname + '/'));
-})();
+}());
 
 app.get(/.*/, function root(req, res) {
   res.sendFile(__dirname + '/index.html');

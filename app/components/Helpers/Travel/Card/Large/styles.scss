@@ -12,7 +12,7 @@
     p.city {
       @include caption();
 
-      font-weight: 500;
+      font-weight: 800;
 
       $size: 38px;
 
@@ -43,6 +43,10 @@
   .data {
     position: absolute;
     margin: 20px;
+
+    // text-align: center;
+    // width: 100%;
+    // display: block;
 
     p.date {
       position: relative;

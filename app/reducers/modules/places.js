@@ -9,7 +9,7 @@ const data = [{
 
   date: new Date('3/10/2016'),
 
-  className: '',
+  className: 'white',
   chapter: 'III',
   viewMode: 'large',
 

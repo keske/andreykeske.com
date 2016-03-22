@@ -25,6 +25,11 @@ $thumb-height-large-desktop: 470px;
     height: $thumb-height-large-desktop;
   }
 
+  // Classnames
+  .white {
+    color: #FFF;
+  }
+
   .img-wrap {
     overflow: hidden;
     display: inline-block;
@@ -51,6 +56,6 @@ $thumb-height-large-desktop: 470px;
     line-height: 18px;
 
     display: inline-block;
-    margin-right: 3px;
+    margin-right: 6px;
   }
 }

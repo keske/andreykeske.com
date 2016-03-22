@@ -10,24 +10,32 @@ import { styles } from './styles.scss';
 
 const Card = place => {
 
-  const renderAsCard = () =>
-    R.equals(place.viewMode, 'large')
-      ? <Large {...place} />
-      : <Medium {...place} />;
+  const renderAsCard =
+    R.ifElse(
+      R.equals(R.__, 'large'),
+      () => <Large {...place} />,
+      () => <Medium {...place} />
+    );
 
   const renderAsText = () =>
     <span className="render-cities-as-text">
       {
-        `${place.city}, `
+        place.city
       }
     </span>;
 
+  const render =
+    R.ifElse(
+      R.equals(R.__, true),
+      () => renderAsCard(place.viewMode),
+      () => renderAsText()
+    );
+
   return (
+
     <span className={styles}>
       {
-        R.equals(place.cover, true)
-          ? renderAsCard()
-          : renderAsText()
+        render(place.cover)
       }
     </span>
   );
