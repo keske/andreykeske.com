@@ -31,7 +31,9 @@ export default class Works extends Component {
 
     return (
       <div className={styles}>
-        {React.createElement(Hacks[R.join('', component)], this.props)}
+        {
+          React.createElement(Hacks[R.join('', component)], this.props)
+        }
         <NavFooter {...this.props} work={work} />
       </div>
     );

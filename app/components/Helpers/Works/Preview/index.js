@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { Col } from 'react-bootstrap';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -10,10 +11,20 @@ const Preview = data => (
       to={`/${data.application.language}/works/${data.work.link}`}
       key={`/${data.application.language}/works/${data.work.link}`}
     >
-      <div className="col-xs-12 col-md-6 col-md-4 col-lg-4">
+      <Col
+        xs={12}
+        sm={6}
+        md={4}
+        lg={4}
+      >
         <img src={`./app/components/Content/Works/${data.work.link}/files/${data.work.img}`} />
-      </div>
-      <div className="col-xs-12 col-md-6 col-md-4 col-lg-4">
+      </Col>
+      <Col
+        xs={12}
+        sm={6}
+        md={4}
+        lg={4}
+      >
         <span className="card">
           <h2>
             {data.work.title}
@@ -22,7 +33,7 @@ const Preview = data => (
             {data.work.info}
           </p>
         </span>
-      </div>
+      </Col>
     </Link>
   </div>
 );
