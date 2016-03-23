@@ -1,7 +1,9 @@
-@import '../../../../../containers/App/styles/typography';
+@import '../../../../containers/App/styles/typography';
 
 :local(.styles) {
   position: relative;
+
+  padding: 20px;
 
   .title {
     @include caption();

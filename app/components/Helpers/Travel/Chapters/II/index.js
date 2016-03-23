@@ -2,7 +2,7 @@ import React from 'react';
 import { Col } from 'react-bootstrap';
 
 // Component styles
-import { styles } from './styles.scss';
+import { styles } from '../styles.scss';
 
 // Language
 import Language from './locale';
