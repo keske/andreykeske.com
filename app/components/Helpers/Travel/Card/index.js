@@ -21,7 +21,7 @@ const Card = place =>
         () => <span className="render-cities-as-text">
                 { place.city }
               </span>
-      )(place.cover)
+      )(R.prop('cover', place))
     }
   </span>;
 

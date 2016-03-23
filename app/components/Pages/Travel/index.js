@@ -43,11 +43,11 @@ export default class Travel extends Component {
     const renderPlace = (place, data = { ...place, language }) =>
       R.equals(mode, 'card')
         ? R.or(R.equals(place.cover, true), R.equals(place.chapter, 'I')) &&
-          <Card {...data} />
-        : <Text {...data} />;
+          <Card {...data} key={Math.random()} />
+        : <Text {...data} key={Math.random()} />;
 
     const renderChapter = chapterPlaces =>
-      <Row className="chapters-row">
+      <Row className="chapters-row" key={Math.random()}>
         {
           // Create chapter component
           React.createElement(

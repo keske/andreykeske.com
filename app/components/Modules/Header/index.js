@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router';
 
 // Actions
@@ -16,7 +17,6 @@ export default class Header extends Component {
     application: React.PropTypes.object,
     dispatch: React.PropTypes.func,
   };
-
 
   componentDidMount() {
     window.addEventListener('scroll', this.hideHeader);
@@ -48,15 +48,27 @@ export default class Header extends Component {
     Language.setLocale(application.language);
 
     return (
-      <div className={`${styles}`} ref="header">
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+      <section className={`${styles}`} ref="header">
+        <Grid>
+          <Row>
+            <Col
+              xs={4}
+              sm={4}
+              md={2}
+              lg={2}
+            >
               <Link to="/">
-                  { Language.translate('AndreyKeske') }
+                { Language.translate('AndreyKeske') }
               </Link>
-            </div>
-            <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9 header-nav">
+            </Col>
+
+            <Col
+              xs={7}
+              sm={7}
+              md={9}
+              lg={9}
+              className="header-nav"
+            >
               <Link to={`/${application.language}/works`} className="nav">
                 { Language.translate('Works') }
               </Link>
@@ -71,10 +83,10 @@ export default class Header extends Component {
               <Link to={`/${application.language}/about`} className="nav">
                 { Language.translate('About') }
               </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+        </Grid>
+      </section>
     );
   }
 }
