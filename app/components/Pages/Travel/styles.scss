@@ -9,20 +9,4 @@
   .chapters-row {
     margin-bottom: 100px;
   }
-
-  span.new {
-    @include caption();
-    
-    font-size: 10px;
-
-    color: #FFF;
-    background: $green;
-
-    padding: 1px 4px;
-    position: relative;
-
-    border-radius: 2px;
-
-    top: -21px;
-  }
 }

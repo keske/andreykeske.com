@@ -3,5 +3,18 @@
 @import '../../../../containers/App/styles/screens';
 
 :local(.styles) {
+  @include caption();
+  
+  font-size: 10px;
+
+  color: $green;
+  background: #FFF;
+
+  padding: 1px 4px;
   position: relative;
+
+  border-radius: 2px;
+
+  top: -21px;
+  left: 6px;
 }

@@ -1,13 +1,12 @@
 export const showNewLabel = date => {
-  // const today = new Date();
-  // const year = today.getFullYear();
-  // const month = today.getMonth() + 1;
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
 
-  // const _month = date.getMonth() + 1;
-  // const _year = date.getFullYear();
+  const _month = date.getMonth() + 1;
+  const _year = date.getFullYear();
 
-  // return (_month === month && _year === year) ? true : false;
-  return false;
+  return (_month === month && _year === year) ? true : false;
 };
 
 export const showStartDateMonth = (start, end) => {
@@ -16,3 +15,9 @@ export const showStartDateMonth = (start, end) => {
 
   return (splitStart[1] === splitEnd[1]) ? splitStart[0] : start;
 };
+
+export const generateUrlToPlace = place =>
+  `/${place.language}/places/${place.year}/${place.month}/${place.city}`;
+
+export const generateUrlToPostThumb = place =>
+  `./app/components/Content/Places/${place.year}/${place.month}/${place.city.replace(/ /g, '')}/images/thumb.jpg`;

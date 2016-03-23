@@ -3,7 +3,11 @@ import { Link } from 'react-router';
 import { Col } from 'react-bootstrap';
 
 // Utils
-import { showNewLabel } from '../../../../../utils/travel';
+import {
+  showNewLabel,
+  generateUrlToPlace,
+  generateUrlToPostThumb,
+} from '../../../../../utils/travel';
 
 // Components
 import NewLabel from '../../NewLabel';
@@ -23,7 +27,7 @@ const Large = place =>
     md={8}
     lg={8}
   >
-    <Link to={`/${place.language}/places/${place.year}/${place.month}/${place.city}`}>
+    <Link to={generateUrlToPlace(place)}>
       <div className={`data ${place.className}`}>
         <p className="city">
           {
@@ -31,13 +35,13 @@ const Large = place =>
           }
           {
             showNewLabel(place.date) &&
-              <NewLabel />
+              <NewLabel language={place.language} />
           }
         </p>
         <VisitedDate {...place} />
       </div>
       <span className="img-wrap">
-        <img src={`./app/components/Content/Places/${place.year}/${place.month}/${place.city.replace(/ /g, '')}/images/thumb.jpg`} />
+        <img src={generateUrlToPostThumb(place)} />
       </span>
     </Link>
   </Col>;
