@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Col } from 'react-bootstrap';
 
-import { showNewLabel } from '../../../../utils/travel';
-
 // Components
 import NewLabel from '../NewLabel';
 import VisitedDate from '../VisitedDate';
@@ -15,24 +13,18 @@ const Text = place => {
 
   const renderInner = () => (
     <Col
-      className={`
-        ${styles}
-        year-${place.year}
-      `}
+      className={styles}
       xs={12}
       sm={12}
       md={12}
       lg={12}
     >
       <div className={'data'}>
-        {
-          showNewLabel(place.date) &&
-            <NewLabel />
-        }
         <p className="city">
           { place.city }
         </p>
         <VisitedDate {...place} />
+        <NewLabel {...place} />
       </div>
     </Col>
   );

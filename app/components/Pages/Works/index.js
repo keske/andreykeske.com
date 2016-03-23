@@ -36,6 +36,9 @@ export default class Works extends Component {
       <section className={styles}>
         <DocumentMeta {...metaData} />
         <div className="container">
+          <h1 className="page-title">
+            Hacks
+          </h1>
           {
             works.map((work, key) => {
               const data = {

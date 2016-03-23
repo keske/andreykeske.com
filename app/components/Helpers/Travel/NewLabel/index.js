@@ -1,21 +1,25 @@
 import React from 'react';
 
+// Utils
+import { showNewLabel } from '../../../../utils/travel';
+
 // Component styles
 import { styles } from './styles.scss';
 
 // Language
 import Language from './locale';
 
-const NewLabel = language => {
+const NewLabel = place => {
 
   // Set language
-  Language.setLocale(language);
+  Language.setLocale(place.language);
 
-  return (
-    <span className={styles}>
-      New
-    </span>
-  );
+  return showNewLabel(place.date)
+    ? <span className={styles}>
+        { Language.translate('title') }
+      </span>
+    : <span />;
 };
+
 
 export default NewLabel;

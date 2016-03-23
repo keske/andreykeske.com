@@ -1,0 +1,10 @@
+@import 'typography';
+
+h1.page-title {
+  @include caption();
+
+  font-size: 70px;
+  opacity: .1;
+
+  margin: 70px 0 30px;
+}

@@ -34,7 +34,9 @@ export default class Place extends Component {
     return (
       <div className={styles}>
         <DocumentMeta {...metaData} />
-        {React.createElement(Cities[component], this.props)}
+        {
+          React.createElement(Cities[component], this.props)
+        }
       </div>
     );
   }

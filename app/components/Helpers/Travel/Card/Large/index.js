@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Col } from 'react-bootstrap';
-import R from 'ramda';
 
 // Utils
 import {
-  showNewLabel,
   generateUrlToPlace,
   generateUrlToPostThumb,
 } from '../../../../../utils/travel';
@@ -34,13 +32,7 @@ const Large = place =>
           {
             place.city
           }
-          {
-            R.ifElse(
-              R.equals(R.__, true),
-              () => <NewLabel language={place.language} />,
-              () => '',
-            )(showNewLabel(place.date))
-          }
+          <NewLabel {...place} />
         </p>
         <VisitedDate {...place} />
       </div>

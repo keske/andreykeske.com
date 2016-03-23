@@ -9,7 +9,10 @@ import { styles } from './styles.scss';
 const NavFooter = data => {
 
   const { application, works, work } = data;
+
+  // TODO: refactoring _ to R
   const workIndex = _.indexOf(works, _.findWhere(works, { link: work }));
+
   const prevWork = works[workIndex - 1];
   const nextWork = works[workIndex + 1];
 

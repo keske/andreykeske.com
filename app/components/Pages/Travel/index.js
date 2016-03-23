@@ -77,6 +77,9 @@ export default class Travel extends Component {
               md={12}
               lg={12}
             >
+              <h1 className="page-title">
+                Travel
+              </h1>
               <Filter {...this.props} />
             </Col>
           </Row>
