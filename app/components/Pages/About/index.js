@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
 import { Grid, Row, Col } from 'react-bootstrap';
 
+// Components
+import Footer from '../../Modules/Footer';
+
 // Component styles
 import { styles } from './styles.scss';
 
 // Language
 import Language from './locale/';
 
-import Footer from '../../Modules/Footer';
 export default class About extends Component {
 
   static propTypes = {

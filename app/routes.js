@@ -11,7 +11,7 @@ import Work from './containers/Work';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={Home} />
+    <IndexRoute component={About} />
     <Route path=":language/about" component={About} />
     <Route path=":language/travel/:mode" component={Travel} />
     <Route path=":language/places/:year/:month/:city" component={Place} />
