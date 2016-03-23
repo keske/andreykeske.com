@@ -12,7 +12,7 @@ const NewLabel = language => {
   Language.setLocale(language);
 
   return (
-    <span className={`${styles} new`}>
+    <span className={styles}>
       New
     </span>
   );
