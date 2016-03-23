@@ -1,16 +1,20 @@
-// Usefull site for colorus: http://colours.neilorangepeel.com/ Thanks!
+// Colours
 
 $black: #000;
 $gray: #999;
 $white: #FFF;
 
 $red: #DC143C;
-// $blue: #4169E1;
-$blue: #9D6043;
-// $purple: #BA55D3;
-$purple: #9D6043;
+$blue: #0000CD;
+$blueLight: #1E90FF;
+$purple: #0000CD;
 $pink: #BA55D3;
 $green: #32CD32;
+
+// UI
+$link: $blue;
+$linkHover: $red;
+$linkVisited: $purple;
 
 @mixin ui-active() {
   @include light();

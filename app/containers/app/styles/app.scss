@@ -9,22 +9,21 @@
   position: relative;
 
   a {
-    color: $blue;
+    color: $link;
     text-decoration: none;
     
     &:hover {
-      color: $red;
+      color: $linkHover;
       text-decoration: none;
     }
 
     &:visited:hover {
-      color: $red;
+      color: $linkHover;
     }
 
     &:visited {
-      color: $purple;
+      color: $linkVisited;
     }
-
   }
 
   img {
