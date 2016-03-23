@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Col } from 'react-bootstrap';
+import R from 'ramda';
 
 // Utils
 import {
@@ -34,8 +35,11 @@ const Large = place =>
             place.city
           }
           {
-            showNewLabel(place.date) &&
-              <NewLabel language={place.language} />
+            R.ifElse(
+              R.equals(R.__, true),
+              () => <NewLabel language={place.language} />,
+              () => '',
+            )(showNewLabel(place.date))
           }
         </p>
         <VisitedDate {...place} />

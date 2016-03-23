@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -32,15 +33,21 @@ export default class About extends Component {
     };
 
     return (
-      <section>
-        <div className={`${styles} container`}>
-          <DocumentMeta {...metaData} />
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8
-                col-md-offset-2 col-lg-offset-2"
+      <section className={styles}>
+        <DocumentMeta {...metaData} />
+        <Grid>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={12} mdOffset={2}
+              lg={12} lgOffset={2}
             >
-
-              <img src={require('./files/me.jpg')} className="face" alt="Andrey Keske" />
+              <img
+                src={require('./files/me.jpg')}
+                className="face"
+                alt={ Language.translate('AndreyKeske') }
+              />
 
               <h3>
                 { Language.translate('AndreyKeske') }
@@ -72,9 +79,9 @@ export default class About extends Component {
                   </a>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Grid>
         <Footer />
       </section>
     );
