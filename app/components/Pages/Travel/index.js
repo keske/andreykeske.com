@@ -1,7 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
 import { Grid, Row, Col } from 'react-bootstrap';
+import ParallaxComponent from 'react-parallax-component';
 import R from 'ramda';
+
+// Utils
+import { random } from '../../../utils/math';
 
 // Components
 import Filter from '../../Helpers/Travel/Filter';
@@ -66,6 +70,40 @@ export default class Travel extends Component {
         }
       </Row>;
 
+    const renderPhotos = () => {
+      const width = 250;
+      const height = 200;
+      const photos = {
+        total: 7,
+        perPage: 5,
+      };
+
+      const photosOnPage = [];
+
+      R.range(0, photos.perPage).map(() => {
+        const setValue = (rnd = random(1, photos.total)) =>
+          R.ifElse(
+            R.equals(R.__, true),
+            () => photosOnPage.push(rnd),
+            () => setValue()
+          )(!R.contains(rnd, photosOnPage));
+        setValue();
+      });
+
+      return photosOnPage.map((file, index) =>
+        <ParallaxComponent
+          speed={`0.${index + 1}`}
+          top={`${random((100 * index), (index * (height * 2)))}`}
+          left={`${window.innerWidth / random(20, 40)}%`}
+          width={`${width}`}
+          key={index}
+        >
+          <img src={`./app/components/Pages/Travel/files/${file}.jpg`} />
+        </ParallaxComponent>
+      );
+
+    };
+
     return (
       <section className={styles}>
         <DocumentMeta {...metaData} />
@@ -90,6 +128,11 @@ export default class Travel extends Component {
             )(R.groupBy(R.prop('chapter'), places))
           }
         </Grid>
+
+        {
+          R.equals(mode, 'text') && renderPhotos()
+        }
+
       </section>
     );
   }
