@@ -92,10 +92,10 @@ export default class Travel extends Component {
 
       return photosOnPage.map((file, index) =>
         <ParallaxComponent
-          speed={`0.${index + 1}`}
-          top={`${random((100 * index), (index * (height * 2)))}`}
+          speed={`0.${R.add(index, 1)}`}
+          top={R.toString(random((R.multiply(100, index)), (R.multiply(index, (R.multiply(height, 2))))))}
           left={`${window.innerWidth / random(20, 40)}%`}
-          width={`${width}`}
+          width={R.toString(width)}
           key={index}
         >
           <img src={`./app/components/Pages/Travel/files/${file}.jpg`} />
