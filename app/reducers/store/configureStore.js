@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
+import async from '../utils/asyncMiddleware';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import rootReducer from '../';
@@ -11,6 +12,7 @@ const logger = createLogger({
 
 const createStoreWithMiddleware = applyMiddleware(
   thunkMiddleware,
+  async,
   logger
 )(createStore);
 

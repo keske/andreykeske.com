@@ -16,8 +16,12 @@ const metaData = {
   },
 };
 
-@connect(state => state.works)
-@connect(state => state.application)
+@connect(
+  state => ({
+    ...state.application,
+    ...state.works,
+  }),
+)
 export default class WorkContainer extends Component {
 
   static propTypes = {

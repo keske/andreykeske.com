@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'underscore';
+import R from 'ramda';
 import { Link } from 'react-router';
 import { Grid, Row, Col } from 'react-bootstrap';
 
@@ -8,13 +8,12 @@ import { styles } from './styles.scss';
 
 const NavFooter = data => {
 
-  const { application, works, work } = data;
+  const { language, works, work } = data;
 
-  // TODO: refactoring _ to R
-  const workIndex = _.indexOf(works, _.findWhere(works, { link: work }));
+  const workIndex = R.findIndex(R.propEq('link', work))(works);
 
-  const prevWork = works[workIndex - 1];
-  const nextWork = works[workIndex + 1];
+  const prevWork = works[R.dec(workIndex, 1)];
+  const nextWork = works[R.add(workIndex, 1)];
 
   return (
     <section className={styles}>
@@ -28,7 +27,7 @@ const NavFooter = data => {
           >
             {
               workIndex > 0 && (
-                <Link to={`/${application.language}/works/${prevWork.link}`}>
+                <Link to={`/${language}/works/${prevWork.link}`}>
                   <p className="prevNextWorks">
                     ← Prev work
                   </p>
@@ -51,7 +50,7 @@ const NavFooter = data => {
           >
               {
                 workIndex < works.length - 1 && (
-                  <Link to={`/${application.language}/works/${nextWork.link}`}>
+                  <Link to={`/${language}/works/${nextWork.link}`}>
                     <p className="prevNextWorks">
                       Next work →
                     </p>
@@ -61,7 +60,7 @@ const NavFooter = data => {
                     <p>
                       { nextWork.info }
                     </p>
-                    <img src={`./app/components/Pages/Work/works/${nextWork.link}/files/${nextWork.img}`} />
+                    <img src={`./app/components/Content/Works/${nextWork.link}/files/${nextWork.img}`} />
                   </Link>
                 )
               }

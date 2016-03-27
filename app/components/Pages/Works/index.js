@@ -13,7 +13,7 @@ import Language from '../../Modules/Header/locale/';
 export default class Works extends Component {
 
   static propTypes = {
-    application: React.PropTypes.object,
+    language: React.PropTypes.string,
     works: React.PropTypes.array,
   };
 

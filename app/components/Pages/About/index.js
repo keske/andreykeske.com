@@ -14,14 +14,14 @@ import Language from './locale/';
 export default class About extends Component {
 
   static propTypes = {
-    application: React.PropTypes.object,
+    language: React.PropTypes.string,
   };
 
   render() {
-    const { application } = this.props;
+    const { language } = this.props;
 
     // Set language
-    Language.setLocale(application.language);
+    Language.setLocale(language);
 
     const metaData = {
       title: Language.translate('AndreyKeske'),

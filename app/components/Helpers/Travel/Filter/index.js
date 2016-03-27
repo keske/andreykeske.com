@@ -1,16 +1,13 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
-// Actions
-import { setTravelViewMode } from '../../../../actions/application.js';
-
 // Component styles
 import { styles } from './styles.scss';
 
 const Filter = props => {
 
-  const handleViewMode = () => {
-    props.dispatch(setTravelViewMode(props.mode));
+  const handleViewMode = mode => {
+    props.setTravelViewMode(mode);
   };
 
   return (
@@ -20,14 +17,14 @@ const Filter = props => {
           <span className="title">
             View:
           </span>
-          <Link to={`/${props.application.language}/travel/card`}
+          <Link to={`/${props.params.language}/travel/card`}
             onClick={() => handleViewMode('card')}
             activeClassName="active"
           >
             ☷
           </Link>
 
-          <Link to={`/${props.application.language}/travel/text`}
+          <Link to={`/${props.params.language}/travel/text`}
             onClick={() => handleViewMode('text')}
             activeClassName="active"
           >
@@ -40,7 +37,7 @@ const Filter = props => {
 };
 
 Filter.propTypes = {
-  application: PropTypes.object,
+  params: PropTypes.object,
 };
 
 export default Filter;

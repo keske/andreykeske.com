@@ -15,7 +15,7 @@ export default class Work extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
-    application: React.PropTypes.object,
+    language: React.PropTypes.string,
   };
 
   componentDidMount() {
@@ -37,10 +37,10 @@ export default class Work extends Component {
 
   render() {
     // Application settings
-    const { application } = this.props;
+    const { language } = this.props;
 
     // Set language
-    Language.setLocale(application.language);
+    Language.setLocale(language);
 
     const metaData = {
       title: `${Language.translate('Title')}`,

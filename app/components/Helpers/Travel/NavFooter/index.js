@@ -62,7 +62,7 @@ export default NavFooter;
 //     const placesRange = placesWithCover.slice(startPlace, endPlace);
 
 //     // Set language
-//     Language.setLocale(application.language);
+//     Language.setLocale(language);
 
 //     const renderNewLabel = (place) => {
 //       return (
@@ -80,7 +80,7 @@ export default NavFooter;
 //           <div className="row">
 
 //             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-//               <Link to={ `/${ application.language }/travel/card` } className="list-of-cities">
+//               <Link to={ `/${ language }/travel/card` } className="list-of-cities">
 //                 { Language.translate('List') }
 //               </Link>
 //             </div>

@@ -11,8 +11,8 @@ import { styles } from './styles.scss';
 const Preview = data => (
   <div className={`${styles} row`}>
     <Link
-      to={`/${data.application.language}/works/${data.work.link}`}
-      key={`/${data.application.language}/works/${data.work.link}`}
+      to={`/${data.language}/works/${data.work.link}`}
+      key={`/${data.language}/works/${data.work.link}`}
     >
       <Col
         xs={12}

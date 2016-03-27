@@ -14,7 +14,8 @@ import Language from './locale/';
 export default class Header extends Component {
 
   static propTypes = {
-    application: React.PropTypes.object,
+    language: React.PropTypes.string,
+    mode: React.PropTypes.string,
     dispatch: React.PropTypes.func,
   };
 
@@ -34,18 +35,18 @@ export default class Header extends Component {
 
   // Togle language between `ru` and `en`
   toggleLanguage = () => {
-    const { dispatch, application } = this.props;
+    const { dispatch, language } = this.props;
 
-    application.language === 'ru'
+    language === 'ru'
       ? dispatch(setLanguage('en'))
       : dispatch(setLanguage('ru'));
   }
 
   render() {
-    const { application } = this.props;
+    const { language, mode } = this.props;
 
     // Set language
-    Language.setLocale(application.language);
+    Language.setLocale(language);
 
     return (
       <section className={`${styles}`} ref="header">
@@ -69,12 +70,12 @@ export default class Header extends Component {
               lg={9}
               className="header-nav"
             >
-              <Link to={`/${application.language}/works`} className="nav">
+              <Link to={`/${language}/works`} className="nav">
                 { Language.translate('Works') }
               </Link>
 
               <Link
-                to={`/${application.language}/travel/${application.mode}` }
+                to={`/${language}/travel/${mode}` }
                 className="nav"
               >
                 { Language.translate('Travel') }

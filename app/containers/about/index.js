@@ -16,7 +16,11 @@ const metaData = {
   },
 };
 
-@connect(state => state.application)
+@connect(
+  state => ({
+    ...state.application,
+  }),
+)
 export default class AboutContainer extends Component {
 
   static propTypes = {

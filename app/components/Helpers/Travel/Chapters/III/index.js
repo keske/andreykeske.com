@@ -10,7 +10,7 @@ import Language from './locale';
 const III = data => {
 
   // Set language
-  Language.setLocale(data.application.language);
+  Language.setLocale(data.params.language);
 
   return (
     <Col

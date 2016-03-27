@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import DocumentMeta from 'react-document-meta';
+
+import { setTravelViewMode } from '../../reducers/modules/application';
 
 // Global styles
 import './styles/app.scss';
@@ -19,7 +22,13 @@ const metaData = {
   },
 };
 
-@connect(state => state.application)
+
+@connect(
+  state => state.application,
+  dispatch => bindActionCreators({
+    setTravelViewMode,
+  }, dispatch)
+)
 export default class App extends Component {
 
   static propTypes = {

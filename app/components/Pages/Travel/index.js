@@ -75,7 +75,7 @@ export default class Travel extends Component {
       const height = 200;
       const photos = {
         total: 7,
-        perPage: 5,
+        perPage: 3,
       };
 
       const photosOnPage = [];

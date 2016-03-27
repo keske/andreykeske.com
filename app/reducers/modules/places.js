@@ -1,8 +1,11 @@
+import R from 'ramda';
+import { createReducer } from '../utils/reducer.js';
+
 const data = [{
   city: 'Tel Aviv',
   country: 'Israel',
-  start: '20 March',
-  end: '10 March',
+  start: '10 March',
+  end: '20 March',
 
   month: 'March',
   year: 2016,
@@ -17,8 +20,8 @@ const data = [{
 }, {
   city: 'Yekaterinburg',
   country: 'Russia',
-  start: '8 March',
-  end: '3 March',
+  start: '3 March',
+  end: '8 March',
 
   month: 'March',
   year: 2016,
@@ -1041,14 +1044,12 @@ const initialState = {
   places: data,
 };
 
-export function places(state = initialState, action) {
-  switch (action.type) {
-    case 'GET':
-      return {
-        data,
-      };
+export const places = createReducer({
 
-    default:
-      return state;
-  }
-}
+  // GET: (state, action) =>
+  //   R.compose(
+  //     R.set(R.lensProp('mode'), []),
+  //     R.over(R.lensProp('state'), statusRequest)
+  //   )(state),
+
+}, initialState);

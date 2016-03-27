@@ -16,9 +16,11 @@ const metaData = {
   },
 };
 
-@connect(state => state.works)
-@connect(state => state.places)
-@connect(state => state.application)
+@connect(
+  state => ({
+    ...state.application,
+  }),
+)
 export default class HomeContainer extends Component {
 
   static propTypes = {

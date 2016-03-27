@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import DocumentMeta from 'react-document-meta';
+
+import { setTravelViewMode } from '../../reducers/modules/application';
 
 // Components
 import Travel from '../../components/Pages/Travel';
@@ -17,8 +20,15 @@ const metaData = {
   },
 };
 
-@connect(state => state.places)
-@connect(state => state.application)
+@connect(
+  state => ({
+    ...state.application,
+    ...state.places,
+  }),
+  dispatch => bindActionCreators({
+    setTravelViewMode,
+  }, dispatch)
+)
 export default class TravelContainer extends Component {
 
   render() {

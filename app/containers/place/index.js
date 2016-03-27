@@ -3,8 +3,12 @@ import { connect } from 'react-redux';
 
 import Place from '../../components/Pages/Place';
 
-@connect(state => state.places)
-@connect(state => state.application)
+@connect(
+  state => ({
+    ...state.application,
+    ...state.places,
+  }),
+)
 export default class PlaceContainer extends Component {
 
   static propTypes = {

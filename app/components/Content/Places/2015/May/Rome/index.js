@@ -16,7 +16,7 @@ export default class City extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
-    application: React.PropTypes.object,
+    language: React.PropTypes.string,
   };
 
   render() {
@@ -28,7 +28,7 @@ export default class City extends Component {
     const { application } = this.props;
 
     // Set language
-    Language.setLocale(application.language);
+    Language.setLocale(language);
 
     return (
       <div className={styles}>
@@ -425,7 +425,7 @@ export default class City extends Component {
 
         <img src={ `${img}/bottom.jpg` } className="photo-margin-top" />
 
-        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ application.language } />
+        <NavFooter style="white bottom-on-photo" year={ year * 1 } month={ month } city={ city } language={ language } />
       </div>
     );
   }
