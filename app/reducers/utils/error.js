@@ -1,4 +1,4 @@
-import R from 'R';
+import R from 'ramda';
 
 export const getErrors = R.cond([
   [

@@ -28,10 +28,18 @@ export default class Travel extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    console.log('asdasdd');
+    this.props.loadPlaces();
   }
 
   render() {
     const { places, params: { language, mode } } = this.props;
+
+    if (R.isEmpty(places)) {
+      return <p>Loading</p>
+    }
+
+    console.log('asdasdd');
 
     const metaData = {
       title: Language.translate('Travel'),
@@ -105,35 +113,39 @@ export default class Travel extends Component {
     };
 
     return (
-      <section className={styles}>
-        <DocumentMeta {...metaData} />
-        <Grid>
-          <Row>
-            <Col
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-            >
-              <h1 className="page-title">
-                Travel
-              </h1>
-              <Filter {...this.props} />
-            </Col>
-          </Row>
-          {
-            R.compose(
-              R.map(renderChapter),
-              R.values,
-            )(R.groupBy(R.prop('chapter'), places))
-          }
-        </Grid>
+      <p>Placesss</p>
+    )
 
-        {
-          R.equals(mode, 'text') && renderPhotos()
-        }
+    // return (
+    //   <section className={styles}>
+    //     <DocumentMeta {...metaData} />
+    //     <Grid>
+    //       <Row>
+    //         <Col
+    //           xs={12}
+    //           sm={12}
+    //           md={12}
+    //           lg={12}
+    //         >
+    //           <h1 className="page-title">
+    //             Travel
+    //           </h1>
+    //           <Filter {...this.props} />
+    //         </Col>
+    //       </Row>
+    //       {
+    //         R.compose(
+    //           R.map(renderChapter),
+    //           R.values,
+    //         )(R.groupBy(R.prop('chapter'), places))
+    //       }
+    //     </Grid>
 
-      </section>
-    );
+    //     {
+    //       R.equals(mode, 'text') && renderPhotos()
+    //     }
+
+    //   </section>
+    // );
   }
 }

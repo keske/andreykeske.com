@@ -24,7 +24,10 @@ const metaData = {
 
 
 @connect(
-  state => state.application,
+  state => ({
+    language: state.application.language,
+    mode: state.application.mode,
+  }),
   dispatch => bindActionCreators({
     setTravelViewMode,
   }, dispatch)

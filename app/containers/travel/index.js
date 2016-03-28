@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import DocumentMeta from 'react-document-meta';
 
 import { setTravelViewMode } from '../../reducers/modules/application';
+import { loadPlaces } from '../../reducers/modules/places';
 
 // Components
 import Travel from '../../components/Pages/Travel';
@@ -22,15 +23,16 @@ const metaData = {
 
 @connect(
   state => ({
-    ...state.application,
-    ...state.places,
+    language: state.application.language,
+    mode: state.application.mode,
+    places: state.places.places,
   }),
   dispatch => bindActionCreators({
     setTravelViewMode,
+    loadPlaces,
   }, dispatch)
 )
 export default class TravelContainer extends Component {
-
   render() {
     return (
       <section>

@@ -9,7 +9,7 @@ const resolveProps = obj => {
 
   return Promise
     .all(values)
-    .cancellable()
+    // .cancellable()
     .then(resolvedArray => props.reduce((acc, prop, index) =>
       ({ ...acc, [prop]: resolvedArray[index] }), {}));
 };
