@@ -22,7 +22,6 @@ const metaData = {
   },
 };
 
-
 @connect(
   state => ({
     language: state.application.language,

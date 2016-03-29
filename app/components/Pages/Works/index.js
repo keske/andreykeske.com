@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
+import R from 'ramda';
 
 // Components
 import Preview from '../../Helpers/Works/Preview';
@@ -13,14 +14,26 @@ import Language from '../../Modules/Header/locale/';
 export default class Works extends Component {
 
   static propTypes = {
-    language: React.PropTypes.string,
-    works: React.PropTypes.array,
+    language: PropTypes.string,
+    params: PropTypes.object,
+    works: PropTypes.array,
+    loadWorks: PropTypes.func,
   };
 
-  render() {
-    const { application } = this.props;
-    const { works } = this.props;
+  componentDidMount() {
+    const { loadWorks } = this.props;
+    loadWorks();
+  }
 
+  render() {
+    const { language, works } = this.props;
+
+    console.log(this.props);
+    if (R.isEmpty(works)) {
+      return <p>Loading</p>;
+    }
+    console.log(this.props);
+    
     const metaData = {
       title: Language.translate('Works'),
       description: Language.translate('Works'),
@@ -43,7 +56,7 @@ export default class Works extends Component {
             works.map((work, key) => {
               const data = {
                 work,
-                application,
+                language,
               };
               return <Preview {...data} key={key} />;
             })

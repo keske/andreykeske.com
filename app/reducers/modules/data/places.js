@@ -1,4 +1,4 @@
-[{
+export default [{
   city: 'Tel Aviv',
   country: 'Israel',
   start: '10 March',

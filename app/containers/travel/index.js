@@ -25,7 +25,7 @@ const metaData = {
   state => ({
     language: state.application.language,
     mode: state.application.mode,
-    places: state.places.places,
+    places: state.places.data,
   }),
   dispatch => bindActionCreators({
     setTravelViewMode,

@@ -4,9 +4,6 @@ import React, { Component } from 'react';
 import LinkToImage from '../../../../../Helpers/LinkToImage';
 import NavFooter from '../../../../../Helpers/Travel/NavFooter';
 
-// Component styles
-import { styles } from './styles/styles.scss';
-
 // Language
 import Language from './locale/';
 
@@ -26,7 +23,7 @@ export default class City extends Component {
     Language.setLocale(language);
 
     return (
-      <div className={styles}>
+      <div>
         <LinkToImage url={ `${img}/thumb.jpg` } />
 
         <div className="top-page-city-name on-image">

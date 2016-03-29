@@ -1,63 +1,47 @@
-import request from 'superagent-bluebird-promise';
-
 import R from 'ramda';
-import { statusRequest } from '../utils/request.js';
-import { createReducer } from '../utils/reducer.js';
+
+// Utils
+import { apiLoadPlaces } from '../../utils/api';
+import { createReducer } from '../utils/reducer';
+
+const TYPE = 'PLACES';
+const defaultData = [];
 
 const initialState = {
-  places: [],
+  data: defaultData,
 };
 
-export const apiLoadPlaces = () =>
-  request
-  .get('/app/reducers/modules/data/places.js')
-  .promise()
-  .then(response => response.text);
-
 export const loadPlaces = () => ({
-  type: 'LOAD_PLACES',
+  type: `LOAD_${TYPE}`,
   payload: {
-    places: apiLoadPlaces(),
-  }
+    data: apiLoadPlaces(),
+  },
 });
 
-// console.log(initialState)
-
-const LPlaces = R.lensProp('places');
-const LState = R.lensProp('state');
+const LPlaces = R.lensProp('data');
 
 export const places = createReducer({
 
-  LOAD_PLACES_REQUEST: (state, action) => {
-    console.log('request');
+  // Request
+  [`LOAD_${TYPE}_REQUEST`]: state =>
+    R.compose(
+      R.set(LPlaces, defaultData),
+    )(state),
 
-   return R.compose(
-      // R.set(R.lensProp('mode'), action.payload.mode),
-        // R.set(LPlaces, 'asdsadasd'),
-        R.set(R.lensProp('places'), []),
-        // R.over(LState, statusRequest)
-    )(state)
-  },
+  // Failure
+  [`LOAD_${TYPE}_FAILURE`]: state =>
+    R.compose(
+      R.set(LPlaces, defaultData),
+    )(state),
 
-  LOAD_PLACES_FAILURE: (state) => {
-    console.log('fail');
-    return R.compose(
-      R.set(LPlaces, {}),
-      R.over(LState, statusFailure(payload))
-    )(state)
-  },
-
-  LOAD_PLACES_SUCCESS: (state, {
+  // Success
+  [`LOAD_${TYPE}_SUCCESS`]: (state, {
     payload: {
-      places
-    }
-  }) => {
-    console.log('success');
-
-    return R.compose(
-      R.set(LPlaces, places),
-      // R.over(LState, statusSuccess)
-    )(state)
-  },
+      data,
+    },
+  }) =>
+    R.compose(
+      R.set(LPlaces, data),
+    )(state),
 
 }, initialState);

@@ -24,22 +24,22 @@ export default class Travel extends Component {
   static propTypes = {
     params: PropTypes.object,
     places: PropTypes.array,
+    loadPlaces: PropTypes.func,
   };
 
   componentDidMount() {
+    const { loadPlaces } = this.props;
+    loadPlaces();
+
     window.scrollTo(0, 0);
-    console.log('asdasdd');
-    this.props.loadPlaces();
   }
 
   render() {
     const { places, params: { language, mode } } = this.props;
 
     if (R.isEmpty(places)) {
-      return <p>Loading</p>
+      return <p>Loading</p>;
     }
-
-    console.log('asdasdd');
 
     const metaData = {
       title: Language.translate('Travel'),
@@ -113,39 +113,35 @@ export default class Travel extends Component {
     };
 
     return (
-      <p>Placesss</p>
-    )
+      <section className={styles}>
+        <DocumentMeta {...metaData} />
+        <Grid>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+            >
+              <h1 className="page-title">
+                Travel
+              </h1>
+              <Filter {...this.props} />
+            </Col>
+          </Row>
+          {
+            R.compose(
+              R.map(renderChapter),
+              R.values,
+            )(R.groupBy(R.prop('chapter'), places))
+          }
+        </Grid>
 
-    // return (
-    //   <section className={styles}>
-    //     <DocumentMeta {...metaData} />
-    //     <Grid>
-    //       <Row>
-    //         <Col
-    //           xs={12}
-    //           sm={12}
-    //           md={12}
-    //           lg={12}
-    //         >
-    //           <h1 className="page-title">
-    //             Travel
-    //           </h1>
-    //           <Filter {...this.props} />
-    //         </Col>
-    //       </Row>
-    //       {
-    //         R.compose(
-    //           R.map(renderChapter),
-    //           R.values,
-    //         )(R.groupBy(R.prop('chapter'), places))
-    //       }
-    //     </Grid>
+        {
+          R.equals(mode, 'text') && renderPhotos()
+        }
 
-    //     {
-    //       R.equals(mode, 'text') && renderPhotos()
-    //     }
-
-    //   </section>
-    // );
+      </section>
+    );
   }
 }
