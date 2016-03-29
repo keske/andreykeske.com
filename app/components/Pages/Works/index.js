@@ -28,12 +28,10 @@ export default class Works extends Component {
   render() {
     const { language, works } = this.props;
 
-    console.log(this.props);
     if (R.isEmpty(works)) {
       return <p>Loading</p>;
     }
-    console.log(this.props);
-    
+
     const metaData = {
       title: Language.translate('Works'),
       description: Language.translate('Works'),

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router';
 
-// Actions
-import { setLanguage } from '../../../actions/application.js';
-
 // Component styles
 import { styles } from './styles.scss';
 
@@ -35,11 +32,11 @@ export default class Header extends Component {
 
   // Togle language between `ru` and `en`
   toggleLanguage = () => {
-    const { dispatch, language } = this.props;
+    // const { dispatch, language } = this.props;
 
-    language === 'ru'
-      ? dispatch(setLanguage('en'))
-      : dispatch(setLanguage('ru'));
+    // language === 'ru'
+    //   ? dispatch(setLanguage('en'))
+    //   : dispatch(setLanguage('ru'));
   }
 
   render() {

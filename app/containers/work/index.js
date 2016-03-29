@@ -18,8 +18,9 @@ const metaData = {
 
 @connect(
   state => ({
-    ...state.application,
-    ...state.works,
+    language: state.application.language,
+    mode: state.application.mode,
+    works: state.works.data,
   }),
 )
 export default class WorkContainer extends Component {
