@@ -1,8 +1,13 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import DocumentMeta from 'react-document-meta';
 import { Grid, Row, Col } from 'react-bootstrap';
 import ParallaxComponent from 'react-parallax-component';
 import R from 'ramda';
+
+import { setTravelViewMode } from '../../../reducers/modules/application';
+import { loadPlaces } from '../../../reducers/modules/places';
 
 // Utils
 import { random } from '../../../utils/math';
@@ -19,6 +24,17 @@ import { styles } from './styles.scss';
 // Language
 import Language from '../../Modules/Header/locale/';
 
+@connect(
+  state => ({
+    language: state.application.language,
+    mode: state.application.mode,
+    places: state.places.data,
+  }),
+  dispatch => bindActionCreators({
+    setTravelViewMode,
+    loadPlaces,
+  }, dispatch)
+)
 export default class Travel extends Component {
 
   static propTypes = {
@@ -28,8 +44,7 @@ export default class Travel extends Component {
   };
 
   componentDidMount() {
-    const { loadPlaces } = this.props;
-    loadPlaces();
+    this.props.loadPlaces();
 
     window.scrollTo(0, 0);
   }

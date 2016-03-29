@@ -2,12 +2,12 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './containers/App';
-import Home from './containers/Home';
-import About from './containers/About';
-import Travel from './containers/Travel';
-import Place from './containers/Place';
-import Works from './containers/Works';
-import Work from './containers/Work';
+import Home from './components/Pages/Home';
+import About from './components/Pages/About';
+import Travel from './components/Pages/Travel';
+import Place from './components/Pages/Place';
+import Works from './components/Pages/Works';
+import Work from './components/Pages/Work';
 
 export default (
   <Route path="/" component={App}>

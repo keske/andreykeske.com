@@ -1,6 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import DocumentMeta from 'react-document-meta';
 import R from 'ramda';
+
+import { setTravelViewMode } from '../../../reducers/modules/application';
+import { loadWorks } from '../../../reducers/modules/works';
 
 // Components
 import Preview from '../../Helpers/Works/Preview';
@@ -11,6 +16,17 @@ import { styles } from './styles.scss';
 // Language
 import Language from '../../Modules/Header/locale/';
 
+@connect(
+  state => ({
+    language: state.application.language,
+    mode: state.application.mode,
+    works: state.works.data,
+  }),
+  dispatch => bindActionCreators({
+    setTravelViewMode,
+    loadWorks,
+  }, dispatch)
+)
 export default class Works extends Component {
 
   static propTypes = {
@@ -21,8 +37,7 @@ export default class Works extends Component {
   };
 
   componentDidMount() {
-    const { loadWorks } = this.props;
-    loadWorks();
+    this.props.loadWorks();
   }
 
   render() {
