@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import R from 'ramda';
 
@@ -13,8 +13,8 @@ import Language from './locale/';
 export default class Home extends Component {
 
   static propTypes = {
-    language: React.PropTypes.string,
-    params: React.PropTypes.object,
+    language: PropTypes.string,
+    params: PropTypes.object,
   };
 
   render() {

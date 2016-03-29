@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import $ from 'jquery';
@@ -27,8 +27,8 @@ import {
 export default class Work extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
-    language: React.PropTypes.string,
+    params: PropTypes.object,
+    language: PropTypes.string,
   };
 
   constructor(props) {

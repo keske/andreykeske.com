@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
 import * as Cities from '../../Content/Places/index.js';
 
@@ -8,8 +8,8 @@ import { styles } from './styles.scss';
 export default class Place extends Component {
 
   static propTypes = {
-    routeParams: React.PropTypes.object,
-    language: React.PropTypes.string,
+    routeParams: PropTypes.object,
+    language: PropTypes.string,
   };
 
   componentDidMount() {

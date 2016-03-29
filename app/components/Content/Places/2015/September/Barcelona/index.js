@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -6,7 +6,7 @@ import { styles } from './styles/styles.scss';
 export default class City extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
+    params: PropTypes.object,
   };
 
   render() {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 // Components
 import LinkToImage from '../../../../../Helpers/LinkToImage';
@@ -13,7 +13,7 @@ import Language from './locale/';
 export default class City extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
+    params: PropTypes.object,
   };
 
   render() {

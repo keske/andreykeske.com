@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router';
 
@@ -11,9 +11,9 @@ import Language from './locale/';
 export default class Header extends Component {
 
   static propTypes = {
-    language: React.PropTypes.string,
-    mode: React.PropTypes.string,
-    dispatch: React.PropTypes.func,
+    language: PropTypes.string,
+    mode: PropTypes.string,
+    dispatch: PropTypes.func,
   };
 
   componentDidMount() {

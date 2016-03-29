@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -6,7 +6,7 @@ import { styles } from './styles/styles.scss';
 export default class Unsharpness extends Component {
 
   static propTypes = {
-    image: React.PropTypes.string,
+    image: PropTypes.string,
   };
 
 

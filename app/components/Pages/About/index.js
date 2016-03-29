@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
 import { Grid, Row, Col } from 'react-bootstrap';
 
@@ -14,7 +14,7 @@ import Language from './locale/';
 export default class About extends Component {
 
   static propTypes = {
-    language: React.PropTypes.string,
+    language: PropTypes.string,
   };
 
   render() {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ParallaxComponent from 'react-parallax-component';
 
 // Components
@@ -13,7 +13,7 @@ import Language from './locale';
 export default class City extends Component {
 
   static propTypes = {
-    routeParams: React.PropTypes.object,
+    routeParams: PropTypes.object,
   };
 
   render() {

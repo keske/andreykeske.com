@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class LinkToImage extends Component {
 
   static propTypes = {
-    url: React.PropTypes.string,
+    url: PropTypes.string,
   };
 
   render() {

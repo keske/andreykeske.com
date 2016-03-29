@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 // Components
@@ -15,8 +15,8 @@ import Language from './locale/';
 export default class City extends Component {
 
   static propTypes = {
-    params: React.PropTypes.object,
-    language: React.PropTypes.string,
+    params: PropTypes.object,
+    language: PropTypes.string,
   };
 
   render() {
