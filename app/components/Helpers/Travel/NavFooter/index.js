@@ -1,9 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import R from 'ramda';
-import _ from 'underscore';
+import cx from 'classnames';
+import { Grid, Row, Col } from 'react-bootstrap';
 
-import { showNewLabel } from '../../../../utils/travel';
+import { loadPlaces } from '../../../../reducers/modules/places';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -11,110 +14,128 @@ import { styles } from './styles.scss';
 // Language
 import Language from './locale/';
 
-const NavFooter = () => {
+@connect(
+  state => ({
+    language: state.application.language,
+    mode: state.application.mode,
+    places: state.places.data,
+  }),
+  dispatch => bindActionCreators({
+    loadPlaces,
+  }, dispatch)
+)
+export default class NavFooter extends Component {
 
-  return (
-    <div>
-      NavFooter
-    </div>
-  );
-};
+  static propTypes = {
+    params: PropTypes.object,
+    places: PropTypes.array,
+    loadPlaces: PropTypes.func,
+    language: PropTypes.string,
+    style: PropTypes.string,
+    city: PropTypes.string,
+    month: PropTypes.string,
+    year: PropTypes.number,
+  };
 
-export default NavFooter;
+  componentDidMount() {
+    this.props.loadPlaces();
+  }
 
-//     // Reduce places
-//     const reducedPlaces = R.reduceRight(places, (a, b) => {
-//       return a.concat(b);
-//     }, []);
+  render() {
+    const {
+      city, month, year, places, language, style,
+    } = this.props;
 
-//     // Get places with cover
-//     const placesWithCover = R.filter(reducedPlaces, (place) => {
-//       return place.cover ? place : null;
-//     });
+    if (R.isEmpty(places)) {
+      return <p>Loading</p>;
+    }
 
-//     // Get current index of places in the array
-//     const currentPlaceIndex = R.indexOf(placesWithCover,
-//       _.findWhere(placesWithCover, {
-//         city,
-//         year,
-//         month,
-//       }));
+    // Reduce places
+    const reducedPlaces = R.reduceRight((a, b) => a.concat(b), [], places);
 
-//     // Length of the places array
-//     let startPlace = currentPlaceIndex - 2;
-//     let endPlace = currentPlaceIndex + 4;
+    // Get places with cover
+    const placesWithCover = R.filter(place => place.cover && place, reducedPlaces);
 
-//     // Get range...
-//     if (startPlace === -2 || startPlace === -1 || startPlace === 0) {
-//       startPlace = 0;
-//       endPlace = 6;
-//     } else if ((placesWithCover.length - currentPlaceIndex) === 1) {
-//       startPlace = currentPlaceIndex - 5;
-//       endPlace = placesWithCover.max;
-//     } else if ((placesWithCover.length - currentPlaceIndex) === 2) {
-//       startPlace = currentPlaceIndex - 4;
-//       endPlace = placesWithCover.max;
-//     } else if ((placesWithCover.length - currentPlaceIndex) === 3) {
-//       startPlace = currentPlaceIndex - 3;
-//       endPlace = placesWithCover.max;
-//     }
+    let currentPlaceIndex = 0;
 
-//     const placesRange = placesWithCover.slice(startPlace, endPlace);
+    placesWithCover.map((place, index) => {
+      if (place.city === city && place.month === month && place.year === year) {
+        currentPlaceIndex = index;
+      }
+    });
 
-//     // Set language
-//     Language.setLocale(language);
+    // Length of the places array
+    let startPlace = currentPlaceIndex - 2;
+    let endPlace = currentPlaceIndex + 4;
 
-//     const renderNewLabel = (place) => {
-//       return (
-//         showNewLabel(place.date) &&
-//           <span className="new">
-//             New
-//           </span>
-//       );
-//     };
+    R.cond([
+      [startPlace === -2 || startPlace === -1 || startPlace === 0, () => {
+        startPlace = 0;
+        endPlace = 6;
+      }],
+      [(placesWithCover.length - currentPlaceIndex) === 1, () => {
+        startPlace = currentPlaceIndex - 5;
+        endPlace = placesWithCover.max;
+      }],
+      [(placesWithCover.length - currentPlaceIndex) === 2, () => {
+        startPlace = currentPlaceIndex - 4;
+        endPlace = placesWithCover.max;
+      }],
+      [(placesWithCover.length - currentPlaceIndex) === 3, () => {
+        startPlace = currentPlaceIndex - 3;
+        endPlace = placesWithCover.max;
+      }],
+    ]);
 
-//     return (
-//       <div className={ `${ styles } ${ style }` }>
-//         <div className="container">
+    const placesRange = R.slice(startPlace, endPlace, placesWithCover);
 
-//           <div className="row">
+    // Set language
+    Language.setLocale(language);
 
-//             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-//               <Link to={ `/${ language }/travel/card` } className="list-of-cities">
-//                 { Language.translate('List') }
-//               </Link>
-//             </div>
-
-//             {
-//               placesRange.map((currentPlace) => {
-//                 const activeClass = city === currentPlace.city &&
-//                   month === currentPlace.month &&
-//                   year === currentPlace.year ? 'active' : '';
-
-//                 return (
-//                   currentPlace.cover &&
-//                     <Link
-//                       to={ `/${ language }/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }
-//                       key={ `${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city }` }
-//                       className={ `${ activeClass }` }
-//                     >
-//                       <div className={ `col-md-2 col-lg-2 nav-block` }>
-//                         <div className="data">
-//                           <p className="city">
-//                             { currentPlace.city }
-//                             { renderNewLabel(currentPlace) }
-//                           </p>
-//                         </div>
-//                         <img src={ `./src/components/place/places/${ currentPlace.year }/${ currentPlace.month }/${ currentPlace.city.replace(/ /g, '') }/images/thumb.jpg` } />
-//                       </div>
-//                     </Link>
-//                 );
-//               })
-//             }
-//           </div>
-//         </div>
-
-//       </div>
-//     );
-//   }
-// }
+    return (
+      <Grid className={cx(styles, style)}>
+        <Row>
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+          >
+            <Link to={ `/${language}/travel/card`} className="list-of-cities">
+              { Language.translate('List')}
+            </Link>
+          </Col>
+          {
+            placesRange.map((
+              currentPlace,
+              activeClass = city === currentPlace.city && month === currentPlace.month && year === currentPlace.year && 'active'
+              ) => (
+                currentPlace.cover &&
+                  <Link
+                    to={ `/${language}/places/${currentPlace.year}/${currentPlace.month}/${currentPlace.city}`}
+                    key={ `${currentPlace.year}/${currentPlace.month}/${currentPlace.city}`}
+                    className={ `${activeClass}`}
+                  >
+                    <Col
+                      xs={12}
+                      sm={12}
+                      md={2}
+                      lg={2}
+                      className="nav-block"
+                    >
+                      <div className="data">
+                        <p className="city">
+                          { currentPlace.city }
+                        </p>
+                      </div>
+                      <img src={ `./app/Components/Content/Places/${currentPlace.year}/${currentPlace.month}/${currentPlace.city.replace(/ /g, '')}/images/thumb.jpg`} />
+                    </Col>
+                  </Link>
+                )
+            )
+          }
+        </Row>
+      </Grid>
+    );
+  }
+}

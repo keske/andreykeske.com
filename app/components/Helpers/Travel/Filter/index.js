@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { Row, Col } from 'react-bootstrap';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -11,28 +12,33 @@ const Filter = props => {
   };
 
   return (
-    <div className={styles}>
-      <div className="row">
-        <div className="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-          <span className="title">
-            View:
-          </span>
-          <Link to={`/${props.params.language}/travel/card`}
-            onClick={() => handleViewMode('card')}
-            activeClassName="active"
-          >
-            ☷
-          </Link>
+    <Row className={styles}>
+      <Col
+        xs={3}
+        sm={3}
+        md={2}
+        lg={2}
+      >
+        <span className="title">
+          View:
+        </span>
+        <Link
+          to={`/${props.params.language}/travel/card`}
+          onClick={() => handleViewMode('card')}
+          activeClassName="active"
+        >
+          ☷
+        </Link>
 
-          <Link to={`/${props.params.language}/travel/text`}
-            onClick={() => handleViewMode('text')}
-            activeClassName="active"
-          >
-            ☰
-          </Link>
-        </div>
-      </div>
-    </div>
+        <Link
+          to={`/${props.params.language}/travel/text`}
+          onClick={() => handleViewMode('text')}
+          activeClassName="active"
+        >
+          ☰
+        </Link>
+      </Col>
+    </Row>
   );
 };
 
