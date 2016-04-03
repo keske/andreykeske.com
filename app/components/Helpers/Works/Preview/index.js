@@ -8,7 +8,7 @@ import { random } from '../../../../utils/math';
 // Component styles
 import { styles } from './styles.scss';
 
-const Preview = data => (
+const Preview = data =>
   <div className={`${styles} row`}>
     <Link
       to={`/${data.language}/works/${data.work.link}`}
@@ -38,7 +38,6 @@ const Preview = data => (
         </span>
       </Col>
     </Link>
-  </div>
-);
+  </div>;
 
 export default Preview;

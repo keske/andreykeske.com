@@ -31,7 +31,6 @@ export default class NavFooter extends Component {
     places: PropTypes.array,
     loadPlaces: PropTypes.func,
     language: PropTypes.string,
-    style: PropTypes.string,
     city: PropTypes.string,
     month: PropTypes.string,
     year: PropTypes.number,
@@ -43,8 +42,10 @@ export default class NavFooter extends Component {
 
   render() {
     const {
-      city, month, year, places, language, style,
-    } = this.props;
+      props: {
+        city, month, year, places, language,
+      },
+    } = this;
 
     if (R.isEmpty(places)) {
       return <p>Loading</p>;
@@ -93,7 +94,7 @@ export default class NavFooter extends Component {
     Language.setLocale(language);
 
     return (
-      <Grid className={cx(styles, style)}>
+      <Grid className={cx(styles)}>
         <Row>
           <Col
             xs={12}

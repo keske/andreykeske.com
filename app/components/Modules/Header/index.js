@@ -40,13 +40,17 @@ export default class Header extends Component {
   }
 
   render() {
-    const { language, mode } = this.props;
+    const {
+      props: {
+        language, mode,
+      },
+    } = this;
 
     // Set language
     Language.setLocale(language);
 
     return (
-      <section className={`${styles}`} ref="header">
+      <section className={styles} ref="header">
         <Grid>
           <Row>
             <Col

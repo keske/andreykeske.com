@@ -9,11 +9,13 @@ import { styles } from './styles.scss';
 const VisitedDate = place => (
   <p className={`${styles} date`}>
     <span className="country">
-      {place.country}
+      { place.country }
     </span>
     <br />
-    {showStartDateMonth(place.start, place.end)}
-    {place.end && <span>..{place.end}</span>}
+    { showStartDateMonth(place.start, place.end) }
+    {
+      place.end && <span>..{place.end}</span>
+    }
   </p>
 );
 

@@ -48,23 +48,23 @@ const NavFooter = data => {
             md={4}
             lg={4}
           >
-              {
-                workIndex < works.length - 1 && (
-                  <Link to={`/${language}/works/${nextWork.link}`}>
-                    <p className="prevNextWorks">
-                      Next work →
-                    </p>
-                    <h3>
-                      { nextWork.title }
-                    </h3>
-                    <p>
-                      { nextWork.info }
-                    </p>
-                    <img src={`./app/components/Content/Works/${nextWork.link}/files/${nextWork.img}`} />
-                  </Link>
-                )
-              }
-            </Col>
+            {
+              workIndex < works.length - 1 && (
+                <Link to={`/${language}/works/${nextWork.link}`}>
+                  <p className="prevNextWorks">
+                    Next work →
+                  </p>
+                  <h3>
+                    { nextWork.title }
+                  </h3>
+                  <p>
+                    { nextWork.info }
+                  </p>
+                  <img src={`./app/components/Content/Works/${nextWork.link}/files/${nextWork.img}`} />
+                </Link>
+              )
+            }
+          </Col>
 
         </Row>
       </Grid>

@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 // Components
-import Footer from '../../Modules/Footer';
+import { Footer } from '../../Modules/Footer';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -11,11 +12,20 @@ import { styles } from './styles.scss';
 // Language
 import Language from './locale/';
 
+@connect(
+  state => ({
+    language: state.application.language,
+  }),
+)
 export default class About extends Component {
 
   static propTypes = {
     language: PropTypes.string,
   };
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   render() {
     const { language } = this.props;
