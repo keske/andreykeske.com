@@ -53,7 +53,7 @@ export default class Travel extends Component {
     const { places, params: { language, mode } } = this.props;
 
     if (R.isEmpty(places)) {
-      return <p>Loading</p>;
+      return <p className="loading">✈</p>;
     }
 
     const metaData = {

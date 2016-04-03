@@ -32,9 +32,7 @@ const Text = place => {
   return (
     place.cover
       ? <Link to={`/${place.language}/places/${place.year}/${place.month}/${place.city}`}>
-          {
-            renderInner()
-          }
+          { renderInner() }
         </Link>
       : renderInner()
   );

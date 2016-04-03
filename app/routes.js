@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './containers/App';
-import Home from './components/Pages/Home';
 import About from './components/Pages/About';
 import Travel from './components/Pages/Travel';
 import Place from './components/Pages/Place';
@@ -17,6 +16,6 @@ export default (
     <Route path=":language/places/:year/:month/:city" component={Place} />
     <Route path=":language/works" component={Works} />
     <Route path=":language/works/:work" component={Work} />
-    <Route status={404} path="*" component={Home} />
+    <Route status={404} path="*" component={About} />
   </Route>
 );

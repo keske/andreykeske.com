@@ -72,14 +72,14 @@ export default class Header extends Component {
               className="header-nav"
             >
               <Link to={`/${language}/works`} className="nav">
-                ⠵ { Language.translate('Works') }
+                { Language.translate('Works') }
               </Link>
 
               <Link
                 to={`/${language}/travel/${mode}` }
                 className="nav"
               >
-                ✈ { Language.translate('Travel') }
+                { Language.translate('Travel') }
               </Link>
             </Col>
           </Row>

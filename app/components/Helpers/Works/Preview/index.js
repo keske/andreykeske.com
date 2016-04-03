@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 // Utils
 import { random } from '../../../../utils/math';
@@ -9,7 +9,7 @@ import { random } from '../../../../utils/math';
 import { styles } from './styles.scss';
 
 const Preview = data =>
-  <div className={`${styles} row`}>
+  <Row className={styles}>
     <Link
       to={`/${data.language}/works/${data.work.link}`}
       key={`/${data.language}/works/${data.work.link}`}
@@ -38,6 +38,6 @@ const Preview = data =>
         </span>
       </Col>
     </Link>
-  </div>;
+  </Row>;
 
 export default Preview;

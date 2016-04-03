@@ -1,6 +1,6 @@
 module.exports = {
 
   title: 'Chapter II',
-  description: 'Experimental view on my trips',
+  description: 'Quite a regular trip reports, text with photos. This approach quickly bore me.',
 
 };

@@ -44,7 +44,7 @@ export default class Works extends Component {
     const { language, works } = this.props;
 
     if (R.isEmpty(works)) {
-      return <p>Loading</p>;
+      return <p className="loading">⠵</p>;
     }
 
     const metaData = {
