@@ -9,21 +9,20 @@
 :global(body) {
   position: relative;
 
+  color: $black;
+  background: $white;
+
   a {
     color: $link;
     text-decoration: none;
+
+    &.active {
+      color: $black;
+    }
     
     &:hover {
       color: $linkHover;
       text-decoration: none;
-    }
-
-    &:visited:hover {
-      color: $linkHover;
-    }
-
-    &:visited {
-      color: $linkVisited;
     }
   }
 

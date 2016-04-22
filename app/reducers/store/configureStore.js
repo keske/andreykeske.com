@@ -18,13 +18,5 @@ const createStoreWithMiddleware = applyMiddleware(
 
 export default function configureStore(initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState);
-
-  if (module.hot) {
-    module.hot.accept('../', () => {
-      const nextRootReducer = require('../').default;
-      store.replaceReducer(nextRootReducer);
-    });
-  }
-
   return store;
 }

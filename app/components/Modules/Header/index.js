@@ -71,13 +71,18 @@ export default class Header extends Component {
               lg={9}
               className="header-nav"
             >
-              <Link to={`/${language}/works`} className="nav">
+              <Link
+                to={`/${language}/works`}
+                className="nav"
+                activeClassName="active"
+              >
                 { Language.translate('Works') }
               </Link>
 
               <Link
                 to={`/${language}/travel/${mode}` }
                 className="nav"
+                activeClassName="active"
               >
                 { Language.translate('Travel') }
               </Link>

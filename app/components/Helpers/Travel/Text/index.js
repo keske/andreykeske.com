@@ -16,8 +16,8 @@ const Text = place => {
       className={styles}
       xs={12}
       sm={12}
-      md={12}
-      lg={12}
+      md={8}
+      lg={8}
     >
       <div className={'data'}>
         <p className="city">

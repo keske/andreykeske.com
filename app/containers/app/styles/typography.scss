@@ -76,6 +76,7 @@ ul {
 
   li {
     @include caption();
+
     font-size: 16px;
     font-weight: 100;
     line-height: 26px;
