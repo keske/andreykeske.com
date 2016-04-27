@@ -61,7 +61,8 @@ export default class Work extends Component {
                   width="600"
                   height="450"
                   frameBorder="0"
-                  allowFullScreen />
+                  allowFullScreen
+                />
               </div>
 
             </div>

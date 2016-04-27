@@ -1,9 +1,9 @@
 export default [
   {
     title: 'Globalization',
+    info: 'The world when the boundaries are blurred.',
     link: 'globalization',
     img: 'cover.png',
-    info: 'The world when the boundaries are blurred.',
     count: '',
   },
   // {

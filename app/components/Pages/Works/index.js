@@ -43,6 +43,9 @@ export default class Works extends Component {
   render() {
     const { language, works } = this.props;
 
+    // Set language
+    Language.setLocale(language);
+
     if (R.isEmpty(works)) {
       return <p className="loading">⠵</p>;
     }
@@ -63,7 +66,7 @@ export default class Works extends Component {
         <DocumentMeta {...metaData} />
         <div className="container">
           <h1 className="page-title">
-            Hacks
+            { Language.translate('Works') }
           </h1>
           {
             works.map((work, key) => {

@@ -9,7 +9,7 @@ export const setTravelViewMode = mode => ({
 });
 
 const initialState = {
-  language: 'en',
+  language: 'ru',
   mode: 'card',
 };
 

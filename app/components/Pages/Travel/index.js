@@ -139,7 +139,7 @@ export default class Travel extends Component {
               lg={12}
             >
               <h1 className="page-title">
-                Travel
+                { Language.translate('Travel') }
               </h1>
               <Filter {...this.props} />
             </Col>
