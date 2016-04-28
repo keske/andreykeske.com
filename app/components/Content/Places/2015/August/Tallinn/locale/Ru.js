@@ -1,6 +1,6 @@
 module.exports = {
 
-  City: 'Tallin',
+  City: 'Талин',
   Intro: 'That trip was a very slow',
 
 };
