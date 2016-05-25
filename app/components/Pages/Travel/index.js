@@ -67,31 +67,35 @@ export default class Travel extends Component {
       },
     };
 
-    const renderPlace = (place, data = { ...place, language }) =>
+    const renderPlace = (place, data = { ...place, language }) => (
       R.equals(mode, 'card')
         ? R.or(R.equals(place.cover, true), R.equals(place.chapter, 'I')) &&
           <Card {...data} key={Math.random()} />
-        : <Text {...data} key={Math.random()} />;
+        : <Text {...data} key={Math.random()} />
+    );
 
-    const renderChapter = chapterPlaces =>
-      <Row className="chapters-row" key={Math.random()}>
-        {
-          // Create chapter component
-          React.createElement(
-            Chapters[
-              R.compose(
-                R.view(R.lensProp('chapter')),
-                R.find(R.prop('chapter')),
-              )(chapterPlaces)
-            ],
-            this.props
-          )
-        }
-        {
-          // After render places for each chapter
-          R.map(renderPlace, chapterPlaces)
-        }
-      </Row>;
+    const renderChapter = chapterPlaces => (
+      R.equals(mode, 'card')
+        ? <Row className="chapters-row" key={Math.random()}>
+            {
+              // Create chapter component
+              React.createElement(
+                Chapters[
+                  R.compose(
+                    R.view(R.lensProp('chapter')),
+                    R.find(R.prop('chapter')),
+                  )(chapterPlaces)
+                ],
+                this.props
+              )
+            }
+            {
+              // After render places for each chapter
+              R.map(renderPlace, chapterPlaces)
+            }
+          </Row>
+        : R.map(renderPlace, chapterPlaces)
+    );
 
     const renderPhotos = () => {
       const width = 250;
@@ -153,7 +157,7 @@ export default class Travel extends Component {
         </Grid>
 
         {
-          R.equals(mode, 'text') && renderPhotos()
+          // R.equals(mode, 'text') && renderPhotos()
         }
 
       </section>
