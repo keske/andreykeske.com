@@ -1,4 +1,52 @@
 export default [{
+  city: 'Batumi',
+  country: 'Georgia',
+  start: '13 May',
+  end: '17 May',
+
+  month: 'May',
+  year: 2016,
+
+  date: new Date('5/17/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: 'large',
+
+  cover: false,
+}, {
+  city: 'Tbilisi',
+  country: 'Georgia',
+  start: '9 May',
+  end: '21 May',
+
+  month: 'May',
+  year: 2016,
+
+  date: new Date('5/21/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: 'large',
+
+  cover: false,
+}, {
+  city: 'Olonets',
+  country: 'Russia',
+  start: '23 April',
+  end: '1 May',
+
+  month: 'May',
+  year: 2016,
+
+  date: new Date('5/1/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: 'large',
+
+  cover: false,
+}, {
   city: 'Tel Aviv',
   country: 'Israel',
   start: '10 March',
@@ -302,7 +350,7 @@ export default [{
   cover: true,
 }, {
   city: 'Budapest',
-  country: 'Hungry',
+  country: 'Hungary',
   start: '9 Sep',
   end: '10 Sep',
 

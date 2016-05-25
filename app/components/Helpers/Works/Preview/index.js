@@ -35,12 +35,8 @@ const Preview = ({ language, work: { link, img } }) => {
           lg={4}
         >
           <span className="card">
-            <h2>
-              { locale.Title }
-            </h2>
-            <p>
-              { locale.Text }
-            </p>
+            <h2 dangerouslySetInnerHTML={{ __html: locale.Title }} />
+            <p dangerouslySetInnerHTML={{ __html: locale.Text }} />
           </span>
         </Col>
       </Link>

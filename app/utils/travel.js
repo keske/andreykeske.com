@@ -6,12 +6,14 @@ export const showNewLabel = date => {
   const _month = date.getMonth() + 1;
   const _year = date.getFullYear();
 
-  return (_month === month && _year === year) ? true : false;
+  return _month === month && _year === year;
 };
 
 export const showStartDateMonth = (start, end) => {
   const splitStart = start.split(' ');
   const splitEnd = end.split(' ');
+
+  console.log(splitStart[1])
 
   return (splitStart[1] === splitEnd[1]) ? splitStart[0] : start;
 };

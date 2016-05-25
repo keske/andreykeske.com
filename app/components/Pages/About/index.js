@@ -11,6 +11,7 @@ import { styles } from './styles.scss';
 
 // Language
 import Language from './locale/';
+import R from 'ramda';
 
 @connect(
   state => ({
