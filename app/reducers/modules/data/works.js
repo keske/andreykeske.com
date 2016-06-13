@@ -168,6 +168,14 @@ export default [
   },
 
   {
+    title: 'Infinity',
+    link: 'infinity',
+    img: 'cover.jpg',
+    info: '',
+    count: '',
+  },
+
+  {
     title: 'Friday dock',
     link: 'friday-dock',
     img: 'cover.png',

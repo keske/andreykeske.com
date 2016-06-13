@@ -14,6 +14,8 @@ const Preview = ({ language, work: { link, img } }) => {
   // Set language
   const locale = require(`../../../Content/Works/${link}/locale/${capitalizeFirstLetter(language)}.js`);
 
+  const getOffset = () => random(1, 3);
+
   return (
     <Row className={styles}>
       <Link
@@ -23,8 +25,8 @@ const Preview = ({ language, work: { link, img } }) => {
         <Col
           xs={12}
           sm={6}
-          md={3} mdOffset={random(1, 3)}
-          lg={3} lgOffset={random(1, 3)}
+          md={3} mdOffset={getOffset()}
+          lg={3} lgOffset={getOffset()}
         >
           <img src={`./app/components/Content/Works/${link}/files/${img}`} />
         </Col>
@@ -36,7 +38,7 @@ const Preview = ({ language, work: { link, img } }) => {
         >
           <span className="card">
             <h2 dangerouslySetInnerHTML={{ __html: locale.Title }} />
-            <p dangerouslySetInnerHTML={{ __html: locale.Text }} />
+            { /* <p dangerouslySetInnerHTML={{ __html: locale.Text }} /> */ }
           </span>
         </Col>
       </Link>

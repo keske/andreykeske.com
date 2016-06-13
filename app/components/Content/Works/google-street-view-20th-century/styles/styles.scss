@@ -1,7 +1,7 @@
 :local(.styles) {
   position: relative;
 
-  iframe {
+  .sepia {
     -webkit-filter: contrast(1) grayscale(1) sepia(.7);
     -moz-filter: url(#sepia);
     -o-filter: url(#sepia);

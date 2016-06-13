@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
-import $ from 'jquery';
 
 // Component styles
 import { styles } from './styles/styles.scss';
@@ -21,7 +20,7 @@ import {
   getWindowWidth,
   getWindowHeight,
   debug,
-} from './files/Utils.js';
+} from './files/utils.js';
 
 @connect(state => state.application)
 export default class Work extends Component {

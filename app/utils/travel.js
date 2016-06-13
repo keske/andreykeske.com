@@ -13,8 +13,6 @@ export const showStartDateMonth = (start, end) => {
   const splitStart = start.split(' ');
   const splitEnd = end.split(' ');
 
-  console.log(splitStart[1])
-
   return (splitStart[1] === splitEnd[1]) ? splitStart[0] : start;
 };
 

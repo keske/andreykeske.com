@@ -51,6 +51,10 @@ export default class Work extends Component {
                 { Language.translate('Title') }
               </h1>
 
+              <p>
+                { Language.translate('Text') }
+              </p>
+
               <div className="responsive-container">
                 <iframe width="960" height="720"
                   src="//www.youtube.com/embed/8P2lZcFDNw0"

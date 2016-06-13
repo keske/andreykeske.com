@@ -1,4 +1,20 @@
 export default [{
+  city: 'Petrozavodsk',
+  country: 'Russia',
+  start: '7 June',
+  end: '9 June',
+
+  month: 'May',
+  year: 2016,
+
+  date: new Date('6/7/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: '',
+
+  cover: false,
+}, {
   city: 'Batumi',
   country: 'Georgia',
   start: '13 May',

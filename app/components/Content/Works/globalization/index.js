@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Grid, Row, Col } from 'react-bootstrap';
 import DocumentMeta from 'react-document-meta';
 
 // Component styles
@@ -37,14 +38,13 @@ export default class Work extends Component {
     return (
       <div className={styles}>
         <DocumentMeta {...metaData} />
-        <div className="container">
-          <div className="row">
-            <div className={`
-                col-xs-12
-                col-sm-12
-                col-md-8 col-md-offset-2
-                col-lg-8 col-lg-offset-2
-            `}
+        <Grid>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={8} mdOffset={2}
+              lg={8} lgOffset={2}
             >
 
               <h1>
@@ -53,9 +53,14 @@ export default class Work extends Component {
               <p>
                 { Language.translate('Text') }
               </p>
-            </div>
+            </Col>
 
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <Col
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+            >
               <div className="responsive-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d55207280.68936508!2d-17.645922980156378!3d32.37667657045178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sru!4v1451573511029"
                   width="600"
@@ -64,10 +69,9 @@ export default class Work extends Component {
                   allowFullScreen
                 />
               </div>
-
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }

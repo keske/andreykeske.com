@@ -7,6 +7,7 @@ export { default as DaftPunk } from './daft-punk'; // In process
 export { default as BlackHole } from './black-hole';
 
 // Part I
+export { default as Infinity } from './infinity';
 export { default as Catch } from './catch';
 export { default as TheShellGame } from './the-shell-game';
 export { default as FootballFansTrolling } from './football-fans-trolling';
