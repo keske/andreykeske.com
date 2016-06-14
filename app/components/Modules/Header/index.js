@@ -16,19 +16,19 @@ export default class Header extends Component {
     dispatch: PropTypes.func,
   };
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.hideHeader);
-  }
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.hideHeader);
+  // }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.hideHeader);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('scroll', this.hideHeader);
+  // }
 
   // Smooth hide header when scrolling
-  hideHeader = () => {
-    const opacity = 1 - (window.pageYOffset / 50).toFixed(1);
-    this.refs.header.style.opacity = opacity;
-  }
+  // hideHeader = () => {
+  //   const opacity = 1 - (window.pageYOffset / 50).toFixed(1);
+  //   this.refs.header.style.opacity = opacity;
+  // }
 
   // Togle language between `ru` and `en`
   toggleLanguage = () => {
@@ -50,33 +50,45 @@ export default class Header extends Component {
     Language.setLocale(language);
 
     return (
-      <section className={styles} ref="header">
-        <Grid>
+      <section ref="header">
+        <Grid className={styles}>
           <Row>
             <Col
-              xs={4}
-              sm={4}
-              md={2}
-              lg={2}
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
             >
-              <Link to="/">
+              <Link
+                to="/"
+                className="nav"
+                activeClassName="active"
+              >
                 { Language.translate('AndreyKeske') }
               </Link>
-            </Col>
 
-            <Col
-              xs={7}
-              sm={7}
-              md={9}
-              lg={9}
-              className="header-nav"
-            >
               <Link
                 to={`/${language}/works`}
                 className="nav"
                 activeClassName="active"
               >
                 { Language.translate('Works') }
+              </Link>
+
+              <Link
+                to={`/${language}/streets`}
+                className="nav"
+                activeClassName="active"
+              >
+                { Language.translate('Streets') }
+              </Link>
+
+              <Link
+                to={`/${language}/posters`}
+                className="nav"
+                activeClassName="active"
+              >
+                { Language.translate('Posters') }
               </Link>
 
               <Link

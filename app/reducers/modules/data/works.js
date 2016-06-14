@@ -6,13 +6,13 @@ export default [
     img: 'cover.png',
     count: '',
   },
-  // {
-  //   title: 'Straight Flush',
-  //   link: 'straight-flush',
-  //   img: 'cover.png',
-  //   info: '',
-  //   count: '',
-  // },
+  {
+    title: 'Straight Flush',
+    link: 'straight-flush',
+    img: 'cover.png',
+    info: '',
+    count: '',
+  },
   {
     title: 'Google Street View in the beginning of the 20th century',
     link: 'google-street-view-20th-century',
