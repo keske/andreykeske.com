@@ -8,22 +8,22 @@ import { capitalizeFirstLetter } from '../../../../utils/strings';
 // Component styles
 import { styles } from './styles.scss';
 
-const PostersPreview = ({ language, poster: { link, img } }) => {
+const StreetsPreview = ({ language, street: { title, img } }) => {
 
   // Set language
-  const locale = require(`../../../Content/Posters/${link}/locale/${capitalizeFirstLetter(language)}.js`);
+  const locale = require(`../../../Content/Streets/${title}/locale/${capitalizeFirstLetter(language)}.js`);
 
   return (
     <Row className={styles}>
       <Link
-        to={`/${language}/posters/${link}`}
-        key={`/${language}/posters/${link}`}
+        to={`/${language}/streets/${title}`}
+        key={`/${language}/streets/${title}`}
       >
         <Col
           xs={12}
           sm={6}
         >
-          <img src={`./app/components/Content/Posters/${link}/files/${img}`} />
+          <img src={`./app/components/Content/Streets/${title}/files/${img}`} />
         </Col>
         <Col
           xs={12}
@@ -40,9 +40,9 @@ const PostersPreview = ({ language, poster: { link, img } }) => {
   );
 };
 
-PostersPreview.propTypes = {
+StreetsPreview.propTypes = {
   language: PropTypes.string,
-  poster: PropTypes.object,
+  street: PropTypes.object,
 };
 
-export default PostersPreview;
+export default StreetsPreview;

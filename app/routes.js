@@ -14,9 +14,11 @@ import Work from './components/Pages/Work';
 
 // Posters
 import Posters from './components/Pages/Posters';
+import Poster from './components/Pages/Poster';
 
 // Streets
 import Streets from './components/Pages/Streets';
+import Street from './components/Pages/Street';
 
 export default (
   <Route path="/" component={App}>
@@ -33,11 +35,11 @@ export default (
 
     { /* Posters */ }
     <Route path=":language/posters" component={Posters} />
-    <Route path=":language/posters/:poster" component={Work} />
+    <Route path=":language/posters/:poster" component={Poster} />
 
     { /* Streets */ }
     <Route path=":language/streets" component={Streets} />
-    <Route path=":language/streets/:street" component={Work} />
+    <Route path=":language/streets/:street" component={Street} />
 
     <Route status={404} path="*" component={About} />
   </Route>

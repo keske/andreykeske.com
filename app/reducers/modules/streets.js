@@ -1,7 +1,7 @@
 import R from 'ramda';
 
 // Utils
-import { apiLoadPlaces } from '../../utils/api';
+import { apiLoadStreets } from '../../utils/api';
 import { createReducer } from '../utils/reducer';
 
 const TYPE = 'STREETS';
@@ -14,7 +14,7 @@ const initialState = {
 export const loadStreets = () => ({
   type: `LOAD_${TYPE}`,
   payload: {
-    data: apiLoadPlaces(),
+    data: apiLoadStreets(),
   },
 });
 

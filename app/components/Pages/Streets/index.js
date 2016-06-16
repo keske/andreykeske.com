@@ -8,7 +8,7 @@ import R from 'ramda';
 import { loadStreets } from '../../../reducers/modules/streets';
 
 // Components
-// import Preview from '../../Helpers/Works/Preview';
+import StreetsPreview from '../../Helpers/Streets/Preview';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -66,7 +66,15 @@ export default class Streets extends Component {
           <h1 className="page-title">
             { Language.translate('Works') }
           </h1>
-          streets
+          {
+            streets.map((street, key) => {
+              const data = {
+                street,
+                language,
+              };
+              return <StreetsPreview {...data} key={key} />;
+            })
+          }
         </div>
       </section>
     );

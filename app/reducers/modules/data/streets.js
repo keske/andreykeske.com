@@ -1,9 +1,9 @@
 export default [
   {
-    title: 'Street 1',
+    title: 'Love',
     info: 'The world when the boundaries are blurred.',
-    link: 'globalization',
-    img: 'cover.png',
-    count: '',
+  }, {
+    title: 'Ecology',
+    info: 'The world when the boundaries are blurred.',
   },
 ];
