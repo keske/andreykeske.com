@@ -8,7 +8,7 @@ import R from 'ramda';
 import { loadPosters } from '../../../reducers/modules/posters';
 
 // Components
-// import Preview from '../../Helpers/Works/Preview';
+import PostersPreview from '../../Helpers/Posters/Preview';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -66,7 +66,15 @@ export default class Posters extends Component {
           <h1 className="page-title">
             { Language.translate('Works') }
           </h1>
-          posters
+          {
+            posters.map((poster, key) => {
+              const data = {
+                poster,
+                language,
+              };
+              return <PostersPreview {...data} key={key} />;
+            })
+          }
         </div>
       </section>
     );

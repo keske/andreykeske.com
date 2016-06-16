@@ -1,9 +1,15 @@
 export default [
   {
-    title: 'Poster 1',
-    info: 'The world when the boundaries are blurred.',
-    link: 'globalization',
-    img: 'cover.png',
-    count: '',
+    title: 'Air Synth',
+    info: '',
+    link: 'AirSynth',
+  }, {
+    title: 'FM Radio',
+    info: '',
+    link: 'FMRadio',
+  }, {
+    title: 'Skate',
+    info: '',
+    link: 'Skate',
   },
 ];
