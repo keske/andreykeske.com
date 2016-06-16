@@ -61,24 +61,21 @@ const common = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: module => {
-        return module.resource &&
-          module.resource.indexOf('node_modules') !== -1 &&
-          module.resource.indexOf('.css') === -1;
-      },
+      minChunks: module =>
+        module.resource &&
+        module.resource.indexOf('node_modules') !== -1 &&
+        module.resource.indexOf('.css') === -1,
     }),
   ],
 
-  postcss: wp => {
-    return [
-      autoprefixer({
-        browsers: ['last 2 versions'],
-      }),
-      postcssImport({
-        addDependencyTo: wp,
-      }),
-    ];
-  },
+  postcss: wp => [
+    autoprefixer({
+      browsers: ['last 2 versions'],
+    }),
+    postcssImport({
+      addDependencyTo: wp,
+    }),
+  ],
 };
 
 if (TARGET === 'start' || !TARGET) {
