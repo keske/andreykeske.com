@@ -1,5 +1,12 @@
 export default [
   {
+    title: 'Graffiti bufs on girls',
+    info: 'TODO.',
+    link: 'graffiti-buf-on-girll',
+    img: 'cover.png',
+    count: '',
+  },
+  {
     title: 'Globalization',
     info: 'The world when the boundaries are blurred.',
     link: 'globalization',
@@ -8,9 +15,9 @@ export default [
   },
   {
     title: 'Straight Flush',
+    info: 'TODO.',
     link: 'straight-flush',
     img: 'cover.png',
-    info: '',
     count: '',
   },
   {

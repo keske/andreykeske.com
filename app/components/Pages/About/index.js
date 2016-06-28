@@ -94,8 +94,8 @@ export default class About extends Component {
               </ul>
             </Col>
           </Row>
+          <Footer />
         </Grid>
-        <Footer />
       </section>
     );
   }

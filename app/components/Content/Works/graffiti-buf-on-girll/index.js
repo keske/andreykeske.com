@@ -2,9 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 
-// Components
-import Airsynth from './AirSynth';
-
 // Component styles
 import { styles } from './styles/styles.scss';
 
@@ -40,7 +37,31 @@ export default class Work extends Component {
     return (
       <div className={styles}>
         <DocumentMeta {...metaData} />
-        <Airsynth />
+        <div className="container">
+          <div className="row">
+            <div className={`
+                col-xs-12
+                col-sm-12
+                col-md-8 col-md-offset-2
+                col-lg-8 col-lg-offset-2
+            `}
+            >
+
+              <h1>
+                { Language.translate('Title') }
+              </h1>
+              <p>
+                { Language.translate('Text') }
+              </p>
+
+              <div className="responsive-container">
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/oARU7GLKj3Y"
+                  frameBorder="0" allowFullScreen />
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
