@@ -1,6 +1,6 @@
 // Colours
 
-$black: #000;
+$black: #282725;
 $gray: rgba(14, 14, 14, 1);
 $white: #FFF;
 // $white: rgba(249, 249, 249, 1);
@@ -8,13 +8,13 @@ $white: #FFF;
 $red: #DC143C;
 $blue: #0000CD;
 $blueLight: #1E90FF;
-$purple: #0000CD;
+$purple: #803EB9;
 $pink: #BA55D3;
 $green: #32CD32;
 
 // UI
 $link: $blue;
-$linkHover: $red;
+$linkHover: $blue;
 $linkVisited: $purple;
 
 @mixin ui-active() {

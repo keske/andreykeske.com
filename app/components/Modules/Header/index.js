@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router';
+import cx from 'classnames';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -13,34 +13,33 @@ export default class Header extends Component {
   static propTypes = {
     language: PropTypes.string,
     mode: PropTypes.string,
-    dispatch: PropTypes.func,
   };
 
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.hideHeader);
-  // }
+  constructor(props) {
+    super(props);
 
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll', this.hideHeader);
-  // }
+    this.state = {
+      showMenu: false,
+    };
+  }
 
-  // Smooth hide header when scrolling
-  // hideHeader = () => {
-  //   const opacity = 1 - (window.pageYOffset / 50).toFixed(1);
-  //   this.refs.header.style.opacity = opacity;
-  // }
+  handleMenu = () => {
+    const {
+      state: {
+        showMenu,
+      },
+    } = this;
 
-  // Togle language between `ru` and `en`
-  toggleLanguage = () => {
-    // const { dispatch, language } = this.props;
-
-    // language === 'ru'
-    //   ? dispatch(setLanguage('en'))
-    //   : dispatch(setLanguage('ru'));
+    this.setState({
+      showMenu: !showMenu,
+    });
   }
 
   render() {
     const {
+      state: {
+        showMenu,
+      },
       props: {
         language, mode,
       },
@@ -49,58 +48,57 @@ export default class Header extends Component {
     // Set language
     Language.setLocale(language);
 
+    const renderMenu = () =>
+      <div className={cx('menu', { show: showMenu })}>
+        <Link
+          className="nav"
+          activeClassName="active"
+          onClick={() => {
+            this.setState({
+              showMenu: false,
+            });
+          }}
+          to="/about"
+        >
+          { Language.translate('AndreyKeske') }
+        </Link>
+
+        <Link
+          className="nav"
+          activeClassName="active"
+          onClick={() => {
+            this.setState({
+              showMenu: false,
+            });
+          }}
+          to={`/${language}/works`}
+        >
+          { Language.translate('Works') }
+        </Link>
+
+        <Link
+          className="nav"
+          activeClassName="active"
+          onClick={() => {
+            this.setState({
+              showMenu: false,
+            });
+          }}
+          to={`/${language}/travel/${mode}` }
+        >
+          { Language.translate('Travel') }
+        </Link>
+      </div>;
+
     return (
-      <section ref="header">
-        <Grid className={styles}>
-          <Row>
-            <Col
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-            >
-              <Link
-                to="/"
-                className="nav"
-                activeClassName="active"
-              >
-                { Language.translate('AndreyKeske') }
-              </Link>
-
-              <Link
-                to={`/${language}/works`}
-                className="nav"
-                activeClassName="active"
-              >
-                { Language.translate('Works') }
-              </Link>
-
-              <Link
-                to={`/${language}/streets`}
-                className="nav"
-                activeClassName="active"
-              >
-                { Language.translate('Streets') }
-              </Link>
-
-              <Link
-                to={`/${language}/posters`}
-                className="nav"
-                activeClassName="active"
-              >
-                { Language.translate('Posters') }
-              </Link>
-
-              <Link
-                to={`/${language}/travel/${mode}` }
-                className="nav"
-                activeClassName="active"
-              >
-                { Language.translate('Travel') }
-              </Link>
-            </Col>
-          </Row>
-        </Grid>
+      <section className={styles}>
+        <span
+          className="burger"
+          onClick={this.handleMenu}
+        >
+          🍔
+        </span>
+        { renderMenu() }
       </section>
     );
   }

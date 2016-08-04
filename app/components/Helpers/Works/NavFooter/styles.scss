@@ -3,9 +3,16 @@
 
 :local(.styles) {
   padding-top: 20px;
-  margin-bottom: 100px;
 
   border-top: 1px solid rgba(0, 0, 0, .13);
+
+  .left-side {
+    text-align: right;
+  }
+
+  .left-side, .right-side {
+    padding: 0 30px;
+  }
 
   img {
     width: 20%;
@@ -19,23 +26,23 @@
   }
   
   p.prevNextWorks {
-    @include caption();
+    @include paragraph();
 
-    opacity: .5;
+    font-size: 12px;
+    font-weight: 300;
+
+    color: $black;
+
     margin-top: 30px;
   }
 
   h3 {
+    @include caption();
+
     font-size: 16px;
+    font-weight: 300;
 
     margin-top: -5px;
-    margin-bottom: 5px;
-  }
-
-  p {
-    color: $black;
-
-    font-size: 12px;
-    line-height: 20px;
+    margin-bottom: 15px;
   }
 }

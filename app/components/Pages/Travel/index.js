@@ -134,6 +134,11 @@ export default class Travel extends Component {
     return (
       <section className={styles}>
         <DocumentMeta {...metaData} />
+
+        <h1 className="page-title">
+          { Language.translate('Travel') }
+        </h1>
+
         <Grid>
           <Row>
             <Col
@@ -142,9 +147,6 @@ export default class Travel extends Component {
               md={12}
               lg={12}
             >
-              <h1 className="page-title">
-                { Language.translate('Travel') }
-              </h1>
               <Filter {...this.props} />
             </Col>
           </Row>

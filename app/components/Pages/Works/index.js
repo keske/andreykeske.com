@@ -64,10 +64,12 @@ export default class Works extends Component {
     return (
       <section className={styles}>
         <DocumentMeta {...metaData} />
+
+        <h1 className="page-title">
+          { Language.translate('Works') }
+        </h1>
+
         <div className="container">
-          <h1 className="page-title">
-            { Language.translate('Works') }
-          </h1>
           {
             works.map((work, key) => {
               const data = {

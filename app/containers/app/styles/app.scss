@@ -6,23 +6,47 @@
 @import 'buttons';
 @import 'page';
 
+
 :global(body) {
-  position: relative;
+  $borderSize: 0;
 
   color: $black;
   background: $white;
+
+  user-select: none;
+
+  border-top: $borderSize solid $red;
+  border-left: $borderSize solid $red;
+  border-right: $borderSize solid $red;
+
+  // height: 100%;
+
+  &:after {
+    content: " ";
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    height: 5px;
+
+    border-bottom: $borderSize solid $red;    
+  }
 
   a {
     color: $link;
     text-decoration: none;
 
     &.active {
-      color: $black;
+      color: $red;
     }
     
     &:hover {
       color: $linkHover;
       text-decoration: none;
+    }
+
+    &:visited {
+      color: $purple;
     }
   }
 

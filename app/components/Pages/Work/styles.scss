@@ -9,7 +9,16 @@
   }
 
   h1 {
-    // 
+    @include caption();
+
+    font-size: 58px;
+    font-weight: 500;
+  }
+
+  p {
+    @include paragraph();
+
+    font-size: 18px;
   }
 
   hr {
@@ -37,8 +46,6 @@
     position: relative;
 
     padding-bottom: 56.25%;
-
-    margin-top: 20px;
 
     height: 0;
     overflow: hidden;

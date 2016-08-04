@@ -1,6 +1,6 @@
 module.exports = {
 
-  AndreyKeske: 'Andrey Keske',
+  AndreyKeske: 'About',
 
   Travel: 'Travel',
   Works: 'Hacks',

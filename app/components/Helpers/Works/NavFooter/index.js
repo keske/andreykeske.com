@@ -1,7 +1,7 @@
-import React from 'react';
-import R from 'ramda';
-import { Link } from 'react-router';
+import React, { PropTypes } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router';
+import R from 'ramda';
 
 // Component styles
 import { styles } from './styles.scss';
@@ -23,7 +23,8 @@ const NavFooter = data => {
             xs={6}
             sm={6}
             md={4} mdOffset={2}
-            lg={4} lgOffset={2}
+            lg={4} mdOffset={2}
+            className="left-side"
           >
             {
               workIndex > 0 && (
@@ -32,10 +33,8 @@ const NavFooter = data => {
                     ← Prev work
                   </p>
                   <h3>
-                    { prevWork.title }</h3>
-                  <p>
-                    { prevWork.info }
-                  </p>
+                    { prevWork.title }
+                  </h3>
                   <img src={`./app/components/Content/Works/${prevWork.link}/files/${prevWork.img}`} />
                 </Link>
               )
@@ -47,6 +46,7 @@ const NavFooter = data => {
             sm={6}
             md={4}
             lg={4}
+            className="right-side"
           >
             {
               workIndex < works.length - 1 && (
@@ -57,9 +57,6 @@ const NavFooter = data => {
                   <h3>
                     { nextWork.title }
                   </h3>
-                  <p>
-                    { nextWork.info }
-                  </p>
                   <img src={`./app/components/Content/Works/${nextWork.link}/files/${nextWork.img}`} />
                 </Link>
               )
@@ -70,6 +67,10 @@ const NavFooter = data => {
       </Grid>
     </section>
   );
+};
+
+NavFooter.propTypes = {
+  data: PropTypes.object,
 };
 
 export default NavFooter;

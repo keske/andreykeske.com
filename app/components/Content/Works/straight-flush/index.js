@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React, { PropTypes } from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
 import DocumentMeta from 'react-document-meta';
 
 // Component styles
@@ -8,43 +8,32 @@ import { styles } from './styles/styles.scss';
 // Language
 import Language from './locale/';
 
-@connect(state => state.application)
-export default class StraightFlush extends Component {
+const Work = ({ language }) => {
 
-  static propTypes = {
-    params: PropTypes.object,
-    language: PropTypes.string,
+  // Set language
+  Language.setLocale(language);
+
+  const metaData = {
+    title: `${Language.translate('Title')} — ${Language.translate('Text')}`,
+    description: Language.translate('Text'),
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: Language.translate('Title'),
+      },
+    },
   };
 
-  render() {
-    // Application settings
-    const { language } = this.props;
-
-    // Set language
-    Language.setLocale(language);
-
-    const metaData = {
-      title: `${Language.translate('Title')} — ${Language.translate('Text')}`,
-      description: Language.translate('Text'),
-      meta: {
-        charset: 'utf-8',
-        name: {
-          keywords: Language.translate('Title'),
-        },
-      },
-    };
-
-    return (
-      <div className={styles}>
-        <DocumentMeta {...metaData} />
-        <div className="container">
-          <div className="row">
-            <div className={`
-                col-xs-12
-                col-sm-12
-                col-md-8 col-md-offset-2
-                col-lg-8 col-lg-offset-2
-            `}
+  return (
+    <div className={styles}>
+      <DocumentMeta {...metaData} />
+        <Grid>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={8} mfOffset={2}
+              lg={8} lgOffset={2}
             >
 
               <h1>
@@ -53,17 +42,15 @@ export default class StraightFlush extends Component {
               <p>
                 { Language.translate('Text') }
               </p>
+            </Col>
+          </Row>
+        </Grid>
+    </div>
+  );
+};
 
-              <div className="responsive-container">
-                <iframe width="420" height="315" src="https://www.youtube.com/embed/oARU7GLKj3Y"
-                  frameBorder="0" allowFullScreen />
-              </div>
+Work.propTypes = {
+  language: PropTypes.string,
+};
 
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-}
+export default Work;

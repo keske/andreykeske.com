@@ -9,7 +9,6 @@ export default class Unsharpness extends Component {
     image: PropTypes.string,
   };
 
-
   render() {
     const { image } = this.props;
 
