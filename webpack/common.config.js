@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-const postcssImport = require('postcss-import');
 const merge = require('webpack-merge');
 
 const development = require('./dev.config.js');
@@ -68,12 +67,9 @@ const common = {
     }),
   ],
 
-  postcss: wp => [
+  postcss: () => [
     autoprefixer({
       browsers: ['last 2 versions'],
-    }),
-    postcssImport({
-      addDependencyTo: wp,
     }),
   ],
 };
