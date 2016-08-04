@@ -1,10 +1,9 @@
 import request from 'superagent-bluebird-promise';
 
-// Data
 import dataPlaces from '../reducers/modules/data/places';
+import dataWorks from '../reducers/modules/data/works';
 import dataStreets from '../reducers/modules/data/streets';
 import dataPosters from '../reducers/modules/data/posters';
-import dataWorks from '../reducers/modules/data/works';
 
 /**
  * Load places

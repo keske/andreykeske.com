@@ -1,4 +1,5 @@
 // Part II
+export { default as GraffitiBuffsOnGirls } from './graffiti-buffs-on-girls/';
 export { default as StraightFlush } from './straight-flush';
 export { default as Globalization } from './globalization';
 export { default as GoogleStreetView20thCentury } from './google-street-view-20th-century';

@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+
+// Decorators
+import { Orientation } from '../../../../../decorators/deviceOrientation';
 
 // Utils
 import { random } from '../../../../../utils/math';
@@ -13,7 +16,14 @@ import PhoneLog from '../../../../Helpers/PhoneLog';
 // Component styles
 import { styles } from './airsynth.scss';
 
+@Orientation
 export default class Airsynth extends Component {
+
+  static propTypes = {
+    wave: PropTypes.string,
+    filter: PropTypes.string,
+    orientation: PropTypes.object,
+  };
 
   constructor(props) {
     super(props);
@@ -22,32 +32,12 @@ export default class Airsynth extends Component {
       // Audio waves and filters, get random
       wave: AudioWaves[random(0, AudioWaves.length - 1)],
       filter: AudioFilters[random(0, AudioFilters.length - 1)],
-      // Device rate of rotation
-      orientation: {
-        alpha: 0,
-        beta: 0,
-        gamma: 0,
-      },
     };
   }
 
   componentDidMount() {
-    window.addEventListener('deviceorientation', this.handleRotation, false);
     AirsynthAudio.init();
   }
-
-  handleRotation = event => {
-    const { alpha, beta, gamma } = event;
-    const maxRound = 0;
-
-    this.setState({
-      orientation: {
-        alpha: alpha.toFixed(maxRound),
-        beta: beta.toFixed(maxRound),
-        gamma: gamma.toFixed(maxRound),
-      },
-    });
-  };
 
   render() {
     const {
@@ -55,7 +45,7 @@ export default class Airsynth extends Component {
       filter,
       orientation,
       orientation: { alpha, beta, gamma },
-    } = this.state;
+    } = this.props;
 
     return (
       <div className={styles}>

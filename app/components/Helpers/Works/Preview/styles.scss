@@ -16,15 +16,4 @@
     margin-top: 20px;
     margin-bottom: 10px;
   }
-
-  p {
-    @include light();
-
-    color: $black;
-
-    $size: 14px;
-
-    font-size: $size;
-    line-height: $size + 6;
-  }
 }

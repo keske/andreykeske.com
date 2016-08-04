@@ -13,5 +13,4 @@ PhoneLog.propTypes = {
   log: PropTypes.string,
 };
 
-
 export default PhoneLog;

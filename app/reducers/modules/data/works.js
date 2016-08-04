@@ -1,8 +1,8 @@
 export default [
   {
-    title: 'Graffiti bufs on girls',
+    title: 'Graffiti Buffs On Girls',
     info: 'TODO.',
-    link: 'graffiti-buf-on-girll',
+    link: 'graffiti-buffs-on-girls',
     img: 'cover.png',
     count: '',
   },
