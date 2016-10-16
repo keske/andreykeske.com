@@ -44,6 +44,7 @@ const Filter = props => {
 
 Filter.propTypes = {
   params: PropTypes.object,
+  setTravelViewMode: PropTypes.func,
 };
 
 export default Filter;

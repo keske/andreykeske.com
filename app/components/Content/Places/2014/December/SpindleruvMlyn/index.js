@@ -31,10 +31,10 @@ export default class VeniceInMay2015 extends Component {
 
     return (
       <div className={styles}>
-        <img src={ `${img}/15.jpg` } />
+        <img src={`${img}/15.jpg`} />
 
         <div className="top-page-city-name on-image">
-          { Language.translate('SpindleruvMlyn') }
+          {Language.translate('SpindleruvMlyn')}
         </div>
 
         <div className="container">
@@ -42,21 +42,21 @@ export default class VeniceInMay2015 extends Component {
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <h2>
-                { Language.translate('DayOne') }
+                {Language.translate('DayOne')}
               </h2>
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/2.jpg` } />
+              <LinkToImage url={`${img}/2.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/4.jpg` } />
+              <LinkToImage url={`${img}/4.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <h2>
-                { Language.translate('DayTwo') }
+                {Language.translate('DayTwo')}
               </h2>
             </div>
 
@@ -65,60 +65,60 @@ export default class VeniceInMay2015 extends Component {
         </div>
 
         <div className="photo">
-          <img src={ `${img}/16.jpg` } />
+          <img src={`${img}/16.jpg`} />
         </div>
 
         <div className="container">
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/20.jpg` } />
+              <LinkToImage url={`${img}/20.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/19.jpg` } />
+              <LinkToImage url={`${img}/19.jpg`} />
             </div>
 
           </div>
         </div>
 
         <div className="photo">
-          <img src={ `${img}/17.jpg` } />
+          <img src={`${img}/17.jpg`} />
         </div>
 
         <div className="container">
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/23.jpg` } />
+              <LinkToImage url={`${img}/23.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/24.jpg` } />
+              <LinkToImage url={`${img}/24.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/25.jpg` } />
+              <LinkToImage url={`${img}/25.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/26.jpg` } />
+              <LinkToImage url={`${img}/26.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/27.jpg` } />
+              <LinkToImage url={`${img}/27.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/28.jpg` } />
+              <LinkToImage url={`${img}/28.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/29.jpg` } />
+              <LinkToImage url={`${img}/29.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/3.jpg` } />
+              <LinkToImage url={`${img}/3.jpg`} />
             </div>
 
           </div>

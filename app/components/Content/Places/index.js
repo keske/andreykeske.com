@@ -1,6 +1,5 @@
 // January 2016
 export { default as TelAvivInMarch2016 } from './2016/March/TelAviv/index.js';
-export { default as YekaterinburgInJanuary2016 } from './2016/January/Yekaterinburg/index.js';
 
 // September 2015
 export { default as BarcelonaInSeptember2015 } from './2015/September/Barcelona/index.js';

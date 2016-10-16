@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const merge = require('webpack-merge');
+const path = require('path');
 
 const development = require('./dev.config.js');
 const production = require('./prod.config.js');
@@ -20,6 +21,15 @@ const common = {
   resolve: {
     extensions: ['', '.jsx', '.js', '.json', '.scss'],
     modulesDirectories: ['node_modules'],
+    alias: {
+      containers: path.join(__dirname, '../app/containers/'),
+      components: path.join(__dirname, '../app/components/'),
+      'reducers/modules': path.join(__dirname, '../app/reducers/modules/'),
+      'reducers/store': path.join(__dirname, '../app/reducers/store/'),
+      constants: path.join(__dirname, '../app/constants/'),
+      decorators: path.join(__dirname, '../app/decorators/'),
+      utils: path.join(__dirname, '../app/utils/'),
+    },
   },
 
   module: {

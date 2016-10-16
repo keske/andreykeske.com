@@ -28,22 +28,22 @@ export default class City extends Component {
     return (
       <div className={styles}>
         <div className="photo">
-          <LinkToImage url={ `${img}/thumb.jpg` } />
+          <LinkToImage url={`${img}/thumb.jpg`} />
         </div>
 
         <div className="top-page-city-name on-image">
-          { Language.translate('Helsinki') }
+          {Language.translate('Helsinki')}
         </div>
 
         <div className="container">
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <LinkToImage url={ `${img}/1.jpg` } />
+              <LinkToImage url={`${img}/1.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <LinkToImage url={ `${img}/2.jpg` } />
+              <LinkToImage url={`${img}/2.jpg`} />
             </div>
 
           </div>

@@ -19,7 +19,7 @@ const Card = place =>
                 () => <Medium {...place} />
               )(place.viewMode),
         () => <span className="render-cities-as-text">
-                { place.city }
+                {place.city}
               </span>
       )(R.prop('cover', place))
     }

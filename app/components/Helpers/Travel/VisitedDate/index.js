@@ -18,10 +18,10 @@ const VisitedDate = place => {
   return (
     <p className={`${styles} date`}>
       <span className="country">
-        { Language.translate(lowerFirstLetter(place.country.replace(' ', ''))) }
+        {Language.translate(lowerFirstLetter(place.country.replace(' ', '')))}
       </span>
       <br />
-      { showStartDateMonth(place.start, place.end) }
+      {showStartDateMonth(place.start, place.end)}
       {
         place.end && <span>..{place.end}</span>
       }

@@ -99,14 +99,14 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
               </p>
 
               <audio ref="audio"
-                src={ `${ path }/technologic.mp3`}
+                src={`${ path }/technologic.mp3`}
                 ontimeupdate={ () => this.playScene() }
                 controls= { ready ? 'controls' : '' }
                 muted="false"

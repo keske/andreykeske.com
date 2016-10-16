@@ -32,11 +32,11 @@ export default class City extends Component {
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/1.jpg` } />
+              <LinkToImage url={`${img}/1.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/2.jpg` } />
+              <LinkToImage url={`${img}/2.jpg`} />
             </div>
 
           </div>

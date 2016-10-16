@@ -8,7 +8,7 @@ import { styles } from './styles/styles.scss';
 // Language
 import Language from './locale/';
 
-const Work = ({ language }) => {
+const Work = ({Language }) => {
 
   // Set language
   Language.setLocale(language);
@@ -37,14 +37,14 @@ const Work = ({ language }) => {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
               </p>
 
               <p>
-                { Language.translate('Watch') }
+                {Language.translate('Watch')}
               </p>
 
             </Col>

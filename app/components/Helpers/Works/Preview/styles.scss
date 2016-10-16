@@ -1,5 +1,6 @@
 @import '../../../../containers/App/styles/typography';
 @import '../../../../containers/App/styles/pallete';
+@import '../../../../containers/App/styles/screens';
 
 :local(.styles) {
   white-space: nowrap;
@@ -7,14 +8,23 @@
 
   padding: 10px 0;
 
+  @media (#{$phone}) {
+    display: block;
+
+    padding: 10px 20px;
+  }
+
   a {
     position: relative;
     z-index: 0;
 
-    color: $black;
-    font-size: 38px;
+    font-size: 18px;
     
     margin-right: 20px;
+
+    @media (#{$phone}) {
+      font-size: 22px;
+    }
 
     &.name {
       @include caption();
@@ -27,6 +37,8 @@
       letter-spacing: 2px;
       vertical-align: top;
 
+      color: #999;
+
       margin-left: 10px;
       opacity: .7;
     }
@@ -34,11 +46,15 @@
     span.devider {
       @include paragraph();
 
-      color: $red;
+      color: #CCC;
       font-weight: 300;
       font-style: italic;
 
       margin: 0 20px;
+
+      @media (#{$phone}) {
+        display: none;
+      }
     }
   }
 }

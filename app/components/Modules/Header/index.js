@@ -60,7 +60,7 @@ export default class Header extends Component {
           }}
           to="/about"
         >
-          { Language.translate('AndreyKeske') }
+          {Language.translate('AndreyKeske')}
         </Link>
 
         <Link
@@ -73,7 +73,7 @@ export default class Header extends Component {
           }}
           to={`/${language}/works`}
         >
-          { Language.translate('Works') }
+          {Language.translate('Works')}
         </Link>
 
         <Link
@@ -84,9 +84,9 @@ export default class Header extends Component {
               showMenu: false,
             });
           }}
-          to={`/${language}/travel/${mode}` }
+          to={`/${language}/travel/${mode}`}
         >
-          { Language.translate('Travel') }
+          {Language.translate('Travel')}
         </Link>
       </div>;
 
@@ -98,7 +98,7 @@ export default class Header extends Component {
         >
           🍔
         </span>
-        { renderMenu() }
+        {renderMenu()}
       </section>
     );
   }

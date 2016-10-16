@@ -48,18 +48,18 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
                 <br />
-                { Language.translate('Slider') }
+                {Language.translate('Slider')}
               </p>
 
               { /*
               <h4>
                 <a href="#" onClick={ this.openWindows() }>
-                  { Language.translate('Try') }
+                  {Language.translate('Try')}
                 </a>
               </h4>
               */ }

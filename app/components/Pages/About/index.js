@@ -11,7 +11,8 @@ import { styles } from './styles.scss';
 
 // Language
 import Language from './locale/';
-import R from 'ramda';
+
+const me = require('./files/me-in-glitch.jpg');
 
 @connect(
   state => ({
@@ -51,24 +52,43 @@ export default class About extends Component {
         <Grid>
           <Row>
             <Col
-              xs={12}
-              sm={12}
-              md={12} mdOffset={2}
-              lg={12} lgOffset={2}
+              xs={10} xsOffset={1}
+              sm={4}
+              md={4} mdOffset={2}
+              lg={4} lgOffset={2}
             >
               <img
-                src={require('./files/me.jpg')}
+                src={me}
                 className="face"
-                alt={ Language.translate('AndreyKeske') }
+                alt={Language.translate('AndreyKeske')}
               />
+            </Col>
 
-              <h3>
-                { Language.translate('AndreyKeske') }
-              </h3>
+            <Col
+              xs={10} xsOffset={1}
+              sm={6} smOffset={1}
+              md={6} mdOffset={0}
+              lg={6} lgOffset={0}
+            >
+              <h1>
+                Hello there!
+              </h1>
 
               <p>
-                { Language.translate('Do') }
+                I'm Andrey Keske (29). I'm a kind of artist (artist between such disciplines as code, design, ui hacking, street art and etc).
               </p>
+
+              <p>
+                I live in Saint Petersburg, Russia.
+              </p>
+
+              <p>
+                In professional life I'm working as a freelance front end developer for few companies which based in New York, San Francisco and Berlin.
+              </p>
+
+              <h3>
+                Get in touch with me
+              </h3>
 
               <ul>
                 <li>
@@ -88,7 +108,9 @@ export default class About extends Component {
                 </li>
                 <li>
                   <a href="https://instagram.com/andreykeske/">
-                    Instagram
+                    Instagram: personal
+                  </a> / <a href="https://instagram.com/keskeandrey/">
+                   art works
                   </a>
                 </li>
               </ul>

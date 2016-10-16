@@ -19,7 +19,7 @@ const Preview = ({ language, work: { link } }) => {
         key={`/${language}/works/${link}`}
         className="name"
       >
-        { locale.Title }
+        {locale.Title}
         <span className="date">
           2014
         </span>

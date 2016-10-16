@@ -53,23 +53,23 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
               </p>
               <p>
-                { Language.translate('Idea') }
+                {Language.translate('Idea')}
               </p>
 
               <h4>
-                <a href={ ` ${path}/do.html` } target="_blank">
-                  { Language.translate('Open') }
+                <a href={ ` ${path}/do.html`} target="_blank">
+                  {Language.translate('Open')}
                 </a>
               </h4>
 
               <h2>
-                { Language.translate('How') }
+                {Language.translate('How')}
               </h2>
               <div className="responsive-container">
                 <iframe width="960" height="720"

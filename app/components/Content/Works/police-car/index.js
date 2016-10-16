@@ -24,7 +24,7 @@ export default class Work extends Component {
     Language.setLocale(language);
 
     const metaData = {
-      title: `${ Language.translate('Title') } — ${ Language.translate('Intro') }`,
+      title: `${Language.translate('Title')} — ${Language.translate('Intro')}`,
       description: Language.translate('Intro'),
       meta: {
         charset: 'utf-8',
@@ -48,16 +48,16 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Intro') }
+                {Language.translate('Intro')}
               </p>
 
-              <h2>{ Language.translate('How') }</h2>
+              <h2>{Language.translate('How')}</h2>
 
               <p>
-                { Language.translate('HowText') }
+                {Language.translate('HowText')}
               </p>
 
               <div className="responsive-container">
@@ -67,32 +67,32 @@ export default class Work extends Component {
               </div>
 
               <h2>
-                { Language.translate('Repeat') }
+                {Language.translate('Repeat')}
               </h2>
 
               <ul>
                 <li>
-                  { Language.translate('li_1') }
+                  {Language.translate('li_1')}
                 </li>
                 <li>
-                  { Language.translate('li_2') }
+                  {Language.translate('li_2')}
                 </li>
                 <li>
-                  { Language.translate('li_3') }
+                  {Language.translate('li_3')}
                 </li>
                 <li>
-                  { Language.translate('li_4') }
+                  {Language.translate('li_4')}
                 </li>
                 <li>
-                  { Language.translate('li_5') }
+                  {Language.translate('li_5')}
                 </li>
                 <li>
-                  { Language.translate('li_6') }
+                  {Language.translate('li_6')}
                 </li>
               </ul>
 
               <i>
-                { Language.translate('System') }
+                {Language.translate('System')}
               </i>
 
             </div>

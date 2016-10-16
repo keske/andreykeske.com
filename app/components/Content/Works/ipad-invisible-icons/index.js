@@ -53,44 +53,44 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
               </p>
 
               <h2>
-                { Language.translate('Result') }
+                {Language.translate('Result')}
               </h2>
-              <img src={`${path}/ipad-1.jpg` } />
+              <img src={`${path}/ipad-1.jpg`} />
 
               <h2>
-                { Language.translate('Closer') }
+                {Language.translate('Closer')}
               </h2>
-              <img src={`${path}/ipad-2.jpg` } />
+              <img src={`${path}/ipad-2.jpg`} />
 
               <h2>
-                { Language.translate('EvenCloser') }
+                {Language.translate('EvenCloser')}
               </h2>
-              <img src={`${path}/ipad-3.jpg` } />
+              <img src={`${path}/ipad-3.jpg`} />
 
 
               <h2>
-                { Language.translate('How') }
+                {Language.translate('How')}
               </h2>
 
               <ul>
                 <li>
-                  { Language.translate('Screenshot') }
+                  {Language.translate('Screenshot')}
                 </li>
                 <li>
-                  { Language.translate('Background') }
+                  {Language.translate('Background')}
                 </li>
                 <li>
-                  { Language.translate('Apps') }
+                  {Language.translate('Apps')}
                 </li>
                 <li>
-                  { Language.translate('Finally') }
+                  {Language.translate('Finally')}
                 </li>
               </ul>
 

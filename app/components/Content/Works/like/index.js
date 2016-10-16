@@ -30,7 +30,7 @@ export default class Work extends Component {
 
     const metaData = {
       title: `${Language.translate('Title')}`,
-      description: `${ Language.translate('EmpiteStateBuilding') } ${ Language.translate('SpaceInvaders') }`,
+      description: `${Language.translate('EmpiteStateBuilding')} ${Language.translate('SpaceInvaders')}`,
       meta: {
         charset: 'utf-8',
         name: {
@@ -53,35 +53,35 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
 
               <h2>
-                { Language.translate('EmpiteStateBuilding') }
+                {Language.translate('EmpiteStateBuilding')}
               </h2>
 
               <h4>
-                <a href={ `${ path }/empire.andreykeske.com/index.html` }>
-                  { Language.translate('Open') }
+                <a href={`${ path }/empire.andreykeske.com/index.html`}>
+                  {Language.translate('Open')}
                 </a>
               </h4>
 
-              <a href={ `${ path }/empire.andreykeske.com/index.html` }>
-                <img src={`${path}/empire-state.jpg` } />
+              <a href={`${ path }/empire.andreykeske.com/index.html`}>
+                <img src={`${path}/empire-state.jpg`} />
               </a>
 
               <h2>
-                { Language.translate('SpaceInvaders') }
+                {Language.translate('SpaceInvaders')}
               </h2>
 
               <h4>
-                <a href={ `${ path }/spaceinvaders.andreykeske.com/index.html` }>
-                  { Language.translate('Open') }
+                <a href={`${ path }/spaceinvaders.andreykeske.com/index.html`}>
+                  {Language.translate('Open')}
                 </a>
               </h4>
 
-              <a href={ `${ path }/spaceinvaders.andreykeske.com/index.html` }>
-                <img src={`${path}/spaceinvaders.jpg` } />
+              <a href={`${ path }/spaceinvaders.andreykeske.com/index.html`}>
+                <img src={`${path}/spaceinvaders.jpg`} />
               </a>
 
             </div>

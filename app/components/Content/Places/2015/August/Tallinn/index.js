@@ -81,7 +81,7 @@ export default class City extends Component {
             left="180"
           >
             <div className="top-page-city-name">
-              { Language.translate('City') }
+              {Language.translate('City')}
             </div>
           </ParallaxComponent>
 
@@ -92,7 +92,7 @@ export default class City extends Component {
             left="180"
           >
             <p>
-              { Language.translate('Intro') }
+              {Language.translate('Intro')}
             </p>
           </ParallaxComponent>
 

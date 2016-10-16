@@ -28,30 +28,30 @@ export default class City extends Component {
     return (
       <div className={styles}>
         <div className="photo">
-          <LinkToImage url={ `${img}/thumb.jpg` } />
+          <LinkToImage url={`${img}/thumb.jpg`} />
         </div>
 
         <div className="top-page-city-name on-image">
-          { Language.translate('Budapest') }
+          {Language.translate('Budapest')}
         </div>
 
         <div className="photo">
-          <LinkToImage url={ `${img}/1.jpg` } />
+          <LinkToImage url={`${img}/1.jpg`} />
         </div>
 
         <div className="photo">
-          <LinkToImage url={ `${img}/2.jpg` } />
+          <LinkToImage url={`${img}/2.jpg`} />
         </div>
 
         <div className="container">
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <LinkToImage url={ `${img}/3.jpg` } />
+              <LinkToImage url={`${img}/3.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <LinkToImage url={ `${img}/4.jpg` } />
+              <LinkToImage url={`${img}/4.jpg`} />
             </div>
 
           </div>

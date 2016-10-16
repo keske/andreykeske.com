@@ -33,9 +33,12 @@ const NavFooter = data => {
                     ← Prev work
                   </p>
                   <h3>
-                    { prevWork.title }
+                    {prevWork.title}
                   </h3>
-                  <img src={`./app/components/Content/Works/${prevWork.link}/files/${prevWork.img}`} />
+                  <img
+                    src={`./app/components/Content/Works/${prevWork.link}/files/${prevWork.img}`}
+                    role="presentation"
+                  />
                 </Link>
               )
             }
@@ -55,9 +58,12 @@ const NavFooter = data => {
                     Next work →
                   </p>
                   <h3>
-                    { nextWork.title }
+                    {nextWork.title}
                   </h3>
-                  <img src={`./app/components/Content/Works/${nextWork.link}/files/${nextWork.img}`} />
+                  <img
+                    src={`./app/components/Content/Works/${nextWork.link}/files/${nextWork.img}`}
+                    role="presentation"
+                  />
                 </Link>
               )
             }

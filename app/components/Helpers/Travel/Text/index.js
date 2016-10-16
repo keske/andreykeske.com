@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Col } from 'react-bootstrap';
 
 // Components
 import NewLabel from '../NewLabel';
@@ -12,29 +11,34 @@ import { styles } from './styles.scss';
 const Text = place => {
 
   const renderInner = () => (
-    <Col
-      className={styles}
-      xs={12}
-      sm={12}
-      md={12}
-      lg={12}
-    >
-      <div className={'data'}>
-        <p className="city">
-          { place.city }
-        </p>
+    <span>
+      <span className="city">
+        {place.city}
+      </span>
+      <span className="date">
         <VisitedDate {...place} />
-        <NewLabel {...place} />
-      </div>
-    </Col>
+      </span>
+      <NewLabel {...place} />
+      <span className="devider">
+        /
+      </span>
+    </span>
   );
 
   return (
-    place.cover
-      ? <Link to={`/${place.language}/places/${place.year}/${place.month}/${place.city}`}>
-          { renderInner() }
-        </Link>
-      : renderInner()
+    <span className={styles}>
+      {
+        place.cover
+          ?
+          <Link
+            to={`/${place.language}/places/${place.year}/${place.month}/${place.city}`}
+            className="name"
+          >
+            {renderInner()}
+          </Link>
+          : renderInner()
+      }
+    </span>
   );
 };
 

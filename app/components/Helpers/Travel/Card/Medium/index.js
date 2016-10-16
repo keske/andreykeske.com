@@ -38,7 +38,10 @@ const Medium = place => {
           <VisitedDate {...place} />
         </div>
         <span className="img-wrap">
-          <img src={generateUrlToPostThumb(place)} />
+          <img
+            src={generateUrlToPostThumb(place)}
+            role="presentation"
+          />
         </span>
       </Link>
     </Col>

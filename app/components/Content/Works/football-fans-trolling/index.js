@@ -53,13 +53,13 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('About') }
+                {Language.translate('About')}
               </p>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
               </p>
 
             </div>
@@ -67,11 +67,11 @@ export default class Work extends Component {
 
           <div className="row images-block">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={`${path}/1.jpeg` } />
+              <img src={`${path}/1.jpeg`} />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={`${path}/2.jpeg` } />
+              <img src={`${path}/2.jpeg`} />
             </div>
           </div>
 
@@ -79,11 +79,11 @@ export default class Work extends Component {
 
           <div className="row">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={`${path}/3.jpeg` } />
+              <img src={`${path}/3.jpeg`} />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src={`${path}/4.jpeg` } />
+              <img src={`${path}/4.jpeg`} />
             </div>
           </div>
         </div>

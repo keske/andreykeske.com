@@ -102,8 +102,8 @@ export default class NavFooter extends Component {
             md={12}
             lg={12}
           >
-            <Link to={ `/${language}/travel/card`} className="list-of-cities">
-              { Language.translate('List')}
+            <Link to={`/${language}/travel/text`} className="list-of-cities">
+              {Language.translate('List')}
             </Link>
           </Col>
           {
@@ -113,9 +113,9 @@ export default class NavFooter extends Component {
               ) => (
                 currentPlace.cover &&
                   <Link
-                    to={ `/${language}/places/${currentPlace.year}/${currentPlace.month}/${currentPlace.city}`}
-                    key={ `${currentPlace.year}/${currentPlace.month}/${currentPlace.city}`}
-                    className={ `${activeClass}`}
+                    to={`/${language}/places/${currentPlace.year}/${currentPlace.month}/${currentPlace.city}`}
+                    key={`${currentPlace.year}/${currentPlace.month}/${currentPlace.city}`}
+                    className={`${activeClass}`}
                   >
                     <Col
                       xs={12}
@@ -126,10 +126,13 @@ export default class NavFooter extends Component {
                     >
                       <div className="data">
                         <p className="city">
-                          { currentPlace.city }
+                          {currentPlace.city}
                         </p>
                       </div>
-                      <img src={ `./app/Components/Content/Places/${currentPlace.year}/${currentPlace.month}/${currentPlace.city.replace(/ /g, '')}/images/thumb.jpg`} />
+                      <img
+                        src={`./app/Components/Content/Places/${currentPlace.year}/${currentPlace.month}/${currentPlace.city.replace(/ /g, '')}/images/thumb.jpg`}
+                        role="presentation"
+                      />
                     </Col>
                   </Link>
                 )

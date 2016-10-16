@@ -32,13 +32,16 @@ const Large = place => {
       <Link to={generateUrlToPlace(place)}>
         <div className={`data ${place.className}`}>
           <p className="city">
-            { locale.City }
+            {locale.City}
             <NewLabel {...place} />
           </p>
           <VisitedDate {...place} />
         </div>
         <span className="img-wrap">
-          <img src={generateUrlToPostThumb(place)} />
+          <img
+            src={generateUrlToPostThumb(place)}
+            role="presentation"
+          />
         </span>
       </Link>
     </Col>);

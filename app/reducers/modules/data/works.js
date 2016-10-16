@@ -1,11 +1,11 @@
 export default [
-  {
-    title: 'Graffiti Buffs On Girls',
-    info: 'TODO.',
-    link: 'graffiti-buffs-on-girls',
-    img: 'cover.png',
-    count: '',
-  },
+  // {
+  //   title: 'Graffiti Buffs On Girls',
+  //   info: 'TODO.',
+  //   link: 'graffiti-buffs-on-girls',
+  //   img: 'cover.png',
+  //   count: '',
+  // },
   {
     title: 'Globalization',
     info: 'The world when the boundaries are blurred.',
@@ -13,13 +13,13 @@ export default [
     img: 'cover.png',
     count: '',
   },
-  {
-    title: 'Straight Flush',
-    info: 'TODO.',
-    link: 'straight-flush',
-    img: 'cover.png',
-    count: '',
-  },
+  // {
+  //   title: 'Straight Flush',
+  //   info: 'TODO.',
+  //   link: 'straight-flush',
+  //   img: 'cover.png',
+  //   count: '',
+  // },
   {
     title: 'Google Street View in the beginning of the 20th century',
     link: 'google-street-view-20th-century',

@@ -24,13 +24,13 @@ export default class City extends Component {
 
     return (
       <div>
-        <LinkToImage url={ `${img}/thumb.jpg` } />
+        <LinkToImage url={`${img}/thumb.jpg`} />
 
         <div className="top-page-city-name on-image">
-          { Language.translate('Prague') }
+          {Language.translate('Prague')}
         </div>
 
-        <LinkToImage url={ `${img}/1.jpg` } />
+        <LinkToImage url={`${img}/1.jpg`} />
 
         <NavFooter style="white bottom-on-photo" year={year * 1} month={month} city={city} language={language} />
       </div>

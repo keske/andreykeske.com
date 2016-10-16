@@ -10,7 +10,7 @@ export const setTravelViewMode = mode => ({
 
 const initialState = {
   language: 'en',
-  mode: 'card',
+  mode: 'text',
 };
 
 export const application = createReducer({

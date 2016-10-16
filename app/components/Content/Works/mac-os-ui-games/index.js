@@ -53,17 +53,17 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
               </p>
 
               <h1>
-                { Language.translate('SlotMachines') }
+                {Language.translate('SlotMachines')}
               </h1>
               <p>
-                { Language.translate('SlotMachinesText') }
+                {Language.translate('SlotMachinesText')}
               </p>
 
               <div className="responsive-container">
@@ -73,47 +73,47 @@ export default class Work extends Component {
               </div>
 
               <h2>
-                { Language.translate('SlotMachinesHow') }
+                {Language.translate('SlotMachinesHow')}
               </h2>
 
               <ul>
                 <li>
-                  { Language.translate('SlotMachinesHowOpen') }
+                  {Language.translate('SlotMachinesHowOpen')}
                   <br />
-                  { Language.translate('SlotMachinesHowCd') }
+                  {Language.translate('SlotMachinesHowCd')}
                 </li>
                 <li>
-                  { Language.translate('SlotMachinesHowOpenFolders') }
+                  {Language.translate('SlotMachinesHowOpenFolders')}
                   <br />
-                  { Language.translate('SlotMachinesHowOpenFolders1') }
+                  {Language.translate('SlotMachinesHowOpenFolders1')}
                   <br />
-                  { Language.translate('SlotMachinesHowOpenFolders2') }
+                  {Language.translate('SlotMachinesHowOpenFolders2')}
                   <br />
-                  { Language.translate('SlotMachinesHowOpenFolders3') }
+                  {Language.translate('SlotMachinesHowOpenFolders3')}
                 </li>
                 <li>
-                  { Language.translate('SlotMachinesHowRun') }
+                  {Language.translate('SlotMachinesHowRun')}
                   <br />
-                  { Language.translate('SlotMachinesHowStart') }
+                  {Language.translate('SlotMachinesHowStart')}
                 </li>
               </ul>
 
               <p>
-                { Language.translate('SlotMachinesNow') }
+                {Language.translate('SlotMachinesNow')}
               </p>
 
               <h4>
-                <a href={ `${ path }/slotmachine.zip` }>
-                  { Language.translate('SlotMachinesDownload') }
+                <a href={`${ path }/slotmachine.zip`}>
+                  {Language.translate('SlotMachinesDownload')}
                 </a>
               </h4>
 
               <h1>
-                { Language.translate('DiceGame') }
+                {Language.translate('DiceGame')}
               </h1>
 
               <p>
-                { Language.translate('DiceGameText') }
+                {Language.translate('DiceGameText')}
               </p>
 
               <div className="responsive-container">
@@ -123,29 +123,29 @@ export default class Work extends Component {
               </div>
 
               <h2>
-                { Language.translate('DiceGameNow') }
+                {Language.translate('DiceGameNow')}
               </h2>
 
               <ul>
                 <li>
-                  { Language.translate('DiceGameNowOpenFolder') }
+                  {Language.translate('DiceGameNowOpenFolder')}
                 </li>
                 <li>
-                  { Language.translate('DiceGameNowOpenTerminal') }
+                  {Language.translate('DiceGameNowOpenTerminal')}
                   <br />
-                  { Language.translate('DiceGameNowTerminalCommand') }
+                  {Language.translate('DiceGameNowTerminalCommand')}
                 </li>
                 <li>
-                  { Language.translate('DiceGameNowRun') }
+                  {Language.translate('DiceGameNowRun')}
                 </li>
                 <li>
-                  { Language.translate('DiceGameNowEach') }
+                  {Language.translate('DiceGameNowEach')}
                 </li>
               </ul>
 
               <h4>
-                <a href={ `${ path }/dicegame.zip` }>
-                  { Language.translate('DiceGameDownload') }
+                <a href={`${ path }/dicegame.zip`}>
+                  {Language.translate('DiceGameDownload')}
                 </a>
               </h4>
             </div>

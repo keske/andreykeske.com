@@ -53,28 +53,28 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
 
               <p>
-                { Language.translate('Normal') }
+                {Language.translate('Normal')}
               </p>
 
-              <img src={`${path}/normal.jpg` } />
+              <img src={`${path}/normal.jpg`} />
 
               <hr />
 
               <p>
-                { Language.translate('Friday') }
+                {Language.translate('Friday')}
               </p>
 
-              <img src={`${path}/friday-dock.jpg` } />
+              <img src={`${path}/friday-dock.jpg`} />
 
               <hr />
 
               <h4>
-                <a href={ `${ path }/friday-apps.zip` }>
-                  { Language.translate('Download') }
+                <a href={`${ path }/friday-apps.zip`}>
+                  {Language.translate('Download')}
                 </a>
               </h4>
 

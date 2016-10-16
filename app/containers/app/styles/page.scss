@@ -1,8 +1,8 @@
 @import 'typography';
+@import 'screens';
 
 h1.page-title {
   font-weight: 300;
-  font-size: 300px;
   font-style: italic;
   line-height: 300px;
   color: $red;
@@ -10,8 +10,22 @@ h1.page-title {
   position: fixed;
   z-index: 0;
 
-  bottom: -50px;
   right: 40px;
 
   opacity: 1;
+
+  @media (#{$phone}) {
+    font-size: 140px;
+    bottom: -80px;
+  }
+
+  @media (#{$tablet}) {
+    font-size: 200px;
+    bottom: -80px;
+  }
+
+  @media (#{$desktop}) {
+    font-size: 300px;
+    bottom: -50px;
+  }
 }

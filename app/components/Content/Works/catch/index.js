@@ -53,21 +53,21 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
               </p>
 
               <p>
                 <i>
-                  { Language.translate('Thanks') }
+                  {Language.translate('Thanks')}
                 </i>
               </p>
 
               <h4>
-                <a target="_blank" href={ `${ path }/TheCatch.zip` }>
-                  { Language.translate('Download') }
+                <a target="_blank" href={`${ path }/TheCatch.zip`}>
+                  {Language.translate('Download')}
                 </a>
               </h4>
 

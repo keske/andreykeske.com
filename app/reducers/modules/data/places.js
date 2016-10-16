@@ -1,4 +1,100 @@
 export default [{
+  city: 'Baltimore',
+  country: 'USA',
+  start: '1 October',
+  end: '2 October',
+
+  month: 'October',
+  year: 2016,
+
+  date: new Date('10/1/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: '',
+
+  cover: false,
+}, {
+  city: 'New York',
+  country: 'USA',
+  start: '6 September',
+  end: 'November',
+
+  month: 'November',
+  year: 2016,
+
+  date: new Date('11/3/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: '',
+
+  cover: false,
+}, {
+  city: 'Boston',
+  country: 'USA',
+  start: '4 September',
+  end: '6 September',
+
+  month: 'September',
+  year: 2016,
+
+  date: new Date('9/6/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: '',
+
+  cover: false,
+}, {
+  city: 'Warwick, Rl',
+  country: 'USA',
+  start: '3 September',
+  end: '4 September',
+
+  month: 'September',
+  year: 2016,
+
+  date: new Date('9/4/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: '',
+
+  cover: false,
+}, {
+  city: 'Prague',
+  country: 'Czech Republic',
+  start: '25 August',
+  end: '3 September',
+
+  month: 'August',
+  year: 2016,
+
+  date: new Date('8/25/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: '',
+
+  cover: false,
+}, {
+  city: 'Moscow',
+  country: 'Russia',
+  start: '22 July',
+  end: '26 July',
+
+  month: 'May',
+  year: 2016,
+
+  date: new Date('7/22/2016'),
+
+  className: '',
+  chapter: 'III',
+  viewMode: '',
+
+  cover: false,
+}, {
   city: 'Petrozavodsk',
   country: 'Russia',
   start: '7 June',
@@ -77,7 +173,7 @@ export default [{
   chapter: 'III',
   viewMode: 'large',
 
-  cover: true,
+  cover: false,
 }, {
   city: 'Yekaterinburg',
   country: 'Russia',

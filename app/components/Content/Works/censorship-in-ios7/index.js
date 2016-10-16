@@ -53,52 +53,52 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text') }
+                {Language.translate('Text')}
               </p>
 
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
               <h4>
-                { Language.translate('Home') }
+                {Language.translate('Home')}
               </h4>
-              <img src={ ` ${path}/dock-phone.png` } />
+              <img src={ ` ${path}/dock-phone.png`} />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
               <h4>
-                { Language.translate('Sound') }
+                {Language.translate('Sound')}
               </h4>
-              <img src={ ` ${path}/ringer-phone.png` } />
+              <img src={ ` ${path}/ringer-phone.png`} />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
               <h4>
-                { Language.translate('Group') }
+                {Language.translate('Group')}
               </h4>
-              <img src={ ` ${path}/group-phone.png` } />
+              <img src={ ` ${path}/group-phone.png`} />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
               <h4>
-                { Language.translate('Multitask') }
+                {Language.translate('Multitask')}
               </h4>
-              <img src={ ` ${path}/task-phone.png` } />
+              <img src={ ` ${path}/task-phone.png`} />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 images-block">
               <h4>
-                { Language.translate('Drag') }
+                {Language.translate('Drag')}
               </h4>
-              <img src={ ` ${path}/icon-phone.png` } />
+              <img src={ ` ${path}/icon-phone.png`} />
             </div>
 
             <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 images-block">
               <h2>
-                { Language.translate('Bonus') }
+                {Language.translate('Bonus')}
               </h2>
               <div className="responsive-container">
                 <iframe width="960" height="720"

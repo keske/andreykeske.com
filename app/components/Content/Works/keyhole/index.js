@@ -41,7 +41,7 @@ export default class Work extends Component {
     Language.setLocale(language);
 
     const metaData = {
-      title: `${ Language.translate('Title') } — ${ Language.translate('Text1') }`,
+      title: `${Language.translate('Title')} — ${Language.translate('Text1')}`,
       description: Language.translate('Text1'),
       meta: {
         charset: 'utf-8',
@@ -65,21 +65,21 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
               <p>
-                { Language.translate('Text1') }
+                {Language.translate('Text1')}
                 <br />
-                { Language.translate('Text2') }
+                {Language.translate('Text2')}
               </p>
 
               <div className="keyhole-girl keyhole-girl-center">
-                <img src={`${path}/girl.png` } alt="Girl" ref="girl" />
+                <img src={`${path}/girl.png`} alt="Girl" ref="girl" />
               </div>
 
               <div className="keyhole keyhole-center"
                 onMouseMove={ () => this.move() }>
-                <img src={`${path}/keyhole.png` } alt="Keyhole" />
+                <img src={`${path}/keyhole.png`} alt="Keyhole" />
               </div>
 
             </div>

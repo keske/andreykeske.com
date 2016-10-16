@@ -53,20 +53,20 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
 
               <p dangerouslySetInnerHTML={{__html:
-                Language.translate('About') }} />
+                Language.translate('About')}} />
 
               <p dangerouslySetInnerHTML={{__html:
-                Language.translate('Text') }} />
+                Language.translate('Text')}} />
 
-              <a target="_blank" href={`${path}/index.html` }>
-                <img src={ ` ${path}/work.jpg` } />
+              <a target="_blank" href={`${path}/index.html`}>
+                <img src={ ` ${path}/work.jpg`} />
               </a>
               <h4>
-                <a target="_blank" href={`${path}/index.html` }>Open page</a>
+                <a target="_blank" href={`${path}/index.html`}>Open page</a>
               </h4>
 
             </div>

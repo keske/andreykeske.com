@@ -1,6 +1,5 @@
 /* global styles */
 
-@import 'fonts/roboto';
 @import 'typography';
 @import 'pallete';
 @import 'buttons';
@@ -12,8 +11,6 @@
 
   color: $black;
   background: $white;
-
-  user-select: none;
 
   border-top: $borderSize solid $red;
   border-left: $borderSize solid $red;

@@ -53,63 +53,63 @@ export default class Work extends Component {
             >
 
               <h1>
-                { Language.translate('Title') }
+                {Language.translate('Title')}
               </h1>
 
               <h2>
-                { Language.translate('Emojii') }
+                {Language.translate('Emojii')}
               </h2>
-              <img src={`${path}/emojii.jpeg` } />
+              <img src={`${path}/emojii.jpeg`} />
 
               <hr />
 
               <h2>
-                { Language.translate('Rosette') }
+                {Language.translate('Rosette')}
               </h2>
-              <img src={`${path}/Rossete.jpg` } />
+              <img src={`${path}/Rossete.jpg`} />
 
               <hr />
 
               <h2>
-                { Language.translate('Paralympic') }
+                {Language.translate('Paralympic')}
               </h2>
               <div className="no-width-image">
-                <img src={`${path}/paralympic.jpg` } />
+                <img src={`${path}/paralympic.jpg`} />
               </div>
 
               <hr />
 
               <h2>
-                { Language.translate('Slave') }
+                {Language.translate('Slave')}
               </h2>
 
-              <img src={`${path}/rub.jpg` } />
+              <img src={`${path}/rub.jpg`} />
 
               <h2>
-                { Language.translate('Cola') }
+                {Language.translate('Cola')}
               </h2>
               <div className="no-width-image">
-                <img src={`${path}/cola.jpg` } />
+                <img src={`${path}/cola.jpg`} />
               </div>
 
               <hr />
 
               <h2>
-                { Language.translate('Sneakers') }
+                {Language.translate('Sneakers')}
               </h2>
               <p>
-                { Language.translate('SneakersText1') }
+                {Language.translate('SneakersText1')}
                 <br />
-                { Language.translate('SneakersText2') }
+                {Language.translate('SneakersText2')}
               </p>
-              <img src={`${path}/sneakers.jpg` } />
+              <img src={`${path}/sneakers.jpg`} />
 
               <hr />
 
               <h2>
-                { Language.translate('InvertManhattan') }
+                {Language.translate('InvertManhattan')}
               </h2>
-              <img src={`${path}/invert_manhattan.jpg` } />
+              <img src={`${path}/invert_manhattan.jpg`} />
 
             </div>
           </div>

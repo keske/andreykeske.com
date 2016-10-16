@@ -28,40 +28,40 @@ export default class City extends Component {
     return (
       <div className={styles}>
         <div className="photo">
-          <LinkToImage url={ `${img}/thumb.jpg` } />
+          <LinkToImage url={`${img}/thumb.jpg`} />
         </div>
 
         <div className="top-page-city-name on-image">
-          { Language.translate('Prague') }
+          {Language.translate('Prague')}
         </div>
 
         <div className="photo">
-          <LinkToImage url={ `${img}/2.jpg` } />
+          <LinkToImage url={`${img}/2.jpg`} />
         </div>
 
         <div className="container">
           <div className="row">
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/3.jpg` } />
+              <LinkToImage url={`${img}/3.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/4.jpg` } />
+              <LinkToImage url={`${img}/4.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/5.jpg` } />
+              <LinkToImage url={`${img}/5.jpg`} />
             </div>
 
             <div className="photo col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <LinkToImage url={ `${img}/6.jpg` } />
+              <LinkToImage url={`${img}/6.jpg`} />
             </div>
 
           </div>
         </div>
 
-        <LinkToImage url={ `${img}/8.jpg` } />
+        <LinkToImage url={`${img}/8.jpg`} />
 
         <NavFooter year={year * 1} month={month} city={city} language={language} />
       </div>

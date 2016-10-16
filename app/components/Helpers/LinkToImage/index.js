@@ -1,18 +1,16 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-export default class LinkToImage extends Component {
+const LinkToImage = ({ url }) =>
+  <a target="_blank" href={url}>
+    <img
+      src={url}
+      role="presentation"
+    />
+  </a>;
 
-  static propTypes = {
-    url: PropTypes.string,
-  };
 
-  render() {
-    const { url } = this.props;
+LinkToImage.propTypes = {
+  url: PropTypes.string,
+};
 
-    return (
-      <a target="_blank" href={url}>
-        <img src={url} />
-      </a>
-    );
-  }
-}
+export default LinkToImage;

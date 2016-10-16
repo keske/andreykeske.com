@@ -1,18 +1,18 @@
 module.exports = {
 
   // Months
-  january: 'January',
-  febrary: 'Febrary',
+  january: 'Jan',
+  febrary: 'Feb',
   march: 'March',
-  april: 'April',
+  april: 'Apr',
   may: 'May',
   june: 'June',
   july: 'July',
-  august: 'August',
-  september: 'September',
-  october: 'October',
-  november: 'November',
-  december: 'December',
+  august: 'Aug',
+  september: 'Sep',
+  october: 'Oct',
+  november: 'Nov',
+  december: 'Dec',
 
   // Countries
   finland: 'Finland',

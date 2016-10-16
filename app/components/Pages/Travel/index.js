@@ -2,18 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import DocumentMeta from 'react-document-meta';
-import { Grid, Row, Col } from 'react-bootstrap';
-import ParallaxComponent from 'react-parallax-component';
+import { Grid, Row } from 'react-bootstrap';
 import R from 'ramda';
 
 import { setTravelViewMode } from '../../../reducers/modules/application';
 import { loadPlaces } from '../../../reducers/modules/places';
 
-// Utils
-import { random } from '../../../utils/math';
-
 // Components
-import Filter from '../../Helpers/Travel/Filter';
 import * as Chapters from '../../Helpers/Travel/Chapters';
 import Card from '../../Helpers/Travel/Card';
 import Text from '../../Helpers/Travel/Text';
@@ -93,63 +88,19 @@ export default class Travel extends Component {
               // After render places for each chapter
               R.map(renderPlace, chapterPlaces)
             }
-          </Row>
+        </Row>
         : R.map(renderPlace, chapterPlaces)
     );
-
-    const renderPhotos = () => {
-      const width = 250;
-      const height = 200;
-      const photos = {
-        total: 7,
-        perPage: 3,
-      };
-
-      const photosOnPage = [];
-
-      R.range(0, photos.perPage).map(() => {
-        const setValue = (rnd = random(1, photos.total)) =>
-          R.ifElse(
-            R.equals(R.__, true),
-            () => photosOnPage.push(rnd),
-            () => setValue()
-          )(!R.contains(rnd, photosOnPage));
-        setValue();
-      });
-
-      return photosOnPage.map((file, index) =>
-        <ParallaxComponent
-          speed={`0.${R.add(index, 1)}`}
-          top={R.toString(random((R.multiply(100, index)), (R.multiply(index, (R.multiply(height, 2))))))}
-          left={`${window.innerWidth / random(20, 40)}%`}
-          width={R.toString(width)}
-          key={index}
-        >
-          <img src={`./app/components/Pages/Travel/files/${file}.jpg`} />
-        </ParallaxComponent>
-      );
-
-    };
 
     return (
       <section className={styles}>
         <DocumentMeta {...metaData} />
 
         <h1 className="page-title">
-          { Language.translate('Travel') }
+          {Language.translate('Travel')}
         </h1>
 
         <Grid>
-          <Row>
-            <Col
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-            >
-              <Filter {...this.props} />
-            </Col>
-          </Row>
           {
             R.compose(
               R.map(renderChapter),
@@ -157,11 +108,6 @@ export default class Travel extends Component {
             )(R.groupBy(R.prop('chapter'), places))
           }
         </Grid>
-
-        {
-          // R.equals(mode, 'text') && renderPhotos()
-        }
-
       </section>
     );
   }

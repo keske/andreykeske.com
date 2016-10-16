@@ -16,10 +16,9 @@ const NewLabel = place => {
 
   return showNewLabel(place.date)
     ? <span className={styles}>
-        { Language.translate('title') }
-      </span>
+        {Language.translate('title')}
+    </span>
     : <span />;
 };
-
 
 export default NewLabel;
