@@ -5,17 +5,16 @@ module.exports = {
   devtool: 'source-map',
 
   entry: {
-    main: ['./app/index'],
-  },
-
-  output: {
-    publicPath: '/dist/',
+    main: ['./src/index'],
   },
 
   module: {
     loaders: [{
       test: /\.scss$/,
-      loader: 'style!css!postcss-loader!sass',
+      loader: ExtractTextPlugin.extract({
+        notExtractLoader: 'style-loader',
+        loader: 'css?minimize!postcss-loader!sass-loader',
+      }),
     }],
   },
 
@@ -27,6 +26,10 @@ module.exports = {
       compress: {
         warnings: false,
       },
+    }),
+    new webpack.ProvidePlugin({
+      Promise: 'exports?global.Promise!es6-promise',
+      fetch: 'exports?self.fetch!whatwg-fetch',
     }),
   ],
 };

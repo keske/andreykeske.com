@@ -7,11 +7,16 @@
     "mocha": true
   },
   "globals": {
-    "connect": true
+    connect: true,
+    window: true,
+    __CLIENT__: true,
+    __DEVELOPMENT__: true,
+    __INITIAL_STATE__: true,
+
   },
   "rules": {
     "max-len": 0,
-    "padded-blocks": 0,
+    "import/parser": 0
   },
   "plugins": [
     "react"

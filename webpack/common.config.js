@@ -1,93 +1,110 @@
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const merge = require('webpack-merge');
-const path = require('path');
+import webpack from 'webpack';
+import merge from 'webpack-merge';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import path from 'path';
 
-const development = require('./dev.config.js');
-const production = require('./prod.config.js');
-
-require('babel-polyfill').default;
+// Webpack configs
+import development from './dev.config.js';
+import production from './prod.config.js';
 
 const TARGET = process.env.npm_lifecycle_event;
-
 process.env.BABEL_ENV = TARGET;
+
+const getDevelopmentUrl = () => (
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000/dist/'
+    : '/dist/'
+);
+
+const devUrl = getDevelopmentUrl();
 
 const common = {
   output: {
-    path: __dirname + '/dist/',
+    path: __dirname + '/../dist/',
+    publicPath: devUrl,
     filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
   },
 
   resolve: {
-    extensions: ['', '.jsx', '.js', '.json', '.scss'],
+    extensions: ['', '.js', '.json'],
     modulesDirectories: ['node_modules'],
     alias: {
-      containers: path.join(__dirname, '../app/containers/'),
-      components: path.join(__dirname, '../app/components/'),
-      'reducers/modules': path.join(__dirname, '../app/reducers/modules/'),
-      'reducers/store': path.join(__dirname, '../app/reducers/store/'),
-      constants: path.join(__dirname, '../app/constants/'),
-      decorators: path.join(__dirname, '../app/decorators/'),
-      utils: path.join(__dirname, '../app/utils/'),
+      components: path.join(__dirname, '../src/components/'),
+      constants: path.join(__dirname, '../src/constants/'),
+      decorators: path.join(__dirname, '../src/decorators/'),
+      utils: path.join(__dirname, '../src/utils/'),
     },
   },
 
   module: {
     loaders: [{
-      test: /bootstrap-sass\/assets\/javascripts\//,
-      loader: 'imports?jQuery=jquery',
-    }, {
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'url?limit=10000&mimetype=application/font-woff',
     }, {
       test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'url?limit=10000&mimetype=application/font-woff2',
     }, {
-      test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=application/octet-stream',
-    }, {
-      test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=application/font-otf',
-    }, {
-      test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'file',
-    }, {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'url?limit=10000&mimetype=image/svg+xml',
     }, {
       test: /\.js$/,
-      loaders: ['babel-loader'],
       exclude: /node_modules/,
+      loader: 'babel-loader',
     }, {
       test: /\.png$/,
       loader: 'file?name=[name].[ext]',
     }, {
       test: /\.jpg$/,
       loader: 'file?name=[name].[ext]',
+    }, {
+      test: /\.jpeg$/,
+      loader: 'file?name=[name].[ext]',
     }],
   },
 
   plugins: [
+    // generate bundle.css for server-side-rendering
+    new ExtractTextPlugin('bundle.css'),
+
+    // define global constants
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: process.env.NODE_ENV === 'development' ? '"development"' : '"production"',
+      },
+      __DEVELOPMENT__: process.env.NODE_ENV === 'development',
+      __PRODUCTION__: process.env.NODE_ENV === 'production',
+      __CLIENT__: true,
+    }),
+
+    // chunks for generate vendor bundle
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: module =>
+      minChunks: (module) =>
         module.resource &&
-        module.resource.indexOf('node_modules') !== -1 &&
-        module.resource.indexOf('.css') === -1,
+          module.resource.indexOf('node_modules') !== -1 &&
+          module.resource.indexOf('.css') === -1,
     }),
   ],
 
   postcss: () => [
-    autoprefixer({
-      browsers: ['last 2 versions'],
+    require('postcss-simple-vars')({
+      variables: {
+        white: '#FFFFFF',
+        black: '#000000',
+        gray: '#AAAAAA',
+        green: '#8ce071',
+      },
+    }),
+    require('postcss-nested'),
+    require('postcss-short'),
+    require('autoprefixer')({
+      browsers: ['> 5%'],
+      remove: false,
     }),
   ],
 };
 
-if (TARGET === 'start' || !TARGET) {
-  module.exports = merge(development, common);
-}
-
-if (TARGET === 'build' || !TARGET) {
-  module.exports = merge(production, common);
-}
+module.exports = process.env.NODE_ENV === 'development'
+  ? merge(development, common)
+  : merge(production, common);

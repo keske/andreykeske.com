@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Circular Std";
+  src: url(../../../static/fonts/circularstd-book.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url(../../../static/fonts/circularstd-medium.woff) format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  padding: 40px 75px;
+  margin: 0;
+
+  font-family: "Circular Std", 'Helvetica';
+  font-size: 15px;
+  font-weight: normal;
+  color: $black;
+  background: $white;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+
+  &.light {
+    font-weight: normal;
+  }
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* Link */
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}

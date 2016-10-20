@@ -1,0 +1,12 @@
+.root {
+  position: relative;
+  
+  .map {
+    width: 100%;
+    overflow: hidden;
+
+    iframe {
+      filter: blur(10px);
+    }
+  }
+}

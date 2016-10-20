@@ -1,0 +1,33 @@
+.root {
+  $width: 230px;
+
+  .center {
+    text-align: center;
+    overflow: hidden;
+
+    display: block;
+    height: 230px;
+  }
+
+  .girl {
+    width: $width;
+    height: $width;
+
+    overflow: hidden;
+
+    display: inline-block;
+
+    img {
+      min-width: 400px;
+    }
+  }
+
+  .keyhole {
+    margin-top: -$width;
+    margin-left: -$width;
+
+    width: $width;
+
+    overflow: hidden;
+  }
+}
