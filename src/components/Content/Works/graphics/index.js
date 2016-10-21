@@ -16,56 +16,56 @@ const Work = ({ language }) => {
         {Language.translate('Title')}
       </h1>
 
-      <h2>
-        {Language.translate('Emojii')}
-      </h2>
-      <div className={s.image}> 
+      <div className={s.image}>
         <img
           src={require('./files/emojii.jpeg')}
           role="presentation"
         />
       </div>
-
-      <h2>
-        {Language.translate('Rosette')}
-      </h2>
+      <i>
+        {Language.translate('Emojii')}
+      </i>
+      <hr />
       <div className={s.image}>
         <img
           src={require('./files/Rossete.jpg')}
           role="presentation"
         />
       </div>
-
-      <h2>
-        {Language.translate('Paralympic')}
-      </h2>
+      <i>
+        {Language.translate('Rosette')}
+      </i>
+      <hr />
       <div className={s.image}>
         <img
           src={require('./files/paralympic.jpg')}
           role="presentation"
         />
       </div>
-
-      <h2>
-        {Language.translate('Slave')}
-      </h2>
+      <i>
+        {Language.translate('Paralympic')}
+      </i>
+      <br />
       <div className={s.image}>
         <img
           src={require('./files/rub.jpg')}
           role="presentation"
         />
       </div>
-
-      <h2>
-        {Language.translate('Cola')}
-      </h2>
+      <i>
+        {Language.translate('Slave')}
+      </i>
+      <hr />
       <div className={s.image}>
         <img
           src={require('./files/cola.jpg')}
           role="presentation"
         />
       </div>
-
+      <i>
+        {Language.translate('Cola')}
+      </i>
+      <hr />
       <h2>
         {Language.translate('Sneakers')}
       </h2>
@@ -80,17 +80,16 @@ const Work = ({ language }) => {
           role="presentation"
         />
       </div>
-
-      <h2>
-        {Language.translate('InvertManhattan')}
-      </h2>
+      <hr />
       <div className={s.image}>
         <img
           src={require('./files/invert_manhattan.jpg')}
           role="presentation"
         />
       </div>
-
+      <i>
+        {Language.translate('InvertManhattan')}
+      </i>
     </div>
   );
 };

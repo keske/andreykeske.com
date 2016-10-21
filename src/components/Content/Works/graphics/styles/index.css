@@ -3,4 +3,17 @@
   .image {
     text-align: center;
   }
+
+  i {
+    display: block;
+
+    font-size: 12px;
+    padding-top: 10px;
+
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
 }

@@ -35,14 +35,17 @@ export default class Module extends Component {
             );
 
             return (
-              <span key={index}>
+              <div
+                key={index}
+                className={s.work}
+              >
                 {
                   React.createElement(
                     Works[component.join('')],
                     props,
                   )
                 }
-              </span>
+              </div>
             );
           })
         }

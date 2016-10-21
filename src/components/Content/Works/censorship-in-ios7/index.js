@@ -18,48 +18,48 @@ const Work = ({ language }) => {
       <p>
         {Language.translate('Text')}
       </p>
-
+      <hr />
       <div className={s.center}>
-        <h4>
-          {Language.translate('Home')}
-        </h4>
         <img
           src={require('./files/dock-phone.png')}
           role="presentation"
         />
-
-        <h4>
-          {Language.translate('Sound')}
-        </h4>
+        <i>
+          {Language.translate('Home')}
+        </i>
+        <hr />
         <img
           src={require('./files/ringer-phone.png')}
           role="presentation"
         />
-
-        <h4>
-          {Language.translate('Group')}
-        </h4>
+        <i>
+          {Language.translate('Sound')}
+        </i>
+        <hr />
         <img
           src={require('./files/group-phone.png')}
           role="presentation"
         />
-
-        <h4>
-          {Language.translate('Multitask')}
-        </h4>
+        <i>
+          {Language.translate('Group')}
+        </i>
+        <hr />
         <img
           src={require('./files/task-phone.png')}
           role="presentation"
         />
-        <h4>
-          {Language.translate('Drag')}
-        </h4>
+        <i>
+          {Language.translate('Multitask')}
+        </i>
+        <hr />
         <img
           src={require('./files/icon-phone.png')}
           role="presentation"
         />
+        <i>
+          {Language.translate('Drag')}
+        </i>
       </div>
-
       <h2>
         {Language.translate('Bonus')}
       </h2>

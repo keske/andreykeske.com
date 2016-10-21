@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 import Language from './locale/';
 
 // Styles
-import s from './styles/index.css';
+import s from './index.css';
 
 const Work = ({ language }) => {
   // Set language
@@ -22,23 +22,25 @@ const Work = ({ language }) => {
         {Language.translate('Text')}
       </p>
 
-      <img
-        src={require('./files/1.jpeg')}
-        role="presentation"
-      />
-      <img
-        src={require('./files/2.jpeg')}
-        role="presentation"
-      />
+      <div className={s.images}>
+        <img
+          src={require('./files/1.jpeg')}
+          role="presentation"
+        />
+        <img
+          src={require('./files/2.jpeg')}
+          role="presentation"
+        />
 
-      <img
-        src={require('./files/3.jpeg')}
-        role="presentation"
-      />
-      <img
-        src={require('./files/4.jpeg')}
-        role="presentation"
-      />
+        <img
+          src={require('./files/3.jpeg')}
+          role="presentation"
+        />
+        <img
+          src={require('./files/4.jpeg')}
+          role="presentation"
+        />
+      </div>
     </div>
   );
 };

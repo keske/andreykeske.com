@@ -19,6 +19,8 @@ const Work = ({ language, work }) => {
         {Language.translate('Text')}
       </p>
 
+      <hr />
+
       <h1>
         {Language.translate('SlotMachines')}
       </h1>
@@ -69,6 +71,8 @@ const Work = ({ language, work }) => {
           {Language.translate('SlotMachinesDownload')}
         </a>
       </h4>
+
+      <hr />
 
       <h1>
         {Language.translate('DiceGame')}

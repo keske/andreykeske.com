@@ -49,9 +49,6 @@ const Work = ({ language }) => {
           {Language.translate('li_6')}
         </li>
       </ul>
-      <i>
-        {Language.translate('System')}
-      </i>
     </div>
   );
 };

@@ -7,4 +7,8 @@
     -ms-filter: contrast(1) grayscale(1) sepia(.7);
     filter: url(#sepia);
   }
+
+  svg {
+    display: none;
+  }
 }

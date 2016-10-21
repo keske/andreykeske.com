@@ -15,7 +15,6 @@ const Work = ({ language }) => {
       <p>
         {Language.translate('Text')}
       </p>
-
       <iframe
         width="100%"
         height="430"
@@ -23,12 +22,6 @@ const Work = ({ language }) => {
         frameBorder="0"
         allowFullScreen
       />
-
-      <p>
-        <i>
-          {Language.translate('Now')}
-        </i>
-      </p>
     </div>
   );
 };

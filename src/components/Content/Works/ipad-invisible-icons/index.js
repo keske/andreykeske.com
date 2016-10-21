@@ -3,15 +3,15 @@ import React, { PropTypes } from 'react';
 // Language
 import Language from './locale/';
 
-const Work = ({ language, work }) => {
+// Styles
+import s from './index.css';
+
+const Work = ({ language }) => {
   // Set language
   Language.setLocale(language);
 
-  // Path to photos
-  const path = `./src/components/Content/Works/${work}/files`;
-
   return (
-    <div>
+    <div className={s.root}>
       <h1>
         {Language.translate('Title')}
       </h1>
@@ -22,26 +22,22 @@ const Work = ({ language, work }) => {
       <h2>
         {Language.translate('Result')}
       </h2>
-      <img
-        src={require('./files/ipad-1.jpg')}
-        role="presentation"
-      />
+      <div className={s.images}>
+        <img
+          src={require('./files/ipad-1.jpg')}
+          role="presentation"
+        />
+        <img
+          src={require('./files/ipad-2.jpg')}
+          role="presentation"
+        />
+        <img
+          src={require('./files/ipad-3.jpg')}
+          role="presentation"
+        />
+      </div>
 
-      <h2>
-        {Language.translate('Closer')}
-      </h2>
-      <img
-        src={require('./files/ipad-2.jpg')}
-        role="presentation"
-      />
-
-      <h2>
-        {Language.translate('EvenCloser')}
-      </h2>
-      <img
-        src={require('./files/ipad-3.jpg')}
-        role="presentation"
-      />
+      <br />
 
       <h2>
         {Language.translate('How')}
@@ -67,7 +63,6 @@ const Work = ({ language, work }) => {
 
 Work.propTypes = {
   language: PropTypes.string,
-  work: PropTypes.string,
 };
 
 export default Work;

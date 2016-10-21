@@ -3,4 +3,18 @@
   .center {
     text-align: center;
   }
+
+  img {
+    width: 30%;
+  }
+
+  i {
+    display: block;
+
+    font-size: 12px;
+  }
+
+  hr {
+    margin: 50px 0;
+  }
 }

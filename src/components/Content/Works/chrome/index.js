@@ -15,7 +15,6 @@ const Work = ({ language }) => {
       <p>
         {Language.translate('Text')}
       </p>
-
       <div className="responsive-container">
         <iframe
           src="//player.vimeo.com/video/42966580"
@@ -25,12 +24,6 @@ const Work = ({ language }) => {
           allowFullScreen
         />
       </div>
-
-      <h4>
-        <a href="works/research/chrome/source.html.zip">
-          {Language.translate('Download')}
-        </a>
-      </h4>
     </div>
   );
 };
