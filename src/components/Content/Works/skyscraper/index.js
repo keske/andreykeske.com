@@ -20,11 +20,11 @@ const Work = ({ language }) => {
       </p>
       <div className={s.images}>
         <img
-          src={require('./files/top.jpg')}
+          src={require('./files/skyscraper-1.jpg')}
           role="presentation"
         />
         <img
-          src={require('./files/right.jpg')}
+          src={require('./files/skyscraper-2.jpg')}
           role="presentation"
         />
       </div>

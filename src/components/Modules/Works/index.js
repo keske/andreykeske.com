@@ -1,6 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { observer } from 'mobx-react';
+import cx from 'classnames';
 import R from 'ramda';
+
+// Constants
+import { path } from 'constants/config';
 
 // Components
 import * as Works from '../../Content/Works/index.js';
@@ -27,35 +31,10 @@ export default class Module extends Component {
       language: 'en',
     };
 
-    const types = ['all'];
-    let filteredWorks = {};
-
-    works.all.map((work) => {
-      types.push(work.type);
-    });
-
-    if (app.type !== 'All') {
-      filteredWorks = R.filter(R.propEq('type', app.type))(works.all);
-    } else {
-      filteredWorks = works.all;
-    }
-
     return (
       <section className={s.root}>
         {
-          R.uniq(types).map((type) =>
-            <span
-              className={s.type}
-              onClick={() => {
-                app.changeType(type);
-              }}
-            >
-              {type}
-            </span>
-          )
-        }
-        {
-          filteredWorks.map((work, index) => {
+          works.all.map((work, index) => {
             const component = [];
 
             work.link.split('-').map((word) =>
@@ -65,12 +44,19 @@ export default class Module extends Component {
             return (
               <div
                 key={index}
-                className={s.work}
+                className={cx(
+                  s.work,
+                  { [s.hide]: app.type !== 'all' && work.type !== app.type },
+                )}
               >
+                <a name={work.link} />
                 {
                   React.createElement(
                     Works[component.join('')],
-                    props,
+                    {
+                      ...props,
+                      link: `${path}src/components/Content/Works/${work.link}/files`,
+                    },
                   )
                 }
               </div>

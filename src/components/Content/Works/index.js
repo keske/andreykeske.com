@@ -1,3 +1,6 @@
+export { default as Pinhead } from './pinhead';
+export { default as Hodor } from './hodor';
+export { default as Skyscraper } from './skyscraper';
 export { default as Water } from './water';
 // export { default as GraffitiBuffsOnGirls } from './graffiti-buffs-on-girls/';
 // export { default as StraightFlush } from './straight-flush';
@@ -27,3 +30,4 @@ export { default as Like } from './like';
 export { default as Keyhole } from './keyhole';
 export { default as Volume } from './volume';
 export { default as Chrome } from './chrome';
+export { default as About } from './about';

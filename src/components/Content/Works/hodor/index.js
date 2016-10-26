@@ -18,13 +18,9 @@ const Work = ({ language }) => {
       <p>
         {Language.translate('Text')}
       </p>
-      <div className={s.images}>
+      <div className={s.center}>
         <img
-          src={require('./files/top.jpg')}
-          role="presentation"
-        />
-        <img
-          src={require('./files/right.jpg')}
+          src={require('./files/hodor-big.png')}
           role="presentation"
         />
       </div>

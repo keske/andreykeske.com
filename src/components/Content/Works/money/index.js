@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 // Language
 import Language from './locale/';
 
-const Work = ({ language }) => {
+const Work = ({ language, link }) => {
   // Set language
   Language.setLocale(language);
 
@@ -24,14 +24,14 @@ const Work = ({ language }) => {
             Language.translate('Text'),
         }}
       />
-      <a target="_blank" href="./files/index.html">
+      <a href={`${link}/index.html`}>
         <img
           src={require('./files/work.jpg')}
           role="presentation"
         />
       </a>
       <h4>
-        <a target="_blank" href="./files/index.html">Open page</a>
+        <a href={`${link}/index.html`}>Open page</a>
       </h4>
     </div>
   );
@@ -39,6 +39,7 @@ const Work = ({ language }) => {
 
 Work.propTypes = {
   language: PropTypes.string,
+  link: PropTypes.string,
 };
 
 export default Work;

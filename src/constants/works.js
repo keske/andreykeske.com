@@ -1,10 +1,23 @@
 export default [
   {
+    title: 'Pinhead',
+    link: 'pinhead',
+    type: 'graphics',
+  },
+  {
+    title: 'Hodor',
+    link: 'hodor',
+    type: 'social',
+  },
+  {
     title: 'Water problems',
-    info: 'Eco',
     link: 'water',
-    img: 'cover.png',
     type: 'street',
+  },
+  {
+    title: 'Skyscraper in Saint Petersburg',
+    link: 'skyscraper',
+    type: 'graphics',
   },
   // {
   //   title: 'Graffiti Buffs On Girls',
@@ -219,24 +232,24 @@ export default [
   {
     title: 'The key hole',
     link: 'keyhole',
-    img: 'cover.png',
-    info: 'I really love snooping and you?',
     type: 'interface',
   },
 
   {
     title: 'Volume experiments',
     link: 'volume',
-    img: 'cover.png',
-    info: 'Changing the volume level according to the provisions of window scrollbar or window size.',
     type: 'interface',
   },
 
   {
     title: 'Desktop background in the browser',
     link: 'chrome',
-    img: 'cover.jpg',
-    info: 'Imitation that window having a hole. ',
     type: 'interface',
+  },
+
+  {
+    title: 'About',
+    link: 'about',
+    type: '',
   },
 ];

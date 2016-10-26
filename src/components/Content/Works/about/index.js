@@ -18,13 +18,23 @@ const Work = ({ language }) => {
       <p>
         {Language.translate('Text')}
       </p>
+      <div className={s.links}>
+        <a href="mailto:hello@andreykeske.com">
+          hello@andreykeske.com
+        </a>
+        <a href="https://github.com/keske">
+          https://github.com/keske
+        </a>
+        <a href="https://www.facebook.com/andrey.keske">
+          Facebook
+        </a>
+        <a href="https://instagram.com/andreykeske/">
+          Instagram
+        </a>
+      </div>
       <div className={s.images}>
         <img
-          src={require('./files/top.jpg')}
-          role="presentation"
-        />
-        <img
-          src={require('./files/right.jpg')}
+          src={require('./files/me-3.jpg')}
           role="presentation"
         />
       </div>
