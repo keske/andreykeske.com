@@ -15,10 +15,6 @@ const Work = ({ language }) => {
       <p>
         {Language.translate('Text')}
       </p>
-      <p>
-        {Language.translate('Watch')}
-      </p>
-
       <iframe
         width="100%"
         height="400"

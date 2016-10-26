@@ -3,33 +3,35 @@ import React, { PropTypes } from 'react';
 // Language
 import Language from './locale/';
 
+// Styles
+import s from './index.css';
+
 const Work = ({ language }) => {
   // Set language
   Language.setLocale(language);
 
   return (
-    <div>
+    <div className={s.root}>
       <h1>
         {Language.translate('Title')}
       </h1>
-      <h2>
-        {Language.translate('EmpiteStateBuilding')}
-      </h2>
-      <a href="/empire.andreykeske.com/index.html">
+      <p>
+        {Language.translate('Text')}
+      </p>
+      <div className={s.images}>
         <img
-          src={require('./files/empire-state.jpg')}
+          src={require('./files/top.jpg')}
           role="presentation"
         />
-      </a>
-      <h2>
-        {Language.translate('SpaceInvaders')}
-      </h2>
-      <a href="/spaceinvaders.andreykeske.com/index.html">
         <img
-          src={require('./files/spaceinvaders.jpg')}
+          src={require('./files/left.jpg')}
           role="presentation"
         />
-      </a>
+        <img
+          src={require('./files/right.jpg')}
+          role="presentation"
+        />
+      </div>
     </div>
   );
 };

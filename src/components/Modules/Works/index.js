@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { observer } from 'mobx-react';
+import R from 'ramda';
 
 // Components
 import * as Works from '../../Content/Works/index.js';
@@ -11,6 +12,7 @@ import s from './index.css';
 export default class Module extends Component {
 
   static contextTypes = {
+    app: PropTypes.object,
     works: PropTypes.object,
   };
 
@@ -18,16 +20,42 @@ export default class Module extends Component {
       string.charAt(0).toUpperCase() + string.slice(1);
 
   render() {
-    const { works } = this.context;
+    const { app, works } = this.context;
+
     const props = {
       ...this.props,
       language: 'en',
     };
 
+    const types = ['all'];
+    let filteredWorks = {};
+
+    works.all.map((work) => {
+      types.push(work.type);
+    });
+
+    if (app.type !== 'All') {
+      filteredWorks = R.filter(R.propEq('type', app.type))(works.all);
+    } else {
+      filteredWorks = works.all;
+    }
+
     return (
       <section className={s.root}>
         {
-          works.all.map((work, index) => {
+          R.uniq(types).map((type) =>
+            <span
+              className={s.type}
+              onClick={() => {
+                app.changeType(type);
+              }}
+            >
+              {type}
+            </span>
+          )
+        }
+        {
+          filteredWorks.map((work, index) => {
             const component = [];
 
             work.link.split('-').map((word) =>

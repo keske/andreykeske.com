@@ -15,7 +15,7 @@ const Work = ({ language }) => {
       <h1>
         {Language.translate('Title')}
       </h1>
-
+      <br />
       <div className={s.image}>
         <img
           src={require('./files/emojii.jpeg')}

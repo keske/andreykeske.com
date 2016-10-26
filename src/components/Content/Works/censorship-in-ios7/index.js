@@ -18,7 +18,7 @@ const Work = ({ language }) => {
       <p>
         {Language.translate('Text')}
       </p>
-      <hr />
+      <br />
       <div className={s.center}>
         <img
           src={require('./files/dock-phone.png')}

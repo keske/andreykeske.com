@@ -91,8 +91,9 @@ const common = {
     require('postcss-simple-vars')({
       variables: {
         white: '#FFFFFF',
-        black: '#000000',
+        black: '#444444',
         gray: '#AAAAAA',
+        blue: '#4E00E2',
         green: '#8ce071',
       },
     }),

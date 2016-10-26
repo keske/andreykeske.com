@@ -21,7 +21,7 @@ const Work = ({ language }) => {
 
       <h4>
         <a
-          href="./files/do.html"
+          href="files/do.html"
           target="_blank"
         >
           {Language.translate('Open')}

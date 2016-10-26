@@ -1,4 +1,11 @@
 export default [
+  {
+    title: 'Water problems',
+    info: 'Eco',
+    link: 'water',
+    img: 'cover.png',
+    type: 'street',
+  },
   // {
   //   title: 'Graffiti Buffs On Girls',
   //   info: 'TODO.',
@@ -11,14 +18,14 @@ export default [
     info: 'The world when the boundaries are blurred.',
     link: 'globalization',
     img: 'cover.png',
-    count: '',
+    type: 'interface',
   },
   // {
   //   title: 'Straight Flush',
   //   info: 'TODO.',
   //   link: 'straight-flush',
   //   img: 'cover.png',
-  //   count: '',
+  //   type: 'interface',
   // },
 
   {
@@ -26,14 +33,14 @@ export default [
     link: 'google-street-view-20th-century',
     img: 'cover.png',
     info: 'Black and white with sepia like old photo cards.',
-    count: '',
+    type: 'interface',
   },
   {
     title: 'Tmux Chess',
     link: 'tmux-chess',
     img: 'cover.png',
     info: 'Play in Chess with tmux',
-    count: '',
+    type: 'interface',
   },
   // {
   //   title: 'Daft Punk - Technologic',
@@ -47,13 +54,14 @@ export default [
     link: 'black-hole',
     img: 'cover.png',
     info: 'In the space of my Desktop was noticed a black hole where the any information or object will be removed forever.',
-    count: '',
-  }, {
+    type: 'interface',
+  },
+  {
     title: 'The Shell Game',
     link: 'the-shell-game',
     img: 'cover.png',
     info: 'My vision on the shell game.',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -61,7 +69,7 @@ export default [
     link: 'the-hairpin',
     img: 'cover.jpg',
     info: 'Surreal scene about the real hairpin which holds the window in OS X.',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -69,16 +77,8 @@ export default [
     link: 'football-fans-trolling',
     img: 'cover.jpg',
     info: 'I took several emblems of my native football clubs and deliberately mingled their colors between them.',
-    count: '',
+    type: 'street',
   },
-
-  // {
-  //  title: 'Poetry of the streets ',
-  //  link: 'street-poetics',
-  //  img: 'assets/images/works/selection/cover.jpg',
-  //  info: 'Lead text',
-  //  count: 'New'
-  // },
 
   // {
   //  title: 'Hidden meaning',
@@ -93,7 +93,7 @@ export default [
     link: 'money',
     img: 'cover.jpg',
     info: 'My work for online exhibition from M0US310n.net featuring Digital & Net.Art on the subject of Money & Error, put together by an anonymous curator «Vasily Zaitsev».',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -101,7 +101,7 @@ export default [
     link: 'tabs-piano',
     img: 'img/screen.jpg',
     info: 'Once I woke up in the middle of night cause I got an idea: what if tabs in browser were like the piano keys?. I wrote the thought down in Asana and got back to sleep.',
-    count: '',
+    type: 'interface',
   },
 
   // // {
@@ -117,7 +117,7 @@ export default [
     link: 'censorship-in-ios7',
     img: 'cover.jpg',
     info: 'The blur effect in the interface os iOS7 as censorship. And small bonus with Mac OS X.',
-    count: '',
+    type: 'interface',
   },
 
   // // {
@@ -133,7 +133,7 @@ export default [
     link: 'police-car',
     img: 'cover.jpg',
     info: 'As you know the OS X gives the opportunity to set image folder as background and set colour labels for folders and files. Also that can be done from Terminal. What if we make animation from this labels?',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -141,7 +141,7 @@ export default [
     link: 'catch',
     img: 'cover.jpg',
     info: 'Window minimization represents a scene from the movie of catching a ghost. ',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -149,7 +149,7 @@ export default [
     link: 'graphics',
     img: 'cover.jpg',
     info: 'Selected graphics works and photos.',
-    count: '',
+    type: 'graphics',
   },
 
   {
@@ -157,7 +157,7 @@ export default [
     link: 'spectrum',
     img: 'cover.jpg',
     info: 'I try to show how typical browser bar will visualize sound spectrum.',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -165,7 +165,7 @@ export default [
     link: 'mac-os-ui-games',
     img: 'cover.jpg',
     info: 'Two rather simple games, but based on the Mac OS X Interface.',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -173,7 +173,7 @@ export default [
     link: 'ipad-invisible-icons',
     img: 'cover.jpg',
     info: 'Imitation transparency of the icons.',
-    count: '',
+    type: 'interface',
   },
 
   // // {
@@ -189,7 +189,7 @@ export default [
     link: 'friday-dock',
     img: 'cover.png',
     info: 'My dock on Friday.',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -197,7 +197,7 @@ export default [
     link: 'shadows',
     img: 'cover.jpg',
     info: 'The slider controls the size of the shadow.',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -205,7 +205,7 @@ export default [
     link: 'water-on-mars',
     img: 'water-on-mars.jpg',
     info: 'The windows composition',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -213,7 +213,7 @@ export default [
     link: 'like',
     img: 'cover.png',
     info: 'Drawing with the buttons.',
-    count: '',
+    type: 'social',
   },
 
   {
@@ -221,7 +221,7 @@ export default [
     link: 'keyhole',
     img: 'cover.png',
     info: 'I really love snooping and you?',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -229,7 +229,7 @@ export default [
     link: 'volume',
     img: 'cover.png',
     info: 'Changing the volume level according to the provisions of window scrollbar or window size.',
-    count: '',
+    type: 'interface',
   },
 
   {
@@ -237,6 +237,6 @@ export default [
     link: 'chrome',
     img: 'cover.jpg',
     info: 'Imitation that window having a hole. ',
-    count: '',
+    type: 'interface',
   },
 ];

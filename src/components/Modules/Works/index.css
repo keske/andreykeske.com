@@ -1,13 +1,33 @@
 .root {
   position: relative;
 
+  .type {
+    font-size: 14px;
+    opacity: .7;
+    
+    display: inline-block;
+
+    margin-right: 13px;
+    margin-bottom: 30px;
+
+    cursor: pointer;
+
+    &:hover, &.active {
+      opacity: 1;
+    }
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
   .work {
     margin-bottom: 77px;
 
     overflow: hidden;
     
     background: #FFF;
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .07);
     border-radius: 5px;
 
     padding: 10px 20px;
