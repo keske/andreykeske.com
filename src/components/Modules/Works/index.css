@@ -1,9 +1,12 @@
 .root {
   position: relative;
 
-  .work {
-    margin-bottom: 77px;
+  .anchor {
+    padding-bottom: 40px;
+    display: block;
+  }
 
+  .work {
     overflow: hidden;
     
     background: #FFF;

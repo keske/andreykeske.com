@@ -42,24 +42,29 @@ export default class Module extends Component {
             );
 
             return (
-              <div
-                key={index}
-                className={cx(
-                  s.work,
-                  { [s.hide]: app.type !== 'all' && work.type !== app.type },
-                )}
-              >
-                <a name={work.link} />
-                {
-                  React.createElement(
-                    Works[component.join('')],
-                    {
-                      ...props,
-                      link: `${path}src/components/Content/Works/${work.link}/files`,
-                    },
-                  )
-                }
-              </div>
+              <section>
+                <a
+                  name={work.link}
+                  className={s.anchor}
+                />
+                <div
+                  key={index}
+                  className={cx(
+                    s.work,
+                    { [s.hide]: app.type !== 'all' && work.type !== app.type },
+                  )}
+                >
+                  {
+                    React.createElement(
+                      Works[component.join('')],
+                      {
+                        ...props,
+                        link: `${path}src/components/Content/Works/${work.link}/files`,
+                      },
+                    )
+                  }
+                </div>
+              </section>
             );
           })
         }

@@ -4,6 +4,8 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import cx from 'classnames';
 import R from 'ramda';
 
+// Components
+import ScrollView from 'components/Layout/ScrollView';
 import Works from 'components/Modules/Works';
 
 // Styles
@@ -64,42 +66,44 @@ export default class Page extends Component {
                 md={3}
                 lg={3}
               >
-                {
-                  R.uniq(types).map((type, index) =>
-                    <span
-                      key={index}
-                      className={cx(
-                          s.type,
-                          { [s.active]: type === app.type },
-                        )}
-                      onClick={() => {
-                        app.changeType(type);
-                      }}
-                    >
-                      {type}
-                    </span>
-                  )
-                }
-                <hr />
-                {
-                  works.all.map((work, index) =>
-                    <span>
-                      {
-                        work.link === 'about' && <hr />
-                      }
-                      <a
+                <ScrollView>
+                  {
+                    R.uniq(types).map((type, index) =>
+                      <span
                         key={index}
-                        href={`#${work.link}`}
                         className={cx(
-                          { [s.hide]:
-                              app.type !== 'all' && work.type !== app.type },
-                        )}
+                            s.type,
+                            { [s.active]: type === app.type },
+                          )}
+                        onClick={() => {
+                          app.changeType(type);
+                        }}
                       >
-                        {work.title}
-                      </a>
-                    </span>
-                  )
-                }
+                        {type}
+                      </span>
+                    )
+                  }
+                  <hr />
+                  {
+                    works.all.map((work, index) =>
+                      <span>
+                        {
+                          work.link === 'about' && <hr />
+                        }
+                        <a
+                          key={index}
+                          href={`#${work.link}`}
+                          className={cx(
+                            { [s.hide]:
+                                app.type !== 'all' && work.type !== app.type },
+                          )}
+                        >
+                          {work.title}
+                        </a>
+                      </span>
+                    )
+                  }
+                </ScrollView>
               </Col>
             </Row>
           </Grid>
