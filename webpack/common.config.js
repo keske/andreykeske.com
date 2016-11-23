@@ -52,14 +52,11 @@ const common = {
       exclude: /node_modules/,
       loader: 'babel-loader',
     }, {
-      test: /\.png$/,
-      loader: 'file?name=[name].[ext]',
-    }, {
-      test: /\.jpg$/,
-      loader: 'file?name=[name].[ext]',
-    }, {
-      test: /\.jpeg$/,
-      loader: 'file?name=[name].[ext]',
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      loaders: [
+        'file?hash=sha512&digest=hex&name=[hash].[ext]',
+        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
+      ],
     }, {
       test: /\.zip$/,
       loader: 'file?name=[name].[ext]',
