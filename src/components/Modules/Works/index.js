@@ -45,7 +45,10 @@ export default class Module extends Component {
               <section>
                 <a
                   name={work.link}
-                  className={s.anchor}
+                  className={cx(
+                    s.anchor,
+                    { [s.hide]: app.type !== 'all' && work.type !== app.type },
+                  )}
                 />
                 <div
                   key={index}

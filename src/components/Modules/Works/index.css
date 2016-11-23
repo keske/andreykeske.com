@@ -4,6 +4,10 @@
   .anchor {
     padding-bottom: 40px;
     display: block;
+
+    &.hide {
+      display: none;
+    }
   }
 
   .work {

@@ -1,3 +1,5 @@
+export { default as Matryoshka } from './matryoshka';
+export { default as Ball } from './ball';
 export { default as Pinhead } from './pinhead';
 export { default as Hodor } from './hodor';
 export { default as Skyscraper } from './skyscraper';

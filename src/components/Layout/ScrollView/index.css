@@ -1,5 +1,5 @@
 .root {
-  position: relative;
+  position: absolute;
 
   overflow-x: hidden;
   width: 100%;

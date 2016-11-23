@@ -53,14 +53,21 @@ p, ul {
   line-height: 18px;
 }
 
-iframe {
-  width: calc(100% + 40px);
-  
-  margin-top: 8px;
-  margin-left: -20px;
+:global {
 
-  &:last-child {
-    margin-bottom: -20px;
+  iframe {
+    width: calc(100% + 40px);
+    
+    margin-top: 8px;
+    margin-left: -20px;
+
+    &.only-iframe-as-content {
+      margin-top: -10px;
+    }
+
+    &:last-child {
+      margin-bottom: -20px;
+    }
   }
 }
 

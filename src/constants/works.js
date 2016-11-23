@@ -1,5 +1,15 @@
 export default [
   {
+    title: 'Matryoshka',
+    link: 'matryoshka',
+    type: 'interface',
+  },
+  {
+    title: 'Ball',
+    link: 'ball',
+    type: 'interface',
+  },
+  {
     title: 'Pinhead',
     link: 'pinhead',
     type: 'graphics',
@@ -250,6 +260,6 @@ export default [
   {
     title: 'About',
     link: 'about',
-    type: '',
+    type: 'about',
   },
 ];

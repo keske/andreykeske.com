@@ -4,6 +4,9 @@ import { observer } from 'mobx-react';
 // Stores
 import { app, travel, works } from '../../stores';
 
+// Components
+import Home from 'components/Pages/Home';
+
 // Styles
 import s from './index.css';
 
@@ -34,9 +37,7 @@ export default class Root extends Component {
   render() {
     return (
       <section className={s}>
-        {
-          React.cloneElement(this.props.children, this.props)
-        }
+        <Home />
       </section>
     );
   }

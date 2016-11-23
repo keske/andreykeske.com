@@ -69,18 +69,19 @@ export default class Page extends Component {
                 <ScrollView>
                   {
                     R.uniq(types).map((type, index) =>
-                      <span
-                        key={index}
-                        className={cx(
-                            s.type,
-                            { [s.active]: type === app.type },
-                          )}
-                        onClick={() => {
-                          app.changeType(type);
-                        }}
-                      >
-                        {type}
-                      </span>
+                      type !== 'about' &&
+                        <span
+                          key={index}
+                          className={cx(
+                              s.type,
+                              { [s.active]: type === app.type },
+                            )}
+                          onClick={() => {
+                            app.changeType(type);
+                          }}
+                        >
+                          {type}
+                        </span>
                     )
                   }
                   <hr />
@@ -95,7 +96,10 @@ export default class Page extends Component {
                           href={`#${work.link}`}
                           className={cx(
                             { [s.hide]:
-                                app.type !== 'all' && work.type !== app.type },
+                              app.type !== 'all' &&
+                              work.type !== app.type &&
+                              work.type !== 'about',
+                            },
                           )}
                         >
                           {work.title}

@@ -8,7 +8,7 @@ const Work = ({ language, work }) => {
   Language.setLocale(language);
 
   // Path to photos
-  const path = `./src/components/Content/Works/${work}/files`;
+  const path = `src/components/Content/Works/friday-dock/files`;
 
   return (
     <div>

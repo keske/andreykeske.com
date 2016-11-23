@@ -14,7 +14,7 @@ export default class ScrollView extends Component {
       <section
         className={s.root}
         style={{
-          height: screen.height - 100,
+          height: window.innerHeight - 50,
         }}
       >
         {this.props.children}

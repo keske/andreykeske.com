@@ -1,11 +1,11 @@
-import webpack from 'webpack';
-import merge from 'webpack-merge';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import path from 'path';
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 
 // Webpack configs
-import development from './dev.config.js';
-import production from './prod.config.js';
+const development = require('./dev.config.js');
+const production = require('./prod.config.js');
 
 const TARGET = process.env.npm_lifecycle_event;
 process.env.BABEL_ENV = TARGET;
@@ -59,6 +59,15 @@ const common = {
       loader: 'file?name=[name].[ext]',
     }, {
       test: /\.jpeg$/,
+      loader: 'file?name=[name].[ext]',
+    }, {
+      test: /\.zip$/,
+      loader: 'file?name=[name].[ext]',
+    }, {
+      test: /\.rar$/,
+      loader: 'file?name=[name].[ext]',
+    }, {
+      test: /\.html$/,
       loader: 'file?name=[name].[ext]',
     }],
   },
