@@ -1,20 +1,18 @@
 import Express from 'express';
 import http from 'http';
 
+// Webpack
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+
 const app = new Express();
 const server = new http.Server(app);
 const port = 3001;
 const proxy = require('http-proxy').createProxyServer({});
 
-// Webpack
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-
 // Config
 const webpackConfig = require('./webpack/common.config');
-
-global.ssr = true;
 
 (function initWebpack() {
   const compiler = webpack(webpackConfig);

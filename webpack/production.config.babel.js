@@ -11,20 +11,19 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract({
-        notExtractLoader: 'style-loader',
-        loader: 'css-loader?minimize&module&localIdentName=[hash:base64:5]!postcss',
-      }),
+      use: [
+        'css-loader?minimize&module&localIdentName=[hash:base64:5]',
+        'postcss-loader',
+      ],
     }],
   },
 
   plugins: [
-
     new ExtractTextPlugin({
       filename: 'bundle.css',
       allChunks: true,
     }),
-    new webpack.optimize.DedupePlugin(),
+
     new webpack.optimize.OccurrenceOrderPlugin(),
 
     new webpack.optimize.UglifyJsPlugin({

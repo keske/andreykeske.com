@@ -1,17 +1,20 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
-
-// Webpack configs
-const development = require('./dev.config.js');
-const production = require('./prod.config.js');
+import webpack from 'webpack';
+import merge from 'webpack-merge';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import path from 'path';
 
 // PostCSS
-const postcssSimpleVars = require('postcss-simple-vars');
-const postcssNested = require('postcss-nested');
-const postcssShort = require('postcss-short');
-const postcssAutoprefixer = require('autoprefixer');
+import postcssSimpleVars from 'postcss-simple-vars';
+import postcssNested from 'postcss-nested';
+import postcssShort from 'postcss-short';
+import postcssAutoprefixer from 'autoprefixer';
+
+// PostCSS configs
+import variables from './postcss-configs/variables.js';
+
+// Webpack configs
+import development from './development.config.babel.js';
+import production from './production.config.babel.js';
 
 const TARGET = process.env.npm_lifecycle_event;
 process.env.BABEL_ENV = TARGET;
@@ -95,13 +98,7 @@ const common = {
       options: {
         postcss: [
           postcssSimpleVars({
-            variables: {
-              white: '#FFFFFF',
-              black: '#444444',
-              gray: '#AAAAAA',
-              blue: '#4E00E2',
-              green: '#8ce071',
-            },
+            variables,
           }),
           postcssNested,
           postcssShort,
