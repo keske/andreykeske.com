@@ -6,7 +6,7 @@ import s from './index.css';
 export default class ScrollView extends Component {
 
   static propTypes = {
-    children: PropTypes.any,
+    children: PropTypes.array,
   };
 
   render() {
@@ -14,7 +14,7 @@ export default class ScrollView extends Component {
       <section
         className={s.root}
         style={{
-          height: window.innerHeight - 50,
+          height: window.innerHeight - 100,
         }}
       >
         {this.props.children}

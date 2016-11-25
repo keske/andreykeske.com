@@ -14,8 +14,8 @@ import s from './index.css';
 export default class Page extends Component {
 
   static contextTypes = {
-    app: PropTypes.shape,
-    works: PropTypes.shape,
+    app: PropTypes.object,
+    works: PropTypes.object,
   };
 
   componentDidMount() {

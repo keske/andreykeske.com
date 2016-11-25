@@ -15,15 +15,15 @@ import s from './index.css';
 export default class Root extends Component {
 
   static propTypes = {
-    location: PropTypes.shape,
-    children: PropTypes.shape,
-    params: PropTypes.shape,
-    history: PropTypes.shape,
+    location: PropTypes.func,
+    children: PropTypes.func,
+    params: PropTypes.func,
+    history: PropTypes.func,
   };
 
   static childContextTypes = {
-    app: PropTypes.shape,
-    works: PropTypes.shape,
+    app: PropTypes.object,
+    works: PropTypes.object,
   }
 
   getChildContext() {
