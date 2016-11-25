@@ -65,7 +65,7 @@ const common = {
       test: /\.(jpe?g|png|gif|svg)$/i,
       loaders: [
         'file-loader?name=[name].[ext]',
-        'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false',
+        'image-webpack-loader',
       ],
     }],
   },

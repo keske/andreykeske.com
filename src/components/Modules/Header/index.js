@@ -1,19 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-
-// Constants
-import { path } from 'constants/config';
-
-// Components
-import * as Works from '../../Content/Works/index.js';
+import React, { Component } from 'react';
 
 // Styles
 import s from './index.css';
 
-export default class Module extends Component {
-
+export default class Header extends Component {
   render() {
     return (
-      <section className={s.root}>
+      <section className={s.header}>
         Andrey Keske
       </section>
     );

@@ -1,19 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 
-import $ from 'jquery'; // remove
-
-
-
-// Styles
-import s from './index.css';
-
 // Language
 import Language from './locale/';
 
 export default class Work extends Component {
 
   static propTypes = {
-    params: PropTypes.object,
+    params: PropTypes.shape,
     language: PropTypes.string,
   };
 

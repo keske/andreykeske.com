@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-
-
 // Styles
 import s from './index.css';
 
@@ -25,7 +23,7 @@ import {
 export default class Work extends Component {
 
   static propTypes = {
-    params: PropTypes.object,
+    params: PropTypes.shape,
     language: PropTypes.string,
   };
 

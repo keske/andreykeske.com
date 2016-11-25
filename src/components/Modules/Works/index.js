@@ -12,11 +12,11 @@ import * as Works from '../../Content/Works/index.js';
 import s from './index.css';
 
 @observer
-export default class Module extends Component {
+export default class WorksPage extends Component {
 
   static contextTypes = {
-    app: PropTypes.object,
-    works: PropTypes.object,
+    app: PropTypes.shape,
+    works: PropTypes.shape,
   };
 
   capitalizeFirstLetter = (string) =>
@@ -37,7 +37,7 @@ export default class Module extends Component {
             const component = [];
 
             work.link.split('-').map((word) =>
-              component.push(this.capitalizeFirstLetter(word))
+              component.push(this.capitalizeFirstLetter(word)),
             );
 
             return (
@@ -49,23 +49,7 @@ export default class Module extends Component {
                     { [s.hide]: app.type !== 'all' && work.type !== app.type },
                   )}
                 />
-                <div
-                  key={index}
-                  className={cx(
-                    s.work,
-                    { [s.hide]: app.type !== 'all' && work.type !== app.type },
-                  )}
-                >
-                  {
-                    React.createElement(
-                      Works[component.join('')],
-                      {
-                        ...props,
-                        link: `${path}src/components/Content/Works/${work.link}/files`,
-                      },
-                    )
-                  }
-                </div>
+                1
               </section>
             );
           })

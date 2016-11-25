@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 // Components
 import Root from 'components/Root';
+console.log('42');
 
 let initialState;
 try {

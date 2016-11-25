@@ -14,16 +14,14 @@ import s from './index.css';
 export default class Page extends Component {
 
   static contextTypes = {
-    app: PropTypes.object,
-    travel: PropTypes.object,
-    works: PropTypes.object,
+    app: PropTypes.shape,
+    works: PropTypes.shape,
   };
 
   componentDidMount() {
-    const { travel, works } = this.context;
+    const { works } = this.context;
 
     // Fetch
-    travel.get();
     works.get();
 
     window.addEventListener('scroll', this.hideNav);

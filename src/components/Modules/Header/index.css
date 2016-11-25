@@ -1,5 +1,3 @@
-.root {
+.header {
   position: fixed;
-
-  background: $white;
 }

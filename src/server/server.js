@@ -15,9 +15,7 @@ import webpackConfig from '../../webpack/common.config.babel.js';
 const compiler = webpack(webpackConfig);
 const app = new Express();
 const server = new http.Server(app);
-const port = process.env.NODE_ENV === 'development'
-  ? 3000
-  : 80;
+const port = process.env.NODE_ENV === 'development' ? 3000 : 80;
 
 if (process.env.NODE_ENV === 'development') {
   app.use(webpackDevMiddleware(compiler, {
@@ -34,7 +32,7 @@ app.use('/static', Express.static(`${__dirname}/../../static/`));
 app.use('/dist', Express.static(`${__dirname}/../../dist/`));
 
 app.get(/.*/, (req, res) => {
-  const domain = req.get('host').replace(/\:.*/, '');
+  const domain = req.get('host').replace(/:.*/, '');
   res.end(render('', port, domain));
 });
 
