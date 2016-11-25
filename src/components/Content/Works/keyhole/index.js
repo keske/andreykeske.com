@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import $ from 'jquery';
 
 // Language
 import Language from './locale/';
@@ -14,9 +13,10 @@ export default class Module extends Component {
   };
 
   handleMove = (event) => {
-    $(this.refs.girl)
-      .css('marginLeft', (event.clientX.toFixed(0) / 20) * -1)
-      .css('marginTop', (event.clientY.toFixed(0) / 20 + 20) * -1);
+    const girl = document.querySelector('.girl');
+
+    girl.style.marginLeft = event.clientX.toFixed(0) / 10 * -2 + 'px';
+    girl.style.marginTop = event.clientY.toFixed(0) / 10 * -2 + 'px';
   };
 
   render() {
@@ -45,6 +45,7 @@ export default class Module extends Component {
               src={require('./files/girl.png')}
               role="presentation"
               ref="girl"
+              className="girl"
             />
           </div>
           <span

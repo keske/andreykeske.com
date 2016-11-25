@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { observer } from 'mobx-react';
 import cx from 'classnames';
-import R from 'ramda';
 
 // Constants
 import { path } from 'constants/config';
@@ -42,7 +41,7 @@ export default class Module extends Component {
             );
 
             return (
-              <section>
+              <section key={index}>
                 <a
                   name={work.link}
                   className={cx(

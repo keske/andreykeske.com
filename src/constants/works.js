@@ -38,9 +38,7 @@ export default [
   // },
   {
     title: 'Globalization',
-    info: 'The world when the boundaries are blurred.',
     link: 'globalization',
-    img: 'cover.png',
     type: 'interface',
   },
   // {
@@ -54,15 +52,11 @@ export default [
   {
     title: 'Google Street View in the beginning of the 20th century',
     link: 'google-street-view-20th-century',
-    img: 'cover.png',
-    info: 'Black and white with sepia like old photo cards.',
     type: 'interface',
   },
   {
     title: 'Tmux Chess',
     link: 'tmux-chess',
-    img: 'cover.png',
-    info: 'Play in Chess with tmux',
     type: 'interface',
   },
   // {
@@ -75,31 +69,23 @@ export default [
   {
     title: 'Black hole on my Desktop',
     link: 'black-hole',
-    img: 'cover.png',
-    info: 'In the space of my Desktop was noticed a black hole where the any information or object will be removed forever.',
     type: 'interface',
   },
   {
     title: 'The Shell Game',
     link: 'the-shell-game',
-    img: 'cover.png',
-    info: 'My vision on the shell game.',
     type: 'interface',
   },
 
   {
     title: 'The hairpin',
     link: 'the-hairpin',
-    img: 'cover.jpg',
-    info: 'Surreal scene about the real hairpin which holds the window in OS X.',
     type: 'interface',
   },
 
   {
     title: 'Football fans trolling',
     link: 'football-fans-trolling',
-    img: 'cover.jpg',
-    info: 'I took several emblems of my native football clubs and deliberately mingled their colors between them.',
     type: 'street',
   },
 
@@ -114,16 +100,12 @@ export default [
   {
     title: 'Tell me what you want',
     link: 'money',
-    img: 'cover.jpg',
-    info: 'My work for online exhibition from M0US310n.net featuring Digital & Net.Art on the subject of Money & Error, put together by an anonymous curator «Vasily Zaitsev».',
     type: 'interface',
   },
 
   {
     title: 'Browser tabs as the piano keys',
     link: 'tabs-piano',
-    img: 'img/screen.jpg',
-    info: 'Once I woke up in the middle of night cause I got an idea: what if tabs in browser were like the piano keys?. I wrote the thought down in Asana and got back to sleep.',
     type: 'interface',
   },
 
@@ -138,8 +120,6 @@ export default [
   {
     title: 'Censorship in the iOS 7',
     link: 'censorship-in-ios7',
-    img: 'cover.jpg',
-    info: 'The blur effect in the interface os iOS7 as censorship. And small bonus with Mac OS X.',
     type: 'interface',
   },
 
@@ -154,72 +134,54 @@ export default [
   {
     title: 'Police siren alarm animation in OS X Finder',
     link: 'police-car',
-    img: 'cover.jpg',
-    info: 'As you know the OS X gives the opportunity to set image folder as background and set colour labels for folders and files. Also that can be done from Terminal. What if we make animation from this labels?',
     type: 'interface',
   },
 
   {
     title: 'The catch',
     link: 'catch',
-    img: 'cover.jpg',
-    info: 'Window minimization represents a scene from the movie of catching a ghost. ',
     type: 'interface',
   },
 
   {
     title: 'Graphic works',
     link: 'graphics',
-    img: 'cover.jpg',
-    info: 'Selected graphics works and photos.',
     type: 'graphics',
   },
 
   {
     title: 'Spectrum at the browser bar',
     link: 'spectrum',
-    img: 'cover.jpg',
-    info: 'I try to show how typical browser bar will visualize sound spectrum.',
     type: 'interface',
   },
 
   {
     title: 'Mac OS UI Games',
     link: 'mac-os-ui-games',
-    img: 'cover.jpg',
-    info: 'Two rather simple games, but based on the Mac OS X Interface.',
     type: 'interface',
   },
 
   {
     title: 'Invisible icons on the iPad',
     link: 'ipad-invisible-icons',
-    img: 'cover.jpg',
-    info: 'Imitation transparency of the icons.',
     type: 'interface',
   },
 
-  // // {
-  // //   title: 'Infinity',
-  // //   link: 'infinity',
-  // //   img: 'cover.jpg',
-  // //   info: '',
-  // //   count: '',
-  // // },
+  {
+    title: 'Infinity',
+    link: 'infinity',
+    type: 'interface',
+  },
 
   {
     title: 'Friday dock',
     link: 'friday-dock',
-    img: 'cover.png',
-    info: 'My dock on Friday.',
     type: 'interface',
   },
 
   {
     title: 'The shadows of the window',
     link: 'shadows',
-    img: 'cover.jpg',
-    info: 'The slider controls the size of the shadow.',
     type: 'interface',
   },
 
@@ -227,16 +189,19 @@ export default [
     title: 'I found the water on the Mars',
     link: 'water-on-mars',
     img: 'water-on-mars.jpg',
-    info: 'The windows composition',
     type: 'interface',
   },
 
   {
     title: 'Like',
     link: 'like',
-    img: 'cover.png',
-    info: 'Drawing with the buttons.',
     type: 'social',
+  },
+
+  {
+    title: 'Close favicon',
+    link: 'close-favicon',
+    type: 'interface',
   },
 
   {

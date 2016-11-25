@@ -21,16 +21,13 @@ const Work = ({ language }) => {
 
       <h4>
         <a
-          href="files/do.html"
+          href="http://www.andreykeske.com/upload/works/piano.andreykeske.com/do.html"
           target="_blank"
         >
           {Language.translate('Open')}
         </a>
       </h4>
 
-      <h2>
-        {Language.translate('How')}
-      </h2>
       <iframe
         width="100%"
         height="450"

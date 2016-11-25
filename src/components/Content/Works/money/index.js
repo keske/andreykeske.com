@@ -24,15 +24,12 @@ const Work = ({ language, link }) => {
             Language.translate('Text'),
         }}
       />
-      <a href={`${link}/index.html`}>
+      <a href="http://www.mon3y.us/andrey_keske.html">
         <img
-          src={require('./files/work.jpg')}
+          src={require('./files/money-work.png')}
           role="presentation"
         />
       </a>
-      <h4>
-        <a href={`${link}/index.html`}>Open page</a>
-      </h4>
     </div>
   );
 };

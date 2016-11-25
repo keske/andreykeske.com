@@ -18,13 +18,14 @@
     border-radius: 5px;
 
     padding: 10px 20px;
+    margin-bottom: 77px;
 
     &.hide {
       display: none;
     }
 
     p {
-      margin-top: -5px;
+      width: 93%;
     }
   }
 }

@@ -19,9 +19,6 @@ const Work = ({ language }) => {
         {Language.translate('Text')}
       </p>
 
-      <h2>
-        {Language.translate('Result')}
-      </h2>
       <div className={s.images}>
         <img
           src={require('./files/ipad-1.jpg')}

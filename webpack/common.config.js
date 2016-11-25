@@ -13,7 +13,7 @@ process.env.BABEL_ENV = TARGET;
 const getDevelopmentUrl = () => (
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000/dist/'
-    : '/dist/'
+    : './dist/'
 );
 
 const devUrl = getDevelopmentUrl();
@@ -39,32 +39,28 @@ const common = {
 
   module: {
     loaders: [{
+      // Fonts: woff
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'url?limit=10000&mimetype=application/font-woff',
     }, {
+      // Fonts: woff2
       test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'url?limit=10000&mimetype=application/font-woff2',
     }, {
-      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=image/svg+xml',
-    }, {
+      // JS
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
     }, {
+      // Images
       test: /\.(jpe?g|png|gif|svg)$/i,
       loaders: [
-        'file?hash=sha512&digest=hex&name=[hash].[ext]',
+        'file?name=[name].[ext]',
         'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
       ],
     }, {
-      test: /\.zip$/,
-      loader: 'file?name=[name].[ext]',
-    }, {
-      test: /\.rar$/,
-      loader: 'file?name=[name].[ext]',
-    }, {
-      test: /\.html$/,
+      // Other files
+      test: /\.(`zip`|rar|html)$/i,
       loader: 'file?name=[name].[ext]',
     }],
   },

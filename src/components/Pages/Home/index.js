@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { observer } from 'mobx-react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import cx from 'classnames';
-import R from 'ramda';
 
 // Components
 import ScrollView from 'components/Layout/ScrollView';
@@ -63,12 +62,12 @@ export default class Page extends Component {
               <Col
                 xsHidden
                 smHidden
-                md={3}
-                lg={3}
+                md={4}
+                lg={4}
               >
                 <ScrollView>
                   {
-                    R.uniq(types).map((type, index) =>
+                    Array.from(new Set(types)).map((type, index) =>
                       type !== 'about' &&
                         <span
                           key={index}
@@ -87,12 +86,11 @@ export default class Page extends Component {
                   <hr />
                   {
                     works.all.map((work, index) =>
-                      <span>
+                      <span key={index}>
                         {
                           work.link === 'about' && <hr />
                         }
                         <a
-                          key={index}
                           href={`#${work.link}`}
                           className={cx(
                             { [s.hide]:
@@ -117,8 +115,8 @@ export default class Page extends Component {
             <Col
               xs={12}
               sm={12}
-              md={7} mdOffset={3}
-              lg={7} lgOffset={3}
+              md={7} mdOffset={4}
+              lg={7} lgOffset={4}
             >
               <Works />
             </Col>

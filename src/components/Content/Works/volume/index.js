@@ -28,19 +28,21 @@ const Work = ({ language }) => {
       </p>
 
       <h4>
-        <a href="./volume.andreykeske.com/index.html">
+        <a href="http://www.andreykeske.com/upload/works/volume.andreykeske.com/index.html">
           {Language.translate('OpenAndScroll')}
         </a>
       </h4>
 
       <br />
 
-      <a href="./volume.andreykeske.com/index.html">
+      <a href="http://www.andreykeske.com/upload/works/volume.andreykeske.com/index.html">
         <img
           src={require('./files/fade.jpg')}
           role="presentation"
         />
       </a>
+
+      <hr />
 
       <h2>
         {Language.translate('ResizeTitle')}
@@ -51,14 +53,14 @@ const Work = ({ language }) => {
       </p>
 
       <h4>
-        <a href="./resize.andreykeske.com/index.html">
+        <a href="http://www.andreykeske.com/upload/works/resize.andreykeske.com/index.html">
           {Language.translate('OpenAndResize')}
         </a>
       </h4>
 
       <br />
 
-      <a href="./resize.andreykeske.com/index.html">
+      <a href="http://www.andreykeske.com/upload/works/resize.andreykeske.com/index.html">
         <img
           src={require('./files/resize.jpg')}
           role="presentation"

@@ -23,11 +23,11 @@
   }
 
   .keyhole {
-    margin-top: -$width;
     margin-left: -$width;
 
     width: $width;
 
     overflow: hidden;
+    position: absolute;
   }
 }

@@ -1,3 +1,4 @@
+// Works
 export { default as Matryoshka } from './matryoshka';
 export { default as Ball } from './ball';
 export { default as Pinhead } from './pinhead';
@@ -11,7 +12,7 @@ export { default as GoogleStreetView20thCentury } from './google-street-view-20t
 export { default as TmuxChess } from './tmux-chess';
 // export { default as DaftPunk } from './daft-punk'; // In process
 export { default as BlackHole } from './black-hole';
-// export { default as Infinity } from './infinity';
+export { default as Infinity } from './infinity';
 export { default as Catch } from './catch';
 export { default as TheShellGame } from './the-shell-game';
 export { default as FootballFansTrolling } from './football-fans-trolling';
@@ -31,5 +32,9 @@ export { default as Shadows } from './shadows';
 export { default as Like } from './like';
 export { default as Keyhole } from './keyhole';
 export { default as Volume } from './volume';
+export { default as CloseFavicon } from './close-favicon';
 export { default as Chrome } from './chrome';
 export { default as About } from './about';
+
+// Travel
+// TODO:

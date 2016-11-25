@@ -3,12 +3,9 @@ import React, { PropTypes } from 'react';
 // Language
 import Language from './locale/';
 
-const Work = ({ language, work }) => {
+const Work = ({ language }) => {
   // Set language
   Language.setLocale(language);
-
-  // Path to photos
-  const path = `src/components/Content/Works/friday-dock/files`;
 
   return (
     <div>
@@ -25,7 +22,7 @@ const Work = ({ language, work }) => {
         role="presentation"
       />
 
-      <hr />
+      <br /><br />
 
       <p>
         {Language.translate('Friday')}
@@ -36,10 +33,8 @@ const Work = ({ language, work }) => {
         role="presentation"
       />
 
-      <hr />
-
       <h4>
-        <a href={`${path}/friday-apps.zip`}>
+        <a href="https://github.com/keske/FridayDock/blob/master/apps.zip?raw=true">
           {Language.translate('Download')}
         </a>
       </h4>
@@ -49,7 +44,6 @@ const Work = ({ language, work }) => {
 
 Work.propTypes = {
   language: PropTypes.string,
-  work: PropTypes.string,
 };
 
 export default Work;
