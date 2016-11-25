@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Root from 'components/Root/';
+// Components
+import Root from 'components/Root';
 
 let initialState;
 try {
@@ -13,6 +14,6 @@ try {
 if (__CLIENT__) {
   ReactDOM.render(
     <Root />,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
 }

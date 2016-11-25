@@ -1,7 +1,11 @@
 import Express from 'express';
-import http from 'http';
-import { renderFullPage } from './utils/render';
 import webpack from 'webpack';
+import http from 'http';
+
+// Utils
+import render from './utils/render';
+
+// Configs
 import webpackConfig from '../../webpack/common.config';
 
 const compiler = webpack(webpackConfig);
@@ -27,7 +31,7 @@ app.use('/dist', Express.static(__dirname + '/../../dist/'));
 
 app.get(/.*/, (req, res) => {
   const domain = req.get('host').replace(/\:.*/, '');
-  res.end(renderFullPage('', port, domain));
+  res.end(render('', port, domain));
 });
 
 server.listen(port, () => {

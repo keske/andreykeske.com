@@ -7,6 +7,12 @@ const path = require('path');
 const development = require('./dev.config.js');
 const production = require('./prod.config.js');
 
+// PostCSS
+const postcssSimpleVars = require('postcss-simple-vars');
+const postcssNested = require('postcss-nested');
+const postcssShort = require('postcss-short');
+const postcssAutoprefixer = require('autoprefixer');
+
 const TARGET = process.env.npm_lifecycle_event;
 process.env.BABEL_ENV = TARGET;
 
@@ -20,7 +26,7 @@ const devUrl = getDevelopmentUrl();
 
 const common = {
   output: {
-    path: __dirname + '/../dist/',
+    path: `${__dirname}/../dist/`,
     publicPath: devUrl,
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
@@ -58,10 +64,6 @@ const common = {
         'file-loader?name=[name].[ext]',
         'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false',
       ],
-    }, {
-      // Other files
-      test: /\.(`zip`|rar|html)$/i,
-      loader: 'file-loader?name=[name].[ext]',
     }],
   },
 
@@ -91,9 +93,8 @@ const common = {
 
     new webpack.LoaderOptionsPlugin({
       options: {
-        // context: filePaths.root,
         postcss: [
-          require('postcss-simple-vars')({
+          postcssSimpleVars({
             variables: {
               white: '#FFFFFF',
               black: '#444444',
@@ -102,9 +103,9 @@ const common = {
               green: '#8ce071',
             },
           }),
-          require('postcss-nested'),
-          require('postcss-short'),
-          require('autoprefixer')({
+          postcssNested,
+          postcssShort,
+          postcssAutoprefixer({
             browsers: ['> 5%'],
             remove: false,
           }),

@@ -35,6 +35,3 @@ export { default as Volume } from './volume';
 export { default as CloseFavicon } from './close-favicon';
 export { default as Chrome } from './chrome';
 export { default as About } from './about';
-
-// Travel
-// TODO:

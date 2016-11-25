@@ -1,5 +1,7 @@
 const fs = require('fs');
-const config = JSON.parse(fs.readFileSync('./.babelrc'));
 
-require('babel-core/register')(config);
+// Register eslint rules
+require('babel-core/register')(JSON.parse(fs.readFileSync('./.babelrc')));
+
+// Init webpack development server
 require('../webpack-dev-server');
