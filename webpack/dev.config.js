@@ -15,7 +15,11 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.css$/,
-      loader: 'style!css?module&localIdentName=[path]__[name]__[local]!postcss',
+      use: [
+        'style-loader',
+        'css-loader?module&localIdentName=[path]__[name]__[local]',
+        'postcss-loader',
+      ],
     }],
   },
 

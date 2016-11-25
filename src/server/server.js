@@ -7,12 +7,9 @@ import webpackConfig from '../../webpack/common.config';
 const compiler = webpack(webpackConfig);
 const app = new Express();
 const server = new http.Server(app);
-const proxy = require('http-proxy').createProxyServer({});
 const port = process.env.NODE_ENV === 'development'
   ? 3000
   : 80;
-
-app.use(require('morgan')('short'));
 
 if (process.env.NODE_ENV === 'development') {
   app.use(require('webpack-dev-middleware')(compiler, {
@@ -23,16 +20,6 @@ if (process.env.NODE_ENV === 'development') {
     log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000,
   }));
 }
-
-proxy.on('error', (err, req) => {
-  console.error(err, req.url);
-});
-
-// Activate proxy for session
-app.use(/\/api\/(.*)/, (req, res) => {
-  req.url = req.originalUrl;
-  proxy.web(req, res, { target: 'http://127.0.0.1:55552/api' });
-});
 
 // Static directory for express
 app.use('/static', Express.static(__dirname + '/../../static/'));

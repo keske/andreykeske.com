@@ -80,7 +80,7 @@ export default class Page extends Component {
                           }}
                         >
                           {type}
-                        </span>
+                        </span>,
                     )
                   }
                   <hr />
@@ -102,7 +102,7 @@ export default class Page extends Component {
                         >
                           {work.title}
                         </a>
-                      </span>
+                      </span>,
                     )
                   }
                 </ScrollView>

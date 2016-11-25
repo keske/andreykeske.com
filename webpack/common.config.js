@@ -27,8 +27,8 @@ const common = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.json'],
-    modulesDirectories: ['node_modules'],
+    extensions: ['.js', '.json'],
+    modules: ['node_modules'],
     alias: {
       components: path.join(__dirname, '../src/components/'),
       constants: path.join(__dirname, '../src/constants/'),
@@ -41,11 +41,11 @@ const common = {
     loaders: [{
       // Fonts: woff
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=application/font-woff',
+      loader: 'url-loader?limit=10000&mimetype=application/font-woff',
     }, {
       // Fonts: woff2
       test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=application/font-woff2',
+      loader: 'url-loader?limit=10000&mimetype=application/font-woff2',
     }, {
       // JS
       test: /\.js$/,
@@ -55,13 +55,13 @@ const common = {
       // Images
       test: /\.(jpe?g|png|gif|svg)$/i,
       loaders: [
-        'file?name=[name].[ext]',
-        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
+        'file-loader?name=[name].[ext]',
+        'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false',
       ],
     }, {
       // Other files
       test: /\.(`zip`|rar|html)$/i,
-      loader: 'file?name=[name].[ext]',
+      loader: 'file-loader?name=[name].[ext]',
     }],
   },
 
@@ -82,28 +82,34 @@ const common = {
     // chunks for generate vendor bundle
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: (module) =>
+      minChunks: (module) => {
         module.resource &&
           module.resource.indexOf('node_modules') !== -1 &&
-          module.resource.indexOf('.css') === -1,
-    }),
-  ],
-
-  postcss: () => [
-    require('postcss-simple-vars')({
-      variables: {
-        white: '#FFFFFF',
-        black: '#444444',
-        gray: '#AAAAAA',
-        blue: '#4E00E2',
-        green: '#8ce071',
+          module.resource.indexOf('.css') === -1;
       },
     }),
-    require('postcss-nested'),
-    require('postcss-short'),
-    require('autoprefixer')({
-      browsers: ['> 5%'],
-      remove: false,
+
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        // context: filePaths.root,
+        postcss: [
+          require('postcss-simple-vars')({
+            variables: {
+              white: '#FFFFFF',
+              black: '#444444',
+              gray: '#AAAAAA',
+              blue: '#4E00E2',
+              green: '#8ce071',
+            },
+          }),
+          require('postcss-nested'),
+          require('postcss-short'),
+          require('autoprefixer')({
+            browsers: ['> 5%'],
+            remove: false,
+          }),
+        ],
+      },
     }),
   ],
 };

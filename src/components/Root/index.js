@@ -5,6 +5,7 @@ import { observer } from 'mobx-react';
 import { app, travel, works } from '../../stores';
 
 // Components
+import Header from 'components/Modules/Header';
 import Home from 'components/Pages/Home';
 
 // Styles
@@ -37,6 +38,7 @@ export default class Root extends Component {
   render() {
     return (
       <section className={s}>
+        <Header />
         <Home />
       </section>
     );
