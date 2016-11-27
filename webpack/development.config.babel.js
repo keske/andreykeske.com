@@ -1,15 +1,6 @@
 import webpack from 'webpack';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 
-// PostCSS
-import postcssSimpleVars from 'postcss-simple-vars';
-import postcssNested from 'postcss-nested';
-import postcssShort from 'postcss-short';
-import postcssAutoprefixer from 'autoprefixer';
-
-// PostCSS configs
-import variables from './postcss-configs/variables.js';
-
 module.exports = {
   devtool: 'eval-cheap-module-source-map',
 

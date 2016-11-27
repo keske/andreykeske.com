@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 import Language from './locale/';
 
 // Styles
-import s from './styles/index.css';
+import s from './index.css';
 
 const Work = ({ language }) => {
   // Set language

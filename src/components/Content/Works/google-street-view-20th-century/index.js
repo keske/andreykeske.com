@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 // Styles
-import s from './styles/index.css';
+import s from './index.css';
 
 // Language
 import Language from './locale/';
