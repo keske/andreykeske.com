@@ -2,9 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { observer } from 'mobx-react';
 import cx from 'classnames';
 
-// Constants
-import { path } from 'constants/config';
-
 // Components
 import * as Works from '../../Content/Works/index.js';
 
@@ -20,7 +17,7 @@ export default class WorksRender extends Component {
   };
 
   capitalizeFirstLetter = (string) =>
-      string.charAt(0).toUpperCase() + string.slice(1);
+    string.charAt(0).toUpperCase() + string.slice(1);
 
   render() {
     const { app, works } = this.context;
@@ -36,9 +33,9 @@ export default class WorksRender extends Component {
           works.all.map((work, index) => {
             const component = [];
 
-            work.link.split('-').map((word) =>
-              component.push(this.capitalizeFirstLetter(word)),
-            );
+            work.link.split('-').map((word) => {
+              component.push(this.capitalizeFirstLetter(word));
+            });
 
             return (
               <section key={index}>
@@ -61,7 +58,6 @@ export default class WorksRender extends Component {
                       Works[component.join('')],
                       {
                         ...props,
-                        link: `${path}src/components/Content/Works/${work.link}/files`,
                       },
                     )
                   }

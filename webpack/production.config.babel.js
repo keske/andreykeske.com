@@ -11,10 +11,10 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.css$/,
-      use: [
-        'css-loader?minimize&module&localIdentName=[hash:base64:5]',
-        'postcss-loader',
-      ],
+      loader: ExtractTextPlugin.extract({
+        notExtractLoader: 'style-loader',
+        loader: 'css-loader?minimize&module&localIdentName=[hash:base64:5]!postcss-loader',
+      }),
     }],
   },
 
