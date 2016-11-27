@@ -51,6 +51,7 @@
     "merge": "^1.2.0",
     "morgan": "^1.7.0",
     "path-chunk-webpack-plugin": "^1.2.0",
+    "postcss-modules": "^0.5.2",
     "ramda": "^0.22.1",
     "react-addons-create-fragment": "^15.4.1",
     "react-helmet": "^3.2.2",

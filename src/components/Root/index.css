@@ -1,83 +1,84 @@
-@font-face {
-  font-family: "Circular Std";
-  src: url(../../../static/fonts/circularstd-book.woff) format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+:global {
 
-@font-face {
-  font-family: "Circular Std";
-  src: url(../../../static/fonts/circularstd-medium.woff) format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-body {
-  padding: 33px 0;
-  margin: 0;
-
-  font-family: "Circular Std", 'Helvetica';
-  font-size: 18px;
-  font-weight: normal;
-
-  color: #444;
-
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Typography */
-
-h1 {
-  font-size: 19px;
-  line-height: 19px;
-
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 17px;
-  line-height: 17px;
-
-  margin-top: 20px;
-}
-
-h3 {
-  font-size: 15px;
-  line-height: 15px;
-}
-
-h4 {
-  font-size: 13px;
-  line-height: 13px;
-
-  a {
-    color: $blue;
-    border: 1px solid $blue;
-
-    padding: 5px 10px;
-    border-radius: 5px;
-
-    font-size: 12px;
-
-    margin: 7px 0;
-    display: inline-block;
+  @font-face {
+    font-family: "Circular Std";
+    src: url(../../../static/fonts/circularstd-book.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+    
   }
-}
 
-p, ul {
-  font-size: 14px;
-  line-height: 18px;
+  @font-face {
+    font-family: "Circular Std";
+    src: url(../../../static/fonts/circularstd-medium.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
 
-  li {
+  body {
+    padding: 33px 0;
+    margin: 0;
+
+    font-family: "Circular Std", 'Helvetica';
+    font-size: 18px;
+    font-weight: normal;
+
+    color: #444;
+
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Typography */
+
+  h1 {
+    font-size: 19px;
+    line-height: 19px;
+
     margin-bottom: 10px;
   }
-}
 
-p {
-  margin-bottom: 20px;
-}
+  h2 {
+    font-size: 17px;
+    line-height: 17px;
 
-:global {
+    margin-top: 20px;
+  }
+
+  h3 {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  h4 {
+    font-size: 13px;
+    line-height: 13px;
+
+    a {
+      color: $blue;
+      border: 1px solid $blue;
+
+      padding: 5px 10px;
+      border-radius: 5px;
+
+      font-size: 12px;
+
+      margin: 7px 0;
+      display: inline-block;
+    }
+  }
+
+  p, ul {
+    font-size: 14px;
+    line-height: 18px;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
 
   iframe {
     width: calc(100% + 40px);
@@ -92,36 +93,36 @@ p {
       margin-bottom: -20px;
     }
   }
-}
 
-/* Link */
+  /* Link */
 
-a {
-  color: $blue;
-  text-decoration: none;
-
-  &:hover {
+  a {
     color: $blue;
     text-decoration: none;
 
-    opacity: .7;
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+
+      opacity: .7;
+    }
+
+    &:visited {
+      // color: #DD67FF;
+    }
+
+    &:active {
+      color: red;
+    }
   }
 
-  &:visited {
-    // color: #DD67FF;
+  /* Images */
+
+  img {
+    max-width: 100%;
   }
 
-  &:active {
-    color: red;
+  hr {
+    margin: 30px 0 20px;
   }
-}
-
-/* Images */
-
-img {
-  max-width: 100%;
-}
-
-hr {
-  margin: 30px 0 20px;
 }

@@ -7,7 +7,7 @@ import s from './index.css';
 export default class Header extends Component {
   render() {
     return (
-      <section className={s.header}>
+      <section className={s.root}>
         <Grid>
           <Row>
             <Col
@@ -16,7 +16,7 @@ export default class Header extends Component {
               md={12}
               lg={12}
             >
-              Andrey Keske's Home Page
+              Andrey Keske
             </Col>
           </Row>
         </Grid>

@@ -1,5 +1,14 @@
-const webpack = require('webpack');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+import webpack from 'webpack';
+import DashboardPlugin from 'webpack-dashboard/plugin';
+
+// PostCSS
+import postcssSimpleVars from 'postcss-simple-vars';
+import postcssNested from 'postcss-nested';
+import postcssShort from 'postcss-short';
+import postcssAutoprefixer from 'autoprefixer';
+
+// PostCSS configs
+import variables from './postcss-configs/variables.js';
 
 module.exports = {
   devtool: 'eval-cheap-module-source-map',
@@ -16,9 +25,19 @@ module.exports = {
     loaders: [{
       test: /\.css$/,
       use: [
-        'style-loader',
-        'css-loader?module&localIdentName=[path]__[name]__[local]',
-        'postcss-loader',
+        {
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: 1,
+            importLoaders: 1,
+            localIdentName:
+              '[folder]_[path]__[name]_[local]__[hash:base64:16]',
+          },
+        }, {
+          loader: 'postcss-loader',
+        },
       ],
     }],
   },

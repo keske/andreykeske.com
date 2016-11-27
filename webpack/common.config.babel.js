@@ -96,6 +96,7 @@ const common = {
 
     new webpack.LoaderOptionsPlugin({
       options: {
+        context: __dirname,
         postcss: [
           postcssSimpleVars({
             variables,
