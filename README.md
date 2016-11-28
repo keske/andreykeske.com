@@ -6,3 +6,7 @@ Andrey Keske
 ``` $ npm i ```
 
 ``` $ npm start ```
+
+## Stack
+
+Webpack2, React, MobX, PostCSS, CSS Modules, Babel, ESlint wirh AirBnb config
