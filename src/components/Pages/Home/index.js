@@ -23,24 +23,6 @@ export default class Page extends Component {
 
     // Fetch
     works.get();
-
-    window.addEventListener('scroll', this.hideNav);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.hideNav);
-  }
-
-  hideNav = () => {
-    this.setState({
-      green: window.pageYOffset > 200 && !window.innerWidth < 640,
-    });
-  }
-
-  handleSearch = (value) => {
-    this.setState({
-      search: { value },
-    });
   }
 
   render() {

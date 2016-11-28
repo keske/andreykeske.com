@@ -21,4 +21,4 @@ Start logging:
 
 ## Stack
 
-Webpack2, React, MobX, PostCSS, CSS Modules, Babel, ESlint wirh AirBnb config
+Webpack2, React, MobX, PostCSS, CSS Modules, Babel, ESlint with AirBnb config
