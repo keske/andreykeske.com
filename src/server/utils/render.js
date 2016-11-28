@@ -41,7 +41,7 @@ export default function render(html, devPort, domain, initialState = null, head)
         ${bundleCSS}
 
         ${head ? head.meta.toString() : ''}
-        ${head ? head.title.toString() : ''}
+        ${head ? head.title.toString() : 'Andrey Keske'}
       </head>
       <body>
         <div id="root">${html || ''}</div>

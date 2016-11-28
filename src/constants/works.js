@@ -1,4 +1,14 @@
 export default [
+  // {
+  //   title: 'AirSynth',
+  //   link: 'AirSynth',
+  //   type: 'application',
+  // },
+  // {
+  //   title: 'Skills',
+  //   link: 'Skills',
+  //   type: 'application',
+  // },
   {
     title: 'Matryoshka',
     link: 'matryoshka',

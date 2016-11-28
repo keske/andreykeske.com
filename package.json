@@ -1,10 +1,10 @@
 {
-  "name": "andrey_keske",
+  "name": "andrey_keske_works",
   "version": "5.0.2",
-  "description": "Andrey Keske Site http://andreykeske.com",
+  "description": "Andrey Keske Works http://andreykeske.com",
   "repository": {
     "type": "git",
-    "url": "todo"
+    "url": "https://github.com/keske/andreykeske.com"
   },
   "license": "MIT",
   "authors": [
@@ -84,6 +84,6 @@
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^2.1.0-beta.11",
     "webpack-hot-middleware": "^2.13.2",
-    "webpack-merge": "^0.17.0"
+    "webpack-merge": "^1.0.1"
   }
 }
