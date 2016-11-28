@@ -33,9 +33,9 @@ export default class WorksRender extends Component {
           works.all.map((work, index) => {
             const component = [];
 
-            work.link.split('-').map((word) =>
-              component.push(this.capitalizeFirstLetter(word)),
-            );
+            work.link.split('-').map((word) => {
+              component.push(this.capitalizeFirstLetter(word));
+            });
 
             return (
               <section
