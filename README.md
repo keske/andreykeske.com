@@ -13,6 +13,8 @@ Start dashboard:
 
 ``` $ npm start ```
 
+![](https://raw.githubusercontent.com/keske/andreykeske.com/master/static/github/dashboard.png "Dashboard")
+
 Start logging:
 
 ``` $ npm run log```
