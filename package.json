@@ -19,7 +19,6 @@
     "node": ">=7.0"
   },
   "devDependencies": {
-    "@types/selenium-webdriver": "^2.44.26",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.8",
     "babel-plugin-react-transform": "^2.0.2",
@@ -35,7 +34,6 @@
     "babel-register": "^6.18.0",
     "counterpart": "^0.17.6",
     "css-loader": "^0.26.0",
-    "es6-promise": "^4.0.5",
     "eslint": "^3.10.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
@@ -52,7 +50,6 @@
     "morgan": "^1.7.0",
     "path-chunk-webpack-plugin": "^1.2.0",
     "postcss-modules": "^0.5.2",
-    "ramda": "^0.22.1",
     "react-addons-create-fragment": "^15.4.1",
     "react-helmet": "^3.2.2",
     "react-transform-catch-errors": "^1.0.2",
