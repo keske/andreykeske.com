@@ -10,6 +10,11 @@ export default [
   //   type: 'application',
   // },
   {
+    title: 'Search Queries with Emojii for Pornhub',
+    link: 'emojiihub',
+    type: 'interface',
+  },
+  {
     title: 'Matryoshka',
     link: 'matryoshka',
     type: 'interface',
