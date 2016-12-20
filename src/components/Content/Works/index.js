@@ -1,5 +1,5 @@
 // Works
-export { default as Emojiihub } from './emojiihub';
+export { default as Emojihub } from './emojihub';
 export { default as Matryoshka } from './matryoshka';
 export { default as Ball } from './ball';
 export { default as Pinhead } from './pinhead';

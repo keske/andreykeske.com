@@ -10,8 +10,8 @@ export default [
   //   type: 'application',
   // },
   {
-    title: 'Search Queries with Emojii for Pornhub',
-    link: 'emojiihub',
+    title: 'Search Queries with Emoji for Pornhub',
+    link: 'emojihub',
     type: 'interface',
   },
   {
