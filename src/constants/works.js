@@ -10,6 +10,11 @@ export default [
   //   type: 'application',
   // },
   {
+    title: 'My Updated Logo for Rolling Stones',
+    link: 'rolling-stones',
+    type: 'graphics',
+  },
+  {
     title: 'Search Queries with Emoji for Pornhub',
     link: 'emojihub',
     type: 'interface',
