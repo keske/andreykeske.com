@@ -17,6 +17,9 @@ export default class Header extends Component {
               lg={12}
             >
               Andrey Keske
+              <div className={s.sign}>
+                UI Hacking, Street Art, Net Art, Savvy & Wit
+              </div>
             </Col>
           </Row>
         </Grid>

@@ -40,6 +40,11 @@ export default [
     type: 'social',
   },
   {
+    title: 'Tinder',
+    link: 'tinder',
+    type: 'interface',
+  },
+  {
     title: 'Water problems',
     link: 'water',
     type: 'street',

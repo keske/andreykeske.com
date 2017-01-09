@@ -5,8 +5,8 @@ const Work = () => (
     <div className="responsive-container">
       <iframe
         width="100%"
-        height="410"
-        src="https://www.youtube.com/embed/dT1l7jtfNWw"
+        height="500"
+        src="https://www.youtube.com/embed/oM9n7OeZw1c"
         frameBorder="0"
         allowFullScreen
         className="only-iframe-as-content"

@@ -1,4 +1,5 @@
 // Works
+export { default as Tinder } from './tinder';
 export { default as RollingStones } from './rolling-stones';
 export { default as Emojihub } from './emojihub';
 export { default as Matryoshka } from './matryoshka';

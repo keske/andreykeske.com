@@ -20,10 +20,10 @@ const Work = ({ language }) => {
       </p>
       <div className={s.links}>
         <a href="mailto:hello@andreykeske.com">
-          hello@andreykeske.com
+          Mail (hello@andreykeske.com)
         </a>
         <a href="https://github.com/keske">
-          https://github.com/keske
+          Github
         </a>
         <a href="https://www.facebook.com/andrey.keske">
           Facebook
