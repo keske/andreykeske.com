@@ -1,0 +1,36 @@
+.root {
+  
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  .trad, .peace, .death, .wild {
+    width: calc(100% + 40px);
+    
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-bottom: -20px;
+
+    text-align: center;
+
+    img {
+      width: 500px;
+    }
+  }
+
+  .trad {
+    background: #EEE9D6;
+  }
+
+  .peace {
+    background: #45537E;
+  }
+
+  .death {
+    background: #1C1B2D;
+  }
+
+  .wild {
+    background: #000;
+  }
+}

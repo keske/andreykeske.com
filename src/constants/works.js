@@ -10,6 +10,11 @@ export default [
   //   type: 'application',
   // },
   {
+    title: 'Emoji Tattoo Flashes',
+    link: 'emoji-tattoo-flashes',
+    type: 'graphics',
+  },
+  {
     title: 'My Updated Logo for Rolling Stones',
     link: 'rolling-stones',
     type: 'graphics',

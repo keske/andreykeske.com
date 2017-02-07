@@ -18,7 +18,7 @@ export default class Header extends Component {
             >
               Andrey Keske
               <div className={s.sign}>
-                UI Hacking, Street Art, Net Art, Savvy & Wit
+                Do the impossible, see the invisible
               </div>
             </Col>
           </Row>
