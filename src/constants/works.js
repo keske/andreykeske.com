@@ -1,14 +1,14 @@
 export default [
-  // {
-  //   title: 'AirSynth',
-  //   link: 'AirSynth',
-  //   type: 'application',
-  // },
-  // {
-  //   title: 'Skills',
-  //   link: 'Skills',
-  //   type: 'application',
-  // },
+  {
+    title: 'Emojis from the back',
+    link: 'emoji-back',
+    type: 'graphics',
+  },
+  {
+    title: 'IKEA furniture in Augmented Reality',
+    link: 'ikea-place',
+    type: 'ar',
+  },
   {
     title: 'Emoji Tattoo Flashes',
     link: 'emoji-tattoo-flashes',

@@ -11,12 +11,30 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract({
-        notExtractLoader: 'style-loader',
-        loader: 'css-loader?minimize&module&localIdentName=[hash:base64:5]!postcss-loader',
-      }),
+
+      use: 'css-loader',
+
+      // use: {
+      //   loader: ExtractTextPlugin.extract({
+      //     notExtractLoader: 'style-loader',
+      //     loader: 'css-loader?minimize&module&localIdentName=[hash:base64:5]!postcss-loader',
+      //   })
+      // },
     }],
   },
+
+  /*
+  {
+    use: ExtractTextPlugin.extract({
+    use: 'css-loader'
+    //loader: 'css-loader'
+    // Replace this "loader" with "use"
+    // loader option has been deprecated - replace with "use"
+    }),
+    //use: ['style-loader', 'css-loader'],
+    test: /.css$/
+    },
+  */
 
   plugins: [
     new ExtractTextPlugin({

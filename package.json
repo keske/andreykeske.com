@@ -11,8 +11,7 @@
     "Andrey Keske (http://github.com/keske)"
   ],
   "scripts": {
-    "start": "rimraf dist && NODE_ENV=development webpack-dashboard -- node bin/server.js",
-    "log": "rimraf dist && NODE_ENV=development node bin/server.js",
+    "start": "NODE_ENV=development node bin/server.js",
     "build": "rimraf dist && NODE_ENV=production webpack --progress --verbose --display-error-details --config webpack/common.config.babel.js"
   },
   "engines": {
@@ -50,6 +49,7 @@
     "morgan": "^1.7.0",
     "path-chunk-webpack-plugin": "^1.2.0",
     "postcss-modules": "^0.5.2",
+    "ramda": "^0.25.0",
     "react-addons-create-fragment": "^15.4.1",
     "react-helmet": "^3.2.2",
     "react-transform-catch-errors": "^1.0.2",

@@ -33,10 +33,6 @@
       font-size: 12px;
       line-height: 21px;
       display: block;
-
-      &.hide {
-        display: none;
-      }
     }
   }
 }

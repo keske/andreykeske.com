@@ -1,0 +1,17 @@
+import React from 'react';
+
+import { Route, IndexRoute } from 'react-router';
+
+import Root from './components/Root/';
+import Home from './components/Pages/Home/';
+import Moments from './components/Pages/Moments/';
+
+export default (
+  <Route path="/" component={Root}>
+    <IndexRoute component={Home} />
+
+    <Route path="/home" component={Home} />
+    <Route path="/moments" component={Moments} />
+
+  </Route>
+);

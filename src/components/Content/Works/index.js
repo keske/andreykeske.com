@@ -1,4 +1,6 @@
 // Works
+export { default as EmojiBack } from './emoji-back/';
+export { default as IkeaPlace } from './ikea-place/';
 export { default as EmojiTattooFlashes } from './emoji-tattoo-flashes';
 export { default as Tinder } from './tinder';
 export { default as RollingStones } from './rolling-stones';
