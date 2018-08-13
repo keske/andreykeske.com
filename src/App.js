@@ -1,67 +1,64 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 // Components
 import * as Works from './Works/';
-import ScrollView from './ScrollView';
-
-import works from './works.const.js';
 
 import './App.css';
 
-const capitalizeFirstLetter = (string) =>
-  string.charAt(0).toUpperCase() + string.slice(1);
-
-export default class App extends Component {
-  render() {
-    return (
-      <section className="root">
-        <div className="nav">
-          <Grid>
-            <Row>
-              <Col
-                xsHidden
-                smHidden
-                md={4}
-                lg={4}
-              >
-                <ScrollView>
-                  {
-                    works.map((work) => (
-                      <span key={work.link}>
-                        {
-                          work.link === 'about' && <hr />
-                        }
-                        <a href={`#${work.link}`}>
-                          {
-                            work.title
-                          }
-                        </a>
-                      </span>
-                    ))
-                  }
-                </ScrollView>
-              </Col>
-            </Row>
-          </Grid>
-        </div>
-        <Grid>
-          <Row>
-            <Col
-              xs={12}
-              sm={12}
-              md={7}
-              mdOffset={4}
-              lg={7}
-              lgOffset={4}
-            >
-              <div className="work">
-                <Works.EmojiBack />
-              </div>
-            </Col>
-          </Row>
-        </Grid>
-      </section>
-    );
-  }
-}
+export default () => (
+  <section className="root">
+    <Grid>
+      <Row>
+        <Col
+          xs={12}
+          sm={12}
+          md={6}
+          mdOffset={3}
+          lg={6}
+          lgOffset={3}
+        >
+          <div className="work">
+            <Works.EmojiBack />
+            <Works.IkeaPlace />
+            <Works.EmojiTattooFlashes />
+            <Works.Tinder />
+            <Works.RollingStones />
+            <Works.Emojihub />
+            <Works.Matryoshka />
+            <Works.Ball />
+            <Works.Pinhead />
+            <Works.Hodor />
+            <Works.Skyscraper />
+            <Works.Water />
+            <Works.Globalization />
+            <Works.GoogleStreetView20thCentury />
+            <Works.TmuxChess />
+            <Works.BlackHole />
+            <Works.Infinity />
+            <Works.Catch />
+            <Works.TheShellGame />
+            <Works.FootballFansTrolling />
+            <Works.Money />
+            <Works.TabsPiano />
+            <Works.CensorshipInIos7 />
+            <Works.IpadInvisibleIcons />
+            <Works.MacOsUiGames />
+            <Works.WaterOnMars />
+            <Works.PoliceCar />
+            <Works.Spectrum />
+            <Works.TheHairpin />
+            <Works.FridayDock />
+            <Works.Shadows />
+            <Works.Like />
+            <Works.Keyhole />
+            <Works.Volume />
+            <Works.CloseFavicon />
+            <Works.Chrome />
+            <Works.About />
+          </div>
+        </Col>
+      </Row>
+    </Grid>
+  </section>
+);
