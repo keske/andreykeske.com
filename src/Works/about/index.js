@@ -6,9 +6,18 @@ const photo = require('./files/me.jpg');
 
 export default () => (
   <div className="about">
-    <div className="links">
+    <img
+      alt="Andrey"
+      src={photo}
+      className="photo"
+      role="presentation"
+    />
+    <p>
+      Andrey Keske <i> &mdash; Coder, Designer and Hacker</i>
+    </p>
+    <p>
       <a href="mailto:hello@andreykeske.com">
-        Mail (hello@andreykeske.com)
+        hello@andreykeske.com
       </a>
       <a href="https://github.com/keske">
         Github
@@ -19,13 +28,6 @@ export default () => (
       <a href="https://instagram.com/andreykeske/">
         Instagram
       </a>
-    </div>
-    <div className="images">
-      <img
-        alt="Andrey"
-        src={photo}
-        role="presentation"
-      />
-    </div>
+    </p>
   </div>
 );

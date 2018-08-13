@@ -5,13 +5,13 @@ import './index.css';
 export default class Demo extends Component {
   render() {
     return (
-      <div className="key">
+      <div>
         <h1>
           Key hole
         </h1>
 
         <div
-          className="center"
+          className="key-center"
           onMouseMove={(event) => {
             const girl = document.querySelector('.girl');
 
@@ -19,7 +19,7 @@ export default class Demo extends Component {
             girl.style.marginTop = event.clientY.toFixed(0) / 10 * -2 + 'px';
           }}
         >
-          <div className="girl">
+          <div className="key-girl">
             <img
               src={require('./files/girl.png')}
               role="presentation"
@@ -27,7 +27,7 @@ export default class Demo extends Component {
               className="girl"
             />
           </div>
-          <span className="keyhole">
+          <span className="key-hole">
             <img
               src={require('./files/keyhole.png')}
               role="presentation"

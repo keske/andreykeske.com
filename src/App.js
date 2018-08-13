@@ -4,10 +4,15 @@ import { Grid, Row, Col } from 'react-bootstrap';
 // Components
 import * as Works from './Works/';
 
+import works from './works.const.js';
+
 import './App.css';
 
+const capitalizeFirstLetter = (string) =>
+  string.charAt(0).toUpperCase() + string.slice(1);
+
 export default () => (
-  <section className="root">
+  <section>
     <Grid>
       <Row>
         <Col
@@ -18,45 +23,34 @@ export default () => (
           lg={6}
           lgOffset={3}
         >
-          <div className="work">
-            <Works.EmojiBack />
-            <Works.IkeaPlace />
-            <Works.EmojiTattooFlashes />
-            <Works.Tinder />
-            <Works.RollingStones />
-            <Works.Emojihub />
-            <Works.Matryoshka />
-            <Works.Ball />
-            <Works.Pinhead />
-            <Works.Hodor />
-            <Works.Skyscraper />
-            <Works.Water />
-            <Works.Globalization />
-            <Works.GoogleStreetView20thCentury />
-            <Works.TmuxChess />
-            <Works.BlackHole />
-            <Works.Infinity />
-            <Works.Catch />
-            <Works.TheShellGame />
-            <Works.FootballFansTrolling />
-            <Works.Money />
-            <Works.TabsPiano />
-            <Works.CensorshipInIos7 />
-            <Works.IpadInvisibleIcons />
-            <Works.MacOsUiGames />
-            <Works.WaterOnMars />
-            <Works.PoliceCar />
-            <Works.Spectrum />
-            <Works.TheHairpin />
-            <Works.FridayDock />
-            <Works.Shadows />
-            <Works.Like />
-            <Works.Keyhole />
-            <Works.Volume />
-            <Works.CloseFavicon />
-            <Works.Chrome />
-            <Works.About />
-          </div>
+          <section className="works">
+            {
+              works.map((work) => {
+                const component = [];
+
+                work.link.split('-').map((word) => {
+                  component.push(capitalizeFirstLetter(word));
+                });
+
+                return (
+                  <section
+                    key={work.link}
+                    className="work"
+                    data-link={work.link}
+                  >
+                    {
+                      React.createElement(
+                        Works[component.join('')],
+                      )
+                    }
+                    <p className="devider">
+                      ***
+                    </p>
+                  </section>
+                );
+              })
+            }
+          </section>
         </Col>
       </Row>
     </Grid>

@@ -1,3 +1,5 @@
+export { default as About } from './about';
+
 // Works
 export { default as EmojiBack } from './emoji-back';
 export { default as IkeaPlace } from './ikea-place';
@@ -40,4 +42,3 @@ export { default as Keyhole } from './keyhole';
 export { default as Volume } from './volume';
 export { default as CloseFavicon } from './close-favicon';
 export { default as Chrome } from './chrome';
-export { default as About } from './about';

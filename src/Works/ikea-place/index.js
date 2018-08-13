@@ -13,18 +13,6 @@ export default () => (
       <iframe
         width="100%"
         height="400"
-        src="https://www.youtube.com/embed/h4HOWz9mmyI"
-        frameBorder="0"
-        allowFullScreen
-      />
-    </div>
-
-    <br />
-
-    <div className="responsive-container">
-      <iframe
-        width="100%"
-        height="400"
         src="https://www.youtube.com/embed/WjKAlIXw-sI"
         frameBorder="0"
         allowFullScreen

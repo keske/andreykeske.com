@@ -22,7 +22,7 @@ export default () => (
       Rosette for windows
     </i>
     <hr />
-    <img
+    {/*<img
       src={require('./files/paralympic.jpg')}
       role="presentation"
     />
@@ -45,7 +45,7 @@ export default () => (
     <i>
       The new color for Coca-Cola. Red — the brand color
     </i>
-    <hr />
+    <hr />*/}
     <h2>
       Sneakers
     </h2>

@@ -1,5 +1,11 @@
 export default [
   {
+    title: 'About',
+    link: 'about',
+    type: 'about',
+  },
+
+  {
     title: 'Emojis from the back',
     link: 'emoji-back',
     type: 'graphics',
@@ -250,11 +256,5 @@ export default [
     title: 'Desktop background in the browser',
     link: 'chrome',
     type: 'interface',
-  },
-
-  {
-    title: 'About',
-    link: 'about',
-    type: 'about',
   },
 ];
