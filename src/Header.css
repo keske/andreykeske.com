@@ -1,0 +1,18 @@
+.header {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  padding: 25px 0;
+
+  .sign {
+    font-size: 11px;
+    font-weight: normal;
+  }
+}

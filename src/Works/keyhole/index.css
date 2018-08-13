@@ -1,0 +1,31 @@
+.key {
+  .center {
+    text-align: center;
+    overflow: hidden;
+
+    display: block;
+    height: 230px;
+  }
+
+  .girl {
+    width: 230px;
+    height: 230px;
+
+    overflow: hidden;
+
+    display: inline-block;
+
+    img {
+      min-width: 400px;
+    }
+  }
+
+  .keyhole {
+    margin-left: -230px;
+
+    width: 230px;
+
+    overflow: hidden;
+    position: absolute;
+  }
+}

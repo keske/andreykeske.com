@@ -1,0 +1,15 @@
+.globalization {
+  position: relative;
+  
+  .map {
+    overflow: hidden;
+    width: calc(100% + 40px);
+
+    margin-left: -20px;
+    margin-bottom: -20px;
+
+    iframe {
+      filter: blur(10px);
+    }
+  }
+}
