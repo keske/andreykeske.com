@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script src="./tracking-min.js"></script>
+  <script src="./face-min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800&amp;subset=cyrillic" rel="stylesheet">
+
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+    }
+    video {
+      border-radius: 3px;
+      overflow: hidden;
+
+      margin-top: 50px;
+    }
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 57px;
+
+      text-transform: uppercase;
+    }
+    p {
+      opacity: 0.5;
+
+      font-family: sans-serif;
+      font-weight: 200;
+      font-size: 12px;
+    }
+    sup {
+      font-size: 8px;
+    }
+    sup a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title"></h1>
+
+  <p>
+    Wave–particle duality.
+  </p>
+
+  <p>
+    Light behaves as a wave and as a particle, depending on the circumstances and the effect being observed. <sup><a href="https://lco.global/spacebook/light-particle/">Link</a></sup>
+  </p>
+
+  <video id="video" width="320" height="200" preload autoplay loop muted />
+
+  <script>
+    window.onload = function() {
+      var video = document.getElementById('video');
+
+      var tracker = new tracking.ObjectTracker('face');
+
+      tracker.setInitialScale(4);
+      tracker.setStepSize(2);
+      tracker.setEdgesDensity(0.1);
+
+      tracking.track('#video', tracker, { camera: true });
+
+      tracker.on('track', function(event) {
+        if (event.data.length === 0) {
+          document.getElementById("title").textContent = 'Wave';
+          // document.getElementById("title").textContent = 'Волна';
+        } else {
+          document.getElementById("title").textContent = 'Particle';
+          // document.getElementById("title").textContent = 'Частица';
+        }
+      });
+
+    };
+  </script>
+
+</body>
+</html>

@@ -6,6 +6,17 @@ export default [
   },
 
   {
+    title: 'Energy',
+    link: 'energy-or-particle',
+    type: 'interface',
+  },
+  // {
+  //   title: 'Distance',
+  //   link: 'distance',
+  //   type: 'interface',
+  // },
+
+  {
     title: 'Emojis from the back',
     link: 'emoji-back',
     type: 'graphics',

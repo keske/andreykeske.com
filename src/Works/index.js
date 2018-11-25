@@ -1,6 +1,8 @@
 export { default as About } from './about';
 
 // Works
+export { default as EnergyOrParticle } from './energy-or-particle';
+export { default as Distance } from './distance';
 export { default as EmojiBack } from './emoji-back';
 export { default as IkeaPlace } from './ikea-place';
 export { default as EmojiTattooFlashes } from './emoji-tattoo-flashes';

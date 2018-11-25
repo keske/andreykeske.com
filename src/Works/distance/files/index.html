@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script src="./tracking-min.js"></script>
+  <script src="./face-min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800&amp;subset=cyrillic" rel="stylesheet">
+
+  <style>
+    body {
+      margin-top: 200px;
+    }
+    video {
+      right: 77px;
+      bottom: 77px;
+      position: absolute;
+    }
+    p {
+      font-size: 16px;
+      padding: 50px;
+      /*filter: blur(4px);*/
+    }
+  </style>
+</head>
+<body>
+  <video id="video" width="320" height="240" preload autoplay loop muted></video>
+  <p id="text">
+    イギリス経験論では、視覚は他の感覚入力との連合によって説明された。経験論哲学における有名な問題として、「球体と立方体を触覚的に判別できる先天盲者が開眼手術を受けたとき、盲人は視覚的に球体と立方体を判別できるか」というモリニュクス問題がある。経験論によれば、視覚は他の感覚と連合されていないため、開眼時点では視覚的な判断はできないと結論された。ヘルムホルツは視覚を感覚入力をもとにした無意識的推論の過程であると見なした。例えば、小さなものや遠くにあるものは、網膜上では同じように小さく見える。しかし、我々は小さな顔を見たとしても、顔が小さいと知覚することはなく、顔が遠くにあるように知覚する(大きさの恒常性)。このことは、「顔というものは実際にはこの程度の大きさのはずだから、網膜上で顔が小さいということは遠くにあるのだろう」という推論を我々が無意識的に行っているのだと解釈された。
+  </p>
+
+  <script>
+    window.onload = function() {
+      var video = document.getElementById('video');
+      var tracker = new tracking.ObjectTracker('face');
+      var text = document.getElementById('text');
+
+      tracker.setInitialScale(1);
+      tracker.setStepSize(2);
+      tracker.setEdgesDensity(0.1);
+
+      tracking.track('#video', tracker, { camera: true });
+
+      tracker.on('track', function(event) {
+        event.data.forEach(function(rect) {
+          var blur = rect.width - 150;
+
+          console.log(rect.width);
+
+          text.style.filter = 'blur(' + blur + 'px)';
+        });
+      });
+    };
+  </script>
+  </script>
+
+</body>
+</html>
