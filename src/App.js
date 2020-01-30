@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import * as Works from './Works/';
@@ -13,7 +13,7 @@ const capitalizeFirstLetter = (string) =>
 
 export default () => (
   <section>
-    <Grid>
+    <Container>
       <Row>
         <Col
           xs={12}
@@ -53,6 +53,6 @@ export default () => (
           </section>
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </section>
 );
