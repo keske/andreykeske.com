@@ -1,6 +1,6 @@
-/* 
+/*
  *  DSP.js - a comprehensive digital signal processing  library for javascript
- * 
+ *
  *  Created by Corban Brook <corbanbrook@gmail.com> on 2010-01-01.
  *  Copyright 2010 Corban Brook. All rights reserved.
  *
@@ -10,14 +10,14 @@
 function FourierTransform(bufferSize, sampleRate) {
   this.bufferSize = bufferSize;
   this.sampleRate = sampleRate;
-  this.bandwidth  = 2 / bufferSize * sampleRate / 2;
+  this.bandwidth = ((2 / bufferSize) * sampleRate) / 2;
 
-  this.spectrum   = new Float32Array(bufferSize/2);
-  this.real       = new Float32Array(bufferSize);
-  this.imag       = new Float32Array(bufferSize);
+  this.spectrum = new Float32Array(bufferSize / 2);
+  this.real = new Float32Array(bufferSize);
+  this.imag = new Float32Array(bufferSize);
 
-  this.peakBand   = 0;
-  this.peak       = 0;
+  this.peakBand = 0;
+  this.peak = 0;
 
   /**
    * Calculates the *middle* frequency of an FFT band.
@@ -31,16 +31,16 @@ function FourierTransform(bufferSize, sampleRate) {
   };
 
   this.calculateSpectrum = function() {
-    var spectrum  = this.spectrum,
-        real      = this.real,
-        imag      = this.imag,
-        bSi       = 2 / this.bufferSize,
-        sqrt      = Math.sqrt,
-        rval, 
-        ival,
-        mag;
+    var spectrum = this.spectrum,
+      real = this.real,
+      imag = this.imag,
+      bSi = 2 / this.bufferSize,
+      sqrt = Math.sqrt,
+      rval,
+      ival,
+      mag;
 
-    for (var i = 0, N = bufferSize/2; i < N; i++) {
+    for (var i = 0, N = bufferSize / 2; i < N; i++) {
       rval = real[i];
       ival = imag[i];
       mag = bSi * sqrt(rval * rval + ival * ival);
@@ -66,7 +66,7 @@ function FourierTransform(bufferSize, sampleRate) {
  */
 function FFT(bufferSize, sampleRate) {
   FourierTransform.call(this, bufferSize, sampleRate);
-   
+
   this.reverseTable = new Uint32Array(bufferSize);
 
   var limit = 1;
@@ -87,8 +87,8 @@ function FFT(bufferSize, sampleRate) {
   this.cosTable = new Float32Array(bufferSize);
 
   for (i = 0; i < bufferSize; i++) {
-    this.sinTable[i] = Math.sin(-Math.PI/i);
-    this.cosTable[i] = Math.cos(-Math.PI/i);
+    this.sinTable[i] = Math.sin(-Math.PI / i);
+    this.cosTable[i] = Math.cos(-Math.PI / i);
   }
 }
 
@@ -102,29 +102,36 @@ function FFT(bufferSize, sampleRate) {
  */
 FFT.prototype.forward = function(buffer) {
   // Locally scope variables for speed up
-  var bufferSize      = this.bufferSize,
-      cosTable        = this.cosTable,
-      sinTable        = this.sinTable,
-      reverseTable    = this.reverseTable,
-      real            = this.real,
-      imag            = this.imag,
-      spectrum        = this.spectrum;
+  var bufferSize = this.bufferSize,
+    cosTable = this.cosTable,
+    sinTable = this.sinTable,
+    reverseTable = this.reverseTable,
+    real = this.real,
+    imag = this.imag,
+    spectrum = this.spectrum;
 
   var k = Math.floor(Math.log(bufferSize) / Math.LN2);
 
-  if (Math.pow(2, k) !== bufferSize) { throw "Invalid buffer size, must be a power of 2."; }
-  if (bufferSize !== buffer.length)  { throw "Supplied buffer is not the same size as defined FFT. FFT Size: " + bufferSize + " Buffer Size: " + buffer.length; }
+  if (Math.pow(2, k) !== bufferSize) {
+    throw 'Invalid buffer size, must be a power of 2.';
+  }
+  if (bufferSize !== buffer.length) {
+    throw 'Supplied buffer is not the same size as defined FFT. FFT Size: ' +
+      bufferSize +
+      ' Buffer Size: ' +
+      buffer.length;
+  }
 
   var halfSize = 1,
-      phaseShiftStepReal,
-      phaseShiftStepImag,
-      currentPhaseShiftReal,
-      currentPhaseShiftImag,
-      off,
-      tr,
-      ti,
-      tmpReal,
-      i;
+    phaseShiftStepReal,
+    phaseShiftStepImag,
+    currentPhaseShiftReal,
+    currentPhaseShiftImag,
+    off,
+    tr,
+    ti,
+    tmpReal,
+    i;
 
   for (i = 0; i < bufferSize; i++) {
     real[i] = buffer[reverseTable[i]];
@@ -136,7 +143,7 @@ FFT.prototype.forward = function(buffer) {
     //phaseShiftStepImag = Math.sin(-Math.PI/halfSize);
     phaseShiftStepReal = cosTable[halfSize];
     phaseShiftStepImag = sinTable[halfSize];
-    
+
     currentPhaseShiftReal = 1;
     currentPhaseShiftImag = 0;
 
@@ -145,8 +152,12 @@ FFT.prototype.forward = function(buffer) {
 
       while (i < bufferSize) {
         off = i + halfSize;
-        tr = (currentPhaseShiftReal * real[off]) - (currentPhaseShiftImag * imag[off]);
-        ti = (currentPhaseShiftReal * imag[off]) + (currentPhaseShiftImag * real[off]);
+        tr =
+          currentPhaseShiftReal * real[off] -
+          currentPhaseShiftImag * imag[off];
+        ti =
+          currentPhaseShiftReal * imag[off] +
+          currentPhaseShiftImag * real[off];
 
         real[off] = real[i] - tr;
         imag[off] = imag[i] - ti;
@@ -157,8 +168,12 @@ FFT.prototype.forward = function(buffer) {
       }
 
       tmpReal = currentPhaseShiftReal;
-      currentPhaseShiftReal = (tmpReal * phaseShiftStepReal) - (currentPhaseShiftImag * phaseShiftStepImag);
-      currentPhaseShiftImag = (tmpReal * phaseShiftStepImag) + (currentPhaseShiftImag * phaseShiftStepReal);
+      currentPhaseShiftReal =
+        tmpReal * phaseShiftStepReal -
+        currentPhaseShiftImag * phaseShiftStepImag;
+      currentPhaseShiftImag =
+        tmpReal * phaseShiftStepImag +
+        currentPhaseShiftImag * phaseShiftStepReal;
     }
 
     halfSize = halfSize << 1;

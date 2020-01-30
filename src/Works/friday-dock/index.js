@@ -2,24 +2,16 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>
-      Friday Dock
-    </h1>
+    <h1>Friday Dock</h1>
 
-    <p>
-      Normal:
-    </p>
+    <p>Normal:</p>
 
-    <img
-      src={require('./files/normal.jpg')}
-      role="presentation"
-    />
+    <img src={require('./files/normal.jpg')} role="presentation" />
 
-    <br /><br />
+    <br />
+    <br />
 
-    <p>
-      Friday:
-    </p>
+    <p>Friday:</p>
 
     <img
       src={require('./files/friday-dock.jpg')}

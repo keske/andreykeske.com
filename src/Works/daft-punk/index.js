@@ -21,7 +21,6 @@ import {
 } from './files/utils.js';
 
 export default class Work extends Component {
-
   static propTypes = {
     params: PropTypes.shape,
     language: PropTypes.string,
@@ -38,24 +37,26 @@ export default class Work extends Component {
   componentDidMount() {
     const { windows } = this.state;
 
-    this.refs.audio.getDOMNode().addEventListener('timeupdate', () => {
-      const second = getSecond();
+    this.refs.audio
+      .getDOMNode()
+      .addEventListener('timeupdate', () => {
+        const second = getSecond();
 
-      const word = getWord();
-      const wordIndex = getWordIndex(second, word);
+        const word = getWord();
+        const wordIndex = getWordIndex(second, word);
 
-      const width = getWindowWidth(second);
-      const height = getWindowHeight(second);
+        const width = getWindowWidth(second);
+        const height = getWindowHeight(second);
 
-      const top = getWindowTop(second, word);
-      const left = getWindowLeft(second, word);
+        const top = getWindowTop(second, word);
+        const left = getWindowLeft(second, word);
 
-      // windows[wordIndex].resizeTo(width, height);
-      // windows[wordIndex].moveTo(top, left);
-      // windows[wordIndex].focus();
+        // windows[wordIndex].resizeTo(width, height);
+        // windows[wordIndex].moveTo(top, left);
+        // windows[wordIndex].focus();
 
-      debug(top, left, word, wordIndex, second, width, height);
-    });
+        debug(top, left, word, wordIndex, second, width, height);
+      });
   }
 
   render() {
@@ -72,7 +73,9 @@ export default class Work extends Component {
     Language.setLocale(language);
 
     const metaData = {
-      title: `${Language.translate('Title')} — ${Language.translate('Text')}`,
+      title: `${Language.translate('Title')} — ${Language.translate(
+        'Text',
+      )}`,
       description: Language.translate('Text'),
       meta: {
         charset: 'utf-8',
@@ -84,52 +87,50 @@ export default class Work extends Component {
 
     return (
       <div className={styles}>
-        
         <div className="container">
           <div className="row">
-            <div className={`
+            <div
+              className={`
                 col-xs-12
                 col-sm-12
                 col-md-8 col-md-offset-2
                 col-lg-8 col-lg-offset-2
             `}
             >
+              <h1>{Language.translate('Title')}</h1>
+              <p>{Language.translate('Text')}</p>
 
-              <h1>
-                {Language.translate('Title')}
-              </h1>
-              <p>
-                {Language.translate('Text')}
-              </p>
-
-              <audio ref="audio"
-                src={`${ path }/technologic.mp3`}
-                ontimeupdate={ () => this.playScene() }
-                controls= { ready ? 'controls' : '' }
+              <audio
+                ref="audio"
+                src={`${path}/technologic.mp3`}
+                ontimeupdate={() => this.playScene()}
+                controls={ready ? 'controls' : ''}
                 muted="false"
-                disabled="disabled" />
+                disabled="disabled"
+              />
 
-              {
-                !ready ? (
-                  <div className="button inline blur medium blue"
-                    onClick={ () => this.openAllWindows() }>
-                    Start
-                  </div>
-                  ) : (
-                  <div className="button outline inline blur small blue"
-                    onClick={ () => this.closeAllWindows() }>
-                    Close all windows
-                  </div>
-                )
-              }
+              {!ready ? (
+                <div
+                  className="button inline blur medium blue"
+                  onClick={() => this.openAllWindows()}
+                >
+                  Start
+                </div>
+              ) : (
+                <div
+                  className="button outline inline blur small blue"
+                  onClick={() => this.closeAllWindows()}
+                >
+                  Close all windows
+                </div>
+              )}
 
-              { /*
+              {/*
                 <div className="responsive-container">
                   <iframe width="420" height="315" src="https://www.youtube.com/embed/oARU7GLKj3Y"
                     frameBorder="0" allowFullScreen />
                 </div>
-              */ }
-
+              */}
             </div>
           </div>
         </div>

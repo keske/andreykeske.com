@@ -16,18 +16,10 @@ export default () => (
       Andrey Keske <i> &mdash; Coder, Designer and Hacker</i>
     </p>
     <p>
-      <a href="mailto:hello@andreykeske.com">
-        hello@andreykeske.com
-      </a>
-      <a href="https://github.com/keske">
-        Github
-      </a>
-      <a href="https://www.facebook.com/andrey.keske">
-        Facebook
-      </a>
-      <a href="https://instagram.com/andreykeske/">
-        Instagram
-      </a>
+      <a href="mailto:hello@andreykeske.com">hello@andreykeske.com</a>
+      <a href="https://github.com/keske">Github</a>
+      <a href="https://www.facebook.com/andrey.keske">Facebook</a>
+      <a href="https://instagram.com/andreykeske/">Instagram</a>
     </p>
   </div>
 );

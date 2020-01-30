@@ -2,12 +2,8 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>
-      Tmux Chess
-    </h1>
-    <p>
-      Play in Chess with tmux.
-    </p>
+    <h1>Tmux Chess</h1>
+    <p>Play in Chess with tmux.</p>
 
     <iframe
       width="100%"

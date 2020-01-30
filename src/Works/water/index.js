@@ -4,9 +4,7 @@ import s from './index.css';
 
 export default () => (
   <div className={s.root}>
-    <h1>
-      Eco problems with water
-    </h1>
+    <h1>Eco problems with water</h1>
     <p>
       Street instalation. The water filter in an unusual situation:
     </p>

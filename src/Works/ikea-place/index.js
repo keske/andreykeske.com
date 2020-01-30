@@ -2,9 +2,7 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>
-      IKEA Place
-    </h1>
+    <h1>IKEA Place</h1>
     <p>
       The first discarded piece of IKEA furniture in Augmented Reality
     </p>

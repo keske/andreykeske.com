@@ -2,11 +2,10 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>
-      Black hole on my Desktop
-    </h1>
+    <h1>Black hole on my Desktop</h1>
     <p>
-      In the space of my Desktop was noticed a black hole where the any information or object will be removed forever.
+      In the space of my Desktop was noticed a black hole where the
+      any information or object will be removed forever.
     </p>
 
     <div className="responsive-container">

@@ -2,12 +2,11 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>
-      The Shell Game
-    </h1>
+    <h1>The Shell Game</h1>
 
     <p>
-      I am continuing to insert games to the interface of operation system. Now it is a shell game.
+      I am continuing to insert games to the interface of operation
+      system. Now it is a shell game.
     </p>
 
     <iframe

@@ -4,12 +4,8 @@ import './index.css';
 
 export default () => (
   <div>
-    <h1>
-      Globalization
-    </h1>
-    <p>
-      The world when the boundaries are blurred.
-    </p>
+    <h1>Globalization</h1>
+    <p>The world when the boundaries are blurred.</p>
 
     <div className="map">
       <iframe

@@ -3,30 +3,57 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "ramda": "^0.25.0",
+    "ramda": "^0.26.1",
     "react": "^16.4.2",
-    "react-bootstrap": "^0.32.1",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-jss": "^10.0.3",
+    "react-scripts": "3.3.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.0.0-beta.55",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.4.5",
     "@babel/preset-flow": "^7.0.0-beta.55",
     "@babel/preset-react": "^7.0.0-beta.55",
+    "@babel/runtime": "^7.6.2",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-flow": "^6.23.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-react": "^6.24.1",
-    "eslint": "^5.2.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
-    "flow-bin": "^0.77.0"
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-react-app": "^5.1.0",
+    "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-module-resolver": "^0.13.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^1.18.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --debug src/",
+    "lint:write": "eslint --debug src/ --fix",
+    "prettier": "prettier --write src/**/**/*.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

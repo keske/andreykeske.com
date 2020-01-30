@@ -1,29 +1,87 @@
-{
-  "parser": "babel-eslint",
-  "extends": "airbnb",
+module.exports = {
+  root: true,
+  "extends": [
+    "react-app",
+    "airbnb",
+    "prettier"
+  ],
   "env": {
-    "browser": true,
     "node": true,
-    "mocha": true
   },
   "globals": {
-    connect: true,
-    window: true,
-    __CLIENT__: true,
-    __DEVELOPMENT__: true,
-    __INITIAL_STATE__: true,
-
-  },
-  "rules": {
-    "max-len": 0,
-    "import/extensions": 0,
-    "import/no-unresolved": 0,
-    "import/parser": 0,
-    "no-console": 0,
-    "no-underscore-dangle": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "performance": true,
+    "window": true,
+    "document": true,
   },
   "plugins": [
-    "react"
-  ]
-}
+    "prettier",
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "array-callback-return": 0,
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "always"],
+    "class-methods-use-this": 0,
+    "function-paren-newline": 0,
+    "indent": 0,
+    "implicit-arrow-linebreak": 0,
+    "import/no-cycle": 0,
+    "import/extensions": 0,
+    "import/no-named": 0,
+    "import/no-unresolved": "error",
+    "import/parser": 0,
+    "max-depth": ["error", 4],
+    "max-nested-callbacks": ["error", 3],
+    "max-lines": ["error", 120],
+    "max-len": [
+      "error", {
+        "code": 80,
+        "comments": 80,
+        "ignoreUrls": true,
+      },
+    ],
+    "max-params": ["error", 3],
+    "max-statements": ["error", 10],
+    "new-parens": 0,
+    "no-confusing-arrow": 0,
+    "no-console": 0,
+    "no-nested-ternary": "error",
+    "no-underscore-dangle": 0,
+    "object-curly-newline": 0,
+    "operator-linebreak": 0,
+    "padded-blocks": 0,
+    "prettier/prettier": "error",
+    "react/forbid-prop-types": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": 0,
+    "react/require-default-props": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-curly-newline": [0, {
+      multiline: "consistent",
+      singleline: "consistent",
+    }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-max-depth": ["error", { "max": 7 }],
+    "react/jsx-max-props-per-line": [1, { "maximum": 3, "when": "always" }],
+    "react/jsx-sort-props": [1],
+    "react/jsx-wrap-multilines": [1, {
+      "arrow": "parens",
+      "assignment": "parens",
+      "condition": "parens-new-line",
+      "declaration": "parens",
+      "logical": "parens",
+      "prop": "parens",
+      "return": "parens",
+    }],
+    "react/sort-comp": 0,
+    "sort-imports": ["error", {
+      "ignoreCase": false,
+      "ignoreDeclarationSort": true,
+      "ignoreMemberSort": false,
+      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+    }],
+    "sort-vars": "error",
+    "space-before-function-paren": 0,
+  },
+};

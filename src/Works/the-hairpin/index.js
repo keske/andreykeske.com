@@ -2,9 +2,7 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>
-      The hairpin
-    </h1>
+    <h1>The hairpin</h1>
     <iframe
       width="100%"
       height="400"

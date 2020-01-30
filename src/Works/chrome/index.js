@@ -2,9 +2,7 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>
-      Desktop background in browser
-    </h1>
+    <h1>Desktop background in browser</h1>
     <div className="responsive-container">
       <iframe
         src="//player.vimeo.com/video/42966580"

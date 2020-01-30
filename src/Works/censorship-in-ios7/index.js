@@ -4,9 +4,7 @@ import './index.css';
 
 export default () => (
   <div>
-    <h1>
-      Censorhip in iOS 7
-    </h1>
+    <h1>Censorhip in iOS 7</h1>
     <div className="center">
       <img
         className="censorship-image"

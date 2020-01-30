@@ -2,12 +2,8 @@ import React from 'react';
 
 export default () => (
   <div>
-    <h1>
-      Distance
-    </h1>
-    <p>
-      TODO
-    </p>
+    <h1>Distance</h1>
+    <p>TODO</p>
 
     <div className="responsive-container">
       <iframe
