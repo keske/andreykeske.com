@@ -1,13 +1,26 @@
 import React from 'react';
 
-import Header from './components/Header';
+// Libs
+import { Col, Container, Row } from 'react-bootstrap';
 
-import './App.css';
+// Components
+import Header from './components/Header';
 
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <Header label="false" />      
+    <div>
+      <Header label="false" />
+      <Container fluid>
+        <Row>
+          <Col>1 of 1</Col>
+          <Col>1 of 1</Col>
+        </Row>
+        <Row>
+          <Col>1 of 3</Col>
+          <Col>2 of 3</Col>
+          <Col>3 of 3</Col>
+        </Row>
+      </Container>
     </div>
   );
 }
