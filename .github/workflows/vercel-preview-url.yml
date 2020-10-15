@@ -1,10 +1,8 @@
 name: Capture Vercel preview URL
 
-on: push
-
-# on:
-  # issue_comment:
-  #   types: [edited]
+on:
+  issue_comment:
+    types: [edited]
 
 jobs:
   capture_vercel_preview_url:
