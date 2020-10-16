@@ -10,7 +10,7 @@
     "@types/node": "^14.11.5",
     "@types/react": "^16.9.51",
     "@types/react-dom": "^16.9.8",
-    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.0",
     "aphrodite": "^2.4.0",
     "bootstrap": "^4.5.2",
