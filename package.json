@@ -13,7 +13,7 @@
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "aphrodite": "^2.4.0",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "eslint-config-airbnb-typescript": "^11.0.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.22.1",
