@@ -1,0 +1,55 @@
+---
+- name: Good first issue
+  color: 7057ff
+  description: Good for newcomers
+- name: Help wanted
+  color: 008672
+  description: Extra attention is needed
+- name: 'Priority: critical'
+  color: b60205
+  description: ''
+- name: 'Priority: high'
+  color: d93f0b
+  description: ''
+- name: 'Priority: low'
+  color: 0e8a16
+  description: ''
+- name: 'Priority: medium'
+  color: fbca04
+  description: ''
+- name: 'Status: can''t reproduce'
+  color: fec1c1
+  description: ''
+- name: 'Status: confirmed'
+  color: 215cea
+  description: ''
+- name: 'Status: duplicate'
+  color: cfd3d7
+  description: This issue or pull request already exists
+- name: 'Status: needs information'
+  color: fef2c0
+  description: ''
+- name: 'Status: wont do/fix'
+  color: eeeeee
+  description: This will not be worked on
+- name: 'Type: bug'
+  color: d73a4a
+  description: Something isn't working
+- name: 'Type: discussion'
+  color: d4c5f9
+  description: ''
+- name: 'Type: documentation'
+  color: 006b75
+  description: ''
+- name: 'Type: enhancement'
+  color: 84b6eb
+  description: ''
+- name: 'Type: epic'
+  color: 3E4B9E
+  description: A theme of work that contain sub-tasks
+- name: 'Type: feature request'
+  color: fbca04
+  description: New feature or request
+- name: 'Type: question'
+  color: d876e3
+  description: Further information is requested
