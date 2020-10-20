@@ -8,9 +8,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:format": "eslint . --ext .tsx --fix",
-    "prettier:format": "prettier --config prettier.config.js 'src/**/*.tsx' --write",
     "lint:watch": "onchange \"**/*\" -- eslint . --ext .tsx --fix {{changed}}",
     "pre-commit": "run-s prettier:format lint:format",
+    "prettier:format": "prettier --config prettier.config.js 'src/**/*.tsx' --write",
     "prettier:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "watch": "run-s prettier:watch lint:watch"
   },
