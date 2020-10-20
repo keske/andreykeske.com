@@ -62,5 +62,6 @@ module.exports = {
     ],
     'space-before-function-paren': 0,
     'sort-keys-fix/sort-keys-fix': 'error',
+    '@typescript-eslint/no-unused-vars': 'error',
   },
 };
