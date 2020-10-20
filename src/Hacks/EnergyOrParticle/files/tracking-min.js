@@ -14,17 +14,17 @@
         (t.prototype = new n()),
         (t.prototype.constructor = t),
         (t.base = function (t, n) {
-          var e = Array.prototype.slice.call(arguments, 2);
+          const e = Array.prototype.slice.call(arguments, 2);
           return r.prototype[n].apply(t, e);
         });
     }),
     (tracking.initUserMedia_ = function (r, n) {
       t.navigator.mediaDevices
-        .getUserMedia({ video: !0, audio: !(!n || !n.audio) })
+        .getUserMedia({ audio: !(!n || !n.audio), video: !0 })
         .then(function (t) {
           r.srcObject = t;
         })
-        ['catch'](function (t) {
+        .catch(function (t) {
           throw Error('Cannot capture user camera.');
         });
     }),
@@ -63,8 +63,8 @@
       }
     }),
     (tracking.trackCanvas_ = function (t, r) {
-      var n = this,
-        e = new tracking.TrackerTask(r);
+      const n = this;
+        const e = new tracking.TrackerTask(r);
       return (
         e.on('run', function () {
           n.trackCanvasInternal_(t, r);
@@ -73,18 +73,18 @@
       );
     }),
     (tracking.trackCanvasInternal_ = function (t, r) {
-      var n = t.width,
-        e = t.height,
-        a = t.getContext('2d'),
-        i = a.getImageData(0, 0, n, e);
+      const n = t.width;
+        const e = t.height;
+        const a = t.getContext('2d');
+        const i = a.getImageData(0, 0, n, e);
       r.track(i.data, n, e);
     }),
     (tracking.trackImg_ = function (t, r) {
-      var n = t.width,
-        e = t.height,
-        a = document.createElement('canvas');
+      const n = t.width;
+        const e = t.height;
+        const a = document.createElement('canvas');
       (a.width = n), (a.height = e);
-      var i = new tracking.TrackerTask(r);
+      const i = new tracking.TrackerTask(r);
       return (
         i.on('run', function () {
           tracking.Canvas.loadImage(
@@ -103,19 +103,19 @@
       );
     }),
     (tracking.trackVideo_ = function (r, n) {
-      var e,
-        a,
-        i = document.createElement('canvas'),
-        o = i.getContext('2d'),
-        c = function () {
+      let e;
+        let a;
+        const i = document.createElement('canvas');
+        const o = i.getContext('2d');
+        const c = function () {
           (e = r.offsetWidth),
             (a = r.offsetHeight),
             (i.width = e),
             (i.height = a);
         };
       c(), r.addEventListener('resize', c);
-      var s,
-        g = function () {
+      let s;
+        var g = function () {
           s = t.requestAnimationFrame(function () {
             if (r.readyState === r.HAVE_ENOUGH_DATA) {
               try {
@@ -125,8 +125,8 @@
             }
             g();
           });
-        },
-        h = new tracking.TrackerTask(n);
+        };
+        const h = new tracking.TrackerTask(n);
       return (
         h.on('stop', function () {
           t.cancelAnimationFrame(s);
@@ -149,7 +149,7 @@
     (tracking.EventEmitter = function () {}),
       (tracking.EventEmitter.prototype.events_ = null),
       (tracking.EventEmitter.prototype.addListener = function (t, r) {
-        if ('function' != typeof r)
+        if (typeof r !== 'function')
           throw new TypeError('Listener must be a function');
         return (
           this.events_ || (this.events_ = {}),
@@ -163,10 +163,10 @@
         return this.events_ && this.events_[t];
       }),
       (tracking.EventEmitter.prototype.emit = function (t) {
-        var r = this.listeners(t);
+        const r = this.listeners(t);
         if (r) {
           for (
-            var n = Array.prototype.slice.call(arguments, 1), e = 0;
+            let n = Array.prototype.slice.call(arguments, 1), e = 0;
             e < r.length;
             e++
           )
@@ -178,7 +178,7 @@
       (tracking.EventEmitter.prototype.on =
         tracking.EventEmitter.prototype.addListener),
       (tracking.EventEmitter.prototype.once = function (t, r) {
-        var n = this;
+        const n = this;
         n.on(t, function e() {
           n.removeListener(t, e), r.apply(this, arguments);
         });
@@ -194,12 +194,12 @@
         t,
         r,
       ) {
-        if ('function' != typeof r)
+        if (typeof r !== 'function')
           throw new TypeError('Listener must be a function');
         if (!this.events_) return this;
-        var n = this.listeners(t);
+        const n = this.listeners(t);
         if (Array.isArray(n)) {
-          var e = n.indexOf(r);
+          const e = n.indexOf(r);
           if (e < 0) return this;
           n.splice(e, 1);
         }
@@ -212,11 +212,11 @@
   (function () {
     (tracking.Canvas = {}),
       (tracking.Canvas.loadImage = function (t, r, n, e, a, i, o) {
-        var c = this,
-          s = new window.Image();
+        const c = this;
+          let s = new window.Image();
         (s.crossOrigin = '*'),
           (s.onload = function () {
-            var r = t.getContext('2d');
+            const r = t.getContext('2d');
             (t.width = a),
               (t.height = i),
               r.drawImage(s, n, e, a, i),
@@ -231,7 +231,7 @@
       if (void 0 === t)
         throw new Error('DisjointSet length not specified.');
       (this.length = t), (this.parent = new Uint32Array(t));
-      for (var r = 0; r < t; r++) this.parent[r] = r;
+      for (let r = 0; r < t; r++) this.parent[r] = r;
     }),
       (tracking.DisjointSet.prototype.length = null),
       (tracking.DisjointSet.prototype.parent = null),
@@ -241,8 +241,8 @@
           : (this.parent[t] = this.find(this.parent[t]));
       }),
       (tracking.DisjointSet.prototype.union = function (t, r) {
-        var n = this.find(t),
-          e = this.find(r);
+        const n = this.find(t);
+          const e = this.find(r);
         this.parent[n] = e;
       });
   })(),
@@ -265,11 +265,11 @@
           u < i;
           u++
         ) {
-          var l = u - f,
-            m = g * Math.exp(l * l * h);
+          const l = u - f;
+            const m = g * Math.exp(l * l * h);
           (o[u] = m), (k += m);
         }
-        for (var d = 0; d < o.length; d++) o[d] /= k;
+        for (let d = 0; d < o.length; d++) o[d] /= k;
         return this.separableConvolve(t, r, n, o, o, !1);
       }),
       (tracking.Image.computeIntegralImage = function (
@@ -285,12 +285,12 @@
           throw new Error(
             'You should specify at least one output array in the order: sum, square, tilted, sobel.',
           );
-        var c;
+        let c;
         o && (c = tracking.Image.sobel(t, r, n));
-        for (var s = 0; s < n; s++)
-          for (var g = 0; g < r; g++) {
-            var h = s * r * 4 + 4 * g,
-              k = ~~(
+        for (let s = 0; s < n; s++)
+          for (let g = 0; g < r; g++) {
+            const h = s * r * 4 + 4 * g;
+              const k = ~~(
                 0.299 * t[h] +
                 0.587 * t[h + 1] +
                 0.114 * t[h + 2]
@@ -300,8 +300,8 @@
               a && this.computePixelValueSAT_(a, r, s, g, k * k),
               i)
             ) {
-              var f = h - 4 * r,
-                u = ~~(
+              const f = h - 4 * r;
+                const u = ~~(
                   0.299 * t[f] +
                   0.587 * t[f + 1] +
                   0.114 * t[f + 2]
@@ -319,7 +319,7 @@
         a,
         i,
       ) {
-        var o = n * r + e;
+        const o = n * r + e;
         t[o] =
           (t[o - r - 1] || 0) +
           (t[o - r + 1] || 0) -
@@ -334,7 +334,7 @@
         e,
         a,
       ) {
-        var i = n * r + e;
+        const i = n * r + e;
         t[i] =
           (t[i - r] || 0) + (t[i - 1] || 0) + a - (t[i - r - 1] || 0);
       }),
@@ -347,8 +347,8 @@
           c < n;
           c++
         )
-          for (var s = 0; s < r; s++) {
-            var g =
+          for (let s = 0; s < r; s++) {
+            const g =
               0.299 * t[o] + 0.587 * t[o + 1] + 0.114 * t[o + 2];
             (a[i++] = g),
               e && ((a[i++] = g), (a[i++] = g), (a[i++] = t[o + 3])),
@@ -366,7 +366,7 @@
           g < n;
           g++
         )
-          for (var h = 0; h < r; h++) {
+          for (let h = 0; h < r; h++) {
             for (
               var k = g,
                 f = h,
@@ -379,10 +379,10 @@
               p < i;
               p++
             ) {
-              var y = k,
-                w = Math.min(r - 1, Math.max(0, f + p - o)),
-                T = 4 * (y * r + w),
-                x = e[p];
+              const y = k;
+                const w = Math.min(r - 1, Math.max(0, f + p - o));
+                const T = 4 * (y * r + w);
+                const x = e[p];
               (l += t[T] * x),
                 (m += t[T + 1] * x),
                 (d += t[T + 2] * x),
@@ -405,7 +405,7 @@
           g < n;
           g++
         )
-          for (var h = 0; h < r; h++) {
+          for (let h = 0; h < r; h++) {
             for (
               var k = g,
                 f = h,
@@ -418,10 +418,10 @@
               p < i;
               p++
             ) {
-              var y = Math.min(n - 1, Math.max(0, k + p - o)),
-                w = f,
-                T = 4 * (y * r + w),
-                x = e[p];
+              const y = Math.min(n - 1, Math.max(0, k + p - o));
+                const w = f;
+                const T = 4 * (y * r + w);
+                const x = e[p];
               (l += t[T] * x),
                 (m += t[T + 1] * x),
                 (d += t[T + 2] * x),
@@ -442,7 +442,7 @@
         a,
         i,
       ) {
-        var o = this.verticalConvolve(t, r, n, a, i);
+        const o = this.verticalConvolve(t, r, n, a, i);
         return this.horizontalConvolve(o, r, n, e, i);
       }),
       (tracking.Image.sobel = function (t, r, n) {
@@ -457,9 +457,9 @@
           s < e.length;
           s += 4
         ) {
-          var g = o[s],
-            h = c[s],
-            k = Math.sqrt(h * h + g * g);
+          const g = o[s];
+            const h = c[s];
+            const k = Math.sqrt(h * h + g * g);
           (e[s] = k),
             (e[s + 1] = k),
             (e[s + 2] = k),
@@ -498,16 +498,16 @@
         o,
         c,
       ) {
-        var s,
-          g = 0,
-          h = [],
-          k = new Int32Array(r * n),
-          f = new Int32Array(r * n),
-          u = new Int32Array(r * n);
+        let s;
+          let g = 0;
+          const h = [];
+          const k = new Int32Array(r * n);
+          const f = new Int32Array(r * n);
+          const u = new Int32Array(r * n);
         o > 0 && (s = new Int32Array(r * n)),
           tracking.Image.computeIntegralImage(t, r, n, k, f, u, s);
         for (
-          var l = c[0],
+          let l = c[0],
             m = c[1],
             d = e * a,
             v = (d * l) | 0,
@@ -515,12 +515,12 @@
           v < r && p < n;
 
         ) {
-          for (var y = (d * i + 0.5) | 0, w = 0; w < n - p; w += y)
-            for (var T = 0; T < r - v; T += y)
+          for (let y = (d * i + 0.5) | 0, w = 0; w < n - p; w += y)
+            for (let T = 0; T < r - v; T += y)
               (o > 0 &&
                 this.isTriviallyExcluded(o, s, w, T, r, v, p)) ||
                 (this.evalStages_(c, k, f, u, w, T, r, v, p, d) &&
-                  (h[g++] = { width: v, height: p, x: T, y: w }));
+                  (h[g++] = { height: p, width: v, x: T, y: w }));
           (d *= a), (v = (d * l) | 0), (p = (d * m) | 0);
         }
         return this.mergeRectangles_(h);
@@ -534,11 +534,11 @@
         i,
         o,
       ) {
-        var c = n * a + e,
-          s = c + i,
-          g = c + o * a,
-          h = g + i,
-          k = (r[c] - r[s] - r[g] + r[h]) / (i * o * 255);
+        const c = n * a + e;
+          const s = c + i;
+          const g = c + o * a;
+          const h = g + i;
+          const k = (r[c] - r[s] - r[g] + r[h]) / (i * o * 255);
         return k < t;
       }),
       (tracking.ViolaJones.evalStages_ = function (
@@ -553,31 +553,31 @@
         s,
         g,
       ) {
-        var h = 1 / (c * s),
-          k = a * o + i,
-          f = k + c,
-          u = k + s * o,
-          l = u + c,
-          m = (r[k] - r[f] - r[u] + r[l]) * h,
-          d = (n[k] - n[f] - n[u] + n[l]) * h - m * m,
-          v = 1;
+        const h = 1 / (c * s);
+          const k = a * o + i;
+          const f = k + c;
+          const u = k + s * o;
+          const l = u + c;
+          const m = (r[k] - r[f] - r[u] + r[l]) * h;
+          const d = (n[k] - n[f] - n[u] + n[l]) * h - m * m;
+          let v = 1;
         d > 0 && (v = Math.sqrt(d));
-        for (var p = t.length, y = 2; y < p; ) {
+        for (let p = t.length, y = 2; y < p; ) {
           for (var w = 0, T = t[y++], x = t[y++]; x--; ) {
             for (
               var M = 0, _ = t[y++], C = t[y++], E = 0;
               E < C;
               E++
             ) {
-              var F,
-                B,
-                L,
-                S,
-                A = (i + t[y++] * g + 0.5) | 0,
-                I = (a + t[y++] * g + 0.5) | 0,
-                R = (t[y++] * g + 0.5) | 0,
-                b = (t[y++] * g + 0.5) | 0,
-                D = t[y++];
+              var F;
+                var B;
+                var L;
+                var S;
+                const A = (i + t[y++] * g + 0.5) | 0;
+                const I = (a + t[y++] * g + 0.5) | 0;
+                const R = (t[y++] * g + 0.5) | 0;
+                const b = (t[y++] * g + 0.5) | 0;
+                const D = t[y++];
               _
                 ? ((F = A - b + R + (I + R + b - 1) * o),
                   (B = A + (I - 1) * o),
@@ -590,9 +590,9 @@
                   (S = L + R),
                   (M += (r[F] - r[B] - r[L] + r[S]) * D));
             }
-            var O = t[y++],
-              N = t[y++],
-              j = t[y++];
+            const O = t[y++];
+              const N = t[y++];
+              const j = t[y++];
             w += M * h < O * v ? N : j;
           }
           if (w < T) return !1;
@@ -605,8 +605,8 @@
           n < t.length;
           n++
         )
-          for (var e = t[n], a = 0; a < t.length; a++) {
-            var i = t[a];
+          for (let e = t[n], a = 0; a < t.length; a++) {
+            const i = t[a];
             if (
               tracking.Math.intersectRect(
                 e.x,
@@ -619,20 +619,20 @@
                 i.y + i.height,
               )
             ) {
-              var o = Math.max(e.x, i.x),
-                c = Math.max(e.y, i.y),
-                s = Math.min(e.x + e.width, i.x + i.width),
-                g = Math.min(e.y + e.height, i.y + i.height),
-                h = (o - s) * (c - g),
-                k = e.width * e.height,
-                f = i.width * i.height;
+              const o = Math.max(e.x, i.x);
+                const c = Math.max(e.y, i.y);
+                const s = Math.min(e.x + e.width, i.x + i.width);
+                const g = Math.min(e.y + e.height, i.y + i.height);
+                const h = (o - s) * (c - g);
+                const k = e.width * e.height;
+                const f = i.width * i.height;
               h / (k * (k / f)) >= this.REGIONS_OVERLAP &&
                 h / (f * (k / f)) >= this.REGIONS_OVERLAP &&
                 r.union(n, a);
             }
           }
         for (var u = {}, l = 0; l < r.length; l++) {
-          var m = r.find(l);
+          const m = r.find(l);
           u[m]
             ? (u[m].total++,
               (u[m].width += t[l].width),
@@ -640,21 +640,21 @@
               (u[m].x += t[l].x),
               (u[m].y += t[l].y))
             : (u[m] = {
+                height: t[l].height,
                 total: 1,
                 width: t[l].width,
-                height: t[l].height,
                 x: t[l].x,
                 y: t[l].y,
               });
         }
-        var d = [];
+        const d = [];
         return (
           Object.keys(u).forEach(function (t) {
-            var r = u[t];
+            const r = u[t];
             d.push({
+              height: (r.height / r.total + 0.5) | 0,
               total: r.total,
               width: (r.width / r.total + 0.5) | 0,
-              height: (r.height / r.total + 0.5) | 0,
               x: (r.x / r.total + 0.5) | 0,
               y: (r.y / r.total + 0.5) | 0,
             });
@@ -679,7 +679,7 @@
           c += 2
         )
           for (
-            var s = r * n[c + 1] + n[c], g = 0, h = 0, k = this.N;
+            let s = r * n[c + 1] + n[c], g = 0, h = 0, k = this.N;
             h < k;
             h++
           )
@@ -704,20 +704,20 @@
             k < s && ((s = k), (g = h));
           }
           o[c] = {
+            confidence: 1 - s / this.N,
             index1: c,
             index2: g,
             keypoint1: [t[2 * c], t[2 * c + 1]],
             keypoint2: [n[2 * g], n[2 * g + 1]],
-            confidence: 1 - s / this.N,
           };
         }
         return o;
       }),
       (tracking.Brief.reciprocalMatch = function (t, r, n, e) {
-        var a = [];
-        if (0 === t.length || 0 === n.length) return a;
+        const a = [];
+        if (t.length === 0 || n.length === 0) return a;
         for (
-          var i = tracking.Brief.match(t, r, n, e),
+          let i = tracking.Brief.match(t, r, n, e),
             o = tracking.Brief.match(n, e, t, r),
             c = 0;
           c < i.length;
@@ -769,12 +769,12 @@
       (tracking.Fast.THRESHOLD = 40),
       (tracking.Fast.circles_ = {}),
       (tracking.Fast.findCorners = function (t, r, n, e) {
-        var a = this.getCircleOffsets_(r),
-          i = new Int32Array(16),
-          o = [];
+        const a = this.getCircleOffsets_(r);
+          const i = new Int32Array(16);
+          const o = [];
         void 0 === e && (e = this.THRESHOLD);
-        for (var c = 3; c < n - 3; c++)
-          for (var s = 3; s < r - 3; s++) {
+        for (let c = 3; c < n - 3; c++)
+          for (let s = 3; s < r - 3; s++) {
             for (var g = c * r + s, h = t[g], k = 0; k < 16; k++)
               i[k] = t[g + a[k]];
             this.isCorner(h, i, e) && (o.push(s, c), (s += 3));
@@ -786,9 +786,9 @@
       }),
       (tracking.Fast.isCorner = function (t, r, n) {
         if (this.isTriviallyExcluded(r, t, n)) return !1;
-        for (var e = 0; e < 16; e++) {
+        for (let e = 0; e < 16; e++) {
           for (var a = !0, i = !0, o = 0; o < 9; o++) {
-            var c = r[(e + o) & 15];
+            const c = r[(e + o) & 15];
             if (!this.isBrighter(t, c, n) && ((i = !1), a === !1))
               break;
             if (!this.isDarker(t, c, n) && ((a = !1), i === !1))
@@ -802,11 +802,11 @@
         return r - t > n;
       }),
       (tracking.Fast.isTriviallyExcluded = function (t, r, n) {
-        var e = 0,
-          a = t[8],
-          i = t[12],
-          o = t[4],
-          c = t[0];
+        let e = 0;
+          const a = t[8];
+          const i = t[12];
+          const o = t[4];
+          const c = t[0];
         return (
           this.isBrighter(c, r, n) && e++,
           this.isBrighter(o, r, n) && e++,
@@ -823,7 +823,7 @@
       }),
       (tracking.Fast.getCircleOffsets_ = function (t) {
         if (this.circles_[t]) return this.circles_[t];
-        var r = new Int32Array(16);
+        const r = new Int32Array(16);
         return (
           (r[0] = -t - t - t),
           (r[1] = r[0] + 1),
@@ -849,8 +849,8 @@
   (function () {
     (tracking.Math = {}),
       (tracking.Math.distance = function (t, r, n, e) {
-        var a = n - t,
-          i = e - r;
+        const a = n - t;
+          const i = e - r;
         return Math.sqrt(a * a + i * i);
       }),
       (tracking.Math.hammingWeight = function (t) {
@@ -880,9 +880,9 @@
     (tracking.Matrix = {}),
       (tracking.Matrix.forEach = function (t, r, n, e, a) {
         a = a || 1;
-        for (var i = 0; i < n; i += a)
-          for (var o = 0; o < r; o += a) {
-            var c = i * r * 4 + 4 * o;
+        for (let i = 0; i < n; i += a)
+          for (let o = 0; o < r; o += a) {
+            const c = i * r * 4 + 4 * o;
             e.call(this, t[c], t[c + 1], t[c + 2], t[c + 3], c, i, o);
           }
       }),
@@ -892,7 +892,7 @@
           e < n.length;
           e++
         )
-          for (var a = 0; a < n[e].length; a++) n[e][a] -= r[e][a];
+          for (let a = 0; a < n[e].length; a++) n[e][a] -= r[e][a];
         return n;
       }),
       (tracking.Matrix.add = function (t, r) {
@@ -901,14 +901,14 @@
           e < n.length;
           e++
         )
-          for (var a = 0; a < n[e].length; a++) n[e][a] += r[e][a];
+          for (let a = 0; a < n[e].length; a++) n[e][a] += r[e][a];
         return n;
       }),
       (tracking.Matrix.clone = function (t, r, n) {
         (r = r || t[0].length), (n = n || t.length);
         for (var e = new Array(n), a = n; a--; ) {
           e[a] = new Array(r);
-          for (var i = r; i--; ) e[a][i] = t[a][i];
+          for (let i = r; i--; ) e[a][i] = t[a][i];
         }
         return e;
       }),
@@ -918,7 +918,7 @@
           e < r.length;
           e++
         )
-          for (var a = 0; a < r[e].length; a++) n[e][a] *= t;
+          for (let a = 0; a < r[e].length; a++) n[e][a] *= t;
         return n;
       }),
       (tracking.Matrix.transpose = function (t) {
@@ -928,16 +928,16 @@
           n++
         ) {
           r[n] = new Array(t.length);
-          for (var e = 0; e < t.length; e++) r[n][e] = t[e][n];
+          for (let e = 0; e < t.length; e++) r[n][e] = t[e][n];
         }
         return r;
       }),
       (tracking.Matrix.mul = function (t, r) {
         for (var n = new Array(t.length), e = 0; e < t.length; e++) {
           n[e] = new Array(r[0].length);
-          for (var a = 0; a < r[0].length; a++) {
+          for (let a = 0; a < r[0].length; a++) {
             n[e][a] = 0;
-            for (var i = 0; i < t[0].length; i++)
+            for (let i = 0; i < t[0].length; i++)
               n[e][a] += t[e][i] * r[i][a];
           }
         }
@@ -945,7 +945,7 @@
       }),
       (tracking.Matrix.norm = function (t) {
         for (var r = 0, n = 0; n < t.length; n++)
-          for (var e = 0; e < t[n].length; e++)
+          for (let e = 0; e < t[n].length; e++)
             r += t[n][e] * t[n][e];
         return Math.sqrt(r);
       }),
@@ -962,9 +962,9 @@
         )
           for (var e = 0; e < t[0].length - 1; e++)
             a[n].push(a[n][0]);
-        var i = tracking.Matrix.sub(t, a),
-          o = tracking.Matrix.transpose(i),
-          c = tracking.Matrix.mul(o, i);
+        const i = tracking.Matrix.sub(t, a);
+          const o = tracking.Matrix.transpose(i);
+          const c = tracking.Matrix.mul(o, i);
         return [c, r];
       });
   })(),
@@ -1001,7 +1001,7 @@
         this.tracker_ = t;
       }),
       (tracking.TrackerTask.prototype.run = function () {
-        var t = this;
+        const t = this;
         if (!this.inRunning())
           return (
             this.setRunning(!0),
@@ -1029,7 +1029,7 @@
   (function () {
     (tracking.ColorTracker = function (t) {
       tracking.ColorTracker.base(this, 'constructor'),
-        'string' == typeof t && (t = [t]),
+        typeof t === 'string' && (t = [t]),
         t &&
           (t.forEach(function (t) {
             if (!tracking.ColorTracker.getColor(t))
@@ -1061,14 +1061,14 @@
           o < r;
           o += 2
         ) {
-          var c = t[o],
-            s = t[o + 1];
+          const c = t[o];
+            const s = t[o + 1];
           c < a && (a = c),
             c > n && (n = c),
             s < i && (i = s),
             s > e && (e = s);
         }
-        return { width: n - a, height: e - i, x: a, y: i };
+        return { height: e - i, width: n - a, x: a, y: i };
       }),
       (tracking.ColorTracker.prototype.getColors = function () {
         return this.colors;
@@ -1087,7 +1087,7 @@
       ) {
         if (tracking.ColorTracker.neighbours_[t])
           return tracking.ColorTracker.neighbours_[t];
-        var r = new Int32Array(8);
+        const r = new Int32Array(8);
         return (
           (r[0] = 4 * -t),
           (r[1] = 4 * -t + 4),
@@ -1113,10 +1113,10 @@
           i < t.length;
           i++
         ) {
-          var o = t[i];
+          const o = t[i];
           r = !0;
-          for (var c = i + 1; c < t.length; c++) {
-            var s = t[c];
+          for (let c = i + 1; c < t.length; c++) {
+            const s = t[c];
             if (
               tracking.Math.intersectRect(
                 o.x,
@@ -1130,10 +1130,10 @@
               )
             ) {
               r = !1;
-              var g = Math.min(o.x, s.x),
-                h = Math.min(o.y, s.y),
-                k = Math.max(o.x + o.width, s.x + s.width),
-                f = Math.max(o.y + o.height, s.y + s.height);
+              const g = Math.min(o.x, s.x);
+                const h = Math.min(o.y, s.y);
+                const k = Math.max(o.x + o.width, s.x + s.width);
+                const f = Math.max(o.y + o.height, s.y + s.height);
               (s.height = f - h),
                 (s.width = k - g),
                 (s.x = g),
@@ -1169,13 +1169,13 @@
         this.minGroupSize = t;
       }),
       (tracking.ColorTracker.prototype.track = function (t, r, n) {
-        var e = this,
-          a = this.getColors();
+        const e = this;
+          const a = this.getColors();
         if (!a)
           throw new Error(
             'Colors not specified, try `new tracking.ColorTracker("magenta")`.',
           );
-        var i = [];
+        let i = [];
         a.forEach(function (a) {
           i = i.concat(e.trackColor_(t, r, n, a));
         }),
@@ -1187,22 +1187,22 @@
         a,
         i,
       ) {
-        var o,
-          c,
-          s,
-          g,
-          h,
-          k = tracking.ColorTracker.knownColors_[i],
-          f = new Int32Array(n.length >> 2),
-          u = new Int8Array(n.length),
-          l = this.getMinGroupSize(),
-          m = this.getNeighboursForWidth_(e),
-          d = new Int32Array(n.length),
-          v = [],
-          p = -4;
+        let o;
+          let c;
+          let s;
+          let g;
+          let h;
+          const k = tracking.ColorTracker.knownColors_[i];
+          const f = new Int32Array(n.length >> 2);
+          const u = new Int8Array(n.length);
+          const l = this.getMinGroupSize();
+          const m = this.getNeighboursForWidth_(e);
+          const d = new Int32Array(n.length);
+          const v = [];
+          let p = -4;
         if (!k) return v;
-        for (var y = 0; y < a; y++)
-          for (var w = 0; w < e; w++)
+        for (let y = 0; y < a; y++)
+          for (let w = 0; w < e; w++)
             if (((p += 4), !u[p])) {
               for (
                 o = 0,
@@ -1221,10 +1221,10 @@
                   k(n[g], n[g + 1], n[g + 2], n[g + 3], g, c, s))
                 ) {
                   (f[o++] = s), (f[o++] = c);
-                  for (var T = 0; T < m.length; T++) {
-                    var x = g + m[T],
-                      M = c + t[T],
-                      _ = s + r[T];
+                  for (let T = 0; T < m.length; T++) {
+                    const x = g + m[T];
+                      const M = c + t[T];
+                      const _ = s + r[T];
                     !u[x] &&
                       M >= 0 &&
                       M < a &&
@@ -1237,18 +1237,18 @@
                   }
                 }
               if (o >= l) {
-                var C = this.calculateDimensions_(f, o);
+                const C = this.calculateDimensions_(f, o);
                 C && ((C.color = i), v.push(C));
               }
             }
         return this.mergeRectangles_(v);
       }),
       tracking.ColorTracker.registerColor('cyan', function (t, r, n) {
-        var e = 50,
-          a = 70,
-          i = t - 0,
-          o = r - 255,
-          c = n - 255;
+        const e = 50;
+          const a = 70;
+          const i = t - 0;
+          const o = r - 255;
+          const c = n - 255;
         return (
           (r - t >= e && n - t >= a) || i * i + o * o + c * c < 6400
         );
@@ -1258,10 +1258,10 @@
         r,
         n,
       ) {
-        var e = 50,
-          a = t - 255,
-          i = r - 0,
-          o = n - 255;
+        const e = 50;
+          const a = t - 255;
+          const i = r - 0;
+          const o = n - 255;
         return (
           (t - r >= e && n - r >= e) || a * a + i * i + o * o < 19600
         );
@@ -1271,16 +1271,16 @@
         r,
         n,
       ) {
-        var e = 50,
-          a = t - 255,
-          i = r - 255,
-          o = n - 0;
+        const e = 50;
+          const a = t - 255;
+          const i = r - 255;
+          const o = n - 0;
         return (
           (t - n >= e && r - n >= e) || a * a + i * i + o * o < 1e4
         );
       });
-    var t = new Int32Array([-1, -1, 0, 1, 1, 1, 0, -1]),
-      r = new Int32Array([0, 1, 1, 1, 0, -1, -1, -1]);
+    var t = new Int32Array([-1, -1, 0, 1, 1, 1, 0, -1]);
+      var r = new Int32Array([0, 1, 1, 1, 0, -1, -1, -1]);
   })(),
   (function () {
     (tracking.ObjectTracker = function (t) {
@@ -1290,7 +1290,7 @@
           Array.isArray(t) &&
             t.forEach(function (r, n) {
               if (
-                ('string' == typeof r &&
+                (typeof r === 'string' &&
                   (t[n] = tracking.ViolaJones.classifiers[r]),
                 !t[n])
               )
@@ -1321,13 +1321,13 @@
         return this.stepSize;
       }),
       (tracking.ObjectTracker.prototype.track = function (t, r, n) {
-        var e = this,
-          a = this.getClassifiers();
+        const e = this;
+          const a = this.getClassifiers();
         if (!a)
           throw new Error(
             'Object classifier not specified, try `new tracking.ObjectTracker("face")`.',
           );
-        var i = [];
+        let i = [];
         a.forEach(function (a) {
           i = i.concat(
             tracking.ViolaJones.detect(
@@ -1381,8 +1381,8 @@
         r,
         n,
       ) {
-        var e = tracking.ViolaJones.classifiers.face,
-          a = tracking.ViolaJones.detect(
+        const e = tracking.ViolaJones.classifiers.face;
+          const a = tracking.ViolaJones.detect(
             t,
             r,
             n,
@@ -1391,8 +1391,8 @@
             this.getStepSize(),
             this.getEdgesDensity(),
             e,
-          ),
-          i = tracking.LBF.align(t, r, n, a);
+          );
+          const i = tracking.LBF.align(t, r, n, a);
         this.emit('track', { data: { faces: a, landmarks: i } });
       });
   })(),
@@ -1402,7 +1402,7 @@
         (this.maxNumStages = t),
           (this.rfs = new Array(t)),
           (this.models = new Array(t));
-        for (var r = 0; r < t; r++)
+        for (let r = 0; r < t; r++)
           (this.rfs[r] = new tracking.LBF.RandomForest(r)),
             (this.models[r] = tracking.LBF.RegressorData[r].models);
         this.meanShape = tracking.LBF.LandmarksData;
@@ -1413,15 +1413,15 @@
         n,
         e,
       ) {
-        var a = [],
-          i = [],
-          o = [],
-          c = tracking.Matrix.clone(this.meanShape);
-        a.push({ data: t, width: r, height: n }),
+        const a = [];
+          const i = [];
+          const o = [];
+          const c = tracking.Matrix.clone(this.meanShape);
+        a.push({ data: t, height: n, width: r }),
           o.push(e),
           i.push(tracking.LBF.projectShapeToBoundingBox_(c, e));
-        for (var s = 0; s < this.maxNumStages; s++) {
-          var g = tracking.LBF.Regressor.deriveBinaryFeat(
+        for (let s = 0; s < this.maxNumStages; s++) {
+          const g = tracking.LBF.Regressor.deriveBinaryFeat(
             this.rfs[s],
             a,
             i,
@@ -1445,7 +1445,7 @@
         )
           i[o] = [0, 0];
         for (var o = 0; o < n.length; o++) {
-          for (var c = 0; c < a; c++) {
+          for (let c = 0; c < a; c++) {
             for (
               var s = 0, g = 0, h = 0;
               (h = t[o][g].index) != -1;
@@ -1455,11 +1455,11 @@
                 (s += r[c].data[h - 1] * t[o][g].value);
             c < a / 2 ? (i[c][0] = s) : (i[c - a / 2][1] = s);
           }
-          var k = tracking.LBF.similarityTransform_(
+          const k = tracking.LBF.similarityTransform_(
               tracking.LBF.unprojectShapeToBoundingBox_(n[o], e[o]),
               this.meanShape,
-            ),
-            f =
+            );
+            let f =
               (tracking.Matrix.transpose(k[0]),
               tracking.LBF.unprojectShapeToBoundingBox_(n[o], e[o]));
           (f = tracking.Matrix.add(f, i)),
@@ -1474,7 +1474,7 @@
         a,
       ) {
         for (var i = new Array(r.length), o = 0; o < r.length; o++) {
-          var c = t.maxNumTrees * t.landmarkNum + 1;
+          const c = t.maxNumTrees * t.landmarkNum + 1;
           i[o] = new Array(c);
           for (var s = 0; s < c; s++) i[o][s] = {};
         }
@@ -1493,16 +1493,16 @@
             s < t.landmarkNum;
             s++
           )
-            for (var f = 0; f < t.maxNumTrees; f++) {
-              var u = tracking.LBF.Regressor.getCodeFromTree(
+            for (let f = 0; f < t.maxNumTrees; f++) {
+              const u = tracking.LBF.Regressor.getCodeFromTree(
                   t.rfs[s][f],
                   r[o],
                   n[o],
                   e[o],
                   k[0],
                   k[1],
-                ),
-                l = s * t.maxNumTrees + f;
+                );
+                const l = s * t.maxNumTrees + f;
               (i[o][l].index = g * l + u), (i[o][l].value = 1);
             }
           (i[o][t.landmarkNum * t.maxNumTrees].index = -1),
@@ -1519,39 +1519,39 @@
         i,
       ) {
         for (var o = 0, c = 0; ; ) {
-          var s =
+          const s =
               Math.cos(t.nodes[o].feats[0]) *
               t.nodes[o].feats[2] *
               t.maxRadioRadius *
-              e.width,
-            g =
+              e.width;
+            const g =
               Math.sin(t.nodes[o].feats[0]) *
               t.nodes[o].feats[2] *
               t.maxRadioRadius *
-              e.height,
-            h =
+              e.height;
+            const h =
               Math.cos(t.nodes[o].feats[1]) *
               t.nodes[o].feats[3] *
               t.maxRadioRadius *
-              e.width,
-            k =
+              e.width;
+            const k =
               Math.sin(t.nodes[o].feats[1]) *
               t.nodes[o].feats[3] *
               t.maxRadioRadius *
-              e.height,
-            f = a[0][0] * s + a[0][1] * g,
-            u = a[1][0] * s + a[1][1] * g,
-            l = Math.floor(f + n[t.landmarkID][0]),
-            m = Math.floor(u + n[t.landmarkID][1]);
+              e.height;
+            const f = a[0][0] * s + a[0][1] * g;
+            const u = a[1][0] * s + a[1][1] * g;
+            let l = Math.floor(f + n[t.landmarkID][0]);
+            let m = Math.floor(u + n[t.landmarkID][1]);
           (l = Math.max(0, Math.min(l, r.height - 1))),
             (m = Math.max(0, Math.min(m, r.width - 1)));
-          var d = a[0][0] * h + a[0][1] * k,
-            v = a[1][0] * h + a[1][1] * k,
-            p = Math.floor(d + n[t.landmarkID][0]),
-            y = Math.floor(v + n[t.landmarkID][1]);
+          const d = a[0][0] * h + a[0][1] * k;
+            const v = a[1][0] * h + a[1][1] * k;
+            let p = Math.floor(d + n[t.landmarkID][0]);
+            let y = Math.floor(v + n[t.landmarkID][1]);
           (p = Math.max(0, Math.min(p, r.height - 1))),
             (y = Math.max(0, Math.min(y, r.width - 1)));
-          var w =
+          const w =
             Math.floor(r.data[m * r.width + l]) -
             Math.floor(r.data[y * r.width + p]);
           if (
@@ -1559,10 +1559,10 @@
               w < t.nodes[o].thresh
                 ? t.nodes[o].cnodes[0]
                 : t.nodes[o].cnodes[1]),
-            1 == t.nodes[o].is_leafnode)
+            t.nodes[o].is_leafnode == 1)
           ) {
             c = 1;
-            for (var T = 0; T < t.leafnodes.length; T++) {
+            for (let T = 0; T < t.leafnodes.length; T++) {
               if (t.leafnodes[T] == o) return c;
               c++;
             }
@@ -1576,16 +1576,16 @@
     (tracking.LBF.maxNumStages = 4),
       (tracking.LBF.regressor_ = null),
       (tracking.LBF.align = function (t, r, n, e) {
-        null == tracking.LBF.regressor_ &&
+        tracking.LBF.regressor_ == null &&
           (tracking.LBF.regressor_ = new tracking.LBF.Regressor(
             tracking.LBF.maxNumStages,
           )),
           (t = tracking.Image.grayscale(t, r, n, !1)),
           (t = tracking.Image.equalizeHist(t, r, n));
-        var a = new Array(e.length);
-        for (var i in e) {
+        const a = new Array(e.length);
+        for (const i in e) {
           e[i].height = e[i].width;
-          var o = {};
+          const o = {};
           (o.startX = e[i].x),
             (o.startY = e[i].y),
             (o.width = e[i].width),
@@ -1631,28 +1631,28 @@
             (i[a][1] -= n[1]),
             (o[a][0] -= e[0]),
             (o[a][1] -= e[1]);
-        var c,
-          s,
-          g,
-          h,
-          k = tracking.Matrix.calcCovarMatrix(i);
+        let c;
+          let s;
+          let g;
+          let h;
+          let k = tracking.Matrix.calcCovarMatrix(i);
         (c = k[0]),
           (g = k[1]),
           (k = tracking.Matrix.calcCovarMatrix(o)),
           (s = k[0]),
           (h = k[1]);
-        var f = Math.sqrt(tracking.Matrix.norm(c)),
-          u = Math.sqrt(tracking.Matrix.norm(s)),
-          l = f / u;
+        const f = Math.sqrt(tracking.Matrix.norm(c));
+          const u = Math.sqrt(tracking.Matrix.norm(s));
+          const l = f / u;
         (i = tracking.Matrix.mulScalar(1 / f, i)),
           (o = tracking.Matrix.mulScalar(1 / u, o));
         for (var m = 0, d = 0, a = 0; a < t.length; a++)
           (m = m + i[a][1] * o[a][0] - i[a][0] * o[a][1]),
             (d = d + i[a][0] * o[a][0] + i[a][1] * o[a][1]);
-        var v = Math.sqrt(m * m + d * d),
-          p = m / v,
-          y = d / v,
-          w = [
+        const v = Math.sqrt(m * m + d * d);
+          const p = m / v;
+          const y = d / v;
+          const w = [
             [y, -p],
             [p, y],
           ];
@@ -1666,14 +1666,14 @@
           (this.maxDepth = tracking.LBF.RegressorData[t].max_depth),
           (this.stages = tracking.LBF.RegressorData[t].stages),
           (this.rfs = new Array(this.landmarkNum));
-        for (var r = 0; r < this.landmarkNum; r++) {
+        for (let r = 0; r < this.landmarkNum; r++) {
           this.rfs[r] = new Array(this.maxNumTrees);
-          for (var n = 0; n < this.maxNumTrees; n++)
+          for (let n = 0; n < this.maxNumTrees; n++)
             this.rfs[r][n] = new tracking.LBF.Tree(t, r, n);
         }
       }),
       (tracking.LBF.Tree = function (t, r, n) {
-        var e = tracking.LBF.RegressorData[t].landmarks[r][n];
+        const e = tracking.LBF.RegressorData[t].landmarks[r][n];
         (this.maxDepth = e.max_depth),
           (this.maxNumNodes = e.max_numnodes),
           (this.nodes = e.nodes),
