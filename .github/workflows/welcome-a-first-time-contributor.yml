@@ -1,3 +1,6 @@
+---
+name: Welcome a first-time contributor
+
 on: pull_request
 
 jobs:
