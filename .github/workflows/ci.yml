@@ -1,24 +1,30 @@
----
-name: CI
-
-on:
-  push:
-    branches:
-      - master
-  pull_request: {branches: main}
+on: push
 
 jobs:
-  ci:
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with: {node-version: 13.x}
-      - uses: actions/cache@v1
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
         with:
-          path: ~/.npm
-          key: ${{runner.os}}-npm-${{hashFiles('**/package-lock.json')}}
-          restore-keys: ${{runner.os}}-npm-
-      - run: yarn lint:format
-      - run: yarn prettier:format
+          node-version: 12
+
+      # ESLint and Prettier must be in `package.json`
+      - name: Install Node.js dependencies
+        run: npm install
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          # Enable linters
+          eslint: true
+          prettier: true
+
+      # - name: Run tests
       # - run: yarn test
