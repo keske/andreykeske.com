@@ -7,10 +7,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint:check": "eslint . --ext .tsx",
     "lint:format": "eslint . --ext .tsx --fix",
     "lint:watch": "onchange \"**/*\" -- eslint . --ext .tsx --fix {{changed}}",
     "pre-commit": "run-s prettier:format lint:format",
     "prettier:format": "prettier --config prettier.config.js 'src/**/*.tsx' --write",
+    "prettier:check": "prettier --config prettier.config.js --check 'src/**/*.tsx'",
     "prettier:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "watch": "run-s prettier:watch lint:watch"
   },
