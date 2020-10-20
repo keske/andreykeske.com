@@ -13,6 +13,6 @@ const styles = StyleSheet.create({
 
 const Text: React.FC<Props> = ({ children }: Props): JSX.Element => (
   <p className={css(styles.root)}>{children}</p>
-);
+)
 
 export default Text;
