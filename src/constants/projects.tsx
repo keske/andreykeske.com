@@ -1,3 +1,5 @@
+/* eslint max-lines: 0 */
+
 export default [
   {
     link: 'energy-or-particle',

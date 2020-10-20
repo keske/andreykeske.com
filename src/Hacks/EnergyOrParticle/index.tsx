@@ -33,6 +33,7 @@ const EnergyOrParticle: React.FC = (): JSX.Element => (
           frameBorder="0"
           height="400"
           src="https://www.youtube.com/embed/3m6k7IDz8Qw"
+          title="Energy Or Particle"
           width="100%"
         />
       </div>

@@ -4,13 +4,11 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 type Props = {
-  children: any;
+  children: JSX.Element;
 };
 
 const styles = StyleSheet.create({
-  root: {
-    color: 'red',
-  },
+  root: { color: 'red' },
 });
 
 const Text: React.FC<Props> = ({ children }: Props): JSX.Element => (
