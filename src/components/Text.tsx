@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 // Libs
 import { StyleSheet, css } from 'aphrodite';

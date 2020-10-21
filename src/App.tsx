@@ -1,6 +1,5 @@
-import React from 'react';
+import * as React from 'react';
 
-// Components
 import Projects from './Projects';
 
 function App(): JSX.Element {
