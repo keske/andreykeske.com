@@ -1,6 +1,6 @@
 {
   "name": "andreykeske-site",
-  "version": "0.1.0",
+  "version": "3.0.2",
   "private": true,
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.8",
+    "@testing-library/user-event": "^12.1.9",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.0",
     "@types/react": "^16.9.53",
@@ -50,9 +50,11 @@
     "husky": "^4.3.0",
     "onchange": "^7.0.2",
     "prettier": "^2.1.2",
-    "react": "^16.14.0",
+    "react": "^17.0.0",
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.14.0",
+    "react-scripts": "3.4.4",
+    "react-dom": "^17.0.0",
     "react-scripts": "3.4.4",
     "typescript": "~4.0.3"
   },

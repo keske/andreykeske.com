@@ -4,7 +4,7 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 type Props = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 const styles = StyleSheet.create({
