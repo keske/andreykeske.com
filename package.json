@@ -20,8 +20,8 @@
   },
   "lint-staged": {
     "**/*.tsx": [
-      "lint:format",
-      "prettier:format"
+      "eslint --fix",
+      "prettier --write"
     ],
     "**/*.@(md|json|yml)": [
       "prettier --write"
