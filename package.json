@@ -16,15 +16,26 @@
     "lint:check": "eslint . --ext .tsx",
     "lint:format": "eslint . --ext .tsx --fix",
     "lint:watch": "onchange \"**/*\" -- eslint . --ext .tsx --fix {{changed}}",
-    "pre-commit": "run-s alex prettier:format lint:format",
     "prettier:format": "prettier --config prettier.config.js 'src/**/*.tsx' --write",
     "prettier:check": "prettier --config prettier.config.js --check 'src/**/*.tsx'",
     "prettier:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "watch": "run-s prettier:watch lint:watch"
   },
+  "lint-staged": {
+    "**/*.tsx": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.@(md|json|yml)": [
+      "prettier --write"
+    ],
+    "**/*.@(md)": [
+      "alex ."
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run pre-commit && git add ."
+      "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
@@ -48,12 +59,11 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sort-keys-fix": "^1.1.1",
     "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
     "onchange": "^7.0.2",
     "prettier": "^2.1.2",
     "react": "^17.0.0",
     "react-bootstrap": "^1.4.0",
-    "react-dom": "^16.14.0",
-    "react-scripts": "3.4.4",
     "react-dom": "^17.0.0",
     "react-scripts": "3.4.4",
     "typescript": "~4.0.3"
