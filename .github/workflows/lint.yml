@@ -14,19 +14,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with: {node-version: 13.x}
-
-      - name: Install modules
       - run: yarn
-
-      - name: Install ESLint global
       - run: yarn global add eslint
-
-      - name: ESLint
       - run: yarn lint:check
-
-      - name: Prettier
       - run: yarn prettier:check
-
-      - name: Alex
         run: yarn alex
       # - run: yarn test
