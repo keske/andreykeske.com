@@ -2,12 +2,17 @@
   "name": "andreykeske-site",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keske/personal-site.git"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "alex": "alex .",
+    "changelog": "lerna-changelog",
     "lint:check": "eslint . --ext .tsx",
     "lint:format": "eslint . --ext .tsx --fix",
     "lint:watch": "onchange \"**/*\" -- eslint . --ext .tsx --fix {{changed}}",
@@ -52,6 +57,7 @@
     "typescript": "~4.0.3"
   },
   "devDependencies": {
+    "lerna-changelog": "^1.0.1",
     "npm-run-all": "^4.1.5"
   },
   "eslintConfig": {
@@ -68,5 +74,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "changelog": {
+    "labels": {
+      "bug": "Type: bug",
+      "documentation": "Type: documentation",
+      "enhancement": "Type: enhancement",
+      "feature": "Type: feature request"
+    },
+    "repo": "keske/personal-site"
   }
 }
