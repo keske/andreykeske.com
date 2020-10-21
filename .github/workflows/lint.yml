@@ -15,9 +15,9 @@ jobs:
       - uses: actions/setup-node@v1
         with: {node-version: 13.x}
       - run: |
-        yarn
-        yarn global add eslint
-        yarn lint:check
-        yarn prettier:check
-        yarn alex
-      # yarn test
+          yarn
+          yarn global add eslint
+          yarn lint:check
+          yarn prettier:check
+          yarn alex
+        # yarn test
