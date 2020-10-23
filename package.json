@@ -1,6 +1,8 @@
 {
   "name": "andreykeske-site",
   "version": "3.0.2",
+  "author": "Andrey Keske <hello@andreykeske.com> (http://andreykeske.com/)",
+  "license": "UNLICENSED",
   "private": true,
   "repository": {
     "type": "git",
@@ -12,11 +14,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "changelog": "lerna-changelog",
-    "lint:format": "eslint . --ext .tsx --fix",
-    "lint:watch": "onchange \"**/*\" -- eslint . --ext .tsx --fix {{changed}}",
+    "lint:format": "eslint . --ext=.tsx --fix",
+    "lint:watch": "onchange \"**/*\" -- eslint . --ext=.tsx --fix {{changed}}",
     "prettier:format": "prettier --config prettier.config.js 'src/**/*.tsx' --write",
     "prettier:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
-    "watch": "run-s prettier:watch lint:watch"
+    "watch": "npm-run-all -p prettier:watch lint:format"
   },
   "lint-staged": {
     "**/*.tsx": [
