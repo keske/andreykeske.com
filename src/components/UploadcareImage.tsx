@@ -14,6 +14,8 @@ type Props = {
 
 const styles = StyleSheet.create({
   root: {
+    borderRadius: 7,
+    overflow: 'hidden',
     width: '100%',
   },
 });

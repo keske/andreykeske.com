@@ -18,7 +18,7 @@ const EnergyOrParticle: React.FC = (): JSX.Element => (
     <Col lg={{ offset: 0, span: 8 }}>
       <ResponsiveFrame
         src="https://www.youtube.com/embed/3m6k7IDz8Qw"
-        title="Energy Or Particle"
+        title="Wave–particle duality"
       />
       <Title>Wave–particle duality</Title>
       <Text>

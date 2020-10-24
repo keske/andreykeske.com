@@ -18,7 +18,7 @@ const IkeaGarbage: React.FC = (): JSX.Element => (
     <Col lg={{ offset: 3, span: 7 }}>
       <ResponsiveFrame
         src="https://www.youtube.com/embed/WjKAlIXw-sI"
-        title="Catch"
+        title="IKEA Place"
       />
       <Title>IKEA Place</Title>
       <Text>

@@ -12,19 +12,19 @@ import {
   Title,
 } from '../components';
 
-const TmuxChess: React.FC = (): JSX.Element => (
+const Matryoshka: React.FC = (): JSX.Element => (
   <ProjectWrapper>
-    <Col lg={{ offset: 0, span: 12 }}>
+    <Col lg={{ offset: 1, span: 9 }}>
       <ResponsiveFrame
-        src="https://www.youtube.com/embed/JlvEuMp2UVw"
-        title="Tmux Chess"
+        src="https://www.youtube.com/embed/biVVizdYm-I"
+        title="Matryoshka"
       />
-      <Title>Tmux Chess</Title>
+      <Title>Matryoshka</Title>
       <Text>
-        Playing in Chess using <Mark>tmux</Mark> as board
+        Matryoshka in <Mark>interface of operation system</Mark>
       </Text>
     </Col>
   </ProjectWrapper>
 );
 
-export default TmuxChess;
+export default Matryoshka;
