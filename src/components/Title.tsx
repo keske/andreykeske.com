@@ -11,7 +11,9 @@ type Props = {
 const styles = ({ invert }: Pick<Props, 'invert'>) => ({
   root: {
     color: invert ? 'white' : 'black',
-  },
+    fontWeight: 600,
+    marginTop: 40,
+  } as const,
 });
 
 const Title: React.FC<Props> = ({

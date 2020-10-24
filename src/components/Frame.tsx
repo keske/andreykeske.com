@@ -12,14 +12,13 @@ const styles = StyleSheet.create({
   root: {
     height: '100%',
     left: 0,
-    position: 'absolute',
     top: 0,
     width: '100%',
   },
   wrapper: {
-    borderRadius: 7,
+    height: 500,
     overflow: 'hidden',
-    paddingTop: '56.25%',
+    paddingTop: 0,
     position: 'relative',
   },
 });
@@ -29,15 +28,13 @@ const ResponsiveFrame: React.FC<Props> = ({
   title,
 }: Props): JSX.Element => {
   return (
-    <div className={css(styles.wrapper)}>
-      <iframe
-        allowFullScreen
-        className={css(styles.root)}
-        frameBorder="0"
-        src={src}
-        title={title}
-      />
-    </div>
+    <iframe
+      allowFullScreen
+      className={css(styles.root)}
+      frameBorder="0"
+      src={src}
+      title={title}
+    />
   );
 };
 

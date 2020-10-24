@@ -3,6 +3,24 @@
 body {
   margin: 0;
   font-family: monospace;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+a:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'HelveticaNeue-CondensedBold';
+  font-size: 2.3rem;
+  letter-spacing: 0.13rem;
+  text-transform: uppercase;
+}
+
+sup: {
+  margin-left: 15px;
 }

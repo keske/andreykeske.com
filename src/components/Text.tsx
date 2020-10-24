@@ -11,6 +11,8 @@ type Props = {
 const styles = ({ invert }: Pick<Props, 'invert'>) => ({
   root: {
     color: invert ? 'white' : 'black',
+    fontSize: '1rem',
+    lineHeight: '2rem',
   },
 });
 

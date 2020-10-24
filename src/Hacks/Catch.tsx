@@ -1,0 +1,36 @@
+import * as React from 'react';
+
+// Libs
+import { Col } from 'react-bootstrap';
+
+// Components
+import {
+  Mark,
+  ProjectWrapper,
+  ResponsiveFrame,
+  Text,
+  Title,
+} from '../components';
+
+const Catch: React.FC = (): JSX.Element => (
+  <ProjectWrapper>
+    <Col lg={{ offset: 4, span: 8 }}>
+      <ResponsiveFrame
+        src="https://www.youtube.com/embed/tCV8dwhAwf0"
+        title="Catch"
+      />
+      <Title>The Catch</Title>
+      <Text>
+        The application icon in the dock is a trap from the
+        <Mark>Ghostbusters</Mark>
+      </Text>
+      <Text>
+        The window is a ghost. Window minimization represents a scene
+        from the movie of catching a ghost
+      </Text>
+      <Text>Thanks: Andrey Smirny and Nikita Rokotyan</Text>
+    </Col>
+  </ProjectWrapper>
+);
+
+export default Catch;
