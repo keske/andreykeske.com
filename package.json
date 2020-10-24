@@ -14,8 +14,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "changelog": "lerna-changelog",
+    "lint:check": "eslint . --ext=.tsx",
     "lint:format": "eslint . --ext=.tsx --fix",
     "lint:watch": "onchange \"**/*\" -- eslint . --ext=.tsx --fix {{changed}}",
+    "prettier:check": "prettier --config prettier.config.js 'src/**/*.tsx'",
     "prettier:format": "prettier --config prettier.config.js 'src/**/*.tsx' --write",
     "prettier:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "watch": "npm-run-all -p prettier:watch lint:format"
