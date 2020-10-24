@@ -6,7 +6,9 @@ import { Col } from 'react-bootstrap';
 // Components
 import {
   Mark,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -23,6 +25,8 @@ const Matryoshka: React.FC = (): JSX.Element => (
       <Text>
         Matryoshka in <Mark>interface of operation system</Mark>
       </Text>
+      <ProjectTopics topics={['Interface', 'Ready Made']} />
+      <ProjectYear>2017</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

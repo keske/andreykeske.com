@@ -6,7 +6,9 @@ import { Col } from 'react-bootstrap';
 // Components
 import {
   Mark,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -23,6 +25,8 @@ const TmuxChess: React.FC = (): JSX.Element => (
       <Text>
         Playing in Chess using <Mark>tmux</Mark> as board
       </Text>
+      <ProjectTopics topics={['Interface', 'Ready Made']} />
+      <ProjectYear>2014</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

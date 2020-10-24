@@ -11,6 +11,10 @@ type Props = {
 const styles = StyleSheet.create({
   // I had my graffity crew, which name was `230`
   root: {
+    '@media screen and (max-width: 414px)': {
+      paddingBottom: 50,
+      paddingTop: 50,
+    },
     paddingBottom: 115,
     paddingTop: 115,
   },

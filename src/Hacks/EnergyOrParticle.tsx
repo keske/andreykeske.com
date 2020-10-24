@@ -7,7 +7,10 @@ import { Col } from 'react-bootstrap';
 import {
   Button,
   Mark,
+  ProjectDisciplines,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -30,6 +33,10 @@ const EnergyOrParticle: React.FC = (): JSX.Element => (
           <Button>Try it</Button>
         </a>
       </Text>
+      <br />
+      <ProjectDisciplines disciplines={['Programming']} />
+      <ProjectTopics topics={['Interaction']} />
+      <ProjectYear>2018</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

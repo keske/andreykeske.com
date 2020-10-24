@@ -21,7 +21,10 @@ const styles = ({ color }: Pick<Props, 'color'>) => ({
     display: 'inline-block',
     fontSize: '1rem',
     marginTop: 10,
-    padding: 13,
+    paddingBottom: 13,
+    paddingLeft: 23,
+    paddingRight: 23,
+    paddingTop: 13,
   } as const,
 });
 

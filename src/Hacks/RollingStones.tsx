@@ -6,13 +6,16 @@ import { Col } from 'react-bootstrap';
 // Components
 import {
   Mark,
+  ProjectDisciplines,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   Text,
   Title,
   UploadcareImage,
 } from '../components';
 
-const RollinStones: React.FC = (): JSX.Element => (
+const RollingStones: React.FC = (): JSX.Element => (
   <ProjectWrapper>
     <Col lg={{ offset: 2, span: 5 }}>
       <UploadcareImage src="https://ucarecdn.com/eea10eaa-ea87-4ecd-ae78-9de9e11b54e9/" />
@@ -20,8 +23,11 @@ const RollinStones: React.FC = (): JSX.Element => (
       <Text>
         <Mark>Emoji-like</Mark> logo
       </Text>
+      <ProjectDisciplines disciplines={['Graphic Design']} />
+      <ProjectTopics topics={['Emoji']} />
+      <ProjectYear>2017</ProjectYear>
     </Col>
   </ProjectWrapper>
 );
 
-export default RollinStones;
+export default RollingStones;

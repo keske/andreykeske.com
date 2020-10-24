@@ -6,7 +6,9 @@ import { Col } from 'react-bootstrap';
 // Components
 import {
   Mark,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -29,6 +31,8 @@ const Catch: React.FC = (): JSX.Element => (
         from the movie of catching a ghost
       </Text>
       <Text>Thanks: Andrey Smirny and Nikita Rokotyan</Text>
+      <ProjectTopics topics={['Interface', 'Ready Made']} />
+      <ProjectYear>2013</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

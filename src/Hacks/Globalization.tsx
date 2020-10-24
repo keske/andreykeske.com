@@ -7,7 +7,9 @@ import { Col } from 'react-bootstrap';
 // Components
 import {
   Mark,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -31,6 +33,12 @@ const Globalization: React.FC = (): JSX.Element => (
       <Title>Globalization</Title>
       <Text>The world when the boundaries are blurred</Text>
       <Mark>⇧ Try to swipe it ⇧</Mark>
+      <br />
+      <br />
+      <ProjectTopics
+        topics={['Interface', 'Ready Made', 'Social Commentary']}
+      />
+      <ProjectYear>2016</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

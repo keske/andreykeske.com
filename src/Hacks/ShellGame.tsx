@@ -6,7 +6,9 @@ import { Col } from 'react-bootstrap';
 // Components
 import {
   Mark,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -25,6 +27,8 @@ const ShellGame: React.FC = (): JSX.Element => (
         <Mark>interface of operation system</Mark>. Now it is a shell
         game.
       </Text>
+      <ProjectTopics topics={['Game', 'Interface', 'Ready Made']} />
+      <ProjectYear>2017</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

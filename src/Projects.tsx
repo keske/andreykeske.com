@@ -5,9 +5,10 @@ import * as Hacks from './Hacks';
 
 const Projects: React.FC = (): JSX.Element => (
   <>
+    <Hacks.W1D1 />
     <Hacks.EmojiBack />
     <Hacks.IkeaGarbage />
-    <Hacks.RollinStones />
+    <Hacks.RollingStones />
     <Hacks.EmojiTattooFlashes />
     <Hacks.Ball />
     <Hacks.BlackHole />
@@ -19,11 +20,21 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.Spectrum />
     <Hacks.Globalization />
     <Hacks.EnergyOrParticle />
+    <Hacks.WaterFilter />
+    <Hacks.WaterOnMars />
     <Hacks.VintageGoogleStreetView />
     <Hacks.PinHead />
+    <Hacks.MacOSGamesDice />
+    <Hacks.MacOSGamesSlot />
     <Hacks.EmojiHub />
     <Hacks.FridayDock />
     <Hacks.Hairpin />
+    <Hacks.PianoTabs />
+    <Hacks.Shadows />
+    <Hacks.IPadIcons />
+    <Hacks.Sneakers />
+    <Hacks.Emoticons />
+    <Hacks.Manhattan />
   </>
 );
 

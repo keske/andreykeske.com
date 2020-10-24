@@ -1,8 +1,13 @@
 export { default as Button } from './Button';
 export { default as Frame } from './Frame';
 export { default as Mark } from './Mark';
+export { default as ProjectDisciplines } from './Project.Disciplines';
+export { default as ProjectRoles } from './Project.Roles';
+export { default as ProjectTopics } from './Project.Topics';
 export { default as ProjectWrapper } from './Project.Wrapper';
+export { default as ProjectYear } from './Project.Year';
 export { default as ResponsiveFrame } from './ResponsiveFrame';
+export { default as SubTitle } from './SubTitle';
 export { default as Text } from './Text';
 export { default as Title } from './Title';
 export { default as UploadcareImage } from './UploadcareImage';

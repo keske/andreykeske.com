@@ -7,7 +7,9 @@ import { Col } from 'react-bootstrap';
 import {
   Button,
   Mark,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -15,7 +17,7 @@ import {
 
 const IkeaGarbage: React.FC = (): JSX.Element => (
   <ProjectWrapper>
-    <Col lg={{ offset: 3, span: 7 }}>
+    <Col lg={{ offset: 3, span: 9 }}>
       <ResponsiveFrame
         src="https://www.youtube.com/embed/WjKAlIXw-sI"
         title="IKEA Place"
@@ -28,6 +30,10 @@ const IkeaGarbage: React.FC = (): JSX.Element => (
       <a href="https://apps.apple.com/us/app/ikea-place/id1279244498">
         <Button>Download Application →</Button>
       </a>
+      <br />
+      <br />
+      <ProjectTopics topics={['AR', 'Ready Made']} />
+      <ProjectYear>2017</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

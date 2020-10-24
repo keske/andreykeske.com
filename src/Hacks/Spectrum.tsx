@@ -6,7 +6,10 @@ import { Col } from 'react-bootstrap';
 // Components
 import {
   Mark,
+  ProjectDisciplines,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -25,6 +28,9 @@ const Spectrum: React.FC = (): JSX.Element => (
         as URL or its anchors, but in my experiment I try to show how
         typical browser bar will <Mark>visualize sound spectrum</Mark>
       </Text>
+      <ProjectDisciplines disciplines={['Programming']} />
+      <ProjectTopics topics={['Interface']} />
+      <ProjectYear>2013</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

@@ -7,7 +7,10 @@ import { Col } from 'react-bootstrap';
 import {
   Button,
   Mark,
+  ProjectDisciplines,
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   Text,
   Title,
   UploadcareImage,
@@ -27,6 +30,11 @@ const Hodor: React.FC = (): JSX.Element => (
       <a href="https://github.com/keske/Hodor">
         <Button>Github Repo →</Button>
       </a>
+      <br />
+      <br />
+      <ProjectDisciplines disciplines={['Programming']} />
+      <ProjectTopics topics={['Bots', 'Social Commentary']} />
+      <ProjectYear>2016</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

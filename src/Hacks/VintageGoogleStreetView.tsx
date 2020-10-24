@@ -5,12 +5,19 @@ import { StyleSheet, css } from 'aphrodite';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
-import { Frame, Mark, Text, Title } from '../components';
+import {
+  Frame,
+  Mark,
+  ProjectTopics,
+  ProjectYear,
+  Text,
+  Title,
+} from '../components';
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 0,
-    paddingRight: 0,
+    paddingLeft: -10,
+    paddingRight: -10,
   },
   root: {
     '-webkit-filter': 'sepia(1)',
@@ -43,6 +50,10 @@ const VintageGoogleStreetView: React.FC = (): JSX.Element => (
           <Title>Google Street View vintage style</Title>
           <Text>Black and white with sepia like old photo card</Text>
           <Mark>⇧ Try to swipe it ⇧</Mark>
+          <br />
+          <br />
+          <ProjectTopics topics={['Interface', 'Ready Made']} />
+          <ProjectYear>2016</ProjectYear>
         </Col>
       </Row>
     </Container>

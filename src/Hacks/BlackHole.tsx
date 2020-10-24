@@ -5,7 +5,9 @@ import { Col } from 'react-bootstrap';
 
 // Components
 import {
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Text,
   Title,
@@ -23,6 +25,8 @@ const BlackHole: React.FC = (): JSX.Element => (
         In the space of my Desktop was noticed a black hole where the
         any information or object will be removed forever
       </Text>
+      <ProjectTopics topics={['Interface', 'Ready Made']} />
+      <ProjectYear>2014</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

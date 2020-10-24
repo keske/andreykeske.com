@@ -5,7 +5,9 @@ import { Col } from 'react-bootstrap';
 
 // Components
 import {
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   ResponsiveFrame,
   Title,
 } from '../components';
@@ -18,6 +20,8 @@ const Hairpin: React.FC = (): JSX.Element => (
         title="Haiping"
       />
       <Title>The hairpin</Title>
+      <ProjectTopics topics={['Interface']} />
+      <ProjectYear>2014</ProjectYear>
     </Col>
   </ProjectWrapper>
 );

@@ -5,7 +5,9 @@ import { Col } from 'react-bootstrap';
 
 // Components
 import {
+  ProjectTopics,
   ProjectWrapper,
+  ProjectYear,
   Title,
   UploadcareImage,
 } from '../components';
@@ -20,6 +22,8 @@ const EmojiHub: React.FC = (): JSX.Element => (
           👌👈
         </span>
       </Title>
+      <ProjectTopics topics={['Emoji']} />
+      <ProjectYear>2016</ProjectYear>
     </Col>
   </ProjectWrapper>
 );
