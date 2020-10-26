@@ -14,9 +14,8 @@ const About: React.FC = (): JSX.Element => (
         <Title>Andrey Keske</Title>
         <Text>
           Artist/Programmer, I&#39;m working in different disciplines
-          and on various topics, suchs us: street art, interface
-          hacking, photograpy/cinematograpy and a lot other intresting
-          things
+          and on various topics, such us: street art, interface
+          hacking, photograpy/cinematograpy, etc
         </Text>
         <Text>
           <a href="mailto://hello@andreykeske.com">
