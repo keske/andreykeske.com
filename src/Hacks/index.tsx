@@ -11,6 +11,7 @@ export { default as Globalization } from './Globalization';
 export { default as Hairpin } from './Hairpin';
 export { default as Hodor } from './Hodor';
 export { default as IkeaGarbage } from './IkeaGarbage';
+export { default as LOT2046Tattoo } from './LOT2046Tattoo';
 export { default as IPadIcons } from './IPadIcons';
 export { default as Manhattan } from './Manhattan';
 export { default as Matryoshka } from './Matryoshka';

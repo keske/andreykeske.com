@@ -1,6 +1,7 @@
 export { default as Button } from './Button';
 export { default as Frame } from './Frame';
 export { default as Mark } from './Mark';
+export { default as Me } from './Me';
 export { default as ProjectDisciplines } from './Project.Disciplines';
 export { default as ProjectRoles } from './Project.Roles';
 export { default as ProjectTopics } from './Project.Topics';
