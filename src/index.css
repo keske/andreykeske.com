@@ -14,25 +14,10 @@ a:hover {
   text-decoration: none;
 }
 
-h1 {
-  font-family: 'HelveticaNeue-CondensedBold', Impact;
-  font-size: 2.7rem;
-  letter-spacing: 0.17rem;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-family: 'HelveticaNeue-CondensedBold', Impact;
-  font-size: 2.3rem;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-}
-
+h1,
+h2,
 h3 {
   font-family: 'HelveticaNeue-CondensedBold', Impact;
-  font-size: 1.9rem;
-  letter-spacing: 0.09rem;
-  text-transform: uppercase;
 }
 
 sup: {

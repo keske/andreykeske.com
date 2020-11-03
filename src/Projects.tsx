@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Components
-import * as Hacks from './Hacks';
+import * as Hacks from './hacks';
 
 const Projects: React.FC = (): JSX.Element => (
   <>
@@ -27,7 +27,6 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.PinHead />
     <Hacks.MacOSGamesDice />
     <Hacks.MacOSGamesSlot />
-    <Hacks.EmojiHub />
     <Hacks.FridayDock />
     <Hacks.Hairpin />
     <Hacks.PianoTabs />

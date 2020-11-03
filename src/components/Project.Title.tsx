@@ -8,32 +8,18 @@ type Props = {
   invert?: boolean;
 };
 
-const DESKTOP_FONT_SIZE = 1.9;
-const MOBILE_FONT_SIZE = 1.1;
-
-const getTypographySettings = (
-  fontSize: number,
-): Record<string, string> => ({
-  fontSize: `${fontSize}rem`,
-  letterSpacing: `${fontSize / 20}rem`,
-});
-
 const styles = ({ invert }: Pick<Props, 'invert'>) => ({
   root: {
-    '@media screen and (max-width: 414px)': {
-      ...getTypographySettings(MOBILE_FONT_SIZE),
-    },
-    ...getTypographySettings(DESKTOP_FONT_SIZE),
     color: invert ? 'white' : 'black',
-    fontSize: '1.9rem',
+    fontSize: '2.3rem',
     fontWeight: 600,
-    letterSpacing: '0.09rem',
+    letterSpacing: '0.0`rem',
     marginTop: 40,
     textTransform: 'uppercase',
   } as const,
 });
 
-const SubTitle: React.FC<Props> = ({
+const ProjectTitle: React.FC<Props> = ({
   children,
   invert = false,
 }: Props): JSX.Element => {
@@ -42,4 +28,4 @@ const SubTitle: React.FC<Props> = ({
   return <h3 className={css(cx.root)}>{children}</h3>;
 };
 
-export default SubTitle;
+export default ProjectTitle;

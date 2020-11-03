@@ -4,6 +4,7 @@ export { default as Mark } from './Mark';
 export { default as Me } from './Me';
 export { default as ProjectDisciplines } from './Project.Disciplines';
 export { default as ProjectRoles } from './Project.Roles';
+export { default as ProjectTitle } from './Project.Title';
 export { default as ProjectTopics } from './Project.Topics';
 export { default as ProjectWrapper } from './Project.Wrapper';
 export { default as ProjectYear } from './Project.Year';
