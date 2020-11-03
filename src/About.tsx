@@ -18,6 +18,11 @@ const getTypographySettings = (
 });
 
 const styles = StyleSheet.create({
+  root: {
+    '@media screen and (max-width: 414px)': {
+      marginTop: 100,
+    },
+  },
   title: {
     '@media screen and (max-width: 414px)': {
       ...getTypographySettings(MOBILE_FONT_SIZE),
@@ -33,7 +38,7 @@ const styles = StyleSheet.create({
 });
 
 const About: React.FC = (): JSX.Element => (
-  <>
+  <div className={css(styles.root)}>
     <Me />
     <ProjectWrapper>
       <Col lg={{ span: 8 }}>
@@ -60,7 +65,7 @@ const About: React.FC = (): JSX.Element => (
         </Text>
       </Col>
     </ProjectWrapper>
-  </>
+  </div>
 );
 
 export default About;
