@@ -27,7 +27,6 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.PinHead />
     <Hacks.MacOSGamesDice />
     <Hacks.MacOSGamesSlot />
-    <Hacks.EmojiHub />
     <Hacks.FridayDock />
     <Hacks.Hairpin />
     <Hacks.PianoTabs />

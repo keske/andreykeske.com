@@ -8,11 +8,24 @@ type Props = {
   invert?: boolean;
 };
 
+const DESKTOP_FONT_SIZE = 1;
+const MOBILE_FONT_SIZE = 0.8;
+
+const getTypographySettings = (
+  fontSize: number,
+): Record<string, string> => ({
+  fontSize: `${fontSize}rem`,
+  lineHeight: `${fontSize * 2}rem`,
+});
+
 const styles = ({ invert }: Pick<Props, 'invert'>) => ({
   root: {
+    '@media screen and (max-width: 414px)': {
+      ...getTypographySettings(MOBILE_FONT_SIZE),
+    },
+    ...getTypographySettings(DESKTOP_FONT_SIZE),
     color: invert ? 'white' : 'black',
     fontSize: '1rem',
-    lineHeight: '2rem',
   },
 });
 
