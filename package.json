@@ -1,12 +1,12 @@
 {
-  "name": "andreykeske-site",
-  "version": "3.0.2",
+  "name": "andreykeske",
+  "version": "2.1.1",
   "author": "Andrey Keske <hello@andreykeske.com> (http://andreykeske.com/)",
   "license": "UNLICENSED",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keske/personal-site.git"
+    "url": "git+https://github.com/keske/andreykeske.com.git"
   },
   "scripts": {
     "start": "react-scripts start",
