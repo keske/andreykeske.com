@@ -38,7 +38,7 @@ const W1D1: React.FC = (): JSX.Element => (
       <br />
       <br />
       <ProjectRoles roles={['Co-Founder', 'CTO']} />
-      <ProjectDisciplines disciplines={['DevOps', 'Programming']} />
+      <ProjectDisciplines disciplines={['DevOps', 'Engineering']} />
       <ProjectTopics topics={['iOS Application', 'Social Network']} />
       <ProjectYear>2020</ProjectYear>
     </Col>

@@ -44,9 +44,17 @@ const About: React.FC = (): JSX.Element => (
       <Col lg={{ span: 8 }}>
         <h1 className={css(styles.title)}>Andrey Keske</h1>
         <Text>
-          Artist/Programmer, I&#39;m working in different disciplines
-          and on various topics, such us: street art, interface
-          hacking, photograpy/cinematograpy, etc
+          Andrey Keske is a Russian fullstack developer and designer
+        </Text>
+        <Text>
+          He is focusing on the engineering of applications and
+          back-end architectures. In parallel to his main job, he is
+          always trying to find a new vision of common things in life,
+          interfaces, or even music and video
+        </Text>
+        <Text>
+          Now Andrey lives in the USA between two cities New York and
+          Miami
         </Text>
         <Text>
           <a href="mailto://hello@andreykeske.com">
