@@ -39,7 +39,7 @@ const Battleship: React.FC = (): JSX.Element => {
         <Tabs defaultActiveKey={letters[0]}>
           {letters.map((letter) => (
             <Tab key={letter} eventKey={letter} title={letter}>
-              <Tabs defaultActiveKey={numbers[numbers.length]}>
+              <Tabs defaultActiveKey={numbers[numbers.length - 1]}>
                 {numbers.map((number) => (
                   <Tab
                     key={`${letter}-${number}`}
@@ -59,7 +59,7 @@ const Battleship: React.FC = (): JSX.Element => {
           UI <Mark>hardcore</Mark> version of game
         </Text>
         <ProjectTopics topics={['Interface']} />
-        <ProjectYear>2020</ProjectYear>
+        <ProjectYear>2012</ProjectYear>
       </Col>
     </ProjectWrapper>
   );
