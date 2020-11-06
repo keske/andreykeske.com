@@ -11,6 +11,7 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.IkeaGarbage />
     <Hacks.RollingStones />
     <Hacks.EmojiTattooFlashes />
+    <Hacks.Battleship />
     <Hacks.Ball />
     <Hacks.BlackHole />
     <Hacks.Matryoshka />

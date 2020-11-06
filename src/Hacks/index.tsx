@@ -1,4 +1,5 @@
 export { default as Ball } from './Ball';
+export { default as Battleship } from './Battleship';
 export { default as BlackHole } from './BlackHole';
 export { default as Catch } from './Catch';
 export { default as EmojiBack } from './EmojiBack';
