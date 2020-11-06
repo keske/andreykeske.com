@@ -20,6 +20,7 @@ export { default as MacOSGamesDice } from './MacOSGames.Dice';
 export { default as MacOSGamesSlot } from './MacOSGames.Slot';
 export { default as PianoTabs } from './PianoTabs';
 export { default as PinHead } from './PinHead';
+export { default as PipeLineReactComponent } from './PipeLineReactComponent';
 export { default as RollingStones } from './RollingStones';
 export { default as Shadows } from './Shadows';
 export { default as ShellGame } from './ShellGame';
