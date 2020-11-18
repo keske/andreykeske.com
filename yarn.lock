@@ -1536,10 +1536,10 @@
     lz-string "^1.4.4"
     pretty-format "^26.4.2"
 
-"@testing-library/jest-dom@^5.11.5":
-  version "5.11.5"
-  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.5.tgz#44010f37f4b1e15f9d433963b515db0b05182fc8"
-  integrity sha512-XI+ClHR864i6p2kRCEyhvpVejuer+ObVUF4cjCvRSF88eOMIfqw7RoS9+qoRhyigGswMfT64L6Nt0Ufotxbwtg==
+"@testing-library/jest-dom@^5.11.6":
+  version "5.11.6"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.6.tgz#782940e82e5cd17bc0a36f15156ba16f3570ac81"
+  integrity sha512-cVZyUNRWwUKI0++yepYpYX7uhrP398I+tGz4zOlLVlUYnZS+Svuxv4fwLeCIy7TnBYKXUaOlQr3vopxL8ZfEnA==
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@types/testing-library__jest-dom" "^5.9.1"
@@ -2298,10 +2298,10 @@ ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.12.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alex@^9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/alex/-/alex-9.0.1.tgz#3948ae3512182c86bd36ad99b0166f90c1f758f6"
-  integrity sha512-q560b+fVMXvu3WVkvoYBUGRHRXo9K9P/Fnt6Xcq1VhZow9MNqoQ5x7OJTYzSStAElaGxaJ7djTef9pJrM3GBXg==
+alex@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/alex/-/alex-9.1.0.tgz#bc54b305c3e05d87085cca3af4376314be0dbeee"
+  integrity sha512-mlNQ0CBGinzZj1pjiXaSLsihjZ4Kzq0U0EjR+DrZ3IQQfM4pf4OtxHI1agBIiEwv0tQUzimjgTk+5t9iHeT7Vw==
   dependencies:
     meow "^7.0.0"
     rehype-parse "^7.0.0"
@@ -2312,7 +2312,7 @@ alex@^9.0.1:
     remark-parse "^8.0.0"
     remark-retext "^4.0.0"
     retext-english "^3.0.0"
-    retext-equality "~5.2.0"
+    retext-equality "~5.5.0"
     retext-profanities "~6.1.0"
     unified "^9.0.0"
     unified-diff "^3.0.0"
@@ -11077,10 +11077,10 @@ retext-english@^3.0.0:
     parse-english "^4.0.0"
     unherit "^1.0.4"
 
-retext-equality@~5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/retext-equality/-/retext-equality-5.2.0.tgz#d3bd7c3d96444533a3a800f16d269ab9fd59c884"
-  integrity sha512-qfyDsVvwI6RsbyBi5GDRnutDbRMQj5zzK5oVg6ddKhONle2ZmQ/DBg9mz9QLKdnGhp8aW5xoVskXgwHufSQa3g==
+retext-equality@~5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/retext-equality/-/retext-equality-5.5.0.tgz#d01e7251f11bfa3bbc9c47f4047a40c2eb84fa28"
+  integrity sha512-ha7zrQ+Bq4xWifm21IcAzc9xhMWCJYfePUjRRNE2mXi8cFhaq1F8+cD78YA2nd6W2mxd11VGTVKY9O0DmzEywQ==
   dependencies:
     nlcst-normalize "^2.0.0"
     nlcst-search "^2.0.0"
