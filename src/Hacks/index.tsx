@@ -31,3 +31,4 @@ export { default as VintageGoogleStreetView } from './VintageGoogleStreetView';
 export { default as W1D1 } from './W1D1';
 export { default as WaterFilter } from './WaterFilter';
 export { default as WaterOnMars } from './WaterOnMars';
+export { default as YoutubeChina2017 } from './YoutubeChina2017';
