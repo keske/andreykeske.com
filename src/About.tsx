@@ -57,9 +57,7 @@ const About: React.FC = (): JSX.Element => (
           Miami
         </Text>
         <Text>
-          <a href="mailto://hello@andreykeske.com">
-            hello@andreykeske.com
-          </a>
+          <a href="mailto://keskeone@gmail.com">keskeone@gmail.com</a>
           {' • '}
           <a href="https://github.com/keske">Github</a>
           {' • '}
@@ -69,6 +67,10 @@ const About: React.FC = (): JSX.Element => (
           {' • '}
           <a href="https://www.linkedin.com/in/andrey-keske-45583423/">
             LinkedIn
+          </a>
+          {' • '}
+          <a href="https://www.youtube.com/user/andreykeske">
+            YouTube
           </a>
         </Text>
       </Col>
