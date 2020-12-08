@@ -7,7 +7,7 @@ import { Col } from 'react-bootstrap';
 // Components
 import { Me, ProjectWrapper, Text } from './components';
 
-const DESKTOP_FONT_SIZE = 2.7;
+const DESKTOP_FONT_SIZE = 1.9;
 const MOBILE_FONT_SIZE = 1.7;
 
 const getTypographySettings = (
@@ -42,20 +42,22 @@ const About: React.FC = (): JSX.Element => (
     <Me />
     <ProjectWrapper>
       <Col lg={{ span: 8 }}>
-        <h1 className={css(styles.title)}>Andrey Keske</h1>
-        <Text>
+        <h1 className={css(styles.title)}>
           Andrey Keske is a Russian fullstack developer and designer
-        </Text>
-        <Text>
+          <br />
+          <br />
           He is focusing on the engineering of applications and
-          back-end architectures. In parallel to his main job, he is
-          always trying to find a new vision of common things in life,
-          interfaces, or even music and video
-        </Text>
-        <Text>
+          back-end architectures.
+          <br />
+          <br />
+          In parallel to his main job, he is always trying to find a
+          new vision of common things in life, interfaces, or even
+          music and video
+          <br />
+          <br />
           Now Andrey lives in the USA between two cities New York and
           Miami
-        </Text>
+        </h1>
         <Text>
           <a href="mailto://keskeone@gmail.com">keskeone@gmail.com</a>
           {' • '}

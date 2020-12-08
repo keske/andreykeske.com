@@ -9,7 +9,7 @@ import {
   ProjectWrapper,
   ProjectYear,
   ResponsiveFrame,
-  Text,
+  // Text,
   Title,
 } from '../components';
 
@@ -29,10 +29,12 @@ const YouTubeRecentVideos: React.FC = (): JSX.Element => (
     </Col>
     <Col lg={{ offset: 0, span: 12 }}>
       <Title>YouTube Recent Videos</Title>
-      <Text>
-        At the end of the year 2017, I realized that I want to make
-        cinematic look videos and bought my first DSLR camera.
-      </Text>
+      {/*
+        <Text>
+          At the end of the year 2017, I realized that I want to make
+          cinematic look videos and bought my first DSLR camera.
+        </Text>
+        */}
       <ProjectTopics topics={['Video', 'Youtube']} />
       <ProjectYear>2017&mdash;2020</ProjectYear>
     </Col>
