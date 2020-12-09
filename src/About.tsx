@@ -7,7 +7,7 @@ import { Col } from 'react-bootstrap';
 // Components
 import { Me, ProjectWrapper, Text } from './components';
 
-const DESKTOP_FONT_SIZE = 1.9;
+const DESKTOP_FONT_SIZE = 2.7;
 const MOBILE_FONT_SIZE = 1.7;
 
 const getTypographySettings = (
@@ -42,24 +42,24 @@ const About: React.FC = (): JSX.Element => (
     <Me />
     <ProjectWrapper>
       <Col lg={{ span: 8 }}>
-        <h1 className={css(styles.title)}>
+        <h1 className={css(styles.title)}>Andrey Keske</h1>
+        <Text>
           Andrey Keske is a Russian fullstack developer and designer
-          <br />
-          <br />
+        </Text>
+        <Text>
           He is focusing on the engineering of applications and
-          back-end architectures.
-          <br />
-          <br />
-          In parallel to his main job, he is always trying to find a
-          new vision of common things in life, interfaces, or even
-          music and video
-          <br />
-          <br />
+          back-end architectures. In parallel to his main job, he is
+          always trying to find a new vision of common things in life,
+          interfaces, or even music and video
+        </Text>
+        <Text>
           Now Andrey lives in the USA between two cities New York and
           Miami
-        </h1>
+        </Text>
         <Text>
-          <a href="mailto://keskeone@gmail.com">keskeone@gmail.com</a>
+          <a href="mailto://hello@andreykeske.com">
+            hello@andreykeske.com
+          </a>
           {' • '}
           <a href="https://github.com/keske">Github</a>
           {' • '}
@@ -67,12 +67,8 @@ const About: React.FC = (): JSX.Element => (
             Instagram
           </a>
           {' • '}
-          <a href="https://www.linkedin.com/in/andrey-keske-45583423/">
+          <a href="https://www.linkedin.com/in/andreykeske/">
             LinkedIn
-          </a>
-          {' • '}
-          <a href="https://www.youtube.com/user/andreykeske">
-            YouTube
           </a>
         </Text>
       </Col>
