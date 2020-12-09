@@ -43,9 +43,7 @@ const About: React.FC = (): JSX.Element => (
     <ProjectWrapper>
       <Col lg={{ span: 8 }}>
         <h1 className={css(styles.title)}>Andrey Keske</h1>
-        <Text>
-          Andrey Keske is a Russian fullstack developer and designer
-        </Text>
+        <Text>Andrey Keske is a fullstack developer</Text>
         <Text>
           He is focusing on the engineering of applications and
           back-end architectures. In parallel to his main job, he is
@@ -69,6 +67,10 @@ const About: React.FC = (): JSX.Element => (
           {' • '}
           <a href="https://www.linkedin.com/in/andreykeske/">
             LinkedIn
+          </a>
+          {' • '}
+          <a href="https://www.youtube.com/user/andreykeske">
+            YouTube
           </a>
         </Text>
       </Col>
