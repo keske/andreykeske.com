@@ -50,10 +50,7 @@ const About: React.FC = (): JSX.Element => (
           always trying to find a new vision of common things in life,
           interfaces, or even music and video
         </Text>
-        <Text>
-          Now Andrey lives in the USA between two cities New York and
-          Miami
-        </Text>
+        <Text>Andrey lives in Miami, Fl</Text>
         <Text>
           <a href="mailto://hello@andreykeske.com">
             hello@andreykeske.com
