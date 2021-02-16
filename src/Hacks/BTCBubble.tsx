@@ -31,7 +31,7 @@ const BTCBubble: React.FC = (): JSX.Element => (
           <Title>BTC Bubble</Title>
           <Text>
             The current project is about the social opinion that
-            Bitcoin is a bubble and text inside it bubble the current
+            Bitcoin is a bubble and text inside it is the current
             BTC&#39;s course.
           </Text>
           <a href="https://btc-bubble.vercel.app">
