@@ -5,6 +5,7 @@ import * as Hacks from './Hacks';
 
 const Projects: React.FC = (): JSX.Element => (
   <>
+    <Hacks.BTCBubble />
     <Hacks.YouTubeRecentVideos />
     <Hacks.W1D1 />
     <Hacks.LOT2046Tattoo />

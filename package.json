@@ -40,6 +40,7 @@
     }
   },
   "dependencies": {
+    "@react-three/drei": "^3.8.2",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
@@ -52,6 +53,7 @@
     "@typescript-eslint/parser": "^4.8.2",
     "alex": "^9.1.0",
     "aphrodite": "^2.4.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^6.14.0",
@@ -64,11 +66,14 @@
     "lint-staged": "^10.5.2",
     "onchange": "^7.1.0",
     "prettier": "^2.2.0",
+    "r3f-perf": "^0.79.0",
     "ramda": "^0.27.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "react-three-fiber": "^5.3.18",
+    "three": "^0.125.2",
     "typescript": "~4.0.3"
   },
   "devDependencies": {
