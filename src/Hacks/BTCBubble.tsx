@@ -34,7 +34,7 @@ const BTCBubble: React.FC = (): JSX.Element => (
             Bitcoin is a bubble and text inside it bubble the current
             BTC&#39;s course.
           </Text>
-          <a href="https://apps.apple.com/ru/app/w1d1/id1497155726?l=en&fbclid=IwAR3GVwUd543i3hoCZ4RBR5kaBp2iyhAjrdNuzy_07iTsIZW8jM9ryaOdlew">
+          <a href="https://btc-bubble.vercel.app">
             <Button>Open Site →</Button>
           </a>
           <br />
