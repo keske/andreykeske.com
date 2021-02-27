@@ -35,7 +35,7 @@ const Battleship: React.FC = (): JSX.Element => {
 
   return (
     <ProjectWrapper>
-      <Col lg={{ offset: 3, span: 5 }}>
+      <Col lg={{ offset: 3, span: 6 }}>
         <Tabs defaultActiveKey={letters[0]}>
           {letters.map((letter) => (
             <Tab key={letter} eventKey={letter} title={letter}>
