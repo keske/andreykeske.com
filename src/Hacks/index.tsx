@@ -27,6 +27,7 @@ export { default as Shadows } from './Shadows';
 export { default as ShellGame } from './ShellGame';
 export { default as Sneakers } from './Sneakers';
 export { default as Spectrum } from './Spectrum';
+export { default as SwitchInButton } from './SwitchInButton';
 export { default as TickyApplication } from './TickyApplication';
 export { default as TmuxChess } from './TmuxChess';
 export { default as VintageGoogleStreetView } from './VintageGoogleStreetView';
