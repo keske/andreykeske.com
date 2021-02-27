@@ -56,7 +56,8 @@ const Battleship: React.FC = (): JSX.Element => {
         </Tabs>
         <Title>Battleship</Title>
         <Text>
-          UI <Mark>hardcore</Mark> version of game
+          Hardcore representation of classic game through{' '}
+          <Mark>tabs</Mark>
         </Text>
         <ProjectTopics topics={['Interface']} />
         <ProjectYear>2012</ProjectYear>
