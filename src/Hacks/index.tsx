@@ -8,6 +8,7 @@ export { default as EmojiHub } from './EmojiHub';
 export { default as EmojiTattooFlashes } from './EmojiTattooFlashes';
 export { default as Emoticons } from './Emoticons';
 export { default as EnergyOrParticle } from './EnergyOrParticle';
+export { default as EsherSphere } from './EsherSphere';
 export { default as EsherSwitchButton } from './EsherSwitchButton';
 export { default as FridayDock } from './FridayDock';
 export { default as Globalization } from './Globalization';
