@@ -4,48 +4,49 @@
 import React from 'react';
 
 // Libs
-import { Vector2 } from 'three';
+// import * as THREE from 'three';
+// import { useFrame } from 'react-three-fiber';
+import { Box, CubeCamera } from '@react-three/drei';
 
-import { Reflector, TorusKnot } from '@react-three/drei';
+const Sphere = ({ ...props }: any) => {
+  const ref = React.useRef<THREE.Group>();
 
-const Scene: React.FC = () => {
-  const normalScale = React.useMemo(() => new Vector2(0), []);
+  // useFrame(({ clock }) => {
+  //   ref.current!.position.y =
+  //     Math.sin(offset + clock.elapsedTime) * 5;
+  // });
 
   return (
-    <>
-      <Reflector
-        args={[10, 10]}
-        blur={[0, 0]}
-        debug={0}
-        depthScale={0}
-        depthToBlurRatioBias={0.2}
-        distortion={0}
-        // distortionMap={distortionMap}
-        maxDepthThreshold={1.2}
-        minDepthThreshold={0.8}
-        mirror={0.75}
-        mixBlur={10}
-        mixStrength={2}
-        resolution={1024}
-        rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-      >
-        {(Material, props) => (
-          <Material
-            color="#a0a0a0"
-            metalness={0.5}
-            // normalMap={normal}
-            normalScale={normalScale}
-            roughness={1}
-            // roughnessMap={roughness}
-            {...props}
+    <CubeCamera {...props}>
+      {(texture) => (
+        <mesh ref={ref}>
+          <sphereBufferGeometry args={[5, 64, 64]} />
+          <meshStandardMaterial
+            envMap={texture}
+            metalness={1}
+            roughness={0}
           />
-        )}
-      </Reflector>
+        </mesh>
+      )}
+    </CubeCamera>
+  );
+};
 
-      <TorusKnot args={[0.5, 0.2, 128, 32]} position={[0, 1, 0]}>
-        <meshPhysicalMaterial color="hotpink" />
-      </TorusKnot>
-    </>
+const Scene: React.FC = () => {
+  return (
+    <group>
+      <fog args={['#f0f0f0', 100, 200]} attach="fog" />
+
+      <Sphere position={[-10, 10, 0]} />
+
+      <Box
+        args={[5, 5, 5]}
+        material-color="hotpink"
+        position-y={1.5}
+      />
+
+      <gridHelper args={[100, 10]} />
+    </group>
   );
 };
 
