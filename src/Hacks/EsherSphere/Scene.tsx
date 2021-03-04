@@ -1,12 +1,15 @@
 /* eslint react/jsx-props-no-spreading: 0 */
 /* eslint no-multi-assign: 0 */
+/* eslint @typescript-eslint/ban-ts-comment: 0 */
 
 import React from 'react';
 
 // Libs
-// import * as THREE from 'three';
-// import { useFrame } from 'react-three-fiber';
+import Webcam from 'react-webcam';
+import { extend } from 'react-three-fiber';
 import { Box, CubeCamera } from '@react-three/drei';
+
+extend({ Webcam });
 
 const Sphere = ({ ...props }: any) => {
   const ref = React.useRef<THREE.Group>();
@@ -43,6 +46,22 @@ const Scene: React.FC = () => {
         args={[5, 5, 5]}
         material-color="hotpink"
         position-y={1.5}
+      />
+
+      {/* @ts-ignore} */}
+      <webcam
+        // @ts-ignore
+        audio={false}
+        // @ts-ignore
+        height="113"
+        // @ts-ignore
+        id="webcam"
+        // @ts-ignore
+        mirrored
+        // @ts-ignore
+        screenshotFormat="image/jpeg"
+        // @ts-ignore
+        width="200"
       />
 
       <gridHelper args={[100, 10]} />
