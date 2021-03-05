@@ -26,8 +26,7 @@ const styles = StyleSheet.create({
 const ResponsiveFrame: React.FC<Props> = ({
   src,
   title,
-}: Props): JSX.Element => {
-  return (
+}: Props): JSX.Element => (
     <iframe
       allowFullScreen
       className={css(styles.root)}
@@ -36,6 +35,5 @@ const ResponsiveFrame: React.FC<Props> = ({
       title={title}
     />
   );
-};
 
 export default ResponsiveFrame;

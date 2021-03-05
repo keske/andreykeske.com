@@ -18,8 +18,7 @@ const styles = StyleSheet.create({
 
 const ProjectDisciplines: React.FC<Props> = ({
   disciplines,
-}: Props): JSX.Element => {
-  return (
+}: Props): JSX.Element => (
     <div className={css(styles.root)}>
       <span>
         {`Discipline${disciplines.length === 1 ? '' : 's'}: `}
@@ -33,6 +32,5 @@ const ProjectDisciplines: React.FC<Props> = ({
       </span>
     </div>
   );
-};
 
 export default ProjectDisciplines;

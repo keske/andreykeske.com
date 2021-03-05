@@ -18,8 +18,7 @@ const styles = StyleSheet.create({
 
 const ProjectRoles: React.FC<Props> = ({
   roles,
-}: Props): JSX.Element => {
-  return (
+}: Props): JSX.Element => (
     <div className={css(styles.root)}>
       <span>
         {`Role${roles.length === 1 ? '' : 's'}: `}
@@ -31,6 +30,5 @@ const ProjectRoles: React.FC<Props> = ({
       </span>
     </div>
   );
-};
 
 export default ProjectRoles;

@@ -18,8 +18,7 @@ const styles = StyleSheet.create({
 
 const ProjectTopics: React.FC<Props> = ({
   topics,
-}: Props): JSX.Element => {
-  return (
+}: Props): JSX.Element => (
     <div className={css(styles.root)}>
       <span>
         {`Topic${topics.length === 1 ? '' : 's'}: `}
@@ -31,6 +30,5 @@ const ProjectTopics: React.FC<Props> = ({
       </span>
     </div>
   );
-};
 
 export default ProjectTopics;
