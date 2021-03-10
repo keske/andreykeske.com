@@ -24,22 +24,16 @@ const Sphere = ({ ...props }: any) => {
   );
 };
 
-const Scene: React.FC = () => {
-  return (
-    <group>
-      <fog args={['#f0f0f0', 100, 200]} attach="fog" />
+const Scene: React.FC = () => (
+  <group>
+    <fog args={['#f0f0f0', 100, 200]} attach="fog" />
 
-      <Sphere position={[-10, 10, 0]} />
+    <Sphere position={[-10, 10, 0]} />
 
-      <Box
-        args={[5, 5, 5]}
-        material-color="hotpink"
-        position-y={1.5}
-      />
+    <Box args={[5, 5, 5]} material-color="hotpink" position-y={1.5} />
 
-      <gridHelper args={[100, 10]} />
-    </group>
-  );
-};
+    <gridHelper args={[100, 10]} />
+  </group>
+);
 
 export default Scene;

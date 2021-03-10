@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
 
 const Button: React.FC<Props> = ({
   children,
-}: Props): JSX.Element => <span className={css(styles.root)}>{children}</span>;
+}: Props): JSX.Element => (
+  <span className={css(styles.root)}>{children}</span>
+);
 
 export default Button;

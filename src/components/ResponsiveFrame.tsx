@@ -28,15 +28,15 @@ const ResponsiveFrame: React.FC<Props> = ({
   src,
   title,
 }: Props): JSX.Element => (
-    <div className={css(styles.wrapper)}>
-      <iframe
-        allowFullScreen
-        className={css(styles.root)}
-        frameBorder="0"
-        src={src}
-        title={title}
-      />
-    </div>
-  );
+  <div className={css(styles.wrapper)}>
+    <iframe
+      allowFullScreen
+      className={css(styles.root)}
+      frameBorder="0"
+      src={src}
+      title={title}
+    />
+  </div>
+);
 
 export default ResponsiveFrame;

@@ -23,11 +23,11 @@ const styles = StyleSheet.create({
 const ProjectWrapper: React.FC<Props> = ({
   children,
 }: Props): JSX.Element => (
-    <div className={css(styles.root)}>
-      <Container>
-        <Row>{children}</Row>
-      </Container>
-    </div>
-  );
+  <div className={css(styles.root)}>
+    <Container>
+      <Row>{children}</Row>
+    </Container>
+  </div>
+);
 
 export default ProjectWrapper;

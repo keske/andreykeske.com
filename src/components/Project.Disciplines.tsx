@@ -19,18 +19,18 @@ const styles = StyleSheet.create({
 const ProjectDisciplines: React.FC<Props> = ({
   disciplines,
 }: Props): JSX.Element => (
-    <div className={css(styles.root)}>
-      <span>
-        {`Discipline${disciplines.length === 1 ? '' : 's'}: `}
-        {disciplines.map((discipline, index) => (
-          <span key={discipline} className={css(styles.label)}>
-            {`${discipline}${
-              index < disciplines.length - 1 ? ', ' : ''
-            }`}
-          </span>
-        ))}
-      </span>
-    </div>
-  );
+  <div className={css(styles.root)}>
+    <span>
+      {`Discipline${disciplines.length === 1 ? '' : 's'}: `}
+      {disciplines.map((discipline, index) => (
+        <span key={discipline} className={css(styles.label)}>
+          {`${discipline}${
+            index < disciplines.length - 1 ? ', ' : ''
+          }`}
+        </span>
+      ))}
+    </span>
+  </div>
+);
 
 export default ProjectDisciplines;

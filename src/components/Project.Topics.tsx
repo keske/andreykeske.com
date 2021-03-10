@@ -19,16 +19,16 @@ const styles = StyleSheet.create({
 const ProjectTopics: React.FC<Props> = ({
   topics,
 }: Props): JSX.Element => (
-    <div className={css(styles.root)}>
-      <span>
-        {`Topic${topics.length === 1 ? '' : 's'}: `}
-        {topics.map((topic, index) => (
-          <span key={topic} className={css(styles.label)}>
-            {`${topic}${index < topics.length - 1 ? ', ' : ''}`}
-          </span>
-        ))}
-      </span>
-    </div>
-  );
+  <div className={css(styles.root)}>
+    <span>
+      {`Topic${topics.length === 1 ? '' : 's'}: `}
+      {topics.map((topic, index) => (
+        <span key={topic} className={css(styles.label)}>
+          {`${topic}${index < topics.length - 1 ? ', ' : ''}`}
+        </span>
+      ))}
+    </span>
+  </div>
+);
 
 export default ProjectTopics;
