@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 
 // Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './static/fonts/Inter/inter.css';
 import './index.css';
 
 import App from './App';

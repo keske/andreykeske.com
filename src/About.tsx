@@ -7,14 +7,13 @@ import { Col } from 'react-bootstrap';
 // Components
 import { Me, ProjectWrapper, Text } from './components';
 
-const DESKTOP_FONT_SIZE = 2.7;
+const DESKTOP_FONT_SIZE = 4.0;
 const MOBILE_FONT_SIZE = 1.7;
 
 const getTypographySettings = (
   fontSize: number,
 ): Record<string, string> => ({
   fontSize: `${fontSize}rem`,
-  letterSpacing: `${fontSize / 15}rem`,
 });
 
 const styles = StyleSheet.create({
@@ -30,10 +29,10 @@ const styles = StyleSheet.create({
       marginTop: 20,
     },
     ...getTypographySettings(DESKTOP_FONT_SIZE),
-    fontWeight: 600,
-    marginBottom: 20,
+    fontWeight: 800,
+    letterSpacing: `-.025rem`,
+    marginBottom: 40,
     marginTop: 40,
-    textTransform: 'uppercase',
   } as const,
 });
 

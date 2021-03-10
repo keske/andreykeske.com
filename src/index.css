@@ -20,10 +20,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'HelveticaNeue-CondensedBold', Impact;
+  font-family: 'Inter';
 }
 
-sup: {
+sup {
   margin-left: 15px;
 }
 

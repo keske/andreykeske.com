@@ -8,14 +8,13 @@ type Props = {
   invert?: boolean;
 };
 
-const DESKTOP_FONT_SIZE = 2.3;
+const DESKTOP_FONT_SIZE = 2.5;
 const MOBILE_FONT_SIZE = 1.7;
 
 const getTypographySettings = (
   fontSize: number,
 ): Record<string, string> => ({
   fontSize: `${fontSize}rem`,
-  letterSpacing: `${fontSize / 20}rem`,
 });
 
 const styles = ({ invert }: Pick<Props, 'invert'>) => ({
@@ -27,10 +26,10 @@ const styles = ({ invert }: Pick<Props, 'invert'>) => ({
     },
     ...getTypographySettings(DESKTOP_FONT_SIZE),
     color: invert ? 'white' : 'black',
-    fontWeight: 600,
+    fontWeight: 800,
+    letterSpacing: `-.025rem`,
     marginBottom: 20,
     marginTop: 40,
-    textTransform: 'uppercase',
   } as const,
 });
 
