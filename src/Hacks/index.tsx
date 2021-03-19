@@ -21,6 +21,7 @@ export { default as Manhattan } from './Manhattan';
 export { default as Matryoshka } from './Matryoshka';
 export { default as MacOSGamesDice } from './MacOSGames.Dice';
 export { default as MacOSGamesSlot } from './MacOSGames.Slot';
+export { default as MandelbrotSet } from './MandelbrotSet';
 export { default as PianoTabs } from './PianoTabs';
 export { default as PinHead } from './PinHead';
 export { default as PipeLineReactComponent } from './PipeLineReactComponent';
