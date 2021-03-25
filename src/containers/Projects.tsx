@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Components
-import * as Hacks from './Hacks';
+import * as Hacks from '../Hacks';
 
 const Projects: React.FC = (): JSX.Element => (
   <>

@@ -5,7 +5,7 @@ import { StyleSheet, css } from 'aphrodite';
 import { Col } from 'react-bootstrap';
 
 // Components
-import { Me, ProjectWrapper, Text } from './components';
+import { Me, ProjectWrapper, Text } from '../components';
 
 const DESKTOP_FONT_SIZE = 4.0;
 const MOBILE_FONT_SIZE = 1.7;

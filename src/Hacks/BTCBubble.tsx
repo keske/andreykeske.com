@@ -7,7 +7,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 // Components
 import {
   Button,
-  // Mark,
   ProjectTopics,
   ProjectYear,
   Text,
