@@ -40,7 +40,7 @@ const About: React.FC = (): JSX.Element => (
   <div className={css(styles.root)}>
     <Me />
     <ProjectWrapper>
-      <Col lg={{ span: 8 }}>
+      <Col lg={{ span: 10 }}>
         <h1 className={css(styles.title)}>Andrey Keske</h1>
         <Text>Andrey Keske is a fullstack developer</Text>
         <Text>
