@@ -5,6 +5,7 @@ import * as Hacks from '../Hacks';
 
 const Projects: React.FC = (): JSX.Element => (
   <>
+    <Hacks.ZenosParadox />
     <Hacks.MandelbrotSet />
     <Hacks.EsherSwitchButton />
     <Hacks.SwitchInButton />

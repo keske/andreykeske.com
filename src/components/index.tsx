@@ -8,6 +8,7 @@ export { default as ProjectTitle } from './Project.Title';
 export { default as ProjectTopics } from './Project.Topics';
 export { default as ProjectWrapper } from './Project.Wrapper';
 export { default as ProjectYear } from './Project.Year';
+export { default as Quote } from './Quote';
 export { default as ResponsiveFrame } from './ResponsiveFrame';
 export { default as SubTitle } from './SubTitle';
 export { default as Text } from './Text';
