@@ -17,8 +17,18 @@ const DELAY = 100;
     return spaces;
   };
 
-  const copyFile = async (dest /* string */) /* Promise */ => {
+  const copyFile = async (dest) => {
     await fs.promises.copyFile('./🐲', dest);
+  };
+
+  const copyFiles = async (total) => {
+    await Promise.all(
+      [...Array(total).keys()].map(async (index) => {
+        const spaces = getSpaces(heads + index);
+
+        await copyFile(`./Hydra/🐲${spaces}`);
+      }),
+    );
   };
 
   const main = async () => {
@@ -27,13 +37,7 @@ const DELAY = 100;
     const totalFiles = files.length - 1; // .DS_Store
 
     if (totalFiles < heads) {
-      Promise.all(
-        [...Array(2).keys()].map(async (index) => {
-          const spaces = getSpaces(heads + index);
-
-          await copyFile(`./Hydra/🐲${spaces}`);
-        }),
-      );
+      await copyFiles(2);
 
       heads = totalFiles + 2;
     }
@@ -43,16 +47,10 @@ const DELAY = 100;
     }, DELAY);
   };
 
-  const init = () => {
+  const init = async () => {
     const initialTotalHeads = 3;
 
-    Promise.all(
-      [...Array(initialTotalHeads).keys()].map(async (index) => {
-        const spaces = getSpaces(heads + index);
-
-        await copyFile(`./Hydra/🐲${spaces}`);
-      }),
-    );
+    await copyFiles(initialTotalHeads);
 
     heads = initialTotalHeads;
 

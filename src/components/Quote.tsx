@@ -25,6 +25,8 @@ const styles = ({ invert }: Pick<Props, 'invert'>) => ({
       ...getTypographySettings(MOBILE_FONT_SIZE),
     },
     ...getTypographySettings(DESKTOP_FONT_SIZE),
+    backgroundColor: 'lemonchiffon',
+    borderRadius: 10,
     color: invert ? 'white' : 'black',
     padding: 20,
   },
@@ -40,18 +42,16 @@ const Quote: React.FC<Props> = ({
   console.log(link);
 
   return (
-    <>
-      <p className={css(cx.root)}>
-        {children}
-        {link && (
-          <sup>
-            <a href="https://en.wikipedia.org/wiki/Zeno's_paradoxes#Achilles_and_the_tortoise">
-              Source
-            </a>
-          </sup>
-        )}
-      </p>
-    </>
+    <p className={css(cx.root)}>
+      {children}
+      {link && (
+        <sup>
+          <a href="https://en.wikipedia.org/wiki/Zeno's_paradoxes#Achilles_and_the_tortoise">
+            Source
+          </a>
+        </sup>
+      )}
+    </p>
   );
 };
 
