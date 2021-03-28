@@ -4,6 +4,7 @@ import * as React from 'react';
 
 // Libs
 import * as R from 'ramda';
+import { animated, useSpring } from 'react-spring';
 import { StyleSheet, css } from 'aphrodite';
 import { useWheel } from 'react-use-gesture';
 
@@ -13,11 +14,14 @@ import { useWindowSize } from '../hooks';
 // Components
 import { Text } from '../components';
 
-type Props = {
-  screens?: number;
-};
-
 const styles = StyleSheet.create({
+  scroll: {
+    backgroundColor: '#999',
+    borderRadius: 30,
+    position: 'absolute',
+    right: 0,
+    width: 10,
+  },
   text: {
     left: 20,
     position: 'fixed',
@@ -25,51 +29,49 @@ const styles = StyleSheet.create({
   },
 });
 
-const ZenosParadoxScrollArea: React.FC<Props> = ({
-  screens = 10,
-}): JSX.Element => {
+const ZenosParadoxScrollArea: React.FC = (): JSX.Element => {
+  const [index, setIndex] = React.useState<number>(1);
+
   const { height, width } = useWindowSize();
 
-  const [totalScreens, setTotalScreens] = React.useState<number>(
-    screens,
-  );
+  const [pos, ref] = useSpring(() => ({ y: 0 }));
 
   const bind = useWheel(({ xy: [, y] }) => {
-    if (y > totalScreens * height - 10) {
-      setTotalScreens(totalScreens + 1);
+    console.log('y', y);
+    console.log('height / (index + 1)', height / (index + 1));
+    if (y - height / (index + 1) > height / (index + 1)) {
+      setIndex(index + 1);
     }
+
+    ref.current[0].set({ y });
   });
 
-  const renderPhrase = (index: number): string =>
-    index === 0 ? 'Half of' : ', half of';
+  const renderPhrase = (): string =>
+    index === 1 ? 'Half of' : ', half of';
 
   return (
-    <div
-      {...bind()}
-      style={{
-        height: height * totalScreens + 13,
-        width,
-      }}
-    >
+    <div {...bind()} style={{ height, width }}>
       <div className={css(styles.text)}>
-        {totalScreens === screens ? (
+        {index === 1 ? (
           <Text>Start scrolling</Text>
         ) : (
           <Text
             style={{
-              fontSize: `${1 - totalScreens * 0.001}rem`,
-              lineHeight: '1.3rem',
               paddingRight: 20,
               paddingTop: 20,
             }}
           >
-            {R.range(0, totalScreens - screens).map((key) => (
-              <span key={key}>{renderPhrase(key)}</span>
+            {R.range(0, index).map((key) => (
+              <span key={key}>{renderPhrase()}</span>
             ))}{' '}
             way
           </Text>
         )}
       </div>
+      <animated.div
+        className={css(styles.scroll)}
+        style={{ height: height / (index + 1), y: pos.y }}
+      />
     </div>
   );
 };
