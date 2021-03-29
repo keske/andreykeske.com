@@ -7,6 +7,7 @@ const Projects: React.FC = (): JSX.Element => (
   <>
     <Hacks.Hydra />
     {/* <Hacks.ZenosParadox /> */}
+    <Hacks.Volume />
     <Hacks.MandelbrotSet />
     <Hacks.EsherSwitchButton />
     <Hacks.SwitchInButton />

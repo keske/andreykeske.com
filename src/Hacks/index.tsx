@@ -35,6 +35,7 @@ export { default as SwitchInButton } from './SwitchInButton';
 export { default as TickyApplication } from './TickyApplication';
 export { default as TmuxChess } from './TmuxChess';
 export { default as VintageGoogleStreetView } from './VintageGoogleStreetView';
+export { default as Volume } from './Volume';
 export { default as W1D1 } from './W1D1';
 export { default as WaterFilter } from './WaterFilter';
 export { default as WaterOnMars } from './WaterOnMars';

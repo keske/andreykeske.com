@@ -8,7 +8,12 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import { Home, MandelbrotSet, ZenosParadox } from './containers';
+import {
+  Home,
+  MandelbrotSet,
+  VolumeScroll,
+  ZenosParadox,
+} from './containers';
 
 ReactGA.initialize('UA-10906656-5');
 ReactGA.pageview(window.location.pathname + window.location.search);
@@ -22,6 +27,9 @@ function App(): JSX.Element {
         </Route>
         <Route path="/mandelbrot-set">
           <MandelbrotSet />
+        </Route>
+        <Route path="/volume-scroll">
+          <VolumeScroll />
         </Route>
         <Route path="/zenos-paradox">
           <ZenosParadox />
