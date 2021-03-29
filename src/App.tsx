@@ -11,6 +11,7 @@ import {
 import {
   Home,
   MandelbrotSet,
+  VolumeResize,
   VolumeScroll,
   ZenosParadox,
 } from './containers';
@@ -27,6 +28,9 @@ function App(): JSX.Element {
         </Route>
         <Route path="/mandelbrot-set">
           <MandelbrotSet />
+        </Route>
+        <Route path="/volume-resize">
+          <VolumeResize />
         </Route>
         <Route path="/volume-scroll">
           <VolumeScroll />

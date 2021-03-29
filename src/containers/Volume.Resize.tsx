@@ -1,3 +1,4 @@
+/* eslint no-restricted-globals: 0 */
 /* eslint react/jsx-props-no-spreading: 0 */
 
 import * as React from 'react';
@@ -5,10 +6,6 @@ import * as React from 'react';
 // Libs
 import useSound from 'use-sound';
 import { StyleSheet, css } from 'aphrodite';
-import { useScroll } from 'react-use-gesture';
-
-// Hooks
-import { useWindowSize } from '../hooks';
 
 // Sound
 import fugue from './Volume.Fugue.mp3';
@@ -24,7 +21,7 @@ const styles = StyleSheet.create({
     left: 20,
     letterSpacing: 2,
     padding: 15,
-    position: 'absolute',
+    position: 'fixed',
     top: 20,
   },
   copyright: {
@@ -34,50 +31,49 @@ const styles = StyleSheet.create({
     position: 'fixed',
   },
   title: {
+    bottom: 20,
     fontFamily: 'Inter',
     fontSize: 12,
     fontWeight: 600,
     position: 'fixed',
     right: 20,
-    top: 20,
   },
 });
 
-const VolumeScroll: React.FC = (): JSX.Element => {
+const VolumeResize: React.FC = (): JSX.Element => {
   const [playing, setPlaying] = React.useState<boolean>(false);
 
   const [volume, setVolume] = React.useState<number>(100);
   const [
     volumeIndication,
-    setVolumeIndication,
+    setIndicationVolume,
   ] = React.useState<number>(100);
-
-  const { height, width } = useWindowSize();
-
-  const totalHeight = height * 10;
 
   const [play, { pause }] = useSound(fugue, {
     volume,
   });
 
-  useScroll(
-    ({ xy: [, y] }) => {
-      const newVolume = +(1 - y / (totalHeight - height)).toFixed(2);
+  React.useEffect(() => {
+    function handleResize() {
+      const newVolume = window.innerHeight / screen.height;
 
       const newVolumeIndication = Math.floor(
-        (1 - y / (totalHeight - height)) * 100,
+        (window.innerHeight / screen.height) * 100,
       );
 
       setVolume(newVolume);
-      setVolumeIndication(newVolumeIndication);
-    },
-    {
-      domTarget: window,
-    },
-  );
+      setIndicationVolume(newVolumeIndication);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div style={{ height: totalHeight, width }}>
+    <div>
       <button
         className={css(styles.button)}
         onClick={() => {
@@ -105,4 +101,4 @@ const VolumeScroll: React.FC = (): JSX.Element => {
   );
 };
 
-export default VolumeScroll;
+export default VolumeResize;
