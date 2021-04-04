@@ -39,8 +39,6 @@ const Quote: React.FC<Props> = ({
 }: Props): JSX.Element => {
   const cx = StyleSheet.create(styles({ invert }));
 
-  console.log(link);
-
   return (
     <p className={css(cx.root)}>
       {children}

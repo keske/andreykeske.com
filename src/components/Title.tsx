@@ -3,8 +3,11 @@ import * as React from 'react';
 // Libs
 import { StyleSheet, css } from 'aphrodite';
 
+// Local
+import Anchor from './Anchor';
+
 type Props = {
-  children: React.ReactNode;
+  children: string;
   invert?: boolean;
 };
 
@@ -39,7 +42,16 @@ const Title: React.FC<Props> = ({
 }: Props): JSX.Element => {
   const cx = StyleSheet.create(styles({ invert }));
 
-  return <h2 className={css(cx.root)}>{children}</h2>;
+  const getLink = () => children.replace(' ', '-').toLowerCase();
+
+  return (
+    <>
+      <Anchor link={getLink()} />
+      <h2 className={css(cx.root)} id={getLink()}>
+        {children}
+      </h2>
+    </>
+  );
 };
 
 export default Title;
