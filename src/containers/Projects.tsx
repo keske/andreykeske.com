@@ -35,6 +35,7 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.WaterOnMars />
     <Hacks.VintageGoogleStreetView />
     <Hacks.PinHead />
+    <Hacks.FootballFansTrolling />
     <Hacks.PipeLineReactComponent />
     <Hacks.MacOSGamesDice />
     <Hacks.MacOSGamesSlot />
