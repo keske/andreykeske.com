@@ -19,6 +19,7 @@ export { default as Hydra } from './Hydra';
 export { default as IkeaGarbage } from './IkeaGarbage';
 export { default as LOT2046Tattoo } from './LOT2046Tattoo';
 export { default as IPadIcons } from './IPadIcons';
+export { default as LegoHTMLElement } from './LegoHTMLElement';
 export { default as Manhattan } from './Manhattan';
 export { default as Matryoshka } from './Matryoshka';
 export { default as MacOSGamesDice } from './MacOSGames.Dice';
