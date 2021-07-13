@@ -9,8 +9,6 @@
 import * as THREE from 'three';
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
-import { useFrame } from 'react-three-fiber';
-
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 type Props = {
@@ -42,9 +40,10 @@ const Model: React.FC<Props> = ({ material }: Props) => {
         ref={ref}
         geometry={nodes.Cube128.geometry}
         material={material.current}
+        position={[0, -0.2, 0]}
       >
         <meshStandardMaterial
-          color="red"
+          color="yellow"
           metalness={3}
           roughness={3}
         />

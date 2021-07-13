@@ -10,26 +10,35 @@ type Props = {
 
 const styles = StyleSheet.create({
   canvas: {
+    backgroundColor: '#f6ec36',
+    height: '50vh',
+    marginLeft: '10%',
+    width: '80%',
+  },
+  root: {
+    backgroundColor: '#f6ec36',
     height: '50vh',
     width: '100%',
   },
 });
 
 const Canvas: React.FC<Props> = ({ children }: Props) => (
-  <FiberCanvas
-    camera={{ position: [0, 0, 1] }}
-    className={css(styles.canvas)}
-    colorManagement
-    gl={{
-      alpha: true,
-      antialias: true,
-      depth: false,
-      powerPreference: 'high-performance',
-      stencil: false,
-    }}
-  >
-    {children}
-  </FiberCanvas>
+  <div className={css(styles.root)}>
+    <FiberCanvas
+      camera={{ position: [0, 0, 1.2] }}
+      className={css(styles.canvas)}
+      colorManagement
+      gl={{
+        alpha: true,
+        antialias: true,
+        depth: false,
+        powerPreference: 'high-performance',
+        stencil: false,
+      }}
+    >
+      {children}
+    </FiberCanvas>
+  </div>
 );
 
 export default Canvas;

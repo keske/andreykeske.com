@@ -12,13 +12,13 @@ const Scene: React.FC = () => {
 
   return (
     <group>
-      <ambientLight intensity={0.1} />
+      <ambientLight intensity={0.2} />
 
       <spotLight
         angle={Math.PI / 6}
         castShadow
         intensity={0.1}
-        position={[20, 20, 20]}
+        position={[20, 20, 30]}
         shadow-bias={-0.00005}
         shadow-mapSize-height={2048}
         shadow-mapSize-width={2048}
@@ -27,7 +27,7 @@ const Scene: React.FC = () => {
       <MeshWobbleMaterial
         ref={material}
         bumpScale={0.005}
-        color="red"
+        color="#d01012"
         factor={7}
         metalness={3}
         roughness={0.3}
