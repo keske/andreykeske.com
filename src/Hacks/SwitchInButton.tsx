@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     border: 'none',
     borderRadius: 15,
     boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.2)',
-    color: '#999',
     height: 70,
     paddingLeft: 60,
     width: 200,
@@ -55,6 +54,9 @@ const SwitchInButton: React.FC = (): JSX.Element => {
           onClick={() => {
             alert('Clicked!');
           }}
+          style={{
+            color: checked ? '#000' : '#999',
+          }}
           type="button"
         >
           Confirm
@@ -62,8 +64,8 @@ const SwitchInButton: React.FC = (): JSX.Element => {
         <Switch
           checked={checked}
           className={css(styles.switch)}
-          onChange={(_) => {
-            setChecked(_);
+          onChange={(value) => {
+            setChecked(value);
           }}
         />
         <br />

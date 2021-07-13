@@ -59,7 +59,7 @@ const LegoHTMLElement: React.FC = (): JSX.Element => (
       </button>
       <br />
       <br />
-      <ProjectTopics topics={['UI']} />
+      <ProjectTopics topics={['Lego', 'UI']} />
       <ProjectYear>2021</ProjectYear>
     </Col>
   </ProjectWrapper>
