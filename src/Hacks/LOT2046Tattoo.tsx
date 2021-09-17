@@ -39,12 +39,18 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
     <Col className={css(styles.col)} lg={{ offset: 2, span: 10 }}>
       <Title>LOT2046 Tattoo Machine</Title>
       <Text>
-        Tattoo machine which I&#39;ve built from{' '}
-        <a href="https://www.lot2046.com/">lot2046</a> products:{' '}
+        Tattoo machine which I&#39;ve built from
+        {' '}
+        <a href="https://www.lot2046.com/">lot2046</a>
+        {' '}
+        products:
+        {' '}
         <Mark color="black" invert>
           hair trimmer
-        </Mark>{' '}
-        and{' '}
+        </Mark>
+        {' '}
+        and
+        {' '}
         <Mark color="black" invert>
           toothbrush
         </Mark>

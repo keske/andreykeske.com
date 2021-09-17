@@ -41,7 +41,12 @@ const LegoHTMLElement: React.FC = (): JSX.Element => (
       <Title>Lego HTML Element</Title>
       <Text>
         A classical Lego brick except that this one was made from HTML
-        elements <Mark color="#35da35">button</Mark> and{' '}
+        elements
+        {' '}
+        <Mark color="#35da35">button</Mark>
+        {' '}
+        and
+        {' '}
         <Mark color="#35da35">input</Mark>
       </Text>
       <button className={css(styles.root)} type="button">

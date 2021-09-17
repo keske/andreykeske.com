@@ -25,7 +25,11 @@ const W1D1: React.FC = (): JSX.Element => (
     <Col lg={{ span: 6 }}>
       <Title>W1D1</Title>
       <Text>
-        An <Mark>app for daily creative challenges</Mark> to get
+        An
+        {' '}
+        <Mark>app for daily creative challenges</Mark>
+        {' '}
+        to get
         inspired, learn new stuff and grow
       </Text>
       <Text>

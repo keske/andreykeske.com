@@ -38,8 +38,11 @@ const IPadIcons: React.FC = (): JSX.Element => (
     <Col className={css(styles.col)} lg={{ offset: 2, span: 10 }}>
       <Title>Invisible icons on the iPad</Title>
       <Text>
-        I&#39;ve created 20 apps. Each imitating{' '}
-        <Mark>transparency/absence</Mark> of the icon itself. But the
+        I&#39;ve created 20 apps. Each imitating
+        {' '}
+        <Mark>transparency/absence</Mark>
+        {' '}
+        of the icon itself. But the
         icons are not transparent.
       </Text>
 

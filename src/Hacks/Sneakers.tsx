@@ -30,8 +30,14 @@ const Sneakers: React.FC = (): JSX.Element => (
 
       <Title>Sneakers</Title>
       <Text>
-        I took the popular model of both brands —{' '}
-        <Mark>Nike Dunk</Mark> and <Mark>Adidas Superstar</Mark> — and
+        I took the popular model of both brands —
+        {' '}
+        <Mark>Nike Dunk</Mark>
+        {' '}
+        and
+        <Mark>Adidas Superstar</Mark>
+        {' '}
+        — and
         crossed them.
       </Text>
       <ProjectDisciplines disciplines={['Graphic Design']} />

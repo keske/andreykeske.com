@@ -10,6 +10,7 @@ type Props = {
 };
 
 const DESKTOP_FONT_SIZE = 0.8;
+
 const MOBILE_FONT_SIZE = 0.7;
 
 const getTypographySettings = (

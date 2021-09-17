@@ -29,7 +29,8 @@ const PianoTabs: React.FC = (): JSX.Element => (
       </Text>
       <Text>
         In the morning I felt less enthusiastic about this idea until
-        i realized that{' '}
+        i realized that
+        {' '}
         <Mark>
           Google Chrome actually has hotkeys for changing tabs
         </Mark>

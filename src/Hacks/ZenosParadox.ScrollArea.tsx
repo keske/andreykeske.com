@@ -46,8 +46,7 @@ const ZenosParadoxScrollArea: React.FC = (): JSX.Element => {
     ref.current[0].set({ y });
   });
 
-  const renderPhrase = (): string =>
-    index === 1 ? 'Half of' : ', half of';
+  const renderPhrase = (): string => (index === 1 ? 'Half of' : ', half of');
 
   return (
     <div {...bind()} style={{ height, width }}>
@@ -63,7 +62,8 @@ const ZenosParadoxScrollArea: React.FC = (): JSX.Element => {
           >
             {R.range(0, index).map((key) => (
               <span key={key}>{renderPhrase()}</span>
-            ))}{' '}
+            ))}
+            {' '}
             way
           </Text>
         )}

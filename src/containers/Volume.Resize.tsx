@@ -44,6 +44,7 @@ const VolumeResize: React.FC = (): JSX.Element => {
   const [playing, setPlaying] = React.useState<boolean>(false);
 
   const [volume, setVolume] = React.useState<number>(100);
+
   const [
     volumeIndication,
     setIndicationVolume,
@@ -91,7 +92,9 @@ const VolumeResize: React.FC = (): JSX.Element => {
       </button>
       <div
         className={css(styles.title)}
-      >{`${volumeIndication}%`}</div>
+      >
+        {`${volumeIndication}%`}
+      </div>
       <div className={css(styles.copyright)}>
         <a href="https://freemusicarchive.org/music/John_Lewis_Grant/24_Preludes__Fugues_J_S_Bach/Bach_Prelude___Fugue_11">
           Bach Prelude & Fugue 11 by John Lewis Grant

@@ -43,7 +43,10 @@ const SwitchInButton: React.FC = (): JSX.Element => {
       <Col lg={{ offset: 2, span: 7 }}>
         <Title>Switch In Button</Title>
         <Text>
-          Experimental button component with <Mark>Switch</Mark>{' '}
+          Experimental button component with
+          {' '}
+          <Mark>Switch</Mark>
+          {' '}
           inside it that disable or enable that button. This button
           can be used in forms when you have to confirm or agree with
           the license, for example.

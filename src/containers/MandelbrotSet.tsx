@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
 
 const MandelbrotSet: React.FC = (): JSX.Element => {
   const [quantity, setQuantity] = React.useState<number>(100);
+
   const [size, setSize] = React.useState<number>(10);
 
   return (

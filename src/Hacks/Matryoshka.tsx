@@ -23,7 +23,9 @@ const Matryoshka: React.FC = (): JSX.Element => (
       />
       <Title>Matryoshka</Title>
       <Text>
-        Matryoshka in <Mark>interface of operation system</Mark>
+        Matryoshka in
+        {' '}
+        <Mark>interface of operation system</Mark>
       </Text>
       <ProjectTopics topics={['Interface', 'Ready Made']} />
       <ProjectYear>2017</ProjectYear>

@@ -1,4 +1,3 @@
-'use strict';
 
 const fs = require('fs');
 
@@ -11,7 +10,7 @@ const DELAY = 100;
     let spaces = ' ';
 
     [...Array(total).keys()].map(() => {
-      spaces = spaces + ' ';
+      spaces += ' ';
     });
 
     return spaces;

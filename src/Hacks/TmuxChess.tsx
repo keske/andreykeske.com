@@ -23,7 +23,11 @@ const TmuxChess: React.FC = (): JSX.Element => (
       />
       <Title>Tmux Chess</Title>
       <Text>
-        Playing in Chess using <Mark>tmux</Mark> as board
+        Playing in Chess using
+        {' '}
+        <Mark>tmux</Mark>
+        {' '}
+        as board
       </Text>
       <ProjectTopics topics={['Interface', 'Ready Made']} />
       <ProjectYear>2014</ProjectYear>

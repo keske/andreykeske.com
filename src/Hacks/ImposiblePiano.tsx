@@ -18,9 +18,11 @@ import {
 } from '../components';
 
 const xSpaces = 6;
+
 const ySpaces = 6;
 
 const steps = 14;
+
 const stepInc = 1 / (steps / (2 + 1 / steps) - 1);
 
 const turnDur = '0.6s';
@@ -29,7 +31,9 @@ const firstStepH = 2;
 
 // colors
 const stepColor1 = '#fff';
+
 const stepColor2 = '#888';
+
 const stepColor3 = '#555';
 
 const data = [
@@ -137,7 +141,9 @@ const ImposiblePiano: React.FC = (): JSX.Element => (
       {/* Piano */}
       <div className={css(styles.container)}>
         <div className={css(styles.surface)}>
-          {data.map(({ x, y, z, h }, index) => (
+          {data.map(({
+            x, y, z, h,
+          }, index) => (
             <div
               key={index}
               // a={console.log(

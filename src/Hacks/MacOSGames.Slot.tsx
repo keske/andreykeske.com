@@ -28,7 +28,11 @@ const MacOSGamesSlot: React.FC = (): JSX.Element => (
       <Text>
         3 slots, each has a set of pictures. The aim of the game is to
         get 3 the same pictures. In my game each slot is the simple
-        folder in <Mark>Cover Flow</Mark> mode and in contrast WI the
+        folder in
+        {' '}
+        <Mark>Cover Flow</Mark>
+        {' '}
+        mode and in contrast WI the
         original game the movement of the slots is horizontal.
       </Text>
 
@@ -36,7 +40,8 @@ const MacOSGamesSlot: React.FC = (): JSX.Element => (
       <ul>
         <li>
           Open Terminal
-          <br />$ cd path-to-game/
+          <br />
+          $ cd path-to-game/
         </li>
         <li>
           Open 3 folders and place them on below the other.
@@ -44,13 +49,15 @@ const MacOSGamesSlot: React.FC = (): JSX.Element => (
           $ open first/
           <br />
           $ open second/
-          <br />$ open third/
+          <br />
+          $ open third/
         </li>
         <li>
           Run game.php script. After that pictures from the source
           folder will be randomly copied 600 times to the folders
           first, second mad third
-          <br />$ php game.php
+          <br />
+          $ php game.php
         </li>
       </ul>
 
