@@ -28,7 +28,9 @@ const MacOSGamesDice: React.FC = (): JSX.Element => (
       <Text>
         Very simple. Normal folder in Preview mode shows previews of
         the image files, two in our case. Script copes such two images
-        <Mark>randomly</Mark> and gives a combination of two dices.
+        <Mark>randomly</Mark>
+        {' '}
+        and gives a combination of two dices.
       </Text>
 
       <SubTitle>How to play</SubTitle>
@@ -36,7 +38,8 @@ const MacOSGamesDice: React.FC = (): JSX.Element => (
         <li>Open folder and set Preview mode</li>
         <li>
           Open Terminal
-          <br />$ cd path-to-game/
+          <br />
+          $ cd path-to-game/
         </li>
         <li>Run the game ($ php game.php)</li>
         <li>Each roll is a script run</li>

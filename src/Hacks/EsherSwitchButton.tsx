@@ -39,7 +39,8 @@ const EsherSwitchButton: React.FC = (): JSX.Element => (
         C. Escher. 1938
         <br />
         <a href="https://en.wikipedia.org/wiki/Sky_and_Water_I">
-          WIKI<sup>↗</sup>
+          WIKI
+          <sup>↗</sup>
         </a>
       </Text>
     </Col>

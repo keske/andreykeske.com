@@ -24,11 +24,9 @@ const styles = StyleSheet.create({
 const Battleship: React.FC = (): JSX.Element => {
   const length = 10;
 
-  const letters: Array<string> = Array.from({ length }, (_, i) =>
-    String.fromCharCode('A'.charCodeAt(0) + i),
-  );
+  const letters: string[] = Array.from({ length }, (_, i) => String.fromCharCode('A'.charCodeAt(0) + i));
 
-  const numbers: Array<number> = Array.from(
+  const numbers: number[] = Array.from(
     { length },
     (_, i) => i + 1,
   );
@@ -56,7 +54,8 @@ const Battleship: React.FC = (): JSX.Element => {
         </Tabs>
         <Title>Battleship</Title>
         <Text>
-          Hardcore representation of classic game through{' '}
+          Hardcore representation of classic game through
+          {' '}
           <Mark>tabs</Mark>
         </Text>
         <ProjectTopics topics={['Interface']} />

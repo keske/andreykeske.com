@@ -24,7 +24,8 @@ const IkeaGarbage: React.FC = (): JSX.Element => (
       />
       <Title>IKEA Place</Title>
       <Text>
-        The first discarded piece of IKEA furniture in{' '}
+        The first discarded piece of IKEA furniture in
+        {' '}
         <Mark>Augmented Reality</Mark>
       </Text>
       <a href="https://apps.apple.com/us/app/ikea-place/id1279244498">

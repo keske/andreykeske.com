@@ -25,7 +25,10 @@ const EnergyOrParticle: React.FC = (): JSX.Element => (
       />
       <Title>Wave–particle duality</Title>
       <Text>
-        Light behaves <Mark>as a wave and as a particle</Mark>,
+        Light behaves
+        {' '}
+        <Mark>as a wave and as a particle</Mark>
+        ,
         depending on the circumstances and the effect being observed
       </Text>
       <Text>

@@ -1,0 +1,31 @@
+---
+extends:
+  - .eslintrc.strict.yaml
+rules:
+  '@typescript-eslint/no-unused-vars': warn
+  better-styled-components/sort-declarations-alphabetically:
+    - 1
+  import/prefer-default-export: 0
+  max-len:
+    - warn
+    - code: 80
+      comments: 180
+      ignoreUrls: true
+  max-lines:
+    - warn
+    - 140
+  react/jsx-sort-props: warn
+  react/no-unused-prop-types: warn
+  react/prop-types: warn
+  sort-imports:
+    - warn
+    - ignoreCase: false
+      ignoreDeclarationSort: true
+      ignoreMemberSort: false
+      memberSyntaxSortOrder:
+        - none
+        - all
+        - multiple
+        - single
+  sort-keys: warn
+  sort-keys-fix/sort-keys-fix: warn

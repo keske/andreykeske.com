@@ -24,7 +24,9 @@ const Hodor: React.FC = (): JSX.Element => (
     <Col lg={{ span: 6 }}>
       <Title>Hodor / Telegram bot</Title>
       <Text>
-        Try to speak with him: <Mark>@got_hodor_bot</Mark>
+        Try to speak with him:
+        {' '}
+        <Mark>@got_hodor_bot</Mark>
       </Text>
       <Text>He is so Hodor</Text>
       <a href="https://github.com/keske/Hodor">

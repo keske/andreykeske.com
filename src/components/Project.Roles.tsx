@@ -4,7 +4,7 @@ import * as React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 type Props = {
-  roles: Array<string>;
+  roles: string[];
 };
 
 const styles = StyleSheet.create({

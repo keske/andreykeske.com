@@ -21,7 +21,9 @@ const RollingStones: React.FC = (): JSX.Element => (
       <UploadcareImage src="https://ucarecdn.com/eea10eaa-ea87-4ecd-ae78-9de9e11b54e9/" />
       <Title>The Rolling Stones</Title>
       <Text>
-        <Mark>Emoji-like</Mark> logo
+        <Mark>Emoji-like</Mark>
+        {' '}
+        logo
       </Text>
       <ProjectDisciplines disciplines={['Graphic Design']} />
       <ProjectTopics topics={['Emoji']} />

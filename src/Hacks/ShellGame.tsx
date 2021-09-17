@@ -23,8 +23,10 @@ const ShellGame: React.FC = (): JSX.Element => (
       />
       <Title>The Shell Game</Title>
       <Text>
-        I am continuing to insert games to the{' '}
-        <Mark>interface of operation system</Mark>. Now it is a shell
+        I am continuing to insert games to the
+        {' '}
+        <Mark>interface of operation system</Mark>
+        . Now it is a shell
         game.
       </Text>
       <ProjectTopics topics={['Game', 'Interface', 'Ready Made']} />

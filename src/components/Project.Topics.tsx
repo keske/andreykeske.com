@@ -4,7 +4,7 @@ import * as React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 type Props = {
-  topics: Array<string>;
+  topics: string[];
 };
 
 const styles = StyleSheet.create({

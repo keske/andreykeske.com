@@ -5,8 +5,8 @@ import * as R from 'ramda';
 import { StyleSheet, css } from 'aphrodite';
 
 type Props = {
-  format?: 'png' | 'jpeg';
-  progressive?: 'yes' | 'no';
+  format?: 'jpeg' | 'png';
+  progressive?: 'no' | 'yes';
   quality?: 'lightest' | 'normal';
   src: string;
   // width: number;

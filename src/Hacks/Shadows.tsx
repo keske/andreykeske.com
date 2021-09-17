@@ -24,7 +24,8 @@ const Shadows: React.FC = (): JSX.Element => (
       <Title>The shadows of the window</Title>
       <Text>
         I continue research and experiments with Mac OS interface.
-        This time I found that I can interact with{' '}
+        This time I found that I can interact with
+        {' '}
         <Mark>window&#39;s shadow</Mark>
       </Text>
       <Text>The slider controls the size of the shadow</Text>
