@@ -14,30 +14,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "changelog": "lerna-changelog",
-    "lint:check": "eslint . --ext=.tsx",
-    "lint:format": "eslint . --ext=.tsx --fix",
-    "lint:watch": "onchange \"**/*\" -- eslint . --ext=.tsx --fix {{changed}}",
-    "prettier:check": "prettier --config prettier.config.js 'src/**/*.tsx'",
-    "prettier:format": "prettier --config prettier.config.js 'src/**/*.tsx' --write",
-    "prettier:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
-    "watch": "npm-run-all -p prettier:watch lint:format"
-  },
-  "lint-staged": {
-    "**/*.tsx": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "**/*.@(md|json|yml)": [
-      "prettier --write"
-    ],
-    "**/*.@(md)": [
-      "alex ."
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix --config .eslintrc.strict.yaml"
   },
   "dependencies": {
     "@react-three/drei": "^3.7.0",
@@ -53,23 +30,17 @@
     "@types/styled-components": "^5.1.14",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
-    "alex": "^9.1.0",
     "aphrodite": "^2.4.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-better-styled-components": "^1.1.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sort-keys-fix": "^1.1.1",
-    "husky": "^5.1.3",
-    "lint-staged": "^10.5.4",
-    "onchange": "^7.1.0",
     "postprocessing": "^6.20.3",
-    "prettier": "^2.2.1",
     "r3f-perf": "^0.83.0",
     "ramda": "^0.27.1",
     "react": "^17.0.1",
@@ -89,8 +60,6 @@
     "use-sound": "^2.0.1"
   },
   "devDependencies": {
-    "lerna-changelog": "^1.0.1",
-    "npm-run-all": "^4.1.5"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -106,14 +75,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "changelog": {
-    "labels": {
-      "bug": "Type: bug",
-      "documentation": "Type: documentation",
-      "enhancement": "Type: enhancement",
-      "feature": "Type: feature request"
-    },
-    "repo": "keske/personal-site"
   }
 }
