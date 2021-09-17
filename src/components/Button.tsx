@@ -1,40 +1,27 @@
 import * as React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 
 type Props = {
   children: React.ReactNode;
-  color?: string;
 };
 
-const DEFAULT_COLOR = 'black';
-
-const styles = ({ color }: Pick<Props, 'color'>) => ({
-  root: {
-    ':hover': {
-      opacity: 0.7,
-    },
-    border: `1px solid ${color}`,
-    borderRadius: 7,
-    color,
-    display: 'inline-block',
-    fontSize: '1rem',
-    marginTop: 10,
-    paddingBottom: 13,
-    paddingLeft: 23,
-    paddingRight: 23,
-    paddingTop: 13,
-  } as const,
-});
+const Root = styled.button`
+  background-color: #000;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 10px;
+  padding-bottom: 13px;
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-top: 13px;
+`;
 
 const Button: React.FC<Props> = ({
   children,
-  color = DEFAULT_COLOR,
-}: Props): JSX.Element => {
-  const cx = StyleSheet.create(styles({ color }));
-
-  return <span className={css(cx.root)}>{children}</span>;
-};
+}: Props): JSX.Element => <Root>{children}</Root>;
 
 export default Button;
