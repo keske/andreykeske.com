@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 import { Col } from 'react-bootstrap';
 
 // Components
@@ -16,26 +16,23 @@ import {
   UploadcareImage,
 } from '../components';
 
-const styles = StyleSheet.create({
-  col: {
-    paddingBottom: 20,
-    paddingTop: 20,
-  },
-});
+const StyledCol = styled(Col)`
+  padding: 20px 0;
+`;
 
 const IPadIcons: React.FC = (): JSX.Element => (
   <ProjectWrapper>
-    <Col className={css(styles.col)} lg={{ offset: 2, span: 7 }}>
+    <StyledCol lg={{ offset: 2, span: 7 }}>
       <UploadcareImage src="https://ucarecdn.com/1ce5b127-bdcd-4459-89f9-fdfde13da28d/" />
-    </Col>
-    <Col className={css(styles.col)} lg={{ offset: 5, span: 6 }}>
+    </StyledCol>
+    <StyledCol lg={{ offset: 5, span: 6 }}>
       <UploadcareImage src="https://ucarecdn.com/9a4e78d7-599f-4b51-ad06-8736283fc2a0/" />
-    </Col>
-    <Col className={css(styles.col)} lg={{ offset: 6, span: 5 }}>
+    </StyledCol>
+    <StyledCol lg={{ offset: 6, span: 5 }}>
       <UploadcareImage src="https://ucarecdn.com/fdb99690-68b0-47b8-9860-b8ae32ae4794/" />
-    </Col>
+    </StyledCol>
 
-    <Col className={css(styles.col)} lg={{ offset: 2, span: 10 }}>
+    <StyledCol lg={{ offset: 2, span: 10 }}>
       <Title>Invisible icons on the iPad</Title>
       <Text>
         I&#39;ve created 20 apps. Each imitating
@@ -60,7 +57,7 @@ const IPadIcons: React.FC = (): JSX.Element => (
       </ul>
       <ProjectTopics topics={['Interface']} />
       <ProjectYear>2011</ProjectYear>
-    </Col>
+    </StyledCol>
   </ProjectWrapper>
 );
 
