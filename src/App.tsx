@@ -13,7 +13,6 @@ import {
   MandelbrotSet,
   VolumeResize,
   VolumeScroll,
-  ZenosParadox,
 } from './containers';
 
 ReactGA.initialize('UA-10906656-5');
@@ -34,9 +33,6 @@ function App(): JSX.Element {
         </Route>
         <Route path="/volume-scroll">
           <VolumeScroll />
-        </Route>
-        <Route path="/zenos-paradox">
-          <ZenosParadox />
         </Route>
       </Switch>
     </Router>

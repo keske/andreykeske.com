@@ -44,4 +44,3 @@ export { default as WaterFilter } from './WaterFilter';
 export { default as WaterOnMars } from './WaterOnMars';
 export { default as YoutubeChina2017 } from './YoutubeChina2017';
 export { default as YouTubeRecentVideos } from './YouTubeRecentVideos';
-export { default as ZenosParadox } from './ZenosParadox';

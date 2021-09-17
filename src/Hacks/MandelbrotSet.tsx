@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -16,22 +15,9 @@ import {
   UploadcareImage,
 } from '../components';
 
-// Local
-import MandelbrotSetGeometry from './MandelbrotSet.Geometry';
-
-const styles = StyleSheet.create({
-  wrapper: {
-    height: 10 * 100,
-    width: 10 * 100,
-  },
-});
-
 const MandelbrotSet: React.FC = (): JSX.Element => (
   <ProjectWrapper>
     <Col lg={{ offset: 1, span: 10 }}>
-      <div className={css(styles.wrapper)}>
-        <MandelbrotSetGeometry />
-      </div>
       <Title>Mandelbrot set</Title>
       <Text>
         The fractal geometry built from the Radio Button elements

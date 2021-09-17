@@ -1,3 +1,5 @@
+/* eslint jsx-a11y/accessible-emoji: 0 */
+
 import * as React from 'react';
 
 // Libs
