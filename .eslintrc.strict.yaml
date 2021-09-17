@@ -1,0 +1,113 @@
+---
+extends:
+  - airbnb-typescript
+  - eslint:recommended
+  - plugin:jsx-a11y/recommended
+  - plugin:@typescript-eslint/eslint-recommended
+  - plugin:@typescript-eslint/recommended
+parser: '@typescript-eslint/parser'
+parserOptions:
+  project: ./tsconfig.json
+plugins:
+  - better-styled-components
+  - jsx-a11y
+  - '@typescript-eslint'
+  - sort-keys-fix
+  - react-hooks
+root: true
+rules:
+  '@typescript-eslint/array-type':
+    - error
+    - default: array-simple
+  '@typescript-eslint/ban-types':
+    - error
+  '@typescript-eslint/comma-dangle':
+    - error
+    - always-multiline
+  '@typescript-eslint/method-signature-style':
+    - error
+    - property
+  '@typescript-eslint/no-non-null-assertion': error
+  '@typescript-eslint/no-unused-vars': error
+  '@typescript-eslint/quotes': 0
+  '@typescript-eslint/restrict-plus-operands':
+    - error
+  '@typescript-eslint/sort-type-union-intersection-members': error
+  '@typescript-eslint/switch-exhaustiveness-check': error
+  arrow-body-style:
+    - error
+    - as-needed
+  better-styled-components/sort-declarations-alphabetically:
+    - 1
+  comma-dangle:
+    - error
+    - always-multiline
+  import/prefer-default-export: 0
+  max-len:
+    - error
+    - code: 80
+      comments: 180
+      ignoreUrls: true
+  max-lines:
+    - error
+    - 140
+  newline-after-var: 2
+  no-console: 0
+  no-multiple-empty-lines:
+    - error
+    - max: 1
+      maxEOF: 0
+  padding-line-between-statements:
+    - error
+    - blankLine: always
+      next: '*'
+      prev:
+        - const
+        - let
+        - var
+        - case
+        - default
+    - blankLine: always
+      next: '*'
+      prev:
+        - return
+  react-hooks/exhaustive-deps: warn
+  react-hooks/rules-of-hooks: error
+  react/jsx-curly-newline:
+    - 0
+    - multiline: consistent
+      singleline: consistent
+  react/jsx-max-depth:
+    - error
+    - max: 7
+  react/jsx-max-props-per-line:
+    - 1
+    - maximum: 5
+      when: always
+  react/jsx-props-no-spreading: 0
+  react/jsx-sort-props: error
+  react/jsx-wrap-multilines:
+    - 1
+    - arrow: parens
+      assignment: parens
+      condition: parens-new-line
+      declaration: parens
+      logical: parens
+      prop: parens
+      return: parens
+  react/no-array-index-key: 0
+  react/react-in-jsx-scope: 'off'
+  react/require-default-props: 0
+  sort-imports:
+    - error
+    - ignoreCase: false
+      ignoreDeclarationSort: true
+      ignoreMemberSort: false
+      memberSyntaxSortOrder:
+        - none
+        - all
+        - multiple
+        - single
+  sort-keys: error
+  sort-keys-fix/sort-keys-fix: error
+  space-before-function-paren: 0
