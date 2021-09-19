@@ -1,44 +1,24 @@
 import * as React from 'react';
 
-// Libs
-import { useResource } from 'react-three-fiber';
-import { MeshWobbleMaterial } from '@react-three/drei';
+// Components
+import Cube from './Cube';
 
-const Scene: React.FC = () => {
-  const material = useResource();
+const Scene: React.FC = () => (
+  <group>
+    <ambientLight intensity={0.2} />
 
-  return (
-    <group>
-      <ambientLight intensity={0.2} />
+    <spotLight
+      angle={Math.PI / 6}
+      castShadow
+      intensity={0.1}
+      position={[20, 20, 30]}
+      shadow-bias={-0.00005}
+      shadow-mapSize-height={2048}
+      shadow-mapSize-width={2048}
+    />
 
-      <spotLight
-        angle={Math.PI / 6}
-        castShadow
-        intensity={0.1}
-        position={[20, 20, 30]}
-        shadow-bias={-0.00005}
-        shadow-mapSize-height={2048}
-        shadow-mapSize-width={2048}
-      />
-
-      <MeshWobbleMaterial
-        ref={material}
-        bumpScale={0.005}
-        color="#d01012"
-        factor={7}
-        metalness={3}
-        roughness={0.3}
-        speed={0}
-      />
-
-      <group>
-        <mesh>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshBasicMaterial attach="material" />
-        </mesh>
-      </group>
-    </group>
-  );
-};
+    <Cube />
+  </group>
+);
 
 export default Scene;

@@ -10,21 +10,20 @@ type Props = {
 
 const StyledFiberCanvas = styled(FiberCanvas)`
   background-color: #000;
-  height: 50vh;
-  margin-left: 10%;
-  width: 80%;
+  height: 100vh;
+  width: 100%;
 `;
 
 const Root = styled.div`
   background-color: #000;
-  height: 50vh;
+  height: 100vh;
   width: 100%;
 `;
 
 const Canvas: React.FC<Props> = ({ children }: Props) => (
   <Root>
     <StyledFiberCanvas
-      camera={{ position: [0, 0, 1.2] }}
+      camera={{ position: [0, 0, 5.2] }}
       colorManagement
       gl={{
         alpha: true,
