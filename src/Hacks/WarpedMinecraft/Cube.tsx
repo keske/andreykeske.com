@@ -7,6 +7,22 @@ import * as THREE from 'three';
 import Face from './Cube.Face';
 
 const Cube: React.FC = () => {
+  const getLeftEdgeOfFrontFace = React.useCallback(() => [
+    // Left edge of front face from bottom to top
+    new THREE.Vector4(-2, -2, 0, 0.1),
+    new THREE.Vector4(-2, -1, 0, 0.1),
+    new THREE.Vector4(-2, 1, 0, 0.1),
+    new THREE.Vector4(-2, 2, 0, 0.1),
+  ], []);
+
+  const getRightEdgeOfFrontFace = React.useCallback(() => [
+    // Right edge of front face from bottom to top
+    new THREE.Vector4(2, -2, 0, 0.1),
+    new THREE.Vector4(2, -1, 0, 0.1),
+    new THREE.Vector4(2, 1, 0, 0.1),
+    new THREE.Vector4(2, 2, 0, 0.1),
+  ], []);
+
   const net = React.useMemo(
     () => ({
       /**
@@ -71,13 +87,7 @@ const Cube: React.FC = () => {
        */
       front: {
         nsControlPoints: [
-          [
-            // Left edge of front face from bottom to top
-            new THREE.Vector4(-2, -2, 0, 0.1),
-            new THREE.Vector4(-2, -1, 0, 0.1),
-            new THREE.Vector4(-2, 1, 0, 0.1),
-            new THREE.Vector4(-2, 2, 0, 0.1),
-          ],
+          getLeftEdgeOfFrontFace(),
           [
             // Middle edge of front face from bottom to top
             new THREE.Vector4(0, -2, 0, 0.1),
@@ -85,13 +95,7 @@ const Cube: React.FC = () => {
             new THREE.Vector4(0, 1, 0, 0.1),
             new THREE.Vector4(0, 2, 0, 0.1),
           ],
-          [
-            // Right edge of front face from bottom to top
-            new THREE.Vector4(2, -2, 0, 0.1),
-            new THREE.Vector4(2, -1, 0, 0.1),
-            new THREE.Vector4(2, 1, 0, 0.1),
-            new THREE.Vector4(2, 2, 0, 0.1),
-          ],
+          getRightEdgeOfFrontFace(),
         ],
         url: 'static/minecraft/dirt.jpg',
       },
@@ -114,14 +118,7 @@ const Cube: React.FC = () => {
             new THREE.Vector4(-2, 1, -2, 0.1),
             new THREE.Vector4(-2, 2, -2, 0.1),
           ],
-          [
-            // Right edge of left face from bottom to top
-            // Same as the front face's left edge
-            new THREE.Vector4(-2, -2, 0, 0.1),
-            new THREE.Vector4(-2, -1, 0, 0.1),
-            new THREE.Vector4(-2, 1, 0, 0.1),
-            new THREE.Vector4(-2, 2, 0, 0.1),
-          ],
+          getLeftEdgeOfFrontFace(),
         ],
         url: 'static/minecraft/dirt.jpg',
       },
@@ -130,14 +127,7 @@ const Cube: React.FC = () => {
        */
       right: {
         nsControlPoints: [
-          [
-            // Left edge of right face from bottom to top
-            // Same as the front face's right edge
-            new THREE.Vector4(2, -2, 0, 0.1),
-            new THREE.Vector4(2, -1, 0, 0.1),
-            new THREE.Vector4(2, 1, 0, 0.1),
-            new THREE.Vector4(2, 2, 0, 0.1),
-          ],
+          getRightEdgeOfFrontFace(),
           [
             // Middle edge of right face from bottom to top
             new THREE.Vector4(2, -2, -2, 0.1),
