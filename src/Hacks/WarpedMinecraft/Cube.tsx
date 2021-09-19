@@ -15,7 +15,7 @@ const Cube: React.FC = () => {
       back: {
         nsControlPoints: [
           [
-            // Left edge of front face from bottom to top
+            // Left edge of back face from bottom to top
             // Same as right edge of right face
             new THREE.Vector4(2, -2, -4, 0.1),
             new THREE.Vector4(2, -1, -4, 0.1),
@@ -23,19 +23,45 @@ const Cube: React.FC = () => {
             new THREE.Vector4(2, 2, -4, 0.1),
           ],
           [
-            // Middle edge of front face from bottom to top
+            // Middle edge of back face from bottom to top
             new THREE.Vector4(0, -2, -4, 0.1),
             new THREE.Vector4(0, -1, -4, 0.1),
             new THREE.Vector4(0, 1, -4, 0.1),
             new THREE.Vector4(0, 2, -4, 0.1),
           ],
           [
-            // Right edge of front face from bottom to top
+            // Right edge of back face from bottom to top
             // Same as left edge of left face
             new THREE.Vector4(-2, -2, -4, 0.1),
             new THREE.Vector4(-2, -1, -4, 0.1),
             new THREE.Vector4(-2, 1, -4, 0.1),
             new THREE.Vector4(-2, 2, -4, 0.1),
+          ],
+        ],
+        url: 'static/minecraft/dirt.jpg',
+      },
+      /**
+       * Bottom face
+       */
+      bottom: {
+        nsControlPoints: [
+          [
+            new THREE.Vector4(-2, -2, -4, 0.1),
+            new THREE.Vector4(-2, -2, -2, 0.1),
+            new THREE.Vector4(-2, -2, -1, 0.1),
+            new THREE.Vector4(-2, -2, 0, 0.1),
+          ],
+          [
+            new THREE.Vector4(0, -2, -4, 0.1),
+            new THREE.Vector4(0, -2, -2, 0.1),
+            new THREE.Vector4(0, -2, -1, 0.1),
+            new THREE.Vector4(0, -2, 0, 0.1),
+          ],
+          [
+            new THREE.Vector4(2, -2, -4, 0.1),
+            new THREE.Vector4(2, -2, -2, 0.1),
+            new THREE.Vector4(2, -2, -1, 0.1),
+            new THREE.Vector4(2, -2, 0, 0.1),
           ],
         ],
         url: 'static/minecraft/dirt.jpg',
@@ -75,21 +101,21 @@ const Cube: React.FC = () => {
       left: {
         nsControlPoints: [
           [
-            // Left edge of front face from bottom to top
+            // Left edge of left face from bottom to top
             new THREE.Vector4(-2, -2, -4, 0.1),
             new THREE.Vector4(-2, -1, -4, 0.1),
             new THREE.Vector4(-2, 1, -4, 0.1),
             new THREE.Vector4(-2, 2, -4, 0.1),
           ],
           [
-            // Middle edge of front face from bottom to top
+            // Middle edge of left face from bottom to top
             new THREE.Vector4(-2, -2, -2, 0.1),
             new THREE.Vector4(-2, -1, -2, 0.1),
             new THREE.Vector4(-2, 1, -2, 0.1),
             new THREE.Vector4(-2, 2, -2, 0.1),
           ],
           [
-            // Right edge of front face from bottom to top
+            // Right edge of left face from bottom to top
             // Same as the front face's left edge
             new THREE.Vector4(-2, -2, 0, 0.1),
             new THREE.Vector4(-2, -1, 0, 0.1),
@@ -105,7 +131,7 @@ const Cube: React.FC = () => {
       right: {
         nsControlPoints: [
           [
-            // Left edge of front face from bottom to top
+            // Left edge of right face from bottom to top
             // Same as the front face's right edge
             new THREE.Vector4(2, -2, 0, 0.1),
             new THREE.Vector4(2, -1, 0, 0.1),
@@ -113,18 +139,44 @@ const Cube: React.FC = () => {
             new THREE.Vector4(2, 2, 0, 0.1),
           ],
           [
-            // Middle edge of front face from bottom to top
+            // Middle edge of right face from bottom to top
             new THREE.Vector4(2, -2, -2, 0.1),
             new THREE.Vector4(2, -1, -2, 0.1),
             new THREE.Vector4(2, 1, -2, 0.1),
             new THREE.Vector4(2, 2, -2, 0.1),
           ],
           [
-            // Right edge of front face from bottom to top
+            // Right edge of right face from bottom to top
             new THREE.Vector4(2, -2, -4, 0.1),
             new THREE.Vector4(2, -1, -4, 0.1),
             new THREE.Vector4(2, 1, -4, 0.1),
             new THREE.Vector4(2, 2, -4, 0.1),
+          ],
+        ],
+        url: 'static/minecraft/dirt.jpg',
+      },
+      /**
+       * Top face
+       */
+      top: {
+        nsControlPoints: [
+          [
+            new THREE.Vector4(2, 2, -4, 0.1),
+            new THREE.Vector4(2, 2, -2, 0.1),
+            new THREE.Vector4(2, 2, -1, 0.1),
+            new THREE.Vector4(2, 2, 0, 0.1),
+          ],
+          [
+            new THREE.Vector4(0, 2, -4, 0.1),
+            new THREE.Vector4(0, 2, -2, 0.1),
+            new THREE.Vector4(0, 2, -1, 0.1),
+            new THREE.Vector4(0, 2, 0, 0.1),
+          ],
+          [
+            new THREE.Vector4(-2, 2, -4, 0.1),
+            new THREE.Vector4(-2, 2, -2, 0.1),
+            new THREE.Vector4(-2, 2, -1, 0.1),
+            new THREE.Vector4(-2, 2, 0, 0.1),
           ],
         ],
         url: 'static/minecraft/dirt.jpg',
@@ -139,6 +191,8 @@ const Cube: React.FC = () => {
       <Face {...{ ...net.right }} />
       <Face {...{ ...net.left }} />
       <Face {...{ ...net.back }} />
+      <Face {...{ ...net.top }} />
+      <Face {...{ ...net.bottom }} />
     </group>
   );
 };
