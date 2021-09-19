@@ -9,8 +9,8 @@ type Props = {
   url: string;
 };
 
-const CubeFront: React.FC<Props> = (props: Props) => (
+const CubeFace: React.FC<Props> = (props: Props) => (
   <Nurbs {...props} />
 );
 
-export default CubeFront;
+export default CubeFace;
