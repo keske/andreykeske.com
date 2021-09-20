@@ -203,7 +203,7 @@ const Cube: React.FC = () => {
         nsControlPoints: [
           getLeftEdgeOfBottomFace,
           [
-            new THREE.Vector4(0, -2, -4, 0.1),
+            new THREE.Vector4(...x1y0z3, 0.1),
             new THREE.Vector4(0, -2, -2, 0.1),
             new THREE.Vector4(0, -2, -1, 0.1),
             new THREE.Vector4(0, -2, 0, 0.1),
@@ -262,16 +262,16 @@ const Cube: React.FC = () => {
             new THREE.Vector4(...x2y3z0, 0.1),
           ],
           [
-            new THREE.Vector4(0, 2, -4, 0.1),
+            new THREE.Vector4(...x1y3z3, 0.1),
             new THREE.Vector4(0, 2, -2, 0.1),
             new THREE.Vector4(0, 2, -1, 0.1),
-            new THREE.Vector4(0, 2, 0, 0.1),
+            new THREE.Vector4(...x1y3z0, 0.1),
           ],
           [
-            new THREE.Vector4(-2, 2, -4, 0.1),
-            new THREE.Vector4(-2, 2, -2, 0.1),
+            new THREE.Vector4(...x0y3z3, 0.1),
+            new THREE.Vector4(...x0y3z2, 0.1),
             new THREE.Vector4(-2, 2, -1, 0.1),
-            new THREE.Vector4(-2, 2, 0, 0.1),
+            new THREE.Vector4(...x0y3z0, 0.1),
           ],
         ],
         url: 'static/minecraft/dirt.jpg',
