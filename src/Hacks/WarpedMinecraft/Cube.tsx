@@ -69,7 +69,7 @@ const Cube: React.FC = () => {
 
   const x1y0z2 = React.useMemo(() => [0, -2, -2], []);
 
-  const x1y0z1 = React.useMemo(() => [0, -2, 1], []);
+  const x1y0z1 = React.useMemo(() => [0, -2, -1], []);
 
   const x1y1z0 = React.useMemo(() => [0, -1, 0], []);
 
