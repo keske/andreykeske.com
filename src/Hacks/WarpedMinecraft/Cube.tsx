@@ -2,9 +2,10 @@
 
 import * as React from 'react';
 import * as THREE from 'three';
+import * as R from 'ramda';
 
 // Components
-import Face from './Cube.Face';
+import { Nurbs } from '../../components/NURBS';
 
 type Props = {
   map: {
@@ -21,7 +22,7 @@ const Cube: React.FC<Props> = ({ map }: Props) => {
     [],
   );
 
-  const warp = React.useMemo(() => 1, []);
+  const warp = React.useMemo(() => 0, []);
 
   const getRandomCoords = React.useCallback(
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
@@ -452,12 +453,9 @@ const Cube: React.FC<Props> = ({ map }: Props) => {
 
   return (
     <group>
-      <Face {...{ ...net.front }} />
-      <Face {...{ ...net.right }} />
-      <Face {...{ ...net.left }} />
-      <Face {...{ ...net.back }} />
-      <Face {...{ ...net.top }} />
-      <Face {...{ ...net.bottom }} />
+      {R.values(net).map((obj) => (
+        <Nurbs {...obj} />
+      ))}
     </group>
   );
 };
