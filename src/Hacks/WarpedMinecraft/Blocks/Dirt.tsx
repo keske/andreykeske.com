@@ -3,7 +3,9 @@ import * as React from 'react';
 // Components
 import Cube from '../Cube';
 
-const Dirt: React.FC = () => {
+type Props = JSX.IntrinsicElements['group'];
+
+const Dirt: React.FC<Props> = ({ ...rest }: Props) => {
   const map = React.useMemo(
     () => ({
       bottom: 'static/minecraft/dirt-bottom.png',
@@ -13,7 +15,7 @@ const Dirt: React.FC = () => {
     [],
   );
 
-  return <Cube map={map} />;
+  return <Cube {...{ ...rest, map }} />;
 };
 
 export default Dirt;

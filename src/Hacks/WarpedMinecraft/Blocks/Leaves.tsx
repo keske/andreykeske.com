@@ -3,7 +3,9 @@ import * as React from 'react';
 // Components
 import Cube from '../Cube';
 
-const Leaves: React.FC = () => {
+type Props = JSX.IntrinsicElements['group'];
+
+const Leaves: React.FC<Props> = ({ ...rest }: Props) => {
   const map = React.useMemo(
     () => ({
       bottom: 'static/minecraft/leaves.png',
@@ -13,7 +15,7 @@ const Leaves: React.FC = () => {
     [],
   );
 
-  return <Cube map={map} />;
+  return <Cube {...{ ...rest, map }} />;
 };
 
 export default Leaves;

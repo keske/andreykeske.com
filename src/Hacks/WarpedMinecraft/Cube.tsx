@@ -7,7 +7,7 @@ import * as R from 'ramda';
 // Components
 import { Nurbs } from '../../components/NURBS';
 
-type Props = {
+type Props = JSX.IntrinsicElements['group'] & {
   map: {
     bottom: string;
     side: string;
@@ -15,7 +15,7 @@ type Props = {
   };
 };
 
-const Cube: React.FC<Props> = ({ map }: Props) => {
+const Cube: React.FC<Props> = ({ map, ...rest }: Props) => {
   const random = React.useCallback(
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     (min = 0, max: number) => Math.random() * (max - min) + min,
@@ -452,7 +452,7 @@ const Cube: React.FC<Props> = ({ map }: Props) => {
   );
 
   return (
-    <group>
+    <group {...rest}>
       {R.values(net).map((obj) => (
         <Nurbs {...obj} />
       ))}
