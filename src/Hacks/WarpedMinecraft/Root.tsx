@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import * as React from 'react';
 
 // Libs
 import { OrbitControls } from '@react-three/drei';
@@ -9,10 +9,10 @@ import Scene from './Scene';
 
 const Root: React.FC = () => (
   <Canvas>
-    <Suspense fallback={null}>
+    <React.Suspense fallback={null}>
       <OrbitControls />
       <Scene />
-    </Suspense>
+    </React.Suspense>
   </Canvas>
 );
 

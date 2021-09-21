@@ -25,15 +25,15 @@ const Nurbs = React.forwardRef(({ nsControlPoints, url }: Props) => {
     nsControlPoints,
   );
 
-  const map = new THREE.TextureLoader().load(
-    url,
-  );
+  const map = new THREE.TextureLoader().load(url);
 
   map.wrapS = THREE.RepeatWrapping;
   map.wrapT = THREE.RepeatWrapping;
   map.anisotropy = 32;
 
-  const getSurfacePoint = (u, v, target) => nurbsSurface.getPoint(u, v, target);
+  const getSurfacePoint = (u, v, target) =>
+    // eslint-disable-next-line
+    nurbsSurface.getPoint(u, v, target);
 
   const geometry = new THREE.ParametricBufferGeometry(
     getSurfacePoint,
