@@ -6,32 +6,52 @@ import * as THREE from 'three';
 // Components
 import Face from './Cube.Face';
 
-const Cube: React.FC = () => {
+type Props = {
+  map: {
+    bottom: string;
+    side: string;
+    top: string;
+  };
+};
+
+const Cube: React.FC<Props> = ({ map }: Props) => {
   const random = React.useCallback(
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     (min = 0, max: number) => Math.random() * (max - min) + min,
     [],
   );
 
-  // const yCoords = React.useMemo(() => [-2, -1, 1, 2], []);
+  const warp = React.useMemo(() => 1, []);
 
-  // const getEdge = React.useCallback(
-  //   (x: number, z: number) => [
-  //     new THREE.Vector4(x * delta, yCoords[0], z * delta, 0.1),
-  //     new THREE.Vector4(x * delta, yCoords[1], z * delta, 0.1),
-  //     new THREE.Vector4(x * delta, yCoords[2], z * delta, 0.1),
-  //     new THREE.Vector4(x * delta, yCoords[3], z * delta, 0.1),
-  //   ],
-  //   [delta, yCoords],
-  // );
+  const getRandomCoords = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+    (x: number, y: number, z: number) => [
+      random(x - warp, x + warp),
+      random(y - warp, y + warp),
+      random(z - warp, z + warp),
+    ],
+    [random, warp],
+  );
 
-  const x0y0z0 = React.useMemo(() => [-2, -2, 0], []);
+  const x0y0z0 = React.useMemo(
+    () => getRandomCoords(-2, -2, 0),
+    [getRandomCoords],
+  );
 
-  const x0y1z0 = React.useMemo(() => [-2, -1, 0], []);
+  const x0y1z0 = React.useMemo(
+    () => getRandomCoords(-2, -1, 0),
+    [getRandomCoords],
+  );
 
-  const x0y2z0 = React.useMemo(() => [-2, 1, 0], []);
+  const x0y2z0 = React.useMemo(
+    () => getRandomCoords(-2, 1, 0),
+    [getRandomCoords],
+  );
 
-  const x0y3z0 = React.useMemo(() => [-2, 2, 0], []);
+  const x0y3z0 = React.useMemo(
+    () => getRandomCoords(-2, 2, 0),
+    [getRandomCoords],
+  );
 
   const getLeftEdgeOfFrontFace = React.useMemo(
     () => [
@@ -43,17 +63,35 @@ const Cube: React.FC = () => {
     [x0y0z0, x0y1z0, x0y2z0, x0y3z0],
   );
 
-  const x1y0z3 = React.useMemo(() => [0, -2, -4], []);
+  const x1y0z3 = React.useMemo(
+    () => getRandomCoords(0, -2, -4),
+    [getRandomCoords],
+  );
 
-  const x1y3z2 = React.useMemo(() => [0, 2, -2], []);
+  const x1y3z2 = React.useMemo(
+    () => getRandomCoords(0, 2, -2),
+    [getRandomCoords],
+  );
 
-  const x1y3z1 = React.useMemo(() => [0, 2, -1], []);
+  const x1y3z1 = React.useMemo(
+    () => getRandomCoords(0, 2, -1),
+    [getRandomCoords],
+  );
 
-  const x1y1z3 = React.useMemo(() => [0, -1, -4], []);
+  const x1y1z3 = React.useMemo(
+    () => getRandomCoords(0, -1, -4),
+    [getRandomCoords],
+  );
 
-  const x1y2z3 = React.useMemo(() => [0, 1, -4], []);
+  const x1y2z3 = React.useMemo(
+    () => getRandomCoords(0, 1, -4),
+    [getRandomCoords],
+  );
 
-  const x1y3z3 = React.useMemo(() => [0, 2, -4], []);
+  const x1y3z3 = React.useMemo(
+    () => getRandomCoords(0, 2, -4),
+    [getRandomCoords],
+  );
 
   const getMiddleEdgeOfBackFace = React.useMemo(
     () => [
@@ -65,17 +103,35 @@ const Cube: React.FC = () => {
     [x1y0z3, x1y1z3, x1y2z3, x1y3z3],
   );
 
-  const x1y0z0 = React.useMemo(() => [0, -2, 0], []);
+  const x1y0z0 = React.useMemo(
+    () => getRandomCoords(0, -2, 0),
+    [getRandomCoords],
+  );
 
-  const x1y0z2 = React.useMemo(() => [0, -2, -2], []);
+  const x1y0z2 = React.useMemo(
+    () => getRandomCoords(0, -2, -2),
+    [getRandomCoords],
+  );
 
-  const x1y0z1 = React.useMemo(() => [0, -2, -1], []);
+  const x1y0z1 = React.useMemo(
+    () => getRandomCoords(0, -2, -1),
+    [getRandomCoords],
+  );
 
-  const x1y1z0 = React.useMemo(() => [0, -1, 0], []);
+  const x1y1z0 = React.useMemo(
+    () => getRandomCoords(0, -1, 0),
+    [getRandomCoords],
+  );
 
-  const x1y2z0 = React.useMemo(() => [0, 1, 0], []);
+  const x1y2z0 = React.useMemo(
+    () => getRandomCoords(0, 1, 0),
+    [getRandomCoords],
+  );
 
-  const x1y3z0 = React.useMemo(() => [0, 2, 0], []);
+  const x1y3z0 = React.useMemo(
+    () => getRandomCoords(0, 2, 0),
+    [getRandomCoords],
+  );
 
   const getMiddleEdgeOfFrontFace = React.useMemo(
     () => [
@@ -87,13 +143,25 @@ const Cube: React.FC = () => {
     [x1y0z0, x1y1z0, x1y2z0, x1y3z0],
   );
 
-  const x2y0z0 = React.useMemo(() => [2, -2, 0], []);
+  const x2y0z0 = React.useMemo(
+    () => getRandomCoords(2, -2, 0),
+    [getRandomCoords],
+  );
 
-  const x2y1z0 = React.useMemo(() => [2, -1, 0], []);
+  const x2y1z0 = React.useMemo(
+    () => getRandomCoords(2, -1, 0),
+    [getRandomCoords],
+  );
 
-  const x2y2z0 = React.useMemo(() => [2, 1, 0], []);
+  const x2y2z0 = React.useMemo(
+    () => getRandomCoords(2, 1, 0),
+    [getRandomCoords],
+  );
 
-  const x2y3z0 = React.useMemo(() => [2, 2, 0], []);
+  const x2y3z0 = React.useMemo(
+    () => getRandomCoords(2, 2, 0),
+    [getRandomCoords],
+  );
 
   const getRightEdgeOfFrontFace = React.useMemo(
     () => [
@@ -105,13 +173,25 @@ const Cube: React.FC = () => {
     [x2y0z0, x2y1z0, x2y2z0, x2y3z0],
   );
 
-  const x2y0z2 = React.useMemo(() => [2, -2, -2], []);
+  const x2y0z2 = React.useMemo(
+    () => getRandomCoords(2, -2, -2),
+    [getRandomCoords],
+  );
 
-  const x2y1z2 = React.useMemo(() => [2, -1, -2], []);
+  const x2y1z2 = React.useMemo(
+    () => getRandomCoords(2, -1, -2),
+    [getRandomCoords],
+  );
 
-  const x2y2z2 = React.useMemo(() => [2, 1, -2], []);
+  const x2y2z2 = React.useMemo(
+    () => getRandomCoords(2, 1, -2),
+    [getRandomCoords],
+  );
 
-  const x2y3z2 = React.useMemo(() => [2, 2, -2], []);
+  const x2y3z2 = React.useMemo(
+    () => getRandomCoords(2, 2, -2),
+    [getRandomCoords],
+  );
 
   const getMiddleEdgeOfRightFace = React.useMemo(
     () => [
@@ -123,17 +203,35 @@ const Cube: React.FC = () => {
     [x2y0z2, x2y1z2, x2y2z2, x2y3z2],
   );
 
-  const x2y0z3 = React.useMemo(() => [2, -2, -4], []);
+  const x2y0z3 = React.useMemo(
+    () => getRandomCoords(2, -2, -4),
+    [getRandomCoords],
+  );
 
-  const x2y0z1 = React.useMemo(() => [2, -2, -1], []);
+  const x2y0z1 = React.useMemo(
+    () => getRandomCoords(2, -2, -1),
+    [getRandomCoords],
+  );
 
-  const x2y1z3 = React.useMemo(() => [2, -1, -4], []);
+  const x2y1z3 = React.useMemo(
+    () => getRandomCoords(2, -1, -4),
+    [getRandomCoords],
+  );
 
-  const x2y2z3 = React.useMemo(() => [2, 1, -4], []);
+  const x2y2z3 = React.useMemo(
+    () => getRandomCoords(2, 1, -4),
+    [getRandomCoords],
+  );
 
-  const x2y3z3 = React.useMemo(() => [2, 2, -4], []);
+  const x2y3z3 = React.useMemo(
+    () => getRandomCoords(2, 2, -4),
+    [getRandomCoords],
+  );
 
-  const x2y3z1 = React.useMemo(() => [2, 2, -1], []);
+  const x2y3z1 = React.useMemo(
+    () => getRandomCoords(2, 2, -1),
+    [getRandomCoords],
+  );
 
   const getRightEdgeOfRightFace = React.useMemo(
     () => [
@@ -145,13 +243,25 @@ const Cube: React.FC = () => {
     [x2y0z3, x2y1z3, x2y2z3, x2y3z3],
   );
 
-  const x0y0z2 = React.useMemo(() => [-2, -2, -2], []);
+  const x0y0z2 = React.useMemo(
+    () => getRandomCoords(-2, -2, -2),
+    [getRandomCoords],
+  );
 
-  const x0y1z2 = React.useMemo(() => [-2, -1, -2], []);
+  const x0y1z2 = React.useMemo(
+    () => getRandomCoords(-2, -1, -2),
+    [getRandomCoords],
+  );
 
-  const x0y2z2 = React.useMemo(() => [-2, 1, -2], []);
+  const x0y2z2 = React.useMemo(
+    () => getRandomCoords(-2, 1, -2),
+    [getRandomCoords],
+  );
 
-  const x0y3z2 = React.useMemo(() => [-2, 2, -2], []);
+  const x0y3z2 = React.useMemo(
+    () => getRandomCoords(-2, 2, -2),
+    [getRandomCoords],
+  );
 
   const getMiddleEdgeOfLeftFace = React.useMemo(
     () => [
@@ -163,15 +273,30 @@ const Cube: React.FC = () => {
     [x0y0z2, x0y1z2, x0y2z2, x0y3z2],
   );
 
-  const x0y0z3 = React.useMemo(() => [-2, -2, -4], []);
+  const x0y0z3 = React.useMemo(
+    () => getRandomCoords(-2, -2, -4),
+    [getRandomCoords],
+  );
 
-  const x0y3z1 = React.useMemo(() => [-2, 2, -1], []);
+  const x0y3z1 = React.useMemo(
+    () => getRandomCoords(-2, 2, -1),
+    [getRandomCoords],
+  );
 
-  const x0y1z3 = React.useMemo(() => [-2, -1, -4], []);
+  const x0y1z3 = React.useMemo(
+    () => getRandomCoords(-2, -1, -4),
+    [getRandomCoords],
+  );
 
-  const x0y2z3 = React.useMemo(() => [-2, 1, -4], []);
+  const x0y2z3 = React.useMemo(
+    () => getRandomCoords(-2, 1, -4),
+    [getRandomCoords],
+  );
 
-  const x0y3z3 = React.useMemo(() => [-2, 2, -4], []);
+  const x0y3z3 = React.useMemo(
+    () => getRandomCoords(-2, 2, -4),
+    [getRandomCoords],
+  );
 
   const getLeftEdgeOfLeftFace = React.useMemo(
     () => [
@@ -206,7 +331,7 @@ const Cube: React.FC = () => {
           getMiddleEdgeOfBackFace,
           getLeftEdgeOfLeftFace,
         ],
-        url: 'static/minecraft/dirt.jpg',
+        url: map.side,
       },
       /**
        * Bottom face
@@ -227,7 +352,7 @@ const Cube: React.FC = () => {
             new THREE.Vector4(...x2y0z0, 0.1),
           ],
         ],
-        url: 'static/minecraft/dirt.jpg',
+        url: map.bottom,
       },
       /**
        * Front face
@@ -238,7 +363,7 @@ const Cube: React.FC = () => {
           getMiddleEdgeOfFrontFace,
           getRightEdgeOfFrontFace,
         ],
-        url: 'static/minecraft/dirt.jpg',
+        url: map.side,
       },
       /**
        * Left face
@@ -249,7 +374,7 @@ const Cube: React.FC = () => {
           getMiddleEdgeOfLeftFace,
           getLeftEdgeOfFrontFace,
         ],
-        url: 'static/minecraft/dirt.jpg',
+        url: map.side,
       },
       /**
        * Right face
@@ -260,7 +385,7 @@ const Cube: React.FC = () => {
           getMiddleEdgeOfRightFace,
           getRightEdgeOfRightFace,
         ],
-        url: 'static/minecraft/dirt.jpg',
+        url: map.side,
       },
       /**
        * Top face
@@ -286,7 +411,7 @@ const Cube: React.FC = () => {
             new THREE.Vector4(...x0y3z0, 0.1),
           ],
         ],
-        url: 'static/minecraft/dirt.jpg',
+        url: map.top,
       },
     }),
     [
@@ -299,6 +424,9 @@ const Cube: React.FC = () => {
       getMiddleEdgeOfRightFace,
       getRightEdgeOfFrontFace,
       getRightEdgeOfRightFace,
+      map.bottom,
+      map.side,
+      map.top,
       x0y3z0,
       x0y3z1,
       x0y3z2,

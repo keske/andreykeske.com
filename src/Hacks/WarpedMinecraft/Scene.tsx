@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Components
-import Cube from './Cube';
+import Dirt from './Dirt';
 
 const Scene: React.FC = () => (
   <group>
@@ -17,7 +17,17 @@ const Scene: React.FC = () => (
       shadow-mapSize-width={2048}
     />
 
-    <Cube />
+    <group position={[-4, 0, 0]}>
+      <Dirt />
+    </group>
+
+    <group position={[0, 0, 0]}>
+      <Dirt />
+    </group>
+
+    <group position={[4, 0, 0]}>
+      <Dirt />
+    </group>
   </group>
 );
 

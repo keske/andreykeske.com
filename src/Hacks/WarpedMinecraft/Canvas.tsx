@@ -23,7 +23,7 @@ const Root = styled.div`
 const Canvas: React.FC<Props> = ({ children }: Props) => (
   <Root>
     <StyledFiberCanvas
-      camera={{ position: [0, 0, 5.2] }}
+      camera={{ position: [0, 0, 10.2] }}
       colorManagement
       gl={{
         alpha: true,
