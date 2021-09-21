@@ -2,6 +2,7 @@ import * as React from 'react';
 
 // Components
 import { Dirt, Stone } from './Blocks';
+import { Tree } from './Structures';
 
 const Scene: React.FC = () => (
   <group>
@@ -23,6 +24,10 @@ const Scene: React.FC = () => (
 
     <group position={[0, 0, 0]}>
       <Dirt />
+    </group>
+
+    <group position={[0, 4, 0]}>
+      <Tree />
     </group>
 
     <group position={[4, 0, 0]}>
