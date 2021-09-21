@@ -42,12 +42,15 @@ rules:
   comma-dangle:
     - error
     - always-multiline
+  function-paren-newline: 0
+  implicit-arrow-linebreak: 0
   import/prefer-default-export: 0
   max-len:
     - error
     - code: 80
       comments: 180
       ignoreUrls: true
+  operator-linebreak: 0
   max-lines:
     - error
     - 140

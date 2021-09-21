@@ -7,6 +7,9 @@ import * as R from 'ramda';
 // Components
 import { Nurbs } from '../../components/NURBS';
 
+// Store
+import useStore from './store';
+
 type Props = JSX.IntrinsicElements['group'] & {
   map: {
     bottom: string;
@@ -16,22 +19,22 @@ type Props = JSX.IntrinsicElements['group'] & {
 };
 
 const Cube: React.FC<Props> = ({ map, ...rest }: Props) => {
+  const { warpRatio } = useStore();
+
   const random = React.useCallback(
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     (min = 0, max: number) => Math.random() * (max - min) + min,
     [],
   );
 
-  const warp = React.useMemo(() => 0, []);
-
   const getRandomCoords = React.useCallback(
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     (x: number, y: number, z: number) => [
-      random(x - warp, x + warp),
-      random(y - warp, y + warp),
-      random(z - warp, z + warp),
+      random(x - warpRatio, x + warpRatio),
+      random(y - warpRatio, y + warpRatio),
+      random(z - warpRatio, z + warpRatio),
     ],
-    [random, warp],
+    [random, warpRatio],
   );
 
   const x0y0z0 = React.useMemo(

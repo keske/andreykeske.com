@@ -1,8 +1,7 @@
 import * as React from 'react';
 
 // Components
-import { Dirt, Stone } from './Blocks';
-import { Tree } from './Structures';
+import World from './World';
 
 const Scene: React.FC = () => (
   <group>
@@ -18,33 +17,7 @@ const Scene: React.FC = () => (
       shadow-mapSize-width={2048}
     />
 
-    <group position={[-4, 0, 0]}>
-      <Dirt />
-    </group>
-
-    <group position={[0, 0, 0]}>
-      <Dirt />
-    </group>
-
-    <group position={[0, 4, 0]}>
-      <Tree />
-    </group>
-
-    <group position={[4, 0, 0]}>
-      <Dirt />
-    </group>
-
-    <group position={[-4, 0, 4]}>
-      <Stone />
-    </group>
-
-    <group position={[0, 0, 4]}>
-      <Stone />
-    </group>
-
-    <group position={[4, 0, 4]}>
-      <Stone />
-    </group>
+    <World />
   </group>
 );
 
