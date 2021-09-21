@@ -42,6 +42,7 @@ const Nurbs = React.forwardRef(({ nsControlPoints, url }: Props) => {
   );
 
   const material = new THREE.MeshLambertMaterial({
+    depthTest: false,
     map,
     side: THREE.FrontSide,
   });
