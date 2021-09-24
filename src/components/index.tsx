@@ -11,6 +11,7 @@ export { default as ProjectWrapper } from './Project.Wrapper';
 export { default as ProjectYear } from './Project.Year';
 export { default as Quote } from './Quote';
 export { default as ResponsiveFrame } from './ResponsiveFrame';
+export { default as Spacer } from './Spacer';
 export { default as SubTitle } from './SubTitle';
 export { default as Text } from './Text';
 export { default as Title } from './Title';

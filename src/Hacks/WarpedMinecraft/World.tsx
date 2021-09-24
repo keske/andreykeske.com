@@ -6,7 +6,7 @@ import { Dirt, Stone } from './Blocks';
 import { Tree } from './Structures';
 
 const World: React.FC = () => {
-  const surfaceMatrix = React.useMemo<number[]>(() => [-1, 1], []);
+  const surfaceMatrix = React.useMemo<number[]>(() => [-3, 3], []);
 
   const earthSurface = React.useMemo(
     () =>
