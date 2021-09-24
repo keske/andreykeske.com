@@ -9,9 +9,9 @@ type Props = {
 };
 
 const Root = styled.p`
-  background-color: lemonchiffon;
-  border-radius: 10;
-  color: #000;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-weight: bold;
   padding: 20px;
 `;
 

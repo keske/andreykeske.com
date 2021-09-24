@@ -45,15 +45,11 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
         {' '}
         products:
         {' '}
-        <Mark color="black" invert>
-          hair trimmer
-        </Mark>
+        <Mark>hair trimmer</Mark>
         {' '}
         and
         {' '}
-        <Mark color="black" invert>
-          toothbrush
-        </Mark>
+        <Mark>toothbrush</Mark>
       </Text>
     </Col>
 

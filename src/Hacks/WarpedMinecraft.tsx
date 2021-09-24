@@ -72,7 +72,7 @@ const WarpedMinecraft: React.FC = (): JSX.Element => (
         </Col>
       </Row>
     </Container>
-    <Spacer size={10} />
+    <Spacer size={40} />
   </>
 );
 

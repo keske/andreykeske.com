@@ -8,9 +8,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const StyledFiberCanvas = styled(FiberCanvas).attrs({
-  sortObjects: false,
-})`
+const StyledFiberCanvas = styled(FiberCanvas)`
   height: 100vh;
   width: 100%;
 `;

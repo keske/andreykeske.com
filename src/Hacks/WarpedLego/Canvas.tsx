@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   },
   root: {
     backgroundColor: '#f6ec36',
+    cursor: 'grab',
     height: '50vh',
     width: '100%',
   },

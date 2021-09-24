@@ -10,7 +10,7 @@ import Scene from './Scene';
 const Root: React.FC = () => (
   <Canvas>
     <Suspense fallback={null}>
-      <OrbitControls />
+      <OrbitControls enableZoom={false} />
       <Scene />
     </Suspense>
   </Canvas>

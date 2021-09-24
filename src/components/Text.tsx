@@ -9,7 +9,7 @@ type Props = {
 const Root = styled.p<Props>`
   color: ${({ invert }) => (invert ? 'white' : 'black')};
   font-size: 18px;
-  line-height: 28px;
+  line-height: 32px;
 `;
 
 const Text: React.FC<Props> = ({ children, ...rest }: Props) => (

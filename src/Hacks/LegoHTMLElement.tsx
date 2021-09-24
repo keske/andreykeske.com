@@ -43,11 +43,11 @@ const LegoHTMLElement: React.FC = (): JSX.Element => (
         A classical Lego brick except that this one was made from HTML
         elements
         {' '}
-        <Mark color="#35da35">button</Mark>
+        <Mark>button</Mark>
         {' '}
         and
         {' '}
-        <Mark color="#35da35">input</Mark>
+        <Mark>input</Mark>
       </Text>
       <button className={css(styles.root)} type="button">
         {R.range(0, 8).map((index) => (
