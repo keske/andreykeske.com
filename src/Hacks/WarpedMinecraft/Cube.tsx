@@ -16,9 +16,14 @@ type Props = JSX.IntrinsicElements['group'] & {
     side: string;
     top: string;
   };
+  transparent?: boolean;
 };
 
-const Cube: React.FC<Props> = ({ map, ...rest }: Props) => {
+const WarpedMinecraftCube: React.FC<Props> = ({
+  map,
+  transparent = false,
+  ...rest
+}: Props) => {
   const { warpRatio } = useStore();
 
   const random = React.useCallback(
@@ -457,10 +462,15 @@ const Cube: React.FC<Props> = ({ map, ...rest }: Props) => {
   return (
     <group {...rest}>
       {R.values(net).map((obj) => (
-        <Nurbs {...obj} />
+        <Nurbs
+          {...obj}
+          side={
+            transparent ? THREE.DoubleSide : THREE.FrontSide
+          }
+        />
       ))}
     </group>
   );
 };
 
-export default Cube;
+export default WarpedMinecraftCube;

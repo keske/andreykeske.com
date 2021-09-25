@@ -18,7 +18,7 @@ const Root = styled.div`
   width: 100%;
 `;
 
-const Canvas: React.FC<Props> = ({ children }: Props) => (
+const WarpedMinecraftCanvas: React.FC<Props> = ({ children }: Props) => (
   <Root>
     <StyledFiberCanvas
       camera={{ position: [0, 10, 15] }}
@@ -36,4 +36,4 @@ const Canvas: React.FC<Props> = ({ children }: Props) => (
   </Root>
 );
 
-export default Canvas;
+export default WarpedMinecraftCanvas;

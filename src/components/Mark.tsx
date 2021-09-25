@@ -9,7 +9,8 @@ type Props = {
 
 const Root = styled.span`
   border: 1px solid #000;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: bold;
   padding: 5px 10px;
 `;

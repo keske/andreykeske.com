@@ -1,78 +1,211 @@
-import * as React from 'react';
+/* eslint max-lines: 0 */
 
+import * as React from 'react';
+import * as THREE from 'three';
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 import { Col } from 'react-bootstrap';
+import { Canvas as FiberCanvas } from 'react-three-fiber';
+import { OrbitControls } from '@react-three/drei';
 
 // Components
-import { Me, ProjectWrapper, Text } from '../components';
+import { ProjectWrapper, Text } from '../components';
+import { Nurbs } from '../components/NURBS';
 
-const DESKTOP_FONT_SIZE = 4.0;
+const StyledCanvas = styled(FiberCanvas)`
+  cursor: grab;
+  height: 100%;
+  width: 100%;
+`;
 
-const MOBILE_FONT_SIZE = 1.7;
+const About: React.FC = (): JSX.Element => {
+  const warpRatio = 0.5;
 
-const getTypographySettings = (
-  fontSize: number,
-): Record<string, string> => ({
-  fontSize: `${fontSize}rem`,
-});
+  const random = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+    (min = 0, max: number) => Math.random() * (max - min) + min,
+    [],
+  );
 
-const styles = StyleSheet.create({
-  root: {
-    '@media screen and (max-width: 414px)': {
-      marginTop: 100,
-    },
-  },
-  title: {
-    '@media screen and (max-width: 414px)': {
-      ...getTypographySettings(MOBILE_FONT_SIZE),
-      marginBottom: 10,
-      marginTop: 20,
-    },
-    ...getTypographySettings(DESKTOP_FONT_SIZE),
-    fontWeight: 800,
-    letterSpacing: `-.025rem`,
-    marginBottom: 40,
-    marginTop: 40,
-  } as const,
-});
+  const getRandomCoords = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+    (x: number, y: number, z: number) => [
+      random(x - warpRatio, x + warpRatio),
+      random(y - warpRatio, y + warpRatio),
+      random(z - warpRatio, z + warpRatio),
+    ],
+    [random, warpRatio],
+  );
 
-const About: React.FC = (): JSX.Element => (
-  <div className={css(styles.root)}>
-    <Me />
-    <ProjectWrapper>
-      <Col lg={{ span: 10 }}>
-        <h1 className={css(styles.title)}>Andrey Keske</h1>
-        <Text>Andrey Keske is a fullstack developer</Text>
-        <Text>
-          He is focusing on the engineering of applications and
-          back-end architectures. In parallel to his main job, he is
-          always trying to find a new vision of common things in life,
-          interfaces, or even music and video
-        </Text>
-        <Text>Andrey lives in Miami, Fl</Text>
-        <Text>
-          <a href="mailto://hello@andreykeske.com">
-            hello@andreykeske.com
-          </a>
-          {' • '}
-          <a href="https://github.com/keske">Github</a>
-          {' • '}
-          <a href="https://www.instagram.com/andreykeske/">
-            Instagram
-          </a>
-          {' • '}
-          <a href="https://www.linkedin.com/in/andreykeske/">
-            LinkedIn
-          </a>
-          {' • '}
-          <a href="https://www.youtube.com/user/andreykeske">
-            YouTube
-          </a>
-        </Text>
-      </Col>
-    </ProjectWrapper>
-  </div>
-);
+  const x0y0z0 = React.useMemo(
+    () => getRandomCoords(-2, -2, 0),
+    [getRandomCoords],
+  );
+
+  const x0y1z0 = React.useMemo(
+    () => getRandomCoords(-2, -1, 0),
+    [getRandomCoords],
+  );
+
+  const x0y2z0 = React.useMemo(
+    () => getRandomCoords(-2, 1, 0),
+    [getRandomCoords],
+  );
+
+  const x0y3z0 = React.useMemo(
+    () => getRandomCoords(-2, 2, 0),
+    [getRandomCoords],
+  );
+
+  const x1y0z0 = React.useMemo(
+    () => getRandomCoords(0, -2, 0),
+    [getRandomCoords],
+  );
+
+  const x1y1z0 = React.useMemo(
+    () => getRandomCoords(0, -1, 0),
+    [getRandomCoords],
+  );
+
+  const x1y2z0 = React.useMemo(
+    () => getRandomCoords(0, 1, 0),
+    [getRandomCoords],
+  );
+
+  const x1y3z0 = React.useMemo(
+    () => getRandomCoords(0, 2, 0),
+    [getRandomCoords],
+  );
+
+  const x2y0z0 = React.useMemo(
+    () => getRandomCoords(2, -2, 0),
+    [getRandomCoords],
+  );
+
+  const x2y1z0 = React.useMemo(
+    () => getRandomCoords(2, -1, 0),
+    [getRandomCoords],
+  );
+
+  const x2y2z0 = React.useMemo(
+    () => getRandomCoords(2, 1, 0),
+    [getRandomCoords],
+  );
+
+  const x2y3z0 = React.useMemo(
+    () => getRandomCoords(2, 2, 0),
+    [getRandomCoords],
+  );
+
+  const nurbs = React.useMemo(
+    () => ({
+      nsControlPoints: [
+        [
+          new THREE.Vector4(...x0y0z0, 0.1),
+          new THREE.Vector4(...x0y1z0, 0.1),
+          new THREE.Vector4(...x0y2z0, 0.1),
+          new THREE.Vector4(...x0y3z0, 0.1),
+        ],
+        [
+          new THREE.Vector4(...x1y0z0, 0.1),
+          new THREE.Vector4(...x1y1z0, 0.1),
+          new THREE.Vector4(...x1y2z0, 0.1),
+          new THREE.Vector4(...x1y3z0, 0.1),
+        ],
+        [
+          new THREE.Vector4(...x2y0z0, 0.1),
+          new THREE.Vector4(...x2y1z0, 0.1),
+          new THREE.Vector4(...x2y2z0, 0.1),
+          new THREE.Vector4(...x2y3z0, 0.1),
+        ],
+      ],
+      url: 'static/me.jpeg',
+    }),
+    [
+      x0y0z0,
+      x0y1z0,
+      x0y2z0,
+      x0y3z0,
+      x1y0z0,
+      x1y1z0,
+      x1y2z0,
+      x1y3z0,
+      x2y0z0,
+      x2y1z0,
+      x2y2z0,
+      x2y3z0,
+    ],
+  );
+
+  return (
+    <div>
+      <ProjectWrapper>
+        <Col lg={{ span: 6 }}>
+          <StyledCanvas
+            camera={{ position: [0, 3, 2] }}
+            colorManagement
+            gl={{
+              alpha: true,
+              antialias: true,
+              depth: false,
+              powerPreference: 'high-performance',
+              stencil: false,
+            }}
+          >
+            <React.Suspense fallback={null}>
+              <OrbitControls enableZoom={false} />
+
+              <group>
+                <ambientLight intensity={0.3} />
+
+                <spotLight
+                  angle={Math.PI / 6}
+                  castShadow
+                  intensity={0.2}
+                  position={[20, 20, 30]}
+                  shadow-bias={-0.00005}
+                  shadow-mapSize-height={2048}
+                  shadow-mapSize-width={2048}
+                />
+
+                <Nurbs {...nurbs} />
+              </group>
+            </React.Suspense>
+          </StyledCanvas>
+        </Col>
+        <Col lg={{ span: 6 }}>
+          <h1>Andrey Keske</h1>
+          <Text>Andrey Keske is a fullstack developer</Text>
+          <Text>
+            He is focusing on the engineering of applications and
+            back-end architectures. In parallel to his main job, he is
+            always trying to find a new vision of common things in
+            life, interfaces, or even music and video
+          </Text>
+          <Text>Andrey lives in Miami, Fl</Text>
+          <Text>
+            <a href="mailto://hello@andreykeske.com">
+              hello@andreykeske.com
+            </a>
+            {' • '}
+            <a href="https://github.com/keske">Github</a>
+            {' • '}
+            <a href="https://www.instagram.com/andreykeske/">
+              Instagram
+            </a>
+            {' • '}
+            <a href="https://www.linkedin.com/in/andreykeske/">
+              LinkedIn
+            </a>
+            {' • '}
+            <a href="https://www.youtube.com/user/andreykeske">
+              YouTube
+            </a>
+          </Text>
+        </Col>
+      </ProjectWrapper>
+    </div>
+  );
+};
 
 export default About;

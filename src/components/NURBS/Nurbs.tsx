@@ -5,10 +5,18 @@ import { NURBSSurface } from './NURBSSurface';
 
 type Props = {
   nsControlPoints: THREE.Vector4[][];
+  side?:
+  | typeof THREE.BackSide
+  | typeof THREE.DoubleSide
+  | typeof THREE.FrontSide;
   url: string;
 };
 
-const Nurbs = React.forwardRef(({ nsControlPoints, url }: Props) => {
+const Nurbs = React.forwardRef(({
+  nsControlPoints,
+  side = THREE.FrontSide,
+  url,
+}: Props) => {
   const degree1 = 2;
 
   const degree2 = 3;
@@ -42,9 +50,8 @@ const Nurbs = React.forwardRef(({ nsControlPoints, url }: Props) => {
   );
 
   const material = new THREE.MeshLambertMaterial({
-    depthTest: false,
     map,
-    side: THREE.FrontSide,
+    side,
   });
 
   const mesh = new THREE.Mesh(geometry, material);

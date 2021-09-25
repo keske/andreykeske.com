@@ -24,6 +24,7 @@ rules:
   '@typescript-eslint/comma-dangle':
     - error
     - always-multiline
+  '@typescript-eslint/indent': 0
   '@typescript-eslint/method-signature-style':
     - error
     - property
@@ -50,7 +51,6 @@ rules:
     - code: 80
       comments: 180
       ignoreUrls: true
-  operator-linebreak: 0
   max-lines:
     - error
     - 140
@@ -60,6 +60,7 @@ rules:
     - error
     - max: 1
       maxEOF: 0
+  operator-linebreak: 0
   padding-line-between-statements:
     - error
     - blankLine: always

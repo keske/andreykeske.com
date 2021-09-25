@@ -36,7 +36,7 @@ const StyledInput = styled.input.attrs({
   width: 100px;
 `;
 
-const WarpRatioInput: React.FC = () => {
+const WarpedMinecraftRatioInput: React.FC = () => {
   const { setWarpRatio, warpRatio } = useStore();
 
   return (
@@ -53,4 +53,4 @@ const WarpRatioInput: React.FC = () => {
   );
 };
 
-export default WarpRatioInput;
+export default WarpedMinecraftRatioInput;

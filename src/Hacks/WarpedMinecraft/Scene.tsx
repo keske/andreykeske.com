@@ -3,7 +3,7 @@ import * as React from 'react';
 // Components
 import World from './World';
 
-const Scene: React.FC = () => (
+const WarpedMinecraftScene: React.FC = () => (
   <group>
     <ambientLight intensity={0.2} />
 
@@ -21,4 +21,4 @@ const Scene: React.FC = () => (
   </group>
 );
 
-export default Scene;
+export default WarpedMinecraftScene;

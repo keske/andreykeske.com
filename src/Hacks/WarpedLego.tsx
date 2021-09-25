@@ -1,28 +1,65 @@
 import * as React from 'react';
 
 // Libs
-import { Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import { ProjectTopics, ProjectYear, Title } from '../components';
 
 import Lego from './WarpedLego/Root';
 
+const Inner = styled.div`
+  transform: translate(40px, -40px);
+`;
+
+const StyledProjectTopics = styled(ProjectTopics)`
+  background-color: #fff;
+  border-radius: 13px;
+  display: inline-block;
+  opacity: 1;
+  padding: 7px 13px;
+`;
+
+const StyledProjectYear = styled(ProjectYear)`
+  background-color: #fff;
+  border: 1px solid #fff;
+`;
+
+const StyledTitle = styled(Title)`
+  background-color: #fff;
+  border-radius: 13px;
+  display: inline-block;
+  padding: 13px 21px;
+`;
+
+const Wrapper = styled.div`
+  background-color: #f6ec36;
+  border-radius: 50px;
+  overflow: hidden;
+`;
+
 const WarpedLego: React.FC = (): JSX.Element => (
-  <>
-    <Lego />
-    <div>
-      <Col lg={{ offset: 1, span: 10 }}>
-        <Title>Lego brick in non-euclidean geometry world</Title>
-        <ProjectTopics
-          topics={['Lego', 'Non-euclidean geometry', 'ThreeJS']}
-        />
-        <ProjectYear>2021</ProjectYear>
+  <Container>
+    <Row>
+      <Col lg={{ span: 12 }}>
+        <Wrapper>
+          <Lego />
+          <Inner>
+            <StyledTitle>
+              Lego brick in non-euclidean geometry world
+            </StyledTitle>
+            <br />
+            <StyledProjectTopics
+              topics={['Lego', 'Non-euclidean geometry', 'ThreeJS']}
+            />
+            <br />
+            <StyledProjectYear>2021</StyledProjectYear>
+          </Inner>
+        </Wrapper>
       </Col>
-    </div>
-    <br />
-    <br />
-  </>
+    </Row>
+  </Container>
 );
 
 export default WarpedLego;

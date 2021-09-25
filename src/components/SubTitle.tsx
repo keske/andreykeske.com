@@ -8,8 +8,9 @@ type Props = {
 
 const Root = styled.h3<Props>`
   color: ${({ invert }) => (invert ? 'white' : 'black')};
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 `;
 
 const SubTitle: React.FC<Props> = ({ children, ...rest }: Props) => (

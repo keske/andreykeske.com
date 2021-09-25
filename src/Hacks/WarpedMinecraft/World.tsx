@@ -5,7 +5,7 @@ import * as R from 'ramda';
 import { Dirt, Stone } from './Blocks';
 import { Tree } from './Structures';
 
-const World: React.FC = () => {
+const WarpedMinecraftWorld: React.FC = () => {
   const surfaceMatrix = React.useMemo<number[]>(() => [-3, 3], []);
 
   const earthSurface = React.useMemo(
@@ -44,4 +44,4 @@ const World: React.FC = () => {
   );
 };
 
-export default World;
+export default WarpedMinecraftWorld;

@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   wrapper: {
-    borderRadius: 7,
+    borderRadius: 21,
     overflow: 'hidden',
     paddingTop: '56.25%',
     position: 'relative',
