@@ -9,10 +9,10 @@ type Props = {
 };
 
 const Root = styled.p`
-  border: 1px solid #000;
-  border-radius: 10px;
-  font-weight: bold;
-  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 13px;
+  font-style: italic;
+  padding: 13px;
 `;
 
 const Quote: React.FC<Props> = ({

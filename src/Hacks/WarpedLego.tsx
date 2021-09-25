@@ -1,11 +1,12 @@
 import * as React from 'react';
 
 // Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import { ProjectTopics, ProjectYear, Title } from '../components';
+import { mediaQuery } from '../utils';
 
 import Lego from './WarpedLego/Root';
 
@@ -31,6 +32,14 @@ const StyledTitle = styled(Title)`
   border-radius: 13px;
   display: inline-block;
   padding: 13px 21px;
+  width: 80%;
+
+  ${mediaQuery(
+    'greaterThanTablet',
+    css`
+      width: auto;
+    `,
+  )}
 `;
 
 const Wrapper = styled.div`
