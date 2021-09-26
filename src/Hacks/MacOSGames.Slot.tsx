@@ -34,9 +34,7 @@ const MacOSGamesSlot: React.FC = (): JSX.Element => (
             3 slots, each has a set of pictures. The aim of the game is to
             get 3 the same pictures. In my game each slot is the simple
             folder in
-            {' '}
             <Mark>Cover Flow</Mark>
-            {' '}
             mode and in contrast WI the
             original game the movement of the slots is horizontal.
           </Text>

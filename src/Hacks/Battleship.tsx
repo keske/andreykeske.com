@@ -38,6 +38,7 @@ const Battleship: React.FC = (): JSX.Element => {
       <Container>
         <Row>
           <Col lg={{ offset: 3, span: 5 }}>
+
             <Tabs defaultActiveKey={letters[0]}>
               {letters.map((letter) => (
                 <Tab key={letter} eventKey={letter} title={letter}>
@@ -56,12 +57,14 @@ const Battleship: React.FC = (): JSX.Element => {
                 </Tab>
               ))}
             </Tabs>
+
             <Title>Battleship</Title>
+
             <Text>
               Hardcore representation of classic game through
-              {' '}
               <Mark>tabs</Mark>
             </Text>
+
             <ProjectTopics topics={['Interface']} />
             <ProjectYear>2012</ProjectYear>
           </Col>

@@ -30,7 +30,6 @@ const IkeaGarbage: React.FC = (): JSX.Element => (
 
           <Text>
             The first discarded piece of IKEA furniture in
-            {' '}
             <Mark>Augmented Reality</Mark>
           </Text>
 

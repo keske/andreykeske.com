@@ -29,7 +29,6 @@ const Shadows: React.FC = (): JSX.Element => (
           <Text>
             I continue research and experiments with Mac OS interface.
             This time I found that I can interact with
-            {' '}
             <Mark>window&#39;s shadow</Mark>
           </Text>
 

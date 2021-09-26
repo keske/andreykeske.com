@@ -26,7 +26,6 @@ const RollingStones: React.FC = (): JSX.Element => (
 
           <Text>
             <Mark>Emoji-like</Mark>
-            {' '}
             logo
           </Text>
 

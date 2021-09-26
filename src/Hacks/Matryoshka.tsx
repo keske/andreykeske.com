@@ -28,7 +28,6 @@ const Matryoshka: React.FC = (): JSX.Element => (
 
           <Text>
             Matryoshka in
-            {' '}
             <Mark>interface of operation system</Mark>
           </Text>
 

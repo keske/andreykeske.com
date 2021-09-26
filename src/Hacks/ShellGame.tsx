@@ -28,7 +28,6 @@ const ShellGame: React.FC = (): JSX.Element => (
 
           <Text>
             I am continuing to insert games to the
-            {' '}
             <Mark>interface of operation system</Mark>
             . Now it is a shell
             game.

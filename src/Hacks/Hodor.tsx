@@ -30,7 +30,6 @@ const Hodor: React.FC = (): JSX.Element => (
 
           <Text>
             Try to speak with him:
-            {' '}
             <Mark>@got_hodor_bot</Mark>
           </Text>
 

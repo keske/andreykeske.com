@@ -46,11 +46,8 @@ const LegoHTMLElement: React.FC = (): JSX.Element => (
           <Text>
             A classical Lego brick except that this one was made from HTML
             elements
-            {' '}
             <Mark>button</Mark>
-            {' '}
             and
-            {' '}
             <Mark>input</Mark>
           </Text>
 

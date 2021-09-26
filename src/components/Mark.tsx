@@ -12,6 +12,7 @@ const Root = styled.span`
   border-radius: 10px;
   font-size: 14px;
   font-weight: bold;
+  margin: 0 3px;
   padding: 5px 10px;
 `;
 

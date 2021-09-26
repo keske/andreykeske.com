@@ -28,9 +28,7 @@ const TmuxChess: React.FC = (): JSX.Element => (
 
           <Text>
             Playing in Chess using
-            {' '}
             <Mark>tmux</Mark>
-            {' '}
             as board
           </Text>
 

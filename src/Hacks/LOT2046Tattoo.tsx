@@ -48,11 +48,8 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
             <a href="https://www.lot2046.com/">lot2046</a>
             {' '}
             products:
-            {' '}
             <Mark>hair trimmer</Mark>
-            {' '}
             and
-            {' '}
             <Mark>toothbrush</Mark>
           </Text>
         </Col>

@@ -47,9 +47,7 @@ const SwitchInButton: React.FC = (): JSX.Element => {
             <Title>Switch In Button</Title>
             <Text>
               Experimental button component with
-              {' '}
               <Mark>Switch</Mark>
-              {' '}
               inside it that disable or enable that button. This button
               can be used in forms when you have to confirm or agree with
               the license, for example.
@@ -70,6 +68,7 @@ const SwitchInButton: React.FC = (): JSX.Element => {
             >
               Confirm
             </button>
+
             <Switch
               checked={checked}
               className={css(styles.switch)}

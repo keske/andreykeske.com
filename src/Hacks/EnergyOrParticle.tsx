@@ -31,7 +31,6 @@ const EnergyOrParticle: React.FC = (): JSX.Element => (
 
           <Text>
             Light behaves
-            {' '}
             <Mark>as a wave and as a particle</Mark>
             ,
             depending on the circumstances and the effect being observed

@@ -34,7 +34,6 @@ const MacOSGamesDice: React.FC = (): JSX.Element => (
             Very simple. Normal folder in Preview mode shows previews of
             the image files, two in our case. Script copes such two images
             <Mark>randomly</Mark>
-            {' '}
             and gives a combination of two dices.
           </Text>
 

@@ -29,12 +29,10 @@ const Spectrum: React.FC = (): JSX.Element => (
 
           <Text>
             Usually we have feedback from
-            {' '}
             <Mark>browser bar</Mark>
             , such
             as URL or its anchors, but in my experiment I try to show how
             typical browser bar will
-            {' '}
             <Mark>visualize sound spectrum</Mark>
           </Text>
 
