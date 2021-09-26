@@ -83,7 +83,7 @@ rules:
       singleline: consistent
   react/jsx-max-depth:
     - error
-    - max: 7
+    - max: 10
   react/jsx-max-props-per-line:
     - 1
     - maximum: 5

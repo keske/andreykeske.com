@@ -10,6 +10,7 @@ import {
   Mark,
   ProjectTopics,
   ProjectYear,
+  Spacer,
   Text,
   Title,
 } from '../components';
@@ -24,14 +25,10 @@ const styles = StyleSheet.create({
     filter: 'sepia(1)',
     height: 500,
   },
-  wrapper: {
-    paddingBottom: 115,
-    paddingTop: 115,
-  },
 });
 
 const VintageGoogleStreetView: React.FC = (): JSX.Element => (
-  <div className={css(styles.wrapper)}>
+  <>
     <Container className={css(styles.container)} fluid>
       <Row>
         <Col lg={{ span: 12 }}>
@@ -50,14 +47,13 @@ const VintageGoogleStreetView: React.FC = (): JSX.Element => (
           <Title>Google Street View vintage style</Title>
           <Text>Black and white with sepia like old photo card</Text>
           <Mark>⇧ Try to swipe it ⇧</Mark>
-          <br />
-          <br />
+          <Spacer size={6} />
           <ProjectTopics topics={['Interface', 'Ready Made']} />
           <ProjectYear>2016</ProjectYear>
         </Col>
       </Row>
     </Container>
-  </div>
+  </>
 );
 
 export default VintageGoogleStreetView;

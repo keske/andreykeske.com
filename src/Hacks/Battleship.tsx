@@ -2,7 +2,9 @@ import * as React from 'react';
 
 // Libs
 import { StyleSheet, css } from 'aphrodite';
-import { Col, Tab, Tabs } from 'react-bootstrap';
+import {
+  Col, Container, Row, Tab, Tabs,
+} from 'react-bootstrap';
 
 // Components
 import {
@@ -33,34 +35,38 @@ const Battleship: React.FC = (): JSX.Element => {
 
   return (
     <ProjectWrapper>
-      <Col lg={{ offset: 3, span: 6 }}>
-        <Tabs defaultActiveKey={letters[0]}>
-          {letters.map((letter) => (
-            <Tab key={letter} eventKey={letter} title={letter}>
-              <Tabs defaultActiveKey={numbers[numbers.length - 1]}>
-                {numbers.map((number) => (
-                  <Tab
-                    key={`${letter}-${number}`}
-                    className={css(styles.inner)}
-                    eventKey={`${number}`}
-                    title={number}
-                  >
-                    <input type="radio" />
-                  </Tab>
-                ))}
-              </Tabs>
-            </Tab>
-          ))}
-        </Tabs>
-        <Title>Battleship</Title>
-        <Text>
-          Hardcore representation of classic game through
-          {' '}
-          <Mark>tabs</Mark>
-        </Text>
-        <ProjectTopics topics={['Interface']} />
-        <ProjectYear>2012</ProjectYear>
-      </Col>
+      <Container>
+        <Row>
+          <Col lg={{ offset: 3, span: 5 }}>
+            <Tabs defaultActiveKey={letters[0]}>
+              {letters.map((letter) => (
+                <Tab key={letter} eventKey={letter} title={letter}>
+                  <Tabs defaultActiveKey={numbers[numbers.length - 1]}>
+                    {numbers.map((number) => (
+                      <Tab
+                        key={`${letter}-${number}`}
+                        className={css(styles.inner)}
+                        eventKey={`${number}`}
+                        title={number}
+                      >
+                        <input type="radio" />
+                      </Tab>
+                    ))}
+                  </Tabs>
+                </Tab>
+              ))}
+            </Tabs>
+            <Title>Battleship</Title>
+            <Text>
+              Hardcore representation of classic game through
+              {' '}
+              <Mark>tabs</Mark>
+            </Text>
+            <ProjectTopics topics={['Interface']} />
+            <ProjectYear>2012</ProjectYear>
+          </Col>
+        </Row>
+      </Container>
     </ProjectWrapper>
   );
 };

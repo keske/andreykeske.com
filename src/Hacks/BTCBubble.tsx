@@ -8,7 +8,9 @@ import { Col, Container, Row } from 'react-bootstrap';
 import {
   Button,
   ProjectTopics,
+  ProjectWrapper,
   ProjectYear,
+  Spacer,
   Text,
   Title,
 } from '../components';
@@ -48,30 +50,31 @@ const Root = styled.div`
 `;
 
 const BTCBubble: React.FC = (): JSX.Element => (
-  <Root>
-    <Sphere />
-    <Inner>
-      <Container>
-        <Row>
-          <Col lg={{ offset: 2, span: 10 }}>
-            <StyledTitle>BTC Bubble</StyledTitle>
-            <StyledText>
-              The current project is about the social opinion that
-              Bitcoin is a bubble and text inside it is the current
-              BTC&#39;s course.
-            </StyledText>
-            <a href="https://btc-bubble.vercel.app">
-              <StyledButton>Open Site →</StyledButton>
-            </a>
-            <br />
-            <br />
-            <StyledProjectTopics topics={['Social Commentary']} />
-            <StyledProjectYear>2021</StyledProjectYear>
-          </Col>
-        </Row>
-      </Container>
-    </Inner>
-  </Root>
+  <ProjectWrapper>
+    <Root>
+      <Sphere />
+      <Inner>
+        <Container>
+          <Row>
+            <Col lg={{ offset: 2, span: 10 }}>
+              <StyledTitle>BTC Bubble</StyledTitle>
+              <StyledText>
+                The current project is about the social opinion that
+                Bitcoin is a bubble and text inside it is the current
+                BTC&#39;s course.
+              </StyledText>
+              <a href="https://btc-bubble.vercel.app">
+                <StyledButton>Open Site →</StyledButton>
+              </a>
+              <Spacer size={8} />
+              <StyledProjectTopics topics={['Social Commentary']} />
+              <StyledProjectYear>2021</StyledProjectYear>
+            </Col>
+          </Row>
+        </Container>
+      </Inner>
+    </Root>
+  </ProjectWrapper>
 );
 
 export default BTCBubble;

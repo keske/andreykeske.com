@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Libs
-import { Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
@@ -14,15 +14,19 @@ import {
 
 const Hairpin: React.FC = (): JSX.Element => (
   <ProjectWrapper>
-    <Col lg={{ offset: 2, span: 7 }}>
-      <ResponsiveFrame
-        src="https://www.youtube.com/embed/zaWOPkX4IpY"
-        title="Haiping"
-      />
-      <Title>The hairpin</Title>
-      <ProjectTopics topics={['Interface']} />
-      <ProjectYear>2014</ProjectYear>
-    </Col>
+    <Container>
+      <Row>
+        <Col lg={{ offset: 2, span: 7 }}>
+          <ResponsiveFrame
+            src="https://www.youtube.com/embed/zaWOPkX4IpY"
+            title="Haiping"
+          />
+          <Title>The hairpin</Title>
+          <ProjectTopics topics={['Interface']} />
+          <ProjectYear>2014</ProjectYear>
+        </Col>
+      </Row>
+    </Container>
   </ProjectWrapper>
 );
 

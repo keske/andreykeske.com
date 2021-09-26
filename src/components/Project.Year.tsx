@@ -13,7 +13,7 @@ const Root = styled.div`
   display: inline-block;
   font-size: 10px;
   letter-spacing: 1px;
-  margin-top: 17px;
+  margin-top: 10px;
   padding-bottom: 3px;
   padding-left: 7px;
   padding-right: 7px;

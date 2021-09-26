@@ -10,7 +10,7 @@ type Props = {
 const Root = styled.button`
   background-color: #000;
   border: none;
-  border-radius: 21px;
+  border-radius: 31px;
   color: #fff;
   display: inline-block;
   margin-top: 10px;

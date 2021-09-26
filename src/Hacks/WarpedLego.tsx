@@ -5,7 +5,12 @@ import styled, { css } from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
-import { ProjectTopics, ProjectYear, Title } from '../components';
+import {
+  ProjectTopics,
+  ProjectWrapper,
+  ProjectYear,
+  Title,
+} from '../components';
 import { mediaQuery } from '../utils';
 
 import Lego from './WarpedLego/Root';
@@ -49,26 +54,28 @@ const Wrapper = styled.div`
 `;
 
 const WarpedLego: React.FC = (): JSX.Element => (
-  <Container>
-    <Row>
-      <Col lg={{ span: 12 }}>
-        <Wrapper>
-          <Lego />
-          <Inner>
-            <StyledTitle>
-              Lego brick in non-euclidean geometry world
-            </StyledTitle>
-            <br />
-            <StyledProjectTopics
-              topics={['Lego', 'Non-euclidean geometry', 'ThreeJS']}
-            />
-            <br />
-            <StyledProjectYear>2021</StyledProjectYear>
-          </Inner>
-        </Wrapper>
-      </Col>
-    </Row>
-  </Container>
+  <ProjectWrapper>
+    <Container>
+      <Row>
+        <Col lg={{ span: 12 }}>
+          <Wrapper>
+            <Lego />
+            <Inner>
+              <StyledTitle>
+                Lego brick in non-euclidean geometry world
+              </StyledTitle>
+              <br />
+              <StyledProjectTopics
+                topics={['Lego', 'Non-euclidean geometry', 'ThreeJS']}
+              />
+              <br />
+              <StyledProjectYear>2021</StyledProjectYear>
+            </Inner>
+          </Wrapper>
+        </Col>
+      </Row>
+    </Container>
+  </ProjectWrapper>
 );
 
 export default WarpedLego;

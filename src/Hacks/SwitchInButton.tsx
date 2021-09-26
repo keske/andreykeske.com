@@ -3,7 +3,7 @@ import * as React from 'react';
 // Libs
 import Switch from 'react-ios-switch';
 import { StyleSheet, css } from 'aphrodite';
-import { Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
@@ -11,6 +11,7 @@ import {
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
+  Spacer,
   Text,
   Title,
 } from '../components';
@@ -40,42 +41,50 @@ const SwitchInButton: React.FC = (): JSX.Element => {
 
   return (
     <ProjectWrapper>
-      <Col lg={{ offset: 2, span: 7 }}>
-        <Title>Switch In Button</Title>
-        <Text>
-          Experimental button component with
-          {' '}
-          <Mark>Switch</Mark>
-          {' '}
-          inside it that disable or enable that button. This button
-          can be used in forms when you have to confirm or agree with
-          the license, for example.
-        </Text>
-        <button
-          className={css(styles.root)}
-          disabled={!checked}
-          onClick={() => {
-            alert('Clicked!');
-          }}
-          style={{
-            color: checked ? '#000' : '#999',
-          }}
-          type="button"
-        >
-          Confirm
-        </button>
-        <Switch
-          checked={checked}
-          className={css(styles.switch)}
-          onChange={(value) => {
-            setChecked(value);
-          }}
-        />
-        <br />
-        <br />
-        <ProjectTopics topics={['UI']} />
-        <ProjectYear>2021</ProjectYear>
-      </Col>
+      <Container>
+        <Row>
+          <Col lg={{ offset: 2, span: 7 }}>
+            <Title>Switch In Button</Title>
+            <Text>
+              Experimental button component with
+              {' '}
+              <Mark>Switch</Mark>
+              {' '}
+              inside it that disable or enable that button. This button
+              can be used in forms when you have to confirm or agree with
+              the license, for example.
+            </Text>
+
+            <Spacer size={2} />
+
+            <button
+              className={css(styles.root)}
+              disabled={!checked}
+              onClick={() => {
+                alert('Clicked!');
+              }}
+              style={{
+                color: checked ? '#000' : '#999',
+              }}
+              type="button"
+            >
+              Confirm
+            </button>
+            <Switch
+              checked={checked}
+              className={css(styles.switch)}
+              onChange={(value) => {
+                setChecked(value);
+              }}
+            />
+
+            <Spacer size={8} />
+
+            <ProjectTopics topics={['UI']} />
+            <ProjectYear>2021</ProjectYear>
+          </Col>
+        </Row>
+      </Container>
     </ProjectWrapper>
   );
 };

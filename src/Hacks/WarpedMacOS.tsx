@@ -7,7 +7,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 // Components
 import {
   ProjectTopics,
-  ProjectWrapper,
   ProjectYear,
   Spacer,
   Text,
@@ -26,8 +25,8 @@ const StyledText = styled(Text)`
   text-align: center;
 `;
 
-const WarpedMinecraft: React.FC = (): JSX.Element => (
-  <ProjectWrapper>
+const WarpedMacOS: React.FC = (): JSX.Element => (
+  <>
     <Container>
       <Row>
         <Col lg={{ span: 12 }}>
@@ -127,7 +126,7 @@ const WarpedMinecraft: React.FC = (): JSX.Element => (
         </Col>
       </Row>
     </Container>
-  </ProjectWrapper>
+  </>
 );
 
-export default WarpedMinecraft;
+export default WarpedMacOS;
