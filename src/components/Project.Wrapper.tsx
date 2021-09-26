@@ -14,6 +14,7 @@ const Root = styled.div`
 
 const ProjectWrapper: React.FC<Props> = ({
   children,
-}: Props): JSX.Element => <Root>{children}</Root>;
+  ...rest
+}: Props): JSX.Element => <Root {...rest}>{children}</Root>;
 
 export default ProjectWrapper;

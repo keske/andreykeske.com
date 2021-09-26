@@ -21,13 +21,13 @@ const FootballFansTrolling: React.FC = (): JSX.Element => (
       <Row>
         <Col lg={{ span: 6 }}>
           <UploadcareImage src="https://ucarecdn.com/d5da363b-c885-4849-8e09-73f5285830cf/" />
-          <Spacer />
+          <Spacer size={7} />
           <UploadcareImage src="https://ucarecdn.com/acda9cb3-8281-4b2a-a87f-9eb810b032c5/" />
         </Col>
 
         <Col lg={{ span: 6 }}>
           <UploadcareImage src="https://ucarecdn.com/5aa369c4-04e6-4ef1-8f2c-1915da9e5ca6/" />
-          <Spacer />
+          <Spacer size={7} />
           <UploadcareImage src="https://ucarecdn.com/a3420d12-c0a4-4efa-a2e4-1c72160f62b2/" />
         </Col>
 

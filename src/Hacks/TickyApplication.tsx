@@ -8,6 +8,7 @@ import {
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
+  Spacer,
   Text,
   Title,
   UploadcareImage,
@@ -22,6 +23,8 @@ const TickyApplication: React.FC = (): JSX.Element => (
         </Col>
 
         <Col lg={{ span: 4 }}>
+          <Spacer size={10} />
+
           <Title>Ticky App</Title>
 
           <Text>

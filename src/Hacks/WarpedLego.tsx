@@ -41,11 +41,11 @@ const StyledTitle = styled(Title)`
   width: 80%;
 
   ${mediaQuery(
-  'greaterThanTablet',
-  css`
+    'greaterThanTablet',
+    css`
       width: auto;
     `,
-)}
+  )}
 `;
 
 const Wrapper = styled.div`

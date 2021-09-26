@@ -32,8 +32,8 @@ const StyledProjectTopics = styled(ProjectTopics)`
 `;
 
 const StyledProjectYear = styled(ProjectYear)`
-  background-color: #fff;
   border: 1px solid #fff;
+  color: #FFF;
 `;
 
 const StyledText = styled(Text)`

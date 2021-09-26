@@ -12,6 +12,7 @@ import {
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
+  Spacer,
   SubTitle,
   Text,
   Title,
@@ -26,7 +27,7 @@ const Volume: React.FC = (): JSX.Element => (
         </Col>
 
         {/* Scroll sections */}
-        <Col lg={{ span: 6 }}>
+        <Col lg={{ span: 5 }}>
           <SubTitle>Scroll</SubTitle>
 
           <Text>
@@ -41,7 +42,7 @@ const Volume: React.FC = (): JSX.Element => (
         </Col>
 
         {/* Resize sections */}
-        <Col lg={{ span: 6 }}>
+        <Col lg={{ offset: 1, span: 5 }}>
           <SubTitle>Resize</SubTitle>
 
           <Text>
@@ -54,6 +55,8 @@ const Volume: React.FC = (): JSX.Element => (
             <Button>🔊 Try it out</Button>
           </Link>
         </Col>
+
+        <Spacer size={6} />
 
         {/* Details */}
         <Col lg={{ span: 12 }}>
