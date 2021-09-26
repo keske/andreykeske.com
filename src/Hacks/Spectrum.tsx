@@ -24,7 +24,9 @@ const Spectrum: React.FC = (): JSX.Element => (
             src="https://www.youtube.com/embed/I1nMNR8ntHM"
             title="Spectrum at browser bar"
           />
+
           <Title>Spectrum at browser bar</Title>
+
           <Text>
             Usually we have feedback from
             {' '}
@@ -35,6 +37,7 @@ const Spectrum: React.FC = (): JSX.Element => (
             {' '}
             <Mark>visualize sound spectrum</Mark>
           </Text>
+
           <ProjectDisciplines disciplines={['Programming']} />
           <ProjectTopics topics={['Interface']} />
           <ProjectYear>2013</ProjectYear>

@@ -35,6 +35,7 @@ const WarpedMinecraft: React.FC = (): JSX.Element => (
         </Col>
       </Row>
     </Container>
+
     <Container>
       <Row>
         <Col
@@ -51,7 +52,9 @@ const WarpedMinecraft: React.FC = (): JSX.Element => (
         </Col>
       </Row>
     </Container>
+
     <Spacer size={10} />
+
     <Container>
       <Row>
         <Col
@@ -118,7 +121,9 @@ const WarpedMinecraft: React.FC = (): JSX.Element => (
         </Col>
       </Row>
     </Container>
+
     <Spacer size={10} />
+
     <Container>
       <Row>
         <Col lg={{ span: 6 }}>

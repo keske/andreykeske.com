@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as THREE from 'three';
 // Libs
 import styled from 'styled-components';
-import { Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Canvas as FiberCanvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 
@@ -138,73 +138,75 @@ const About: React.FC = (): JSX.Element => {
   );
 
   return (
-    <div>
-      <ProjectWrapper>
-        <Col lg={{ span: 6 }}>
-          <StyledCanvas
-            camera={{ position: [0, 3, 2] }}
-            colorManagement
-            gl={{
-              alpha: true,
-              antialias: true,
-              depth: false,
-              powerPreference: 'high-performance',
-              stencil: false,
-            }}
-          >
-            <React.Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
+    <ProjectWrapper>
+      <Container>
+        <Row>
+          <Col lg={{ span: 6 }}>
+            <StyledCanvas
+              camera={{ position: [0, 3, 2] }}
+              colorManagement
+              gl={{
+                alpha: true,
+                antialias: true,
+                depth: false,
+                powerPreference: 'high-performance',
+                stencil: false,
+              }}
+            >
+              <React.Suspense fallback={null}>
+                <OrbitControls enableZoom={false} />
 
-              <group>
-                <ambientLight intensity={0.3} />
+                <group>
+                  <ambientLight intensity={0.3} />
 
-                <spotLight
-                  angle={Math.PI / 6}
-                  castShadow
-                  intensity={0.2}
-                  position={[20, 20, 30]}
-                  shadow-bias={-0.00005}
-                  shadow-mapSize-height={2048}
-                  shadow-mapSize-width={2048}
-                />
+                  <spotLight
+                    angle={Math.PI / 6}
+                    castShadow
+                    intensity={0.2}
+                    position={[20, 20, 30]}
+                    shadow-bias={-0.00005}
+                    shadow-mapSize-height={2048}
+                    shadow-mapSize-width={2048}
+                  />
 
-                <Nurbs {...nurbs} />
-              </group>
-            </React.Suspense>
-          </StyledCanvas>
-        </Col>
-        <Col lg={{ span: 6 }}>
-          <h1>Andrey Keske</h1>
-          <Text>Andrey Keske is a fullstack developer</Text>
-          <Text>
-            He is focusing on the engineering of applications and
-            back-end architectures. In parallel to his main job, he is
-            always trying to find a new vision of common things in
-            life, interfaces, or even music and video
-          </Text>
-          <Text>Andrey lives in Miami, Fl</Text>
-          <Text>
-            <a href="mailto://hello@andreykeske.com">
-              hello@andreykeske.com
-            </a>
-            {' • '}
-            <a href="https://github.com/keske">Github</a>
-            {' • '}
-            <a href="https://www.instagram.com/andreykeske/">
-              Instagram
-            </a>
-            {' • '}
-            <a href="https://www.linkedin.com/in/andreykeske/">
-              LinkedIn
-            </a>
-            {' • '}
-            <a href="https://www.youtube.com/user/andreykeske">
-              YouTube
-            </a>
-          </Text>
-        </Col>
-      </ProjectWrapper>
-    </div>
+                  <Nurbs {...nurbs} />
+                </group>
+              </React.Suspense>
+            </StyledCanvas>
+          </Col>
+          <Col lg={{ span: 6 }}>
+            <h1>Andrey Keske</h1>
+            <Text>Andrey Keske is a fullstack developer</Text>
+            <Text>
+              He is focusing on the engineering of applications and
+              back-end architectures. In parallel to his main job, he is
+              always trying to find a new vision of common things in
+              life, interfaces, or even music and video
+            </Text>
+            <Text>Andrey lives in Miami, Fl</Text>
+            <Text>
+              <a href="mailto://hello@andreykeske.com">
+                hello@andreykeske.com
+              </a>
+              {' • '}
+              <a href="https://github.com/keske">Github</a>
+              {' • '}
+              <a href="https://www.instagram.com/andreykeske/">
+                Instagram
+              </a>
+              {' • '}
+              <a href="https://www.linkedin.com/in/andreykeske/">
+                LinkedIn
+              </a>
+              {' • '}
+              <a href="https://www.youtube.com/user/andreykeske">
+                YouTube
+              </a>
+            </Text>
+          </Col>
+        </Row>
+      </Container>
+    </ProjectWrapper>
   );
 };
 

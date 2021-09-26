@@ -27,7 +27,9 @@ const MacOSGamesSlot: React.FC = (): JSX.Element => (
             src="//player.vimeo.com/video/40103163"
             title="IKEA Place"
           />
+
           <Title>Slot Machines</Title>
+
           <Text>
             3 slots, each has a set of pictures. The aim of the game is to
             get 3 the same pictures. In my game each slot is the simple
@@ -40,6 +42,7 @@ const MacOSGamesSlot: React.FC = (): JSX.Element => (
           </Text>
 
           <SubTitle>How to play</SubTitle>
+
           <ul>
             <li>
               Open Terminal

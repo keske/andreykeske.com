@@ -28,11 +28,13 @@ const Volume: React.FC = (): JSX.Element => (
         {/* Scroll sections */}
         <Col lg={{ span: 6 }}>
           <SubTitle>Scroll</SubTitle>
+
           <Text>
             There is an audioplayer at the top of page. When you are
             scrolling down sound volume gets quiter just like in real
             life.
           </Text>
+
           <Link to="/volume-scroll">
             <Button>🔊 Try it out</Button>
           </Link>
@@ -41,11 +43,13 @@ const Volume: React.FC = (): JSX.Element => (
         {/* Resize sections */}
         <Col lg={{ span: 6 }}>
           <SubTitle>Resize</SubTitle>
+
           <Text>
             Larger speaker can produce sound more loudly. In my
             experiment I use the same principle — larger the window
             louder the sound it produces and vice versa.
           </Text>
+
           <Link to="/volume-resize">
             <Button>🔊 Try it out</Button>
           </Link>

@@ -9,6 +9,7 @@ import {
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
+  Spacer,
   Title,
 } from '../components';
 import { mediaQuery } from '../utils';
@@ -40,11 +41,11 @@ const StyledTitle = styled(Title)`
   width: 80%;
 
   ${mediaQuery(
-    'greaterThanTablet',
-    css`
+  'greaterThanTablet',
+  css`
       width: auto;
     `,
-  )}
+)}
 `;
 
 const Wrapper = styled.div`
@@ -60,15 +61,20 @@ const WarpedLego: React.FC = (): JSX.Element => (
         <Col lg={{ span: 12 }}>
           <Wrapper>
             <Lego />
+
             <Inner>
               <StyledTitle>
                 Lego brick in non-euclidean geometry world
               </StyledTitle>
-              <br />
+
+              <Spacer size={0} />
+
               <StyledProjectTopics
                 topics={['Lego', 'Non-euclidean geometry', 'ThreeJS']}
               />
-              <br />
+
+              <Spacer />
+
               <StyledProjectYear>2021</StyledProjectYear>
             </Inner>
           </Wrapper>

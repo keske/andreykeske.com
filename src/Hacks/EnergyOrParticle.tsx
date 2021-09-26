@@ -12,6 +12,7 @@ import {
   ProjectWrapper,
   ProjectYear,
   ResponsiveFrame,
+  Spacer,
   Text,
   Title,
 } from '../components';
@@ -25,7 +26,9 @@ const EnergyOrParticle: React.FC = (): JSX.Element => (
             src="https://www.youtube.com/embed/3m6k7IDz8Qw"
             title="Wave–particle duality"
           />
+
           <Title>Wave–particle duality</Title>
+
           <Text>
             Light behaves
             {' '}
@@ -33,12 +36,15 @@ const EnergyOrParticle: React.FC = (): JSX.Element => (
             ,
             depending on the circumstances and the effect being observed
           </Text>
+
           <Text>
             <a href="https://lco.global/spacebook/light-particle/">
               <Button>Try it</Button>
             </a>
           </Text>
-          <br />
+
+          <Spacer />
+
           <ProjectDisciplines disciplines={['Programming']} />
           <ProjectTopics topics={['Interaction']} />
           <ProjectYear>2018</ProjectYear>

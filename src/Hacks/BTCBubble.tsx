@@ -58,15 +58,19 @@ const BTCBubble: React.FC = (): JSX.Element => (
           <Row>
             <Col lg={{ offset: 2, span: 10 }}>
               <StyledTitle>BTC Bubble</StyledTitle>
+
               <StyledText>
                 The current project is about the social opinion that
                 Bitcoin is a bubble and text inside it is the current
                 BTC&#39;s course.
               </StyledText>
+
               <a href="https://btc-bubble.vercel.app">
                 <StyledButton>Open Site →</StyledButton>
               </a>
+
               <Spacer size={8} />
+
               <StyledProjectTopics topics={['Social Commentary']} />
               <StyledProjectYear>2021</StyledProjectYear>
             </Col>

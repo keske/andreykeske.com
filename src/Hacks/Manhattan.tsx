@@ -25,6 +25,7 @@ const Manhattan: React.FC = (): JSX.Element => (
           <UploadcareImage src="https://ucarecdn.com/287536f5-7822-497f-ab92-9363e935791f/" />
 
           <Title>Inverted Manhattan</Title>
+
           <ProjectTopics topics={['Ready Made']} />
           <ProjectYear>2011</ProjectYear>
         </StyledCol>

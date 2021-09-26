@@ -33,10 +33,15 @@ const Globalization: React.FC = (): JSX.Element => (
               title="Globalization"
             />
           </div>
+
           <Title>Globalization</Title>
+
           <Text>The world when the boundaries are blurred</Text>
+
           <Mark>⇧ Try to drag it ⇧</Mark>
+
           <Spacer size={6} />
+
           <ProjectTopics
             topics={['Interface', 'Ready Made', 'Social Commentary']}
           />

@@ -21,7 +21,9 @@ const Hairpin: React.FC = (): JSX.Element => (
             src="https://www.youtube.com/embed/zaWOPkX4IpY"
             title="Haiping"
           />
+
           <Title>The hairpin</Title>
+
           <ProjectTopics topics={['Interface']} />
           <ProjectYear>2014</ProjectYear>
         </Col>

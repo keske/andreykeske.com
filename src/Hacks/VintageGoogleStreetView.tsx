@@ -41,13 +41,18 @@ const VintageGoogleStreetView: React.FC = (): JSX.Element => (
         </Col>
       </Row>
     </Container>
+
     <Container>
       <Row>
         <Col lg={{ span: 12 }}>
           <Title>Google Street View vintage style</Title>
+
           <Text>Black and white with sepia like old photo card</Text>
+
           <Mark>⇧ Try to swipe it ⇧</Mark>
+
           <Spacer size={6} />
+
           <ProjectTopics topics={['Interface', 'Ready Made']} />
           <ProjectYear>2016</ProjectYear>
         </Col>

@@ -40,6 +40,7 @@ const EmojiTattooFlashes: React.FC = (): JSX.Element => (
 
         <StyledCol lg={{ offset: 2, span: 10 }}>
           <Title>Emoji Tattoo Flashes</Title>
+
           <ProjectDisciplines disciplines={['Graphic Design']} />
           <ProjectTopics topics={['Emoji', 'Tattoo']} />
           <ProjectYear>2017</ProjectYear>

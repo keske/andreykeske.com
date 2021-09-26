@@ -33,9 +33,11 @@ const WaterFilter: React.FC = (): JSX.Element => (
 
         <Col lg={{ offset: 0, span: 12 }}>
           <Title>Eco problems with water</Title>
+
           <Text>
             Street installation. The water filter in an unusual situation
           </Text>
+
           <ProjectDisciplines disciplines={['Street Art']} />
           <ProjectTopics topics={['Eco', 'Social Commentary']} />
           <ProjectYear>2016</ProjectYear>

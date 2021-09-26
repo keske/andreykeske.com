@@ -34,12 +34,14 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
         <Col className={css(styles.col)} lg={{ offset: 0, span: 10 }}>
           <UploadcareImage src="https://ucarecdn.com/58007ddf-42d7-4892-b431-713538b95b93/" />
         </Col>
+
         <Col className={css(styles.col)} lg={{ offset: 6, span: 5 }}>
           <UploadcareImage src="https://ucarecdn.com/a9e460fb-b621-4e60-9201-06c981ef4d68/" />
         </Col>
 
         <Col className={css(styles.col)} lg={{ offset: 2, span: 10 }}>
           <Title>LOT2046 Tattoo Machine</Title>
+
           <Text>
             Tattoo machine which I&#39;ve built from
             {' '}

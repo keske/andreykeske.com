@@ -23,7 +23,9 @@ const TmuxChess: React.FC = (): JSX.Element => (
             src="https://www.youtube.com/embed/JlvEuMp2UVw"
             title="Tmux Chess"
           />
+
           <Title>Tmux Chess</Title>
+
           <Text>
             Playing in Chess using
             {' '}
@@ -31,6 +33,7 @@ const TmuxChess: React.FC = (): JSX.Element => (
             {' '}
             as board
           </Text>
+
           <ProjectTopics topics={['Interface', 'Ready Made']} />
           <ProjectYear>2014</ProjectYear>
         </Col>

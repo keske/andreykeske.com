@@ -27,7 +27,9 @@ const MacOSGamesDice: React.FC = (): JSX.Element => (
             src="//player.vimeo.com/video/40102765"
             title="Dice game"
           />
+
           <Title>Dice game</Title>
+
           <Text>
             Very simple. Normal folder in Preview mode shows previews of
             the image files, two in our case. Script copes such two images
@@ -37,6 +39,7 @@ const MacOSGamesDice: React.FC = (): JSX.Element => (
           </Text>
 
           <SubTitle>How to play</SubTitle>
+
           <ul>
             <li>Open folder and set Preview mode</li>
             <li>

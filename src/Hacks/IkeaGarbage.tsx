@@ -25,16 +25,21 @@ const IkeaGarbage: React.FC = (): JSX.Element => (
             src="https://www.youtube.com/embed/WjKAlIXw-sI"
             title="IKEA Place"
           />
+
           <Title>IKEA Place</Title>
+
           <Text>
             The first discarded piece of IKEA furniture in
             {' '}
             <Mark>Augmented Reality</Mark>
           </Text>
+
           <a href="https://apps.apple.com/us/app/ikea-place/id1279244498">
             <Button>Download Application →</Button>
           </a>
+
           <Spacer size={8} />
+
           <ProjectTopics topics={['AR', 'Ready Made']} />
           <ProjectYear>2017</ProjectYear>
         </Col>

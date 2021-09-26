@@ -3,7 +3,7 @@ import * as R from 'ramda';
 
 // Libs
 import { StyleSheet, css } from 'aphrodite';
-import { Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
@@ -11,6 +11,7 @@ import {
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
+  Spacer,
   Text,
   Title,
 } from '../components';
@@ -37,34 +38,43 @@ const styles = StyleSheet.create({
 
 const LegoHTMLElement: React.FC = (): JSX.Element => (
   <ProjectWrapper>
-    <Col lg={{ offset: 2, span: 7 }}>
-      <Title>Lego HTML Element</Title>
-      <Text>
-        A classical Lego brick except that this one was made from HTML
-        elements
-        {' '}
-        <Mark>button</Mark>
-        {' '}
-        and
-        {' '}
-        <Mark>input</Mark>
-      </Text>
-      <button className={css(styles.root)} type="button">
-        {R.range(0, 8).map((index) => (
-          <span key={index}>
-            <input
-              checked
-              className={css(styles.input)}
-              type="radio"
-            />
-            <span className={css(styles.label)}>LEGO</span>
-            {index === 3 && <br />}
-          </span>
-        ))}
-      </button>
-      <ProjectTopics topics={['Lego', 'UI']} />
-      <ProjectYear>2021</ProjectYear>
-    </Col>
+    <Container>
+      <Row>
+        <Col lg={{ offset: 2, span: 7 }}>
+          <Title>Lego HTML Element</Title>
+
+          <Text>
+            A classical Lego brick except that this one was made from HTML
+            elements
+            {' '}
+            <Mark>button</Mark>
+            {' '}
+            and
+            {' '}
+            <Mark>input</Mark>
+          </Text>
+
+          <button className={css(styles.root)} type="button">
+            {R.range(0, 8).map((index) => (
+              <span key={index}>
+                <input
+                  checked
+                  className={css(styles.input)}
+                  type="radio"
+                />
+                <span className={css(styles.label)}>LEGO</span>
+                {index === 3 && <br />}
+              </span>
+            ))}
+          </button>
+
+          <Spacer size={6} />
+
+          <ProjectTopics topics={['Lego', 'UI']} />
+          <ProjectYear>2021</ProjectYear>
+        </Col>
+      </Row>
+    </Container>
   </ProjectWrapper>
 );
 

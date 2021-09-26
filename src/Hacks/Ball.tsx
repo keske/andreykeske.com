@@ -21,7 +21,9 @@ const Ball: React.FC = (): JSX.Element => (
             src="https://www.youtube.com/embed/dT1l7jtfNWw"
             title="Ball"
           />
+
           <Title>Ball</Title>
+
           <ProjectTopics topics={['Interface', 'Ready Made']} />
           <ProjectYear>2014</ProjectYear>
         </Col>

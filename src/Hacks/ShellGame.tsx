@@ -23,7 +23,9 @@ const ShellGame: React.FC = (): JSX.Element => (
             src="https://www.youtube.com/embed/8P2lZcFDNw0"
             title="The Shell Game"
           />
+
           <Title>The Shell Game</Title>
+
           <Text>
             I am continuing to insert games to the
             {' '}
@@ -31,6 +33,7 @@ const ShellGame: React.FC = (): JSX.Element => (
             . Now it is a shell
             game.
           </Text>
+
           <ProjectTopics topics={['Game', 'Interface', 'Ready Made']} />
           <ProjectYear>2017</ProjectYear>
         </Col>

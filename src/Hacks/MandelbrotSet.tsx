@@ -10,6 +10,7 @@ import {
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
+  Spacer,
   Text,
   Title,
   UploadcareImage,
@@ -21,15 +22,21 @@ const MandelbrotSet: React.FC = (): JSX.Element => (
       <Row>
         <Col lg={{ offset: 1, span: 10 }}>
           <Title>Mandelbrot set</Title>
+
           <Text>
             The fractal geometry built from the Radio Button elements
           </Text>
+
           <UploadcareImage src="https://ucarecdn.com/3691298d-b2d6-4b07-bf4c-5319f8947739/" />
-          <br />
-          <br />
+
+          <Spacer />
+
           <Link to="/mandelbrot-set">
             <Button>Try it out →</Button>
           </Link>
+
+          <Spacer />
+
           <ProjectTopics topics={['Interface', 'Mathematics']} />
           <ProjectYear>2021</ProjectYear>
         </Col>

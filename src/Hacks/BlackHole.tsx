@@ -22,11 +22,14 @@ const BlackHole: React.FC = (): JSX.Element => (
             src="https://www.youtube.com/embed/oARU7GLKj3Y"
             title="Black Hole"
           />
+
           <Title>Black hole on my Desktop</Title>
+
           <Text>
             In the space of my Desktop was noticed a black hole where the
             any information or object will be removed forever
           </Text>
+
           <ProjectTopics topics={['Interface', 'Ready Made']} />
           <ProjectYear>2014</ProjectYear>
         </Col>

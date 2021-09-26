@@ -38,6 +38,7 @@ const Sneakers: React.FC = (): JSX.Element => (
             {' '}
             — and crossed them.
           </Text>
+
           <ProjectDisciplines disciplines={['Graphic Design']} />
           <ProjectTopics topics={['Fashion']} />
           <ProjectYear>2011</ProjectYear>
