@@ -28,7 +28,7 @@ const StyledProjectWrapper = styled(ProjectWrapper)`
 `;
 
 const StyledProjectTopics = styled(ProjectTopics)`
-  background-color: #fff;
+  backdrop-filter: blur(21px);
   border-radius: 13px;
   display: inline-block;
   opacity: 1;
@@ -36,19 +36,19 @@ const StyledProjectTopics = styled(ProjectTopics)`
 `;
 
 const StyledProjectYear = styled(ProjectYear)`
-  background-color: #fff;
-  border: 1px solid #fff;
+  backdrop-filter: blur(21px);
+  border: none;
 `;
 
 const StyledText = styled(Text)`
-  background-color: #fff;
+  backdrop-filter: blur(21px);
   border-radius: 13px;
   display: inline-block;
   padding: 13px 21px;
 `;
 
 const StyledTitle = styled(Title)`
-  background-color: #fff;
+  backdrop-filter: blur(21px);
   border-radius: 13px;
   display: inline-block;
   padding: 13px 21px;
@@ -77,7 +77,9 @@ const MandelbrotSet: React.FC = (): JSX.Element => (
 
           <Spacer size={6} />
 
-          <StyledProjectTopics topics={['Interface', 'Mathematics']} />
+          <StyledProjectTopics
+            topics={['Interface', 'Mathematics']}
+          />
 
           <Spacer size={0} />
 

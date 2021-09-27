@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 // Libs
+import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
@@ -14,8 +15,33 @@ import {
   Title,
 } from '../components';
 
+const Details = styled.div`
+  opacity: 0.5;
+`;
+
+const StyledMark = styled(Mark)`
+  border: 1px solid #fff;
+`;
+
+const StyledProjectWrapper = styled(ProjectWrapper)`
+  background-color: #000;
+  color: #fff;
+`;
+
+const StyledProjectYear = styled(ProjectYear)`
+  border: 1px solid #fff;
+`;
+
+const StyledText = styled(Text)`
+  color: #fff; ;
+`;
+
+const StyledTitle = styled(Title)`
+  color: #fff;
+`;
+
 const Catch: React.FC = (): JSX.Element => (
-  <ProjectWrapper>
+  <StyledProjectWrapper>
     <Container>
       <Row>
         <Col lg={{ offset: 1, span: 8 }}>
@@ -24,27 +50,30 @@ const Catch: React.FC = (): JSX.Element => (
             title="Catch"
           />
 
-          <Title>The Catch</Title>
+          <StyledTitle>The Catch</StyledTitle>
 
-          <Text>
+          <StyledText>
             The application icon in the dock is a trap from the
-            <Mark>Ghostbusters</Mark>
-          </Text>
+            <StyledMark>Ghostbusters</StyledMark>
+          </StyledText>
 
-          <Text>
-            The window is a ghost. Window minimization represents a scene
-            from the movie of catching a ghost
-          </Text>
+          <StyledText>
+            The window is a ghost. Window minimization represents a
+            scene from the movie of catching a ghost
+          </StyledText>
 
-          <Text>Thanks: Andrey Smirny and Nikita Rokotyan</Text>
+          <StyledText>
+            Thanks: Andrey Smirny and Nikita Rokotyan
+          </StyledText>
 
-          <ProjectTopics topics={['Interface', 'Ready Made']} />
-          <ProjectYear>2013</ProjectYear>
+          <Details>
+            <ProjectTopics topics={['Interface', 'Ready Made']} />
+            <StyledProjectYear>2013</StyledProjectYear>
+          </Details>
         </Col>
       </Row>
-
     </Container>
-  </ProjectWrapper>
+  </StyledProjectWrapper>
 );
 
 export default Catch;

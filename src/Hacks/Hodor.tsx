@@ -46,7 +46,6 @@ const Hodor: React.FC = (): JSX.Element => (
           <ProjectYear>2016</ProjectYear>
         </Col>
       </Row>
-
     </Container>
   </ProjectWrapper>
 );

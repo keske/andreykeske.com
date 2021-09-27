@@ -39,7 +39,6 @@ const TickyApplication: React.FC = (): JSX.Element => (
           <ProjectYear>2021</ProjectYear>
         </Col>
       </Row>
-
     </Container>
   </ProjectWrapper>
 );

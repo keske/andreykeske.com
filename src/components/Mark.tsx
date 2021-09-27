@@ -16,8 +16,9 @@ const Root = styled.span`
   padding: 5px 10px;
 `;
 
-const Mark: React.FC<Props> = ({ children }: Props): JSX.Element => (
-  <Root>{children}</Root>
-);
+const Mark: React.FC<Props> = ({
+  children,
+  ...rest
+}: Props): JSX.Element => <Root {...rest}>{children}</Root>;
 
 export default Mark;

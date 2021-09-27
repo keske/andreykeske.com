@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 // Libs
+import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
@@ -14,8 +15,35 @@ import {
   Title,
 } from '../components';
 
+const GREEN = '#03A749';
+
+const Details = styled.div`
+  opacity: 0.5;
+`;
+
+const StyledMark = styled(Mark)`
+  border: 1px solid ${GREEN};
+`;
+
+const StyledProjectWrapper = styled(ProjectWrapper)`
+  background-color: #000;
+  color: ${GREEN};
+`;
+
+const StyledProjectYear = styled(ProjectYear)`
+  border: 1px solid ${GREEN};
+`;
+
+const StyledText = styled(Text)`
+  color: ${GREEN};
+`;
+
+const StyledTitle = styled(Title)`
+  color: ${GREEN};
+`;
+
 const TmuxChess: React.FC = (): JSX.Element => (
-  <ProjectWrapper>
+  <StyledProjectWrapper>
     <Container>
       <Row>
         <Col lg={{ offset: 0, span: 12 }}>
@@ -24,20 +52,22 @@ const TmuxChess: React.FC = (): JSX.Element => (
             title="Tmux Chess"
           />
 
-          <Title>Tmux Chess</Title>
+          <StyledTitle>Tmux Chess</StyledTitle>
 
-          <Text>
+          <StyledText>
             Playing in Chess using
-            <Mark>tmux</Mark>
+            <StyledMark>tmux</StyledMark>
             as board
-          </Text>
+          </StyledText>
 
-          <ProjectTopics topics={['Interface', 'Ready Made']} />
-          <ProjectYear>2014</ProjectYear>
+          <Details>
+            <ProjectTopics topics={['Interface', 'Ready Made']} />
+            <StyledProjectYear>2014</StyledProjectYear>
+          </Details>
         </Col>
       </Row>
     </Container>
-  </ProjectWrapper>
+  </StyledProjectWrapper>
 );
 
 export default TmuxChess;
