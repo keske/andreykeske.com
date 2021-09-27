@@ -12,7 +12,7 @@ const WarpedMinecraftWorld: React.FC = () => {
     () =>
       R.range(surfaceMatrix[0], surfaceMatrix[1]).map((x) =>
         R.range(surfaceMatrix[0], surfaceMatrix[1]).map((z) => (
-          <group position={[x * 4, 0, z * 4]}>
+          <group key={`dirt-${x}-${z}`} position={[x * 4, 0, z * 4]}>
             <Dirt />
           </group>
         )),
@@ -24,7 +24,10 @@ const WarpedMinecraftWorld: React.FC = () => {
     () =>
       R.range(surfaceMatrix[0], surfaceMatrix[1]).map((x) =>
         R.range(surfaceMatrix[0], surfaceMatrix[1]).map((z) => (
-          <group position={[x * 4, -4, z * 4]}>
+          <group
+            key={`stone-${x}-${z}`}
+            position={[x * 4, -4, z * 4]}
+          >
             <Stone />
           </group>
         )),

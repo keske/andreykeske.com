@@ -461,12 +461,11 @@ const WarpedMinecraftCube: React.FC<Props> = ({
 
   return (
     <group {...rest}>
-      {R.values(net).map((obj) => (
+      {R.values(net).map((obj, index) => (
         <Nurbs
           {...obj}
-          side={
-            transparent ? THREE.DoubleSide : THREE.FrontSide
-          }
+          key={index}
+          side={transparent ? THREE.DoubleSide : THREE.FrontSide}
         />
       ))}
     </group>
