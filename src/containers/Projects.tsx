@@ -24,11 +24,11 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.Battleship />
     <Hacks.Ball />
     <Hacks.BlackHole />
+    <Hacks.TmuxChess />
     <Hacks.Matryoshka />
     <Hacks.ShellGame />
     <Hacks.Hodor />
     <Hacks.Catch />
-    <Hacks.TmuxChess />
     <Hacks.Spectrum />
     <Hacks.Globalization />
     <Hacks.EnergyOrParticle />
