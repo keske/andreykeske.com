@@ -37,7 +37,7 @@ const EnergyOrParticle: React.FC = (): JSX.Element => (
           </Text>
 
           <Text>
-            <a href="https://lco.global/spacebook/light-particle/">
+            <a href="http://andreykeske.com/static/energy-or-particle">
               <Button>Try it</Button>
             </a>
           </Text>
