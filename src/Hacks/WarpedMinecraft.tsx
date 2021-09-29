@@ -48,7 +48,7 @@ const WarpedMinecraft: React.FC = (): JSX.Element => (
             Minecraft where each side of the blocks is a warped NURBS
             surface.
           </Title>
-          <Text>todo</Text>
+          {/* <Text>todo</Text> */}
         </Col>
       </Row>
     </Container>

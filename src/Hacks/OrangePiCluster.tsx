@@ -8,9 +8,7 @@ import {
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
-  // Spacer,
   Title,
-  // Text,
   UploadcareImage,
 } from '../components';
 

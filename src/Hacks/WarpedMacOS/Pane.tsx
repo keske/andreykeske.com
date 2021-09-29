@@ -4,12 +4,15 @@ import * as THREE from 'three';
 // Components
 import { Nurbs } from '../../components/NURBS';
 
+// Store
+import useStore from './store';
+
 type Props = {
   url: string;
 };
 
 const WarpedMacOSPane: React.FC<Props> = ({ url }: Props) => {
-  const warpRatio = 10;
+  const { warpRatio } = useStore();
 
   const random = React.useCallback(
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands

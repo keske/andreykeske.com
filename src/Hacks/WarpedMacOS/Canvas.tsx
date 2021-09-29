@@ -9,12 +9,15 @@ type Props = {
 };
 
 const StyledFiberCanvas = styled(FiberCanvas)`
-  height: 100vh;
+  height: 120vh;
   width: 100%;
 `;
 
 const Root = styled.div`
-  height: 100vh;
+  filter: saturate(150%);
+  height: 120vh;
+  position: absolute;
+  top: -150px;
   width: 100%;
 `;
 

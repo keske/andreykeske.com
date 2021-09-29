@@ -6,8 +6,8 @@ import { OrbitControls, Sky } from '@react-three/drei';
 
 // Local
 import Canvas from './Canvas';
-import Scene from './Scene';
 import RatioInput from './RatioInput';
+import Scene from './Scene';
 
 type SkyProps = {
   distance?: number;
@@ -47,6 +47,7 @@ const WarpedMinecraftRoot: React.FC = () => {
           <Scene />
         </React.Suspense>
       </Canvas>
+
       <RatioInput />
     </Root>
   );
