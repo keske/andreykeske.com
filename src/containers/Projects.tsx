@@ -9,6 +9,7 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.WarpedLego />
     <Hacks.LegoHTMLElement />
     <Hacks.Hydra />
+    <Hacks.OrangePiCluster />
     <Hacks.Volume />
     <Hacks.MandelbrotSet />
     <Hacks.EsherSwitchButton />
