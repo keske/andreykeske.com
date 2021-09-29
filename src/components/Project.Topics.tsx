@@ -1,34 +1,34 @@
 import * as React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 
 type Props = {
   topics: string[];
 };
 
-const styles = StyleSheet.create({
-  label: {
-    paddingLeft: 5,
-  },
-  root: {
-    opacity: 0.5,
-  },
-});
+const Label = styled.span`
+  padding-left: 5px;
+`;
+
+const Root = styled.div`
+  font-size: 12px;
+`;
 
 const ProjectTopics: React.FC<Props> = ({
   topics,
+  ...rest
 }: Props): JSX.Element => (
-  <div className={css(styles.root)}>
+  <Root {...rest}>
     <span>
       {`Topic${topics.length === 1 ? '' : 's'}: `}
       {topics.map((topic, index) => (
-        <span key={topic} className={css(styles.label)}>
+        <Label key={topic}>
           {`${topic}${index < topics.length - 1 ? ', ' : ''}`}
-        </span>
+        </Label>
       ))}
     </span>
-  </div>
+  </Root>
 );
 
 export default ProjectTopics;

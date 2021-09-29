@@ -1,7 +1,8 @@
 import * as React from 'react';
 
 // Libs
-import { Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
@@ -14,25 +15,59 @@ import {
   Title,
 } from '../components';
 
+const GREEN = '#03A749';
+
+const Details = styled.div`
+  opacity: 0.5;
+`;
+
+const StyledMark = styled(Mark)`
+  border: 1px solid ${GREEN};
+`;
+
+const StyledProjectWrapper = styled(ProjectWrapper)`
+  background-color: #000;
+  color: ${GREEN};
+`;
+
+const StyledProjectYear = styled(ProjectYear)`
+  border: 1px solid ${GREEN};
+`;
+
+const StyledText = styled(Text)`
+  color: ${GREEN};
+`;
+
+const StyledTitle = styled(Title)`
+  color: ${GREEN};
+`;
+
 const TmuxChess: React.FC = (): JSX.Element => (
-  <ProjectWrapper>
-    <Col lg={{ offset: 0, span: 12 }}>
-      <ResponsiveFrame
-        src="https://www.youtube.com/embed/JlvEuMp2UVw"
-        title="Tmux Chess"
-      />
-      <Title>Tmux Chess</Title>
-      <Text>
-        Playing in Chess using
-        {' '}
-        <Mark>tmux</Mark>
-        {' '}
-        as board
-      </Text>
-      <ProjectTopics topics={['Interface', 'Ready Made']} />
-      <ProjectYear>2014</ProjectYear>
-    </Col>
-  </ProjectWrapper>
+  <StyledProjectWrapper>
+    <Container>
+      <Row>
+        <Col lg={{ offset: 0, span: 12 }}>
+          <ResponsiveFrame
+            src="https://www.youtube.com/embed/JlvEuMp2UVw"
+            title="Tmux Chess"
+          />
+
+          <StyledTitle>Tmux Chess</StyledTitle>
+
+          <StyledText>
+            Playing in Chess using
+            <StyledMark>tmux</StyledMark>
+            as board
+          </StyledText>
+
+          <Details>
+            <ProjectTopics topics={['Interface', 'Ready Made']} />
+            <StyledProjectYear>2014</StyledProjectYear>
+          </Details>
+        </Col>
+      </Row>
+    </Container>
+  </StyledProjectWrapper>
 );
 
 export default TmuxChess;

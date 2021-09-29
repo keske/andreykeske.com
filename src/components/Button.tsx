@@ -10,18 +10,16 @@ type Props = {
 const Root = styled.button`
   background-color: #000;
   border: none;
-  border-radius: 7px;
+  border-radius: 31px;
   color: #fff;
   display: inline-block;
   margin-top: 10px;
-  padding-bottom: 13px;
-  padding-left: 23px;
-  padding-right: 23px;
-  padding-top: 13px;
+  padding: 23px 33px;
 `;
 
 const Button: React.FC<Props> = ({
   children,
-}: Props): JSX.Element => <Root>{children}</Root>;
+  ...rest
+}: Props): JSX.Element => <Root {...rest}>{children}</Root>;
 
 export default Button;

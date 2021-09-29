@@ -24,6 +24,7 @@ const W1D1: React.FC = (): JSX.Element => (
     </Col>
     <Col lg={{ span: 6 }}>
       <Title>W1D1</Title>
+
       <Text>
         An
         {' '}
@@ -32,15 +33,16 @@ const W1D1: React.FC = (): JSX.Element => (
         to get
         inspired, learn new stuff and grow
       </Text>
+
       <Text>
         W1D1 is a place where we learn to slow down, focus
         attentionand be brave in our artistic endeavours
       </Text>
+
       <a href="https://apps.apple.com/ru/app/w1d1/id1497155726?l=en&fbclid=IwAR3GVwUd543i3hoCZ4RBR5kaBp2iyhAjrdNuzy_07iTsIZW8jM9ryaOdlew">
         <Button>AppStore →</Button>
       </a>
-      <br />
-      <br />
+
       <ProjectRoles roles={['Co-Founder', 'CTO']} />
       <ProjectDisciplines disciplines={['DevOps', 'Engineering']} />
       <ProjectTopics topics={['iOS Application', 'Social Network']} />

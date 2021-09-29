@@ -20,8 +20,11 @@ const YoutubeChina2017: React.FC = (): JSX.Element => (
         src="https://www.youtube.com/embed/3MSpfgV3dfA"
         title="Trip to China 2017"
       />
+
       <Title>China</Title>
+
       <Text>Our trip to China in 2017</Text>
+
       <ProjectTopics topics={['Video', 'Youtube']} />
       <ProjectYear>2017</ProjectYear>
     </Col>

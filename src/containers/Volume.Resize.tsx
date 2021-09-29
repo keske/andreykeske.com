@@ -45,10 +45,8 @@ const VolumeResize: React.FC = (): JSX.Element => {
 
   const [volume, setVolume] = React.useState<number>(100);
 
-  const [
-    volumeIndication,
-    setIndicationVolume,
-  ] = React.useState<number>(100);
+  const [volumeIndication, setIndicationVolume]
+    = React.useState<number>(100);
 
   const [play, { pause }] = useSound(fugue, {
     volume,
@@ -90,9 +88,7 @@ const VolumeResize: React.FC = (): JSX.Element => {
       >
         {playing ? 'PAUSE' : 'PLAY'}
       </button>
-      <div
-        className={css(styles.title)}
-      >
+      <div className={css(styles.title)}>
         {`${volumeIndication}%`}
       </div>
       <div className={css(styles.copyright)}>

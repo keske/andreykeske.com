@@ -7,13 +7,13 @@ import { OrbitControls } from '@react-three/drei';
 import Canvas from './Canvas';
 import Scene from './Scene';
 
-const Root: React.FC = () => (
+const WarpedLegoRoot: React.FC = () => (
   <Canvas>
     <Suspense fallback={null}>
-      <OrbitControls />
+      <OrbitControls enableZoom={false} />
       <Scene />
     </Suspense>
   </Canvas>
 );
 
-export default Root;
+export default WarpedLegoRoot;

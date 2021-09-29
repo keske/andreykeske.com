@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Libs
-import { Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
@@ -14,14 +14,20 @@ import {
 
 const WaterOnMars: React.FC = (): JSX.Element => (
   <ProjectWrapper>
-    <Col lg={{ offset: 2, span: 8 }}>
-      <UploadcareImage src="https://ucarecdn.com/1c88308e-0144-4dc8-be69-30a334b0f194/" />
-      <Title>Water On Mars</Title>
-      <ProjectTopics
-        topics={['Interface', 'Ready Made', 'Social Commentary']}
-      />
-      <ProjectYear>2011</ProjectYear>
-    </Col>
+    <Container>
+      <Row>
+        <Col lg={{ offset: 2, span: 8 }}>
+          <UploadcareImage src="https://ucarecdn.com/1c88308e-0144-4dc8-be69-30a334b0f194/" />
+
+          <Title>Water On Mars</Title>
+
+          <ProjectTopics
+            topics={['Interface', 'Ready Made', 'Social Commentary']}
+          />
+          <ProjectYear>2011</ProjectYear>
+        </Col>
+      </Row>
+    </Container>
   </ProjectWrapper>
 );
 

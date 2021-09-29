@@ -5,9 +5,12 @@ import * as Hacks from '../Hacks';
 
 const Projects: React.FC = (): JSX.Element => (
   <>
+    <Hacks.WarpedMinecraft />
+    <Hacks.WarpedMacOS />
     <Hacks.WarpedLego />
     <Hacks.LegoHTMLElement />
     <Hacks.Hydra />
+    <Hacks.OrangePiCluster />
     <Hacks.Volume />
     <Hacks.MandelbrotSet />
     <Hacks.EsherSwitchButton />
@@ -15,7 +18,6 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.TickyApplication />
     <Hacks.BTCBubble />
     <Hacks.YouTubeRecentVideos />
-    <Hacks.W1D1 />
     <Hacks.LOT2046Tattoo />
     <Hacks.EmojiBack />
     <Hacks.IkeaGarbage />
@@ -24,11 +26,11 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.Battleship />
     <Hacks.Ball />
     <Hacks.BlackHole />
+    <Hacks.TmuxChess />
     <Hacks.Matryoshka />
     <Hacks.ShellGame />
     <Hacks.Hodor />
     <Hacks.Catch />
-    <Hacks.TmuxChess />
     <Hacks.Spectrum />
     <Hacks.Globalization />
     <Hacks.EnergyOrParticle />

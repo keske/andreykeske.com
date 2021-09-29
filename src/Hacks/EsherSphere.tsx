@@ -21,21 +21,22 @@ const styles = StyleSheet.create({
 });
 
 const EsherSphere: React.FC = (): JSX.Element => (
-  <div>
+  <>
     <Sphere />
+
     <Container className={css(styles.root)} fluid>
       <Row>
         <Col lg={{ offset: 2, span: 10 }}>
           <Title>EsherSphere</Title>
+
           <Text>EsherSphere</Text>
-          <br />
-          <br />
+
           <ProjectTopics topics={['Social Commentary']} />
           <ProjectYear>2021</ProjectYear>
         </Col>
       </Row>
     </Container>
-  </div>
+  </>
 );
 
 export default EsherSphere;

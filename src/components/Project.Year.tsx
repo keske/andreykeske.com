@@ -1,33 +1,28 @@
 import * as React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 
 type Props = {
   children: React.ReactNode;
 };
 
-const COLOR = 'gray';
-
-const styles = StyleSheet.create({
-  root: {
-    border: `1px solid ${COLOR}`,
-    borderRadius: 7,
-    color: COLOR,
-    display: 'inline-block',
-    fontSize: '0.7rem',
-    marginTop: 17,
-    paddingBottom: 3,
-    paddingLeft: 7,
-    paddingRight: 7,
-    paddingTop: 3,
-  } as const,
-});
+const Root = styled.div`
+  border: 1px solid #000;
+  border-radius: 7px;
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  padding-bottom: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 3px;
+`;
 
 const Button: React.FC<Props> = ({
   children,
-}: Props): JSX.Element => (
-  <span className={css(styles.root)}>{children}</span>
-);
+  ...rest
+}: Props): JSX.Element => <Root {...rest}>{children}</Root>;
 
 export default Button;
