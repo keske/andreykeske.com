@@ -12,6 +12,7 @@ import Scene from './Scene';
 
 const Root = styled.div`
   background-color: #000;
+  cursor: grab;
   position: relative;
 `;
 
