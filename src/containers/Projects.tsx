@@ -6,6 +6,7 @@ import * as Hacks from '../Hacks';
 const Projects: React.FC = (): JSX.Element => (
   <>
     <Hacks.WarpedMinecraft />
+    <Hacks.WarpedMacOS />
     <Hacks.WarpedLego />
     <Hacks.LegoHTMLElement />
     <Hacks.Hydra />
