@@ -79,8 +79,8 @@ const WarpedMacOS: React.FC = (): JSX.Element => (
             <Spacer size={0} />
 
             <StyledText>
-              The flat interface of the Mac OS transformed in a warped
-              surreal world
+              The flat interface of the Mac OS transformed into a
+              warped surreal world
             </StyledText>
 
             <Spacer size={1} />
