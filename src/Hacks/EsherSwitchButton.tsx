@@ -19,15 +19,15 @@ const EsherSwitchButton: React.FC = (): JSX.Element => (
   <ProjectWrapper>
     <Container>
       <Row>
-        <Col lg={{ span: 5 }}>
+        <Col lg={{ span: 6 }}>
           <UploadcareImage src="https://ucarecdn.com/520d81d0-1ee7-45df-9171-30416d96a94d/" />
         </Col>
 
-        <Col lg={{ span: 4 }}>
+        <Col lg={{ span: 5 }}>
           <Title>Radio Button ⤻ Switch Transformation</Title>
           <Text>
-            My implementation of Esher&rsquo;s infinity deep drawings to
-            the language of the user interfaces
+            My implementation of Esher&rsquo;s infinity deep drawings
+            to the language of the user interfaces
           </Text>
 
           <Spacer size={4} />
