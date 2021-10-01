@@ -43,6 +43,7 @@ export { default as W1D1 } from './W1D1';
 export { default as WarpedLego } from './WarpedLego';
 export { default as WarpedMacOS } from './WarpedMacOS';
 export { default as WarpedMinecraft } from './WarpedMinecraft';
+export { default as WarpedTypography } from './WarpedTypography';
 export { default as WaterFilter } from './WaterFilter';
 export { default as WaterOnMars } from './WaterOnMars';
 export { default as YoutubeChina2017 } from './YoutubeChina2017';

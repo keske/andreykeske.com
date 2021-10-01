@@ -5,7 +5,8 @@ import * as Hacks from '../Hacks';
 
 const Projects: React.FC = (): JSX.Element => (
   <>
-    <Hacks.WarpedMinecraft />
+    <Hacks.WarpedTypography />
+    {/* <Hacks.WarpedMinecraft />
     <Hacks.WarpedMacOS />
     <Hacks.WarpedLego />
     <Hacks.LegoHTMLElement />
@@ -49,7 +50,7 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.IPadIcons />
     <Hacks.Sneakers />
     <Hacks.Emoticons />
-    <Hacks.Manhattan />
+    <Hacks.Manhattan /> */}
   </>
 );
 
