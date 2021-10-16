@@ -4,9 +4,9 @@ import { Box, Flex } from '@react-three/flex';
 // Libs
 import styled from 'styled-components';
 import { OrbitControls } from '@react-three/drei';
-import { Canvas as FiberCanvas } from 'react-three-fiber';
+
 // Local
-// import Canvas from './Canvas';
+import Canvas from './Canvas';
 import Letter from './Letter';
 // import RatioInput from './RatioInput';
 import Scene from './Scene';
@@ -101,22 +101,17 @@ const List: React.FC = () => {
   );
 };
 
-const MyMesh = () => (
-  <group>
-    <Flex flexDirection="row" removeFromParent>
-      <Box removeFromParent>
-        <mesh />
-      </Box>
-    </Flex>
-  </group>
-);
-
 const WarpedTypographyRoot: React.FC = () => (
-  <FiberCanvas>
-    <React.Suspense fallback={null}>
-      <MyMesh />
-    </React.Suspense>
-  </FiberCanvas>
+  <Root>
+    <Canvas>
+      {/* <React.Suspense fallback={null}> */}
+      {/* <OrbitControls enableZoom={false} /> */}
+      {/* <Scene> */}
+      <List />
+      {/* </Scene> */}
+      {/* </React.Suspense> */}
+    </Canvas>
+  </Root>
 );
 
 export default WarpedTypographyRoot;
