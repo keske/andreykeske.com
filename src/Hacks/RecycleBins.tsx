@@ -15,28 +15,31 @@ import {
 } from '../components';
 
 const Details = styled.div`
-  opacity: 0.3;
+  opacity: 0.4;
 `;
 
 const StyledProjectWrapper = styled(ProjectWrapper)`
-  background-color: #000;
   border-radius: 33px;
-  color: #fff;
   text-align: center;
 `;
 
 const StyledProjectYear = styled(ProjectYear)`
-  border: 1px solid #fff;
+  border: 1px solid #000;
 `;
 
 const StyledText = styled(Text)`
-  color: #fff;
   opacity: 0.5;
 `;
 
 const StyledTitle = styled(Title)`
-  color: #fff;
-  opacity: 0.5;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(90deg, #e6344a, #3f497a);
+  background-repeat: repeat;
+  background-size: 100%;
 `;
 
 const Wrapper = styled.div`
@@ -48,8 +51,8 @@ const RecycleBins: React.FC = (): JSX.Element => (
     <StyledProjectWrapper>
       <Container>
         <Row>
-          <Col lg={{ offset: 3, span: 6 }}>
-            <UploadcareImage src="https://ucarecdn.com/eea10eaa-ea87-4ecd-ae78-9de9e11b54e9/" />
+          <Col lg={{ offset: 0, span: 12 }}>
+            <UploadcareImage src="https://ucarecdn.com/a7680ff9-2c6b-4f5a-9fb8-13093b149933/" />
 
             <StyledTitle>
               Bins for a different types of files
