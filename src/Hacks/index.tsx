@@ -3,6 +3,7 @@ export { default as Battleship } from './Battleship';
 export { default as BlackHole } from './BlackHole';
 export { default as BTCBubble } from './BTCBubble';
 export { default as Catch } from './Catch';
+export { default as ClothUI } from './ClothUI';
 export { default as EmojiBack } from './EmojiBack';
 export { default as EmojiHub } from './EmojiHub';
 export { default as EmojiTattooFlashes } from './EmojiTattooFlashes';
