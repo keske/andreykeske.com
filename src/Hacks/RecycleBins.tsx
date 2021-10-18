@@ -55,7 +55,7 @@ const RecycleBins: React.FC = (): JSX.Element => (
             <UploadcareImage src="https://ucarecdn.com/a7680ff9-2c6b-4f5a-9fb8-13093b149933/" />
 
             <StyledTitle>
-              Bins for a different types of files
+              Bins for different types of files
             </StyledTitle>
             <StyledText>Separate your trash</StyledText>
 
