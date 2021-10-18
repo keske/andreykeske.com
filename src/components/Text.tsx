@@ -14,7 +14,7 @@ const Root = styled.p<Props>`
   ${mediaQuery(
     'phone',
     css`
-      line-height: 2;
+      line-height: 1.5;
     `,
   )}
 `;
