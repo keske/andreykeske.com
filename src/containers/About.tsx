@@ -1,11 +1,12 @@
 import * as React from 'react';
 
 // Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import { ProjectWrapper } from '../components';
+import { mediaQuery } from '../utils';
 
 import LeftSide from './About.LeftSide';
 import RightSide from './About.RightSide';
@@ -19,7 +20,7 @@ const About: React.FC = (): JSX.Element => (
     <Container>
       <Row>
         <LeftSide />
-        <Col lg={{ offset: 6, span: 6 }}>
+        <Col lg={{ offset: 6, span: 6 }} sm={12} xs={12}>
           <RightSide />
         </Col>
       </Row>

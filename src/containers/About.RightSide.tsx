@@ -4,10 +4,11 @@
 import * as React from 'react';
 
 // Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // Components
 import { Spacer, Text, Title } from '../components';
+import { mediaQuery } from '../utils';
 
 const { PUBLIC_URL } = process.env;
 
@@ -45,17 +46,20 @@ const Italic = styled(Text)`
   font-size: 24px;
   font-style: italic;
   opacity: 0.7;
-`;
 
-const Root = styled.div`
-  position: absolute;
-  z-index: 21;
+  ${mediaQuery(
+    'phone',
+    css`
+      font-size: 20px;
+    `,
+  )}
 `;
 
 const Link = styled.a`
   border: 1px solid #000;
   border-radius: 7px;
   color: #000;
+  display: inline-block;
   margin-right: 5px;
   padding: 3px 7px;
 
@@ -64,15 +68,36 @@ const Link = styled.a`
   }
 `;
 
+const Root = styled.div`
+  position: absolute;
+  width: 100%;
+  z-index: 21;
+`;
+
 const StyledTitle = styled(Title)`
   font-size: 64px;
   pointer-events: none;
   text-transform: uppercase;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      font-size: 32px;
+    `,
+  )}
 `;
 
 const StyledText = styled(Text)`
   font-size: 20px;
   padding-right: 70px;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      font-size: 16px;
+      line-height: 34px;
+    `,
+  )}
 `;
 
 const Sup = styled.sup`
@@ -135,19 +160,11 @@ const AboutRightSide: React.FC = (): JSX.Element => (
     </StyledText>
     <Spacer size={4} />
     <Text>
-      <Link href="mailto://hello@andreykeske.com">
-        hello@andreykeske.com
-      </Link>
-      <Link href="https://github.com/keske">Github</Link>
-      <Link href="https://www.instagram.com/andreykeske/">
-        Instagram
-      </Link>
-      <Link href="https://www.linkedin.com/in/andreykeske/">
-        LinkedIn
-      </Link>
-      <Link href="https://www.youtube.com/user/andreykeske">
-        YouTube
-      </Link>
+      <Link href="mailto://hello@andreykeske.com">Mail</Link>
+      <Link href="https://github.com/keske">GH</Link>
+      <Link href="https://www.instagram.com/andreykeske/">IG</Link>
+      <Link href="https://www.linkedin.com/in/andreykeske/">LN</Link>
+      <Link href="https://www.youtube.com/user/andreykeske">YT</Link>
     </Text>
   </Root>
 );
