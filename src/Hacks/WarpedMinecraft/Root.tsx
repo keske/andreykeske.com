@@ -4,6 +4,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { OrbitControls, Sky } from '@react-three/drei';
 
+// Components
+import { OnScreen } from '../../components';
+
 // Local
 import Canvas from './Canvas';
 import RatioInput from './RatioInput';
@@ -20,7 +23,9 @@ type SkyProps = {
 };
 
 const Root = styled.div`
+  background-color: #fafafa;
   border-radius: 50px;
+  height: 100vh;
   overflow: hidden;
   position: relative;
 `;
@@ -40,15 +45,17 @@ const WarpedMinecraftRoot: React.FC = () => {
 
   return (
     <Root>
-      <Canvas>
-        <React.Suspense fallback={null}>
-          <OrbitControls />
-          <Sky {...skyProps} />
-          <Scene />
-        </React.Suspense>
-      </Canvas>
+      <OnScreen>
+        <Canvas>
+          <React.Suspense fallback={null}>
+            <OrbitControls />
+            <Sky {...skyProps} />
+            <Scene />
+          </React.Suspense>
+        </Canvas>
 
-      <RatioInput />
+        <RatioInput />
+      </OnScreen>
     </Root>
   );
 };

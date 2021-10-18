@@ -6,6 +6,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
+  OnScreen,
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
@@ -63,7 +64,9 @@ const StyledTitle = styled(Title)`
 
 const WarpedMacOS: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
-    <MacOS />
+    <OnScreen>
+      <MacOS />
+    </OnScreen>
 
     <Inner>
       <Container>
