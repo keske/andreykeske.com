@@ -78,7 +78,6 @@ const Link = styled.a`
 
 const Root = styled.div`
   position: absolute;
-  width: 100%;
   z-index: 21;
 `;
 

@@ -19,7 +19,11 @@ const About: React.FC = (): JSX.Element => (
     <Container>
       <Row>
         <LeftSide />
-        <Col lg={{ offset: 6, span: 6 }} sm={12} xs={12}>
+        <Col
+          lg={{ offset: 6, span: 6 }}
+          sm={{ offset: 0, span: 12 }}
+          xs={{ offset: 0, span: 12 }}
+        >
           <RightSide />
         </Col>
       </Row>
