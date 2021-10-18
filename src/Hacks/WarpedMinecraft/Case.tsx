@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 import { Canvas as FiberCanvas } from 'react-three-fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 
+import { OnScreen } from '../../components';
 import { mediaQuery } from '../../utils';
 
 import AutoRotation from './Case.AutoRotation';
@@ -53,8 +54,13 @@ const Root = styled.div`
   )}
 `;
 
+const StyledOnScreen = styled(OnScreen)`
+  height: 100%;
+  width: 100%;
+`;
+
 const StyledCanvas = styled(FiberCanvas)<{ stars: boolean }>`
-  background-color: ${({ stars }) => (stars ? '#000' : '#f2f2f2')};
+  background-color: ${({ stars }) => (stars ? '#000' : '#fafafa')};
   cursor: grab;
   height: 100%;
   width: 100%;
@@ -78,39 +84,44 @@ const WarpedMinecraftCase: React.FC<Props> = ({
 
   return (
     <Root>
-      <StyledCanvas
-        camera={{ position: [0, 4, 7] }}
-        colorManagement
-        gl={{
-          alpha: true,
-          antialias: true,
-          depth: false,
-          powerPreference: 'high-performance',
-          stencil: false,
-        }}
-        onClick={disableRotation}
-        stars={stars}
-      >
-        <OrbitControls enableZoom={false} />
+      <StyledOnScreen>
+        <StyledCanvas
+          camera={{ position: [0, 4, 7] }}
+          colorManagement
+          gl={{
+            alpha: true,
+            antialias: true,
+            depth: false,
+            powerPreference: 'high-performance',
+            stencil: false,
+          }}
+          onClick={disableRotation}
+          stars={stars}
+        >
+          <OrbitControls enableZoom={false} />
 
-        {stars && <Stars />}
+          {stars && <Stars />}
 
-        <group>
-          <ambientLight intensity={0.2} />
+          <group>
+            <ambientLight intensity={0.2} />
 
-          <spotLight
-            angle={Math.PI / 6}
-            castShadow
-            intensity={0.2}
-            position={[20, 20, 30]}
-            shadow-bias={-0.00005}
-            shadow-mapSize-height={2048}
-            shadow-mapSize-width={2048}
-          />
+            <spotLight
+              angle={Math.PI / 6}
+              castShadow
+              intensity={0.2}
+              position={[20, 20, 30]}
+              shadow-bias={-0.00005}
+              shadow-mapSize-height={2048}
+              shadow-mapSize-width={2048}
+            />
 
-          <AutoRotation rotation={rotation}>{children}</AutoRotation>
-        </group>
-      </StyledCanvas>
+            <AutoRotation rotation={rotation}>
+              {children}
+            </AutoRotation>
+          </group>
+        </StyledCanvas>
+      </StyledOnScreen>
+
       {rotation === 'disabled' && (
         <AnimateButton onClick={enableRotation}>↻</AnimateButton>
       )}

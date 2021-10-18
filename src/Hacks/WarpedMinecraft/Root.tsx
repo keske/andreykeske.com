@@ -1,8 +1,12 @@
 import * as React from 'react';
 
 // Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { OrbitControls, Sky } from '@react-three/drei';
+
+// Components
+import { OnScreen } from '../../components';
+import { mediaQuery } from '../../utils';
 
 // Local
 import Canvas from './Canvas';
@@ -20,9 +24,18 @@ type SkyProps = {
 };
 
 const Root = styled.div`
+  background-color: #fafafa;
   border-radius: 50px;
+  height: 100vh;
   overflow: hidden;
   position: relative;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      height: 50vh;
+    `,
+  )}
 `;
 
 const WarpedMinecraftRoot: React.FC = () => {
@@ -40,15 +53,17 @@ const WarpedMinecraftRoot: React.FC = () => {
 
   return (
     <Root>
-      <Canvas>
-        <React.Suspense fallback={null}>
-          <OrbitControls />
-          <Sky {...skyProps} />
-          <Scene />
-        </React.Suspense>
-      </Canvas>
+      <OnScreen>
+        <Canvas>
+          <React.Suspense fallback={null}>
+            <OrbitControls />
+            <Sky {...skyProps} />
+            <Scene />
+          </React.Suspense>
+        </Canvas>
 
-      <RatioInput />
+        <RatioInput />
+      </OnScreen>
     </Root>
   );
 };

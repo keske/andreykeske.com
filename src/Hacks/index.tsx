@@ -31,6 +31,7 @@ export { default as PianoTabs } from './PianoTabs';
 export { default as PinHead } from './PinHead';
 export { default as PipeLineReactComponent } from './PipeLineReactComponent';
 export { default as RollingStones } from './RollingStones';
+export { default as RecycleBins } from './RecycleBins';
 export { default as Shadows } from './Shadows';
 export { default as ShellGame } from './ShellGame';
 export { default as Sneakers } from './Sneakers';

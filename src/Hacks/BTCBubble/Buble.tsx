@@ -11,9 +11,9 @@ type Props = {
 
 const Buble: React.FC<Props> = ({ material }: Props) => {
   const ref = React.useRef<
-  HTMLDivElement & {
-    rotation;
-  }
+    HTMLDivElement & {
+      rotation;
+    }
   >();
 
   useFrame(({ clock, mouse }) => {

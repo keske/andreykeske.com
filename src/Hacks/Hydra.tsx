@@ -19,9 +19,7 @@ import {
   UploadcareImage,
 } from '../components';
 
-const StyledText = styled(Text)`
-  transform: translateX(-15px);
-`;
+const StyledText = styled(Text)``;
 
 const Hydra: React.FC = (): JSX.Element => (
   <ProjectWrapper>
@@ -42,7 +40,6 @@ const Hydra: React.FC = (): JSX.Element => (
           <Title>Hydra</Title>
 
           <StyledText>
-            <Arrow>↖︎</Arrow>
             Hydra&apos;s representation of head regeneration through
             UI
             <Arrow>↑</Arrow>
