@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
@@ -13,6 +13,7 @@ import {
   Text,
   Title,
 } from '../components';
+import { mediaQuery } from '../utils';
 
 import Case from './WarpedMinecraft/Case';
 import Dirt from './WarpedMinecraft/Blocks/Dirt';
@@ -26,8 +27,17 @@ const StyledText = styled(Text)`
   text-align: center;
 `;
 
+const StyledProjectWrapper = styled(ProjectWrapper)`
+  ${mediaQuery(
+    'phone',
+    css`
+      display: none;
+    `,
+  )}
+`;
+
 const WarpedMinecraft: React.FC = (): JSX.Element => (
-  <ProjectWrapper>
+  <StyledProjectWrapper>
     <Container>
       <Row>
         <Col lg={{ span: 12 }}>
@@ -132,7 +142,7 @@ const WarpedMinecraft: React.FC = (): JSX.Element => (
         </Col>
       </Row>
     </Container>
-  </ProjectWrapper>
+  </StyledProjectWrapper>
 );
 
 export default WarpedMinecraft;
