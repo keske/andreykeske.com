@@ -67,7 +67,7 @@ const Link = styled.a`
 const StyledTitle = styled(Title)`
   font-size: 64px;
   pointer-events: none;
-  text-transform: none;
+  text-transform: uppercase;
 `;
 
 const StyledText = styled(Text)`
