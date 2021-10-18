@@ -1,12 +1,11 @@
 import * as React from 'react';
 
 // Libs
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import { ProjectWrapper } from '../components';
-import { mediaQuery } from '../utils';
 
 import LeftSide from './About.LeftSide';
 import RightSide from './About.RightSide';

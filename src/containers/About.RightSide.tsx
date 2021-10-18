@@ -66,6 +66,14 @@ const Link = styled.a`
   &:hover {
     border: 1px solid blue;
   }
+
+  ${mediaQuery(
+    'phone',
+    css`
+      font-size: 14px;
+      padding: 0px 7px;
+    `,
+  )}
 `;
 
 const Root = styled.div`

@@ -16,7 +16,8 @@ import {
 } from '../components';
 
 const StyledCol = styled(Col)`
-  padding: 20px 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
 `;
 
 const WaterFilter: React.FC = (): JSX.Element => (
@@ -35,7 +36,8 @@ const WaterFilter: React.FC = (): JSX.Element => (
           <Title>Eco problems with water</Title>
 
           <Text>
-            Street installation. The water filter in an unusual situation
+            Street installation. The water filter in an unusual
+            situation
           </Text>
 
           <ProjectDisciplines disciplines={['Street Art']} />

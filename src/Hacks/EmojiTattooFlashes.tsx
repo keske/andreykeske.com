@@ -15,14 +15,19 @@ import {
 } from '../components';
 
 const StyledCol = styled(Col)`
-  padding: 20px 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
 `;
 
 const EmojiTattooFlashes: React.FC = (): JSX.Element => (
   <ProjectWrapper>
     <Container>
       <Row>
-        <StyledCol lg={{ offset: 1, span: 5 }}>
+        <StyledCol
+          lg={{ offset: 1, span: 5 }}
+          sm={{ span: 12 }}
+          xs={{ span: 12 }}
+        >
           <UploadcareImage src="https://ucarecdn.com/68e01be8-2b39-40dd-b01e-376f79afdb83/" />
         </StyledCol>
 

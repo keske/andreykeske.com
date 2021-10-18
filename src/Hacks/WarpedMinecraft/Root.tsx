@@ -1,11 +1,12 @@
 import * as React from 'react';
 
 // Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { OrbitControls, Sky } from '@react-three/drei';
 
 // Components
 import { OnScreen } from '../../components';
+import { mediaQuery } from '../../utils';
 
 // Local
 import Canvas from './Canvas';
@@ -28,6 +29,13 @@ const Root = styled.div`
   height: 100vh;
   overflow: hidden;
   position: relative;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      height: 50vh;
+    `,
+  )}
 `;
 
 const WarpedMinecraftRoot: React.FC = () => {
