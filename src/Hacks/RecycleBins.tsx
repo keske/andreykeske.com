@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
@@ -13,13 +13,13 @@ import {
   Title,
   UploadcareImage,
 } from '../components';
+import { mediaQuery } from '../utils';
 
 const Details = styled.div`
   opacity: 0.4;
 `;
 
 const StyledProjectWrapper = styled(ProjectWrapper)`
-  border-radius: 33px;
   text-align: center;
 `;
 
@@ -44,6 +44,13 @@ const StyledTitle = styled(Title)`
 
 const Wrapper = styled.div`
   padding: 33px;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      padding: 0;
+    `,
+  )}
 `;
 
 const RecycleBins: React.FC = (): JSX.Element => (

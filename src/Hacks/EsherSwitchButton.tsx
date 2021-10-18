@@ -37,11 +37,11 @@ const EsherSwitchButton: React.FC = (): JSX.Element => (
 
             <Spacer size={2} />
 
-            <Col lg={{ span: 6 }}>
+            <Col lg={{ span: 6 }} sm={{ span: 6 }} xs={{ span: 6 }}>
               <UploadcareImage src="https://ucarecdn.com/2800b37e-8afc-4ee4-aa38-3c9e8d36f968/" />
             </Col>
 
-            <Col lg={{ span: 6 }}>
+            <Col lg={{ span: 6 }} sm={{ span: 6 }} xs={{ span: 6 }}>
               <Text>
                 Sky and Water I. M
                 <br />

@@ -72,9 +72,7 @@ const WarpedLego: React.FC = (): JSX.Element => (
 
               <Spacer size={0} />
 
-              <StyledProjectTopics
-                topics={['Lego', 'Non-euclidean geometry', 'ThreeJS']}
-              />
+              <StyledProjectTopics topics={['Lego', 'ThreeJS']} />
 
               <Spacer />
 

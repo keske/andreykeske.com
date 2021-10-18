@@ -17,7 +17,8 @@ import {
 } from '../components';
 
 const StyledCol = styled(Col)`
-  padding: 20px 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
 `;
 
 const Sneakers: React.FC = (): JSX.Element => (

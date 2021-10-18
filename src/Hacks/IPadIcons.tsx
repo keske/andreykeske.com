@@ -17,7 +17,8 @@ import {
 } from '../components';
 
 const StyledCol = styled(Col)`
-  padding: 20px 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
 `;
 
 const IPadIcons: React.FC = (): JSX.Element => (
@@ -39,14 +40,14 @@ const IPadIcons: React.FC = (): JSX.Element => (
           <Text>
             I&#39;ve created 20 apps. Each imitating
             <Mark>transparency/absence</Mark>
-            of the icon itself. But the
-            icons are not transparent.
+            of the icon itself. But the icons are not transparent.
           </Text>
 
           <SubTitle>I achieved this in a simple manner</SubTitle>
           <ul>
             <li>
-              I made screenshot of the iPad screen with and without icons
+              I made screenshot of the iPad screen with and without
+              icons
             </li>
             <li>Next I cutted regions containing background</li>
             <li>All this pieces I applied to apps</li>

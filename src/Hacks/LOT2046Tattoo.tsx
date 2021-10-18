@@ -54,7 +54,12 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
           </Text>
         </Col>
 
-        <Col className={css(styles.col)} lg={{ offset: 2, span: 3 }}>
+        <Col
+          className={css(styles.col)}
+          lg={{ offset: 2, span: 3 }}
+          sm={{ span: 6 }}
+          xs={{ span: 6 }}
+        >
           <UploadcareImage src="https://ucarecdn.com/74eebc30-354a-4b5d-86f0-9a45bd74c230/" />
         </Col>
         <Col
@@ -64,7 +69,12 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
           <UploadcareImage src="https://ucarecdn.com/f1615601-6fc7-4d05-bdfb-ee78632d451a/" />
         </Col>
 
-        <Col className={css(styles.col)} lg={{ offset: 2, span: 10 }}>
+        <Col
+          className={css(styles.col)}
+          lg={{ offset: 2, span: 10 }}
+          sm={{ span: 6 }}
+          xs={{ span: 6 }}
+        >
           <ProjectTopics topics={['DIY', 'Ready Made']} />
           <ProjectYear>2019</ProjectYear>
         </Col>

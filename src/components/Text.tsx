@@ -1,5 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { mediaQuery } from '../utils';
 
 type Props = {
   children: React.ReactNode;
@@ -8,6 +10,13 @@ type Props = {
 
 const Root = styled.p<Props>`
   color: ${({ invert }) => (invert ? 'white' : 'black')};
+
+  ${mediaQuery(
+    'phone',
+    css`
+      line-height: 2;
+    `,
+  )}
 `;
 
 const Text: React.FC<Props> = ({ children, ...rest }: Props) => (

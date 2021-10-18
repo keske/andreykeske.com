@@ -18,7 +18,7 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.SwitchInButton />
     <Hacks.TickyApplication />
     <Hacks.BTCBubble />
-    <Hacks.YouTubeRecentVideos />
+    {/* <Hacks.YouTubeRecentVideos /> */}
     <Hacks.LOT2046Tattoo />
     <Hacks.EmojiBack />
     <Hacks.IkeaGarbage />
@@ -40,7 +40,7 @@ const Projects: React.FC = (): JSX.Element => (
     <Hacks.VintageGoogleStreetView />
     <Hacks.PinHead />
     <Hacks.FootballFansTrolling />
-    <Hacks.PipeLineReactComponent />
+    {/* <Hacks.PipeLineReactComponent /> */}
     <Hacks.MacOSGamesDice />
     <Hacks.MacOSGamesSlot />
     <Hacks.FridayDock />
