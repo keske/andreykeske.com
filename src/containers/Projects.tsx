@@ -5,14 +5,14 @@ import * as Hacks from '../Hacks';
 
 const Projects: React.FC = (): JSX.Element => (
   <>
-    {/* <Hacks.ClothUI /> */}
+    <Hacks.ClothUI />
     <Hacks.RecycleBins />
     <Hacks.WarpedMinecraft />
     <Hacks.WarpedMacOS />
     <Hacks.WarpedLego />
     <Hacks.LegoHTMLElement />
     <Hacks.Hydra />
-    <Hacks.OrangePiCluster />
+    {/* <Hacks.OrangePiCluster /> */}
     <Hacks.Volume />
     <Hacks.MandelbrotSet />
     <Hacks.EsherSwitchButton />
