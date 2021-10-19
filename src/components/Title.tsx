@@ -12,9 +12,7 @@ const Root = styled.h3<Props>`
   color: ${({ invert }) => (invert ? 'white' : 'black')};
   font-size: 24px;
   font-weight: 800;
-  /* letter-spacing: 0.05em; */
-  margin: 40px 0 20px;
-  /* text-transform: uppercase; */
+  margin: 40px 0 10px;
 
   ${mediaQuery(
     'phone',

@@ -54,10 +54,9 @@ const Volume: React.FC = (): JSX.Element => (
           </Link>
         </Col>
 
-        <StyledSpacer size={10} />
-
         {/* Resize sections */}
         <Col lg={{ offset: 1, span: 5 }}>
+          <StyledSpacer size={10} />
           <SubTitle>Resize</SubTitle>
 
           <Text>

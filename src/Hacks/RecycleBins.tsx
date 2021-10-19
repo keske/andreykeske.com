@@ -42,16 +42,7 @@ const StyledTitle = styled(Title)`
   background-size: 100%;
 `;
 
-const Wrapper = styled.div`
-  padding: 33px;
-
-  ${mediaQuery(
-    'phone',
-    css`
-      padding: 0;
-    `,
-  )}
-`;
+const Wrapper = styled.div``;
 
 const RecycleBins: React.FC = (): JSX.Element => (
   <Wrapper>

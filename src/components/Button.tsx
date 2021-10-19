@@ -8,13 +8,14 @@ type Props = {
 };
 
 const Root = styled.button`
-  background-color: #000;
+  background-color: #fff;
   border: none;
   border-radius: 31px;
-  color: #fff;
+  box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.1);
+  color: #000;
   display: inline-block;
   margin-top: 10px;
-  padding: 23px 33px;
+  padding: 13px 33px;
 `;
 
 const Button: React.FC<Props> = ({

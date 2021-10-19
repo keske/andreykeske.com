@@ -67,6 +67,7 @@ const StyledTitle = styled(Title)`
   border-radius: 13px;
   color: #fff;
   display: inline-block;
+  font-size: 64px;
   padding: 13px 21px;
 `;
 
@@ -85,7 +86,7 @@ const WarpedMacOS: React.FC = (): JSX.Element => (
             sm={{ span: 12 }}
             xs={{ span: 12 }}
           >
-            <StyledTitle>Mac OS</StyledTitle>
+            <StyledTitle>Warped Mac OS</StyledTitle>
 
             <Spacer size={0} />
 

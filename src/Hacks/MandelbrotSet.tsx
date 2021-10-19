@@ -81,6 +81,7 @@ const StyledTitle = styled(Title)`
   backdrop-filter: blur(21px);
   border-radius: 13px;
   display: inline-block;
+  font-size: 64px;
   padding: 13px 21px;
 
   ${mediaQuery(
