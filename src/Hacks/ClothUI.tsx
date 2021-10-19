@@ -18,7 +18,7 @@ import { mediaQuery } from '../utils';
 const FONT_COLOR = '#FFFFFF';
 
 const Details = styled.div`
-  bottom: 40px;
+  bottom: 0px;
   position: absolute;
   text-align: left;
   width: 100%;
