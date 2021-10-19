@@ -32,12 +32,18 @@ const Frame = styled.iframe`
   width: 100%;
 `;
 
-const FrameWrapper = styled.div`
+const Frames = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`;
+
+const FrameWrapper = styled.div<{ size?: string }>`
   background-color: #000;
-  min-height: 100vh;
+  height: ${({ size = '100' }) => `${size}vh`};
   overflow: hidden;
   position: relative;
-  width: 100vw;
+  width: ${({ size = '100' }) => `${size}vw`};
 `;
 
 const StyledProjectWrapper = styled(ProjectWrapper)`
@@ -78,7 +84,7 @@ const ClothUI: React.FC = (): JSX.Element => (
         <Frame
           allowFullScreen
           frameBorder="0"
-          src="http://localhost:3000/static/cloth/"
+          src="http://localhost:3000/static/cloth/terminal.html"
           title="Cloth"
         />
 
@@ -100,6 +106,25 @@ const ClothUI: React.FC = (): JSX.Element => (
           </Container>
         </Details>
       </FrameWrapper>
+
+      <Frames>
+        <FrameWrapper size="50">
+          <Frame
+            allowFullScreen
+            frameBorder="0"
+            src="http://localhost:3000/static/cloth/"
+            title="Cloth"
+          />
+        </FrameWrapper>
+        <FrameWrapper size="50">
+          <Frame
+            allowFullScreen
+            frameBorder="0"
+            src="http://localhost:3000/static/cloth/safari.html"
+            title="Cloth"
+          />
+        </FrameWrapper>
+      </Frames>
     </OnScreen>
   </StyledProjectWrapper>
 );

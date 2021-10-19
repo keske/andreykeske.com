@@ -1,0 +1,597 @@
+<html lang="en">
+
+<head>
+	<title>Cloth</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<style>
+		body {
+			background-color: #000000;
+			color: #FFF;
+			font-family: monospace;
+			position: absolute;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.text {
+			transform: translate(20px, 20px);
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<span class="text">Rendering...</span>
+	</div>
+
+	<script src="./builds/ammo.js"></script>
+
+	<script src="./js/three/three.min.js"></script>
+	<script src="./js/three/OrbitControls.js"></script>
+	<script src="./js/three/Detector.js"></script>
+
+	<script>
+		Ammo().then((Ammo) => {
+			// Detects webgl
+			if (!Detector.webgl) {
+				Detector.addGetWebGLMessage();
+				document.getElementById('container').innerHTML = '';
+			}
+
+			// - Global variables -
+
+			// Graphics variables
+			let container;
+
+			let camera;
+
+			let controls;
+
+			let scene;
+
+			let renderer;
+
+			let textureLoader;
+
+			const clock = new THREE.Clock();
+
+			// Physics variables
+			const gravityConstant = -9.8;
+
+			let collisionConfiguration;
+
+			let dispatcher;
+
+			let broadphase;
+
+			let solver;
+
+			let physicsWorld;
+
+			const rigidBodies = [];
+
+			const margin = 0.05;
+
+			let hinge;
+
+			let cloth;
+
+			const transformAux1 = new Ammo.btTransform();
+
+			let time = 0;
+
+			let armMovement = 0;
+
+			// - Main code -
+
+			init();
+			animate();
+
+			// - Functions -
+
+			function init() {
+				initGraphics();
+				initPhysics();
+				createObjects();
+				initInput();
+			}
+
+			function initGraphics() {
+				container = document.getElementById('container');
+
+				camera = new THREE.PerspectiveCamera(
+					20,
+					window.innerWidth / window.innerHeight,
+					0.1,
+					200,
+				);
+
+				scene = new THREE.Scene();
+
+				camera.position.x = -7.5;
+				camera.position.y = 10;
+				camera.position.z = 0;
+
+				controls = new THREE.OrbitControls(camera);
+				controls.target.y = 0;
+				controls.enabled = false;
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor(0x000000);
+				renderer.setPixelRatio(window.devicePixelRatio);
+				renderer.setSize(window.innerWidth, window.innerHeight);
+				renderer.shadowMap.enabled = true;
+
+				textureLoader = new THREE.TextureLoader();
+
+				const ambientLight = new THREE.AmbientLight(0x404040);
+
+				scene.add(ambientLight);
+
+				const light = new THREE.DirectionalLight(0xffffff, 1);
+
+				light.position.set(-7, 10, 15);
+				light.castShadow = true;
+				const d = 10;
+
+				light.shadow.camera.left = -d;
+				light.shadow.camera.right = d;
+				light.shadow.camera.top = d;
+				light.shadow.camera.bottom = -d;
+
+				light.shadow.camera.near = 2;
+				light.shadow.camera.far = 50;
+
+				light.shadow.mapSize.x = 1024;
+				light.shadow.mapSize.y = 1024;
+
+				light.shadow.bias = -0.01;
+
+				scene.add(light);
+
+				container.innerHTML = '';
+				container.appendChild(renderer.domElement);
+
+				window.addEventListener('resize', onWindowResize, false);
+			}
+
+			function initPhysics() {
+				collisionConfiguration =
+					new Ammo.btSoftBodyRigidBodyCollisionConfiguration();
+				dispatcher = new Ammo.btCollisionDispatcher(
+					collisionConfiguration,
+				);
+				broadphase = new Ammo.btDbvtBroadphase();
+				solver = new Ammo.btSequentialImpulseConstraintSolver();
+				softBodySolver = new Ammo.btDefaultSoftBodySolver();
+				physicsWorld = new Ammo.btSoftRigidDynamicsWorld(
+					dispatcher,
+					broadphase,
+					solver,
+					collisionConfiguration,
+					softBodySolver,
+				);
+				physicsWorld.setGravity(
+					new Ammo.btVector3(0, gravityConstant, 0),
+				);
+				physicsWorld
+					.getWorldInfo()
+					.set_m_gravity(new Ammo.btVector3(0, gravityConstant, 0));
+			}
+
+			function createObjects() {
+				const pos = new THREE.Vector3();
+
+				const quat = new THREE.Quaternion();
+
+				// Ground
+				pos.set(0, -0.5, 0);
+				quat.set(0, 0, 0, 1);
+
+				// The cloth
+				// Cloth graphic object
+				const clothWidth = 4;
+
+				const clothHeight = 3;
+
+
+				const clothNumSegmentsZ = clothWidth * 9;
+
+				const clothNumSegmentsY = clothHeight * 9;
+
+				const clothSegmentLengthZ = clothWidth / clothNumSegmentsZ;
+
+				const clothSegmentLengthY = clothHeight / clothNumSegmentsY;
+
+				const clothPos = new THREE.Vector3(-3, 3, 2);
+
+				// var clothGeometry = new THREE.BufferGeometry();
+				const clothGeometry = new THREE.PlaneBufferGeometry(
+					clothWidth,
+					clothHeight,
+					clothNumSegmentsZ,
+					clothNumSegmentsY,
+				);
+
+				clothGeometry.rotateY(Math.PI * 0.5);
+				// clothGeometry.translate(0, -10, 0)
+				// clothGeometry.translate(clothPos.x, clothPos.y + clothHeight * 0.5, clothPos.z - clothWidth * 0.5)
+				// var clothMaterial = new THREE.MeshLambertMaterial( { color: 0x0030A0, side: THREE.DoubleSide } );
+				const clothMaterial = new THREE.MeshLambertMaterial({
+					color: 0xffffff,
+					side: THREE.DoubleSide,
+				});
+
+				cloth = new THREE.Mesh(clothGeometry, clothMaterial);
+				cloth.castShadow = true;
+				cloth.receiveShadow = true;
+				scene.add(cloth);
+				// textureLoader.load('../textures/finder.png', (texture) => {
+				textureLoader.load(
+					'http://localhost:3000/static/cloth/terminal.png',
+					(texture) => {
+						// texture.wrapS = THREE.RepeatWrapping;
+						// texture.wrapT = THREE.RepeatWrapping;
+						// texture.repeat.set(clothNumSegmentsZ, clothNumSegmentsY);
+						cloth.material.map = texture;
+						cloth.material.needsUpdate = true;
+						cloth.material.transparent = true;
+						cloth.material.side = THREE.DoubleSide;
+					});
+
+				// Cloth physic object
+				const softBodyHelpers = new Ammo.btSoftBodyHelpers();
+
+				const clothCorner00 = new Ammo.btVector3(
+					clothPos.x,
+					clothPos.y + clothHeight,
+					clothPos.z,
+				);
+
+				const clothCorner01 = new Ammo.btVector3(
+					clothPos.x,
+					clothPos.y + clothHeight,
+					clothPos.z - clothWidth,
+				);
+
+				const clothCorner10 = new Ammo.btVector3(
+					clothPos.x,
+					clothPos.y,
+					clothPos.z,
+				);
+
+				const clothCorner11 = new Ammo.btVector3(
+					clothPos.x,
+					clothPos.y,
+					clothPos.z - clothWidth,
+				);
+
+				const clothSoftBody = softBodyHelpers.CreatePatch(
+					physicsWorld.getWorldInfo(),
+					clothCorner00,
+					clothCorner01,
+					clothCorner10,
+					clothCorner11,
+					clothNumSegmentsZ + 1,
+					clothNumSegmentsY + 1,
+					0,
+					true,
+				);
+
+				const sbConfig = clothSoftBody.get_m_cfg();
+
+				sbConfig.set_viterations(10);
+				sbConfig.set_piterations(10);
+
+				clothSoftBody.setTotalMass(0.9, false);
+				Ammo.castObject(clothSoftBody, Ammo.btCollisionObject)
+					.getCollisionShape()
+					.setMargin(margin * 3);
+				physicsWorld.addSoftBody(clothSoftBody, 1, -1);
+				cloth.userData.physicsBody = clothSoftBody;
+				// Disable deactivation
+				clothSoftBody.setActivationState(4);
+
+				// The base
+				const armMass = 2;
+
+				const armLength = 3 + clothWidth;
+
+				const pylonHeight = clothPos.y + clothHeight;
+
+				const baseMaterial = new THREE.MeshPhongMaterial({
+					color: 0x606060,
+				});
+
+				// pos.set(clothPos.x, 0.1, clothPos.z - armLength);
+				// quat.set(0, 0, 0, 1);
+				// const base = createParalellepiped(
+				// 	1,
+				// 	0.2,
+				// 	1,
+				// 	0,
+				// 	pos,
+				// 	quat,
+				// 	baseMaterial,
+				// );
+
+				// base.castShadow = true;
+				// base.receiveShadow = true;
+				pos.set(
+					clothPos.x,
+					0.5 * pylonHeight,
+					clothPos.z - armLength,
+				);
+				const pylon = createParalellepiped(
+					0.4,
+					pylonHeight,
+					0.4,
+					0,
+					pos,
+					quat,
+					baseMaterial,
+				);
+
+				pylon.castShadow = true;
+				pylon.receiveShadow = true;
+				pos.set(
+					clothPos.x,
+					pylonHeight + 0.2,
+					clothPos.z - 0.5 * armLength,
+				);
+				const arm = createParalellepiped(
+					0.4,
+					0.4,
+					armLength + 0.4,
+					armMass,
+					pos,
+					quat,
+					baseMaterial,
+				);
+
+				arm.castShadow = true;
+				arm.receiveShadow = true;
+
+				// Glue the cloth to the arm
+				const influence = 0.5;
+
+				clothSoftBody.appendAnchor(
+					0,
+					arm.userData.physicsBody,
+					false,
+					influence,
+				);
+				clothSoftBody.appendAnchor(
+					clothNumSegmentsZ,
+					arm.userData.physicsBody,
+					false,
+					influence,
+				);
+
+				// Hinge constraint to move the arm
+				const pivotA = new Ammo.btVector3(0, pylonHeight * 0.5, 0);
+
+				const pivotB = new Ammo.btVector3(0, -0.2, -armLength * 0.5);
+
+				const axis = new Ammo.btVector3(0, 1, 0);
+
+				hinge = new Ammo.btHingeConstraint(
+					pylon.userData.physicsBody,
+					arm.userData.physicsBody,
+					pivotA,
+					pivotB,
+					axis,
+					axis,
+					true,
+				);
+				physicsWorld.addConstraint(hinge, true);
+			}
+
+			function createParalellepiped(
+				sx,
+				sy,
+				sz,
+				mass,
+				pos,
+				quat,
+				material,
+			) {
+				const threeObject = new THREE.Mesh(
+					new THREE.BoxGeometry(sx, sy, sz, 1, 1, 1),
+					material,
+				);
+
+				const shape = new Ammo.btBoxShape(
+					new Ammo.btVector3(sx * 0.5, sy * 0.5, sz * 0.5),
+				);
+
+				shape.setMargin(margin);
+
+				createRigidBody(threeObject, shape, mass, pos, quat);
+
+				return threeObject;
+			}
+
+			function createRigidBody(
+				threeObject,
+				physicsShape,
+				mass,
+				pos,
+				quat,
+			) {
+				threeObject.position.copy(pos);
+				threeObject.quaternion.copy(quat);
+
+				const transform = new Ammo.btTransform();
+
+				transform.setIdentity();
+				transform.setOrigin(new Ammo.btVector3(pos.x, pos.y, pos.z));
+				transform.setRotation(
+					new Ammo.btQuaternion(quat.x, quat.y, quat.z, quat.w),
+				);
+				const motionState = new Ammo.btDefaultMotionState(transform);
+
+				const localInertia = new Ammo.btVector3(0, 0, 0);
+
+				physicsShape.calculateLocalInertia(mass, localInertia);
+
+				const rbInfo = new Ammo.btRigidBodyConstructionInfo(
+					mass,
+					motionState,
+					physicsShape,
+					localInertia,
+				);
+
+				const body = new Ammo.btRigidBody(rbInfo);
+
+				threeObject.userData.physicsBody = body;
+
+				if (mass > 0) {
+					rigidBodies.push(threeObject);
+
+					// Disable deactivation
+					body.setActivationState(4);
+				}
+
+				physicsWorld.addRigidBody(body);
+			}
+
+			function createRandomColor() {
+				return Math.floor(Math.random() * (1 << 24));
+			}
+
+			function createMaterial() {
+				return new THREE.MeshPhongMaterial({
+					color: createRandomColor(),
+				});
+			}
+
+			function initInput() {
+				window.addEventListener(
+					'click',
+					(event) => {
+						armMovement = 1;
+
+						setTimeout(() => {
+							armMovement = -1;
+
+							setTimeout(() => {
+								armMovement = -0;
+							}, 100);
+						}, 100);
+					},
+					false,
+				);
+
+				window.addEventListener(
+					'keydown',
+					(event) => {
+						switch (event.keyCode) {
+							// Q
+							case 81:
+								armMovement = 1;
+								break;
+
+								// A
+							case 65:
+								armMovement = -1;
+								break;
+						}
+					},
+					false,
+				);
+
+				window.addEventListener(
+					'keyup',
+					(event) => {
+						armMovement = 0;
+					},
+					false,
+				);
+			}
+
+			function onWindowResize() {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize(window.innerWidth, window.innerHeight);
+			}
+
+			function animate() {
+				requestAnimationFrame(animate);
+				render();
+			}
+
+			function render() {
+				const deltaTime = clock.getDelta();
+
+				updatePhysics(deltaTime);
+
+				controls.update(deltaTime);
+
+				renderer.render(scene, camera);
+
+				time += deltaTime;
+			}
+
+			function updatePhysics(deltaTime) {
+				// Hinge control
+				hinge.enableAngularMotor(true, 0.8 * armMovement, 50);
+
+				// Step world
+				physicsWorld.stepSimulation(deltaTime, 10);
+
+				// Update cloth
+				const softBody = cloth.userData.physicsBody;
+
+				const clothPositions =
+					cloth.geometry.attributes.position.array;
+
+				const numVerts = clothPositions.length / 3;
+
+				const nodes = softBody.get_m_nodes();
+
+				let indexFloat = 0;
+
+				for (var i = 0; i < numVerts; i++) {
+					const node = nodes.at(i);
+
+					const nodePos = node.get_m_x();
+
+					clothPositions[indexFloat++] = nodePos.x();
+					clothPositions[indexFloat++] = nodePos.y();
+					clothPositions[indexFloat++] = nodePos.z();
+				}
+				cloth.geometry.computeVertexNormals();
+				cloth.geometry.attributes.position.needsUpdate = true;
+				cloth.geometry.attributes.normal.needsUpdate = true;
+
+				// Update rigid bodies
+				for (var i = 0, il = rigidBodies.length; i < il; i++) {
+					const objThree = rigidBodies[i];
+
+					const objPhys = objThree.userData.physicsBody;
+
+					const ms = objPhys.getMotionState();
+
+					if (ms) {
+						ms.getWorldTransform(transformAux1);
+						const p = transformAux1.getOrigin();
+
+						const q = transformAux1.getRotation();
+
+						objThree.position.set(p.x(), p.y(), p.z());
+						objThree.quaternion.set(q.x(), q.y(), q.z(), q.w());
+					}
+				}
+			}
+		});
+	</script>
+
+</body>
+
+</html>
