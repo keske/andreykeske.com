@@ -14,6 +14,7 @@ export { default as EsherSwitchButton } from './EsherSwitchButton';
 export { default as FootballFansTrolling } from './FootballFansTrolling';
 export { default as FridayDock } from './FridayDock';
 export { default as Globalization } from './Globalization';
+export { default as Graffiti } from './Graffiti';
 export { default as Hairpin } from './Hairpin';
 export { default as Hodor } from './Hodor';
 export { default as Hydra } from './Hydra';

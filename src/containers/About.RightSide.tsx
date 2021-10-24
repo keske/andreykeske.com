@@ -157,8 +157,8 @@ const AboutRightSide: React.FC = (): JSX.Element => (
       </strong>
     </StyledText>
     <StyledText>
-      Andrey <Italic>splits his life between two cities</Italic> New
-      York City
+      He <Italic>splits his life between two cities</Italic> New York
+      City
       <Italic>, NY</Italic>
       <NYFlag url={`${PUBLIC_URL}/static/about/ny.jpg`} />, and Miami,{' '}
       <Italic>Fl</Italic>
