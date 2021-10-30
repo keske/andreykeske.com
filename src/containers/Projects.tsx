@@ -62,6 +62,23 @@ const Projects: React.FC = (): JSX.Element => {
     [hacks, limit],
   );
 
+  const handleScroll = React.useCallback(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop <
+      document.documentElement.offsetHeight - 300
+    ) {
+      return;
+    }
+
+    setLimit(limit + 5);
+  }, [limit]);
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
   return <>{content}</>;
 };
 
