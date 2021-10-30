@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
@@ -14,17 +14,15 @@ import {
 
 import Sphere from './EsherSphere/Root';
 
-const styles = StyleSheet.create({
-  root: {
-    paddingBottom: 115,
-  },
-});
+const StyledContainer = styled(Container)`
+  padding-bottom: 115px;
+`;
 
 const EsherSphere: React.FC = (): JSX.Element => (
   <>
     <Sphere />
 
-    <Container className={css(styles.root)} fluid>
+    <StyledContainer fluid>
       <Row>
         <Col lg={{ offset: 2, span: 10 }}>
           <Title>EsherSphere</Title>
@@ -35,7 +33,7 @@ const EsherSphere: React.FC = (): JSX.Element => (
           <ProjectYear>2021</ProjectYear>
         </Col>
       </Row>
-    </Container>
+    </StyledContainer>
   </>
 );
 

@@ -1,10 +1,8 @@
 import * as React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
-import {
- Col, Container, Row, Tab, Tabs,
-} from 'react-bootstrap';
+import styled from 'styled-components';
+import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
 
 // Components
 import {
@@ -16,12 +14,10 @@ import {
   Title,
 } from '../components';
 
-const styles = StyleSheet.create({
-  inner: {
-    padding: 20,
-    textAlign: 'center',
-  },
-});
+const StyledTab = styled(Tab)`
+  padding: 20px;
+  text-align: center;
+`;
 
 const Battleship: React.FC = (): JSX.Element => {
   const length = 10;
@@ -44,14 +40,13 @@ const Battleship: React.FC = (): JSX.Element => {
                     defaultActiveKey={numbers[numbers.length - 1]}
                   >
                     {numbers.map((number) => (
-                      <Tab
+                      <StyledTab
                         key={`${letter}-${number}`}
-                        className={css(styles.inner)}
                         eventKey={`${number}`}
                         title={number}
                       >
                         <input type="radio" />
-                      </Tab>
+                      </StyledTab>
                     ))}
                   </Tabs>
                 </Tab>
