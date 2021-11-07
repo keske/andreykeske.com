@@ -6,6 +6,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
+  OnScreen,
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
@@ -60,7 +61,9 @@ const WarpedLego: React.FC = (): JSX.Element => (
       <Row>
         <Col lg={{ span: 12 }}>
           <Wrapper>
-            <Lego />
+            <OnScreen>
+              <Lego />
+            </OnScreen>
 
             <Inner>
               <StyledTitle>
@@ -69,9 +72,7 @@ const WarpedLego: React.FC = (): JSX.Element => (
 
               <Spacer size={0} />
 
-              <StyledProjectTopics
-                topics={['Lego', 'Non-euclidean geometry', 'ThreeJS']}
-              />
+              <StyledProjectTopics topics={['Lego', 'ThreeJS']} />
 
               <Spacer />
 

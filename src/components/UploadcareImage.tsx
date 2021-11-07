@@ -2,39 +2,33 @@ import * as React from 'react';
 
 // Libs
 import * as R from 'ramda';
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 
 type Props = {
   format?: 'jpeg' | 'png';
   progressive?: 'no' | 'yes';
   quality?: 'lightest' | 'normal';
   src: string;
-  // width: number;
 };
 
-const styles = StyleSheet.create({
-  root: {
-    borderRadius: 21,
-    overflow: 'hidden',
-    width: '100%',
-  },
-});
+const Root = styled.img`
+  border-radius: 21px;
+  overflow: hidden;
+  width: 100%;
+`;
 
 const UploadcareImage: React.FC<Props> = ({
   format = 'jpeg',
   progressive = 'no',
   quality = 'normal',
   src,
-}: // width,
-Props): JSX.Element => (
-  <img
+}: Props): JSX.Element => (
+  <Root
     alt="uploadcare"
-    className={css(styles.root)}
     src={R.join('', [
       src,
       `-/format/${format}/`,
       `-/progressive/${progressive}/`,
-      // `-/resize/${width.toFixed(0)}x/`,
       `-/quality/${quality}/`,
     ])}
   />

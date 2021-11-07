@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as R from 'ramda';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
@@ -16,25 +16,24 @@ import {
   Title,
 } from '../components';
 
-const styles = StyleSheet.create({
-  input: {
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  label: {
-    fontSize: 4,
-    fontStyle: 'italic',
-    marginLeft: -22,
-    marginTop: 7,
-    position: 'absolute',
-  },
-  root: {
-    backgroundColor: '#35da35',
-    border: 'none',
-    borderRadius: 15,
-    padding: 10,
-  },
-});
+const Input = styled.input`
+  margin: 0 10px;
+`;
+
+const Label = styled.span`
+  font-size: 4px;
+  font-style: italic;
+  margin-left: -22px;
+  margin-top: 7px;
+  position: absolute;
+`;
+
+const Root = styled.button`
+  background-color: #35da35;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+`;
 
 const LegoHTMLElement: React.FC = (): JSX.Element => (
   <ProjectWrapper>
@@ -44,26 +43,22 @@ const LegoHTMLElement: React.FC = (): JSX.Element => (
           <Title>Lego HTML Element</Title>
 
           <Text>
-            A classical Lego brick except that this one was made from HTML
-            elements
+            A classical Lego brick except that this one was made from
+            HTML elements
             <Mark>button</Mark>
             and
             <Mark>input</Mark>
           </Text>
 
-          <button className={css(styles.root)} type="button">
+          <Root type="button">
             {R.range(0, 8).map((index) => (
               <span key={index}>
-                <input
-                  checked
-                  className={css(styles.input)}
-                  type="radio"
-                />
-                <span className={css(styles.label)}>LEGO</span>
+                <Input checked type="radio" />
+                <Label>LEGO</Label>
                 {index === 3 && <br />}
               </span>
             ))}
-          </button>
+          </Root>
 
           <Spacer size={6} />
 

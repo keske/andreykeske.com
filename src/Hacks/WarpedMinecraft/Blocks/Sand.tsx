@@ -8,9 +8,9 @@ type Props = JSX.IntrinsicElements['group'];
 const Sand: React.FC<Props> = ({ ...rest }: Props) => {
   const map = React.useMemo(
     () => ({
-      bottom: 'static/minecraft/sand.png',
-      side: 'static/minecraft/sand.png',
-      top: 'static/minecraft/sand.png',
+      bottom: 'static/minecraft/_sand.png',
+      side: 'static/minecraft/_sand.png',
+      top: 'static/minecraft/_sand.png',
     }),
     [],
   );

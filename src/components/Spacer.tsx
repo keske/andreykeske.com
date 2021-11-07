@@ -1,5 +1,5 @@
-import * as React from "react";
-import styled from "styled-components";
+import * as React from 'react';
+import styled from 'styled-components';
 
 export type Props = {
   /**
@@ -17,8 +17,8 @@ const Root = styled.div<RootProps>`
   height: ${({ size }) => `${size * 4}px`};
 `;
 
-const Spacer: React.FC<Props> = ({ size = 1 }: Props) => (
-  <Root {...{ size }} />
+const Spacer: React.FC<Props> = ({ size = 1, ...rest }: Props) => (
+  <Root {...{ ...rest, size }} />
 );
 
 export default Spacer;

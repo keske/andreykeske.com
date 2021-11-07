@@ -1,22 +1,20 @@
 import React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 import { Canvas as FiberCanvas } from 'react-three-fiber';
 
 type Props = {
   children: React.ReactNode;
 };
 
-const styles = StyleSheet.create({
-  root: {
-    cursor: 'grab',
-    height: '50vh',
-  },
-});
+const Root = styled.div`
+  cursor: grab;
+  height: 50vh;
+`;
 
 const Canvas: React.FC<Props> = ({ children }: Props) => (
-  <div className={css(styles.root)}>
+  <Root>
     <FiberCanvas
       camera={{ position: [0, 0, 1.2] }}
       colorManagement
@@ -30,7 +28,7 @@ const Canvas: React.FC<Props> = ({ children }: Props) => (
     >
       {children}
     </FiberCanvas>
-  </div>
+  </Root>
 );
 
 export default Canvas;

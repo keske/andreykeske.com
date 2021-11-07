@@ -3,6 +3,7 @@
 import * as React from 'react';
 
 // Libs
+import styled, { css } from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -17,6 +18,18 @@ import {
   Text,
   Title,
 } from '../components';
+import { mediaQuery } from '../utils';
+
+const StyledSpacer = styled(Spacer)`
+  display: none;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      display: block;
+    `,
+  )}
+`;
 
 const Volume: React.FC = (): JSX.Element => (
   <ProjectWrapper>
@@ -43,6 +56,7 @@ const Volume: React.FC = (): JSX.Element => (
 
         {/* Resize sections */}
         <Col lg={{ offset: 1, span: 5 }}>
+          <StyledSpacer size={10} />
           <SubTitle>Resize</SubTitle>
 
           <Text>

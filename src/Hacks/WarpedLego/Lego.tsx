@@ -25,10 +25,10 @@ type GLTFResult = GLTF & {
 
 const Model: React.FC<Props> = ({ material }: Props) => {
   const ref = React.useRef<
-  HTMLDivElement & {
-    rotation;
-    factor;
-  }
+    HTMLDivElement & {
+      rotation;
+      factor;
+    }
   >();
 
   const group = useRef<THREE.Group>();

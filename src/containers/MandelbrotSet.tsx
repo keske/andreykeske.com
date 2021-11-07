@@ -1,32 +1,36 @@
+/* eslint jsx-a11y/label-has-associated-control: 0 */
+
 import * as React from 'react';
 
 // Libs
-import { StyleSheet, css } from 'aphrodite';
+import styled from 'styled-components';
 
 // Components
-import { Title } from '../components';
 import MandelbrotSetGeometry from '../Hacks/MandelbrotSet.Geometry';
 
-const styles = StyleSheet.create({
-  form: {
-    borderRadius: 30,
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
-    display: 'inline-block',
-    marginTop: 10,
-    padding: 30,
-  },
-  input: {
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  root: {
-    padding: 20,
-  },
-  wrapper: {
-    position: 'absolute',
-    top: 300,
-  },
-});
+const Form = styled.span`
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-top: 10px;
+  padding: 20px;
+  position: fixed;
+  z-index: 3;
+`;
+
+const Input = styled.input`
+  margin-left: 10px;
+  margin-right: 10px;
+`;
+
+const Root = styled.div`
+  padding: 20px;
+`;
+
+const Wrapper = styled.div`
+  z-index: 1;
+`;
 
 const MandelbrotSet: React.FC = (): JSX.Element => {
   const [quantity, setQuantity] = React.useState<number>(100);
@@ -34,13 +38,14 @@ const MandelbrotSet: React.FC = (): JSX.Element => {
   const [size, setSize] = React.useState<number>(10);
 
   return (
-    <div className={css(styles.root)}>
-      <Title>Mandelbrot Set</Title>
-      <span className={css(styles.form)}>
+    <Root>
+      <Wrapper>
+        <MandelbrotSetGeometry quantity={quantity} size={size} />
+      </Wrapper>
+      <Form>
         <label htmlFor="quantity">
           Quantity
-          <input
-            className={css(styles.input)}
+          <Input
             id="quantity"
             onChange={(event) => {
               setQuantity(+event.target.value);
@@ -51,8 +56,7 @@ const MandelbrotSet: React.FC = (): JSX.Element => {
         </label>
         <label htmlFor="size">
           Size
-          <input
-            className={css(styles.input)}
+          <Input
             id="size"
             onChange={(event) => {
               setSize(+event.target.value);
@@ -61,11 +65,8 @@ const MandelbrotSet: React.FC = (): JSX.Element => {
             value={size}
           />
         </label>
-      </span>
-      <div className={css(styles.wrapper)}>
-        <MandelbrotSetGeometry quantity={quantity} size={size} />
-      </div>
-    </div>
+      </Form>
+    </Root>
   );
 };
 

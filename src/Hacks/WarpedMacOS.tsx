@@ -1,11 +1,12 @@
 import * as React from 'react';
 
 // Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
+  OnScreen,
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
@@ -13,6 +14,7 @@ import {
   Text,
   Title,
 } from '../components';
+import { mediaQuery } from '../utils';
 
 import MacOS from './WarpedMacOS/Root';
 
@@ -27,6 +29,13 @@ const StyledProjectWrapper = styled(ProjectWrapper)`
   background-color: #000;
   height: 120vh;
   position: relative;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      display: none;
+    `,
+  )}
 `;
 
 const StyledProjectTopics = styled(ProjectTopics)`
@@ -58,12 +67,15 @@ const StyledTitle = styled(Title)`
   border-radius: 13px;
   color: #fff;
   display: inline-block;
+  font-size: 64px;
   padding: 13px 21px;
 `;
 
 const WarpedMacOS: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
-    <MacOS />
+    <OnScreen>
+      <MacOS />
+    </OnScreen>
 
     <Inner>
       <Container>
@@ -74,7 +86,7 @@ const WarpedMacOS: React.FC = (): JSX.Element => (
             sm={{ span: 12 }}
             xs={{ span: 12 }}
           >
-            <StyledTitle>Mac OS</StyledTitle>
+            <StyledTitle>Warped Mac OS</StyledTitle>
 
             <Spacer size={0} />
 
