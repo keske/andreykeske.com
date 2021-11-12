@@ -6,13 +6,11 @@ import { Canvas as FiberCanvas } from 'react-three-fiber';
 
 // Local
 import Letter from './Letter';
-import RatioInput from './RatioInput';
 
 const Root = styled.div`
   background-color: #ccff00;
-  /* cursor: grab; */
   display: inline-block;
-  height: 100vh;
+  height: 50vw;
   width: 100vw;
 `;
 
@@ -109,7 +107,7 @@ const List: React.FC = () => {
 
 const WarpedTypographyRoot: React.FC = () => (
   <Root>
-    <RatioInput />
+    {/* <RatioInput /> */}
     <FiberCanvas>
       <React.Suspense fallback={null}>
         <List />

@@ -14,6 +14,7 @@ import {
   Text,
   Title,
 } from '../components';
+import RatioInput from './WarpedTypography/RatioInput';
 import { mediaQuery } from '../utils';
 
 import Root from './WarpedTypography/Root';
@@ -22,7 +23,6 @@ const COLOR = '#f12089';
 
 const Inner = styled.div`
   bottom: 100px;
-  pointer-events: none;
   position: absolute;
   width: 100%;
 `;
@@ -84,7 +84,10 @@ const WarpedTypography: React.FC = (): JSX.Element => (
             sm={{ span: 12 }}
             xs={{ span: 12 }}
           >
-            <StyledTitle>Warped Helvetica</StyledTitle>
+            <StyledTitle>
+              Warped Helvetica
+              <RatioInput />
+            </StyledTitle>
 
             <Spacer size={0} />
 

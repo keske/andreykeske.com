@@ -6,34 +6,24 @@ import styled from 'styled-components';
 // Store
 import useStore from './store';
 
-const Label = styled.span`
-  font-size: 12px;
-  font-weight: bold;
-  left: 15px;
-  letter-spacing: 2px;
-  position: absolute;
-  text-transform: uppercase;
-  top: 12px;
-  z-index: 3;
-`;
-
 const Root = styled.div`
-  left: 30px;
-  position: absolute;
-  top: 30px;
+  display: inline-block;
 `;
 
 const StyledInput = styled.input.attrs({
   step: 0.1,
   type: 'number',
 })`
-  background-color: #fff;
+  background-color: #000;
+  color: #fff;
   border: none;
+  font-size: 16px;
   border-radius: 30px;
   outline: none;
-  padding: 10px 20px 10px 70px;
-  width: 130px;
+  padding: 10px 10px 10px 10px;
+  width: 80px;
   z-index: 1;
+  transform: translateY(-35px) translateX(10px);
 `;
 
 const WarpedMinecraftRatioInput: React.FC = () => {
@@ -41,7 +31,6 @@ const WarpedMinecraftRatioInput: React.FC = () => {
 
   return (
     <Root>
-      <Label>Ratio</Label>
       <StyledInput
         defaultValue={warpRatio}
         onChange={(event) => {

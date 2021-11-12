@@ -33,6 +33,8 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledProjectWrapper = styled(ProjectWrapper)`
+  margin-top: 0;
+  padding-top: 0;
   position: relative;
 `;
 

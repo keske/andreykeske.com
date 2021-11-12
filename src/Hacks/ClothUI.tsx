@@ -47,6 +47,8 @@ const FrameWrapper = styled.div<{ size?: string }>`
 `;
 
 const StyledProjectWrapper = styled(ProjectWrapper)`
+  padding-bottom: 0;
+  padding-top: 0;
   text-align: center;
 
   ${mediaQuery(
