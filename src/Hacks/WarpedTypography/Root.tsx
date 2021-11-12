@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Box, Flex } from '@react-three/flex';
 
 // Libs
 import styled from 'styled-components';
@@ -89,33 +88,21 @@ const List: React.FC = () => {
     [],
   );
 
-  const renderAlphabet = React.useMemo(
-    () => alphabet.map((letter) => renderLetter(letter)),
-    [alphabet, renderLetter],
-  );
+  // const renderAlphabet = React.useMemo(
+  //   () => alphabet.map((letter) => renderLetter(letter)),
+  //   [alphabet, renderLetter],
+  // );
 
-  return (
-    <Flex flexDirection="row" removeFromParent>
-      {renderAlphabet}
-    </Flex>
-  );
+  // return (
+  //   <Flex flexDirection="row" removeFromParent>
+  //     {renderAlphabet}
+  //   </Flex>
+  // );
 };
-
-const MyMesh = () => (
-  <group>
-    <Flex flexDirection="row" removeFromParent>
-      <Box removeFromParent>
-        <mesh />
-      </Box>
-    </Flex>
-  </group>
-);
 
 const WarpedTypographyRoot: React.FC = () => (
   <FiberCanvas>
-    <React.Suspense fallback={null}>
-      <MyMesh />
-    </React.Suspense>
+    <React.Suspense fallback={null} />
   </FiberCanvas>
 );
 
