@@ -6,7 +6,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import {
-  OnScreen,
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
@@ -81,53 +80,49 @@ const StyledTitle = styled(Title)`
 
 const ClothUI: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
-    <OnScreen>
-      <FrameWrapper>
+    <FrameWrapper>
+      <Frame
+        allowFullScreen
+        frameBorder="0"
+        src="http://localhost:3000/static/cloth/terminal.html"
+        title="Cloth"
+      />
+
+      <Details>
+        <Container>
+          <Row>
+            <Col lg={{ offset: 0, span: 12 }}>
+              <StyledTitle>Cloth User Interface</StyledTitle>
+              <StyledText>
+                No more plain and static windows
+              </StyledText>
+
+              <StyledProjectTopics topics={['Inerface', 'Mac OS']} />
+              <StyledProjectYear>2021</StyledProjectYear>
+            </Col>
+          </Row>
+        </Container>
+      </Details>
+    </FrameWrapper>
+
+    <Frames>
+      <FrameWrapper size="50">
         <Frame
           allowFullScreen
           frameBorder="0"
-          src="http://localhost:3000/static/cloth/terminal.html"
+          src="http://localhost:3000/static/cloth/"
           title="Cloth"
         />
-
-        <Details>
-          <Container>
-            <Row>
-              <Col lg={{ offset: 0, span: 12 }}>
-                <StyledTitle>Cloth User Interface</StyledTitle>
-                <StyledText>
-                  No more plain and static windows
-                </StyledText>
-
-                <StyledProjectTopics
-                  topics={['Inerface', 'Mac OS']}
-                />
-                <StyledProjectYear>2021</StyledProjectYear>
-              </Col>
-            </Row>
-          </Container>
-        </Details>
       </FrameWrapper>
-
-      <Frames>
-        <FrameWrapper size="50">
-          <Frame
-            allowFullScreen
-            frameBorder="0"
-            src="http://localhost:3000/static/cloth/"
-            title="Cloth"
-          />
-        </FrameWrapper>
-        <FrameWrapper size="50">
-          <Frame
-            allowFullScreen
-            frameBorder="0"
-            src="http://localhost:3000/static/cloth/safari.html"
-            title="Cloth"
-          />
-        </FrameWrapper>
-      </Frames>
-    </OnScreen>
+      <FrameWrapper size="50">
+        <Frame
+          allowFullScreen
+          frameBorder="0"
+          src="http://localhost:3000/static/cloth/safari.html"
+          title="Cloth"
+        />
+      </FrameWrapper>
+    </Frames>
   </StyledProjectWrapper>
 );
 

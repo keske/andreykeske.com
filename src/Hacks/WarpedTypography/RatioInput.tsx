@@ -34,7 +34,6 @@ const WarpedMinecraftRatioInput: React.FC = () => {
       <StyledInput
         defaultValue={warpRatio}
         onChange={(event) => {
-          console.log(event.target.value);
           setWarpRatio(+event.target.value);
         }}
       />
