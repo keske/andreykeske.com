@@ -12,7 +12,7 @@ const useStore = create<Store>(
       set(() => ({ warpRatio: value }));
     },
 
-    warpRatio: 2.5,
+    warpRatio: 5.7,
   }),
 );
 
