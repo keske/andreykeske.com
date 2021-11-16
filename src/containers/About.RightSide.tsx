@@ -7,7 +7,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 
 // Components
-import { Spacer, Text, Title } from '../components';
+import { Mark, Spacer, Text, Title } from '../components';
 import { mediaQuery } from '../utils';
 
 const { PUBLIC_URL } = process.env;
@@ -60,6 +60,7 @@ const Link = styled.a`
   border-radius: 7px;
   color: #000;
   display: inline-block;
+  line-height: 24px;
   margin-right: 5px;
   padding: 3px 7px;
 
@@ -96,6 +97,7 @@ const StyledTitle = styled(Title)`
 
 const StyledText = styled(Text)`
   font-size: 20px;
+  line-height: 34px;
   padding-right: 70px;
 
   ${mediaQuery(
@@ -127,14 +129,23 @@ const AboutRightSide: React.FC = (): JSX.Element => (
   <Root>
     <StyledTitle>Andrey Keske</StyledTitle>
     <StyledText>
-      <Italic>is a</Italic> digital artist<Italic>/</Italic>creative
-      programmer, <Italic>and a</Italic> full-stack developer{' '}
-      <Image url={`${PUBLIC_URL}/static/about/ts.png`} />
+      <Italic>is a</Italic> digital artist<Italic>/</Italic>software
+      engineer <Image url={`${PUBLIC_URL}/static/about/ts.png`} />
       <Image url={`${PUBLIC_URL}/static/about/react.png`} />
       <Image url={`${PUBLIC_URL}/static/about/node.jpeg`} />
     </StyledText>
     <StyledText>
-      Andrey <Italic>works with companies like</Italic>{' '}
+      In 2006 Andrey started to draw <Italic>Graffiti</Italic> which
+      later transforms into making stickers then graphic design{' '}
+      <Italic>Graffiti</Italic> was a form of hacking, in this case on
+      the streets. And at the same time, Andrey likes computer hacking
+      culture and had a huge interest in programming. Both forms of
+      activity merged <Italic>→</Italic> into <Italic>→</Italic>{' '}
+      <Mark>net-art</Mark>, which represents this site.
+    </StyledText>
+    <StyledText>
+      Besides net-art Andrey works as a software engineer{' '}
+      <Italic>with companies like</Italic>{' '}
       <strong>
         <Link href="https://samara.com/">
           {' '}

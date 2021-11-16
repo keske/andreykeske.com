@@ -16,9 +16,10 @@ const Root = styled.div`
   cursor: grab;
   height: 100vh;
   left: 0;
+  padding: 0;
   position: absolute;
   top: 0;
-  width: 70vw;
+  width: 100vw;
   z-index: 1;
 
   ${mediaQuery(
@@ -157,7 +158,7 @@ const AboutLeftSide: React.FC = (): JSX.Element => {
   return (
     <Root>
       <StyledCanvas
-        camera={{ position: [0, 3, 2] }}
+        camera={{ position: [0, 3, 3] }}
         colorManagement
         gl={{
           alpha: true,
@@ -183,7 +184,9 @@ const AboutLeftSide: React.FC = (): JSX.Element => {
               shadow-mapSize-width={2048}
             />
 
-            <Nurbs {...nurbs} />
+            <mesh position={[-1.5, 0, 0]}>
+              <Nurbs {...nurbs} />
+            </mesh>
           </group>
         </React.Suspense>
       </StyledCanvas>
