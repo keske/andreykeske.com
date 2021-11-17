@@ -27,7 +27,7 @@ const Hr = styled.div`
   ${mediaQuery(
     'phone',
     css`
-      background-color: #f2f2f2;
+      /* background-color: #f2f2f2; */
       display: block;
       height: 20px;
     `,

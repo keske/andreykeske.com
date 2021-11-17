@@ -95,7 +95,7 @@ const List: React.FC = () => {
   const renderAlphabet = React.useMemo(
     () =>
       alphabet.map((letters, index) => (
-        <group key={index} position={[-6, -1.1 * (index - 3), 0]}>
+        <group key={index} position={[-6, -1.2 * (index - 3), 0]}>
           {renderLetter(letters)}
         </group>
       )),
@@ -110,7 +110,9 @@ const WarpedTypographyRoot: React.FC = () => (
     {/* <RatioInput /> */}
     <FiberCanvas>
       <React.Suspense fallback={null}>
-        <List />
+        <group position={[0, -1, 0]}>
+          <List />
+        </group>
       </React.Suspense>
     </FiberCanvas>
   </Root>
