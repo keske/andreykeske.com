@@ -20,10 +20,10 @@ import RatioInput from './WarpedTypography/RatioInput';
 import { mediaQuery } from '../utils';
 
 import Alphabet from './WarpedTypography/Root';
-import OffWhiteAir from './WarpedTypography/Air';
-import OffWhiteAirLarge from './WarpedTypography/AirLarge';
-import KeskeSample from './WarpedTypography/KeskeSample';
-import OffWhiteSwoosh from './WarpedTypography/Swoosh';
+import OffWhiteAir from './WarpedTypography/OffWhite.Air';
+import OffWhiteAirLarge from './WarpedTypography/OffWhite.Large';
+import OffWhiteSample from './WarpedTypography/OffWhite.Sample';
+import OffWhiteSwoosh from './WarpedTypography/OffWhite.Swoosh';
 import WarpedTitle from './WarpedTypography/Title';
 
 const COLOR = '#f12089';
@@ -169,7 +169,7 @@ const WarpedTypography: React.FC = (): JSX.Element => (
           </Container>
         </InnerOffWhite>
         <OffWhiteAirLarge />
-        <KeskeSample />
+        <OffWhiteSample />
       </OffWhite>
     </OnScreen>
   </>

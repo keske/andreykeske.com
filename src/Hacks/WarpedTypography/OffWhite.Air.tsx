@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 // Local
-import { List, OffWhiteCase } from './OffWhiteComponents';
+import { List, OffWhiteCase } from './OffWhite.Components';
 
-const OffWhiteAirLarge: React.FC = () => (
+const OffWhiteAir: React.FC = () => (
   <OffWhiteCase>
-    <group position={[-0.8, -1.1, -0.5]}>
+    <group position={[2, -2.9, -6.5]}>
       <List
         alphabet={[
           [
@@ -16,9 +16,10 @@ const OffWhiteAirLarge: React.FC = () => (
             'quote-right',
           ],
         ]}
+        warpRatio={1.7}
       />
     </group>
   </OffWhiteCase>
 );
 
-export default OffWhiteAirLarge;
+export default OffWhiteAir;

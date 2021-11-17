@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Local
-import { List, OffWhiteCase } from './OffWhiteComponents';
+import { List, OffWhiteCase } from './OffWhite.Components';
 
 const OffWhiteSwoosh: React.FC = () => (
   <OffWhiteCase>
@@ -29,6 +29,7 @@ const OffWhiteSwoosh: React.FC = () => (
             'upper-e',
           ],
         ]}
+        warpRatio={2.3}
       />
     </group>
   </OffWhiteCase>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Local
-import { List, OffWhiteCase } from './OffWhiteComponents';
+import { List, OffWhiteCase } from './OffWhite.Components';
 
 const OffWhiteSample: React.FC = () => (
   <OffWhiteCase>
@@ -27,6 +27,7 @@ const OffWhiteSample: React.FC = () => (
             'quote-right',
           ],
         ]}
+        warpRatio={1.3}
       />
     </group>
   </OffWhiteCase>

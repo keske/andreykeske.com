@@ -6,11 +6,13 @@ import { Nurbs } from '../../components/NURBS';
 
 type Props = {
   url: string;
+  warpRatio: number;
 };
 
-const WarpedTypographyLetter: React.FC<Props> = ({ url }: Props) => {
-  const warpRatio = 1.2;
-
+const OffWhiteLetter: React.FC<Props> = ({
+  url,
+  warpRatio,
+}: Props) => {
   const random = React.useCallback(
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     (min = 0, max: number) => Math.random() * (max - min) + min,
@@ -126,4 +128,4 @@ const WarpedTypographyLetter: React.FC<Props> = ({ url }: Props) => {
   return <Nurbs nsControlPoints={nsControlPoints} url={url} />;
 };
 
-export default WarpedTypographyLetter;
+export default OffWhiteLetter;

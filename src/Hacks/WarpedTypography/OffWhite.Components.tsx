@@ -6,7 +6,7 @@ import { Canvas as FiberCanvas } from 'react-three-fiber';
 
 import { mediaQuery } from '../../utils';
 
-import Letter from './AirLetter';
+import Letter from './OffWhite.Letter';
 
 const { PUBLIC_URL } = process.env;
 
@@ -71,11 +71,12 @@ export const StyledCanvas = styled(FiberCanvas)`
 
 type ListProps = {
   alphabet: string[][];
-  // letterComponent: React.ReactNode
+  warpRatio: number;
 };
 
 export const List: React.FC<ListProps> = ({
   alphabet,
+  warpRatio,
 }: ListProps) => {
   const renderLetter = React.useCallback(
     (letters) =>
@@ -85,10 +86,13 @@ export const List: React.FC<ListProps> = ({
           position={[0.9 * index, 0, 0]}
           scale={[0.3, 0.3, 0.3]}
         >
-          <Letter url={`static/helvetica/${letter}.png`} />
+          <Letter
+            url={`static/helvetica/${letter}.png`}
+            warpRatio={warpRatio}
+          />
         </group>
       )),
-    [],
+    [warpRatio],
   );
 
   const renderAlphabet = React.useMemo(

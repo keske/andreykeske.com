@@ -7,10 +7,7 @@ import { Canvas as FiberCanvas } from 'react-three-fiber';
 // Local
 import Letter from './TitleLetter';
 
-const StyledCanvas = styled(FiberCanvas)`
-  /* height: 100vw;
-  width: 100vw; */
-`;
+const StyledCanvas = styled(FiberCanvas)``;
 
 const Root = styled.div`
   background-color: #ccff00;
