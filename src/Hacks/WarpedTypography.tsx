@@ -35,6 +35,10 @@ const Inner = styled.div`
   z-index: 1;
 `;
 
+const OffWhite = styled.div`
+  background-color: #f6f6f6;
+`;
+
 const InnerOffWhite = styled.div`
   /* bottom: 100px; */
   position: absolute;
@@ -139,31 +143,34 @@ const WarpedTypography: React.FC = (): JSX.Element => (
 
       {/* <Spacer size={100} /> */}
     </StyledProjectWrapper>
+
     <OnScreen>
-      <OffWhiteAir />
-      <OffWhiteSwoosh />
-      <InnerOffWhite>
-        <Container>
-          <Row>
-            <Col
-              lg={{ span: 12 }}
-              md={{ span: 12 }}
-              sm={{ span: 12 }}
-              xs={{ span: 12 }}
-            >
-              <StyledTitleOffWhite>
-                Warped Helvetica x
-                <br />
-                Nike Air Force 1 x
-                <br />
-                OffWhite
-              </StyledTitleOffWhite>
-            </Col>
-          </Row>
-        </Container>
-      </InnerOffWhite>
-      <OffWhiteAirLarge />
-      <KeskeSample />
+      <OffWhite>
+        <OffWhiteAir />
+        <OffWhiteSwoosh />
+        <InnerOffWhite>
+          <Container>
+            <Row>
+              <Col
+                lg={{ span: 12 }}
+                md={{ span: 12 }}
+                sm={{ span: 12 }}
+                xs={{ span: 12 }}
+              >
+                <StyledTitleOffWhite>
+                  Warped Helvetica x
+                  <br />
+                  Nike Air Force 1 x
+                  <br />
+                  OffWhite
+                </StyledTitleOffWhite>
+              </Col>
+            </Row>
+          </Container>
+        </InnerOffWhite>
+        <OffWhiteAirLarge />
+        <KeskeSample />
+      </OffWhite>
     </OnScreen>
   </>
 );
