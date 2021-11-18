@@ -1,14 +1,13 @@
 import * as React from 'react';
 
 // Libs
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
 import { OnScreen, ProjectWrapper, Title } from '../components';
-import { mediaQuery } from '../utils';
 
-import MacOS from './Abstraction/Root';
+import Mirrors from './DistortingMirrors/Root';
 
 const Inner = styled.div`
   bottom: 100px;
@@ -20,13 +19,6 @@ const Inner = styled.div`
 const StyledProjectWrapper = styled(ProjectWrapper)`
   padding: 0;
   position: relative;
-
-  /* ${mediaQuery(
-    'phone',
-    css`
-      display: none;
-    `,
-  )} */
 `;
 
 const StyledTitle = styled(Title)`
@@ -37,7 +29,7 @@ const StyledTitle = styled(Title)`
 const DistortingMirrors: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
     <OnScreen>
-      <MacOS />
+      <Mirrors />
     </OnScreen>
 
     <Inner>
