@@ -21,12 +21,12 @@ const StyledProjectWrapper = styled(ProjectWrapper)`
   padding: 0;
   position: relative;
 
-  ${mediaQuery(
+  /* ${mediaQuery(
     'phone',
     css`
       display: none;
     `,
-  )}
+  )} */
 `;
 
 const StyledTitle = styled(Title)`
