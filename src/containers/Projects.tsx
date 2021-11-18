@@ -8,6 +8,7 @@ const Projects: React.FC = (): JSX.Element => {
 
   const hacks = React.useMemo(
     () => [
+      <Hacks.DistortingMirrors />,
       <Hacks.WarpedTypography />,
       <Hacks.ClothUI />,
       <Hacks.MandelbrotSet />,
