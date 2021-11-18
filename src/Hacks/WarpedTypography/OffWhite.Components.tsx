@@ -11,7 +11,9 @@ import Letter from './OffWhite.Letter';
 const { PUBLIC_URL } = process.env;
 
 export const AnimateButton = styled.button`
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  /* border: 1px solid rgba(0, 0, 0, 0.4); */
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 0;
   border-radius: 100%;
   bottom: 50px;
   color: #000;
