@@ -10,7 +10,7 @@ const WarpedMacOS: React.FC = () => {
     [],
   );
 
-  const desktop = 'static/mac-os/desktop.png';
+  const desktop = 'static/mac-os/desktop.jpg';
 
   const windows = [
     {
