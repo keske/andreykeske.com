@@ -45,40 +45,39 @@ const StyledTitle = styled(Title)`
   color: #fff;
 `;
 
-const Root = styled.div`
+const StyledProjectWrapper = styled(ProjectWrapper)`
   background-color: #000;
+  padding: 0;
 `;
 
 const BTCBubble: React.FC = (): JSX.Element => (
-  <ProjectWrapper>
-    <Root>
-      <Sphere />
-      <Inner>
-        <Container>
-          <Row>
-            <Col lg={{ offset: 2, span: 10 }}>
-              <StyledTitle>BTC Bubble</StyledTitle>
+  <StyledProjectWrapper>
+    <Sphere />
+    <Inner>
+      <Container>
+        <Row>
+          <Col lg={{ offset: 2, span: 10 }}>
+            <StyledTitle>BTC Bubble</StyledTitle>
 
-              <StyledText>
-                The current project is about the social opinion that
-                Bitcoin is a bubble and text inside it is the current
-                BTC&#39;s course.
-              </StyledText>
+            <StyledText>
+              The current project is about the social opinion that
+              Bitcoin is a bubble and text inside it is the current
+              BTC&#39;s course.
+            </StyledText>
 
-              <a href="https://btc-bubble.vercel.app">
-                <StyledButton>Open Site →</StyledButton>
-              </a>
+            <a href="https://btc-bubble.vercel.app">
+              <StyledButton>Open Site →</StyledButton>
+            </a>
 
-              <Spacer size={8} />
+            <Spacer size={8} />
 
-              <StyledProjectTopics topics={['Social Commentary']} />
-              <StyledProjectYear>2021</StyledProjectYear>
-            </Col>
-          </Row>
-        </Container>
-      </Inner>
-    </Root>
-  </ProjectWrapper>
+            <StyledProjectTopics topics={['Social Commentary']} />
+            <StyledProjectYear>2021</StyledProjectYear>
+          </Col>
+        </Row>
+      </Container>
+    </Inner>
+  </StyledProjectWrapper>
 );
 
 export default BTCBubble;

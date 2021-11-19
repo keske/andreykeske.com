@@ -17,12 +17,35 @@ import {
   UploadcareImage,
 } from '../components';
 
+const COLOR = '#5e5e5e';
+
 const StyledCol = styled(Col)`
   padding: 20px 0;
 `;
 
+const StyledMark = styled(Mark)`
+  border: 1px solid ${COLOR};
+`;
+
+const StyledProjectYear = styled(ProjectYear)`
+  border: 1px solid ${COLOR};
+`;
+
+const StyledText = styled(Text)`
+  color: ${COLOR};
+`;
+
+const StyledTitle = styled(Title)`
+  color: ${COLOR};
+`;
+
+const StyledProjectWrapper = styled(ProjectWrapper)`
+  background-color: #000;
+  padding: 0;
+`;
+
 const LOT2046Tattoo: React.FC = (): JSX.Element => (
-  <ProjectWrapper>
+  <StyledProjectWrapper>
     <Container>
       <Row>
         <StyledCol lg={{ offset: 0, span: 10 }}>
@@ -34,18 +57,18 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
         </StyledCol>
 
         <StyledCol lg={{ offset: 2, span: 10 }}>
-          <Title>LOT2046 Tattoo Machine</Title>
+          <StyledTitle>LOT2046 Tattoo Machine</StyledTitle>
 
-          <Text>
+          <StyledText>
             Tattoo machine which I&#39;ve built from{' '}
             <a href="https://www.lot2046.com/">lot2046</a> products:
-            <Mark>hair trimmer</Mark>
+            <StyledMark>hair trimmer</StyledMark>
             and
-            <Mark>toothbrush</Mark>
-          </Text>
+            <StyledMark>toothbrush</StyledMark>
+          </StyledText>
         </StyledCol>
 
-        <StyledCol
+        {/* <StyledCol
           lg={{ offset: 2, span: 3 }}
           sm={{ span: 6 }}
           xs={{ span: 6 }}
@@ -61,7 +84,7 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
           }}
         >
           <UploadcareImage src="https://ucarecdn.com/f1615601-6fc7-4d05-bdfb-ee78632d451a/" />
-        </StyledCol>
+        </StyledCol> */}
 
         <StyledCol
           lg={{ offset: 2, span: 10 }}
@@ -69,11 +92,11 @@ const LOT2046Tattoo: React.FC = (): JSX.Element => (
           xs={{ span: 6 }}
         >
           <ProjectTopics topics={['DIY', 'Ready Made']} />
-          <ProjectYear>2019</ProjectYear>
+          <StyledProjectYear>2019</StyledProjectYear>
         </StyledCol>
       </Row>
     </Container>
-  </ProjectWrapper>
+  </StyledProjectWrapper>
 );
 
 export default LOT2046Tattoo;
