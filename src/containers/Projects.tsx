@@ -6,8 +6,6 @@ import * as Hacks from '../Hacks';
 const Projects: React.FC = (): JSX.Element => {
   const [limit, setLimit] = React.useState(5);
 
-  console.log('limit', limit);
-
   const hacks = React.useMemo(
     () => [
       <Hacks.DistortingMirrors />,
