@@ -10,6 +10,7 @@ type Props = {
 
 const Root = styled.p<Props>`
   color: ${({ invert }) => (invert ? 'white' : 'black')};
+  line-height: 2;
 
   ${mediaQuery(
     'phone',

@@ -22,52 +22,43 @@ const Inner = styled.div`
 `;
 
 const StyledProjectTopics = styled(ProjectTopics)`
-  background-color: #fff;
   border-radius: 13px;
   display: inline-block;
-  opacity: 1;
-  padding: 7px 13px;
 `;
 
-const StyledProjectYear = styled(ProjectYear)`
-  background-color: #fff;
-  border: 1px solid #fff;
-`;
+const StyledProjectYear = styled(ProjectYear)``;
 
 const StyledTitle = styled(Title)`
-  background-color: #fff;
-  border-radius: 13px;
   display: inline-block;
-  padding: 13px 21px;
+  font-size: 64px;
   width: 80%;
 
   ${mediaQuery(
-    'greaterThanTablet',
+    'phone',
     css`
-      width: auto;
+      font-size: 34px;
     `,
   )}
 `;
 
 const Wrapper = styled.div`
   background-color: #f6ec36;
-  border-radius: 50px;
   overflow: hidden;
 `;
 
 const WarpedLego: React.FC = (): JSX.Element => (
-  <ProjectWrapper>
-    <Container>
-      <Row>
-        <Col lg={{ span: 12 }}>
-          <Wrapper>
+  <Wrapper>
+    <ProjectWrapper>
+      <Container>
+        <Row>
+          <Col lg={{ span: 12 }}>
             <OnScreen>
               <Lego />
             </OnScreen>
 
             <Inner>
               <StyledTitle>
-                Lego brick in non-euclidean geometry world
+                Lego brick in &quot;non-euclidean&quot; geometry world
               </StyledTitle>
 
               <Spacer size={0} />
@@ -78,11 +69,11 @@ const WarpedLego: React.FC = (): JSX.Element => (
 
               <StyledProjectYear>2021</StyledProjectYear>
             </Inner>
-          </Wrapper>
-        </Col>
-      </Row>
-    </Container>
-  </ProjectWrapper>
+          </Col>
+        </Row>
+      </Container>
+    </ProjectWrapper>
+  </Wrapper>
 );
 
 export default WarpedLego;

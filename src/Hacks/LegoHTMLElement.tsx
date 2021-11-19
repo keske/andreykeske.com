@@ -1,11 +1,8 @@
 import * as React from 'react';
 import * as R from 'ramda';
-
-// Libs
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
-// Components
 import {
   Mark,
   ProjectTopics,
@@ -15,6 +12,7 @@ import {
   Text,
   Title,
 } from '../components';
+import { mediaQuery } from '../utils';
 
 const COLORS = ['#1E601E', '#039CBD', '#CA1F08', '#F3C305'];
 
@@ -38,6 +36,13 @@ const ButtonsInner = styled.div`
   height: 200vh;
   transform: rotate(15deg) translateX(-15vw);
   width: 200vw;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      transform: rotate(15deg) translateX(-65vw);
+    `,
+  )}
 `;
 
 const Input = styled.input`
@@ -49,6 +54,13 @@ const Inner = styled.div`
   border-radius: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   padding: 20px 50px 50px 50px;
+
+  ${mediaQuery(
+    'phone',
+    css`
+      padding: 1px 20px 20px 20px;
+    `,
+  )}
 `;
 
 const Label = styled.span`

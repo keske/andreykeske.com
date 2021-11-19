@@ -11,6 +11,8 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
+import AutoRotation from '../WarpedMinecraft/Case.AutoRotation';
+
 type Props = {
   material: React.MutableRefObject<any>;
 };
@@ -35,21 +37,35 @@ const Model: React.FC<Props> = ({ material }: Props) => {
 
   const { nodes } = useGLTF('/lego-2.gltf') as GLTFResult;
 
+  const [rotation, setRotation] = React.useState<
+    'disabled' | 'enabled'
+  >('enabled');
+
+  const enableRotation = React.useCallback(() => {
+    setRotation('enabled');
+  }, []);
+
+  const disableRotation = React.useCallback(() => {
+    setRotation('disabled');
+  }, []);
+
   return (
-    <group ref={group} dispose={null}>
-      <mesh
-        ref={ref}
-        geometry={nodes.Cube128.geometry}
-        material={material.current}
-        position={[0, -0.2, 0]}
-      >
-        <meshStandardMaterial
-          color="yellow"
-          metalness={3}
-          roughness={3}
-        />
-      </mesh>
-    </group>
+    <AutoRotation rotation={rotation}>
+      <group ref={group} dispose={null}>
+        <mesh
+          ref={ref}
+          geometry={nodes.Cube128.geometry}
+          material={material.current}
+          position={[0, -0.2, 0]}
+        >
+          <meshStandardMaterial
+            color="yellow"
+            metalness={3}
+            roughness={3}
+          />
+        </mesh>
+      </group>
+    </AutoRotation>
   );
 };
 

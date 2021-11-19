@@ -10,7 +10,7 @@ type Props = {
 
 const Root = styled.h3<Props>`
   color: ${({ invert }) => (invert ? 'white' : 'black')};
-  font-size: 24px;
+  font-size: 54px;
   font-weight: 800;
   margin: 40px 0 10px;
 
