@@ -75,37 +75,19 @@ const DistortingMirrorsRoot: React.FC = () => {
           <OrbitControls enableZoom={false} />
 
           <group>
-            {/* <ambientLight intensity={0.2} /> */}
-
-            {/* <spotLight
-              angle={Math.PI / 6}
-              castShadow
-              intensity={0.2}
-              position={[20, 20, 30]}
-              shadow-bias={-0.00005}
-              shadow-mapSize-height={2048}
-              shadow-mapSize-width={2048}
-            /> */}
-
-            <group>
-              {R.range(0, 30).map((index) => (
-                <group
-                  key={index}
-                  position={[
-                    random(-25, 25),
-                    random(-25, 25),
-                    index * 0.001,
-                  ]}
-                  scale={[
-                    random(-5, 5),
-                    random(-5, 5),
-                    random(-5, 5),
-                  ]}
-                >
-                  <Pane url="" videoRef={videoRef} />
-                </group>
-              ))}
-            </group>
+            {R.range(0, 30).map((index) => (
+              <group
+                key={index}
+                position={[
+                  random(-25, 25),
+                  random(-25, 25),
+                  index * 0.001,
+                ]}
+                scale={[random(-5, 5), random(-5, 5), random(-5, 5)]}
+              >
+                <Pane url="" videoRef={videoRef} />
+              </group>
+            ))}
           </group>
         </React.Suspense>
       </StyledFiberCanvas>

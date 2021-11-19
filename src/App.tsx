@@ -11,6 +11,7 @@ import {
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import {
+  DistortingMirrors,
   Home,
   MandelbrotSet,
   VolumeResize,
@@ -21,16 +22,14 @@ ReactGA.initialize('UA-10906656-5');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App(): JSX.Element {
-  // const getCurrentTheme = () =>
-  // window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  // console.log(getCurrentTheme());
-
   return (
     <Router>
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/distorting-mirrors">
+          <DistortingMirrors />
         </Route>
         <Route path="/mandelbrot-set">
           <MandelbrotSet />
