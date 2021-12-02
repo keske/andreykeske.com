@@ -14,7 +14,7 @@ import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import AutoRotation from '../WarpedMinecraft/Case.AutoRotation';
 
 type Props = {
-  material: React.MutableRefObject<any>;
+  material: React.MutableRefObject<THREE.Material | THREE.Material[]>;
 };
 
 type GLTFResult = GLTF & {

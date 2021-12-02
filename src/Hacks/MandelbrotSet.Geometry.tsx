@@ -11,7 +11,7 @@ const MandelbrotSetGeometry: React.FC<Props> = ({
   quantity = 100,
   size = 10,
 }: Props): JSX.Element => {
-  const generate = () => {
+  const generate = React.useCallback(() => {
     const result = [];
 
     for (let x = 0; x < quantity; x++) {
@@ -47,9 +47,12 @@ const MandelbrotSetGeometry: React.FC<Props> = ({
     }
 
     return result;
-  };
+  }, [quantity, size]);
 
-  const data: any[] = React.useMemo(() => generate(), [quantity]);
+  const data: string[][] = React.useMemo(
+    () => generate(),
+    [generate],
+  );
 
   return (
     <>

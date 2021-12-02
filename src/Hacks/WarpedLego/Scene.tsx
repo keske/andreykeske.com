@@ -8,7 +8,7 @@ import { MeshWobbleMaterial } from '@react-three/drei';
 import Model from './Lego';
 
 const Scene: React.FC = () => {
-  const material = useResource();
+  const material = useResource<THREE.Material | THREE.Material[]>();
 
   return (
     <group>
