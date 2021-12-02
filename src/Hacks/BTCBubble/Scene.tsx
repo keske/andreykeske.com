@@ -11,7 +11,7 @@ import Buble from './Buble';
 const Scene: React.FC = () => {
   const [price, setPrice] = React.useState<number>(0);
 
-  const material = useResource();
+  const material = useResource<THREE.Material | THREE.Material[]>();
 
   React.useEffect(() => {
     (async () => {

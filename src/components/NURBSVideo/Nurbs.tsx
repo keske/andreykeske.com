@@ -5,21 +5,12 @@ import { NURBSSurface } from './NURBSSurface';
 
 type Props = {
   nsControlPoints: THREE.Vector4[][];
-  side?:
-    | typeof THREE.BackSide
-    | typeof THREE.DoubleSide
-    | typeof THREE.FrontSide;
   url: string;
   videoRef: React.MutableRefObject<HTMLVideoElement>;
 };
 
 const Nurbs = React.forwardRef(
-  ({
-    nsControlPoints,
-    side = THREE.FrontSide,
-    url,
-    videoRef,
-  }: Props) => {
+  ({ nsControlPoints, url, videoRef }: Props) => {
     const degree1 = 2;
 
     const degree2 = 3;

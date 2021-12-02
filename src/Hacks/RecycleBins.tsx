@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Libs
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
 // Components
@@ -13,7 +13,6 @@ import {
   Title,
   UploadcareImage,
 } from '../components';
-import { mediaQuery } from '../utils';
 
 const Details = styled.div`
   opacity: 0.4;

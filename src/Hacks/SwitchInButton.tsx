@@ -57,6 +57,7 @@ const SwitchInButton: React.FC = (): JSX.Element => {
             <Root
               disabled={!checked}
               onClick={() => {
+                // eslint-disable-next-line no-alert
                 alert('Clicked!');
               }}
               style={{

@@ -1,3 +1,5 @@
+/* eslint max-lines: 0 */
+
 import * as React from 'react';
 
 // Libs

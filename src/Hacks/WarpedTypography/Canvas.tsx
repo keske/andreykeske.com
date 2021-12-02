@@ -13,12 +13,6 @@ const StyledFiberCanvas = styled(FiberCanvas)`
   width: 100%;
 `;
 
-const Root = styled.div`
-  /* filter: saturate(150%); */
-  height: 100%;
-  width: 100%;
-`;
-
 const WarpedTypographyCanvas: React.FC<Props> = ({
   children,
 }: Props) => (

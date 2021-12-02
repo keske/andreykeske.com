@@ -6,7 +6,7 @@ import { Icosahedron } from '@react-three/drei';
 import { useFrame } from 'react-three-fiber';
 
 type Props = {
-  material: React.MutableRefObject<any>;
+  material: React.MutableRefObject<THREE.Material | THREE.Material[]>;
 };
 
 const Buble: React.FC<Props> = ({ material }: Props) => {
