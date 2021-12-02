@@ -21,6 +21,7 @@ export { default as Hodor } from './Hodor';
 export { default as Hydra } from './Hydra';
 export { default as IkeaGarbage } from './IkeaGarbage';
 export { default as LOT2046Tattoo } from './LOT2046Tattoo';
+export { default as Lucky } from './Lucky';
 export { default as IPadIcons } from './IPadIcons';
 export { default as LegoHTMLElement } from './LegoHTMLElement';
 export { default as Manhattan } from './Manhattan';

@@ -55,6 +55,7 @@ const Projects: React.FC = (): JSX.Element => {
       <Hacks.Emoticons />,
       <Hacks.Manhattan />,
       <Hacks.Graffiti />,
+      <Hacks.Lucky />,
     ],
     [],
   );
