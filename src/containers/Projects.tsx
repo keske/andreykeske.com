@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Components
-import * as Hacks from '../Hacks';
+import * as Hacks from "../Hacks";
 
 const Projects: React.FC = (): JSX.Element => {
   const [limit, setLimit] = React.useState(5);
@@ -57,13 +57,10 @@ const Projects: React.FC = (): JSX.Element => {
       <Hacks.Graffiti />,
       <Hacks.Lucky />,
     ],
-    [],
+    []
   );
 
-  const content = React.useMemo(
-    () => hacks.slice(0, limit),
-    [hacks, limit],
-  );
+  const content = React.useMemo(() => hacks.slice(0, limit), [hacks, limit]);
 
   const handleScroll = React.useCallback(() => {
     if (
@@ -77,9 +74,9 @@ const Projects: React.FC = (): JSX.Element => {
   }, [limit]);
 
   React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
   return <>{content}</>;
