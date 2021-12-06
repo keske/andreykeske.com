@@ -11,9 +11,9 @@ type Props = {
 
 const Root = styled.p<{ inverted: boolean }>`
   border: ${(props) =>
-    props.inverted
+    (props.inverted
       ? "1px solid rgba(255, 255, 255, 0.2);"
-      : "1px solid rgba(0, 0, 0, 0.2);"};
+      : "1px solid rgba(0, 0, 0, 0.2);")};
   border-radius: 13px;
   font-style: italic;
   padding: 13px;

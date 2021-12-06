@@ -48,7 +48,7 @@ const Wrapper = styled.div`
     "phone",
     css`
       border-radius: 0;
-    `
+    `,
   )}
 `;
 
@@ -80,7 +80,7 @@ const BlackHole: React.FC = (): JSX.Element => (
         <Row>
           <Col lg={{ offset: 1, span: 9 }}>
             <ResponsiveFrame
-              src="https://www.youtube.com/embed/NQC2ZvB1BH8"
+              src="https://www.youtube.com/embed/_Y_As4KqK9M"
               title="Black Hole"
             />
 
