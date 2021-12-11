@@ -57,8 +57,9 @@ const Projects: React.FC = (): JSX.Element => {
       <Hacks.Manhattan />,
       <Hacks.Graffiti />,
       <Hacks.Lucky />,
+      <Hacks.BluriOSGirls />,
     ],
-    []
+    [],
   );
 
   const content = React.useMemo(() => hacks.slice(0, limit), [hacks, limit]);
