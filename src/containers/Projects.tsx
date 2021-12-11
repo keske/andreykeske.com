@@ -57,6 +57,7 @@ const Projects: React.FC = (): JSX.Element => {
       <Hacks.Manhattan />,
       <Hacks.Graffiti />,
       <Hacks.Lucky />,
+      <Hacks.Rossette />,
       <Hacks.BluriOSGirls />,
     ],
     [],

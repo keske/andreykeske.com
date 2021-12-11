@@ -91,7 +91,11 @@ const BluriOSGirls: React.FC = (): JSX.Element => (
             It was in 2012 I believe.
             <br />
             But now this works not so well as back then. Anyway, I want to keep
-            it here, and because it&apos;s kinda <Mark>NSFW</Mark> I put it at
+            it here, and because it&apos;s kinda
+            {' '}
+            <Mark>NSFW</Mark>
+            {' '}
+            I put it at
             the end of the all works.
           </Text>
           <ProjectTopics topics={["UI", "iOS"]} />
