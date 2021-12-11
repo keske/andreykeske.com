@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled from 'styled-components';
-import { Col, Container, Row } from 'react-bootstrap';
+import styled from "styled-components";
+import { Col, Container, Row } from "react-bootstrap";
 
 // Components
 import {
@@ -13,12 +13,18 @@ import {
   ResponsiveFrame,
   Text,
   Title,
-} from '../components';
+} from "../components";
 
-const GREEN = '#03A749';
+const GREEN = "#03A749";
 
 const Details = styled.div`
   opacity: 0.5;
+`;
+
+const Mono = styled.div`
+  font-family: monospace;
+  font-size: 17vw;
+  line-height: 0.8;
 `;
 
 const StyledMark = styled(Mark)`
@@ -47,6 +53,14 @@ const TmuxChess: React.FC = (): JSX.Element => (
     <Container>
       <Row>
         <Col lg={{ offset: 0, span: 12 }}>
+          <Mono>
+            ♜♞♝♛♚♝♞♜
+            <br />
+            ♟♟♟♟♟♟♟♟
+          </Mono>
+        </Col>
+
+        <Col lg={{ offset: 0, span: 12 }}>
           <ResponsiveFrame
             src="https://www.youtube.com/embed/JlvEuMp2UVw"
             title="Tmux Chess"
@@ -61,9 +75,17 @@ const TmuxChess: React.FC = (): JSX.Element => (
           </StyledText>
 
           <Details>
-            <ProjectTopics topics={['Interface', 'Ready Made']} />
+            <ProjectTopics topics={["Interface", "Ready Made"]} />
             <StyledProjectYear>2014</StyledProjectYear>
           </Details>
+        </Col>
+
+        <Col lg={{ offset: 0, span: 12 }}>
+          <Mono>
+            ♙♙♙♙♙♙♙♙
+            <br />
+            ♖♘♗♕♔♗♘♖
+          </Mono>
         </Col>
       </Row>
     </Container>
