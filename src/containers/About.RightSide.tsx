@@ -1,14 +1,14 @@
 /* eslint max-lines: 0 */
 /* eslint react/jsx-one-expression-per-line: 0 */
 
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 // Components
-import { Mark, Spacer, Text, Title } from '../components';
-import { mediaQuery } from '../utils';
+import { Mark, Spacer, Text, Title } from "../components";
+import { mediaQuery } from "../utils";
 
 const { PUBLIC_URL } = process.env;
 
@@ -42,16 +42,16 @@ const Airbnb = styled.span`
 
 const Italic = styled(Text)`
   display: inline;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 24px;
   font-style: italic;
   opacity: 0.7;
 
   ${mediaQuery(
-    'phone',
+    "phone",
     css`
       font-size: 20px;
-    `,
+    `
   )}
 `;
 
@@ -69,11 +69,11 @@ const Link = styled.a`
   }
 
   ${mediaQuery(
-    'phone',
+    "phone",
     css`
       font-size: 14px;
       padding: 0px 7px;
-    `,
+    `
   )}
 `;
 
@@ -82,16 +82,20 @@ const Root = styled.div`
   z-index: 21;
 `;
 
+const SocialLink = styled(Link)`
+  font-size: 10px;
+`;
+
 const StyledTitle = styled(Title)`
   font-size: 64px;
   pointer-events: none;
   text-transform: uppercase;
 
   ${mediaQuery(
-    'phone',
+    "phone",
     css`
       font-size: 32px;
-    `,
+    `
   )}
 `;
 
@@ -101,11 +105,11 @@ const StyledText = styled(Text)`
   padding-right: 70px;
 
   ${mediaQuery(
-    'phone',
+    "phone",
     css`
       font-size: 16px;
       line-height: 34px;
-    `,
+    `
   )}
 `;
 
@@ -129,37 +133,37 @@ const AboutRightSide: React.FC = (): JSX.Element => (
   <Root>
     <StyledTitle>Andrey Keske</StyledTitle>
     <StyledText>
-      <Italic>is a</Italic> digital artist<Italic>/</Italic>software
-      engineer <Image url={`${PUBLIC_URL}/static/about/ts.png`} />
+      <Italic>is a</Italic> digital artist<Italic>/</Italic>software engineer{" "}
+      <Image url={`${PUBLIC_URL}/static/about/ts.png`} />
       <Image url={`${PUBLIC_URL}/static/about/react.png`} />
       <Image url={`${PUBLIC_URL}/static/about/node.jpeg`} />
     </StyledText>
     <StyledText>
-      In 2006 Andrey started to draw <Italic>Graffiti</Italic> which
-      later transforms into making stickers then graphic design{' '}
-      <Italic>Graffiti</Italic> was a form of hacking, in this case on
-      the streets. And at the same time, Andrey likes computer hacking
-      culture and had a huge interest in programming. Both forms of
-      activity merged <Italic>→</Italic> into <Italic>→</Italic>{' '}
-      <Mark>net-art</Mark>, which represents this site.
+      In 2006 Andrey started to draw <Italic>Graffiti</Italic> which later
+      transforms into making stickers then graphic design{" "}
+      <Italic>Graffiti</Italic> was a form of hacking, in this case on the
+      streets. And at the same time, Andrey likes computer hacking culture and
+      had a huge interest in programming. Both forms of activity merged{" "}
+      <Italic>→</Italic> into <Italic>→</Italic> <Mark>net-art</Mark>, which
+      represents this site.
     </StyledText>
     <StyledText>
-      Besides net-art Andrey works as a software engineer{' '}
-      <Italic>with companies like</Italic>{' '}
+      Besides net-art Andrey works as a software engineer{" "}
+      <Italic>with companies like</Italic>{" "}
       <strong>
         <Link href="https://samara.com/">
-          {' '}
+          {" "}
           Samara <Airbnb>Airbnb</Airbnb>
           <Sup>↗</Sup>
         </Link>
-      </strong>{' '}
-      <Italic>and</Italic>{' '}
+      </strong>{" "}
+      <Italic>and</Italic>{" "}
       <strong>
         <Link href="https://jupe.com/">
           Jupe<Sup>↗</Sup>
         </Link>
       </strong>
-      <Italic>, in 2020 launched a successful startup</Italic>{' '}
+      <Italic>, in 2020 launched a successful startup</Italic>{" "}
       <strong>
         <Link href="https://apps.apple.com/us/app/w1d1/id1497155726">
           <W1D1>W1D1</W1D1>
@@ -168,21 +172,29 @@ const AboutRightSide: React.FC = (): JSX.Element => (
       </strong>
     </StyledText>
     <StyledText>
-      He <Italic>splits his life between two cities</Italic> New York
-      City
+      He <Italic>splits his life between two cities</Italic> New York City
       <Italic>, NY</Italic>
-      <NYFlag url={`${PUBLIC_URL}/static/about/ny.jpg`} />, and Miami,{' '}
+      <NYFlag url={`${PUBLIC_URL}/static/about/ny.jpg`} />, and Miami,{" "}
       <Italic>Fl</Italic>
-      <Flag url={`${PUBLIC_URL}/static/about/florida.jpg`} />{' '}
+      <Flag url={`${PUBLIC_URL}/static/about/florida.jpg`} />{" "}
       <Italic>where he lives</Italic>
     </StyledText>
     <Spacer size={4} />
     <Text>
-      <Link href="mailto://hello@andreykeske.com">Mail</Link>
-      <Link href="https://github.com/keske">GH</Link>
-      <Link href="https://www.instagram.com/andreykeske/">IG</Link>
-      <Link href="https://www.linkedin.com/in/andreykeske/">LN</Link>
-      <Link href="https://www.youtube.com/user/andreykeske">YT</Link>
+      <SocialLink href="mailto://hello@andreykeske.com">Mail</SocialLink>
+      <SocialLink href="https://github.com/keske">Github</SocialLink>
+      <SocialLink href="https://www.instagram.com/andreykeske/">
+        Instagram
+      </SocialLink>
+      <SocialLink href="https://www.linkedin.com/in/andreykeske/">
+        LinkedIn
+      </SocialLink>
+      <SocialLink href="https://www.youtube.com/user/andreykeske">
+        YouTube
+      </SocialLink>
+      <SocialLink href="https://www.goodreads.com/user/show/63547727-andrey-keske">
+        Good Reads
+      </SocialLink>
     </Text>
   </Root>
 );
