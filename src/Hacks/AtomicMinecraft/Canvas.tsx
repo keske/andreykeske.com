@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 // Libs
-import styled from "styled-components";
-import { Canvas as FiberCanvas } from "react-three-fiber";
+import styled from 'styled-components';
+import { Canvas as FiberCanvas } from 'react-three-fiber';
 
 type Props = {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ type Props = {
 
 const Root = styled.div`
   cursor: grab;
-  height: 100vh;
+  height: 50vh;
 `;
 
 const Canvas: React.FC<Props> = ({ children }: Props) => (
@@ -22,7 +22,7 @@ const Canvas: React.FC<Props> = ({ children }: Props) => (
         alpha: true,
         antialias: true,
         depth: false,
-        powerPreference: "high-performance",
+        powerPreference: 'high-performance',
         stencil: false,
       }}
     >
