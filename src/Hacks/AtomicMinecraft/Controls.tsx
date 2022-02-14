@@ -35,10 +35,25 @@ const StyledSwitch = styled(Switch)`
 `;
 
 const Controls: React.FC = () => {
-  const { handleShowAir, handleShowLines, showAir, showLines } = useStore();
+  const {
+    animation,
+    handleAnimation,
+    handleShowAir,
+    handleShowLines,
+    showAir,
+    showLines,
+  } = useStore();
 
   return (
     <Root>
+      <Row>
+        <Label>Animation</Label>
+        <StyledSwitch
+          checked={animation}
+          onChange={handleAnimation}
+          onColor="#000"
+        />
+      </Row>
       <Row>
         <Label>Air</Label>
         <StyledSwitch
