@@ -1,3 +1,4 @@
+export { default as AtomicMinecraft } from "./AtomicMinecraft";
 export { default as Ball } from "./Ball";
 export { default as Battleship } from "./Battleship";
 export { default as BlackHole } from "./BlackHole";
