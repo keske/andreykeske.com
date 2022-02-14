@@ -25,7 +25,34 @@ const Tree: React.FC<Props> = ({ position, radius, ...rest }: Props) => (
       <Log {...{ ...rest, radius }} />
     </group>
 
+    <group position={[0, radius * 6, 0]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[radius, radius * 3, 0]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[-radius, radius * 3, 0]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[radius, radius * 3, radius]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[-radius, radius * 3, -radius]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
     <group position={[radius, radius * 4, 0]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[-radius, radius * 4, -radius]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[radius, radius * 4, -radius]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[radius, radius * 4, radius]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[-radius, radius * 4, radius]}>
       <Leaves {...{ ...rest, radius }} />
     </group>
     <group position={[-radius, radius * 4, 0]}>
@@ -38,6 +65,12 @@ const Tree: React.FC<Props> = ({ position, radius, ...rest }: Props) => (
       <Leaves {...{ ...rest, radius }} />
     </group>
     <group position={[0, radius * 5, 0]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[0, radius * 5, radius]}>
+      <Leaves {...{ ...rest, radius }} />
+    </group>
+    <group position={[0, radius * 5, -radius]}>
       <Leaves {...{ ...rest, radius }} />
     </group>
   </group>
