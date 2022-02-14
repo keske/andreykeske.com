@@ -10,13 +10,13 @@ type Props = {
 
 const Root = styled.div`
   cursor: grab;
-  height: 50vh;
+  height: 100vh;
 `;
 
 const Canvas: React.FC<Props> = ({ children }: Props) => (
   <Root>
     <FiberCanvas
-      camera={{ position: [0, 0, 1.2] }}
+      camera={{ position: [0, 0, 3.2] }}
       colorManagement
       gl={{
         alpha: true,

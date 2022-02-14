@@ -1,122 +1,82 @@
-/* eslint max-lines: 0 */
-/* eslint no-plusplus: 0 */
-
 import * as React from "react";
-import * as THREE from "three";
-import { useFrame } from "react-three-fiber";
+import * as R from "ramda";
+
+// Blocks
+import Air from "./Block.Air";
+import Dirt from "./Block.Dirt";
+// import Glass from './Block.Glass';
+// import Gold from './Block.Gold';
+import Stone from "./Block.Stone";
+
+// Structures
+import Tree from "./Structure.Tree";
+
+// Store
+import useStore from "./@store";
 
 const Scene: React.FC = () => {
-  const ref = React.useRef<
-    HTMLDivElement & {
-      geometry: THREE.BoxGeometry;
-    }
-  >();
+  const { showAir, showLines } = useStore();
 
-  const radius = React.useMemo(() => 0.7, []);
+  const radius = React.useMemo(() => 0.5, []);
 
-  const rHalf = radius / 2;
+  const airMatrix = React.useMemo<number[]>(() => [-7, 7], []);
 
-  const particleCount = 5;
+  const surfaceMatrix = React.useMemo<number[]>(() => [-7, 7], []);
 
-  const maxParticleCount = 1000;
+  const airSurface = React.useMemo(
+    () =>
+      showAir &&
+      R.range(airMatrix[0], airMatrix[1]).map((x) =>
+        R.range(airMatrix[0], airMatrix[1]).map((y) =>
+          R.range(airMatrix[0], airMatrix[1]).map((z) => (
+            <group
+              key={`stone-${x}-${y}-${z}`}
+              position={[x * radius, y * radius, z * radius]}
+            >
+              <Air radius={radius} showLines={showLines} />
+            </group>
+          ))
+        )
+      ),
+    [airMatrix, radius, showAir, showLines]
+  );
 
-  const segments = maxParticleCount * maxParticleCount;
+  const earthSurface = React.useMemo(
+    () =>
+      R.range(surfaceMatrix[0], surfaceMatrix[1]).map((x) =>
+        R.range(surfaceMatrix[0], surfaceMatrix[1]).map((z) => (
+          <group key={`dirt-${x}-${z}`} position={[x * radius, 0, z * radius]}>
+            <Dirt radius={radius} showLines={showLines} />
+          </group>
+        ))
+      ),
+    [radius, showLines, surfaceMatrix]
+  );
 
-  const positions = new Float32Array(segments * 3);
-
-  const colors = new Float32Array(segments * 3);
-
-  const particlesData = [];
-
-  const particlePositions = new Float32Array(maxParticleCount * 3);
-
-  /**
-   * Render outer cube
-   */
-  const cube = React.useMemo(() => {
-    const cubeGeometry = new THREE.BoxGeometry(radius, radius, radius);
-
-    const cubeMaterial = new THREE.MeshLambertMaterial({
-      blending: THREE.AdditiveBlending,
-      color: 0x101010,
-      transparent: true,
-    });
-
-    return new THREE.Mesh(cubeGeometry, cubeMaterial);
-  }, [radius]);
-
-  /**
-   * Render point cloud
-   */
-  const cloud = React.useMemo(() => {
-    const pMaterial = new THREE.PointsMaterial({
-      blending: THREE.AdditiveBlending,
-      color: 0xffffff,
-      size: 1,
-      sizeAttenuation: false,
-      transparent: true,
-    });
-
-    const particles = new THREE.BufferGeometry();
-
-    for (let i = 0; i < maxParticleCount; i++) {
-      const x = Math.random() * radius - radius / 2;
-
-      const y = Math.random() * radius - radius / 2;
-
-      const z = Math.random() * radius - radius / 2;
-
-      particlePositions[i * 3] = x;
-      particlePositions[i * 3 + 1] = y;
-      particlePositions[i * 3 + 2] = z;
-    }
-
-    particles.setDrawRange(0, particleCount);
-    particles
-      .setAttribute('position', new THREE.BufferAttribute(particlePositions, 3)
-        .setUsage(THREE.DynamicDrawUsage));
-
-    return new THREE.Points(particles, pMaterial);
-  }, [particlePositions, particlesData, radius]);
-
-  useFrame(() => {
-    const vertexpos = 0;
-
-    const colorpos = 0;
-
-    const numConnected = 0;
-
-    particlePositions.forEach((value, i) => {
-      const x = Math.random() * radius - radius / 2;
-
-      const y = Math.random() * radius - radius / 2;
-
-      const z = Math.random() * radius - radius / 2;
-
-      particlePositions[i * 3] = x;
-      particlePositions[i * 3 + 1] = y;
-      particlePositions[i * 3 + 2] = z;
-    });
-
-    ref.current.geometry.attributes.position.needsUpdate = true;
-  });
+  const stoneSurface = React.useMemo(
+    () =>
+      R.range(surfaceMatrix[0], surfaceMatrix[1]).map((x) =>
+        R.range(surfaceMatrix[0], surfaceMatrix[1]).map((z) => (
+          <group
+            key={`stone-${x}-${z}`}
+            position={[x * radius, -radius, z * radius]}
+          >
+            <Stone radius={radius} showLines={showLines} />
+          </group>
+        ))
+      ),
+    [radius, showLines, surfaceMatrix]
+  );
 
   return (
     <group>
-      <ambientLight intensity={0.2} />
+      {airSurface}
+      {earthSurface}
+      {stoneSurface}
 
-      <spotLight
-        angle={Math.PI / 6}
-        castShadow
-        intensity={0.1}
-        position={[20, 20, 30]}
-        shadow-bias={-0.00005}
-        shadow-mapSize-height={2048}
-        shadow-mapSize-width={2048}
-      />
-
-      <primitive object={cube} />
-      <primitive ref={ref} object={cloud} />
+      <group position={[0, radius, 0]}>
+        <Tree radius={radius} showLines={showLines} />
+      </group>
     </group>
   );
 };
