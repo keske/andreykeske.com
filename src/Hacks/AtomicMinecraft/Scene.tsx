@@ -7,6 +7,7 @@ import Dirt from "./Block.Dirt";
 // import Glass from './Block.Glass';
 // import Gold from './Block.Gold';
 import Stone from "./Block.Stone";
+import Torch from "./Block.Torch";
 
 // Structures
 import Tree from "./Structure.Tree";
@@ -35,10 +36,10 @@ const Scene: React.FC = () => {
             >
               <Air radius={radius} showLines={showLines} />
             </group>
-          )),
-        ),
+          ))
+        )
       ),
-    [airMatrix, radius, showAir, showLines],
+    [airMatrix, radius, showAir, showLines]
   );
 
   const earthSurface = React.useMemo(
@@ -48,9 +49,9 @@ const Scene: React.FC = () => {
           <group key={`dirt-${x}-${z}`} position={[x * radius, 0, z * radius]}>
             <Dirt radius={radius} showLines={showLines} />
           </group>
-        )),
+        ))
       ),
-    [radius, showLines, surfaceMatrix],
+    [radius, showLines, surfaceMatrix]
   );
 
   const stoneSurface = React.useMemo(
@@ -63,9 +64,9 @@ const Scene: React.FC = () => {
           >
             <Stone radius={radius} showLines={showLines} />
           </group>
-        )),
+        ))
       ),
-    [radius, showLines, surfaceMatrix],
+    [radius, showLines, surfaceMatrix]
   );
 
   return (
@@ -74,6 +75,9 @@ const Scene: React.FC = () => {
       {earthSurface}
       {stoneSurface}
 
+      <group position={[radius, radius / 2, 0]}>
+        <Torch radius={radius} showLines={showLines} />
+      </group>
       <group position={[0, radius, 0]}>
         <Tree radius={radius} showLines={showLines} />
       </group>
