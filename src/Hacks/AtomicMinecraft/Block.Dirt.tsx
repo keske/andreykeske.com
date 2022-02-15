@@ -10,7 +10,7 @@ const BlockDirt: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => (
   <Cube
     {...rest}
     color={0x464d22}
-    density={100}
+    density={50}
     radius={radius}
     showLines={showLines}
   />

@@ -15,7 +15,7 @@ const BlockLog: React.FC<Props> = ({
   <Cube
     {...rest}
     color={0xe6e6fa}
-    density={2500}
+    density={300}
     position={position}
     radius={radius}
     showLines={showLines}

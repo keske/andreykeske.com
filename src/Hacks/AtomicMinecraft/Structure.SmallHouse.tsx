@@ -406,6 +406,131 @@ const SmallHouse: React.FC<Props> = ({ position, radius, ...rest }: Props) => {
     );
   }, [radius, rest]);
 
+  const seventhLayer = React.useMemo(() => {
+    const y = radius * 5;
+
+    return (
+      <>
+        <group position={[radius * 2, y, radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[radius * 2, y, -radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius * 2, y, -radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius * 2, y, radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+
+        <group position={[-radius, y, 0]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius, y, -radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius, y, radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+
+        <group position={[-radius * 2, y, 0]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius * 2, y, -radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius * 2, y, radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+
+        <group position={[radius, y, 0]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[radius, y, -radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[radius, y, radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+
+        <group position={[radius * 2, y, 0]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[radius * 2, y, -radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[radius * 2, y, radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+
+        <group position={[radius, y, radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[0, y, radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+
+        <group position={[-radius, y, radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+
+        <group position={[radius, y, -radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[0, y, -radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius, y, -radius * 2]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+
+        <group position={[0, y, -radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[0, y, radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+      </>
+    );
+  }, [radius, rest]);
+
+  const eighthLayer = React.useMemo(() => {
+    const y = radius * 6;
+
+    return (
+      <>
+        <group position={[0, y, -radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[0, y, radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[radius, y, -radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius, y, radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[radius, y, radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius, y, -radius]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[radius, y, 0]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[-radius, y, 0]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+        <group position={[0, y, 0]}>
+          <Log {...{ ...rest, radius }} />
+        </group>
+      </>
+    );
+  }, [radius, rest]);
+
   return (
     <group>
       {renderFirstLayer}
@@ -413,6 +538,8 @@ const SmallHouse: React.FC<Props> = ({ position, radius, ...rest }: Props) => {
       {renderThirdLayer}
       {renderFourthLayer}
       {sixthLayer}
+      {seventhLayer}
+      {eighthLayer}
     </group>
   );
 };

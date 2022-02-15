@@ -10,7 +10,7 @@ const BlockTorch: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => (
   <Torch
     {...rest}
     color={0x464d22}
-    density={800}
+    density={400}
     radius={radius}
     showLines={showLines}
   />

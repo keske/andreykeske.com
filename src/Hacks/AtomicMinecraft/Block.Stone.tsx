@@ -10,7 +10,7 @@ const BlockStone: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => (
   <Cube
     {...rest}
     color={0xd4d4d4}
-    density={3000}
+    density={500}
     radius={radius}
     showLines={showLines}
   />

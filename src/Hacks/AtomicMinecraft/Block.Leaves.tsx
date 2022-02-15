@@ -14,7 +14,7 @@ const BlockLeaves: React.FC<Props> = ({
   <Cube
     {...rest}
     color={0xe6e6fa}
-    density={50}
+    density={20}
     radius={radius}
     showLines={showLines}
   />

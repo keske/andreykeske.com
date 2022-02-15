@@ -10,7 +10,7 @@ const BlockGlass: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => (
   <Cube
     {...rest}
     color={0xe6e6fa}
-    density={300}
+    density={10}
     radius={radius}
     showLines={showLines}
   />

@@ -21,9 +21,9 @@ const Scene: React.FC = () => {
 
   const radius = React.useMemo(() => 0.5, []);
 
-  const airMatrix = React.useMemo<number[]>(() => [-7, 7], []);
+  const airMatrix = React.useMemo<number[]>(() => [-10, 10], []);
 
-  const surfaceMatrix = React.useMemo<number[]>(() => [-7, 7], []);
+  const surfaceMatrix = React.useMemo<number[]>(() => [-10, 10], []);
 
   const airSurface = React.useMemo(
     () =>
@@ -72,9 +72,9 @@ const Scene: React.FC = () => {
 
   return (
     <group>
-      {/* {airSurface} */}
-      {/* {earthSurface} */}
-      {/* {stoneSurface} */}
+      {airSurface}
+      {earthSurface}
+      {stoneSurface}
 
       <group position={[0, 0, 0]}>
         <SmallHouse radius={radius} showLines={showLines} />
@@ -82,11 +82,17 @@ const Scene: React.FC = () => {
 
       {/* <group position={[radius, radius / 2, 0]}>
         <Torch radius={radius} showLines={showLines} />
-      </group>
-
-      <group position={[0, radius, 0]}>
-        <Tree radius={radius} showLines={showLines} />
       </group> */}
+
+      <group position={[radius * 7, radius, 0]}>
+        <Tree radius={radius} showLines={showLines} />
+      </group>
+      <group position={[radius * -8, radius, radius * 3]}>
+        <Tree radius={radius} showLines={showLines} />
+      </group>
+      <group position={[radius * -7, radius, radius * 5]}>
+        <Tree radius={radius} showLines={showLines} />
+      </group>
     </group>
   );
 };
