@@ -10,6 +10,7 @@ import Stone from "./Block.Stone";
 import Torch from "./Block.Torch";
 
 // Structures
+import SmallHouse from "./Structure.SmallHouse";
 import Tree from "./Structure.Tree";
 
 // Store
@@ -71,16 +72,21 @@ const Scene: React.FC = () => {
 
   return (
     <group>
-      {airSurface}
-      {earthSurface}
-      {stoneSurface}
+      {/* {airSurface} */}
+      {/* {earthSurface} */}
+      {/* {stoneSurface} */}
 
-      <group position={[radius, radius / 2, 0]}>
+      <group position={[0, 0, 0]}>
+        <SmallHouse radius={radius} showLines={showLines} />
+      </group>
+
+      {/* <group position={[radius, radius / 2, 0]}>
         <Torch radius={radius} showLines={showLines} />
       </group>
+
       <group position={[0, radius, 0]}>
         <Tree radius={radius} showLines={showLines} />
-      </group>
+      </group> */}
     </group>
   );
 };
