@@ -1,14 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled from 'styled-components';
-import { Col, Container, Row } from 'react-bootstrap';
+import styled from "styled-components";
+import { Col, Container, Row } from "react-bootstrap";
 
 // Components
-import { ProjectWrapper } from '../components';
+import { ProjectWrapper } from "../components";
 
-import LeftSide from './About.LeftSide';
-import RightSide from './About.RightSide';
+import LeftSide from "./About.LeftSide";
+import RightSide from "./About.RightSide";
 
 const StyledProjectWrapper = styled(ProjectWrapper)`
   height: 100vh;
