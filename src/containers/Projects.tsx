@@ -8,7 +8,8 @@ const Projects: React.FC = (): JSX.Element => {
 
   const hacks = React.useMemo(
     () => [
-      <Hacks.AtomicMinecraft />,
+      <Hacks.AtomicPhotos />,
+      // <Hacks.AtomicMinecraft />,
       // <Hacks.DistortingMirrors />,
       // <Hacks.WarpedTypography />,
       // <Hacks.ClothUI />,
@@ -61,7 +62,7 @@ const Projects: React.FC = (): JSX.Element => {
       // <Hacks.Rossette />,
       // <Hacks.BluriOSGirls />,
     ],
-    [],
+    []
   );
 
   const content = React.useMemo(() => hacks.slice(0, limit), [hacks, limit]);
