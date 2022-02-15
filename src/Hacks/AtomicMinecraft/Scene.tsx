@@ -72,9 +72,9 @@ const Scene: React.FC = () => {
 
   return (
     <group>
-      {airSurface}
+      {/* {airSurface}
       {earthSurface}
-      {stoneSurface}
+      {stoneSurface} */}
 
       <group position={[0, 0, 0]}>
         <SmallHouse radius={radius} showLines={showLines} />

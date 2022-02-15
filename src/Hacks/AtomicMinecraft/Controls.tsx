@@ -8,7 +8,6 @@ import useStore from "./@store";
 const Label = styled.div`
   flex: 1;
   font-size: 12px;
-  font-weight: 600;
   padding-right: 10px;
   text-align: right;
   width: 100%;
@@ -19,8 +18,8 @@ const Root = styled.div`
   border-radius: 15px;
   padding: 10px;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 60px;
+  top: 60px;
 `;
 
 const Row = styled.div`
