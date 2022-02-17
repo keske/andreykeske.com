@@ -13,8 +13,6 @@ import Scene from "./Scene";
 
 import type { Data } from "./@types";
 
-const { PUBLIC_URL } = process.env;
-
 const StyledCanvas = styled.canvas`
   display: none;
 `;
@@ -23,16 +21,24 @@ const StyledImage = styled.img`
   display: none;
 `;
 
-const AtomicPhotos: React.FC = () => {
+type Props = {
+  height: number;
+  showControls?: boolean;
+  src: string;
+  width: number;
+};
+
+const AtomicPhotos: React.FC<Props> = ({
+  showControls = true,
+  height,
+  src,
+  width,
+}: Props) => {
   const canvas = React.useRef<HTMLCanvasElement>(null);
 
   const image = React.useRef<HTMLImageElement>(null);
 
   const data: Data = React.useMemo(() => [], []);
-
-  const height = 173;
-
-  const width = 173;
 
   const getColorAtOffset = React.useCallback(
     (imageData, offset: number) =>
@@ -70,14 +76,12 @@ const AtomicPhotos: React.FC = () => {
         });
       });
     };
-  }, [data, getColorAtOffset]);
+  }, [data, getColorAtOffset, height, width]);
 
   return (
     <>
       <StyledCanvas ref={canvas} height={height} width={width} />
-      <StyledImage ref={image} src={`${PUBLIC_URL}/static/about/_me.jpg`} />
-
-      <Controls />
+      <StyledImage ref={image} src={src} />
 
       <Canvas>
         <Suspense fallback={null}>
@@ -85,6 +89,8 @@ const AtomicPhotos: React.FC = () => {
           <Scene blocks={data} height={height} width={width} />
         </Suspense>
       </Canvas>
+
+      {showControls && <Controls />}
     </>
   );
 };

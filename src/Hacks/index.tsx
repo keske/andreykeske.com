@@ -1,3 +1,4 @@
+export { default as AtomicLogo } from "./AtomicLogo";
 export { default as AtomicMinecraft } from "./AtomicMinecraft";
 export { default as AtomicPhotos } from "./AtomicPhotos";
 export { default as Ball } from "./Ball";

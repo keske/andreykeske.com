@@ -15,7 +15,7 @@ import {
   Title,
 } from "../components";
 
-import AtomicPhotos from "./AtomicPhotos/Root";
+// import AtomicPhotos from "./AtomicPhotos/Root";
 
 const Inner = styled.div`
   display: none;
@@ -48,7 +48,7 @@ const StyledProjectWrapper = styled(ProjectWrapper)`
 
 const AtomicMinecraft: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
-    <AtomicPhotos />
+    {/* <AtomicPhotos /> */}
 
     <Spacer size={8} />
 

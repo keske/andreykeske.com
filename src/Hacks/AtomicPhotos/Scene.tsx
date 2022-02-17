@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useFrame } from "react-three-fiber";
 
 // Local
 import Cube from "./Cube";
@@ -15,6 +16,8 @@ type Props = {
 };
 
 const Scene: React.FC<Props> = ({ blocks, height, width }: Props) => {
+  const ref = React.useRef<THREE.Scene>();
+
   const { showLines } = useStore();
 
   const radius = React.useMemo(() => 0.1, []);
@@ -37,9 +40,14 @@ const Scene: React.FC<Props> = ({ blocks, height, width }: Props) => {
     [blocks, radius, showLines]
   );
 
+  useFrame(() => {
+    // ref.current.rotation.x += 0.005;
+  });
+
   return (
     <group
-      position={[-(width * radius * radius), -(height * radius * radius), 0]}
+      ref={ref}
+      position={[-((width / 2) * radius), 0, -((height / 2) * radius)]}
     >
       {photo}
     </group>
