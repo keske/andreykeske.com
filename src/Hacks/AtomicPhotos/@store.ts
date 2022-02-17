@@ -10,7 +10,7 @@ export type Store = {
 };
 
 const useStore = create<Store>((set: SetState<Store>) => ({
-  animation: true,
+  animation: false,
 
   handleAnimation: (value) => {
     set(() => ({ animation: value }));

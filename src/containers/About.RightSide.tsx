@@ -41,6 +41,7 @@ const Airbnb = styled.span`
 `;
 
 const Italic = styled(Text)`
+  color: #fff;
   display: inline;
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
@@ -51,14 +52,14 @@ const Italic = styled(Text)`
     "phone",
     css`
       font-size: 20px;
-    `,
+    `
   )}
 `;
 
 const Link = styled.a`
-  border: 1px solid #000;
+  border: 1px solid #fff;
   border-radius: 7px;
-  color: #000;
+  color: #fff;
   display: inline-block;
   line-height: 24px;
   margin-right: 5px;
@@ -73,7 +74,7 @@ const Link = styled.a`
     css`
       font-size: 14px;
       padding: 0px 7px;
-    `,
+    `
   )}
 `;
 
@@ -83,23 +84,28 @@ const Root = styled.div`
 `;
 
 const SocialLink = styled(Link)`
+  /* border-color: rgba(255, 255, 255, 0.5); */
+  background-color: #000;
+  border: none;
   font-size: 10px;
 `;
 
 const StyledTitle = styled(Title)`
-  font-size: 64px;
+  color: #fff;
+  font-size: 72px;
   pointer-events: none;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 
   ${mediaQuery(
     "phone",
     css`
       font-size: 32px;
-    `,
+    `
   )}
 `;
 
 const StyledText = styled(Text)`
+  color: #fff;
   font-size: 20px;
   line-height: 34px;
   padding-right: 70px;
@@ -109,7 +115,7 @@ const StyledText = styled(Text)`
     css`
       font-size: 16px;
       line-height: 34px;
-    `,
+    `
   )}
 `;
 
@@ -133,10 +139,7 @@ const AboutRightSide: React.FC = (): JSX.Element => (
   <Root>
     <StyledTitle>Andrey Keske</StyledTitle>
     <StyledText>
-      <Italic>is a</Italic> digital artist<Italic>/</Italic>software engineer{" "}
-      <Image url={`${PUBLIC_URL}/static/about/ts.png`} />
-      <Image url={`${PUBLIC_URL}/static/about/react.png`} />
-      <Image url={`${PUBLIC_URL}/static/about/node.jpeg`} />
+      <Italic>is a</Italic> digital artist<Italic>/</Italic>software engineer
     </StyledText>
     <StyledText>
       In 2006 Andrey started to draw <Italic>Graffiti</Italic> which later
