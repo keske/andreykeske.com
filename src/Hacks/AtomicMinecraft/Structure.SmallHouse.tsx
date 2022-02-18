@@ -98,7 +98,7 @@ const SmallHouse: React.FC<Props> = ({ position, radius, ...rest }: Props) => {
         </group>
       </>
     ),
-    [radius, rest]
+    [radius, rest],
   );
 
   const renderSecondLayer = React.useMemo(() => {

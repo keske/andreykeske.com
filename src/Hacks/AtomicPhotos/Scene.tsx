@@ -37,7 +37,7 @@ const Scene: React.FC<Props> = ({ blocks, height, width }: Props) => {
           />
         </group>
       )),
-    [blocks, radius, showLines]
+    [blocks, radius, showLines],
   );
 
   useFrame(() => {

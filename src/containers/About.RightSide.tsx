@@ -12,35 +12,11 @@ import { mediaQuery } from "../utils";
 
 const { PUBLIC_URL } = process.env;
 
-const Image = styled.div<{ url: string }>`
-  background-image: ${(props) => `url(${props.url})`};
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 3px;
-  display: inline-block;
-  height: 17px;
-  margin-right: 3px;
-  min-width: 17px;
-  transform: translate(0px, -7px);
-`;
-
-const Flag = styled(Image)<{ url: string }>`
-  background-size: contain;
-  height: 13px;
-  min-width: 27px;
-  transform: translate(7px, -7px);
-`;
-
-const NYFlag = styled(Flag)<{ url: string }>`
-  background-size: cover;
-  width: 27px;
-`;
-
 const Airbnb = styled.span`
   color: #ff585d;
 `;
 
-const Italic = styled(Text)`
+const Italic = styled.span`
   color: #fff;
   display: inline;
   font-family: "Times New Roman", Times, serif;
@@ -52,7 +28,7 @@ const Italic = styled(Text)`
     "phone",
     css`
       font-size: 20px;
-    `
+    `,
   )}
 `;
 
@@ -74,7 +50,7 @@ const Link = styled.a`
     css`
       font-size: 14px;
       padding: 0px 7px;
-    `
+    `,
   )}
 `;
 
@@ -84,7 +60,6 @@ const Root = styled.div`
 `;
 
 const SocialLink = styled(Link)`
-  /* border-color: rgba(255, 255, 255, 0.5); */
   background-color: #000;
   border: none;
   font-size: 10px;
@@ -94,13 +69,12 @@ const StyledTitle = styled(Title)`
   color: #fff;
   font-size: 72px;
   pointer-events: none;
-  /* text-transform: uppercase; */
 
   ${mediaQuery(
     "phone",
     css`
       font-size: 32px;
-    `
+    `,
   )}
 `;
 
@@ -115,7 +89,7 @@ const StyledText = styled(Text)`
     css`
       font-size: 16px;
       line-height: 34px;
-    `
+    `,
   )}
 `;
 
@@ -176,10 +150,7 @@ const AboutRightSide: React.FC = (): JSX.Element => (
     </StyledText>
     <StyledText>
       He <Italic>splits his life between two cities</Italic> New York City
-      <Italic>, NY</Italic>
-      <NYFlag url={`${PUBLIC_URL}/static/about/ny.jpg`} />, and Miami,{" "}
-      <Italic>Fl</Italic>
-      <Flag url={`${PUBLIC_URL}/static/about/florida.jpg`} />{" "}
+      <Italic>, NY</Italic>, and Miami, <Italic>Fl</Italic>{" "}
       <Italic>where he lives</Italic>
     </StyledText>
     <Spacer size={4} />

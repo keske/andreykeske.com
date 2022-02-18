@@ -48,7 +48,7 @@ const AtomicPhotos: React.FC<Props> = ({
           imageData[offset]) /
         1000000
       ).toFixed(0),
-    []
+    [],
   );
 
   React.useEffect(() => {
@@ -65,7 +65,7 @@ const AtomicPhotos: React.FC<Props> = ({
 
           const density = parseInt(
             getColorAtOffset(imageData.data, offset),
-            10
+            10,
           );
 
           data.push({

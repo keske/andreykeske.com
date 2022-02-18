@@ -22,7 +22,7 @@ const AtomicPhotosWrapper = styled.div`
       height: 60vh;
       position: relative;
       width: 100vw;
-    `
+    `,
   )}
 `;
 

@@ -19,7 +19,7 @@ const StyledCol = styled(Col)`
     "phone",
     css`
       transform: translate(0, -10vh);
-    `
+    `,
   )}
 `;
 
