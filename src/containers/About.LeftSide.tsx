@@ -1,6 +1,4 @@
 import * as React from "react";
-
-// Libs
 import styled, { css } from "styled-components";
 
 // Components
@@ -26,15 +24,16 @@ const AtomicPhotosWrapper = styled.div`
   )}
 `;
 
-const AboutLeftSide: React.FC = (): JSX.Element => (
-  <AtomicPhotosWrapper>
-    <AtomicPhotos
-      height={120}
-      showControls={false}
-      src={`${PUBLIC_URL}/static/atomic-photos/gradients.jpg`}
-      width={120}
-    />
-  </AtomicPhotosWrapper>
-);
+const AboutLeftSide: React.FC = (): JSX.Element =>
+  process.env.NODE_ENV === "production" && (
+    <AtomicPhotosWrapper>
+      <AtomicPhotos
+        height={120}
+        showControls={false}
+        src={`${PUBLIC_URL}/static/atomic-photos/gradients.jpg`}
+        width={120}
+      />
+    </AtomicPhotosWrapper>
+  );
 
 export default AboutLeftSide;
