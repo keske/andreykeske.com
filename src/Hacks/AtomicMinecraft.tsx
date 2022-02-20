@@ -18,11 +18,19 @@ import {
   Title,
 } from "../components";
 
-import Preview from "./AtomicMinecraft/Preview";
+// import Preview from "./AtomicMinecraft/Preview";
 
-const Inner = styled.div``;
+const { PUBLIC_URL } = process.env;
 
-const PreviewWrapper = styled.div``;
+const Inner = styled.div`
+  margin-top: -300px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+`;
+
+// const PreviewWrapper = styled.div``;
 
 const StyledButton = styled(Button)`
   border: 2px solid #000;
@@ -56,14 +64,16 @@ const StyledProjectWrapper = styled(ProjectWrapper)`
 
 const AtomicMinecraft: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
-    <PreviewWrapper>
+    {/* <PreviewWrapper>
       <Preview />
-    </PreviewWrapper>
+    </PreviewWrapper> */}
+
+    <Image src={`${PUBLIC_URL}/static/atomic-minecraft/preview.png`} />
 
     <Inner>
       <Container>
         <Row>
-          <Col lg={{ offset: 0, span: 9 }}>
+          <Col lg={{ offset: 0, span: 7 }}>
             <StyledTitle>Atomic Minecraft</StyledTitle>
 
             <StyledText>
