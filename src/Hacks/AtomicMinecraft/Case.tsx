@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as THREE from "three";
 
 // Libs
 import styled, { css } from "styled-components";
@@ -11,6 +12,7 @@ import { mediaQuery } from "../../utils";
 import AutoRotation from "../WarpedMinecraft/Case.AutoRotation";
 
 type Props = {
+  cameraPosition?: THREE.Vector3;
   children: React.ReactNode;
 };
 
@@ -35,21 +37,21 @@ const Root = styled.div`
     "phone",
     css`
       height: 17vh;
-    `,
+    `
   )}
 
   ${mediaQuery(
     "tablet",
     css`
       height: 25vh;
-    `,
+    `
   )}
 
   ${mediaQuery(
     "desktop",
     css`
       height: 33vh;
-    `,
+    `
   )}
 `;
 
@@ -65,9 +67,14 @@ const StyledCanvas = styled(FiberCanvas)`
   width: 100%;
 `;
 
-const WarpedMinecraftCase: React.FC<Props> = ({ children }: Props) => {
+const WarpedMinecraftCase: React.FC<Props> = ({
+  // @ts-expect-error wip
+  cameraPosition = [0, 0, 1.1],
+  children,
+  ...rest
+}: Props) => {
   const [rotation, setRotation] = React.useState<"disabled" | "enabled">(
-    "enabled",
+    "enabled"
   );
 
   const enableRotation = React.useCallback(() => {
@@ -79,10 +86,10 @@ const WarpedMinecraftCase: React.FC<Props> = ({ children }: Props) => {
   }, []);
 
   return (
-    <Root>
+    <Root {...rest}>
       <StyledOnScreen>
         <StyledCanvas
-          camera={{ position: [0, 0, 2] }}
+          camera={{ position: cameraPosition }}
           colorManagement
           gl={{
             alpha: true,

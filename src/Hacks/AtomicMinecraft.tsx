@@ -20,15 +20,9 @@ import {
 
 import Preview from "./AtomicMinecraft/Preview";
 
-const Inner = styled.div`
-  /* position: relative; */
-  /* z-index: 10; */
-`;
+const Inner = styled.div``;
 
-const PreviewWrapper = styled.div`
-  /* position: absolute; */
-  /* transform: translateY(-65%); */
-`;
+const PreviewWrapper = styled.div``;
 
 const StyledButton = styled(Button)`
   border: 2px solid #000;

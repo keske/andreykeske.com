@@ -25,7 +25,7 @@ const Root: React.FC = () => {
       <Wrapper>
         <Canvas
           // @ts-expect-error wip
-          cameraPosition={[0, 0, 7]}
+          cameraPosition={[3, 2, 7]}
         >
           <Suspense fallback={null}>
             <OrbitControls enableZoom={enableZoom} />
