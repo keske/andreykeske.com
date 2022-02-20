@@ -2,6 +2,11 @@ import * as THREE from "three";
 
 export type Block = {
   /**
+   * Color of the cube
+   */
+  color?: THREE.Color | number | string;
+
+  /**
    * Optional, position of the cube
    */
   position?: number[] | THREE.Vector3;

@@ -20,7 +20,7 @@ const CubeParticles: React.FC<Props> = ({ color, density, radius }: Props) => {
 
   const particlePositions = React.useMemo(
     () => new Float32Array(density * 3),
-    [density],
+    [density]
   );
 
   const material = React.useMemo(
@@ -32,7 +32,7 @@ const CubeParticles: React.FC<Props> = ({ color, density, radius }: Props) => {
         sizeAttenuation: false,
         transparent: true,
       }),
-    [color],
+    [color]
   );
 
   const setPosition = React.useCallback(() => {
@@ -56,7 +56,7 @@ const CubeParticles: React.FC<Props> = ({ color, density, radius }: Props) => {
   const cloud = React.useMemo(() => {
     const pMaterial = new THREE.PointsMaterial({
       blending: THREE.AdditiveBlending,
-      color: 0xffffff,
+      color,
       size: 2,
       sizeAttenuation: false,
       transparent: true,
@@ -70,12 +70,12 @@ const CubeParticles: React.FC<Props> = ({ color, density, radius }: Props) => {
     particles.setAttribute(
       "position",
       new THREE.BufferAttribute(particlePositions, 3).setUsage(
-        THREE.DynamicDrawUsage,
-      ),
+        THREE.DynamicDrawUsage
+      )
     );
 
     return new THREE.Points(particles, pMaterial);
-  }, [density, particlePositions, setPosition]);
+  }, [color, density, particlePositions, setPosition]);
 
   useFrame(() => {
     setPosition();

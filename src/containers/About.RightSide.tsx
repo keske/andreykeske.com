@@ -10,8 +10,6 @@ import styled, { css } from "styled-components";
 import { Mark, Spacer, Text, Title } from "../components";
 import { mediaQuery } from "../utils";
 
-const { PUBLIC_URL } = process.env;
-
 const Airbnb = styled.span`
   color: #ff585d;
 `;

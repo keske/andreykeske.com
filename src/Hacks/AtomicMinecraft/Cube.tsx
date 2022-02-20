@@ -14,7 +14,7 @@ const Cube: React.FC<Props> = ({
   showLines,
 }: Props) => (
   <group>
-    <CubeOuter radius={radius} showLines={showLines} />
+    <CubeOuter color={color} radius={radius} showLines={showLines} />
     <CubeParticles color={color} density={density} radius={radius} />
   </group>
 );

@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import Dirt from "./Block.Dirt";
-import Log from "./Block.Gold";
+import Log from "./Block.Log";
 import Stone from "./Block.Stone";
 
 import type { Block as BlockProps } from "./@types";
@@ -98,7 +98,7 @@ const SmallHouse: React.FC<Props> = ({ position, radius, ...rest }: Props) => {
         </group>
       </>
     ),
-    [radius, rest],
+    [radius, rest]
   );
 
   const renderSecondLayer = React.useMemo(() => {

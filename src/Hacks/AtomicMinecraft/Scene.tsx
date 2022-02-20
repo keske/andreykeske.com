@@ -37,10 +37,10 @@ const Scene: React.FC = () => {
             >
               <Air radius={radius} showLines={showLines} />
             </group>
-          )),
-        ),
+          ))
+        )
       ),
-    [airMatrix, radius, showAir, showLines],
+    [airMatrix, radius, showAir, showLines]
   );
 
   const earthSurface = React.useMemo(
@@ -50,9 +50,9 @@ const Scene: React.FC = () => {
           <group key={`dirt-${x}-${z}`} position={[x * radius, 0, z * radius]}>
             <Dirt radius={radius} showLines={showLines} />
           </group>
-        )),
+        ))
       ),
-    [radius, showLines, surfaceMatrix],
+    [radius, showLines, surfaceMatrix]
   );
 
   const stoneSurface = React.useMemo(
@@ -65,24 +65,24 @@ const Scene: React.FC = () => {
           >
             <Stone radius={radius} showLines={showLines} />
           </group>
-        )),
+        ))
       ),
-    [radius, showLines, surfaceMatrix],
+    [radius, showLines, surfaceMatrix]
   );
 
   return (
     <group>
-      {/* {airSurface}
+      {airSurface}
       {earthSurface}
-      {stoneSurface} */}
+      {stoneSurface}
 
       <group position={[0, 0, 0]}>
         <SmallHouse radius={radius} showLines={showLines} />
       </group>
 
-      {/* <group position={[radius, radius / 2, 0]}>
+      <group position={[radius, radius / 2, 0]}>
         <Torch radius={radius} showLines={showLines} />
-      </group> */}
+      </group>
 
       <group position={[radius * 7, radius, 0]}>
         <Tree radius={radius} showLines={showLines} />

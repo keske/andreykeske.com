@@ -1,11 +1,11 @@
 import * as React from "react";
 import * as THREE from "three";
 
-import type { Cube as CubeProps } from './@types';
+import type { Cube as CubeProps } from "./@types";
 
-type Props = Pick<CubeProps, 'radius' | 'showLines'>;
+type Props = Pick<CubeProps, "color" | "radius" | "showLines">;
 
-const CubeOuter: React.FC<Props> = ({ radius, showLines }: Props) => {
+const CubeOuter: React.FC<Props> = ({ color, radius, showLines }: Props) => {
   const object = React.useMemo(() => {
     const cubeGeometry = new THREE.BoxGeometry(radius, radius, radius);
 
@@ -15,18 +15,10 @@ const CubeOuter: React.FC<Props> = ({ radius, showLines }: Props) => {
       transparent: true,
     });
 
-    const mesh = new THREE.Mesh(
-      cubeGeometry,
-      cubeMaterial,
-    );
+    const mesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
 
-    return showLines ? (
-      new THREE.BoxHelper(
-        mesh,
-        'rgba(255, 255, 255, 0.1)',
-      )
-    ) : mesh;
-  }, [radius, showLines]);
+    return showLines ? new THREE.BoxHelper(mesh, color) : mesh;
+  }, [color, radius, showLines]);
 
   return <primitive object={object} />;
 };

@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import Log from "./Block.Gold";
-import Leaves from "./Block.Stone";
+import Log from "./Block.Log";
+import Leaves from "./Block.Leaves";
 
 import type { Block as BlockProps } from "./@types";
 

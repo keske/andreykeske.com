@@ -1,12 +1,15 @@
+/* eslint jsx-a11y/accessible-emoji: 0 */
+
 import * as React from "react";
 
 // Libs
 import styled from "styled-components";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // Components
 import {
-  // Button,
+  Button,
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
@@ -15,10 +18,22 @@ import {
   Title,
 } from "../components";
 
-import Realm from "./AtomicMinecraft/Root";
+import Preview from "./AtomicMinecraft/Preview";
 
 const Inner = styled.div`
-  display: none;
+  /* position: relative; */
+  /* z-index: 10; */
+`;
+
+const PreviewWrapper = styled.div`
+  /* position: absolute; */
+  /* transform: translateY(-65%); */
+`;
+
+const StyledButton = styled(Button)`
+  border: 2px solid #000;
+  box-shadow: none;
+  font-weight: bold;
 `;
 
 const StyledProjectTopics = styled(ProjectTopics)`
@@ -42,27 +57,39 @@ const StyledTitle = styled(Title)`
 
 const StyledProjectWrapper = styled(ProjectWrapper)`
   background-color: #000;
-  height: 100vh;
-  padding: 0;
+  overflow: hidden;
 `;
 
 const AtomicMinecraft: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
-    <Realm />
-
-    <Spacer size={8} />
+    <PreviewWrapper>
+      <Preview />
+    </PreviewWrapper>
 
     <Inner>
       <Container>
         <Row>
-          <Col lg={{ offset: 2, span: 10 }}>
+          <Col lg={{ offset: 0, span: 9 }}>
             <StyledTitle>Atomic Minecraft</StyledTitle>
 
-            <StyledText>Description</StyledText>
+            <StyledText>
+              I was reading the book about fundamental particles and how they
+              make matter and decided to interpolate it to the universe of
+              Minecraft. The result is a cube which is an elementary part of
+              Minecraft and inside these cubes are super small particles that
+              play the role of electrons: unpredictable moves in space, and the
+              amount of them affect the density and weight of the cube. For
+              example, dirt has 10 electrons and stone 100 so to say stone has
+              more weight and density
+            </StyledText>
+
+            <Link to="/atomic-minecraft">
+              <StyledButton>See Atomic Terrain 👉</StyledButton>
+            </Link>
 
             <Spacer size={8} />
 
-            <StyledProjectTopics topics={["Social Commentary"]} />
+            <StyledProjectTopics topics={["Minecraft"]} />
             <StyledProjectYear>2022</StyledProjectYear>
           </Col>
         </Row>

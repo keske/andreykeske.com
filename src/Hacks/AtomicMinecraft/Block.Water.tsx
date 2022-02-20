@@ -11,7 +11,7 @@ const Block: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => {
   const { enableColor } = useStore();
 
   const color = React.useMemo(
-    () => (enableColor ? "#854F2B" : "#FFFFFF"),
+    () => (enableColor ? "#0000AA" : "#FFFFFF"),
     [enableColor]
   );
 
@@ -19,7 +19,7 @@ const Block: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => {
     <Cube
       {...rest}
       color={color}
-      density={30}
+      density={5}
       radius={radius}
       showLines={showLines}
     />

@@ -1,19 +1,29 @@
 import * as React from "react";
 
-import Torch from "./Torch";
+import Cube from "./Cube";
 
 import type { Block as BlockProps } from "./@types";
+import useStore from "./@store";
 
 type Props = BlockProps;
 
-const BlockTorch: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => (
-  <Torch
-    {...rest}
-    color={0x464d22}
-    density={400}
-    radius={radius}
-    showLines={showLines}
-  />
-);
+const Block: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => {
+  const { enableColor } = useStore();
 
-export default BlockTorch;
+  const color = React.useMemo(
+    () => (enableColor ? "#854F2B" : "#FFFFFF"),
+    [enableColor]
+  );
+
+  return (
+    <Cube
+      {...rest}
+      color={color}
+      density={30}
+      radius={radius}
+      showLines={showLines}
+    />
+  );
+};
+
+export default Block;
