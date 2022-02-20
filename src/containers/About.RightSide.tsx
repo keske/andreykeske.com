@@ -28,7 +28,7 @@ const Italic = styled.span`
     "phone",
     css`
       font-size: 20px;
-    `,
+    `
   )}
 `;
 
@@ -50,7 +50,7 @@ const Link = styled.a`
     css`
       font-size: 14px;
       padding: 0px 7px;
-    `,
+    `
   )}
 `;
 
@@ -74,7 +74,7 @@ const StyledTitle = styled(Title)`
     "phone",
     css`
       font-size: 32px;
-    `,
+    `
   )}
 `;
 
@@ -89,7 +89,7 @@ const StyledText = styled(Text)`
     css`
       font-size: 16px;
       line-height: 34px;
-    `,
+    `
   )}
 `;
 
@@ -121,8 +121,8 @@ const AboutRightSide: React.FC = (): JSX.Element => (
       <Italic>Graffiti</Italic> was a form of hacking, in this case on the
       streets. And at the same time, Andrey likes computer hacking culture and
       had a huge interest in programming. Both forms of activity merged{" "}
-      <Italic>→</Italic> into <Italic>→</Italic> <Mark>net-art</Mark>, which
-      represents this site.
+      <Italic>→</Italic> into <Italic>→</Italic>{" "}
+      <Mark color="#FFF">net-art</Mark>, which represents this site.
     </StyledText>
     <StyledText>
       Besides net-art Andrey works as a software engineer{" "}

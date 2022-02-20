@@ -1,14 +1,15 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled from 'styled-components';
+import styled from "styled-components";
 
 type Props = {
   children: React.ReactNode;
+  color?: string;
 };
 
-const Root = styled.span`
-  border: 1px solid #000;
+const Root = styled.span<{ color: string }>`
+  border: 1px solid ${({ color }) => color};
   border-radius: 10px;
   font-size: 14px;
   font-weight: bold;
@@ -18,7 +19,8 @@ const Root = styled.span`
 
 const Mark: React.FC<Props> = ({
   children,
+  color = "#000",
   ...rest
-}: Props): JSX.Element => <Root {...rest}>{children}</Root>;
+}: Props): JSX.Element => <Root {...{ ...rest, color }}>{children}</Root>;
 
 export default Mark;
