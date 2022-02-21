@@ -1,5 +1,6 @@
 /* eslint no-plusplus: 0 */
 
+import * as React from "react";
 import SimplexNoise from "simplex-noise";
 
 import useStore from "./@store";
@@ -7,27 +8,33 @@ import useStore from "./@store";
 const useBiom = (): number[][] => {
   const { height, width } = useStore();
 
-  const gen = new SimplexNoise();
+  const [biom, setBiom] = React.useState<number[][]>([]);
 
-  function noise(nx: number, ny: number): number {
-    return gen.noise2D(nx, ny);
-  }
+  React.useEffect(() => {
+    const gen = new SimplexNoise();
 
-  const value = [];
-
-  for (let y = -height; y < height; y++) {
-    value[y] = [];
-    for (let x = -width; x < width; x++) {
-      const nx = x / width - 0.5;
-
-      const ny = y / height - 0.5;
-
-      // @ts-expect-error wip
-      value[y][x] = noise(nx, ny).toFixed(1) * 10;
+    function noise(nx: number, ny: number): number {
+      return gen.noise2D(nx, ny);
     }
-  }
 
-  return value;
+    const value = [];
+
+    for (let y = -height; y < height; y++) {
+      value[y] = [];
+      for (let x = -width; x < width; x++) {
+        const nx = x / width - 0.5;
+
+        const ny = y / height - 0.5;
+
+        // @ts-expect-error wip
+        value[y][x] = noise(nx, ny).toFixed(1) * 10;
+      }
+    }
+
+    setBiom(value);
+  }, [height, width]);
+
+  return biom;
 };
 
 export default useBiom;
