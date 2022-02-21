@@ -2,10 +2,10 @@
 
 import SimplexNoise from "simplex-noise";
 
-const useBiom = (): number[][] => {
-  const height = 90;
+import useStore from "./@store";
 
-  const width = 90;
+const useBiom = (): number[][] => {
+  const { height, width } = useStore();
 
   const gen = new SimplexNoise();
 

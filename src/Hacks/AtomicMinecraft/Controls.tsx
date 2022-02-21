@@ -2,6 +2,9 @@ import * as React from "react";
 import styled from "styled-components";
 import Switch from "react-ios-switch";
 
+// Components
+import { Spacer } from "../../components";
+
 // Store
 import useStore from "./@store";
 
@@ -32,6 +35,13 @@ const Row = styled.div`
   justify-content: space-between;
 `;
 
+const StyledInput = styled.input`
+  border: none;
+  border-radius: 5px;
+  margin-right: 8px;
+  width: 35px;
+`;
+
 const StyledSwitch = styled(Switch)`
   transform: scale(0.7);
 `;
@@ -44,14 +54,40 @@ const Controls: React.FC = () => {
     handleAnimation,
     handleEnableColor,
     handleEnableZoom,
+    handleHeight,
     handleShowAir,
     handleShowLines,
+    handleWidth,
+    height,
     showAir,
     showLines,
+    width,
   } = useStore();
 
   return (
     <Root>
+      <Row>
+        <Label>Width</Label>
+        <StyledInput
+          defaultValue={width}
+          onChange={(event) => {
+            handleWidth(+event.target.value);
+          }}
+          type="text"
+        />
+      </Row>
+      <Spacer size={1} />
+      <Row>
+        <Label>Height</Label>
+        <StyledInput
+          defaultValue={height}
+          onChange={(event) => {
+            handleHeight(+event.target.value);
+          }}
+          type="text"
+        />
+      </Row>
+      <Spacer size={2} />
       <Row>
         <Label>Animation</Label>
         <StyledSwitch checked={animation} onChange={handleAnimation} />
