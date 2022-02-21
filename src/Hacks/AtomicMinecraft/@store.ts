@@ -16,9 +16,9 @@ export type Store = {
 };
 
 const useStore = create<Store>((set: SetState<Store>) => ({
-  animation: true,
-  enableColor: false,
-  enableZoom: false,
+  animation: false,
+  enableColor: true,
+  enableZoom: true,
 
   handleAnimation: (value) => {
     set(() => ({ animation: value }));
