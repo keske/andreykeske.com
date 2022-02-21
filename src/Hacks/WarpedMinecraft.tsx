@@ -1,149 +1,89 @@
+/* eslint jsx-a11y/accessible-emoji: 0 */
 /* eslint max-lines: 0 */
 
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled, { css } from 'styled-components';
-import { Col, Container, Row } from 'react-bootstrap';
+import styled from "styled-components";
+import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // Components
 import {
+  Button,
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
   Spacer,
-  Text,
   Title,
-} from '../components';
-import { mediaQuery } from '../utils';
+} from "../components";
 
-import Case from './WarpedMinecraft/Case';
-import Dirt from './WarpedMinecraft/Blocks/Dirt';
-import Glass from './WarpedMinecraft/Blocks/Glass';
-import Redstone from './WarpedMinecraft/Blocks/Redstone';
-import Sand from './WarpedMinecraft/Blocks/Sand';
-import Stone from './WarpedMinecraft/Blocks/Stone';
-import World from './WarpedMinecraft/Root';
+const { PUBLIC_URL } = process.env;
 
-const StyledText = styled(Text)`
-  text-align: center;
+const Inner = styled.div`
+  margin-top: -300px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+`;
+
+const StyledButton = styled(Button)`
+  border: 2px solid #000;
+  box-shadow: none;
+  font-weight: bold;
+`;
+
+const StyledProjectTopics = styled(ProjectTopics)`
+  color: #fff;
+  opacity: 1;
+`;
+
+const StyledProjectYear = styled(ProjectYear)`
+  border: 1px solid #fff;
+  color: #fff;
+`;
+
+const StyledTitle = styled(Title)`
+  color: #fff;
 `;
 
 const StyledProjectWrapper = styled(ProjectWrapper)`
-  ${mediaQuery(
-    'phone',
-    css`
-      display: none;
-    `,
-  )}
+  background-color: #000;
+  overflow: hidden;
 `;
 
 const WarpedMinecraft: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
-    <Container>
-      <Row>
-        <Col lg={{ span: 12 }}>
-          <World />
-        </Col>
-      </Row>
-    </Container>
+    <Image src={`${PUBLIC_URL}/static/atomic-minecraft/preview.png`} />
 
-    <Container>
-      <Row>
-        <Col
-          lg={{ span: 9 }}
-          md={{ span: 9 }}
-          sm={{ span: 12 }}
-          xs={{ span: 12 }}
-        >
-          <Title>
-            Minecraft where each side of the blocks is a warped NURBS
-            surface
-          </Title>
-          {/* <Text>todo</Text> */}
-        </Col>
-      </Row>
-    </Container>
+    <Inner>
+      <Container>
+        <Row>
+          <Col
+            lg={{ span: 9 }}
+            md={{ span: 9 }}
+            sm={{ span: 12 }}
+            xs={{ span: 12 }}
+          >
+            <StyledTitle>
+              Minecraft where each side of the blocks is a warped NURBS surface
+            </StyledTitle>
+          </Col>
 
-    <Spacer size={10} />
+          <Link to="/warped-minecraft">
+            <StyledButton>See Warped Terrain 👉</StyledButton>
+          </Link>
 
-    <Container>
-      <Row>
-        <Col
-          lg={{ span: 4 }}
-          md={{ span: 4 }}
-          sm={{ span: 4 }}
-          xs={{ span: 4 }}
-        >
-          <Case>
-            <Dirt />
-          </Case>
-          <Spacer size={2} />
-          <StyledText>Dirt</StyledText>
-        </Col>
-        <Col
-          lg={{ span: 4 }}
-          md={{ span: 4 }}
-          sm={{ span: 4 }}
-          xs={{ span: 4 }}
-        >
-          <Case>
-            <Stone />
-          </Case>
-          <Spacer size={2} />
-          <StyledText>Stone</StyledText>
-        </Col>
-        <Col
-          lg={{ span: 4 }}
-          md={{ span: 4 }}
-          sm={{ span: 4 }}
-          xs={{ span: 4 }}
-        >
-          <Case>
-            <Sand />
-          </Case>
-          <Spacer size={2} />
-          <StyledText>Sand</StyledText>
-        </Col>
-      </Row>
-      <Row>
-        <Col
-          lg={{ span: 8 }}
-          md={{ span: 8 }}
-          sm={{ span: 6 }}
-          xs={{ span: 6 }}
-        >
-          <Case stars>
-            <Glass transparent />
-          </Case>
-          <Spacer size={2} />
-          <StyledText>Glass</StyledText>
-        </Col>
-        <Col
-          lg={{ span: 4 }}
-          md={{ span: 4 }}
-          sm={{ span: 6 }}
-          xs={{ span: 6 }}
-        >
-          <Case>
-            <Redstone />
-          </Case>
-          <Spacer size={2} />
-          <StyledText>Redstone</StyledText>
-        </Col>
-      </Row>
-    </Container>
+          <Spacer size={8} />
 
-    <Spacer size={10} />
-
-    <Container>
-      <Row>
-        <Col lg={{ span: 6 }}>
-          <ProjectTopics topics={['Minecraft', 'ThreeJS']} />
-          <ProjectYear>2021</ProjectYear>
-        </Col>
-      </Row>
-    </Container>
+          <Col lg={{ span: 6 }}>
+            <StyledProjectTopics topics={["Minecraft", "ThreeJS"]} />
+            <StyledProjectYear>2021</StyledProjectYear>
+          </Col>
+        </Row>
+      </Container>
+    </Inner>
   </StyledProjectWrapper>
 );
 

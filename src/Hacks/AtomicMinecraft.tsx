@@ -18,8 +18,6 @@ import {
   Title,
 } from "../components";
 
-// import Preview from "./AtomicMinecraft/Preview";
-
 const { PUBLIC_URL } = process.env;
 
 const Inner = styled.div`
@@ -29,8 +27,6 @@ const Inner = styled.div`
 const Image = styled.img`
   width: 100%;
 `;
-
-// const PreviewWrapper = styled.div``;
 
 const StyledButton = styled(Button)`
   border: 2px solid #000;
@@ -64,10 +60,6 @@ const StyledProjectWrapper = styled(ProjectWrapper)`
 
 const AtomicMinecraft: React.FC = (): JSX.Element => (
   <StyledProjectWrapper>
-    {/* <PreviewWrapper>
-      <Preview />
-    </PreviewWrapper> */}
-
     <Image src={`${PUBLIC_URL}/static/atomic-minecraft/preview.png`} />
 
     <Inner>
