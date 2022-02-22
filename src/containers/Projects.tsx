@@ -30,7 +30,7 @@ const Projects: React.FC = (): JSX.Element => {
   const hacks = React.useMemo(
     () => [
       // <Hacks.AtomicPhotos />,
-      <Hacks.AtomicMinecraft />,
+      // <Hacks.AtomicMinecraft />,
       <Hacks.DistortingMirrors />,
       <Hacks.WarpedTypography />,
       <Hacks.ClothUI />,
