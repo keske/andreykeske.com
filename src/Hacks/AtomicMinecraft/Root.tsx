@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
-
-// Libs
+import styled from "styled-components";
 import { OrbitControls } from "@react-three/drei";
 
 // Local
@@ -11,20 +10,36 @@ import Details from "./Details";
 import Scene from "./Scene";
 import Title from "./Title";
 
-const WarpedLegoRoot: React.FC = () => (
-  <>
-    <Canvas>
-      <Suspense fallback={null}>
-        <OrbitControls enableZoom={false} />
-        <Scene />
-      </Suspense>
-    </Canvas>
+// Store
+import useStore from "./@store";
 
-    <Controls />
-    <Details />
-    <Title />
-    <Content />
-  </>
-);
+const Wrapper = styled.div`
+  background-color: #000;
+`;
 
-export default WarpedLegoRoot;
+const Root: React.FC = () => {
+  const { enableZoom } = useStore();
+
+  return (
+    <>
+      <Wrapper>
+        <Canvas
+          // @ts-expect-error wip
+          cameraPosition={[3, 2, 7]}
+        >
+          <Suspense fallback={null}>
+            <OrbitControls enableZoom={enableZoom} />
+            <Scene />
+          </Suspense>
+        </Canvas>
+      </Wrapper>
+
+      <Controls />
+      <Details />
+      <Title />
+      <Content />
+    </>
+  );
+};
+
+export default Root;

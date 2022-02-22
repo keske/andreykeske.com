@@ -1,24 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import ReactGA from 'react-ga';
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-} from 'react-router-dom';
+import ReactGA from "react-ga";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import {
-  DistortingMirrors,
-  Home,
-  MandelbrotSet,
-  VolumeResize,
-  VolumeScroll,
-} from './containers';
+import * as Screen from "./containers";
 
-ReactGA.initialize('UA-10906656-5');
+ReactGA.initialize("UA-10906656-5");
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App(): JSX.Element {
@@ -26,19 +16,25 @@ function App(): JSX.Element {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Screen.Home />
+        </Route>
+        <Route path="/atomic-minecraft">
+          <Screen.AtomicMinecraft />
         </Route>
         <Route path="/distorting-mirrors">
-          <DistortingMirrors />
+          <Screen.DistortingMirrors />
         </Route>
         <Route path="/mandelbrot-set">
-          <MandelbrotSet />
+          <Screen.MandelbrotSet />
         </Route>
         <Route path="/volume-resize">
-          <VolumeResize />
+          <Screen.VolumeResize />
         </Route>
         <Route path="/volume-scroll">
-          <VolumeScroll />
+          <Screen.VolumeScroll />
+        </Route>
+        <Route path="/warped-minecraft">
+          <Screen.WarpedMinecraft />
         </Route>
       </Switch>
     </Router>

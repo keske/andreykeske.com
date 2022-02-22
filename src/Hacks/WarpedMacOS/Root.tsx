@@ -1,14 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled from 'styled-components';
-import { Col, Container, Row } from 'react-bootstrap';
-import { OrbitControls } from '@react-three/drei';
+import styled from "styled-components";
+import { Col, Container, Row } from "react-bootstrap";
+import { OrbitControls } from "@react-three/drei";
 
 // Local
-import Canvas from './Canvas';
-import RatioInput from './RatioInput';
-import Scene from './Scene';
+import Canvas from "./Canvas";
+import RatioInput from "./RatioInput";
+import Scene from "./Scene";
 
 const Root = styled.div`
   background-color: #000;

@@ -3,17 +3,27 @@ import * as React from "react";
 import Cube from "./Cube";
 
 import type { Block as BlockProps } from "./@types";
+import useStore from "./@store";
 
 type Props = BlockProps;
 
-const BlockGold: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => (
-  <Cube
-    {...rest}
-    color={0xfb9121}
-    density={1000}
-    radius={radius}
-    showLines={showLines}
-  />
-);
+const Block: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => {
+  const { enableColor } = useStore();
 
-export default BlockGold;
+  const color = React.useMemo(
+    () => (enableColor ? "#FFAA00" : "#FFFFFF"),
+    [enableColor]
+  );
+
+  return (
+    <Cube
+      {...rest}
+      color={color}
+      density={500}
+      radius={radius}
+      showLines={showLines}
+    />
+  );
+};
+
+export default Block;

@@ -24,7 +24,7 @@ const Details: React.FC = () => {
 
   return (
     <Root>
-      <StyledButton onClick={scrollTo}>Details 🤔</StyledButton>
+      <StyledButton onClick={scrollTo}>Details 👇</StyledButton>
     </Root>
   );
 };

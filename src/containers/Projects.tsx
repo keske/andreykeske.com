@@ -9,14 +9,19 @@ import { mediaQuery } from "../utils";
 import * as Hacks from "../Hacks";
 
 const SelectedWorksTitle = styled(Title)`
+  color: #fff;
   font-size: 72px;
 
   ${mediaQuery(
     "phone",
     css`
       font-size: 32px;
-    `,
+    `
   )}
+`;
+
+const SelectedWorksWrapper = styled.div`
+  background-color: #000;
 `;
 
 const Projects: React.FC = (): JSX.Element => {
@@ -25,7 +30,7 @@ const Projects: React.FC = (): JSX.Element => {
   const hacks = React.useMemo(
     () => [
       // <Hacks.AtomicPhotos />,
-      // <Hacks.AtomicMinecraft />,
+      <Hacks.AtomicMinecraft />,
       <Hacks.DistortingMirrors />,
       <Hacks.WarpedTypography />,
       <Hacks.ClothUI />,
@@ -79,7 +84,7 @@ const Projects: React.FC = (): JSX.Element => {
       <Hacks.Lucky />,
       <Hacks.AtomicLogo />,
     ],
-    [],
+    []
   );
 
   const content = React.useMemo(() => hacks.slice(0, limit), [hacks, limit]);
@@ -103,19 +108,21 @@ const Projects: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <Container>
-        <Row>
-          <Col lg={{ span: 12 }}>
-            <SelectedWorksTitle>
-              Selected works
-              <Spacer size={0} />
-              2006&mdash;2022
-            </SelectedWorksTitle>
-          </Col>
-        </Row>
-      </Container>
+      <SelectedWorksWrapper>
+        <Container>
+          <Row>
+            <Col lg={{ span: 12 }}>
+              <SelectedWorksTitle>
+                Selected works
+                <Spacer size={0} />
+                2006&mdash;2022
+              </SelectedWorksTitle>
+            </Col>
+          </Row>
+        </Container>
+      </SelectedWorksWrapper>
 
-      <Spacer size={10} />
+      {/* <Spacer size={10} /> */}
 
       {content}
     </>

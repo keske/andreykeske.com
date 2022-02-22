@@ -1,29 +1,27 @@
+/* eslint consistent-return: 0 */
+/* eslint default-case: 0 */
+
 import * as React from "react";
 import * as R from "ramda";
 
 // Blocks
 import Air from "./Block.Air";
 import Dirt from "./Block.Dirt";
-// import Glass from './Block.Glass';
-// import Gold from './Block.Gold';
+import Sand from "./Block.Sand";
 import Stone from "./Block.Stone";
-import Torch from "./Block.Torch";
+import Water from "./Block.Water";
 
-// Structures
-import SmallHouse from "./Structure.SmallHouse";
-import Tree from "./Structure.Tree";
-
-// Store
+import useBiom from "./@useBiom";
 import useStore from "./@store";
 
 const Scene: React.FC = () => {
+  const biom = useBiom();
+
   const { showAir, showLines } = useStore();
 
-  const radius = React.useMemo(() => 0.5, []);
+  const radius = React.useMemo(() => 0.1, []);
 
   const airMatrix = React.useMemo<number[]>(() => [-10, 10], []);
-
-  const surfaceMatrix = React.useMemo<number[]>(() => [-10, 10], []);
 
   const airSurface = React.useMemo(
     () =>
@@ -37,62 +35,50 @@ const Scene: React.FC = () => {
             >
               <Air radius={radius} showLines={showLines} />
             </group>
-          )),
-        ),
+          ))
+        )
       ),
-    [airMatrix, radius, showAir, showLines],
+    [airMatrix, radius, showAir, showLines]
   );
 
-  const earthSurface = React.useMemo(
-    () =>
-      R.range(surfaceMatrix[0], surfaceMatrix[1]).map((x) =>
-        R.range(surfaceMatrix[0], surfaceMatrix[1]).map((z) => (
-          <group key={`dirt-${x}-${z}`} position={[x * radius, 0, z * radius]}>
-            <Dirt radius={radius} showLines={showLines} />
-          </group>
-        )),
-      ),
-    [radius, showLines, surfaceMatrix],
+  const renderBlockDependsOnElevation = React.useCallback(
+    (elevation: number) => {
+      switch (true) {
+        case elevation < -5:
+          return <Water radius={radius} showLines={showLines} />;
+
+        case elevation < -2:
+          return <Sand radius={radius} showLines={showLines} />;
+
+        case elevation < 2:
+          return <Stone radius={radius} showLines={showLines} />;
+
+        case elevation < 9:
+          return <Dirt radius={radius} showLines={showLines} />;
+      }
+    },
+    [radius, showLines]
   );
 
-  const stoneSurface = React.useMemo(
+  const renderBiom = React.useMemo(
     () =>
-      R.range(surfaceMatrix[0], surfaceMatrix[1]).map((x) =>
-        R.range(surfaceMatrix[0], surfaceMatrix[1]).map((z) => (
+      biom.map((row, x) =>
+        row.map((col, z) => (
           <group
             key={`stone-${x}-${z}`}
-            position={[x * radius, -radius, z * radius]}
+            position={[x * radius, col * radius, z * radius]}
           >
-            <Stone radius={radius} showLines={showLines} />
+            {renderBlockDependsOnElevation(col)}
           </group>
-        )),
+        ))
       ),
-    [radius, showLines, surfaceMatrix],
+    [biom, radius, renderBlockDependsOnElevation]
   );
 
   return (
     <group>
-      {/* {airSurface}
-      {earthSurface}
-      {stoneSurface} */}
-
-      <group position={[0, 0, 0]}>
-        <SmallHouse radius={radius} showLines={showLines} />
-      </group>
-
-      {/* <group position={[radius, radius / 2, 0]}>
-        <Torch radius={radius} showLines={showLines} />
-      </group> */}
-
-      <group position={[radius * 7, radius, 0]}>
-        <Tree radius={radius} showLines={showLines} />
-      </group>
-      <group position={[radius * -8, radius, radius * 3]}>
-        <Tree radius={radius} showLines={showLines} />
-      </group>
-      <group position={[radius * -7, radius, radius * 5]}>
-        <Tree radius={radius} showLines={showLines} />
-      </group>
+      {renderBiom}
+      {/* {airSurface} */}
     </group>
   );
 };
