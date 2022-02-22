@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 // Libs
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // Store
-import useStore from './store';
+import useStore from "./@store";
 
 const Label = styled.span`
   font-size: 12px;
@@ -25,7 +25,7 @@ const Root = styled.div`
 
 const StyledInput = styled.input.attrs({
   step: 0.1,
-  type: 'number',
+  type: "number",
 })`
   background-color: #fff;
   border: none;

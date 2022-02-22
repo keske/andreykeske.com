@@ -9,9 +9,9 @@ import { OnScreen } from "../../components";
 import { mediaQuery } from "../../utils";
 
 // Local
-import Biom from "./Biom";
 import Canvas from "./Canvas";
 import RatioInput from "./RatioInput";
+import Scene from "./Scene";
 
 type SkyProps = {
   distance?: number;
@@ -57,7 +57,7 @@ const WarpedMinecraftRoot: React.FC = () => {
           <React.Suspense fallback={null}>
             <OrbitControls />
             <Sky {...skyProps} />
-            <Biom />
+            <Scene />
           </React.Suspense>
         </Canvas>
 

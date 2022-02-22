@@ -60,7 +60,7 @@ const Scene: React.FC = () => {
     [radius, showLines]
   );
 
-  const rednerBiom = React.useMemo(
+  const renderBiom = React.useMemo(
     () =>
       biom.map((row, x) =>
         row.map((col, z) => (
@@ -77,7 +77,7 @@ const Scene: React.FC = () => {
 
   return (
     <group>
-      {rednerBiom}
+      {renderBiom}
       {/* {airSurface} */}
     </group>
   );
