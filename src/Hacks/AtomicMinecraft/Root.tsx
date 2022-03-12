@@ -35,8 +35,8 @@ const Root: React.FC = () => {
       </Wrapper>
 
       <Controls />
-      <Details />
-      <Title />
+      {/* <Details /> */}
+      {/* <Title /> */}
       <Content />
     </>
   );

@@ -69,14 +69,11 @@ const AtomicMinecraft: React.FC = (): JSX.Element => (
             <StyledTitle>Atomic Minecraft</StyledTitle>
 
             <StyledText>
-              I was reading the book about fundamental particles and how they
-              make matter and decided to interpolate it to the universe of
-              Minecraft. The result is a cube which is an elementary part of
-              Minecraft and inside these cubes are super small particles that
-              play the role of electrons: unpredictable moves in space, and the
-              amount of them affect the density and weight of the cube. For
-              example, dirt has 10 electrons and stone 100 so to say stone has
-              more weight and density
+              Atomic Minecraft is a world created with the blocs as the basic
+              structure where inside of each of them are atoms exist. In this
+              world, atoms play the main role where their amount affects the
+              material of the block. More atoms mean that the block is strong
+              and heavy. Actually, like electrons in the real world.
             </StyledText>
 
             <Link to="/atomic-minecraft">

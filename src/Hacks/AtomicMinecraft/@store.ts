@@ -52,10 +52,10 @@ const useStore = create<Store>((set: SetState<Store>) => ({
     set(() => ({ width: value }));
   },
 
-  height: 50,
+  height: 70,
   showAir: false,
   showLines: true,
-  width: 50,
+  width: 70,
 }));
 
 export default useStore;
