@@ -20,6 +20,10 @@ const Wrapper = styled.div`
 const Root: React.FC = () => {
   const { enableZoom } = useStore();
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Wrapper>
