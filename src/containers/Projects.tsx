@@ -35,7 +35,7 @@ const Projects: React.FC = (): JSX.Element => {
       <Hacks.WarpedTypography />,
       <Hacks.ClothUI />,
       <Hacks.MandelbrotSet />,
-      <Hacks.WarpedMinecraft />,
+      // <Hacks.WarpedMinecraft />,
       <Hacks.Catch />,
       <Hacks.RecycleBins />,
       <Hacks.WarpedMacOS />,

@@ -63,8 +63,8 @@ const StyledOnScreen = styled(OnScreen)`
 const StyledCanvas = styled(FiberCanvas)`
   background-color: #000;
   cursor: grab;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vh;
 `;
 
 const WarpedMinecraftCase: React.FC<Props> = ({

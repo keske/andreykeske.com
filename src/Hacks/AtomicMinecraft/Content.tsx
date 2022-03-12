@@ -54,21 +54,16 @@ const Content: React.FC = () => {
       <Container>
         <Row>
           <Col lg={{ span: 10 }}>
-            <StyledTitle>
-              The realm of Micecraft in an Atomic level of representations
-            </StyledTitle>
+            <StyledTitle>Atomic Minecraft</StyledTitle>
           </Col>
           <Spacer size={4} />
           <Col lg={{ span: 10 }}>
             <StyledText>
-              I was reading the book about fundamental particles and how they
-              make matter and decided to interpolate it to the universe of
-              Minecraft. The result is a cube which is an elementary part of
-              Minecraft and inside these cubes are super small particles that
-              play the role of electrons: unpredictable moves in space, and the
-              amount of them affect the density and weight of the cube. For
-              example, dirt has 10 electrons and stone 100 so to say stone has
-              more weight and density
+              Atomic Minecraft is a world created with the blocs as the basic
+              structure where inside of each of them are atoms exist. In this
+              world, atoms play the main role where their amount affects the
+              material of the block. More atoms mean that the block is strong
+              and heavy. Actually, like electrons in the real world.
             </StyledText>
           </Col>
         </Row>
@@ -140,13 +135,6 @@ const Content: React.FC = () => {
             <Spacer size={4} />
             Stone
           </StyledCol>
-          <StyledCol lg={{ offset: 0, span: 3 }}>
-            <Case>
-              <Gold radius={0.5} showLines={showLines} />
-            </Case>
-            <Spacer size={4} />
-            Gold
-          </StyledCol>
         </Row>
 
         <Spacer size={14} />
@@ -165,6 +153,13 @@ const Content: React.FC = () => {
             </Case>
             <Spacer size={4} />
             Red Stone
+          </StyledCol>
+          <StyledCol lg={{ offset: 0, span: 3 }}>
+            <Case>
+              <Gold radius={0.5} showLines={showLines} />
+            </Case>
+            <Spacer size={4} />
+            Gold
           </StyledCol>
         </Row>
 
