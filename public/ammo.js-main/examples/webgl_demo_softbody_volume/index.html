@@ -209,62 +209,62 @@
 
         const volumeMass = 25;
 
-        const createSoftBox = (x = 0, y = 3, z = 0) => {
+        const createSoftBox = (x = 0, y = 3, z = 0, texture) => {
           const boxGeometry = new THREE.BufferGeometry().fromGeometry(
             new THREE.BoxGeometry(3, 3, 3, 4, 4, 20)
           );
 
           boxGeometry.translate(x, y, z);
-          createSoftVolume(boxGeometry, volumeMass, 120);
+          createSoftVolume(boxGeometry, volumeMass, 120, texture);
         }
 
-        const createSoftBox2 = (x = 0, y = 3, z = 0) => {
+        const createSoftBox2 = (x = 0, y = 3, z = 0, texture) => {
           const boxGeometry = new THREE.BufferGeometry().fromGeometry(
             new THREE.BoxGeometry(6, 3, 3, 4, 4, 20)
           );
 
           boxGeometry.translate(x, y, z);
-          createSoftVolume(boxGeometry, volumeMass, 120);
+          createSoftVolume(boxGeometry, volumeMass, 120, texture);
         }
 
         const step = 3.01;
 
         // AC, +/-, %
-        createSoftBox(0, step, -step);
-        createSoftBox(step, step, -step);
-        createSoftBox(step * 2, step, -step);
+        createSoftBox(0, step, -step, 'ac.png');
+        createSoftBox(step, step, -step, 'plus-minus.png');
+        createSoftBox(step * 2, step, -step, 'percent.png');
 
         // /
-        createSoftBox(step * 3, step, -step);
+        createSoftBox(step * 3, step, -step, 'division.png');
 
         // x
-        createSoftBox(step * 3, step, 0);
+        createSoftBox(step * 3, step, 0, 'multy.png');
 
         // -
-        createSoftBox(step * 3, step, step);
+        createSoftBox(step * 3, step, step, 'minus.png');
 
         // + 
-        createSoftBox(step * 3, step, step * 2);
+        createSoftBox(step * 3, step, step * 2, 'plus.png');
 
         // =
-        createSoftBox(step * 3, step, step * 3);
+        createSoftBox(step * 3, step, step * 3, 'equal.png');
 
         // .
-        createSoftBox(step * 2, step, step * 3);
+        createSoftBox(step * 2, step, step * 3, 'dot.png');
 
         // 0
-        createSoftBox2(0, step, step * 3);
+        createSoftBox2(0, step, step * 3, '0.png');
 
         // 1-9
-        createSoftBox();
-        createSoftBox(0, step, step);
-        createSoftBox(step, step, step);
-        createSoftBox(step, step, 0);
-        createSoftBox(step * 2, step, 0);
-        createSoftBox(step * 2, step, step);
-        createSoftBox(0, step, step * 2);
-        createSoftBox(step, step, step * 2);
-        createSoftBox(step * 2, step, step * 2);
+        createSoftBox(0, 3, 0, '7.png');
+        createSoftBox(0, step, step, '4.png');
+        createSoftBox(step, step, step, '5.png');
+        createSoftBox(step, step, 0, '8.png');
+        createSoftBox(step * 2, step, 0, '9.png');
+        createSoftBox(step * 2, step, step, '6.png');
+        createSoftBox(0, step, step * 2, '1.png');
+        createSoftBox(step, step, step * 2, '2.png');
+        createSoftBox(step * 2, step, step * 2, '3.png');
       }
 
       function processGeometry(bufGeometry) {
@@ -373,7 +373,7 @@
         }
       }
 
-      function createSoftVolume(bufferGeom, mass, pressure) {
+      function createSoftVolume(bufferGeom, mass, pressure, texture) {
         processGeometry(bufferGeom);
 
         const volume = new THREE.Mesh(
@@ -388,7 +388,8 @@
         // volume.frustumCulled = false;
         scene.add(volume);
 
-        textureLoader.load("../textures/colors.png", (texture) => {
+        // textureLoader.load("../textures/colors.png", (texture) => {
+        textureLoader.load(`../textures/${texture}`, (texture) => {
           volume.material.map = texture;
           volume.material.needsUpdate = true;
         });
