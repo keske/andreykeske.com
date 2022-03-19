@@ -61,9 +61,9 @@ const SoftVideoPlayer: React.FC = (): JSX.Element => (
             <Image src={`${PUBLIC_URL}/static/soft-ui/preview.png`} />
             <StyledTitle>Soft Interface &mdash; Video Player</StyledTitle>
 
-            <Link to="/soft-video-player">
+            <a href="https://andreykeske.com/soft-ui/examples/soft-player/">
               <StyledButton>Touch the soft 👉</StyledButton>
-            </Link>
+            </a>
 
             <Spacer size={8} />
 
