@@ -30,7 +30,7 @@ const WarpedMinecraftWorld: React.FC = () => {
           return <Dirt />;
       }
     },
-    []
+    [],
   );
 
   const renderBiom = React.useMemo(
@@ -40,9 +40,9 @@ const WarpedMinecraftWorld: React.FC = () => {
           <group key={`stone-${x}-${y}`} position={[x * 4, col, y * 4]}>
             {renderBlockDependsOnElevation(col)}
           </group>
-        ))
+        )),
       ),
-    [biom, renderBlockDependsOnElevation]
+    [biom, renderBlockDependsOnElevation],
   );
 
   // console.log("biom", biom);

@@ -37,21 +37,21 @@ const Root = styled.div`
     "phone",
     css`
       height: 17vh;
-    `
+    `,
   )}
 
   ${mediaQuery(
     "tablet",
     css`
       height: 25vh;
-    `
+    `,
   )}
 
   ${mediaQuery(
     "desktop",
     css`
       height: 33vh;
-    `
+    `,
   )}
 `;
 
@@ -74,7 +74,7 @@ const WarpedMinecraftCase: React.FC<Props> = ({
   ...rest
 }: Props) => {
   const [rotation, setRotation] = React.useState<"disabled" | "enabled">(
-    "enabled"
+    "enabled",
   );
 
   const enableRotation = React.useCallback(() => {

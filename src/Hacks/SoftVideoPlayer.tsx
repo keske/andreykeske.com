@@ -5,7 +5,6 @@ import * as React from "react";
 // Libs
 import styled from "styled-components";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 // Components
 import {

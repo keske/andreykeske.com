@@ -33,7 +33,7 @@ const Root = styled.div`
     "phone",
     css`
       height: 50vh;
-    `
+    `,
   )}
 `;
 
@@ -47,7 +47,7 @@ const WarpedMinecraftRoot: React.FC = () => {
       rayleigh: 3,
       turbidity: 10,
     }),
-    []
+    [],
   );
 
   return (

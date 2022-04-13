@@ -15,9 +15,9 @@ const WarpedMinecraftWorld: React.FC = () => {
           <group key={`dirt-${x}-${z}`} position={[x * 4, 0, z * 4]}>
             <Dirt />
           </group>
-        ))
+        )),
       ),
-    [surfaceMatrix]
+    [surfaceMatrix],
   );
 
   const stoneSurface = React.useMemo(
@@ -27,9 +27,9 @@ const WarpedMinecraftWorld: React.FC = () => {
           <group key={`stone-${x}-${z}`} position={[x * 4, -4, z * 4]}>
             <Stone />
           </group>
-        ))
+        )),
       ),
-    [surfaceMatrix]
+    [surfaceMatrix],
   );
 
   return (

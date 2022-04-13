@@ -16,7 +16,7 @@ const SelectedWorksTitle = styled(Title)`
     "phone",
     css`
       font-size: 32px;
-    `
+    `,
   )}
 `;
 
@@ -85,7 +85,7 @@ const Projects: React.FC = (): JSX.Element => {
       <Hacks.Lucky />,
       <Hacks.AtomicLogo />,
     ],
-    []
+    [],
   );
 
   const content = React.useMemo(() => hacks.slice(0, limit), [hacks, limit]);

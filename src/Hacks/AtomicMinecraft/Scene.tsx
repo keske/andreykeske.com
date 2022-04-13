@@ -35,10 +35,10 @@ const Scene: React.FC = () => {
             >
               <Air radius={radius} showLines={showLines} />
             </group>
-          ))
-        )
+          )),
+        ),
       ),
-    [airMatrix, radius, showAir, showLines]
+    [airMatrix, radius, showAir, showLines],
   );
 
   const renderBlockDependsOnElevation = React.useCallback(
@@ -57,7 +57,7 @@ const Scene: React.FC = () => {
           return <Dirt radius={radius} showLines={showLines} />;
       }
     },
-    [radius, showLines]
+    [radius, showLines],
   );
 
   const renderBiom = React.useMemo(
@@ -70,9 +70,9 @@ const Scene: React.FC = () => {
           >
             {renderBlockDependsOnElevation(col)}
           </group>
-        ))
+        )),
       ),
-    [biom, radius, renderBlockDependsOnElevation]
+    [biom, radius, renderBlockDependsOnElevation],
   );
 
   return (

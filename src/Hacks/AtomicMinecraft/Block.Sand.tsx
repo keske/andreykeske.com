@@ -12,7 +12,7 @@ const Block: React.FC<Props> = ({ radius, showLines, ...rest }: Props) => {
 
   const color = React.useMemo(
     () => (enableColor ? "#d7d8ab" : "#FFFFFF"),
-    [enableColor]
+    [enableColor],
   );
 
   return (

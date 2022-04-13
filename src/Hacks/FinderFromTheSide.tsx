@@ -1,17 +1,14 @@
 import * as React from "react";
 
 // Libs
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Col, Container, Row } from "react-bootstrap";
-
-import { mediaQuery } from "../utils";
 
 // Components
 import {
   ProjectTopics,
   ProjectWrapper,
   ProjectYear,
-  Spacer,
   Text,
   Title,
 } from "../components";
@@ -43,7 +40,8 @@ const FinderFromTheSide: React.FC = (): JSX.Element => (
           <Title>Finder From the Side</Title>
 
           <Text>
-            On the motives of the Flatland: A Romance of Many Dimensions{" "}
+            On the motives of the Flatland: A Romance of Many Dimensions
+            {" "}
             <a href="https://en.wikipedia.org/wiki/Flatland">
               wiki
               <sup>↗</sup>

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled, { css } from 'styled-components';
-import { Col, Container, Row } from 'react-bootstrap';
+import styled, { css } from "styled-components";
+import { Col, Container, Row } from "react-bootstrap";
 
 // Components
 import {
@@ -12,10 +12,10 @@ import {
   ProjectYear,
   Spacer,
   Title,
-} from '../components';
-import { mediaQuery } from '../utils';
+} from "../components";
+import { mediaQuery } from "../utils";
 
-import Lego from './WarpedLego/Root';
+import Lego from "./WarpedLego/Root";
 
 const Inner = styled.div`
   transform: translate(40px, -40px);
@@ -34,7 +34,7 @@ const StyledTitle = styled(Title)`
   width: 80%;
 
   ${mediaQuery(
-    'phone',
+    "phone",
     css`
       font-size: 34px;
     `,
@@ -63,7 +63,7 @@ const WarpedLego: React.FC = (): JSX.Element => (
 
               <Spacer size={0} />
 
-              <StyledProjectTopics topics={['Lego', 'ThreeJS']} />
+              <StyledProjectTopics topics={["Lego", "ThreeJS"]} />
 
               <Spacer />
 

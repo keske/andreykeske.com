@@ -34,7 +34,7 @@ const StyledProjectWrapper = styled(ProjectWrapper)`
     "phone",
     css`
       display: none;
-    `
+    `,
   )}
 `;
 

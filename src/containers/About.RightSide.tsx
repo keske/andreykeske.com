@@ -26,7 +26,7 @@ const Italic = styled.span`
     "phone",
     css`
       font-size: 20px;
-    `
+    `,
   )}
 `;
 
@@ -48,7 +48,7 @@ const Link = styled.a`
     css`
       font-size: 14px;
       padding: 0px 7px;
-    `
+    `,
   )}
 `;
 
@@ -72,7 +72,7 @@ const StyledTitle = styled(Title)`
     "phone",
     css`
       font-size: 32px;
-    `
+    `,
   )}
 `;
 
@@ -87,7 +87,7 @@ const StyledText = styled(Text)`
     css`
       font-size: 16px;
       line-height: 34px;
-    `
+    `,
   )}
 `;
 
