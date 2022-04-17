@@ -31,6 +31,7 @@ export { default as IPadIcons } from "./IPadIcons";
 export { default as LegoHTMLElement } from "./LegoHTMLElement";
 export { default as Manhattan } from "./Manhattan";
 export { default as Matryoshka } from "./Matryoshka";
+export { default as Mistress } from "./Mistress";
 export { default as MacOSGamesDice } from "./MacOSGames.Dice";
 export { default as MacOSGamesSlot } from "./MacOSGames.Slot";
 export { default as MandelbrotSet } from "./MandelbrotSet";

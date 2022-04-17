@@ -31,6 +31,7 @@ const Projects: React.FC = (): JSX.Element => {
     () => [
       <Hacks.SoftVideoPlayer />,
       <Hacks.AtomicMinecraft />,
+      <Hacks.Mistress />,
       <Hacks.FinderFromTheSide />,
       <Hacks.DistortingMirrors />,
       <Hacks.WarpedTypography />,
