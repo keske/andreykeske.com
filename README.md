@@ -1,13 +1,7 @@
-# My Site
+# Andrey Keske (http://andreykeske.com)
 
-## Installation
+## Run
 
 ```bash
-$ yarn
+$ yarn && yarn start
 ```
-
-## Development
-
-`$ yarn start` start on localhost
-
-`$ yarn watch` start watching changed files to linting
