@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled from 'styled-components';
+import styled from "styled-components";
 
 type Props = {
   children: React.ReactNode;
@@ -20,9 +20,8 @@ const Root = styled.div`
   padding-top: 3px;
 `;
 
-const Button: React.FC<Props> = ({
-  children,
-  ...rest
-}: Props): JSX.Element => <Root {...rest}>{children}</Root>;
+const Button: React.FC<Props> = ({ children, ...rest }: Props): JSX.Element => (
+  <Root {...rest}>{children}</Root>
+);
 
 export default Button;
