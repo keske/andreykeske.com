@@ -10,13 +10,13 @@ type Props = {
 };
 
 const Root = styled.p<{ inverted: boolean }>`
-  border: ${(props) =>
-    (props.inverted
+  border-left: ${(props) =>
+    props.inverted
       ? "1px solid rgba(255, 255, 255, 0.2);"
-      : "1px solid rgba(0, 0, 0, 0.2);")};
-  border-radius: 13px;
+      : "1px solid rgba(0, 0, 0, 0.5);"};
   font-style: italic;
-  padding: 13px;
+  margin: 13px 0;
+  padding: 0 0 0 13px;
 `;
 
 const Quote: React.FC<Props> = ({

@@ -49,6 +49,7 @@ export { default as SoftVideoPlayer } from "./SoftVideoPlayer";
 export { default as Spectrum } from "./Spectrum";
 export { default as SwitchInButton } from "./SwitchInButton";
 export { default as TickyApplication } from "./TickyApplication";
+export { default as TimestampTattoo } from "./TimestampTattoo";
 export { default as TmuxChess } from "./TmuxChess";
 export { default as VintageGoogleStreetView } from "./VintageGoogleStreetView";
 export { default as Volume } from "./Volume";

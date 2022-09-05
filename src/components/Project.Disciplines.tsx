@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Libs
-import styled from 'styled-components';
+import styled from "styled-components";
 
 type Props = {
   disciplines: string[];
@@ -21,12 +21,10 @@ const ProjectDisciplines: React.FC<Props> = ({
 }: Props): JSX.Element => (
   <Root {...rest}>
     <span>
-      {`Discipline${disciplines.length === 1 ? '' : 's'}: `}
+      {`Discipline${disciplines.length === 1 ? "" : "s"}: `}
       {disciplines.map((discipline, index) => (
         <Label key={discipline}>
-          {`${discipline}${
-            index < disciplines.length - 1 ? ', ' : ''
-          }`}
+          {`${discipline}${index < disciplines.length - 1 ? ", " : ""}`}
         </Label>
       ))}
     </span>
