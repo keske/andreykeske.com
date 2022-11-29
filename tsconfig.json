@@ -14,8 +14,10 @@
     "noEmit": true,
     "paths": {
       "@/components/*": ["components/*"],
+      "@/hooks/*": ["hooks/*"],
       "@/pages/*": ["pages/*"],
       "@/public/*": ["public/*"],
+      "@/stores/*": ["stores/*"],
       "@/styles/*": ["styles/*"]
     },
     "resolveJsonModule": true,
