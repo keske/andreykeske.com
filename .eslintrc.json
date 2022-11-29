@@ -122,7 +122,7 @@
       {
         "blankLine": "always",
         "next": "*",
-        "prev": ["export", "case", "const", "default", "if", "let", "return"]
+        "prev": ["case", "const", "default", "if", "let", "return"]
       },
       {
         "blankLine": "always",
