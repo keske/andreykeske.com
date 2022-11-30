@@ -13,6 +13,7 @@ import {
 export type Items = Array<{
   component: () => JSX.Element;
   title: string;
+  year: number;
 }>;
 
 export type Store = {
@@ -23,30 +24,37 @@ const DEFAULT_STATE: Items = [
   {
     component: Catch,
     title: "The Catch",
+    year: 2013,
   },
   {
     component: LOT2046Tattoo,
     title: "LOT 2046 Tattoo Machine from Toothbrush",
+    year: 2019,
   },
   {
     component: TmuxChess,
-    title: "Tnux Chess",
+    title: "Tmux Chess",
+    year: 2014,
   },
   {
     component: Lego,
     title: "Lego",
+    year: 2021,
   },
   {
     component: FridayDock,
     title: "Friday Dock",
+    year: 2013,
   },
   {
     component: InvertedManhattan,
     title: "Inverted Manhattan",
+    year: 2011,
   },
   {
     component: Graffiti,
     title: "Graffiti",
+    year: 2006,
   },
 ];
 
