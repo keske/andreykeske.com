@@ -18,11 +18,12 @@ const ViewModeList = () => {
 
   return (
     <>
-      <div className="t-0 absolute">
+      <div className="absolute top-0">{preview}</div>
+      <div className="absolute top-0 p-5">
         {items.map(({ component: PreviewComponent, title }, index) => (
           <div
             key={index}
-            onMouseOut={handleMouseOut}
+            // onMouseOut={handleMouseOut}
             onMouseOver={() => {
               handleMouseOver(<PreviewComponent />);
             }}
@@ -31,7 +32,6 @@ const ViewModeList = () => {
           </div>
         ))}
       </div>
-      <div className="t-0 absolute">{preview}</div>
     </>
   );
 };

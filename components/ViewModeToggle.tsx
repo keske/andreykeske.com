@@ -10,7 +10,7 @@ const ViewModeToggle = () => {
     (label: string) => (
       <div
         className={clsx(
-          "rounded-lg p-2 first-letter:uppercase",
+          "rounded-lg p-2 text-sm first-letter:uppercase",
           label === viewMode
             ? "bg-stone-200"
             : "cursor-pointer hover:bg-stone-100",
@@ -24,7 +24,7 @@ const ViewModeToggle = () => {
 
   return (
     <button
-      className="flex flex-row gap-2 border-0 bg-transparent p-0"
+      className="ml-3 mt-10 flex flex-row gap-2 border-0 bg-transparent p-0"
       onClick={handleViewMode}
     >
       {renderLabel("detail")}
