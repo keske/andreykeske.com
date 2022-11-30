@@ -29,7 +29,7 @@ const Video = () => {
 };
 
 const TmuxChess = () => (
-  <div className="absolute top-0 left-0 h-screen w-screen bg-black">
+  <div className="absolute top-0 left-0 h-screen w-screen">
     <Canvas
       gl={{
         alpha: true,
