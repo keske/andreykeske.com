@@ -5,9 +5,7 @@ type Props = {
 };
 
 const ListItem: React.FC<Props> = ({ title }) => (
-  <>
-    <p className="text-lg font-bold">{title}</p>
-  </>
+  <p className="text-lg font-bold">{title}</p>
 );
 
 export default ListItem;
