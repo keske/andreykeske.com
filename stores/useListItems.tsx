@@ -4,6 +4,7 @@ import {
   Catch,
   FridayDock,
   Graffiti,
+  InvertedManhattan,
   LOT2046Tattoo,
   Lego,
   TmuxChess,
@@ -38,6 +39,10 @@ const DEFAULT_STATE: Items = [
   {
     component: FridayDock,
     title: "Friday Dock",
+  },
+  {
+    component: InvertedManhattan,
+    title: "Inverted Manhattan",
   },
   {
     component: Graffiti,
