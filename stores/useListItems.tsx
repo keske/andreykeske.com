@@ -2,6 +2,7 @@ import create from "zustand";
 
 import {
   Catch,
+  FridayDock,
   Graffiti,
   LOT2046Tattoo,
   Lego,
@@ -33,6 +34,10 @@ const DEFAULT_STATE: Items = [
   {
     component: Lego,
     title: "Lego",
+  },
+  {
+    component: FridayDock,
+    title: "Friday Dock",
   },
   {
     component: Graffiti,
