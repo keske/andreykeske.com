@@ -2,9 +2,10 @@ import create from "zustand";
 
 import {
   Catch,
+  Graffiti,
   LOT2046Tattoo,
+  Lego,
   TmuxChess,
-  WarpedLego,
 } from "@/components/Preview/index";
 
 export type Items = Array<{
@@ -30,8 +31,12 @@ const DEFAULT_STATE: Items = [
     title: "Tnux Chess",
   },
   {
-    component: WarpedLego,
+    component: Lego,
     title: "Lego",
+  },
+  {
+    component: Graffiti,
+    title: "Graffiti",
   },
 ];
 
