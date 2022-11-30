@@ -7,7 +7,7 @@ import { Mesh } from "three";
 const Video = () => {
   const mesh = React.useRef<Mesh>(null!);
 
-  const texture = useVideoTexture("/tmux-chess.mp4", {
+  const texture = useVideoTexture("/videos/tmux-chess.mp4", {
     loop: true,
     start: true,
   });
