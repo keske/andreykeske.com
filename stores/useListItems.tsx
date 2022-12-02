@@ -12,6 +12,7 @@ import {
   LOT2046Tattoo,
   Lego,
   TmuxChess,
+  VintageGoogleStreetView,
   Volcom,
 } from "@/components/Preview/index";
 
@@ -65,6 +66,11 @@ const DEFAULT_STATE: Items = [
     component: FridayDock,
     title: "Friday Dock",
     year: 2013,
+  },
+  {
+    component: VintageGoogleStreetView,
+    title: "Vintage Google StreetView",
+    year: 2016,
   },
   {
     component: InvertedManhattan,
