@@ -17,6 +17,7 @@
     "@types/three": "^0.146.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@use-gesture/react": "^10.2.22",
+    "axios": "^1.2.0",
     "clsx": "^1.2.1",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",

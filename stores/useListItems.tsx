@@ -1,6 +1,7 @@
 import create from "zustand";
 
 import {
+  BTCBubble,
   Canvases,
   Catch,
   DockRecycleBins,
@@ -35,6 +36,11 @@ const DEFAULT_STATE: Items = [
   {
     component: EsherSwitchButton,
     title: "Radio Button to Switch Evolution",
+    year: 2021,
+  },
+  {
+    component: BTCBubble,
+    title: "Bitcoin Bubble",
     year: 2021,
   },
   {
