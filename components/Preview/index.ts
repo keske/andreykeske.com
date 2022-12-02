@@ -11,3 +11,4 @@ export { default as LOT2046Tattoo } from "./LOT2046Tattoo";
 export { default as TmuxChess } from "./TmuxChess";
 export { default as VintageGoogleStreetView } from "./VintageGoogleStreetView";
 export { default as Volcom } from "./Volcom";
+export { default as WaterFilter } from "./WaterFilter";

@@ -14,6 +14,7 @@ import {
   TmuxChess,
   VintageGoogleStreetView,
   Volcom,
+  WaterFilter,
 } from "@/components/Preview/index";
 
 export type Items = Array<{
@@ -27,6 +28,11 @@ export type Store = {
 };
 
 const DEFAULT_STATE: Items = [
+  {
+    component: WaterFilter,
+    title: "Eco problems with water",
+    year: 2016,
+  },
   {
     component: DockRecycleBins,
     title: "The Dock's Recycle Bins",
