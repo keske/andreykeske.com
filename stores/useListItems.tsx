@@ -1,6 +1,7 @@
 import create from "zustand";
 
 import {
+  Canvases,
   Catch,
   FridayDock,
   Graffiti,
@@ -54,7 +55,12 @@ const DEFAULT_STATE: Items = [
   },
   {
     component: Graffiti,
-    title: "Graffiti",
+    title: "Graffiti 2006..2009",
+    year: 2006,
+  },
+  {
+    component: Canvases,
+    title: "Canvases 2006..2009",
     year: 2006,
   },
   {

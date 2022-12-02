@@ -1,3 +1,4 @@
+export { default as Canvases } from "./Canvases";
 export { default as Catch } from "./Catch";
 export { default as FridayDock } from "./FridayDock";
 export { default as Graffiti } from "./Graffiti";
