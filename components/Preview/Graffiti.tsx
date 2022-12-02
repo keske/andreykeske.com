@@ -30,14 +30,17 @@ const Graffiti = () => {
     "Keske, Kaze, 2007",
     "Keske, Kaze, 2007",
     "Keske, Kaze, 2007",
-    "Kaze, Keske, 2007",
+    "Kaze (Aru), Keske, 2007",
     "Keske, Zebo (Bird), 2010",
     "Keske, 2007",
     "Keske (Skull and right thing), Kaze, 2007",
-    "Keske, Kaze, 2009",
-    "Ksenia, Keske, 2009",
+    "Keske, Kaze (Aru), 2009",
+    "Keske, Keske, 2009",
     "Ksenia, Keske, 2009",
     "Keske, 2009",
+    "Keske, 2009",
+    "Kaze, Keske, 2007",
+    "Ksenia, Keske, 2009",
   ];
 
   return (
