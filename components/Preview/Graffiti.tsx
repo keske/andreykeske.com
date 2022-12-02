@@ -63,7 +63,11 @@ const Graffiti = () => {
       <div className="flex flex-col items-center gap-10 p-20">
         {peaces.map((peace, index) => (
           <div className="md:w-1/2 lg:w-1/2 xl:w-1/2 2xl:w-1/3" key={index}>
-            <img alt={peace} src={`/photos/graffiti/${index}.jpg`} />
+            <img
+              alt={peace}
+              className="w-full"
+              src={`/photos/graffiti/${index}.jpg`}
+            />
             <p>{peace}</p>
           </div>
         ))}
