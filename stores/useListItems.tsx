@@ -6,6 +6,7 @@ import {
   FridayDock,
   Globalization,
   Graffiti,
+  IkeaGarbage,
   InvertedManhattan,
   LOT2046Tattoo,
   Lego,
@@ -24,6 +25,11 @@ export type Store = {
 };
 
 const DEFAULT_STATE: Items = [
+  {
+    component: IkeaGarbage,
+    title: "The first discarded piece of IKEA furniture in Augmented Reality",
+    year: 2017,
+  },
   {
     component: Globalization,
     title: "Globalization",

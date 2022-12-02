@@ -3,6 +3,7 @@ export { default as Catch } from "./Catch";
 export { default as FridayDock } from "./FridayDock";
 export { default as Globalization } from "./Globalization";
 export { default as Graffiti } from "./Graffiti";
+export { default as IkeaGarbage } from "./IkeaGarbage";
 export { default as InvertedManhattan } from "./InvertedManhattan";
 export { default as Lego } from "./Lego";
 export { default as LOT2046Tattoo } from "./LOT2046Tattoo";
