@@ -1,77 +1,111 @@
 import clsx from "clsx";
+import { useRouter } from "next/router";
 import * as R from "ramda";
 import React from "react";
+
+import type { Item } from "@/stores/useListItems";
 
 import { CloseButton } from "@/components/index";
 import { useListItems } from "@/stores/index";
 
+type HydratedItem = Item & { id: string };
+
 const ViewModeList = () => {
+  const router = useRouter();
+
   const { items } = useListItems();
 
-  const [selectedCaseTitle, setSelectedCaseTitle] = React.useState<
-    string | null
-  >(null);
+  const hydratedItems = React.useMemo<HydratedItem[]>(
+    () =>
+      items.map((item) => ({
+        ...item,
+        id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
+      })),
+    [items],
+  );
+
+  const [selectedCaseId, setSelectedCaseId] = React.useState<string | null>(
+    null,
+  );
 
   const [preview, setPreview] = React.useState<React.ReactNode>(null);
 
   const handleShowCase = React.useCallback(
-    (title: string) => {
-      if (title === selectedCaseTitle || R.isNil(selectedCaseTitle)) {
-        setSelectedCaseTitle(title);
+    (id: string) => {
+      if (id === selectedCaseId || R.isNil(selectedCaseId)) {
+        setSelectedCaseId(id);
       }
     },
-    [selectedCaseTitle],
+    [selectedCaseId],
   );
 
   const handleCloseCase = React.useCallback(() => {
-    setSelectedCaseTitle(null);
+    router.push("");
+
     setPreview(null);
-  }, []);
+    setSelectedCaseId(null);
+  }, [router]);
 
   const handleMouseOut = React.useCallback(() => {
-    if (R.isNil(selectedCaseTitle)) {
+    if (R.isNil(selectedCaseId)) {
       setPreview(null);
     }
-  }, [selectedCaseTitle]);
+  }, [selectedCaseId]);
 
   const handleMouseOver = React.useCallback(
     (component: React.ReactNode) => {
-      if (R.isNil(selectedCaseTitle)) {
+      if (R.isNil(selectedCaseId)) {
         setPreview(component);
       }
     },
-    [selectedCaseTitle],
+    [selectedCaseId],
   );
+
+  React.useEffect(() => {
+    if (router.asPath !== "/") {
+      const caseId = router.asPath.replace("/#", "");
+
+      const { component } = R.find(
+        R.propEq("id", router.asPath.replace("/#", "")),
+      )(hydratedItems) as HydratedItem;
+
+      setPreview(component);
+      setSelectedCaseId(caseId);
+    }
+  }, [hydratedItems, router.asPath]);
 
   return (
     <>
       <div className="absolute top-0">{preview}</div>
-      <div className="absolute top-10">
+      <div className="absolute mt-10">
+        <a className="ml-12 text-2xl" href="/">
+          Andrey Keske
+        </a>
         <ul>
-          {items.map(({ component: PreviewComponent, title }, index) => (
+          {hydratedItems.map(({ component: PreviewComponent, id, title }) => (
             <li
               className={clsx(
-                "list-none text-lg font-bold",
-                title === selectedCaseTitle || R.isNil(selectedCaseTitle)
+                "list-none text-lg",
+                id === selectedCaseId || R.isNil(selectedCaseId)
                   ? "cursor-pointer opacity-100"
                   : "opacity-10",
               )}
-              key={index}
+              key={id}
               onClick={() => {
-                handleShowCase(title);
+                handleShowCase(id);
               }}
               onMouseOut={handleMouseOut}
               onMouseOver={() => {
                 handleMouseOver(<PreviewComponent />);
               }}
             >
-              {title}
+              <a href={`#${id}`}>{title}</a>
             </li>
           ))}
         </ul>
       </div>
       <CloseButton
-        isShowing={R.not(R.isNil(selectedCaseTitle))}
+        isShowing={R.not(R.isNil(selectedCaseId))}
         onClick={handleCloseCase}
       />
     </>

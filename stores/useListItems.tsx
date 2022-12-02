@@ -19,11 +19,13 @@ import {
   WaterOnMars,
 } from "@/components/Preview/index";
 
-export type Items = Array<{
+export type Item = {
   component: () => JSX.Element;
   title: string;
   year: number;
-}>;
+};
+
+export type Items = Item[];
 
 export type Store = {
   readonly items: Items;
