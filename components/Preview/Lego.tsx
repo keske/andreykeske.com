@@ -2,16 +2,8 @@ import { MeshWobbleMaterial, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
 import { Mesh } from "three";
-import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 
 import { THREEOnMouseRotation } from "@/components/index";
-
-type GLTFResult = GLTF & {
-  materials: {
-    ["Material.001"]: THREE.MeshStandardMaterial;
-  };
-  nodes: Record<string, THREE.Mesh>;
-};
 
 type BrickProps = {
   color: string;
@@ -52,7 +44,6 @@ const Lego = () => (
     >
       <group>
         <ambientLight intensity={0.2} />
-
         <spotLight
           angle={Math.PI / 6}
           castShadow
@@ -62,7 +53,6 @@ const Lego = () => (
           shadow-mapSize-height={2048}
           shadow-mapSize-width={2048}
         />
-
         <mesh position={[-0.5, -0.1, 0]} rotation={[0, 0, 0.1]}>
           <Brick color="#d01012" />
         </mesh>
