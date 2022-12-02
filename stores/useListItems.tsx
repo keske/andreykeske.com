@@ -3,6 +3,7 @@ import create from "zustand";
 import {
   Canvases,
   Catch,
+  DockRecycleBins,
   FridayDock,
   Globalization,
   Graffiti,
@@ -25,6 +26,11 @@ export type Store = {
 };
 
 const DEFAULT_STATE: Items = [
+  {
+    component: DockRecycleBins,
+    title: "The Dock's Recycle Bins",
+    year: 2011,
+  },
   {
     component: IkeaGarbage,
     title: "The first discarded piece of IKEA furniture in Augmented Reality",
