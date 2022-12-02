@@ -1,9 +1,10 @@
 import { MeshWobbleMaterial, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useMove } from "@use-gesture/react";
 import React from "react";
 import { Mesh } from "three";
 import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
+
+import { THREEOnMouseRotation } from "@/components/index";
 
 type GLTFResult = GLTF & {
   materials: {
@@ -11,8 +12,6 @@ type GLTFResult = GLTF & {
   };
   nodes: Record<string, THREE.Mesh>;
 };
-
-useGLTF.preload("/lego-2.gltf");
 
 type BrickProps = {
   color: string;
@@ -23,26 +22,20 @@ const Brick: React.FC<BrickProps> = ({ color }) => {
 
   const { nodes } = useGLTF("/gltfs/lego.gltf") as GLTFResult;
 
-  useMove(
-    (state) => {
-      mesh.current.rotation.y += state.delta[0] * 0.01;
-      mesh.current.rotation.x += state.delta[1] * 0.01;
-    },
-    { target: document },
-  );
-
   return (
-    <mesh geometry={nodes.Cube128.geometry} position={[0, 0, 3]} ref={mesh}>
-      <meshStandardMaterial metalness={3} roughness={3} />
-      <MeshWobbleMaterial
-        bumpScale={0.005}
-        color={color}
-        factor={14}
-        metalness={3}
-        roughness={0.3}
-        speed={0.1}
-      />
-    </mesh>
+    <THREEOnMouseRotation ref={mesh}>
+      <mesh geometry={nodes.Cube128.geometry} position={[0, 0, 3]} ref={mesh}>
+        <meshStandardMaterial metalness={3} roughness={3} />
+        <MeshWobbleMaterial
+          bumpScale={0.005}
+          color={color}
+          factor={14}
+          metalness={3}
+          roughness={0.3}
+          speed={0.1}
+        />
+      </mesh>
+    </THREEOnMouseRotation>
   );
 };
 

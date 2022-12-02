@@ -8,6 +8,7 @@ import {
   LOT2046Tattoo,
   Lego,
   TmuxChess,
+  Volcom,
 } from "@/components/Preview/index";
 
 export type Items = Array<{
@@ -55,6 +56,11 @@ const DEFAULT_STATE: Items = [
     component: Graffiti,
     title: "Graffiti",
     year: 2006,
+  },
+  {
+    component: Volcom,
+    title: "Volcom Art Galery",
+    year: 2007,
   },
 ];
 
