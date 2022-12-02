@@ -24,7 +24,7 @@ const Brick: React.FC<BrickProps> = ({ color }) => {
           factor={14}
           metalness={3}
           roughness={0.3}
-          speed={0.1}
+          speed={0}
         />
       </mesh>
     </THREEOnMouseRotation>
@@ -53,11 +53,8 @@ const Lego = () => (
           shadow-mapSize-height={2048}
           shadow-mapSize-width={2048}
         />
-        <mesh position={[-0.5, -0.1, 0]} rotation={[0, 0, 0.1]}>
+        <mesh>
           <Brick color="#d01012" />
-        </mesh>
-        <mesh position={[0.5, 0.1, 0]} rotation={[0, 0, -0.3]}>
-          <Brick color="#0017FF" />
         </mesh>
       </group>
     </Canvas>
