@@ -4,6 +4,7 @@ import {
   Canvases,
   Catch,
   FridayDock,
+  Globalization,
   Graffiti,
   InvertedManhattan,
   LOT2046Tattoo,
@@ -23,6 +24,11 @@ export type Store = {
 };
 
 const DEFAULT_STATE: Items = [
+  {
+    component: Globalization,
+    title: "Globalization",
+    year: 2016,
+  },
   {
     component: Catch,
     title: "The Catch",
