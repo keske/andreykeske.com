@@ -14,9 +14,14 @@ const ViewModeList = () => {
 
   const [preview, setPreview] = React.useState<React.ReactNode>(null);
 
-  const handleShowCase = React.useCallback((title: string) => {
-    setSelectedCaseTitle(title);
-  }, []);
+  const handleShowCase = React.useCallback(
+    (title: string) => {
+      if (title === selectedCaseTitle || R.isNil(selectedCaseTitle)) {
+        setSelectedCaseTitle(title);
+      }
+    },
+    [selectedCaseTitle],
+  );
 
   const handleCloseCase = React.useCallback(() => {
     setSelectedCaseTitle(null);
@@ -46,9 +51,9 @@ const ViewModeList = () => {
           {items.map(({ component: PreviewComponent, title }, index) => (
             <li
               className={clsx(
-                "cursor-pointer list-none text-lg font-bold",
+                "list-none text-lg font-bold",
                 title === selectedCaseTitle || R.isNil(selectedCaseTitle)
-                  ? "opacity-100"
+                  ? "cursor-pointer opacity-100"
                   : "opacity-10",
               )}
               key={index}
