@@ -4,6 +4,7 @@ import {
   Canvases,
   Catch,
   DockRecycleBins,
+  EsherSwitchButton,
   FridayDock,
   Globalization,
   Graffiti,
@@ -15,6 +16,7 @@ import {
   VintageGoogleStreetView,
   Volcom,
   WaterFilter,
+  WaterOnMars,
 } from "@/components/Preview/index";
 
 export type Items = Array<{
@@ -28,6 +30,11 @@ export type Store = {
 };
 
 const DEFAULT_STATE: Items = [
+  {
+    component: EsherSwitchButton,
+    title: "Radio Button to Switch Evolution",
+    year: 2021,
+  },
   {
     component: WaterFilter,
     title: "Eco problems with water",
@@ -97,6 +104,11 @@ const DEFAULT_STATE: Items = [
     component: Volcom,
     title: "Volcom Art Galery",
     year: 2007,
+  },
+  {
+    component: WaterOnMars,
+    title: "Water on Mars",
+    year: 2011,
   },
 ];
 

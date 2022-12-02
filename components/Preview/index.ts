@@ -1,6 +1,7 @@
 export { default as Canvases } from "./Canvases";
 export { default as Catch } from "./Catch";
 export { default as DockRecycleBins } from "./DockRecycleBins";
+export { default as EsherSwitchButton } from "./EsherSwitchButton";
 export { default as FridayDock } from "./FridayDock";
 export { default as Globalization } from "./Globalization";
 export { default as Graffiti } from "./Graffiti";
@@ -12,3 +13,4 @@ export { default as TmuxChess } from "./TmuxChess";
 export { default as VintageGoogleStreetView } from "./VintageGoogleStreetView";
 export { default as Volcom } from "./Volcom";
 export { default as WaterFilter } from "./WaterFilter";
+export { default as WaterOnMars } from "./WaterOnMars";
