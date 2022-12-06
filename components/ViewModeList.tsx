@@ -85,7 +85,7 @@ const ViewModeList = () => {
           {hydratedItems.map(({ component: PreviewComponent, id, title }) => (
             <li
               className={clsx(
-                "list-none text-5xl font-bold uppercase",
+                "list-none text-5xl font-black uppercase",
                 id === selectedCaseId || R.isNil(selectedCaseId)
                   ? "cursor-pointer opacity-100"
                   : "opacity-10",

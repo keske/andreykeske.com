@@ -15,6 +15,8 @@ import {
   InvertedManhattan,
   LOT2046Tattoo,
   Lego,
+  MandelbrotSet,
+  TickyApplication,
   TmuxChess,
   VintageGoogleStreetView,
   Volcom,
@@ -35,6 +37,16 @@ export type Store = {
 };
 
 const DEFAULT_STATE: Items = [
+  {
+    component: TickyApplication,
+    title: "Ticky iOS Application",
+    year: 2021,
+  },
+  {
+    component: MandelbrotSet,
+    title: "Mandelbrot Set",
+    year: 2021,
+  },
   {
     component: Blackhole,
     title: "Blackhole",
