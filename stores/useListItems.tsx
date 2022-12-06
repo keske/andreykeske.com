@@ -2,6 +2,8 @@ import create from "zustand";
 
 import {
   BTCBubble,
+  Ball,
+  Blackhole,
   Canvases,
   Catch,
   DockRecycleBins,
@@ -33,6 +35,16 @@ export type Store = {
 };
 
 const DEFAULT_STATE: Items = [
+  {
+    component: Blackhole,
+    title: "Blackhole",
+    year: 2016,
+  },
+  {
+    component: Ball,
+    title: "Ball in the Dock",
+    year: 2014,
+  },
   {
     component: EsherSwitchButton,
     title: "Radio Button to Switch Evolution",

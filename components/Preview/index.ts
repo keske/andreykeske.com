@@ -1,3 +1,5 @@
+export { default as Ball } from "./Ball";
+export { default as Blackhole } from "./Blackhole";
 export { default as BTCBubble } from "./BTCBubble";
 export { default as Canvases } from "./Canvases";
 export { default as Catch } from "./Catch";
