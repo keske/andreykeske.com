@@ -10,6 +10,7 @@
     "lint": "yarn prettier --write . && eslint . --ext .ts,.tsx --fix --config .eslintrc.json --resolve-plugins-relative-to ."
   },
   "dependencies": {
+    "@next/font": "^13.0.6",
     "@react-spring/web": "^9.5.5",
     "@react-three/drei": "^9.45.1",
     "@react-three/fiber": "^8.9.1",
