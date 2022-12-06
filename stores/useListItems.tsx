@@ -67,7 +67,7 @@ const DEFAULT_STATE: Items = [
   },
   {
     component: IkeaGarbage,
-    title: "The first discarded piece of IKEA furniture in Augmented Reality",
+    title: "The first discarded piece of IKEA furniture in AR",
     year: 2017,
   },
   {
