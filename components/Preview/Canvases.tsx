@@ -14,7 +14,7 @@ const Canvases = () => (
           <span className="opacity-30">(acrylic on canvas)</span>
         </p>
       </div>
-      <div className="md:w-1/3 lg:w-1/3 xl:w-1/3 2xl:w-1/4">
+      <div className="md:w-1/3 lg:w-1/3 xl:w-1/3 2xl:w-1/5">
         <img
           alt="Keske, 2006 (oil on canvas)"
           className="w-full"
