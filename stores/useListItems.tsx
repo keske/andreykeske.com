@@ -46,6 +46,11 @@ const DEFAULT_STATE: Items = [
     year: 2021,
   },
   {
+    component: Works.RollingStones,
+    title: "Rolling Stones Emoji Logotype",
+    year: 2017,
+  },
+  {
     component: Works.BTCBubble,
     title: "Bitcoin Bubble",
     year: 2021,
