@@ -6,7 +6,7 @@ type MandelbrotSetGeometryProps = {
 };
 
 const MandelbrotSetGeometry: React.FC<MandelbrotSetGeometryProps> = ({
-  quantity = 150,
+  quantity = 100,
   size = 10,
 }) => {
   const generate = React.useCallback(() => {
@@ -16,9 +16,9 @@ const MandelbrotSetGeometry: React.FC<MandelbrotSetGeometryProps> = ({
       for (let y = 0; y < quantity; y++) {
         let i = 0;
 
-        const cx = -2 + x / 50;
+        const cx = -2 + x / 30;
 
-        const cy = -2 + y / 50;
+        const cy = -2 + y / 30;
 
         let zx = 0;
 

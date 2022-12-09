@@ -17,10 +17,13 @@ const ViewModeList = () => {
 
   const hydratedItems = React.useMemo<HydratedItem[]>(
     () =>
-      items.map((item) => ({
-        ...item,
-        id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
-      })),
+      items
+        .map((item) => ({
+          ...item,
+          id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
+        }))
+        .sort((a, b) => a.year - b.year)
+        .reverse(),
     [items],
   );
 
@@ -78,17 +81,17 @@ const ViewModeList = () => {
     <>
       <div className="absolute top-0">{preview}</div>
       <div className="absolute mt-10">
-        <a className="ml-12 text-2xl" href="/">
+        <a className="ml-12 xl:text-xl 2xl:text-2xl" href="/">
           Andrey Keske
         </a>
         <ul>
           {hydratedItems.map(({ component: PreviewComponent, id, title }) => (
             <li
               className={clsx(
-                "list-none text-5xl font-black uppercase",
+                "list-none font-black uppercase lg:text-xl xl:text-2xl 2xl:text-4xl",
                 id === selectedCaseId || R.isNil(selectedCaseId)
                   ? "cursor-pointer opacity-100"
-                  : "opacity-10",
+                  : "cursor-default opacity-0 hover:opacity-10",
               )}
               key={id}
               onClick={() => {

@@ -1,28 +1,6 @@
 import create from "zustand";
 
-import {
-  BTCBubble,
-  Ball,
-  Blackhole,
-  Canvases,
-  Catch,
-  DockRecycleBins,
-  EsherSwitchButton,
-  FridayDock,
-  Globalization,
-  Graffiti,
-  IkeaGarbage,
-  InvertedManhattan,
-  LOT2046Tattoo,
-  Lego,
-  MandelbrotSet,
-  TickyApplication,
-  TmuxChess,
-  VintageGoogleStreetView,
-  Volcom,
-  WaterFilter,
-  WaterOnMars,
-} from "@/components/Preview/index";
+import * as Works from "@/components/Preview/index";
 
 export type Item = {
   component: () => JSX.Element;
@@ -38,107 +16,117 @@ export type Store = {
 
 const DEFAULT_STATE: Items = [
   {
-    component: TickyApplication,
+    component: Works.SoftVideoPlayer,
+    title: "Soft Video Player",
+    year: 2022,
+  },
+  {
+    component: Works.TickyApplication,
     title: "Ticky iOS Application",
     year: 2021,
   },
   {
-    component: MandelbrotSet,
+    component: Works.MandelbrotSet,
     title: "Mandelbrot Set",
     year: 2021,
   },
   {
-    component: Blackhole,
+    component: Works.Blackhole,
     title: "Blackhole",
     year: 2016,
   },
   {
-    component: Ball,
+    component: Works.Ball,
     title: "Ball in the Dock",
     year: 2014,
   },
   {
-    component: EsherSwitchButton,
+    component: Works.EsherSwitchButton,
     title: "Radio Button to Switch Evolution",
     year: 2021,
   },
   {
-    component: BTCBubble,
+    component: Works.BTCBubble,
     title: "Bitcoin Bubble",
     year: 2021,
   },
   {
-    component: WaterFilter,
+    component: Works.EmojiTattooFlashes,
+    title: "Emoji Tattoo Flashes",
+    year: 2017,
+  },
+  {
+    component: Works.WaterFilter,
     title: "Eco problems with water",
     year: 2016,
   },
   {
-    component: DockRecycleBins,
+    component: Works.DockRecycleBins,
     title: "The Dock's Recycle Bins",
     year: 2011,
   },
   {
-    component: IkeaGarbage,
+    component: Works.IkeaGarbage,
     title: "The first discarded piece of IKEA furniture in AR",
     year: 2017,
   },
   {
-    component: Globalization,
+    component: Works.Globalization,
     title: "Globalization",
     year: 2016,
   },
   {
-    component: Catch,
+    component: Works.Catch,
     title: "The Catch",
     year: 2013,
   },
   {
-    component: LOT2046Tattoo,
+    component: Works.LOT2046Tattoo,
     title: "LOT 2046 Tattoo Machine from Toothbrush",
     year: 2019,
   },
   {
-    component: TmuxChess,
+    component: Works.TmuxChess,
     title: "Tmux Chess",
     year: 2014,
   },
   {
-    component: Lego,
+    component: Works.Lego,
     title: "Lego",
     year: 2021,
   },
   {
-    component: FridayDock,
+    component: Works.FridayDock,
     title: "Friday Dock",
     year: 2013,
   },
   {
-    component: VintageGoogleStreetView,
+    component: Works.VintageGoogleStreetView,
     title: "Vintage Google StreetView",
     year: 2016,
   },
   {
-    component: InvertedManhattan,
+    component: Works.InvertedManhattan,
     title: "Inverted Manhattan",
     year: 2011,
   },
   {
-    component: Graffiti,
+    component: Works.Graffiti,
     title: "Graffiti 2006..2009",
     year: 2006,
   },
   {
-    component: Canvases,
+    component: Works.Canvases,
     title: "Canvases 2006..2009",
     year: 2006,
   },
   {
-    component: Volcom,
+    component: Works.Volcom,
     title: "Volcom Art Galery",
     year: 2007,
   },
   {
-    component: WaterOnMars,
+    component: Works.WaterOnMars,
     title: "Water on Mars",
     year: 2011,
   },
