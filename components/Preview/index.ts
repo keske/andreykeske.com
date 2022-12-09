@@ -3,6 +3,7 @@ export { default as Blackhole } from "./Blackhole";
 export { default as BTCBubble } from "./BTCBubble";
 export { default as Canvases } from "./Canvases";
 export { default as Catch } from "./Catch";
+export { default as ClothUI } from "./ClothUI";
 export { default as DistortingMirrors } from "./DistortingMirrors";
 export { default as DockRecycleBins } from "./DockRecycleBins";
 export { default as EmojiTattooFlashes } from "./EmojiTattooFlashes";

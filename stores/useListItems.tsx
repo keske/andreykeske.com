@@ -16,6 +16,11 @@ export type Store = {
 
 const DEFAULT_STATE: Items = [
   {
+    component: Works.ClothUI,
+    title: "Cloth UI",
+    year: 2022,
+  },
+  {
     component: Works.SoftVideoPlayer,
     title: "Soft Video Player",
     year: 2022,
