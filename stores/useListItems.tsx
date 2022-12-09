@@ -21,8 +21,18 @@ const DEFAULT_STATE: Items = [
     year: 2022,
   },
   {
+    component: Works.DistortingMirrors,
+    title: "Distorting Mirrors",
+    year: 2021,
+  },
+  {
     component: Works.TickyApplication,
     title: "Ticky iOS Application",
+    year: 2021,
+  },
+  {
+    component: Works.Hydra,
+    title: "Hydra",
     year: 2021,
   },
   {
