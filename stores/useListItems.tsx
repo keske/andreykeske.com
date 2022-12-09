@@ -135,6 +135,11 @@ const DEFAULT_STATE: Items = [
     title: "Water on Mars",
     year: 2011,
   },
+  {
+    component: Works.Sneakers,
+    title: "Nike Dunk x Adidas Superstar",
+    year: 2011,
+  },
 ];
 
 const useListItems = create<Store>(() => ({

@@ -15,6 +15,7 @@ export { default as Lego } from "./Lego";
 export { default as LOT2046Tattoo } from "./LOT2046Tattoo";
 export { default as MandelbrotSet } from "./MandelbrotSet";
 export { default as RollingStones } from "./RollingStones";
+export { default as Sneakers } from "./Sneakers";
 export { default as SoftVideoPlayer } from "./SoftVideoPlayer";
 export { default as TickyApplication } from "./TickyApplication";
 export { default as TmuxChess } from "./TmuxChess";
