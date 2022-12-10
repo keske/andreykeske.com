@@ -18,7 +18,8 @@
       "@/pages/*": ["pages/*"],
       "@/public/*": ["public/*"],
       "@/stores/*": ["stores/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/utils/*": ["utils/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
