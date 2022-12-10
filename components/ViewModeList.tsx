@@ -80,10 +80,12 @@ const ViewModeList = () => {
   return (
     <>
       <div className="absolute top-0">{preview}</div>
-      <div className="absolute mt-10">
-        <a className="ml-12 xl:text-xl 2xl:text-2xl" href="/">
-          Andrey Keske
-        </a>
+      {/* <div className="absolute mt-10"> */}
+      <a className="ml-12 xl:text-xl 2xl:text-2xl" href="/">
+        Andrey Keske
+      </a>
+      <div style={{ height: 2000 }} />
+      {typeof window !== "undefined" && window.innerWidth > 768 ? (
         <ul>
           {hydratedItems.map(({ component: PreviewComponent, id, title }) => (
             <li
@@ -106,7 +108,19 @@ const ViewModeList = () => {
             </li>
           ))}
         </ul>
-      </div>
+      ) : (
+        hydratedItems.map(
+          ({ component: PreviewComponent, hasMobileVersion, id }) =>
+            hasMobileVersion && (
+              <React.Fragment key={id}>
+                <PreviewComponent />
+              </React.Fragment>
+            ),
+        )
+      )}
+      {/* </div> */}
+      <div style={{ height: 2000 }} />
+      <div style={{ height: 2000 }} />
       <CloseButton
         isShowing={R.not(R.isNil(selectedCaseId))}
         onClick={handleCloseCase}
