@@ -72,7 +72,7 @@ const MandelbrotSetGeometry: React.FC<MandelbrotSetGeometryProps> = ({
   );
 };
 
-const MandelbrotSet = () => (
+export const MandelbrotSet = () => (
   <div className="absolute top-0 left-0 h-screen w-screen">
     <div className="relative">
       <MandelbrotSetGeometry />
@@ -82,5 +82,3 @@ const MandelbrotSet = () => (
     </p>
   </div>
 );
-
-export default MandelbrotSet;

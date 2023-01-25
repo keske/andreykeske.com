@@ -10,7 +10,7 @@ import { useListItems } from "@/stores/index";
 
 type HydratedItem = Item & { id: string };
 
-const ViewModeList = () => {
+export const List = () => {
   const router = useRouter();
 
   const { items } = useListItems();
@@ -84,7 +84,7 @@ const ViewModeList = () => {
         <a className="ml-12 xl:text-xl 2xl:text-2xl" href="/">
           Andrey Keske
         </a>
-        {typeof window !== "undefined" && window.innerWidth > 768 ? (
+        {/* {typeof window !== "undefined" && window.innerWidth > 768 ? (
           <ul>
             {hydratedItems.map(({ component: PreviewComponent, id, title }) => (
               <li
@@ -118,7 +118,7 @@ const ViewModeList = () => {
                 ),
             )}
           </div>
-        )}
+        )} */}
       </div>
       <CloseButton
         isShowing={R.not(R.isNil(selectedCaseId))}
@@ -127,5 +127,3 @@ const ViewModeList = () => {
     </>
   );
 };
-
-export default ViewModeList;

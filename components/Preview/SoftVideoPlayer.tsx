@@ -1,6 +1,6 @@
 import React from "react";
 
-const SoftVideoPlayer = () => (
+export const SoftVideoPlayer = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen justify-center">
     <iframe
       className="h-screen w-screen border-0"
@@ -9,5 +9,3 @@ const SoftVideoPlayer = () => (
     />
   </div>
 );
-
-export default SoftVideoPlayer;

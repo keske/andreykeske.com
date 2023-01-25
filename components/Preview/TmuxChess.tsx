@@ -80,7 +80,7 @@ const Mobile = () => {
   );
 };
 
-export default () =>
+export const TmuxChess = () =>
   typeof window !== "undefined" && window.innerWidth > 768 ? (
     <Desktop />
   ) : (

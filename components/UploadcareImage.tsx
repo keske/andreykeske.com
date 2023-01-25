@@ -9,7 +9,7 @@ type Props = {
   src: string;
 };
 
-const UploadcareImage: React.FC<Props> = ({
+export const UploadcareImage: React.FC<Props> = ({
   alt,
   format = "jpeg",
   progressive = "no",
@@ -27,5 +27,3 @@ const UploadcareImage: React.FC<Props> = ({
     ])}
   />
 );
-
-export default UploadcareImage;

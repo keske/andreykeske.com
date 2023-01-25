@@ -8,7 +8,7 @@ import axios from "axios";
 import React from "react";
 import * as THREE from "three";
 
-const Buble = () => {
+export const Buble = () => {
   const ref = React.useRef<THREE.Mesh>(null!);
 
   useFrame(({ clock, mouse }) => {
@@ -82,5 +82,3 @@ const BTCBubble = () => {
     </div>
   );
 };
-
-export default BTCBubble;

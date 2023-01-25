@@ -2,7 +2,7 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-const FridayDock = () => (
+export const FridayDock = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen items-end justify-center">
     <div className="w-1/2">
       <UploadcareImage
@@ -12,5 +12,3 @@ const FridayDock = () => (
     </div>
   </div>
 );
-
-export default FridayDock;

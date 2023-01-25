@@ -1,1 +1,1 @@
-export { default as interpolate } from "./interpolate";
+export * from "./interpolate";

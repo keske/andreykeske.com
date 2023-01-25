@@ -186,8 +186,6 @@ const DEFAULT_STATE: Items = [
   },
 ];
 
-const useListItems = create<Store>(() => ({
+export const useListItems = create<Store>(() => ({
   items: DEFAULT_STATE,
 }));
-
-export default useListItems;

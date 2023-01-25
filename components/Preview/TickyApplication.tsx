@@ -2,7 +2,7 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-const TickyApplication = () => (
+export const TickyApplication = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen items-center justify-center">
     <div className="w-1/5">
       <UploadcareImage
@@ -19,5 +19,3 @@ const TickyApplication = () => (
     </p>
   </div>
 );
-
-export default TickyApplication;

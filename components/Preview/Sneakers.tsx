@@ -2,7 +2,7 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-const Sneakers = () => (
+export const Sneakers = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen items-center justify-center">
     <div className="w-1/3">
       <UploadcareImage
@@ -16,5 +16,3 @@ const Sneakers = () => (
     </p>
   </div>
 );
-
-export default Sneakers;

@@ -24,7 +24,7 @@ const Wall = () => {
   );
 };
 
-const Graffiti = () => {
+export const Graffiti = () => {
   const peaces = [
     "Keske, Kaze, 2007",
     "Keske, Kaze, 2007",
@@ -77,5 +77,3 @@ const Graffiti = () => {
     </div>
   );
 };
-
-export default Graffiti;

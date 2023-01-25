@@ -2,7 +2,7 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-const EsherSwitchButton = () => (
+export const EsherSwitchButton = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen items-center justify-center">
     <div className="md:w-1/2 xl:w-1/3 2xl:w-1/4">
       <UploadcareImage
@@ -28,5 +28,3 @@ const EsherSwitchButton = () => (
     </p>
   </div>
 );
-
-export default EsherSwitchButton;

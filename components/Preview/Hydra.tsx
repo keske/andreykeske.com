@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hydra = () => (
+export const Hydra = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen justify-center">
     <iframe
       allow="loop"
@@ -16,5 +16,3 @@ const Hydra = () => (
     </p>
   </div>
 );
-
-export default Hydra;

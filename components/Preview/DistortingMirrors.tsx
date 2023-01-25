@@ -15,7 +15,7 @@ const random =
   // eslint-disable-next-line @typescript-eslint/default-param-last
   (min = 0, max: number) => Math.random() * (max - min) + min;
 
-const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
+export const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
   const warpRatio = 10;
 
   const getRandomCoords = React.useCallback(
@@ -165,5 +165,3 @@ const DistortingMirrors = () => {
     </div>
   );
 };
-
-export default DistortingMirrors;

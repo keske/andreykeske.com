@@ -1,4 +1,4 @@
-const interpolate = (
+export const interpolate = (
   xarr: readonly number[],
   yarr: readonly number[],
   xpoint: number,
@@ -23,5 +23,3 @@ const interpolate = (
     yarr[xarr.indexOf(xpoint)] || ya + ((xpoint - xa) * (yb - ya)) / (xb - xa)
   );
 };
-
-export default interpolate;

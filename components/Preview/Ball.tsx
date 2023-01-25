@@ -1,6 +1,6 @@
 import React from "react";
 
-const Ball = () => (
+export const Ball = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen justify-center">
     <iframe
       allow="loop"
@@ -10,5 +10,3 @@ const Ball = () => (
     />
   </div>
 );
-
-export default Ball;

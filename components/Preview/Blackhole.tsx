@@ -1,6 +1,6 @@
 import React from "react";
 
-const Blackhole = () => (
+export const Blackhole = () => (
   <div className="absolute top-0 left-0 h-screen w-screen justify-center">
     <div className="flex h-screen w-screen flex-col items-center gap-10 p-20">
       <div>
@@ -40,5 +40,3 @@ const Blackhole = () => (
     </div>
   </div>
 );
-
-export default Blackhole;

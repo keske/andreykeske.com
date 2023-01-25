@@ -9,7 +9,7 @@ type Props = {
 
 type Ref = Mesh<BufferGeometry, Material | Material[]>;
 
-const THREEOnMouseRotation = React.forwardRef<Ref, Props>(
+export const THREEOnMouseRotation = React.forwardRef<Ref, Props>(
   // @ts-ignore
   ({ children, strength = 0.001 }, ref: Ref) => {
     useMove(
@@ -25,5 +25,3 @@ const THREEOnMouseRotation = React.forwardRef<Ref, Props>(
     return children;
   },
 );
-
-export default THREEOnMouseRotation;

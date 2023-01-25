@@ -2,7 +2,7 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-const WaterOnMars = () => (
+export const WaterOnMars = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen items-center justify-center">
     <div className="w-1/3">
       <UploadcareImage
@@ -12,5 +12,3 @@ const WaterOnMars = () => (
     </div>
   </div>
 );
-
-export default WaterOnMars;

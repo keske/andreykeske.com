@@ -1,6 +1,6 @@
 import React from "react";
 
-const VintageGoogleStreetView = () => (
+export const VintageGoogleStreetView = () => (
   <div className="absolute top-0 left-0 h-screen w-screen">
     <iframe
       className="h-screen w-screen border-0"
@@ -15,5 +15,3 @@ const VintageGoogleStreetView = () => (
     </p>
   </div>
 );
-
-export default VintageGoogleStreetView;

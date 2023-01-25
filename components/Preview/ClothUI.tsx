@@ -1,6 +1,6 @@
 import React from "react";
 
-const ClothUI = () => (
+export const ClothUI = () => (
   <div className="absolute top-0 left-0 flex h-screen w-screen justify-center">
     <iframe
       className="h-screen w-screen border-0"
@@ -9,5 +9,3 @@ const ClothUI = () => (
     />
   </div>
 );
-
-export default ClothUI;

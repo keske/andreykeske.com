@@ -34,7 +34,7 @@ const Mobile = () => (
   </div>
 );
 
-export default () =>
+export const IkeaGarbage = () =>
   typeof window !== "undefined" && window.innerWidth > 768 ? (
     <Desktop />
   ) : (

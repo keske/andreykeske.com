@@ -2,7 +2,7 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-const WaterFilter = () => (
+export const WaterFilter = () => (
   <div className="absolute top-0 left-0 h-screen w-screen">
     <div className="flex flex-col items-center gap-10 p-20">
       <div className="md:w-1/2 lg:w-1/2 xl:w-1/2 2xl:w-1/4">
@@ -25,5 +25,3 @@ const WaterFilter = () => (
     </p>
   </div>
 );
-
-export default WaterFilter;

@@ -49,7 +49,7 @@ const Mobile = () => {
   );
 };
 
-export default () =>
+export const Catch = () =>
   typeof window !== "undefined" && window.innerWidth > 768 ? (
     <Desktop />
   ) : (

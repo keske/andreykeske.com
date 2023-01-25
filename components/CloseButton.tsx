@@ -5,7 +5,7 @@ type Props = {
   onClick: () => void;
 };
 
-const CloseButton: React.FC<Props> = ({ isShowing, onClick }) => {
+export const CloseButton: React.FC<Props> = ({ isShowing, onClick }) => {
   React.useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -30,5 +30,3 @@ const CloseButton: React.FC<Props> = ({ isShowing, onClick }) => {
     </div>
   );
 };
-
-export default CloseButton;
