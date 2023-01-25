@@ -5,4 +5,4 @@ node_modules/
 .snapshots/
 *.min.js
 
-src/fork
+public/

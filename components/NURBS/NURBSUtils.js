@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { Vector3, Vector4 } from 'three';
+import { Vector3, Vector4 } from "three";
 
 /**
  * NURBS utils
@@ -262,13 +262,7 @@ class NURBSUtils {
 
     const span = this.findSpan(p, u, U);
 
-    const nders = this.calcBasisFunctionDerivatives(
-      span,
-      u,
-      p,
-      du,
-      U,
-    );
+    const nders = this.calcBasisFunctionDerivatives(span, u, p, du, U);
 
     const Pw = [];
 
@@ -288,9 +282,7 @@ class NURBSUtils {
       const point = Pw[span - p].clone().multiplyScalar(nders[k][0]);
 
       for (let j = 1; j <= p; ++j) {
-        point.add(
-          Pw[span - p + j].clone().multiplyScalar(nders[k][j]),
-        );
+        point.add(Pw[span - p + j].clone().multiplyScalar(nders[k][j]));
       }
 
       CK[k] = point;
@@ -356,9 +348,7 @@ class NURBSUtils {
 
       for (let i = 1; i <= k; ++i) {
         v.sub(
-          CK[k - i]
-            .clone()
-            .multiplyScalar(this.calcKoverI(k, i) * wders[i]),
+          CK[k - i].clone().multiplyScalar(this.calcKoverI(k, i) * wders[i]),
         );
       }
 

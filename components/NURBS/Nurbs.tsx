@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as THREE from 'three';
+import * as React from "react";
+import * as THREE from "three";
 
-import { NURBSSurface } from './NURBSSurface';
+import { NURBSSurface } from "./NURBSSurface";
 
 type Props = {
   nsControlPoints: THREE.Vector4[][];

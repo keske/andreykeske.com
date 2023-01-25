@@ -1,7 +1,7 @@
 /* eslint-disable */
 
-import { Curve, Vector3, Vector4 } from 'three';
-import { NURBSUtils } from './NURBSUtils';
+import { Curve, Vector3, Vector4 } from "three";
+import { NURBSUtils } from "./NURBSUtils";
 
 /**
  * NURBS curve object
@@ -33,20 +33,16 @@ class NURBSCurve extends Curve {
       // ensure Vector4 for control points
       const point = controlPoints[i];
 
-      this.controlPoints[i] = new Vector4(
-        point.x,
-        point.y,
-        point.z,
-        point.w,
-      );
+      this.controlPoints[i] = new Vector4(point.x, point.y, point.z, point.w);
     }
   }
 
   getPoint(t, optionalTarget = new Vector3()) {
     const point = optionalTarget;
 
-    const u = this.knots[this.startKnot]
-      + t * (this.knots[this.endKnot] - this.knots[this.startKnot]); // linear mapping t->u
+    const u =
+      this.knots[this.startKnot] +
+      t * (this.knots[this.endKnot] - this.knots[this.startKnot]); // linear mapping t->u
 
     // following results in (wx, wy, wz, w) homogeneous point
     const hpoint = NURBSUtils.calcBSplinePoint(
@@ -67,8 +63,8 @@ class NURBSCurve extends Curve {
   getTangent(t, optionalTarget = new Vector3()) {
     const tangent = optionalTarget;
 
-    const u = this.knots[0]
-      + t * (this.knots[this.knots.length - 1] - this.knots[0]);
+    const u =
+      this.knots[0] + t * (this.knots[this.knots.length - 1] - this.knots[0]);
 
     const ders = NURBSUtils.calcNURBSDerivatives(
       this.degree,
