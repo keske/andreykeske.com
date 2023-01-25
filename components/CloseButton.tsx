@@ -1,11 +1,16 @@
 import React from "react";
 
-type Props = {
+import { Button } from "./Button";
+
+type CloseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   isShowing: boolean;
   onClick: () => void;
 };
 
-export const CloseButton: React.FC<Props> = ({ isShowing, onClick }) => {
+export const CloseButton = React.forwardRef<
+  HTMLButtonElement,
+  CloseButtonProps
+>(({ isShowing, onClick, ...props }, ref) => {
   React.useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -25,8 +30,15 @@ export const CloseButton: React.FC<Props> = ({ isShowing, onClick }) => {
   }
 
   return (
-    <div className="fixed top-10 right-10 cursor-pointer" onClick={onClick}>
+    <Button
+      {...props}
+      className="fixed top-10 right-10 cursor-pointer uppercase"
+      onClick={onClick}
+      ref={ref}
+      size={null}
+      variant="transparent"
+    >
       Close
-    </div>
+    </Button>
   );
-};
+});
