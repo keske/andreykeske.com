@@ -80,47 +80,46 @@ const ViewModeList = () => {
   return (
     <>
       <div className="absolute top-0">{preview}</div>
-      {/* <div className="absolute mt-10"> */}
-      <a className="ml-12 xl:text-xl 2xl:text-2xl" href="/">
-        Andrey Keske
-      </a>
-      <div style={{ height: 2000 }} />
-      {typeof window !== "undefined" && window.innerWidth > 768 ? (
-        <ul>
-          {hydratedItems.map(({ component: PreviewComponent, id, title }) => (
-            <li
-              className={clsx(
-                "list-none font-black uppercase lg:text-xl xl:text-2xl 2xl:text-4xl",
-                id === selectedCaseId || R.isNil(selectedCaseId)
-                  ? "cursor-pointer opacity-100"
-                  : "cursor-default opacity-0 hover:opacity-10",
-              )}
-              key={id}
-              onClick={() => {
-                handleShowCase(id);
-              }}
-              onMouseOut={handleMouseOut}
-              onMouseOver={() => {
-                handleMouseOver(<PreviewComponent />);
-              }}
-            >
-              <a href={`#${id}`}>{title}</a>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        hydratedItems.map(
-          ({ component: PreviewComponent, hasMobileVersion, id }) =>
-            hasMobileVersion && (
-              <React.Fragment key={id}>
-                <PreviewComponent />
-              </React.Fragment>
-            ),
-        )
-      )}
-      {/* </div> */}
-      <div style={{ height: 2000 }} />
-      <div style={{ height: 2000 }} />
+      <div className="absolute mt-10">
+        <a className="ml-12 xl:text-xl 2xl:text-2xl" href="/">
+          Andrey Keske
+        </a>
+        {typeof window !== "undefined" && window.innerWidth > 768 ? (
+          <ul>
+            {hydratedItems.map(({ component: PreviewComponent, id, title }) => (
+              <li
+                className={clsx(
+                  "list-none font-black uppercase lg:text-xl xl:text-2xl 2xl:text-4xl",
+                  id === selectedCaseId || R.isNil(selectedCaseId)
+                    ? "cursor-pointer opacity-100"
+                    : "cursor-default opacity-0 hover:opacity-10",
+                )}
+                key={id}
+                onClick={() => {
+                  handleShowCase(id);
+                }}
+                onMouseOut={handleMouseOut}
+                onMouseOver={() => {
+                  handleMouseOver(<PreviewComponent />);
+                }}
+              >
+                <a href={`#${id}`}>{title}</a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="flex flex-col gap-20">
+            {hydratedItems.map(
+              ({ component: PreviewComponent, hasMobileVersion, id }) =>
+                hasMobileVersion && (
+                  <React.Fragment key={id}>
+                    <PreviewComponent />
+                  </React.Fragment>
+                ),
+            )}
+          </div>
+        )}
+      </div>
       <CloseButton
         isShowing={R.not(R.isNil(selectedCaseId))}
         onClick={handleCloseCase}

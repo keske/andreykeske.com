@@ -102,7 +102,7 @@ const DEFAULT_STATE: Items = [
   },
   {
     component: Works.IkeaGarbage,
-    hasMobileVersion: false,
+    hasMobileVersion: true,
     title: "The first discarded piece of IKEA furniture in AR",
     year: 2017,
   },
@@ -126,7 +126,7 @@ const DEFAULT_STATE: Items = [
   },
   {
     component: Works.TmuxChess,
-    hasMobileVersion: false,
+    hasMobileVersion: true,
     title: "Tmux Chess",
     year: 2014,
   },

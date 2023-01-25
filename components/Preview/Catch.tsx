@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 
@@ -30,9 +29,7 @@ const Mobile = () => {
 
   return (
     <div
-      className={clsx(
-        "flex h-screen w-screen flex-col items-center justify-center",
-      )}
+      className={"flex h-screen w-screen flex-col items-center justify-center"}
     >
       <Parallax onProgressChange={handleProgress}>
         <img className="w-full" src={`/images/catch/catch_${index}.jpg`} />
@@ -52,11 +49,9 @@ const Mobile = () => {
   );
 };
 
-const Catch = () =>
+export default () =>
   typeof window !== "undefined" && window.innerWidth > 768 ? (
     <Desktop />
   ) : (
     <Mobile />
   );
-
-export default Catch;
