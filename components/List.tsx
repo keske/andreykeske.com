@@ -8,22 +8,19 @@ import type { Item } from "@/stores/useListItems";
 import { CloseButton } from "@/components/index";
 import { useListItems } from "@/stores/index";
 
-type HydratedItem = Item & { id: string };
+type ItemWithID = Item & { id: string };
 
 export const List = () => {
   const router = useRouter();
 
   const { items } = useListItems();
 
-  const hydratedItems = React.useMemo<HydratedItem[]>(
+  const itemsWithId = React.useMemo<ItemWithID[]>(
     () =>
-      items
-        .map((item) => ({
-          ...item,
-          id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
-        }))
-        .sort((a, b) => a.year - b.year)
-        .reverse(),
+      items.map((item) => ({
+        ...item,
+        id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
+      })),
     [items],
   );
 
@@ -70,20 +67,41 @@ export const List = () => {
 
       const { component } = R.find(
         R.propEq("id", router.asPath.replace("/#", "")),
-      )(hydratedItems) as HydratedItem;
+      )(itemsWithId) as ItemWithID;
 
       setPreview(component);
       setSelectedCaseId(caseId);
     }
-  }, [hydratedItems, router.asPath]);
+  }, [itemsWithId, router.asPath]);
 
   return (
     <>
       <div className="absolute top-0">{preview}</div>
-      <div className="absolute mt-10">
-        <a className="ml-12 xl:text-xl 2xl:text-2xl" href="/">
-          Andrey Keske
-        </a>
+      <div className="absolute mt-20 ml-12">
+        <nav>
+          <ul>
+            {itemsWithId.map(({ component: PreviewComponent, id, title }) => (
+              <li
+                className={clsx(
+                  "list-none font-black uppercase lg:text-xl xl:text-2xl 2xl:text-4xl",
+                  id === selectedCaseId || R.isNil(selectedCaseId)
+                    ? "cursor-pointer opacity-100"
+                    : "cursor-default opacity-0 hover:opacity-10",
+                )}
+                key={id}
+                onClick={() => {
+                  handleShowCase(id);
+                }}
+                onMouseOut={handleMouseOut}
+                onMouseOver={() => {
+                  handleMouseOver(<PreviewComponent />);
+                }}
+              >
+                <a href={`#${id}`}>{title}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
         {/* {typeof window !== "undefined" && window.innerWidth > 768 ? (
           <ul>
             {hydratedItems.map(({ component: PreviewComponent, id, title }) => (

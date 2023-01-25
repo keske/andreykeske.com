@@ -128,7 +128,7 @@ export const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
   );
 };
 
-const DistortingMirrors = () => {
+export const DistortingMirrors = () => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {

@@ -2,12 +2,17 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { Head, List } from "@/components/index";
+import { Head, List, Logo } from "@/components/index";
 
 const Home: NextPage = () => (
   <>
     <Head />
-    <List />
+    <header>
+      <Logo />
+    </header>
+    <main>
+      <List />
+    </main>
   </>
 );
 

@@ -9,13 +9,11 @@ export type Item = {
   year: number;
 };
 
-export type Items = Item[];
-
 export type Store = {
-  readonly items: Items;
+  readonly items: Item[];
 };
 
-const DEFAULT_STATE: Items = [
+const DEFAULT_STATE: Item[] = [
   {
     component: Works.ClothUI,
     hasMobileVersion: false,
@@ -184,7 +182,9 @@ const DEFAULT_STATE: Items = [
     title: "Nike Dunk x Adidas Superstar",
     year: 2011,
   },
-];
+]
+  .sort((a, b) => a.year - b.year)
+  .reverse();
 
 export const useListItems = create<Store>(() => ({
   items: DEFAULT_STATE,

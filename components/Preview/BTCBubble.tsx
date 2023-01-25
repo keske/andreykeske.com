@@ -45,7 +45,7 @@ export const Buble = () => {
   );
 };
 
-const BTCBubble = () => {
+export const BTCBubble = () => {
   const [price, setPrice] = React.useState<number>(0);
 
   React.useEffect(() => {

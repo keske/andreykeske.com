@@ -7,7 +7,13 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "transparent";
 };
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export type ButtonRef =
+  | HTMLButtonElement
+  | HTMLDivElement
+  | HTMLLinkElement
+  | HTMLSpanElement;
+
+export const Button = React.forwardRef<ButtonRef, ButtonProps>(
   (
     {
       as = "button",
@@ -26,7 +32,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       {
         className: clsx(
           className,
-          "cursor-pointer rounded-full border-none font-bold duration-200 hover:scale-105",
+          "cursor-pointer rounded-full border-none font-bold",
           {
             // variant states
             "bg-black": variant == "secondary",
