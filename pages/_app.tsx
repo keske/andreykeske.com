@@ -1,12 +1,15 @@
 import "@/styles/globals.css";
-import { Inter } from "@next/font/google";
+import {
+  Aboreto,
+  // Inter
+} from "@next/font/google";
 
 import * as React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 import type { AppProps } from "next/app";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Aboreto({ subsets: ["latin"], weight: "400" });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

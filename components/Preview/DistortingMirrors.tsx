@@ -6,16 +6,18 @@ import * as THREE from "three";
 
 import { Nurbs } from "../NURBSVideo";
 
+import { THREEOnMouseRotation } from "@/components/index";
+
 type PaneProps = {
   url: string;
-  videoRef: HTMLVideoElement;
+  videoRef: React.RefObject<HTMLVideoElement>;
 };
 
 const random =
   // eslint-disable-next-line @typescript-eslint/default-param-last
   (min = 0, max: number) => Math.random() * (max - min) + min;
 
-export const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
+const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
   const warpRatio = 10;
 
   const getRandomCoords = React.useCallback(
@@ -129,6 +131,8 @@ export const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
 };
 
 export const DistortingMirrors = () => {
+  const meshRef = React.useRef<THREE.Mesh>(null!);
+
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
@@ -150,17 +154,19 @@ export const DistortingMirrors = () => {
       />
       <Canvas camera={{ position: [0, 10, 55] }}>
         <OrbitControls enableZoom={false} />
-        <group>
-          {R.range(0, 10).map((index) => (
-            <group
-              key={index}
-              position={[random(-25, 25), random(-25, 25), index * 0.001]}
-              scale={[random(-5, 5), random(-5, 5), random(-5, 5)]}
-            >
-              <Pane url="" videoRef={videoRef} />
-            </group>
-          ))}
-        </group>
+        <THREEOnMouseRotation ref={meshRef} strength={0.0001}>
+          <mesh ref={meshRef}>
+            {R.range(0, 10).map((index) => (
+              <group
+                key={index}
+                position={[random(-25, 25), random(-25, 25), index * 0.001]}
+                scale={[random(-5, 5), random(-5, 5), random(-5, 5)]}
+              >
+                <Pane url="" videoRef={videoRef} />
+              </group>
+            ))}
+          </mesh>
+        </THREEOnMouseRotation>
       </Canvas>
     </div>
   );

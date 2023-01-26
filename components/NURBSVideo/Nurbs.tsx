@@ -7,7 +7,7 @@ import { NURBSSurface } from "./NURBSSurface";
 type Props = {
   nsControlPoints: THREE.Vector4[][];
   url: string;
-  videoRef: React.MutableRefObject<HTMLVideoElement>;
+  videoRef: React.RefObject<HTMLVideoElement>;
 };
 
 const Nurbs = React.forwardRef(({ nsControlPoints, url, videoRef }: Props) => {

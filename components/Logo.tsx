@@ -1,7 +1,19 @@
 import React from "react";
 
-export const Logo: React.FC = () => (
-  <a className="absolute z-10 mt-10 ml-12 xl:text-xl 2xl:text-2xl" href="/">
+import { Button } from "./Button";
+
+type LogoProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  onClick: () => void;
+};
+
+export const Logo: React.FC<LogoProps> = ({ onClick, ...props }) => (
+  <Button
+    {...props}
+    className="cursor-pointer whitespace-nowrap uppercase"
+    onClick={onClick}
+    size={null}
+    variant="transparent"
+  >
     Andrey Keske
-  </a>
+  </Button>
 );
