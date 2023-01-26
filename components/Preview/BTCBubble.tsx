@@ -9,6 +9,12 @@ import axios from "axios";
 import React from "react";
 import * as THREE from "three";
 
+import { WorkDescription } from "@/components/index";
+
+type Props = {
+  selectedCaseId: string | null;
+};
+
 const useAnimation = (ref: React.MutableRefObject<THREE.Mesh>) => {
   useFrame(({ mouse }) => {
     const node = ref.current;
@@ -34,7 +40,7 @@ const CommonMeshDistortMaterial = () => (
     bumpScale={0.005}
     clearcoat={0.1}
     clearcoatRoughness={0.9}
-    color="rgba(0, 0, 0, 0.0)"
+    color="rgba(255, 255, 255, 0.0)"
     distort={0.31}
     metalness={0.5}
     radius={2.3}
@@ -94,26 +100,27 @@ const Course = () => {
   );
 };
 
-export const BTCBubble = () => (
-  <div className="absolute top-0 left-0 h-screen w-screen">
-    <div className="h-full w-full">
-      <Canvas
-        gl={{
-          alpha: false,
-          antialias: true,
-          depth: false,
-          powerPreference: "high-performance",
-          stencil: false,
-        }}
-      >
-        <Environment preset="sunset" />
-        <Buble />
-        <Course />
-      </Canvas>
-    </div>
-    <p className="fixed right-10 bottom-10 flex flex-col items-end text-sm text-white">
-      The current project is about the social opinion that Bitcoin is a bubble
-      and text inside it is the current BTC&#39;s course.
-    </p>
+export const BTCBubble: React.FC<Props> = ({ selectedCaseId }) => (
+  <div className="h-screen w-screen">
+    <Canvas
+      // className="h-screen w-screen"
+      gl={{
+        alpha: true,
+        antialias: true,
+        depth: false,
+        powerPreference: "high-performance",
+        stencil: false,
+      }}
+    >
+      <Environment preset="sunset" />
+      <Buble />
+      <Course />
+    </Canvas>
+    <WorkDescription selectedCaseId={selectedCaseId}>
+      <p>
+        The current project is about the social opinion that Bitcoin is a bubble
+        and text inside it is the current BTC&#39;s course.
+      </p>
+    </WorkDescription>
   </div>
 );

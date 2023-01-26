@@ -32,7 +32,7 @@ const Brick: React.FC<BrickProps> = ({ color }) => {
 };
 
 export const Lego = () => (
-  <div className="absolute top-0 left-0 h-screen w-screen">
+  <div className="h-screen w-screen">
     <Canvas
       gl={{
         alpha: true,

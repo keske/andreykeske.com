@@ -1,28 +1,19 @@
 import { Transition } from "@headlessui/react";
 import * as R from "ramda";
 import React from "react";
+import { createPortal } from "react-dom";
 
-import type { Item } from "@/stores/useListItems";
-
-type WorkTitleProps = {
-  itemsWithId: Array<Item & { id: string }>;
-  selectedCaseId: string | null;
+type WorkDescriptionProps = React.PropsWithChildren & {
+  selectedCaseId?: string | null;
 };
 
-export const WorkTitle: React.FC<WorkTitleProps> = ({
-  itemsWithId,
-  selectedCaseId,
+export const WorkDescription: React.FC<WorkDescriptionProps> = ({
+  children,
+  selectedCaseId = null,
 }) => {
   const onUnmount = React.useRef<() => void>();
 
-  const title = React.useMemo(
-    () =>
-      selectedCaseId &&
-      itemsWithId.filter((item) => item.id === selectedCaseId)[0].title,
-    [itemsWithId, selectedCaseId],
-  );
-
-  return (
+  return createPortal(
     <Transition
       afterLeave={() => onUnmount.current?.()}
       appear
@@ -38,10 +29,9 @@ export const WorkTitle: React.FC<WorkTitleProps> = ({
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="fixed top-10 z-10 flex w-full justify-center">
-          <h3 className="text-4xl">{title}</h3>
-        </div>
+        <div className="absolute right-10 bottom-10 text-right">{children}</div>
       </Transition.Child>
-    </Transition>
+    </Transition>,
+    document.getElementById("desctiption") as HTMLElement,
   );
 };

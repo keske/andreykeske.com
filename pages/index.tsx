@@ -5,19 +5,17 @@ import React from "react";
 import type { Item } from "@/stores/useListItems";
 import type { NextPage } from "next";
 
-import { Head, List, WorkTitle } from "@/components/index";
+import { Head, List, WorkPreview, WorkTitle } from "@/components/index";
 
 import { Header } from "@/components/index";
 import { useListItems } from "@/stores/index";
-
-type ItemWithID = Item & { id: string };
 
 const Home: NextPage = () => {
   const router = useRouter();
 
   const { items } = useListItems();
 
-  const itemsWithId = React.useMemo<ItemWithID[]>(
+  const itemsWithId = React.useMemo<Array<Item & { id: string }>>(
     () =>
       items.map((item) => ({
         ...item,
@@ -87,6 +85,7 @@ const Home: NextPage = () => {
       />
       <main>
         <WorkTitle {...{ itemsWithId, selectedCaseId }} />
+        <WorkPreview {...{ preview, selectedCaseId }} />
         <List
           {...{
             handleCloseCase,
@@ -94,7 +93,6 @@ const Home: NextPage = () => {
             handleMouseOver,
             handleShowCase,
             itemsWithId,
-            preview,
             selectedCaseId,
           }}
         />

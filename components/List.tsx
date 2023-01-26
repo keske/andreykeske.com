@@ -5,14 +5,11 @@ import React from "react";
 
 import type { Item } from "@/stores/useListItems";
 
-type ItemWithID = Item & { id: string };
-
 type ListProps = {
   handleMouseOut: () => void;
   handleMouseOver: (component: React.ReactNode) => void;
   handleShowCase: (id: string) => void;
-  itemsWithId: ItemWithID[];
-  preview: React.ReactNode;
+  itemsWithId: Array<Item & { id: string }>;
   selectedCaseId: string | null;
 };
 
@@ -21,15 +18,13 @@ export const List: React.FC<ListProps> = ({
   handleMouseOver,
   handleShowCase,
   itemsWithId,
-  preview,
   selectedCaseId,
 }) => {
   const onUnmount = React.useRef<() => void>();
 
   return (
     <>
-      <div className="absolute top-0">{preview}</div>
-      <div className="absolute bottom-10 ml-12">
+      <div className="fixed bottom-10 ml-12">
         <Transition
           afterLeave={() => onUnmount.current?.()}
           appear

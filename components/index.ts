@@ -5,4 +5,6 @@ export * from "./List";
 export * from "./Logo";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
+export * from "./WorkDescription";
+export * from "./WorkPreview";
 export * from "./WorkTitle";

@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ParallaxProvider>
       <main className={inter.className}>
         <Component {...pageProps} />
+        <div id="desctiption" />
       </main>
     </ParallaxProvider>
   );

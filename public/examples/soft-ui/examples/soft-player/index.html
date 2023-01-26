@@ -130,7 +130,7 @@
         controls = new THREE.OrbitControls(camera);
 
         renderer = new THREE.WebGLRenderer();
-        renderer.setClearColor(0x000000);
+        renderer.setClearColor(0xffffff);
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.shadowMap.enabled = true;
@@ -187,7 +187,7 @@
             pos,
             quat,
             new THREE.MeshPhongMaterial({
-              color: 0x000000,
+              color: 0xffffff,
             })
           );
         })();
@@ -204,7 +204,7 @@
           createSoftVolume(boxGeometry, volumeMass, 120, texture);
         }
 
-        const createSoftVideo = (x = 0, y = 3, z = 0, texture) => {
+        const createSoftVideo = (x = 3, y = 3, z = 0, texture) => {
           const boxGeometry = new THREE.BufferGeometry().fromGeometry(
             new THREE.BoxGeometry(32, 3, 24, 4, 4, 20)
           );
