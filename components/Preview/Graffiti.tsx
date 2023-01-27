@@ -8,6 +8,24 @@ import { Mesh } from "three";
 
 import { THREEOnMouseRotation } from "@/components/index";
 
+const peaces = [
+  "Keske, Kaze, 2007",
+  "Keske, Kaze, 2007",
+  "Keske, Kaze, 2007",
+  "Keske, Kaze, 2007",
+  "Kaze (Aru), Keske, 2007",
+  "Keske, Zebo (Bird), 2010",
+  "Keske, 2007",
+  "Keske (Skull and right thing), Kaze, 2007",
+  "Keske, Kaze (Aru), 2009",
+  "Keske, Keske, 2009",
+  "Ksenia, Keske, 2009",
+  "Keske, 2009",
+  "Keske, 2009",
+  "Kaze, Keske, 2007",
+  "Ksenia, Keske, 2009",
+];
+
 const random =
   // eslint-disable-next-line @typescript-eslint/default-param-last
   (min = 0, max: number) => Math.random() * (max - min) + min;
@@ -38,6 +56,12 @@ type PhotoProps = React.PropsWithChildren & {
 const Photo: React.FC<PhotoProps> = ({ children, index }) => {
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
 
+  const [zIndex, setZIndex] = React.useState(peaces.length);
+
+  const left = React.useMemo(() => random(0, window.innerWidth), []);
+
+  const top = React.useMemo(() => random(0, window.innerHeight), []);
+
   const bind = useGesture(
     {
       onDrag: ({ offset: [ox, oy] }) => {
@@ -47,20 +71,25 @@ const Photo: React.FC<PhotoProps> = ({ children, index }) => {
           y: oy,
         });
       },
+      onHover: () => {
+        setZIndex(zIndex + 1);
+      },
     },
     { drag: { preventDefault: true } },
   );
+
+  console.log("zindex", index + zIndex);
 
   return (
     <animated.div
       {...bind()}
       className="absolute flex w-1/4 cursor-grab flex-col gap-1 bg-slate-300 p-1"
       style={{
-        left: random(0, window.innerWidth),
-        top: random(0, window.innerHeight),
+        left,
+        top,
         x,
         y,
-        zIndex: index,
+        zIndex: index + zIndex,
       }}
     >
       {children}
@@ -69,27 +98,6 @@ const Photo: React.FC<PhotoProps> = ({ children, index }) => {
 };
 
 export const Graffiti = () => {
-  const peaces = React.useMemo(
-    () => [
-      "Keske, Kaze, 2007",
-      "Keske, Kaze, 2007",
-      "Keske, Kaze, 2007",
-      "Keske, Kaze, 2007",
-      "Kaze (Aru), Keske, 2007",
-      "Keske, Zebo (Bird), 2010",
-      "Keske, 2007",
-      "Keske (Skull and right thing), Kaze, 2007",
-      "Keske, Kaze (Aru), 2009",
-      "Keske, Keske, 2009",
-      "Ksenia, Keske, 2009",
-      "Keske, 2009",
-      "Keske, 2009",
-      "Kaze, Keske, 2007",
-      "Ksenia, Keske, 2009",
-    ],
-    [],
-  );
-
   const renderPeaces = React.useMemo(
     () =>
       peaces.map((peace, index) => (
@@ -118,7 +126,7 @@ export const Graffiti = () => {
 
   return (
     <>
-      <div className="h-screen w-screen bg-slate-800">{renderPeaces}</div>
+      <div className="h-screen w-screen">{renderPeaces}</div>
       <div className="fixed top-0 z-0 h-screen w-screen">
         <Canvas
           gl={{

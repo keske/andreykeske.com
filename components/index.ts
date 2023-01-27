@@ -1,3 +1,4 @@
+export * from "./AtomicPhoto";
 export * from "./Button";
 export * from "./CloseButton";
 export * from "./Head";

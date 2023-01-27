@@ -16,6 +16,12 @@ export type Store = {
 // @ts-expect-error work in progress
 const DEFAULT_STATE: Item[] = [
   {
+    component: Works.About,
+    hasMobileVersion: false,
+    title: "About",
+    year: 2023,
+  },
+  {
     component: Works.ClothUI,
     hasMobileVersion: false,
     title: "Cloth UI",
@@ -70,9 +76,9 @@ const DEFAULT_STATE: Item[] = [
     year: 2021,
   },
   {
-    component: Works.RollingStones,
+    component: Works.Emojies,
     hasMobileVersion: false,
-    title: "Rolling Stones Emoji Logotype",
+    title: "Emojies",
     year: 2017,
   },
   {
@@ -80,12 +86,6 @@ const DEFAULT_STATE: Item[] = [
     hasMobileVersion: false,
     title: "Bitcoin Bubble",
     year: 2021,
-  },
-  {
-    component: Works.EmojiTattooFlashes,
-    hasMobileVersion: false,
-    title: "Emoji Tattoo Flashes",
-    year: 2017,
   },
   {
     component: Works.WaterFilter,
