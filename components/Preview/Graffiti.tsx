@@ -1,12 +1,6 @@
-import { animated, useSpring } from "@react-spring/web";
-import { useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { useGesture } from "@use-gesture/react";
-
 import React from "react";
-import { Mesh } from "three";
 
-import { THREEOnMouseRotation } from "@/components/index";
+import { UploadcareImage } from "@/components/index";
 
 const peaces = [
   "Keske, Kaze, 2007",
@@ -26,120 +20,72 @@ const peaces = [
   "Ksenia, Keske, 2009",
 ];
 
-const random =
-  // eslint-disable-next-line @typescript-eslint/default-param-last
-  (min = 0, max: number) => Math.random() * (max - min) + min;
-
-const Model = () => {
-  const mesh = React.useRef<Mesh>(null!);
-
-  const { nodes } = useGLTF("/gltfs/wall.gltf") as GLTFResult;
-
-  return (
-    <THREEOnMouseRotation ref={mesh} strength={0.0001}>
-      <mesh
-        geometry={nodes.box_low.geometry}
-        position={[0, 0, -40]}
-        ref={mesh}
-        rotation={[Math.PI / 2, 0, 0]}
-      >
-        <meshPhysicalMaterial color="white" roughness={0.2} />
-      </mesh>
-    </THREEOnMouseRotation>
-  );
-};
-
-type PhotoProps = React.PropsWithChildren & {
-  index: number;
-};
-
-const Photo: React.FC<PhotoProps> = ({ children, index }) => {
-  const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
-
-  const [zIndex, setZIndex] = React.useState(peaces.length);
-
-  const left = React.useMemo(() => random(0, window.innerWidth), []);
-
-  const top = React.useMemo(() => random(0, window.innerHeight), []);
-
-  const bind = useGesture(
-    {
-      onDrag: ({ offset: [ox, oy] }) => {
-        api.start({
-          immediate: true,
-          x: ox,
-          y: oy,
-        });
-      },
-      onHover: () => {
-        setZIndex(zIndex + 1);
-      },
-    },
-    { drag: { preventDefault: true } },
-  );
-
-  console.log("zindex", index + zIndex);
-
-  return (
-    <animated.div
-      {...bind()}
-      className="absolute flex w-1/4 cursor-grab flex-col gap-1 bg-slate-300 p-1"
-      style={{
-        left,
-        top,
-        x,
-        y,
-        zIndex: index + zIndex,
-      }}
-    >
-      {children}
-    </animated.div>
-  );
-};
-
-export const Graffiti = () => {
-  const renderPeaces = React.useMemo(
-    () =>
-      peaces.map((peace, index) => (
-        <div
-          key={index}
-          style={{
-            left: random(0, window.innerWidth),
-            top: random(0, window.innerHeight),
-            zIndex: index,
-          }}
-        >
-          <Photo index={index}>
-            <img
-              alt={peace}
-              className="w-full"
-              src={`/photos/graffiti/${index}.jpg`}
-            />
-            <p className="text-black">
-              {peace}, <span className="opacity-30">Yekaterinburg, Russia</span>
-            </p>
-          </Photo>
+export const Graffiti = () => (
+  <div className="flex flex-col gap-40">
+    <h4 className="sticky top-28 flex flex-col items-center text-3xl">
+      Graffiti
+    </h4>
+    <div className="flex flex-col items-center gap-10">
+      {peaces.map((peace, index) => (
+        <div className="flex w-1/3 flex-col gap-1" key={index}>
+          <img
+            alt={peace}
+            className="w-full"
+            src={`/photos/graffiti/${index}.jpg`}
+          />
+          <p className="text-black">
+            {peace}, <span className="opacity-30">Yekaterinburg, Russia</span>
+          </p>
         </div>
-      )),
-    [peaces],
-  );
+      ))}
+    </div>
 
-  return (
-    <>
-      <div className="h-screen w-screen">{renderPeaces}</div>
-      <div className="fixed top-0 z-0 h-screen w-screen">
-        <Canvas
-          gl={{
-            alpha: true,
-            antialias: true,
-            depth: false,
-            powerPreference: "high-performance",
-          }}
-        >
-          <spotLight angle={1} intensity={0.2} position={[20, 20, 30]} />
-          <Model />
-        </Canvas>
+    <h4 className="sticky top-28 flex flex-col items-center text-3xl">
+      Stickers
+    </h4>
+    <div className="flex flex-col items-center gap-5 pb-40">
+      <div className="w-1/3 text-center">
+        <p>
+          <strong>Football fans trolling</strong>
+        </p>
+        <p>
+          I took several emblems of my native football clubs and deliberately
+          mingled their colors between them.
+        </p>
+        <p>
+          Maybe one of those truly bullies catch a glimpse of my sticker on a
+          wall and dump his jaw on a sidewalk in bewilderment, at least I hope
+          so.
+        </p>
       </div>
-    </>
-  );
-};
+      <div className="flex flex-row flex-wrap justify-center gap-2">
+        <div className="w-1/3">
+          <UploadcareImage
+            alt="Football fans trolling #1"
+            src="https://ucarecdn.com/d5da363b-c885-4849-8e09-73f5285830cf/"
+          />
+        </div>
+        <div className="w-1/3">
+          <UploadcareImage
+            alt="Football fans trolling #2"
+            src="https://ucarecdn.com/acda9cb3-8281-4b2a-a87f-9eb810b032c5/"
+          />
+        </div>
+      </div>
+      <div className="flex flex-row flex-wrap justify-center gap-2">
+        <div className="w-1/3">
+          <UploadcareImage
+            alt="Football fans trolling #3"
+            src="https://ucarecdn.com/5aa369c4-04e6-4ef1-8f2c-1915da9e5ca6/"
+          />
+        </div>
+        <div className="w-1/3">
+          <UploadcareImage
+            alt="Football fans trolling #4"
+            src="https://ucarecdn.com/a3420d12-c0a4-4efa-a2e4-1c72160f62b2/"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+);

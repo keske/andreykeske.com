@@ -22,17 +22,15 @@ export const WorkPreview: React.FC<WorkPreviewProps> = ({
   }, [resetTextColor, selectedCaseId]);
 
   return (
-    <div className="absolute h-screen w-screen">
-      <div
-        className={clsx(
-          "origin-center overflow-hidden duration-300",
-          R.not(R.isNil(selectedCaseId))
-            ? "scale-100 rounded-none"
-            : "scale-[0.99] rounded-md",
-        )}
-      >
-        {preview && React.cloneElement(preview, { selectedCaseId })}
-      </div>
+    <div
+      className={clsx(
+        "origin-center duration-300",
+        R.not(R.isNil(selectedCaseId))
+          ? "scale-100 rounded-none"
+          : "scale-[0.99] rounded-md",
+      )}
+    >
+      {preview && React.cloneElement(preview, { selectedCaseId })}
     </div>
   );
 };
