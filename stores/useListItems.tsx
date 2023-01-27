@@ -46,6 +46,12 @@ const DEFAULT_STATE: Item[] = [
     year: 2021,
   },
   {
+    component: Works.MacOSDock,
+    hasMobileVersion: false,
+    title: "Mac OS Dock",
+    year: 2021,
+  },
+  {
     component: Works.Hydra,
     hasMobileVersion: false,
     title: "Hydra",
@@ -94,12 +100,6 @@ const DEFAULT_STATE: Item[] = [
     year: 2016,
   },
   {
-    component: Works.DockRecycleBins,
-    hasMobileVersion: false,
-    title: "The Dock's Recycle Bins",
-    year: 2011,
-  },
-  {
     component: Works.IkeaGarbage,
     hasMobileVersion: true,
     title: "The first discarded piece of IKEA furniture in AR",
@@ -134,12 +134,6 @@ const DEFAULT_STATE: Item[] = [
     hasMobileVersion: false,
     title: "Lego",
     year: 2021,
-  },
-  {
-    component: Works.FridayDock,
-    hasMobileVersion: false,
-    title: "Friday Dock",
-    year: 2013,
   },
   {
     component: Works.VintageGoogleStreetView,

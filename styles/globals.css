@@ -19,3 +19,8 @@ a {
   color: blue;
   text-decoration: none;
 }
+
+time {
+  opacity: 0.3;
+  margin-left: 1rem;
+}
