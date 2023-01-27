@@ -1,10 +1,10 @@
 import React from "react";
 
-export const Ball = () => (
-  <div className="absolute top-0 left-0 flex h-screen w-screen justify-center">
+export const Ball: React.FC = () => (
+  <div className="flex h-screen w-screen items-center justify-center">
     <iframe
       allow="loop"
-      className="w-1/4 border-0 2xl:w-1/5"
+      className="h-screen w-1/2 border-0"
       src="/videos/ball.mp4"
       title="Ball in the Dock"
     />

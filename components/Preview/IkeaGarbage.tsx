@@ -1,23 +1,32 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 
-const Desktop = () => (
-  <div className="absolute top-0 left-0 flex h-screen w-screen justify-center">
+import { WorkDescription } from "@/components/index";
+
+type Props = {
+  selectedCaseId?: string | null;
+};
+
+const Desktop: React.FC<Props> = ({ selectedCaseId }) => (
+  <div className="flex h-screen w-screen justify-center">
     <iframe
       className="w-1/4 border-0 2xl:w-1/5"
       src="/videos/ikea.mp4"
       title="The first discarded piece of IKEA furniture in Augmented Reality"
     />
-    <p className="absolute right-10 bottom-10">
-      Made in{" "}
-      <a href="https://apps.apple.com/us/app/ikea-place/id1279244498">
-        IKEA Place
-      </a>
-    </p>
+    <WorkDescription selectedCaseId={selectedCaseId}>
+      <p>The first discarded piece of IKEA furniture in Augmented Reality</p>
+      <p>
+        Made in{" "}
+        <a href="https://apps.apple.com/us/app/ikea-place/id1279244498">
+          IKEA Place
+        </a>
+      </p>
+    </WorkDescription>
   </div>
 );
 
-const Mobile = () => (
+const Mobile: React.FC = () => (
   <div>
     <video
       className="w-screen border-0"

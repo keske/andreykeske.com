@@ -1,16 +1,16 @@
 import React from "react";
 
-import { WorkDescription } from "@/components/index";
+import { Button, WorkDescription } from "@/components/index";
 
 type Props = {
-  selectedCaseId: string | null;
+  selectedCaseId?: string | null;
 };
 
 export const Hydra: React.FC<Props> = ({ selectedCaseId }) => (
-  <div className="absolute flex h-screen w-screen items-center justify-center bg-green-200 text-sm">
+  <div className="flex h-screen w-screen items-center justify-center">
     <iframe
       allow="loop"
-      className="w-1/2 border-0 2xl:w-1/2"
+      className="h-screen w-1/2 border-0"
       src="/videos/hydra.mp4"
       title="Hydra"
     />
@@ -19,7 +19,9 @@ export const Hydra: React.FC<Props> = ({ selectedCaseId }) => (
         Hydra&apos;s representation of head regeneration through UI
         <br />
         <br />
-        <a href="/files/hydra.zip">Download script (zip 2.9 KB)</a>
+        <Button as="a" href="/files/hydra.zip" variant="primary">
+          Download script (zip 2.9 KB)
+        </Button>
       </p>
     </WorkDescription>
   </div>

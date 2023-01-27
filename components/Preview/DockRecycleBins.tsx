@@ -2,8 +2,8 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-export const DockRecycleBins = () => (
-  <div className="absolute top-0 left-0 flex h-screen w-screen items-end justify-center">
+export const DockRecycleBins: React.FC = () => (
+  <div className="flex h-screen w-screen items-center justify-center">
     <div className="w-full 2xl:w-1/2">
       <UploadcareImage
         alt="Dock Recycle Bins"

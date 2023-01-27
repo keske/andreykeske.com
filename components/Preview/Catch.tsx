@@ -5,8 +5,8 @@ import { interpolate } from "@/utils/index";
 
 const MAX_INDEX = 57;
 
-const Desktop = () => (
-  <div className="absolute top-0 left-0 flex h-screen w-screen justify-center">
+const Desktop: React.FC = () => (
+  <div className="flex h-screen w-screen justify-center">
     <iframe
       allow="loop"
       className="w-1/2 border-0 2xl:w-1/2"

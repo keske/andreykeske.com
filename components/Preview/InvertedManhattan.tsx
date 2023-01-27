@@ -2,8 +2,8 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-export const InvertedManhattan = () => (
-  <div className="absolute top-0 left-0 flex min-h-screen w-screen items-center justify-center">
+export const InvertedManhattan: React.FC = () => (
+  <div className="flex min-h-screen w-screen items-center justify-center">
     <div className="w-1/2 lg:w-1/3 xl:w-1/4">
       <UploadcareImage
         alt="Manhattan"

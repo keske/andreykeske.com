@@ -2,8 +2,8 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-export const LOT2046Tattoo = () => (
-  <div className="absolute top-0 left-0 h-screen w-screen bg-black">
+export const LOT2046Tattoo: React.FC = () => (
+  <div className="h-screen w-screen bg-black">
     <div className="flex flex-row justify-center">
       <div className="w-5/12">
         <UploadcareImage

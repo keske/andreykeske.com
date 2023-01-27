@@ -5,7 +5,7 @@ import { Mesh } from "three";
 
 import { THREEOnMouseRotation } from "@/components/index";
 
-const Wall = () => {
+const Model = () => {
   const mesh = React.useRef<Mesh>(null!);
 
   const { nodes } = useGLTF("/gltfs/wall.gltf") as GLTFResult;
@@ -44,23 +44,8 @@ export const Graffiti = () => {
   ];
 
   return (
-    <div className="absolute top-0 left-0 h-screen w-screen">
-      <div className="fixed bottom-5 right-5 z-10 h-1/3 w-1/3">
-        <Canvas
-          gl={{
-            alpha: true,
-            antialias: true,
-            depth: false,
-            powerPreference: "high-performance",
-          }}
-        >
-          <group>
-            <spotLight angle={1} intensity={0.2} position={[20, 20, 30]} />
-            <Wall />
-          </group>
-        </Canvas>
-      </div>
-      <div className="flex flex-col items-center gap-10 p-20">
+    <>
+      <div className="flex flex-col items-center gap-10 py-40">
         {peaces.map((peace, index) => (
           <div className="md:w-1/2 lg:w-1/2 xl:w-1/2 2xl:w-1/3" key={index}>
             <img
@@ -74,6 +59,19 @@ export const Graffiti = () => {
           </div>
         ))}
       </div>
-    </div>
+      <div className="fixed top-0 z-10 h-[100px] w-[100px]">
+        <Canvas
+          gl={{
+            alpha: true,
+            antialias: true,
+            depth: false,
+            powerPreference: "high-performance",
+          }}
+        >
+          <spotLight angle={1} intensity={0.2} position={[20, 20, 30]} />
+          <Model />
+        </Canvas>
+      </div>
+    </>
   );
 };

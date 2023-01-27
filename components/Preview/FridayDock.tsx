@@ -2,8 +2,8 @@ import React from "react";
 
 import { UploadcareImage } from "@/components/index";
 
-export const FridayDock = () => (
-  <div className="absolute top-0 left-0 flex h-screen w-screen items-end justify-center">
+export const FridayDock: React.FC = () => (
+  <div className="flex h-screen w-screen items-center justify-center">
     <div className="xs:w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2">
       <UploadcareImage
         alt="Mac OS Dock"

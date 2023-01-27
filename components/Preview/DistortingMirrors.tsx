@@ -141,8 +141,25 @@ export const DistortingMirrors = () => {
     }
   });
 
+  const renderMirrors = React.useMemo(
+    () => (
+      <mesh ref={meshRef}>
+        {R.range(0, 10).map((index) => (
+          <group
+            key={index}
+            position={[random(-25, 25), random(-25, 25), index * 0.001]}
+            scale={[random(-5, 5), random(-5, 5), random(-5, 5)]}
+          >
+            <Pane url="" videoRef={videoRef} />
+          </group>
+        ))}
+      </mesh>
+    ),
+    [],
+  );
+
   return (
-    <div className="absolute top-0 left-0 h-screen w-screen">
+    <div className="h-screen w-screen">
       <video
         autoPlay
         className="absolute opacity-0"
@@ -152,20 +169,10 @@ export const DistortingMirrors = () => {
         playsInline
         ref={videoRef}
       />
-      <Canvas camera={{ position: [0, 10, 55] }}>
+      <Canvas camera={{ position: [0, 10, 55] }} className="h-screen w-screen">
         <OrbitControls enableZoom={false} />
         <THREEOnMouseRotation ref={meshRef} strength={0.0001}>
-          <mesh ref={meshRef}>
-            {R.range(0, 10).map((index) => (
-              <group
-                key={index}
-                position={[random(-25, 25), random(-25, 25), index * 0.001]}
-                scale={[random(-5, 5), random(-5, 5), random(-5, 5)]}
-              >
-                <Pane url="" videoRef={videoRef} />
-              </group>
-            ))}
-          </mesh>
+          {renderMirrors}
         </THREEOnMouseRotation>
       </Canvas>
     </div>

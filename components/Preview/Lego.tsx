@@ -31,7 +31,7 @@ const Brick: React.FC<BrickProps> = ({ color }) => {
   );
 };
 
-export const Lego = () => (
+export const Lego: React.FC = () => (
   <div className="h-screen w-screen">
     <Canvas
       gl={{

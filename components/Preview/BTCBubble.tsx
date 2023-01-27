@@ -12,7 +12,7 @@ import * as THREE from "three";
 import { WorkDescription } from "@/components/index";
 
 type Props = {
-  selectedCaseId: string | null;
+  selectedCaseId?: string | null;
 };
 
 const useAnimation = (ref: React.MutableRefObject<THREE.Mesh>) => {

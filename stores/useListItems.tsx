@@ -3,7 +3,7 @@ import create from "zustand";
 import * as Works from "@/components/Preview/index";
 
 export type Item = {
-  component: () => JSX.Element;
+  component: React.ReactElement;
   hasMobileVersion: boolean;
   title: string;
   year: number;
@@ -13,6 +13,7 @@ export type Store = {
   readonly items: Item[];
 };
 
+// @ts-expect-error work in progress
 const DEFAULT_STATE: Item[] = [
   {
     component: Works.ClothUI,
@@ -65,7 +66,7 @@ const DEFAULT_STATE: Item[] = [
   {
     component: Works.EsherSwitchButton,
     hasMobileVersion: false,
-    title: "Radio Button to Switch Evolution",
+    title: "Radio Button to Switch",
     year: 2021,
   },
   {

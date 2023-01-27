@@ -7,7 +7,7 @@ import type { Item } from "@/stores/useListItems";
 
 type ListProps = {
   handleMouseOut: () => void;
-  handleMouseOver: (component: React.ReactNode) => void;
+  handleMouseOver: (component: React.ReactElement<any, any>) => void;
   handleShowCase: (id: string) => void;
   itemsWithId: Array<Item & { id: string }>;
   selectedCaseId: string | null;
@@ -24,7 +24,7 @@ export const List: React.FC<ListProps> = ({
 
   return (
     <>
-      <div className="fixed bottom-10 ml-12">
+      <div className="fixed bottom-10 ml-12 lg:w-5/6">
         <Transition
           afterLeave={() => onUnmount.current?.()}
           appear
@@ -46,7 +46,7 @@ export const List: React.FC<ListProps> = ({
                   ({ component: PreviewComponent, id, title }) => (
                     <li
                       className={clsx(
-                        "inline-block list-none font-black uppercase lg:text-xl xl:text-2xl 2xl:text-4xl",
+                        "inline-block list-none text-xl font-black",
                       )}
                       key={id}
                       onClick={() => {
@@ -54,28 +54,30 @@ export const List: React.FC<ListProps> = ({
                       }}
                       onMouseOut={handleMouseOut}
                       onMouseOver={() => {
+                        // @ts-expect-error work in progress
                         handleMouseOver(<PreviewComponent />);
                       }}
                     >
                       <a
-                        className={
+                        className={clsx(
+                          "text-black",
                           R.isNil(selectedCaseId)
                             ? "cursor-pointer opacity-100"
-                            : "cursor-default opacity-0"
-                        }
+                            : "cursor-default opacity-0",
+                        )}
                         href={`#${id}`}
                       >
                         {title}
                       </a>
                       <span
                         className={clsx(
-                          "mx-2",
+                          "mx-5 opacity-20",
                           R.isNil(selectedCaseId)
                             ? "cursor-pointer opacity-100"
                             : "cursor-default opacity-0",
                         )}
                       >
-                        •
+                        ∘
                       </span>
                     </li>
                   ),

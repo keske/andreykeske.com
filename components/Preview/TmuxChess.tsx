@@ -25,8 +25,8 @@ const DesktopVideo = () => {
   );
 };
 
-const Desktop = () => (
-  <div className="absolute top-0 left-0 h-screen w-screen">
+const Desktop: React.FC = () => (
+  <div className="h-screen w-screen">
     <Canvas
       gl={{
         alpha: true,

@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Blackhole = () => (
-  <div className="absolute top-0 left-0 h-screen w-screen justify-center">
-    <div className="flex h-screen w-screen flex-col items-center gap-10 p-20">
+export const Blackhole: React.FC = () => (
+  <div className="w-screen">
+    <div className="flex flex-col items-center gap-10 p-20">
       <div>
         <h2>Black hole on my Desktop. Part I</h2>
         <p>
@@ -10,14 +10,16 @@ export const Blackhole = () => (
           information or object will be removed forever
         </p>
       </div>
+      {/* <div className="aspect-w-16 aspect-h-9"> */}
       <iframe
         allow="loop"
-        className="h-full w-1/2 border-0"
+        className="aspect-w-16 aspect-h-1 border-0"
         src="/videos/blackhole-1.mp4"
         title="Blackhole"
       />
+      {/* </div> */}
     </div>
-    <div className="flex h-screen w-screen flex-col items-center gap-10 p-20">
+    <div className="flex flex-col items-center gap-10 p-20">
       <div>
         <h2>Black hole on my Desktop. Part II. With Hawking radiation</h2>
         <p>
@@ -33,7 +35,7 @@ export const Blackhole = () => (
       </div>
       <iframe
         allow="loop"
-        className="h-full w-1/2 border-0"
+        className="w-1/2 border-0"
         src="/videos/blackhole-2.mp4"
         title="Blackhole"
       />

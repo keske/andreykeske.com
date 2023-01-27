@@ -53,7 +53,7 @@ const Home: NextPage = () => {
   }, [selectedCaseId]);
 
   const handleMouseOver = React.useCallback(
-    (component: React.ReactNode) => {
+    (component: React.ReactElement<any, any>) => {
       if (R.isNil(selectedCaseId)) {
         setPreview(component);
       }

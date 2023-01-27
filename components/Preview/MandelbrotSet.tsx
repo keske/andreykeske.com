@@ -1,5 +1,7 @@
 import React from "react";
 
+import { WorkDescription } from "@/components/index";
+
 type MandelbrotSetGeometryProps = {
   quantity?: number;
   size?: number;
@@ -72,13 +74,19 @@ const MandelbrotSetGeometry: React.FC<MandelbrotSetGeometryProps> = ({
   );
 };
 
-export const MandelbrotSet = () => (
-  <div className="absolute top-0 left-0 h-screen w-screen">
+type MandelbrotSetProps = {
+  selectedCaseId?: string | null;
+};
+
+export const MandelbrotSet: React.FC<MandelbrotSetProps> = ({
+  selectedCaseId,
+}) => (
+  <div className="h-screen w-screen">
     <div className="relative">
       <MandelbrotSetGeometry />
     </div>
-    <p className="absolute right-10 bottom-10 w-1/5 text-right">
-      The fractal geometry built from the Radio Button elements
-    </p>
+    <WorkDescription selectedCaseId={selectedCaseId}>
+      <p>The fractal geometry built from the Radio Button elements</p>
+    </WorkDescription>
   </div>
 );
