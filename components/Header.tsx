@@ -12,13 +12,11 @@ export const Header: React.FC<HeaderProps> = ({
   handleCloseCase,
   selectedCaseId,
 }) => (
-  <>
-    <header className="fixed top-10 z-50 flex w-full justify-between px-10">
-      <Logo onClick={handleCloseCase} />
-      <CloseButton
-        isShowing={R.not(R.isNil(selectedCaseId))}
-        onClick={handleCloseCase}
-      />
-    </header>
-  </>
+  <header className="fixed top-10 z-50 flex w-full justify-between px-10">
+    <Logo onClick={handleCloseCase} />
+    <CloseButton
+      isShowing={R.not(R.isNil(selectedCaseId))}
+      onClick={handleCloseCase}
+    />
+  </header>
 );

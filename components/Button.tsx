@@ -1,12 +1,11 @@
 import clsx from "clsx";
 import React from "react";
 
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  (React.LinkHTMLAttributes<HTMLLinkElement> & {
-    as?: React.ElementType;
-    size?: "lg" | "md" | "sm" | "xl" | "xs" | null;
-    variant?: "primary" | "secondary" | "transparent";
-  });
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  as?: React.ElementType;
+  size?: "lg" | "md" | "sm" | "xl" | "xs" | null;
+  variant?: "primary" | "secondary" | "transparent";
+};
 
 export type ButtonRef =
   | HTMLButtonElement

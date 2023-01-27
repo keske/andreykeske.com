@@ -8,3 +8,11 @@ declare global {
     nodes: Record<string, THREE.Mesh>;
   };
 }
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      water: any;
+    }
+  }
+}

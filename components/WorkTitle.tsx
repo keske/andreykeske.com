@@ -1,8 +1,11 @@
 import { Transition } from "@headlessui/react";
+import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
 import type { Item } from "@/stores/useListItems";
+
+import { useHeader } from "@/stores/index";
 
 type WorkTitleProps = {
   itemsWithId: Array<Item & { id: string }>;
@@ -14,6 +17,8 @@ export const WorkTitle: React.FC<WorkTitleProps> = ({
   selectedCaseId,
 }) => {
   const onUnmount = React.useRef<() => void>();
+
+  const { textColor } = useHeader();
 
   const title = React.useMemo(
     () =>
@@ -39,7 +44,7 @@ export const WorkTitle: React.FC<WorkTitleProps> = ({
         leaveTo="opacity-0"
       >
         <div className="fixed top-10 z-10 flex w-full justify-center">
-          <h3 className="text-4xl">{title}</h3>
+          <h3 className={clsx("text-4xl", textColor)}>{title}</h3>
         </div>
       </Transition.Child>
     </Transition>

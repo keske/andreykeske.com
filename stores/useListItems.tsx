@@ -150,7 +150,7 @@ const DEFAULT_STATE: Item[] = [
   {
     component: Works.Graffiti,
     hasMobileVersion: false,
-    title: "Graffiti 2006..2009",
+    title: "Street Art 2006..2012",
     year: 2006,
   },
   {

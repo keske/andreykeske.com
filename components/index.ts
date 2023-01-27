@@ -7,6 +7,7 @@ export * from "./List";
 export * from "./Logo";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
+export * from "./WaterSurface";
 export * from "./WorkDescription";
 export * from "./WorkPreview";
 export * from "./WorkTitle";

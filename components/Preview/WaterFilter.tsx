@@ -1,27 +1,82 @@
+import { Sky } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import * as R from "ramda";
 import React from "react";
 
-import { UploadcareImage } from "@/components/index";
+import { UploadcareImage, WaterSurface } from "@/components/index";
+import { useHeader } from "@/stores/index";
 
-export const WaterFilter: React.FC = () => (
-  <div className="w-screen py-40">
-    <div className="flex flex-col items-center gap-10 p-20">
-      <div className="md:w-1/2 lg:w-1/2 xl:w-1/2 2xl:w-1/4">
-        <UploadcareImage
-          alt="Water Filter"
-          src="https://ucarecdn.com/2db57ca1-3de1-45aa-bb48-08c17eaa2433/"
+type SceneProps = any;
+
+export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
+  (props, ref) => {
+    const handleAnimateUniform = React.useCallback(
+      (delta: number) => delta / 7,
+      [],
+    );
+
+    return (
+      <Canvas
+        camera={{ position: [0, 10, 10] }}
+        className="h-full w-full"
+        ref={ref}
+      >
+        <Sky
+          azimuth={0.15}
+          distance={150000}
+          inclination={0}
+          sunPosition={[0, 1, 20]}
         />
-      </div>
-      <div className="md:w-1/2 lg:w-1/2 xl:w-1/2 2xl:w-1/4">
-        <UploadcareImage
-          alt="Water Filter"
-          src="https://ucarecdn.com/d9922bd6-54c3-49ca-aa12-dc371d09cbca/"
+        <WaterSurface
+          animateUniform={handleAnimateUniform}
+          waterOptions={{
+            waterColor: "#000000",
+          }}
         />
-      </div>
-    </div>
-    <p className="fixed right-10 bottom-10 text-right">
-      Street installation
-      <br />
-      The water filter in an unusual situation
-    </p>
-  </div>
+      </Canvas>
+    );
+  },
 );
+
+type WaterFilterProps = {
+  selectedCaseId?: string | null;
+};
+
+export const WaterFilter: React.FC<WaterFilterProps> = ({ selectedCaseId }) => {
+  const { setTextColor } = useHeader();
+
+  React.useEffect(() => {
+    if (R.not(R.isNil(selectedCaseId))) {
+      setTextColor("text-white");
+    }
+  }, [selectedCaseId, setTextColor]);
+
+  return (
+    <>
+      <div className="fixed top-0 left-0 h-full w-screen overflow-hidden">
+        <Scene />
+      </div>
+      <div className="relative z-10 w-screen py-40">
+        <div className="flex flex-col items-center gap-10 p-20">
+          <div className="md:w-1/2 lg:w-1/2 xl:w-1/2 2xl:w-1/4">
+            <UploadcareImage
+              alt="Water Filter"
+              src="https://ucarecdn.com/2db57ca1-3de1-45aa-bb48-08c17eaa2433/"
+            />
+          </div>
+          <div className="md:w-1/2 lg:w-1/2 xl:w-1/2 2xl:w-1/4">
+            <UploadcareImage
+              alt="Water Filter"
+              src="https://ucarecdn.com/d9922bd6-54c3-49ca-aa12-dc371d09cbca/"
+            />
+          </div>
+        </div>
+        <p className="fixed right-10 bottom-10 text-right text-white">
+          Street installation
+          <br />
+          The water filter in an unusual situation
+        </p>
+      </div>
+    </>
+  );
+};

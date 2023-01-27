@@ -2,7 +2,8 @@ import { Transition } from "@headlessui/react";
 import clsx from "clsx";
 import React from "react";
 
-import { Button, ButtonRef } from "./Button";
+import { Button, ButtonRef } from "@/components/index";
+import { useHeader } from "@/stores/index";
 
 type CloseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   isShowing: boolean;
@@ -12,6 +13,8 @@ type CloseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 export const CloseButton = React.forwardRef<ButtonRef, CloseButtonProps>(
   ({ isShowing, onClick, ...props }, ref) => {
     const onUnmount = React.useRef<() => void>();
+
+    const { textColor } = useHeader();
 
     React.useEffect(() => {
       const handleEsc = (event: KeyboardEvent) => {
@@ -47,6 +50,7 @@ export const CloseButton = React.forwardRef<ButtonRef, CloseButtonProps>(
             {...props}
             className={clsx(
               isShowing ? "cursor-pointer opacity-100" : "opacity-0",
+              textColor,
             )}
             onClick={onClick}
             ref={ref}
