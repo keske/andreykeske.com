@@ -18,7 +18,7 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
     return (
       <Canvas
         camera={{ position: [0, 10, 10] }}
-        className="h-full w-full"
+        className="h-screen w-screen"
         ref={ref}
       >
         <Sky

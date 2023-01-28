@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+small {
+  letter-spacing: 0.1rem;
+}
+
 time {
   opacity: 0.3;
   margin-left: 1rem;

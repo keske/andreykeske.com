@@ -21,10 +21,8 @@ const peaces = [
 ];
 
 export const Graffiti = () => (
-  <div className="flex flex-col gap-40">
-    <h4 className="sticky top-28 flex flex-col items-center text-3xl">
-      Graffiti
-    </h4>
+  <div className="flex flex-col gap-40 py-80">
+    <h4 className="text-center text-3xl">Graffiti</h4>
     <div className="flex flex-col items-center gap-10">
       {peaces.map((peace, index) => (
         <div className="flex w-1/3 flex-col gap-1" key={index}>
@@ -39,11 +37,9 @@ export const Graffiti = () => (
         </div>
       ))}
     </div>
-
-    <h4 className="sticky top-28 flex flex-col items-center text-3xl">
-      Stickers
-    </h4>
-    <div className="flex flex-col items-center gap-5 pb-40">
+    <hr />
+    <h4 className="text-center text-3xl">Stickers</h4>
+    <div className="flex flex-col items-center gap-2 pb-40">
       <div className="w-1/3 text-center">
         <p>
           <strong>Football fans trolling</strong>

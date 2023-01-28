@@ -22,6 +22,10 @@ export const List: React.FC<ListProps> = ({
 }) => {
   const onUnmount = React.useRef<() => void>();
 
+  const groupedByType = R.toPairs(
+    R.groupBy((item: Item) => item.type)(itemsWithId) as any,
+  );
+
   return (
     <>
       <div className="fixed bottom-10 ml-12 lg:w-5/6">
@@ -40,49 +44,56 @@ export const List: React.FC<ListProps> = ({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <nav>
-              <ul>
-                {itemsWithId.map(
-                  ({ component: PreviewComponent, id, title }) => (
-                    <li
-                      className={clsx(
-                        "inline-block list-none text-xl font-black",
+            <nav className="flex flex-col gap-3">
+              {groupedByType.map(
+                ([group, items]: [string, Array<Item & { id: string }>]) => (
+                  <div className="flex flex-row gap-3" key={group}>
+                    <p className="text-xl font-black">{group}</p>
+                    <ul>
+                      {items.map(
+                        ({ component: PreviewComponent, id, title }) => (
+                          <li
+                            className={clsx(
+                              "inline-block list-none text-xl font-medium",
+                            )}
+                            key={id}
+                            onClick={() => {
+                              handleShowCase(id);
+                            }}
+                            onMouseOut={handleMouseOut}
+                            onMouseOver={() => {
+                              // @ts-expect-error work in progress
+                              handleMouseOver(<PreviewComponent />);
+                            }}
+                          >
+                            <a
+                              className={clsx(
+                                "text-black",
+                                R.isNil(selectedCaseId)
+                                  ? "cursor-pointer opacity-100"
+                                  : "cursor-default opacity-0",
+                              )}
+                              href={`#${id}`}
+                            >
+                              {title}
+                            </a>
+                            <span
+                              className={clsx(
+                                "mx-2 opacity-20",
+                                R.isNil(selectedCaseId)
+                                  ? "cursor-pointer opacity-100"
+                                  : "cursor-default opacity-0",
+                              )}
+                            >
+                              ・
+                            </span>
+                          </li>
+                        ),
                       )}
-                      key={id}
-                      onClick={() => {
-                        handleShowCase(id);
-                      }}
-                      onMouseOut={handleMouseOut}
-                      onMouseOver={() => {
-                        // @ts-expect-error work in progress
-                        handleMouseOver(<PreviewComponent />);
-                      }}
-                    >
-                      <a
-                        className={clsx(
-                          "text-black",
-                          R.isNil(selectedCaseId)
-                            ? "cursor-pointer opacity-100"
-                            : "cursor-default opacity-0",
-                        )}
-                        href={`#${id}`}
-                      >
-                        {title}
-                      </a>
-                      <span
-                        className={clsx(
-                          "mx-5 opacity-20",
-                          R.isNil(selectedCaseId)
-                            ? "cursor-pointer opacity-100"
-                            : "cursor-default opacity-0",
-                        )}
-                      >
-                        ∘
-                      </span>
-                    </li>
-                  ),
-                )}
-              </ul>
+                    </ul>
+                  </div>
+                ),
+              )}
             </nav>
           </Transition.Child>
         </Transition>
