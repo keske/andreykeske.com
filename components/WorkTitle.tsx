@@ -20,6 +20,13 @@ export const WorkTitle: React.FC<WorkTitleProps> = ({
 
   const { textColor } = useHeader();
 
+  const type = React.useMemo(
+    () =>
+      selectedCaseId &&
+      itemsWithId.filter((item) => item.id === selectedCaseId)[0].type,
+    [itemsWithId, selectedCaseId],
+  );
+
   const title = React.useMemo(
     () =>
       selectedCaseId &&
@@ -43,8 +50,11 @@ export const WorkTitle: React.FC<WorkTitleProps> = ({
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="fixed top-10 z-10 flex w-full justify-center">
-          <h3 className={clsx("text-4xl", textColor)}>{title}</h3>
+        <div className="fixed top-6 z-10 flex w-full justify-center">
+          <div className={clsx("flex flex-col items-center gap-1", textColor)}>
+            <p className="text-xs">{type}</p>
+            <h3 className="text-4xl">{title}</h3>
+          </div>
         </div>
       </Transition.Child>
     </Transition>

@@ -108,6 +108,13 @@ const DEFAULT_STATE: Item[] = [
     year: 2016,
   },
   {
+    component: Works.MinecraftWarped,
+    hasMobileVersion: false,
+    title: "Warped",
+    type: "Minecraft",
+    year: 2016,
+  },
+  {
     component: Works.IkeaGarbage,
     hasMobileVersion: true,
     title: "Discarded piece of IKEA furniture",
@@ -136,10 +143,17 @@ const DEFAULT_STATE: Item[] = [
     year: 2014,
   },
   {
-    component: Works.Lego,
+    component: Works.LegoWarped,
     hasMobileVersion: false,
-    title: "Lego",
-    type: "None",
+    title: "Warped",
+    type: "Lego",
+    year: 2021,
+  },
+  {
+    component: Works.LegoHTML,
+    hasMobileVersion: false,
+    title: "HTML",
+    type: "Lego",
     year: 2021,
   },
   {

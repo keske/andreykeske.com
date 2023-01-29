@@ -43,7 +43,7 @@ export const Finder: React.FC = () => (
           <iframe
             allow="loop"
             className="border-0"
-            src="/videos/DropboxToICloud.mp4"
+            src="/videos/dropbox-to-iCloud.mp4"
             title="Dropbox To iCloud"
           />
         </div>
