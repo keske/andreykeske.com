@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as THREE from "three";
+import { ParametricGeometry } from "three/addons/geometries/ParametricGeometry.js";
 
 import { NURBSSurface } from "./NURBSSurface";
 
@@ -40,11 +41,7 @@ const Nurbs = React.forwardRef(
       // eslint-disable-next-line
       nurbsSurface.getPoint(u, v, target);
 
-    const geometry = new THREE.ParametricBufferGeometry(
-      getSurfacePoint,
-      20,
-      20,
-    );
+    const geometry = new ParametricGeometry(getSurfacePoint, 20, 20);
 
     const material = new THREE.MeshLambertMaterial({
       map,

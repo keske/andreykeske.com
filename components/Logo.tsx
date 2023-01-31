@@ -4,18 +4,15 @@ import React from "react";
 import { Button } from "@/components/index";
 import { useHeader } from "@/stores/index";
 
-type LogoProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  onClick: () => void;
-};
+type LogoProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Logo: React.FC<LogoProps> = ({ onClick, ...props }) => {
+export const Logo: React.FC<LogoProps> = ({ ...props }) => {
   const { textColor } = useHeader();
 
   return (
     <Button
       {...props}
-      className={clsx("cursor-pointer whitespace-nowrap uppercase", textColor)}
-      onClick={onClick}
+      className={clsx("whitespace-nowrap uppercase", textColor)}
       size={null}
       variant="transparent"
     >

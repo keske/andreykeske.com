@@ -1,0 +1,21 @@
+import React from "react";
+import { Group } from "three";
+
+import { NURBSCube } from "@/components/index";
+
+export const NURBSCubeLeaves = React.forwardRef<
+  Group,
+  JSX.IntrinsicElements["group"]
+>(({ ...props }, ref) => (
+  <NURBSCube
+    ref={ref}
+    {...{
+      ...props,
+      map: {
+        bottom: "textures/minecraft/leaves.png",
+        side: "textures/minecraft/glass.png",
+        top: "textures/minecraft/glass.png",
+      },
+    }}
+  />
+));

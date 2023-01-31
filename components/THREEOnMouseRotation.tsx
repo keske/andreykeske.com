@@ -1,13 +1,13 @@
 import { useMove } from "@use-gesture/react";
 import React from "react";
-import { BufferGeometry, Material, Mesh } from "three";
+import { BufferGeometry, Group, Material, Mesh } from "three";
 
 type Props = {
   children: React.ReactNode;
   strength?: number;
 };
 
-type Ref = Mesh<BufferGeometry, Material | Material[]>;
+type Ref = Group | Mesh<BufferGeometry, Material | Material[]>;
 
 export const THREEOnMouseRotation = React.forwardRef<Ref, Props>(
   // @ts-ignore
