@@ -20,6 +20,14 @@ a {
   text-decoration: none;
 }
 
+mark {
+  border-radius: 3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.3rem;
+}
+
 small {
   letter-spacing: 0.1rem;
 }

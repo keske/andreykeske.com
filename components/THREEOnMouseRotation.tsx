@@ -2,8 +2,7 @@ import { useMove } from "@use-gesture/react";
 import React from "react";
 import { BufferGeometry, Group, Material, Mesh } from "three";
 
-type Props = {
-  children: React.ReactNode;
+type Props = React.PropsWithChildren & {
   strength?: number;
 };
 
@@ -15,9 +14,9 @@ export const THREEOnMouseRotation = React.forwardRef<Ref, Props>(
     useMove(
       (state) => {
         // @ts-ignore
-        ref.current.rotation.z += state.delta[0] * strength;
+        ref.current.rotation.z += -state.delta[0] * strength;
         // @ts-ignore
-        ref.current.rotation.x += state.delta[1] * strength;
+        ref.current.rotation.x += -state.delta[1] * strength;
       },
       { target: document },
     );

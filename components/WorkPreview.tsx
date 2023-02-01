@@ -24,10 +24,10 @@ export const WorkPreview: React.FC<WorkPreviewProps> = ({
   return (
     <div
       className={clsx(
-        "origin-center duration-300",
+        "origin-center overflow-hidden duration-300",
         R.not(R.isNil(selectedCaseId))
           ? "scale-100 rounded-none"
-          : "scale-[0.99] rounded-md",
+          : "scale-[0.99] rounded-3xl",
       )}
     >
       {preview && React.cloneElement(preview, { selectedCaseId })}

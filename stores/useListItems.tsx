@@ -24,6 +24,13 @@ const DEFAULT_STATE: Item[] = [
     year: 2023,
   },
   {
+    component: Works.TimestampTattoo,
+    hasMobileVersion: false,
+    title: "Timestamp Tattoo",
+    type: "Graphic",
+    year: 2022,
+  },
+  {
     component: Works.ClothUI,
     hasMobileVersion: false,
     title: "Cloth UI",
@@ -41,7 +48,7 @@ const DEFAULT_STATE: Item[] = [
     component: Works.DistortingMirrors,
     hasMobileVersion: false,
     title: "Distorting Mirrors",
-    type: "Soft",
+    type: "Camera",
     year: 2021,
   },
   {
@@ -69,7 +76,7 @@ const DEFAULT_STATE: Item[] = [
     component: Works.MandelbrotSet,
     hasMobileVersion: false,
     title: "Mandelbrot Set",
-    type: "None",
+    type: "Uncategorized",
     year: 2021,
   },
   {
@@ -78,6 +85,13 @@ const DEFAULT_STATE: Item[] = [
     title: "Desktop",
     type: "Mac OS",
     year: 2016,
+  },
+  {
+    component: Works.EnergyOrParticle,
+    hasMobileVersion: false,
+    title: "Wave–particle duality",
+    type: "Camera",
+    year: 2018,
   },
   {
     component: Works.EsherSwitchButton,
@@ -97,7 +111,7 @@ const DEFAULT_STATE: Item[] = [
     component: Works.BTCBubble,
     hasMobileVersion: false,
     title: "Bitcoin Bubble",
-    type: "None",
+    type: "Uncategorized",
     year: 2021,
   },
   {
@@ -125,14 +139,14 @@ const DEFAULT_STATE: Item[] = [
     component: Works.Globalization,
     hasMobileVersion: false,
     title: "Globalization",
-    type: "None",
+    type: "Uncategorized",
     year: 2016,
   },
   {
     component: Works.LOT2046Tattoo,
     hasMobileVersion: false,
     title: "LOT 2046 Tattoo Machine from Toothbrush",
-    type: "None",
+    type: "Uncategorized",
     year: 2019,
   },
   {
@@ -160,7 +174,7 @@ const DEFAULT_STATE: Item[] = [
     component: Works.VintageGoogleStreetView,
     hasMobileVersion: false,
     title: "Vintage Google StreetView",
-    type: "None",
+    type: "Uncategorized",
     year: 2016,
   },
   {
@@ -181,7 +195,7 @@ const DEFAULT_STATE: Item[] = [
     component: Works.Canvases,
     hasMobileVersion: false,
     title: "Canvases 2006..2009",
-    type: "None",
+    type: "Uncategorized",
     year: 2006,
   },
   {
@@ -205,7 +219,7 @@ const DEFAULT_STATE: Item[] = [
     type: "Graphic",
     year: 2011,
   },
-];
+].sort((a, b) => a.type.localeCompare(b.type));
 
 export const useListItems = create<Store>(() => ({
   items: DEFAULT_STATE,
