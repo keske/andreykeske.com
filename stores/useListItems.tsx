@@ -117,7 +117,7 @@ const DEFAULT_STATE: Item[] = [
   {
     component: Works.WaterFilter,
     hasMobileVersion: false,
-    title: "Eco problems with water",
+    title: "Filter Instalattion",
     type: "Street Art",
     year: 2016,
   },
@@ -187,9 +187,16 @@ const DEFAULT_STATE: Item[] = [
   {
     component: Works.Graffiti,
     hasMobileVersion: false,
-    title: "Street Art 2006..2012",
+    title: "Graffiti 2006..2012",
     type: "Street Art",
     year: 2006,
+  },
+  {
+    component: Works.Stickers,
+    hasMobileVersion: false,
+    title: "Stickers",
+    type: "Street Art",
+    year: 2012,
   },
   {
     component: Works.Canvases,

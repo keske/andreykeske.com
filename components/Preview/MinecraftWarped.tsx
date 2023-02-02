@@ -7,9 +7,9 @@ import React from "react";
 import {
   NURBSCubeDirt,
   NURBSCubeStructureSmallHouse,
-  THREEOnDragRotation,
   Tab,
 } from "@/components/index";
+import { useControls } from "@/hooks/index";
 
 type MinecraftWarpedProps = {
   selectedCaseId?: string | null;
@@ -18,6 +18,15 @@ type MinecraftWarpedProps = {
 export const MinecraftWarped: React.FC<MinecraftWarpedProps> = ({
   selectedCaseId,
 }) => {
+  const { warpRatio } = useControls({
+    warpRatio: {
+      max: 10,
+      min: 0.1,
+      step: 0.1,
+      value: 0.4,
+    },
+  });
+
   const onUnmount = React.useRef<() => void>();
 
   const [selectedTab, setSelectedTab] = React.useState(0);
@@ -28,12 +37,10 @@ export const MinecraftWarped: React.FC<MinecraftWarpedProps> = ({
         <Canvas className="h-screen w-screen">
           <React.Suspense fallback={null}>
             <Sky />
-            {/* <OrbitControls /> */}
+            <OrbitControls />
             <ambientLight intensity={0.2} />
             <PerspectiveCamera fov={35} makeDefault position={[0, 0, 30]} />
-            <THREEOnDragRotation>
-              <NURBSCubeDirt />
-            </THREEOnDragRotation>
+            <NURBSCubeDirt warpRatio={warpRatio.value} />
           </React.Suspense>
         </Canvas>
       )}
@@ -57,7 +64,7 @@ export const MinecraftWarped: React.FC<MinecraftWarpedProps> = ({
             <OrbitControls />
             <ambientLight intensity={0.2} />
             <PerspectiveCamera fov={55} makeDefault position={[0, 0, 30]} />
-            <NURBSCubeDirt />
+            <NURBSCubeDirt warpRatio={warpRatio.value} />
           </React.Suspense>
         </Canvas>
       )}

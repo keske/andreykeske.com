@@ -20,6 +20,7 @@ export * from "./MandelbrotSet";
 export * from "./MinecraftWarped";
 export * from "./Sneakers";
 export * from "./SoftVideoPlayer";
+export * from "./Stickers";
 export * from "./TickyApplication";
 export * from "./TimestampTattoo";
 export * from "./Terminal";

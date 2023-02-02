@@ -34,16 +34,12 @@ export const Button = React.forwardRef<ButtonRef, ButtonProps>(
           className,
           "cursor-pointer rounded-full border-none font-bold",
           {
-            /**
-             * Variant states
-             */
+            // variant states
             "bg-black text-white": variant == "primary",
             "bg-transparent": variant == "transparent",
             "bg-white": variant == "secondary",
 
-            /**
-             * Size states
-             */
+            // size states
             "p-5 text-lg": size == "lg",
             "py-1 text-xs": size == "xs",
             "py-3 px-5 text-sm": size == "sm",

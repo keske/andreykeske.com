@@ -9,12 +9,14 @@ import { ParallaxProvider } from "react-scroll-parallax";
 
 import type { AppProps } from "next/app";
 
-const inter = Aboreto({ subsets: ["latin"], weight: "400" });
+const aboreto = Aboreto({ subsets: ["latin"], weight: "400" });
+
+// const inter = Inter({ subsets: ["latin"], weight: "400" });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ParallaxProvider>
-      <main className={inter.className}>
+      <main className={aboreto.className}>
         <Component {...pageProps} />
         <div id="desctiption" />
       </main>
