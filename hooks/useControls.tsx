@@ -6,6 +6,7 @@ import { Controls } from "@/components/index";
 
 export type ControlsConfig = {
   draggable?: boolean;
+  hidden?: boolean;
   position?: "bottom-left" | "bottom-right" | "bottom";
 };
 
@@ -26,6 +27,7 @@ export const useControls = (
   initialOptions: ControlsOptions,
   config: ControlsConfig = {
     draggable: false,
+    hidden: false,
     position: "bottom",
   },
 ) => {
@@ -70,6 +72,12 @@ export const useControls = (
         controlsElement,
       );
     }
+
+    return () => {
+      if (document.body) {
+        document.body.removeChild(controlsElement);
+      }
+    };
   }, [config, hendleUpdate, initialOptions, options]);
 
   return options;

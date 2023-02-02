@@ -5,7 +5,9 @@ import { NURBSCube } from "@/components/index";
 
 export const NURBSCubeLeaves = React.forwardRef<
   Group,
-  JSX.IntrinsicElements["group"]
+  JSX.IntrinsicElements["group"] & {
+    warpRatio: number;
+  }
 >(({ ...props }, ref) => (
   <NURBSCube
     ref={ref}

@@ -9,7 +9,9 @@ import {
 
 export const NURBSCubeStructureSmallHouse = React.forwardRef<
   Group,
-  JSX.IntrinsicElements["group"]
+  JSX.IntrinsicElements["group"] & {
+    warpRatio: number;
+  }
 >(({ ...props }, ref) => {
   const radius = 4;
 
@@ -17,86 +19,86 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
     () => (
       <>
         <group position={[0, 0, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, 0, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, 0, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[0, 0, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, 0, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, 0, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[0, 0, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, 0, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, 0, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius * 2, 0, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, 0, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, 0, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, 0, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[-radius * 2, 0, 0]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
         <group position={[-radius * 2, 0, -radius]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
         <group position={[-radius * 2, 0, radius]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
 
         <group position={[radius * 2, 0, 0]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
         <group position={[radius * 2, 0, -radius]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
         <group position={[radius * 2, 0, radius]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
 
         <group position={[radius, 0, radius * 2]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
         <group position={[0, 0, radius * 2]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
         <group position={[-radius, 0, radius * 2]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
 
         <group position={[radius, 0, -radius * 2]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
         <group position={[0, 0, -radius * 2]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
         <group position={[-radius, 0, -radius * 2]}>
-          <NURBSCubeStone {...{ ...props }} />
+          <NURBSCubeStone {...props} />
         </group>
       </>
     ),
@@ -109,54 +111,54 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
     return (
       <>
         <group position={[radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[-radius * 2, y, 0]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[-radius * 2, y, -radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[-radius * 2, y, radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius * 2, y, 0]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[radius * 2, y, -radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[radius * 2, y, radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius, y, radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         {/* DOOR */}
         <group position={[-radius, y, radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius, y, -radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[0, y, -radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[-radius, y, -radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
       </>
     );
@@ -168,48 +170,48 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
     return (
       <>
         <group position={[radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[-radius * 2, y, -radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         {/* WINDOW */}
         <group position={[-radius * 2, y, radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius * 2, y, -radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         {/* WINDOW */}
         <group position={[radius * 2, y, radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius, y, radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         {/* DOOR */}
         <group position={[-radius, y, radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius, y, -radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         {/* WINDOW */}
         <group position={[-radius, y, -radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
       </>
     );
@@ -221,54 +223,54 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
     return (
       <>
         <group position={[radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[-radius * 2, y, 0]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[-radius * 2, y, -radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[-radius * 2, y, radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius * 2, y, 0]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[radius * 2, y, -radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[radius * 2, y, radius]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius, y, radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         {/* DOOR */}
         <group position={[-radius, y, radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
 
         <group position={[radius, y, -radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[0, y, -radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
         <group position={[-radius, y, -radius * 2]}>
-          <NURBSCubeDirt {...{ ...props }} />
+          <NURBSCubeDirt {...props} />
         </group>
       </>
     );
@@ -280,129 +282,129 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
     return (
       <>
         <group position={[radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[-radius * 2, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 3, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 3, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 3, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 3, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 3, y, radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 3, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 3, y, -radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius * 2, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 3, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 3, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 3, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 3, y, radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 3, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 3, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 3, y, -radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, y, radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius * 2, y, -radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, y, -radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, -radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, -radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, -radius * 3]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
       </>
     );
@@ -414,84 +416,84 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
     return (
       <>
         <group position={[radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[-radius, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[-radius * 2, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius * 2, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius * 2, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius * 2, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[-radius, y, radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[radius, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, -radius * 2]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
 
         <group position={[0, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
       </>
     );
@@ -503,31 +505,31 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
     return (
       <>
         <group position={[0, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, y, radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, -radius]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[radius, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[-radius, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
         <group position={[0, y, 0]}>
-          <NURBSCubeLog {...{ ...props }} />
+          <NURBSCubeLog {...props} />
         </group>
       </>
     );

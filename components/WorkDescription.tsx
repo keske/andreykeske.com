@@ -29,7 +29,9 @@ export const WorkDescription: React.FC<WorkDescriptionProps> = ({
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="absolute right-10 bottom-10 text-right">{children}</div>
+        <div className="absolute right-10 bottom-10 text-right font-sans">
+          {children}
+        </div>
       </Transition.Child>
     </Transition>,
     document.getElementById("desctiption") as HTMLElement,

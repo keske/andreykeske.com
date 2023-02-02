@@ -18,14 +18,19 @@ type MinecraftWarpedProps = {
 export const MinecraftWarped: React.FC<MinecraftWarpedProps> = ({
   selectedCaseId,
 }) => {
-  const { warpRatio } = useControls({
-    warpRatio: {
-      max: 10,
-      min: 0.1,
-      step: 0.1,
-      value: 0.4,
+  const { warpRatio } = useControls(
+    {
+      warpRatio: {
+        max: 10,
+        min: 0.1,
+        step: 0.1,
+        value: 0.4,
+      },
     },
-  });
+    {
+      hidden: R.isNil(selectedCaseId),
+    },
+  );
 
   const onUnmount = React.useRef<() => void>();
 
@@ -52,7 +57,7 @@ export const MinecraftWarped: React.FC<MinecraftWarpedProps> = ({
             <ambientLight intensity={0.2} />
             <PerspectiveCamera fov={35} makeDefault position={[10, 20, 100]} />
             <mesh position={[0, -10, 0]}>
-              <NURBSCubeStructureSmallHouse />
+              <NURBSCubeStructureSmallHouse warpRatio={warpRatio.value} />
             </mesh>
           </React.Suspense>
         </Canvas>

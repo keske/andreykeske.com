@@ -57,7 +57,7 @@ export const CloseButton = React.forwardRef<ButtonRef, CloseButtonProps>(
             size={null}
             variant="transparent"
           >
-            Close
+            CLOSE
           </Button>
         </Transition.Child>
       </Transition>

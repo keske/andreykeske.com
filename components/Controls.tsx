@@ -13,6 +13,7 @@ type ControlsProps = ControlsConfig & {
 
 export const Controls: React.FC<ControlsProps> = ({
   draggable = false,
+  hidden,
   onUpdate,
   options,
   position = "bottom",
@@ -29,9 +30,19 @@ export const Controls: React.FC<ControlsProps> = ({
     },
   });
 
+  if (hidden) {
+    return <></>;
+  }
+
   return (
     <animated.div
       {...(draggable && bind())}
+      {...(draggable && {
+        style: {
+          x,
+          y,
+        },
+      })}
       className={clsx(
         "absolute z-50 select-none rounded-xl bg-white p-2 font-sans text-sm",
         {
@@ -44,10 +55,6 @@ export const Controls: React.FC<ControlsProps> = ({
           "cursor-grab": draggable,
         },
       )}
-      style={{
-        x,
-        y,
-      }}
     >
       <div className="flex flex-col gap-4">
         {R.keys(options).map((key, index) => {

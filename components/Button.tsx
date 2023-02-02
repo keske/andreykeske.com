@@ -32,7 +32,7 @@ export const Button = React.forwardRef<ButtonRef, ButtonProps>(
       {
         className: clsx(
           className,
-          "cursor-pointer rounded-full border-none font-bold",
+          "cursor-pointer rounded-full border-none font-sans",
           {
             // variant states
             "bg-black text-white": variant == "primary",
