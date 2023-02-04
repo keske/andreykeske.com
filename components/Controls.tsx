@@ -44,7 +44,7 @@ export const Controls: React.FC<ControlsProps> = ({
         },
       })}
       className={clsx(
-        "absolute z-50 select-none rounded-xl bg-white p-2 font-sans text-sm",
+        "absolute z-50 select-none rounded-xl bg-white p-1 font-sans text-xs",
         {
           // position states
           "bottom-10 left-1/2 flex -translate-x-1/2": position === "bottom",
@@ -62,10 +62,13 @@ export const Controls: React.FC<ControlsProps> = ({
 
           if (type === "number") {
             return (
-              <div className="flex flex-row items-center gap-2" key={index}>
-                {key}
+              <div
+                className="flex flex-row place-content-around items-center gap-2"
+                key={index}
+              >
+                <span className="uppercase">{key}</span>
                 <input
-                  className="rounded-sm border-[1px] p-2 outline-none"
+                  className="w-1/2 rounded-lg border-none bg-slate-200 p-1 outline-none"
                   defaultValue={value}
                   onChange={(event) => {
                     onUpdate({

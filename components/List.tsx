@@ -48,7 +48,7 @@ export const List: React.FC<ListProps> = ({
               {groupedByType.map(
                 ([group, items]: [string, Array<Item & { id: string }>]) => (
                   <div className="flex flex-row gap-3" key={group}>
-                    <p className="text-xl font-black">{group}</p>
+                    <span className="text-xl font-black">{group}</span>
                     <ul>
                       {items
                         .sort((a, b) => a.title.localeCompare(b.title))

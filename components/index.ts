@@ -10,6 +10,8 @@ export * from "./Logo";
 export * from "./NURBSCube";
 export * from "./NURBSCube.Dirt";
 export * from "./NURBSCube.Glass";
+export * from "./NURBSCube.Gold";
+export * from "./NURBSCube.Lava";
 export * from "./NURBSCube.Leaves";
 export * from "./NURBSCube.Log";
 export * from "./NURBSCube.RedStone";

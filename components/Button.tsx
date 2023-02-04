@@ -30,22 +30,18 @@ export const Button = React.forwardRef<ButtonRef, ButtonProps>(
     React.createElement(
       as,
       {
-        className: clsx(
-          className,
-          "cursor-pointer rounded-full border-none font-sans",
-          {
-            // variant states
-            "bg-black text-white": variant == "primary",
-            "bg-transparent": variant == "transparent",
-            "bg-white": variant == "secondary",
+        className: clsx(className, "cursor-pointer rounded-full border-none", {
+          // variant states
+          "bg-black text-white": variant == "primary",
+          "bg-transparent": variant == "transparent",
+          "bg-white": variant == "secondary",
 
-            // size states
-            "p-5 text-lg": size == "lg",
-            "py-1 text-xs": size == "xs",
-            "py-3 px-5 text-sm": size == "sm",
-            "text-md px-5 py-4": size == "md",
-          },
-        ),
+          // size states
+          "p-5 text-lg": size == "lg",
+          "py-1 text-xs": size == "xs",
+          "py-3 px-5 text-sm": size == "sm",
+          "text-md px-5 py-4": size == "md",
+        }),
         disabled,
         ref,
         type,

@@ -52,7 +52,7 @@ export const WorkTitle: React.FC<WorkTitleProps> = ({
       >
         <div className="fixed top-6 z-10 flex w-full justify-center">
           <div className={clsx("flex flex-col items-center gap-1", textColor)}>
-            <p className="text-xs">{type}</p>
+            <span className="text-xs">{type}</span>
             <h3 className="text-4xl">{title}</h3>
           </div>
         </div>

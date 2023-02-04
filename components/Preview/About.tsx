@@ -72,7 +72,7 @@ export const About: React.FC = () => {
         className="absolute top-1/2 left-1/2 h-1/2 w-1/2"
         ref={bottomRight}
       />
-      <Canvas className="canvas" eventSource={container}>
+      <Canvas eventSource={container}>
         <View index={2} track={topLeft}>
           <PerspectiveCamera fov={35} makeDefault position={[0, 4, 0]} />
           <OrbitControls makeDefault />

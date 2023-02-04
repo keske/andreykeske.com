@@ -3,7 +3,7 @@ import { Group } from "three";
 
 import { NURBSCube } from "@/components/index";
 
-export const NURBSCubeLeaves = React.forwardRef<
+export const NURBSCubeGold = React.forwardRef<
   Group,
   JSX.IntrinsicElements["group"] & {
     warpRatio: number;
@@ -14,9 +14,9 @@ export const NURBSCubeLeaves = React.forwardRef<
     {...{
       ...props,
       map: {
-        bottom: "textures/minecraft/leaves.png",
-        side: "textures/minecraft/leaves.png",
-        top: "textures/minecraft/leaves.png",
+        bottom: "textures/minecraft/gold.jpg",
+        side: "textures/minecraft/gold.jpg",
+        top: "textures/minecraft/gold.jpg",
       },
     }}
   />

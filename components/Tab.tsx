@@ -11,7 +11,7 @@ export const Tab: React.FC<TabProps> = ({ children, isActive, ...props }) => (
   <Button
     {...props}
     className={clsx(
-      "uppercase hover:bg-white",
+      "font-sans uppercase hover:bg-white",
       isActive ? "bg-white" : "bg-black",
     )}
     size="sm"
