@@ -38,6 +38,13 @@ const DEFAULT_STATE: Item[] = [
     year: 2022,
   },
   {
+    component: Works.TypographyWarped,
+    hasMobileVersion: false,
+    title: "Warped",
+    type: "Typography",
+    year: 2022,
+  },
+  {
     component: Works.SoftVideoPlayer,
     hasMobileVersion: false,
     title: "Video Player",

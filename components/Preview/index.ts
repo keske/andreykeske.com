@@ -23,6 +23,7 @@ export * from "./SoftVideoPlayer";
 export * from "./Stickers";
 export * from "./TickyApplication";
 export * from "./TimestampTattoo";
+export * from "./TypographyWarped";
 export * from "./Terminal";
 export * from "./VintageGoogleStreetView";
 export * from "./Volcom";
