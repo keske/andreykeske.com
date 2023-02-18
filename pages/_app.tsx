@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ParallaxProvider>
       <main className={aboreto.className}>
         <Component {...pageProps} />
-        <div id="desctiption" />
       </main>
     </ParallaxProvider>
   );

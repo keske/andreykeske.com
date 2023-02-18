@@ -31,6 +31,8 @@ export const useControls = (
     position: "bottom",
   },
 ) => {
+  const id = React.useId();
+
   const [options, setOptions] = React.useState<ControlsOptions>(
     R.pipe(
       R.keys,
@@ -62,8 +64,8 @@ export const useControls = (
 
   React.useEffect(() => {
     const controlsElement =
-      document.getElementById("controls") ||
-      Object.assign(document.createElement("div"), { id: "controls" });
+      document.getElementById(id) ||
+      Object.assign(document.createElement("div"), { id });
 
     if (document.body) {
       document.body.appendChild(controlsElement);
@@ -78,7 +80,7 @@ export const useControls = (
         document.body.removeChild(controlsElement);
       }
     };
-  }, [config, hendleUpdate, initialOptions, options]);
+  }, [config, hendleUpdate, id, initialOptions, options]);
 
   return options;
 };
