@@ -16,9 +16,8 @@ import {
   NURBSCubeSand,
   NURBSCubeStone,
   NURBSCubeStructureSmallHouse,
-  Tab,
 } from "@/components/index";
-import { useControls } from "@/hooks/index";
+import { useControls, useTabs } from "@/hooks/index";
 
 const Environment: React.FC = () => (
   <>
@@ -65,7 +64,7 @@ export const MinecraftWarped: React.FC<MinecraftWarpedProps> = ({
     topRight,
   ] = useRefs() as Array<React.MutableRefObject<HTMLInputElement>>;
 
-  const [selectedTab, setSelectedTab] = React.useState(0);
+  const { renderTabs, selectedTab } = useTabs();
 
   return (
     <div className="h-screen w-screen">
@@ -171,18 +170,7 @@ export const MinecraftWarped: React.FC<MinecraftWarpedProps> = ({
           leaveTo="opacity-0"
         >
           <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
-            {["Dirt", "Blocks", "Small House"].map((label, index) => (
-              <React.Fragment key={index}>
-                <Tab
-                  isActive={selectedTab === index}
-                  onClick={() => {
-                    setSelectedTab(index);
-                  }}
-                >
-                  {label}
-                </Tab>
-              </React.Fragment>
-            ))}
+            {renderTabs(["Dirt", "Blocks", "Small House"])}
           </div>
         </Transition.Child>
       </Transition>
