@@ -5,6 +5,7 @@ import React from "react";
 import { Cloth } from "./Cloth";
 import { DistortingMirrors } from "./DistortingMirrors";
 import { EsherSwitchButton } from "./EsherSwitchButton";
+import { MandelbrotSet } from "./MandelbrotSet";
 import { SoftVideoPlayer } from "./SoftVideoPlayer";
 
 import { useTabs } from "@/hooks/index";
@@ -23,6 +24,7 @@ export const UI: React.FC = () => {
         <Cloth />,
         <DistortingMirrors />,
         <EsherSwitchButton />,
+        <MandelbrotSet />,
         <SoftVideoPlayer />,
       ])}
       <Transition
@@ -45,6 +47,7 @@ export const UI: React.FC = () => {
               "Cloth",
               "Distorting Mirrors",
               "Esher's Switch Button",
+              "Mandelbrot's Set",
               "Soft Video Player",
             ])}
           </div>
