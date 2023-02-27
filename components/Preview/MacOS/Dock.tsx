@@ -3,7 +3,7 @@ import React from "react";
 import { UploadcareImage } from "@/components/index";
 
 export const Dock: React.FC = () => (
-  <div className="flex flex-col justify-center gap-40 py-80">
+  <div className="flex flex-col justify-center gap-40">
     <div className="flex flex-col items-center gap-5">
       <div className="sm:w-screen md:w-screen lg:w-5/6 xl:w-1/2">
         <UploadcareImage

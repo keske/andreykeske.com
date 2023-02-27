@@ -1,20 +1,14 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 
-import { WorkDescription } from "@/components/index";
-
-type Props = {
-  selectedCaseId?: string | null;
-};
-
-const Desktop: React.FC<Props> = ({ selectedCaseId }) => (
-  <div className="flex h-screen w-screen justify-center">
+const Desktop: React.FC = () => (
+  <div className="flex h-screen w-screen flex-col items-center justify-center gap-10">
     <iframe
-      className="w-1/4 border-0 2xl:w-1/5"
+      className="h-1/2 w-1/2 border-0 2xl:w-1/5"
       src="/videos/ikea.mp4"
       title="The first discarded piece of IKEA furniture in Augmented Reality"
     />
-    <WorkDescription selectedCaseId={selectedCaseId}>
+    <div>
       <p>The first discarded piece of IKEA furniture in Augmented Reality</p>
       <p>
         Made in{" "}
@@ -22,7 +16,7 @@ const Desktop: React.FC<Props> = ({ selectedCaseId }) => (
           IKEA Place
         </a>
       </p>
-    </WorkDescription>
+    </div>
   </div>
 );
 
@@ -43,7 +37,7 @@ const Mobile: React.FC = () => (
   </div>
 );
 
-export const IkeaGarbage = () =>
+export const Ikea = () =>
   typeof window !== "undefined" && window.innerWidth > 768 ? (
     <Desktop />
   ) : (

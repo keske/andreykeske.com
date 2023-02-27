@@ -3,7 +3,7 @@ import React from "react";
 import { Button, UploadcareImage } from "@/components/index";
 
 export const Finder: React.FC = () => (
-  <div className="flex flex-col gap-40 py-80">
+  <div className="flex flex-col gap-40">
     <div className="flex flex-col gap-10">
       <h4 className="text-center text-3xl">Hydra</h4>
       <div className="flex flex-col items-center gap-5">

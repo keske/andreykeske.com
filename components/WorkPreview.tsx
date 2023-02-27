@@ -2,18 +2,16 @@ import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
-import { useHeader } from "@/stores/index";
+import { useHeader, useListItems } from "@/stores/index";
 
 type WorkPreviewProps = {
   preview: React.ReactElement<any, React.JSXElementConstructor<any> | string>;
-  selectedCaseId: string | null;
 };
 
-export const WorkPreview: React.FC<WorkPreviewProps> = ({
-  preview,
-  selectedCaseId,
-}) => {
+export const WorkPreview: React.FC<WorkPreviewProps> = ({ preview }) => {
   const { resetTextColor } = useHeader();
+
+  const { selectedCaseId } = useListItems();
 
   React.useEffect(() => {
     if (R.isNil(selectedCaseId)) {

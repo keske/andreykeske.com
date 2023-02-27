@@ -2,12 +2,25 @@ import React from "react";
 
 import { Tab } from "@/components/index";
 
-export const useTabs = (): {
+export type TabsConfig = {
+  initialIndex?: number;
+};
+
+export type UseTabs = {
   renderTabs: (tabs: string[]) => JSX.Element;
+  renderTabsBody: (
+    tabs: Array<
+      React.ReactElement<any, React.JSXElementConstructor<any> | string>
+    >,
+  ) => JSX.Element;
   selectedTab: number;
   setSelectedTab: (value: number) => void;
-} => {
-  const [selectedTab, setSelectedTab] = React.useState(0);
+};
+
+export const useTabs = (config: TabsConfig): UseTabs => {
+  const [selectedTab, setSelectedTab] = React.useState(
+    config?.initialIndex ?? 0,
+  );
 
   const renderTabs = React.useCallback(
     (tabs: string[]) => (
@@ -29,5 +42,14 @@ export const useTabs = (): {
     [selectedTab],
   );
 
-  return { renderTabs, selectedTab, setSelectedTab };
+  const renderTabsBody = React.useCallback(
+    (
+      components: Array<
+        React.ReactElement<any, React.JSXElementConstructor<any> | string>
+      >,
+    ) => <>{React.cloneElement(components[selectedTab])}</>,
+    [selectedTab],
+  );
+
+  return { renderTabs, renderTabsBody, selectedTab, setSelectedTab };
 };

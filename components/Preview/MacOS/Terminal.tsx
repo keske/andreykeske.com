@@ -27,7 +27,7 @@ const DesktopVideo = () => {
 
 const Desktop: React.FC = () => (
   <div className="h-screen w-screen overflow-hidden">
-    <h4 className="z-10 mt-80 text-center text-3xl">Tmux Chess</h4>
+    <h4 className="z-10  text-center text-3xl">Tmux Chess</h4>
     <Canvas
       className="-mt-80"
       gl={{

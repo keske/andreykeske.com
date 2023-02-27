@@ -2,31 +2,16 @@ import { useRouter } from "next/router";
 import * as R from "ramda";
 import React from "react";
 
-import type { Item } from "@/stores/useListItems";
 import type { NextPage } from "next";
 
 import { Head, List, WorkPreview, WorkTitle } from "@/components/index";
-
 import { Header } from "@/components/index";
 import { useListItems } from "@/stores/index";
 
 const Home: NextPage = () => {
   const router = useRouter();
 
-  const { items } = useListItems();
-
-  const itemsWithId = React.useMemo<Array<Item & { id: string }>>(
-    () =>
-      items.map((item) => ({
-        ...item,
-        id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
-      })),
-    [items],
-  );
-
-  const [selectedCaseId, setSelectedCaseId] = React.useState<string | null>(
-    null,
-  );
+  const { selectedCaseId, setSelectedCaseId } = useListItems();
 
   const [preview, setPreview] = React.useState<React.ReactNode>(null);
 
@@ -36,7 +21,7 @@ const Home: NextPage = () => {
         setSelectedCaseId(id);
       }
     },
-    [selectedCaseId],
+    [selectedCaseId, setSelectedCaseId],
   );
 
   const handleCloseCase = React.useCallback(() => {
@@ -44,7 +29,7 @@ const Home: NextPage = () => {
 
     setPreview(null);
     setSelectedCaseId(null);
-  }, [router]);
+  }, [router, setSelectedCaseId]);
 
   const handleMouseOut = React.useCallback(() => {
     if (R.isNil(selectedCaseId)) {
@@ -84,16 +69,14 @@ const Home: NextPage = () => {
         }}
       />
       <main>
-        <WorkTitle {...{ itemsWithId, selectedCaseId }} />
-        <WorkPreview {...{ preview, selectedCaseId }} />
+        <WorkTitle />
+        <WorkPreview {...{ preview }} />
         <List
           {...{
             handleCloseCase,
             handleMouseOut,
             handleMouseOver,
             handleShowCase,
-            itemsWithId,
-            selectedCaseId,
           }}
         />
       </main>

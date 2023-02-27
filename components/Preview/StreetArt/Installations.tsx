@@ -1,6 +1,5 @@
 import { Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import * as R from "ramda";
 import React from "react";
 
 import { UploadcareImage, WaterSurface } from "@/components/index";
@@ -38,18 +37,12 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
   },
 );
 
-type WaterFilterProps = {
-  selectedCaseId?: string | null;
-};
-
-export const WaterFilter: React.FC<WaterFilterProps> = ({ selectedCaseId }) => {
+export const Installations: React.FC = () => {
   const { setTextColor } = useHeader();
 
   React.useEffect(() => {
-    if (R.not(R.isNil(selectedCaseId))) {
-      setTextColor("text-white");
-    }
-  }, [selectedCaseId, setTextColor]);
+    setTextColor("text-white");
+  }, [setTextColor]);
 
   return (
     <>

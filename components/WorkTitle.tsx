@@ -3,35 +3,20 @@ import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
-import type { Item } from "@/stores/useListItems";
+import { useHeader, useListItems } from "@/stores/index";
 
-import { useHeader } from "@/stores/index";
-
-type WorkTitleProps = {
-  itemsWithId: Array<Item & { id: string }>;
-  selectedCaseId: string | null;
-};
-
-export const WorkTitle: React.FC<WorkTitleProps> = ({
-  itemsWithId,
-  selectedCaseId,
-}) => {
+export const WorkTitle: React.FC = () => {
   const onUnmount = React.useRef<() => void>();
 
   const { textColor } = useHeader();
 
-  const type = React.useMemo(
-    () =>
-      selectedCaseId &&
-      itemsWithId.filter((item) => item.id === selectedCaseId)[0].type,
-    [itemsWithId, selectedCaseId],
-  );
+  const { items, selectedCaseId } = useListItems();
 
   const title = React.useMemo(
     () =>
       selectedCaseId &&
-      itemsWithId.filter((item) => item.id === selectedCaseId)[0].title,
-    [itemsWithId, selectedCaseId],
+      items.filter((item) => item.id === selectedCaseId)[0].title,
+    [items, selectedCaseId],
   );
 
   return (
@@ -52,7 +37,6 @@ export const WorkTitle: React.FC<WorkTitleProps> = ({
       >
         <div className="fixed top-6 z-10 flex w-full justify-center">
           <div className={clsx("flex flex-col items-center gap-1", textColor)}>
-            <span className="text-xs">{type}</span>
             <h3 className="text-4xl">{title}</h3>
           </div>
         </div>
