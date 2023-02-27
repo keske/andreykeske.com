@@ -1,20 +1,16 @@
 import React from "react";
 
-import { UploadcareImage, WorkDescription } from "@/components/index";
+import { UploadcareImage, WorkDetails } from "@/components/index";
 
-type Props = {
-  selectedCaseId?: string | null;
-};
-
-export const TimestampTattoo: React.FC<Props> = ({ selectedCaseId }) => (
-  <div className="flex h-screen w-screen items-center justify-center">
+export const TimestampTattoo: React.FC = () => (
+  <div className="flex flex-col items-center gap-10">
     <div className="xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/5">
       <UploadcareImage
         alt="Timestamp Tattoo"
         src="https://ucarecdn.com/6895ff34-0b17-46c8-8109-4ed571387cd0/"
       />
     </div>
-    <WorkDescription selectedCaseId={selectedCaseId}>
+    <WorkDetails>
       <p>
         There are two timestamp tattoos one on the neck{" "}
         <mark>1662414749388</mark> and the other one on the leg
@@ -29,6 +25,6 @@ export const TimestampTattoo: React.FC<Props> = ({ selectedCaseId }) => (
           table...
         </q>
       </p>
-    </WorkDescription>
+    </WorkDetails>
   </div>
 );

@@ -1,21 +1,20 @@
 import React from "react";
 
-import { Graffiti } from "./Graffiti";
-import { Installations } from "./Installations";
-import { Stickers } from "./Stickers";
+import { CV } from "./CV";
+import { Description } from "./Description";
 
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
 
-export const StreetArt: React.FC = () => {
+export const About: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
 
   return (
     <div className="py-80">
-      {renderTabsBody([<Graffiti />, <Installations />, <Stickers />])}
+      {renderTabsBody([<Description />, <CV />])}
       <WorkDetails>
         <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
-          {renderTabs(["Graffiti", "Installations", "Stickers"])}
+          {renderTabs(["Description", "CV"])}
         </div>
       </WorkDetails>
     </div>

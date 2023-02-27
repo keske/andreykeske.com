@@ -1,7 +1,7 @@
 import React from "react";
 
-export const Blackhole: React.FC = () => (
-  <div className="w-screen py-80">
+export const Desktop: React.FC = () => (
+  <>
     <div className="flex flex-col items-center gap-10 p-20">
       <div>
         <h2>Black hole on my Desktop. Part I</h2>
@@ -43,5 +43,5 @@ export const Blackhole: React.FC = () => (
         />
       </div>
     </div>
-  </div>
+  </>
 );

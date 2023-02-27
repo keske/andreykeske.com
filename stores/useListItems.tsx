@@ -17,8 +17,16 @@ export type Store = {
 
 const DEFAULT_STATE: Item[] = [
   {
+    component: Works.About,
+    title: "About",
+  },
+  {
     component: Works.AR,
     title: "AR",
+  },
+  {
+    component: Works.Graphics,
+    title: "Graphics",
   },
   {
     component: Works.IOS,
@@ -27,6 +35,10 @@ const DEFAULT_STATE: Item[] = [
   {
     component: Works.MacOS,
     title: "MacOS",
+  },
+  {
+    component: Works.Maps,
+    title: "Maps",
   },
   {
     component: Works.StreetArt,

@@ -3,7 +3,7 @@ import React from "react";
 import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const Ticky: React.FC = () => (
-  <div className="flex w-screen flex-col items-center justify-center gap-10 py-40">
+  <div className="flex flex-col items-center justify-center gap-10 py-40">
     <div className="xs:w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/5">
       <UploadcareImage
         alt="Side view"

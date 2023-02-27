@@ -1,4 +1,3 @@
-export * from "./AtomicPhoto";
 export * from "./Button";
 export * from "./CloseButton";
 export * from "./Controls";
@@ -19,9 +18,7 @@ export * from "./NURBSCube/NURBSCube.Sand";
 export * from "./NURBSCube/NURBSCube.Stone";
 export * from "./NURBSCube/NURBSCube.Structure.SmallHouse";
 export * from "./NURBSCube/NURBSLetter";
-export * from "./Tab";
 export * from "./THREEOnMouseRotation";
-export * from "./Transition";
 export * from "./UploadcareImage";
 export * from "./WaterSurface";
 export * from "./WorkDetails";

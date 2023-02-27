@@ -1,6 +1,7 @@
+import clsx from "clsx";
 import React from "react";
 
-import { Tab } from "@/components/index";
+import { Button } from "@/components/index";
 
 export type TabsConfig = {
   initialIndex?: number;
@@ -27,14 +28,19 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
       <>
         {tabs.map((label, index) => (
           <React.Fragment key={index}>
-            <Tab
-              isActive={selectedTab === index}
+            <Button
+              className={clsx(
+                "font-sans uppercase hover:bg-white",
+                selectedTab === index ? "bg-white font-bold" : "bg-black",
+              )}
               onClick={() => {
                 setSelectedTab(index);
               }}
+              size="xs"
+              variant="transparent"
             >
               {label}
-            </Tab>
+            </Button>
           </React.Fragment>
         ))}
       </>
