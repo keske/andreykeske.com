@@ -1,7 +1,6 @@
 export * from "./Button";
 export * from "./CloseButton";
 export * from "./Controls";
-export * from "./Dragable";
 export * from "./Head";
 export * from "./Header";
 export * from "./List";
