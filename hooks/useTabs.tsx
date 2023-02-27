@@ -17,7 +17,7 @@ export type UseTabs = {
   setSelectedTab: (value: number) => void;
 };
 
-export const useTabs = (config: TabsConfig): UseTabs => {
+export const useTabs = (config?: TabsConfig): UseTabs => {
   const [selectedTab, setSelectedTab] = React.useState(
     config?.initialIndex ?? 0,
   );

@@ -38,7 +38,7 @@ export const Button = React.forwardRef<ButtonRef, ButtonProps>(
 
           // size states
           "p-5 text-lg": size == "lg",
-          "py-1 text-xs": size == "xs",
+          "py-2 text-xs px-3": size == "xs",
           "py-3 px-5 text-sm": size == "sm",
           "text-md px-5 py-4": size == "md",
         }),

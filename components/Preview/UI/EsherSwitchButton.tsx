@@ -2,11 +2,7 @@ import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
-import { UploadcareImage, WorkDescription } from "@/components/index";
-
-type Props = {
-  selectedCaseId?: string | null;
-};
+import { UploadcareImage } from "@/components/index";
 
 type SwitchProps = {
   handleClick: () => void;
@@ -150,44 +146,15 @@ const Switch: React.FC<SwitchProps> = ({ handleClick, level, on }) => {
   return null;
 };
 
-export const EsherSwitchButton: React.FC<Props> = ({ selectedCaseId }) => {
+export const EsherSwitchButton: React.FC = () => {
   const [on, setOn] = React.useState(true);
 
   const handleClick = React.useCallback(() => {
     setOn(!on);
   }, [on]);
 
-  const renderDescription = React.useMemo(
-    () => (
-      <WorkDescription selectedCaseId={selectedCaseId}>
-        <div className="flex flex-col items-end">
-          <strong>Inspiration</strong>
-          <div className="mt-4 w-1/4">
-            <figure>
-              <UploadcareImage
-                alt="Esher Switch Button"
-                src="https://ucarecdn.com/2800b37e-8afc-4ee4-aa38-3c9e8d36f968/"
-              />
-              <figcaption>
-                <cite>
-                  <a
-                    className="text-xs"
-                    href="https://en.wikipedia.org/wiki/Sky_and_Water_I"
-                  >
-                    Sky and Water I. M C. Escher
-                  </a>
-                </cite>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </WorkDescription>
-    ),
-    [selectedCaseId],
-  );
-
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
+    <div className="flex w-screen flex-col items-center justify-center gap-20 p-80">
       <div className="flex flex-col gap-5">
         {R.range(0, 12).map((row) => (
           <div
@@ -204,7 +171,28 @@ export const EsherSwitchButton: React.FC<Props> = ({ selectedCaseId }) => {
           </div>
         ))}
       </div>
-      {renderDescription}
+      <hr />
+      <div className="flex flex-col items-center">
+        <strong>Inspiration</strong>
+        <div className="mt-4 w-1/4">
+          <figure>
+            <UploadcareImage
+              alt="Esher Switch Button"
+              src="https://ucarecdn.com/2800b37e-8afc-4ee4-aa38-3c9e8d36f968/"
+            />
+            <figcaption>
+              <cite>
+                <a
+                  className="text-xs"
+                  href="https://en.wikipedia.org/wiki/Sky_and_Water_I"
+                >
+                  Sky and Water I. M C. Escher
+                </a>
+              </cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   );
 };

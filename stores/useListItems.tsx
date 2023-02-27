@@ -21,12 +21,20 @@ const DEFAULT_STATE: Item[] = [
     title: "AR",
   },
   {
+    component: Works.IOS,
+    title: "iOS",
+  },
+  {
     component: Works.MacOS,
     title: "MacOS",
   },
   {
     component: Works.StreetArt,
     title: "Street Art",
+  },
+  {
+    component: Works.UI,
+    title: "UI",
   },
 ];
 

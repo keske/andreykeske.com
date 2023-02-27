@@ -14,7 +14,7 @@ export const Tab: React.FC<TabProps> = ({ children, isActive, ...props }) => (
       "font-sans uppercase hover:bg-white",
       isActive ? "bg-white" : "bg-black",
     )}
-    size="sm"
+    size="xs"
     variant="transparent"
   >
     {children}

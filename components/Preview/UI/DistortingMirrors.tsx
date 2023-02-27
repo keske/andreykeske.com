@@ -4,7 +4,7 @@ import * as R from "ramda";
 import React from "react";
 import * as THREE from "three";
 
-import { Nurbs } from "../NURBSVideo";
+import { Nurbs } from "../../NURBSVideo";
 
 import { THREEOnMouseRotation } from "@/components/index";
 
