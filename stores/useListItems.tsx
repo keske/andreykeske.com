@@ -41,8 +41,12 @@ const DEFAULT_STATE: Item[] = [
     title: "Maps",
   },
   {
-    component: Works.StreetArt,
-    title: "Street Art",
+    component: Works.Objects,
+    title: "Objects",
+  },
+  {
+    component: Works.Streets,
+    title: "Streets",
   },
   {
     component: Works.UI,

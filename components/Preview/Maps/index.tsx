@@ -12,7 +12,7 @@ export const Maps: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
 
   return (
-    <div>
+    <>
       {renderTabsBody([
         <Globalization />,
         <InvertedManhattan />,
@@ -29,6 +29,6 @@ export const Maps: React.FC = () => {
           ])}
         </div>
       </WorkDetails>
-    </div>
+    </>
   );
 };

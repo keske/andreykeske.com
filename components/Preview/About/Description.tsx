@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Description: React.FC = () => (
-  <div className="flex flex-col items-center justify-center gap-10">
+  <div className="flex flex-col items-center justify-center gap-10 py-80">
     <div className="w-1/2 px-10">
       <p>
         Andrey Keske is a digital artist/software engineer In 2006 Andrey

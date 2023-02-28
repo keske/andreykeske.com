@@ -7,7 +7,7 @@ import { Stickers } from "./Stickers";
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
 
-export const StreetArt: React.FC = () => {
+export const Streets: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
 
   return (

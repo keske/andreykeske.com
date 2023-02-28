@@ -1,20 +1,19 @@
 import React from "react";
 
-import { CV } from "./CV";
-import { Description } from "./Description";
+import { LOT2046Tattoo } from "./LOT2046Tattoo";
 
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
 
-export const About: React.FC = () => {
+export const Objects: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
 
   return (
     <>
-      {renderTabsBody([<Description />, <CV />])}
+      {renderTabsBody([<LOT2046Tattoo />])}
       <WorkDetails>
         <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
-          {renderTabs(["Description", "CV"])}
+          {renderTabs(["LOT2046Tattoo"])}
         </div>
       </WorkDetails>
     </>

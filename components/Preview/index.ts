@@ -4,5 +4,6 @@ export * from "./Graphics";
 export * from "./IOS";
 export * from "./MacOS";
 export * from "./Maps";
-export * from "./StreetArt";
+export * from "./Objects";
+export * from "./Streets";
 export * from "./UI";
