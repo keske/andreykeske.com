@@ -38,11 +38,18 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
 );
 
 export const Installations: React.FC = () => {
-  const { setTextColor } = useHeader();
+  const { resetScheme, setScheme } = useHeader();
 
   React.useEffect(() => {
-    setTextColor("text-white");
-  }, [setTextColor]);
+    setScheme({
+      bg: "black",
+      text: "white",
+    });
+
+    return () => {
+      resetScheme();
+    };
+  }, [resetScheme, setScheme]);
 
   return (
     <>

@@ -14,7 +14,7 @@ export const CloseButton = React.forwardRef<ButtonRef, CloseButtonProps>(
   ({ isShowing, onClick, ...props }, ref) => {
     const onUnmount = React.useRef<() => void>();
 
-    const { textColor } = useHeader();
+    const { scheme } = useHeader();
 
     React.useEffect(() => {
       const handleEsc = (event: KeyboardEvent) => {
@@ -50,7 +50,7 @@ export const CloseButton = React.forwardRef<ButtonRef, CloseButtonProps>(
             {...props}
             className={clsx(
               isShowing ? "cursor-pointer opacity-100" : "opacity-0",
-              textColor,
+              `text-${scheme.text}`,
             )}
             onClick={onClick}
             ref={ref}

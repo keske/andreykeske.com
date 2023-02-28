@@ -1,12 +1,8 @@
 import React from "react";
 
-import { WorkDescription } from "@/components/index";
+import { WorkDetails } from "@/components/index";
 
-type Props = {
-  selectedCaseId?: string | null;
-};
-
-export const Globalization: React.FC<Props> = ({ selectedCaseId }) => (
+export const Globalization: React.FC = () => (
   <div className="h-screen w-screen">
     <iframe
       className="h-screen w-screen border-0"
@@ -16,8 +12,10 @@ export const Globalization: React.FC<Props> = ({ selectedCaseId }) => (
       }}
       title="Globalization"
     />
-    <WorkDescription selectedCaseId={selectedCaseId}>
-      <p>The world when the boundaries are blurred</p>
-    </WorkDescription>
+    <WorkDetails>
+      <div className="absolute right-10 bottom-10">
+        <p>The world when the boundaries are blurred</p>
+      </div>
+    </WorkDetails>
   </div>
 );

@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React from "react";
 
 import { Button } from "@/components/index";
+import { useHeader } from "@/stores/index";
 
 export type TabsConfig = {
   initialIndex?: number;
@@ -19,6 +20,8 @@ export type UseTabs = {
 };
 
 export const useTabs = (config?: TabsConfig): UseTabs => {
+  const { scheme } = useHeader();
+
   const [selectedTab, setSelectedTab] = React.useState(
     config?.initialIndex ?? 0,
   );
@@ -30,8 +33,12 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
           <React.Fragment key={index}>
             <Button
               className={clsx(
-                "font-sans uppercase hover:bg-white",
-                selectedTab === index ? "bg-white font-bold" : "bg-black",
+                "font-sans uppercase",
+                `text-${scheme.text} hover:bg-${scheme.bg}`,
+                selectedTab === index &&
+                  `bg-${scheme.text} text-${scheme.bg} font-bold`,
+                //   ? `bg-${scheme.secondary} font-bold`
+                //   : `text-${scheme.primary}`,
               )}
               onClick={() => {
                 setSelectedTab(index);
@@ -45,7 +52,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
         ))}
       </>
     ),
-    [selectedTab],
+    [scheme.bg, scheme.text, selectedTab],
   );
 
   const renderTabsBody = React.useCallback(

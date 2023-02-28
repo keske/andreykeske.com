@@ -9,15 +9,15 @@ type WorkPreviewProps = {
 };
 
 export const WorkPreview: React.FC<WorkPreviewProps> = ({ preview }) => {
-  const { resetTextColor } = useHeader();
+  const { resetScheme } = useHeader();
 
   const { selectedCaseId } = useListItems();
 
-  React.useEffect(() => {
-    if (R.isNil(selectedCaseId)) {
-      resetTextColor();
-    }
-  }, [resetTextColor, selectedCaseId]);
+  // React.useEffect(() => {
+  //   if (R.isNil(selectedCaseId)) {
+  //     resetScheme();
+  //   }
+  // }, [resetScheme, selectedCaseId]);
 
   return (
     <div
@@ -28,7 +28,7 @@ export const WorkPreview: React.FC<WorkPreviewProps> = ({ preview }) => {
           : "scale-[0.99] rounded-3xl",
       )}
     >
-      {preview && React.cloneElement(preview, { selectedCaseId })}
+      {preview && React.cloneElement(preview)}
     </div>
   );
 };

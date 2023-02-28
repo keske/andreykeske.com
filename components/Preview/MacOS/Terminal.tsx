@@ -5,6 +5,7 @@ import { Parallax } from "react-scroll-parallax";
 import { Mesh } from "three";
 
 import { THREEOnMouseRotation } from "@/components/index";
+import { useHeader } from "@/stores/index";
 import { interpolate } from "@/utils/index";
 
 const DesktopVideo = () => {
@@ -25,23 +26,40 @@ const DesktopVideo = () => {
   );
 };
 
-const Desktop: React.FC = () => (
-  <div className="h-screen w-screen overflow-hidden">
-    <h4 className="z-10  text-center text-3xl">Tmux Chess</h4>
-    <Canvas
-      className="-mt-80"
-      gl={{
-        alpha: true,
-        antialias: true,
-        depth: false,
-        powerPreference: "high-performance",
-        stencil: false,
-      }}
-    >
-      <DesktopVideo />
-    </Canvas>
-  </div>
-);
+const Desktop: React.FC = () => {
+  const { setScheme } = useHeader();
+
+  // React.useEffect(() => {
+  //   setScheme({
+  //     primary: "white",
+  //     secondary: "black",
+  //   });
+
+  //   return () => {
+  //     setScheme({
+  //       primary: "black",
+  //       secondary: "white",
+  //     });
+  //   };
+  // }, [setScheme]);
+
+  return (
+    <div className="h-screen w-screen overflow-hidden bg-black py-40">
+      <h4 className="z-10 text-center text-3xl text-white">Tmux Chess</h4>
+      <Canvas
+        gl={{
+          alpha: true,
+          antialias: true,
+          depth: false,
+          powerPreference: "high-performance",
+          stencil: false,
+        }}
+      >
+        <DesktopVideo />
+      </Canvas>
+    </div>
+  );
+};
 
 const MobileVideo = () => {
   const mesh = React.useRef<Mesh>(null!);

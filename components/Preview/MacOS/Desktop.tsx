@@ -2,7 +2,7 @@ import React from "react";
 
 export const Desktop: React.FC = () => (
   <>
-    <div className="flex flex-col items-center gap-10 p-20">
+    <div className="flex flex-col items-center gap-10 p-80">
       <div>
         <h2>Black hole on my Desktop. Part I</h2>
         <p>

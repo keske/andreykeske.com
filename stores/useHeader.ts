@@ -1,25 +1,35 @@
 import { create } from "zustand";
 
-const DEFAULT_TEXT_COLOR = "text-black";
+type Color = "black" | "white";
+
+type Scheme = {
+  bg: Color;
+  text: Color;
+};
+
+const DEFAULT_SHEME: Scheme = {
+  bg: "white",
+  text: "black",
+};
 
 export type UseHeader = {
-  resetTextColor: () => void;
-  setTextColor: (value: string) => void;
-  readonly textColor: string;
+  resetScheme: () => void;
+  readonly scheme: Scheme;
+  setScheme: (scheme: Scheme) => void;
 };
 
 export const useHeader = create<UseHeader>((set) => ({
-  resetTextColor: () => {
+  resetScheme: () => {
     set(() => ({
-      textColor: DEFAULT_TEXT_COLOR,
+      scheme: DEFAULT_SHEME,
     }));
   },
 
-  setTextColor: (value: string) => {
+  scheme: DEFAULT_SHEME,
+
+  setScheme: (scheme: Scheme) => {
     set(() => ({
-      textColor: value,
+      scheme: scheme,
     }));
   },
-
-  textColor: DEFAULT_TEXT_COLOR,
 }));

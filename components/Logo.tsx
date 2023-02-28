@@ -7,12 +7,12 @@ import { useHeader } from "@/stores/index";
 type LogoProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Logo: React.FC<LogoProps> = ({ ...props }) => {
-  const { textColor } = useHeader();
+  const { scheme } = useHeader();
 
   return (
     <Button
       {...props}
-      className={clsx("whitespace-nowrap uppercase", textColor)}
+      className={clsx("whitespace-nowrap uppercase", `text-${scheme.text}`)}
       size={null}
       variant="transparent"
     >

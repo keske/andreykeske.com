@@ -8,7 +8,7 @@ import { useHeader, useListItems } from "@/stores/index";
 export const WorkTitle: React.FC = () => {
   const onUnmount = React.useRef<() => void>();
 
-  const { textColor } = useHeader();
+  const { scheme } = useHeader();
 
   const { items, selectedCaseId } = useListItems();
 
@@ -36,7 +36,12 @@ export const WorkTitle: React.FC = () => {
         leaveTo="opacity-0"
       >
         <div className="fixed top-6 z-10 flex w-full justify-center">
-          <div className={clsx("flex flex-col items-center gap-1", textColor)}>
+          <div
+            className={clsx(
+              "flex flex-col items-center gap-1",
+              `text-${scheme.text}`,
+            )}
+          >
             <h3 className="text-4xl">{title}</h3>
           </div>
         </div>

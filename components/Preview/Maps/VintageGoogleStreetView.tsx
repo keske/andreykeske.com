@@ -1,23 +1,17 @@
-import * as R from "ramda";
 import React from "react";
 
-import { WorkDescription } from "@/components/index";
+import { WorkDetails } from "@/components/index";
 import { useHeader } from "@/stores/index";
 
-type Props = {
-  selectedCaseId?: string | null;
-};
+export const VintageGoogleStreetView: React.FC = () => {
+  const { setScheme } = useHeader();
 
-export const VintageGoogleStreetView: React.FC<Props> = ({
-  selectedCaseId,
-}) => {
-  const { setTextColor } = useHeader();
-
-  React.useEffect(() => {
-    if (R.not(R.isNil(selectedCaseId))) {
-      setTextColor("text-white");
-    }
-  }, [selectedCaseId, setTextColor]);
+  // React.useEffect(() => {
+  //   setScheme({
+  //     primary: "black",
+  //     secondary: "white",
+  //   });
+  // }, [setScheme]);
 
   return (
     <div className="h-screen w-screen">
@@ -29,11 +23,13 @@ export const VintageGoogleStreetView: React.FC<Props> = ({
         }}
         title="Vintage Google StreetView"
       />
-      <WorkDescription selectedCaseId={selectedCaseId}>
-        <p className="text-white">
-          Black and white with sepia like old photo card
-        </p>
-      </WorkDescription>
+      <WorkDetails>
+        <div className="absolute right-10 bottom-10">
+          <p className="text-white">
+            Black and white with sepia like old photo card
+          </p>
+        </div>
+      </WorkDetails>
     </div>
   );
 };
