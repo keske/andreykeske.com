@@ -26,6 +26,11 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
     config?.initialIndex ?? 0,
   );
 
+  const isSelected = React.useCallback(
+    (index: number) => selectedTab === index,
+    [selectedTab],
+  );
+
   const renderTabs = React.useCallback(
     (tabs: string[]) => (
       <>
@@ -33,18 +38,17 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
           <React.Fragment key={index}>
             <Button
               className={clsx(
-                "font-sans uppercase",
+                "uppercase tracking-widest",
+                isSelected(index) &&
+                  `bg-${scheme.bg} text-${scheme.text} font-black`,
                 `text-${scheme.text} hover:bg-${scheme.bg}`,
-                selectedTab === index &&
-                  `bg-${scheme.text} text-${scheme.bg} font-bold`,
-                //   ? `bg-${scheme.secondary} font-bold`
-                //   : `text-${scheme.primary}`,
+                "hover:font-black",
               )}
               onClick={() => {
                 setSelectedTab(index);
               }}
               size="xs"
-              variant="transparent"
+              {...(!isSelected(index) && { variant: "transparent" })}
             >
               {label}
             </Button>
@@ -52,7 +56,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
         ))}
       </>
     ),
-    [scheme.bg, scheme.text, selectedTab],
+    [isSelected, scheme.bg, scheme.text],
   );
 
   const renderTabsBody = React.useCallback(
@@ -60,7 +64,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
       components: Array<
         React.ReactElement<any, React.JSXElementConstructor<any> | string>
       >,
-    ) => <>{React.cloneElement(components[selectedTab])}</>,
+    ) => React.cloneElement(components[selectedTab]),
     [selectedTab],
   );
 

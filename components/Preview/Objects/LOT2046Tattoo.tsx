@@ -1,17 +1,19 @@
 import React from "react";
 
 import { UploadcareImage } from "@/components/index";
-import { useHeader } from "@/stores/index";
+import { useHeader, useListItems } from "@/stores/index";
 
 export const LOT2046Tattoo: React.FC = () => {
   const { setScheme } = useHeader();
+
+  const { selectedCaseId } = useListItems();
 
   React.useEffect(() => {
     setScheme({
       bg: "black",
       text: "white",
     });
-  }, [setScheme]);
+  }, [selectedCaseId, setScheme]);
 
   return (
     <div className="h-screen w-screen bg-black">

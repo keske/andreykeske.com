@@ -5,7 +5,7 @@ import { Parallax } from "react-scroll-parallax";
 import { Mesh } from "three";
 
 import { THREEOnMouseRotation } from "@/components/index";
-import { useHeader } from "@/stores/index";
+import { useHeader, useListItems } from "@/stores/index";
 import { interpolate } from "@/utils/index";
 
 const DesktopVideo = () => {
@@ -29,19 +29,14 @@ const DesktopVideo = () => {
 const Desktop: React.FC = () => {
   const { setScheme } = useHeader();
 
-  // React.useEffect(() => {
-  //   setScheme({
-  //     primary: "white",
-  //     secondary: "black",
-  //   });
+  const { selectedCaseId } = useListItems();
 
-  //   return () => {
-  //     setScheme({
-  //       primary: "black",
-  //       secondary: "white",
-  //     });
-  //   };
-  // }, [setScheme]);
+  React.useEffect(() => {
+    setScheme({
+      bg: "black",
+      text: "white",
+    });
+  }, [selectedCaseId, setScheme]);
 
   return (
     <div className="h-screen w-screen overflow-hidden bg-black py-40">

@@ -13,8 +13,8 @@ type Props = {
   url: string;
 };
 
-const Nurbs = React.forwardRef(
-  ({ nsControlPoints, side = THREE.FrontSide, url }: Props) => {
+const Nurbs = React.forwardRef<THREE.Group, Props>(
+  ({ nsControlPoints, side = THREE.FrontSide, url }) => {
     const degree1 = 2;
 
     const degree2 = 3;

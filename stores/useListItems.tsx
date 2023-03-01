@@ -34,7 +34,7 @@ const DEFAULT_STATE: Item[] = [
   },
   {
     component: Works.MacOS,
-    title: "MacOS",
+    title: "Mac OS",
   },
   {
     component: Works.Maps,

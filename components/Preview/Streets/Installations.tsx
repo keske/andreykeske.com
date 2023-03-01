@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import React from "react";
 
 import { UploadcareImage, WaterSurface } from "@/components/index";
-import { useHeader } from "@/stores/index";
+import { useHeader, useListItems } from "@/stores/index";
 
 type SceneProps = any;
 
@@ -38,18 +38,16 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
 );
 
 export const Installations: React.FC = () => {
-  const { resetScheme, setScheme } = useHeader();
+  const { setScheme } = useHeader();
+
+  const { selectedCaseId } = useListItems();
 
   React.useEffect(() => {
     setScheme({
       bg: "black",
       text: "white",
     });
-
-    return () => {
-      resetScheme();
-    };
-  }, [resetScheme, setScheme]);
+  }, [selectedCaseId, setScheme]);
 
   return (
     <>

@@ -4,6 +4,7 @@
 
 html,
 body {
+  font-family: monospace;
   margin: 0;
   padding: 0;
 }
@@ -25,10 +26,6 @@ mark {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.3rem;
-}
-
-p {
-  font-family: sans-serif;
 }
 
 small {

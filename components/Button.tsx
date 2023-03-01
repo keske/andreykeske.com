@@ -1,29 +1,27 @@
 import clsx from "clsx";
 import React from "react";
 
-type Props = {
-  as?: React.ElementType;
-  size?: "lg" | "md" | "sm" | "xl" | "xs" | null;
-  variant?: "primary" | "secondary" | "transparent";
-};
-
-type AsHTMLButtonElement = Props &
-  React.ButtonHTMLAttributes<HTMLButtonElement>;
+type AsHTMLButtonElement = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 type AsHTMLAnchorElement = Pick<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "disabled"
 > &
-  Props &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export type ButtonProps<T> = T extends HTMLButtonElement
-  ? AsHTMLButtonElement
-  : AsHTMLAnchorElement;
+type AsElement<T> = T extends "a" ? AsHTMLAnchorElement : AsHTMLButtonElement;
 
-export type ButtonRef<T extends HTMLElement> = React.Ref<T>;
+export type ButtonProps<T> = AsElement<T> & {
+  as?: React.ElementType;
+  size?: "lg" | "md" | "sm" | "xl" | "xs" | null;
+  variant?: "primary" | "secondary" | "transparent";
+};
 
-export const Button = React.forwardRef(function <T extends HTMLElement>(
+export type ButtonRef<T> = T extends "a"
+  ? HTMLAnchorElement
+  : HTMLButtonElement;
+
+export const Button = React.forwardRef(function <T extends React.ElementType>(
   {
     as = "button",
     children,
@@ -34,7 +32,7 @@ export const Button = React.forwardRef(function <T extends HTMLElement>(
     variant = "primary",
     ...props
   }: ButtonProps<T>,
-  ref: ButtonRef<T>,
+  ref: React.ForwardedRef<ButtonRef<T>>,
 ) {
   return React.createElement(
     as,
@@ -42,7 +40,7 @@ export const Button = React.forwardRef(function <T extends HTMLElement>(
       ...(as === "button" && { disabled }),
       className: clsx(
         className,
-        "cursor-pointer rounded-full border-none",
+        "monospace cursor-pointer rounded-full border-none",
         {
           // `variant` states
           "bg-black text-white": variant == "primary",
@@ -52,7 +50,7 @@ export const Button = React.forwardRef(function <T extends HTMLElement>(
         {
           // `size` states
           "p-5 text-lg": size == "lg",
-          "py-1 text-xs": size == "xs",
+          "py-1 px-3 text-xs": size == "xs",
           "py-3 px-5 text-sm": size == "sm",
           "text-md px-5 py-4": size == "md",
         },

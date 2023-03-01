@@ -12,7 +12,7 @@ export const Logo: React.FC<LogoProps> = ({ ...props }) => {
   return (
     <Button
       {...props}
-      className={clsx("whitespace-nowrap uppercase", `text-${scheme.text}`)}
+      className={clsx("uppercase tracking-widest", `text-${scheme.text}`)}
       size={null}
       variant="transparent"
     >

@@ -13,11 +13,13 @@ export const WorkPreview: React.FC<WorkPreviewProps> = ({ preview }) => {
 
   const { selectedCaseId } = useListItems();
 
-  // React.useEffect(() => {
-  //   if (R.isNil(selectedCaseId)) {
-  //     resetScheme();
-  //   }
-  // }, [resetScheme, selectedCaseId]);
+  React.useEffect(
+    () => () => {
+      // Need to reset scheme when component `unmounted`
+      resetScheme();
+    },
+    [resetScheme, selectedCaseId],
+  );
 
   return (
     <div

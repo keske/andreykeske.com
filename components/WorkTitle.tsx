@@ -35,13 +35,8 @@ export const WorkTitle: React.FC = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="fixed top-6 z-10 flex w-full justify-center">
-          <div
-            className={clsx(
-              "flex flex-col items-center gap-1",
-              `text-${scheme.text}`,
-            )}
-          >
+        <div className="fixed top-9 z-10 flex w-full justify-center">
+          <div className={clsx("uppercase", `text-${scheme.text}`)}>
             <h3 className="text-4xl">{title}</h3>
           </div>
         </div>

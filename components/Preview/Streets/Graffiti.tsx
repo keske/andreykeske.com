@@ -19,7 +19,7 @@ const peaces = [
 ];
 
 export const Graffiti = () => (
-  <div className="flex flex-col gap-40">
+  <div className="flex flex-col gap-40 py-80">
     <div className="flex flex-col items-center gap-10">
       {peaces.map((peace, index) => (
         <div

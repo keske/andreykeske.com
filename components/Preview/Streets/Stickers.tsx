@@ -3,7 +3,7 @@ import React from "react";
 import { UploadcareImage } from "@/components/index";
 
 export const Stickers = () => (
-  <div className="flex flex-col gap-40">
+  <div className="flex flex-col gap-40 py-80">
     <div className="flex flex-col items-center gap-2 pb-40">
       <div className="w-1/3 text-center">
         <p>

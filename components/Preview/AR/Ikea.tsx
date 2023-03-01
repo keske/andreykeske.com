@@ -4,7 +4,7 @@ import { Parallax } from "react-scroll-parallax";
 import { WorkDetails } from "@/components/index";
 
 const Desktop: React.FC = () => (
-  <div className="flex h-screen w-screen flex-col items-center justify-center gap-10">
+  <div className="flex flex-col items-center justify-center gap-10 py-80">
     <iframe
       className="h-1/2 w-1/2 border-0 2xl:w-1/5"
       src="/videos/ikea.mp4"

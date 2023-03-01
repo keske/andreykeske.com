@@ -1,5 +1,4 @@
 import { Transition } from "@headlessui/react";
-import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
@@ -41,50 +40,31 @@ export const List: React.FC<ListProps> = ({
             <nav className="flex flex-col gap-2">
               <div className="flex flex-row gap-3">
                 <ul>
-                  {items
-                    .sort((a, b) => a.title.localeCompare(b.title))
-                    .map(
-                      ({ component: PreviewComponent, id, title }, index) => (
-                        <li
-                          className={clsx(
-                            "inline-block list-none text-xl font-black",
-                          )}
-                          key={id}
-                          onClick={() => {
-                            handleShowCase(id);
-                          }}
-                          onMouseOut={handleMouseOut}
-                          onMouseOver={() => {
-                            // @ts-expect-error work in progress
-                            handleMouseOver(<PreviewComponent />);
-                          }}
-                        >
-                          <a
-                            className={clsx(
-                              "text-black",
-                              R.isNil(selectedCaseId)
-                                ? "cursor-pointer opacity-100"
-                                : "cursor-default opacity-0",
-                            )}
-                            href={`#${id}`}
-                          >
-                            {title}
-                          </a>
-                          {index < items.length - 1 && (
-                            <span
-                              className={clsx(
-                                "mx-2 opacity-20",
-                                R.isNil(selectedCaseId)
-                                  ? "cursor-pointer opacity-100"
-                                  : "cursor-default opacity-0",
-                              )}
-                            >
-                              ・
-                            </span>
-                          )}
-                        </li>
-                      ),
-                    )}
+                  {items.map(
+                    ({ component: PreviewComponent, id, title }, index) => (
+                      <li
+                        className={
+                          "inline-block list-none text-xl font-black uppercase tracking-wider"
+                        }
+                        key={id}
+                        onClick={() => {
+                          handleShowCase(id);
+                        }}
+                        onMouseOut={handleMouseOut}
+                        onMouseOver={() => {
+                          // @ts-expect-error work in progress
+                          handleMouseOver(<PreviewComponent />);
+                        }}
+                      >
+                        <a className="text-black" href={`#${id}`}>
+                          {title}
+                        </a>
+                        {index < items.length - 1 && (
+                          <span className="mx-2 opacity-20">・</span>
+                        )}
+                      </li>
+                    ),
+                  )}
                 </ul>
               </div>
             </nav>
