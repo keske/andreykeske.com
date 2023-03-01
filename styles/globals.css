@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+q {
+  font-style: italic;
+}
+
 mark {
   border-radius: 3rem;
   padding-bottom: 0.3rem;

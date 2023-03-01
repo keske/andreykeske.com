@@ -12,18 +12,18 @@ export const Graphics: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
 
   return (
-    <div className="py-80">
+    <>
+      <WorkDetails>
+        <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
+          {renderTabs(["Emojies", "Sneakers", "Timestamp Tattoo", "Volcom"])}
+        </div>
+      </WorkDetails>
       {renderTabsBody([
         <Emojies />,
         <Sneakers />,
         <TimestampTattoo />,
         <Volcom />,
       ])}
-      <WorkDetails>
-        <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
-          {renderTabs(["Emojies", "Sneakers", "Timestamp Tattoo", "Volcom"])}
-        </div>
-      </WorkDetails>
-    </div>
+    </>
   );
 };

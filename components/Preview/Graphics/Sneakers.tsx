@@ -3,7 +3,7 @@ import React from "react";
 import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const Sneakers: React.FC = () => (
-  <div className="flex flex-col items-center justify-center gap-10">
+  <div className="flex flex-col items-center justify-center gap-10 pt-80 pb-20">
     <div className="w-1/2">
       <UploadcareImage
         alt="Nike Dunk x Adidas Superstar"
