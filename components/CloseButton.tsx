@@ -53,7 +53,7 @@ export const CloseButton = React.forwardRef<
         <Button
           {...props}
           className={clsx(
-            "tracking-widest",
+            "fixed top-10 right-10 z-50 font-black",
             `text-${scheme.text}`,
             isShowing ? "opacity-100" : "opacity-0",
           )}
@@ -62,7 +62,7 @@ export const CloseButton = React.forwardRef<
           size={null}
           variant="transparent"
         >
-          CLOSE
+          ⛌
         </Button>
       </Transition.Child>
     </Transition>

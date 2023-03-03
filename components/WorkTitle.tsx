@@ -37,7 +37,7 @@ export const WorkTitle: React.FC = () => {
       >
         <div className="fixed top-9 z-10 flex w-full justify-center">
           <div className={clsx("uppercase", `text-${scheme.text}`)}>
-            <h3 className="text-4xl">{title}</h3>
+            <h3 className="text-3xl font-black">{title}</h3>
           </div>
         </div>
       </Transition.Child>

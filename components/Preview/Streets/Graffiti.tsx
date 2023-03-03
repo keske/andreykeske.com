@@ -1,6 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
+import { Wall, WorkDetails } from "@/components/index";
 
 const peaces = [
   "Keske, Kaze, 2007",
@@ -21,25 +21,32 @@ const peaces = [
 ];
 
 export const Graffiti = () => (
-  <div className="flex flex-col gap-40 py-80">
-    <div className="flex flex-col items-center gap-10">
-      {peaces.map((peace, index) => (
-        <div
-          className="flex w-1/3 flex-col gap-1 sm:w-full sm:p-10 md:w-full lg:w-1/2"
-          key={index}
-        >
-          <img
-            alt={peace}
-            className="w-full"
-            src={`/photos/graffiti/${index}.jpg`}
-          />
-          <WorkDetails>
-            <p className="text-black">
-              {peace}, <span className="opacity-30">Yekaterinburg, Russia</span>
-            </p>
-          </WorkDetails>
-        </div>
-      ))}
+  <>
+    <div className="h-screen w-screen">
+      <Wall />
     </div>
-  </div>
+
+    <div className="flex flex-col gap-40 py-10">
+      <div className="flex flex-col items-center gap-10">
+        {peaces.map((peace, index) => (
+          <div
+            className="flex w-1/3 flex-col gap-1 sm:w-full sm:p-10 md:w-full lg:w-1/2"
+            key={index}
+          >
+            <img
+              alt={peace}
+              className="w-full"
+              src={`/photos/graffiti/${index}.jpg`}
+            />
+            <WorkDetails>
+              <p className="text-black">
+                {peace},{" "}
+                <span className="opacity-30">Yekaterinburg, Russia</span>
+              </p>
+            </WorkDetails>
+          </div>
+        ))}
+      </div>
+    </div>
+  </>
 );

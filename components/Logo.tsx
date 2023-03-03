@@ -12,7 +12,10 @@ export const Logo: React.FC<LogoProps> = ({ ...props }) => {
   return (
     <Button
       {...props}
-      className={clsx("uppercase tracking-widest", `text-${scheme.text}`)}
+      className={clsx(
+        "fixed top-10 left-10 z-50 text-xs font-black uppercase tracking-widest",
+        `text-${scheme.text}`,
+      )}
       size={null}
       variant="transparent"
     >

@@ -12,12 +12,12 @@ export const Streets: React.FC = () => {
 
   return (
     <>
-      {renderTabsBody([<Graffiti />, <Installations />, <Stickers />])}
       <WorkDetails>
         <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
           {renderTabs(["Graffiti", "Installations", "Stickers"])}
         </div>
       </WorkDetails>
+      {renderTabsBody([<Graffiti />, <Installations />, <Stickers />])}
     </>
   );
 };

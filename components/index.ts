@@ -4,7 +4,6 @@ export * from "./Button";
 export * from "./CloseButton";
 export * from "./Controls";
 export * from "./Head";
-export * from "./Header";
 export * from "./List";
 export * from "./Logo";
 export * from "./NURBSCube/NURBSCube";

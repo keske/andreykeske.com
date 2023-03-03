@@ -133,13 +133,9 @@ const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
 export const DistortingMirrors = () => {
   const meshRef = React.useRef<THREE.Mesh>(null!);
 
-  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const mediaStreamRef = React.useRef<MediaStream | null>(null);
 
-  navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
-    if (videoRef.current) {
-      videoRef.current.srcObject = stream;
-    }
-  });
+  const videoRef = React.useRef<HTMLVideoElement>(null);
 
   const renderMirrors = React.useMemo(
     () => (
@@ -157,6 +153,25 @@ export const DistortingMirrors = () => {
     ),
     [],
   );
+
+  React.useEffect(() => {
+    navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+      if (videoRef.current) {
+        mediaStreamRef.current = stream;
+        videoRef.current.srcObject = stream;
+      }
+    });
+
+    return () => {
+      if (mediaStreamRef.current) {
+        mediaStreamRef.current
+          .getTracks()
+          .forEach((track: MediaStreamTrack) => {
+            track.stop();
+          });
+      }
+    };
+  }, []);
 
   return (
     <div className="h-screen w-screen">

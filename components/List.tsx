@@ -55,11 +55,9 @@ export const List: React.FC<ListProps> = ({
                         handleMouseOver(<Component />);
                       }}
                     >
-                      <a className="text-black" href={`#${id}`}>
-                        {title}
-                      </a>
+                      <a href={`#${id}`}>{title}</a>
                       {index < items.length - 1 && (
-                        <span className="mx-2 opacity-20">・</span>
+                        <span className="mx-2">⸻</span>
                       )}
                     </li>
                   ))}

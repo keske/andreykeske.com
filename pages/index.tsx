@@ -4,8 +4,14 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { Head, List, WorkPreview, WorkTitle } from "@/components/index";
-import { Header } from "@/components/index";
+import {
+  CloseButton,
+  Head,
+  List,
+  Logo,
+  WorkPreview,
+  WorkTitle,
+} from "@/components/index";
 import { useListItems } from "@/stores/index";
 
 const Home: NextPage = () => {
@@ -62,11 +68,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Head />
-      <Header
-        {...{
-          handleCloseCase,
-          selectedCaseId,
-        }}
+      <Logo onClick={handleCloseCase} />
+      <CloseButton
+        isShowing={R.not(R.isNil(selectedCaseId))}
+        onClick={handleCloseCase}
       />
       <main>
         <WorkTitle />
