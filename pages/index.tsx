@@ -4,14 +4,7 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import {
-  CloseButton,
-  Head,
-  List,
-  Logo,
-  WorkPreview,
-  WorkTitle,
-} from "@/components/index";
+import { CloseButton, Head, List, Logo, WorkTitle } from "@/components/index";
 import { useListItems } from "@/stores/index";
 
 const Home: NextPage = () => {
@@ -19,7 +12,10 @@ const Home: NextPage = () => {
 
   const { selectedCaseId, setSelectedCaseId } = useListItems();
 
-  const [preview, setPreview] = React.useState<React.ReactNode>(null);
+  const [preview, setPreview] = React.useState<React.ReactElement<
+    any,
+    React.JSXElementConstructor<any> | string
+  > | null>(null!);
 
   const handleShowCase = React.useCallback(
     (id: string) => {
@@ -74,8 +70,8 @@ const Home: NextPage = () => {
         onClick={handleCloseCase}
       />
       <main>
+        {preview && React.cloneElement(preview)}
         <WorkTitle />
-        <WorkPreview {...{ preview }} />
         <List
           {...{
             handleCloseCase,

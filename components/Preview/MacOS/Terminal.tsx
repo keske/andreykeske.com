@@ -27,7 +27,7 @@ const DesktopVideo = () => {
 };
 
 const Desktop: React.FC = () => {
-  const { setScheme } = useHeader();
+  const { resetScheme, setScheme } = useHeader();
 
   const { selectedCaseId } = useListItems();
 
@@ -36,7 +36,11 @@ const Desktop: React.FC = () => {
       bg: "black",
       text: "white",
     });
-  }, [selectedCaseId, setScheme]);
+
+    return () => {
+      resetScheme();
+    };
+  }, [resetScheme, selectedCaseId, setScheme]);
 
   return (
     <div className="h-screen w-screen overflow-hidden bg-black py-40">

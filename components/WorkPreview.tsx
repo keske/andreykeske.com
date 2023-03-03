@@ -4,11 +4,9 @@ import React from "react";
 
 import { useHeader, useListItems } from "@/stores/index";
 
-type WorkPreviewProps = {
-  preview: React.ReactElement<any, React.JSXElementConstructor<any> | string>;
-};
+type WorkPreviewProps = React.PropsWithChildren;
 
-export const WorkPreview: React.FC<WorkPreviewProps> = ({ preview }) => {
+export const WorkPreview: React.FC<WorkPreviewProps> = ({ children }) => {
   const { resetScheme } = useHeader();
 
   const { selectedCaseId } = useListItems();
@@ -24,13 +22,13 @@ export const WorkPreview: React.FC<WorkPreviewProps> = ({ preview }) => {
   return (
     <div
       className={clsx(
-        "origin-center overflow-hidden duration-300",
+        "duration-300",
         R.not(R.isNil(selectedCaseId))
           ? "scale-100 rounded-none"
           : "scale-[0.99] rounded-3xl",
       )}
     >
-      {preview && React.cloneElement(preview)}
+      {children}
     </div>
   );
 };

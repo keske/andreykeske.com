@@ -4,7 +4,7 @@ import { UploadcareImage } from "@/components/index";
 import { useHeader, useListItems } from "@/stores/index";
 
 export const LOT2046Tattoo: React.FC = () => {
-  const { setScheme } = useHeader();
+  const { resetScheme, setScheme } = useHeader();
 
   const { selectedCaseId } = useListItems();
 
@@ -13,7 +13,11 @@ export const LOT2046Tattoo: React.FC = () => {
       bg: "black",
       text: "white",
     });
-  }, [selectedCaseId, setScheme]);
+
+    return () => {
+      resetScheme();
+    };
+  }, [resetScheme, selectedCaseId, setScheme]);
 
   return (
     <div className="h-screen w-screen bg-black">

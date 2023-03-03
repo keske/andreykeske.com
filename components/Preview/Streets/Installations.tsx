@@ -38,7 +38,7 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
 );
 
 export const Installations: React.FC = () => {
-  const { setScheme } = useHeader();
+  const { resetScheme, setScheme } = useHeader();
 
   const { selectedCaseId } = useListItems();
 
@@ -47,7 +47,11 @@ export const Installations: React.FC = () => {
       bg: "black",
       text: "white",
     });
-  }, [selectedCaseId, setScheme]);
+
+    return () => {
+      resetScheme();
+    };
+  }, [resetScheme, selectedCaseId, setScheme]);
 
   return (
     <>
