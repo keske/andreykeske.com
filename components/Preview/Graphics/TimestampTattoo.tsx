@@ -4,7 +4,7 @@ import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const TimestampTattoo: React.FC = () => (
   <div className="flex flex-col items-center gap-10 pt-80 pb-20">
-    <div className="xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/5">
+    <div className="sm:w-1/2 md:w-1/2 lg:w-1/5">
       <UploadcareImage
         alt="Timestamp Tattoo"
         src="https://ucarecdn.com/6895ff34-0b17-46c8-8109-4ed571387cd0/"

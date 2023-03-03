@@ -1,17 +1,16 @@
 import React from "react";
 
 export const Desktop: React.FC = () => (
-  <>
-    <div className="flex flex-col items-center gap-10 p-80">
-      <div>
+  <div className="flex w-screen flex-col items-center gap-20 p-80">
+    <div className="flex flex-col gap-10">
+      <div className="flex w-full flex-col items-center">
         <h2>Black hole on my Desktop. Part I</h2>
         <p>
           In the space of my Desktop was noticed a black hole where the any
           information or object will be removed forever
         </p>
       </div>
-
-      <div className="aspect-w-16 aspect-h-4 w-1/2">
+      <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
         <iframe
           allow="loop"
           className="border-0"
@@ -20,8 +19,9 @@ export const Desktop: React.FC = () => (
         />
       </div>
     </div>
-    <div className="flex flex-col items-center gap-10 p-20">
-      <div>
+    <hr />
+    <div className="flex flex-col gap-10">
+      <div className="flex w-full flex-col items-center">
         <h2>Black hole on my Desktop. Part II. With Hawking radiation</h2>
         <p>
           When I move a file on the Desktop, it disappears, but a side effect of
@@ -34,7 +34,7 @@ export const Desktop: React.FC = () => (
           </a>
         </p>
       </div>
-      <div className="aspect-w-16 aspect-h-4 w-1/2">
+      <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
         <iframe
           allow="loop"
           className="border-0"
@@ -43,5 +43,5 @@ export const Desktop: React.FC = () => (
         />
       </div>
     </div>
-  </>
+  </div>
 );

@@ -4,12 +4,14 @@ import { Parallax } from "react-scroll-parallax";
 import { WorkDetails } from "@/components/index";
 
 const Desktop: React.FC = () => (
-  <div className="flex flex-col items-center justify-center gap-10 py-80">
-    <iframe
-      className="h-1/2 w-1/2 border-0 2xl:w-1/5"
-      src="/videos/ikea.mp4"
-      title="The first discarded piece of IKEA furniture in Augmented Reality"
-    />
+  <div className="flex flex-col items-center justify-center gap-10 pt-60 pb-20">
+    <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
+      <iframe
+        className="border-0"
+        src="/videos/ikea.mp4"
+        title="The first discarded piece of IKEA furniture in Augmented Reality"
+      />
+    </div>
     <WorkDetails>
       <p>
         The first discarded piece of IKEA furniture in Augmented Reality

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { WorkDetails } from "@/components/index";
+
 const peaces = [
   "Keske, Kaze, 2007",
   "Keske, Kaze, 2007",
@@ -23,7 +25,7 @@ export const Graffiti = () => (
     <div className="flex flex-col items-center gap-10">
       {peaces.map((peace, index) => (
         <div
-          className="flex w-1/3 flex-col gap-1 sm:w-full sm:p-10 md:w-1/2 lg:w-1/2"
+          className="flex w-1/3 flex-col gap-1 sm:w-full sm:p-10 md:w-full lg:w-1/2"
           key={index}
         >
           <img
@@ -31,9 +33,11 @@ export const Graffiti = () => (
             className="w-full"
             src={`/photos/graffiti/${index}.jpg`}
           />
-          <p className="text-black">
-            {peace}, <span className="opacity-30">Yekaterinburg, Russia</span>
-          </p>
+          <WorkDetails>
+            <p className="text-black">
+              {peace}, <span className="opacity-30">Yekaterinburg, Russia</span>
+            </p>
+          </WorkDetails>
         </div>
       ))}
     </div>
