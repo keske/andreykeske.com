@@ -10,12 +10,12 @@ export const Objects: React.FC = () => {
 
   return (
     <>
-      {renderTabsBody([<LOT2046Tattoo />])}
       <WorkDetails>
-        <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
+        <div className="fixed top-28 z-50 flex w-screen flex-row items-center justify-center gap-10">
           {renderTabs(["LOT2046Tattoo"])}
         </div>
       </WorkDetails>
+      {renderTabsBody([<LOT2046Tattoo />])}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Desktop: React.FC = () => (
-  <div className="flex w-screen flex-col items-center gap-20 p-80">
+  <div className="flex w-screen flex-col items-center gap-20 p-60">
     <div className="flex flex-col gap-10">
       <div className="flex w-full flex-col items-center">
         <h2>Black hole on my Desktop. Part I</h2>

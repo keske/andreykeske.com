@@ -4,7 +4,7 @@ import { Parallax } from "react-scroll-parallax";
 import { WorkDetails } from "@/components/index";
 
 const Desktop: React.FC = () => (
-  <div className="flex flex-col items-center justify-center gap-10 pt-60 pb-20">
+  <div className="flex flex-col items-center justify-center gap-10 pt-40 pb-20">
     <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
       <iframe
         className="border-0"

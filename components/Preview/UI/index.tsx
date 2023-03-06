@@ -16,7 +16,7 @@ export const UI: React.FC = () => {
   return (
     <>
       <WorkDetails>
-        <div className="fixed top-24 z-10 flex w-screen flex-row items-center justify-center gap-10">
+        <div className="fixed top-28 z-50 flex w-screen flex-row items-center justify-center gap-10">
           {renderTabs([
             "Bubble",
             "Cloth",

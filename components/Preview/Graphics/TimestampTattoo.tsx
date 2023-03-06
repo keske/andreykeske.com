@@ -3,7 +3,7 @@ import React from "react";
 import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const TimestampTattoo: React.FC = () => (
-  <div className="flex flex-col items-center gap-10 pt-80 pb-20">
+  <div className="flex flex-col items-center gap-10 pt-60 pb-20">
     <div className="sm:w-1/2 md:w-1/2 lg:w-1/5">
       <UploadcareImage
         alt="Timestamp Tattoo"

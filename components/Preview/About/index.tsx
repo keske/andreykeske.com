@@ -11,12 +11,12 @@ export const About: React.FC = () => {
 
   return (
     <>
-      {renderTabsBody([<Description />, <CV />])}
       <WorkDetails>
-        <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
+        <div className="fixed top-28 z-50 flex w-screen flex-row items-center justify-center gap-10">
           {renderTabs(["Description", "CV"])}
         </div>
       </WorkDetails>
+      {renderTabsBody([<Description />, <CV />])}
     </>
   );
 };

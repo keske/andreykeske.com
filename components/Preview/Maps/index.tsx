@@ -13,14 +13,8 @@ export const Maps: React.FC = () => {
 
   return (
     <>
-      {renderTabsBody([
-        <Globalization />,
-        <InvertedManhattan />,
-        <VintageGoogleStreetView />,
-        <WaterOnMars />,
-      ])}
       <WorkDetails>
-        <div className="fixed top-40 flex w-screen flex-row items-center justify-center gap-10">
+        <div className="fixed top-28 z-50 flex w-screen flex-row items-center justify-center gap-10">
           {renderTabs([
             "Globalization",
             "Inverted Manhattan",
@@ -29,6 +23,12 @@ export const Maps: React.FC = () => {
           ])}
         </div>
       </WorkDetails>
+      {renderTabsBody([
+        <Globalization />,
+        <InvertedManhattan />,
+        <VintageGoogleStreetView />,
+        <WaterOnMars />,
+      ])}
     </>
   );
 };
