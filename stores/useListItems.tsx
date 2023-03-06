@@ -2,20 +2,20 @@ import { create } from "zustand";
 
 import * as Works from "@/components/Preview/index";
 
-export type Item = {
+export type Work = {
   component: React.ReactElement<any, React.JSXElementConstructor<any> | string>;
   id: string;
   title: string;
 };
 
 export type Store = {
-  readonly items: Item[];
-
   selectedWorkId: string | null;
   setSelectedWorkId: (value: string | null) => void;
+
+  readonly works: Work[];
 };
 
-const DEFAULT_STATE: Item[] = [
+const DEFAULT_STATE: Work[] = [
   {
     component: Works.About,
     title: "About",
@@ -55,11 +55,6 @@ const DEFAULT_STATE: Item[] = [
 ];
 
 export const useListItems = create<Store>((set) => ({
-  items: DEFAULT_STATE.map((item) => ({
-    ...item,
-    id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
-  })),
-
   selectedWorkId: null,
 
   setSelectedWorkId: (value: string | null) => {
@@ -67,4 +62,9 @@ export const useListItems = create<Store>((set) => ({
       selectedWorkId: value,
     }));
   },
+
+  works: DEFAULT_STATE.map((item) => ({
+    ...item,
+    id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
+  })),
 }));

@@ -17,7 +17,7 @@ export const List: React.FC<ListProps> = ({
 }) => {
   const onUnmount = React.useRef<() => void>();
 
-  const { items, selectedWorkId } = useListItems();
+  const { selectedWorkId, works } = useListItems();
 
   return (
     <>
@@ -40,7 +40,7 @@ export const List: React.FC<ListProps> = ({
             <nav className="flex flex-col gap-2">
               <div className="flex flex-row gap-3">
                 <ul>
-                  {items.map(({ component: Component, id, title }, index) => (
+                  {works.map(({ component: Component, id, title }, index) => (
                     <li
                       className={
                         "inline-block list-none text-xl font-black uppercase tracking-wider"
@@ -56,7 +56,7 @@ export const List: React.FC<ListProps> = ({
                       }}
                     >
                       <a href={`#${id}`}>{title}</a>
-                      {index < items.length - 1 && (
+                      {index < works.length - 1 && (
                         <span className="mx-2">⸻</span>
                       )}
                     </li>

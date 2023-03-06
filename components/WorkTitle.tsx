@@ -10,13 +10,13 @@ export const WorkTitle: React.FC = () => {
 
   const { scheme } = useHeader();
 
-  const { items, selectedWorkId } = useListItems();
+  const { selectedWorkId, works } = useListItems();
 
   const title = React.useMemo(
     () =>
       selectedWorkId &&
-      items.filter((item) => item.id === selectedWorkId)[0].title,
-    [items, selectedWorkId],
+      works.filter((item) => item.id === selectedWorkId)[0].title,
+    [works, selectedWorkId],
   );
 
   return (
