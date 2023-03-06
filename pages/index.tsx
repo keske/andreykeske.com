@@ -4,7 +4,7 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { CloseButton, Head, List, Logo, WorkTitle } from "@/components/index";
+import { CloseButton, Head, Logo, Work, WorkList } from "@/components/index";
 import { useListItems } from "@/stores/index";
 
 const Home: NextPage = () => {
@@ -70,9 +70,8 @@ const Home: NextPage = () => {
         onClick={handleCloseWork}
       />
       <main>
-        {work && React.cloneElement(work)}
-        <WorkTitle />
-        <List
+        <Work>{work && React.cloneElement(work)}</Work>
+        <WorkList
           {...{
             handleCloseWork,
             handleMouseOut,
