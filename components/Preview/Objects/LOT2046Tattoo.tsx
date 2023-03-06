@@ -6,7 +6,7 @@ import { useHeader, useListItems } from "@/stores/index";
 export const LOT2046Tattoo: React.FC = () => {
   const { resetScheme, setScheme } = useHeader();
 
-  const { selectedCaseId } = useListItems();
+  const { selectedWorkId } = useListItems();
 
   React.useEffect(() => {
     setScheme({
@@ -17,7 +17,7 @@ export const LOT2046Tattoo: React.FC = () => {
     return () => {
       resetScheme();
     };
-  }, [resetScheme, selectedCaseId, setScheme]);
+  }, [resetScheme, selectedWorkId, setScheme]);
 
   return (
     <div className="h-screen w-screen bg-black">

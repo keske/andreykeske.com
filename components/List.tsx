@@ -7,17 +7,17 @@ import { useListItems } from "@/stores/index";
 type ListProps = {
   handleMouseOut: () => void;
   handleMouseOver: (component: React.ReactElement<any, any>) => void;
-  handleShowCase: (id: string) => void;
+  handleShowWork: (id: string) => void;
 };
 
 export const List: React.FC<ListProps> = ({
   handleMouseOut,
   handleMouseOver,
-  handleShowCase,
+  handleShowWork,
 }) => {
   const onUnmount = React.useRef<() => void>();
 
-  const { items, selectedCaseId } = useListItems();
+  const { items, selectedWorkId } = useListItems();
 
   return (
     <>
@@ -26,7 +26,7 @@ export const List: React.FC<ListProps> = ({
           afterLeave={() => onUnmount.current?.()}
           appear
           as={React.Fragment}
-          show={R.isNil(selectedCaseId)}
+          show={R.isNil(selectedWorkId)}
         >
           <Transition.Child
             as={React.Fragment}
@@ -47,7 +47,7 @@ export const List: React.FC<ListProps> = ({
                       }
                       key={id}
                       onClick={() => {
-                        handleShowCase(id);
+                        handleShowWork(id);
                       }}
                       onMouseOut={handleMouseOut}
                       onMouseOver={() => {

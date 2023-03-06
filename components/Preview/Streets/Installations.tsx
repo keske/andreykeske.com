@@ -40,7 +40,7 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
 export const Installations: React.FC = () => {
   const { resetScheme, setScheme } = useHeader();
 
-  const { selectedCaseId } = useListItems();
+  const { selectedWorkId } = useListItems();
 
   React.useEffect(() => {
     setScheme({
@@ -51,7 +51,7 @@ export const Installations: React.FC = () => {
     return () => {
       resetScheme();
     };
-  }, [resetScheme, selectedCaseId, setScheme]);
+  }, [resetScheme, selectedWorkId, setScheme]);
 
   return (
     <>

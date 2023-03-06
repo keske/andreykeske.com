@@ -22,5 +22,4 @@ export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
 export * from "./WaterSurface";
 export * from "./WorkDetails";
-export * from "./WorkPreview";
 export * from "./WorkTitle";

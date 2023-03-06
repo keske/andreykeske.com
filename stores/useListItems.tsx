@@ -11,8 +11,8 @@ export type Item = {
 export type Store = {
   readonly items: Item[];
 
-  selectedCaseId: string | null;
-  setSelectedCaseId: (value: string | null) => void;
+  selectedWorkId: string | null;
+  setSelectedWorkId: (value: string | null) => void;
 };
 
 const DEFAULT_STATE: Item[] = [
@@ -60,11 +60,11 @@ export const useListItems = create<Store>((set) => ({
     id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
   })),
 
-  selectedCaseId: null,
+  selectedWorkId: null,
 
-  setSelectedCaseId: (value: string | null) => {
+  setSelectedWorkId: (value: string | null) => {
     set(() => ({
-      selectedCaseId: value,
+      selectedWorkId: value,
     }));
   },
 }));

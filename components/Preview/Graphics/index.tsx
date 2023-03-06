@@ -13,17 +13,17 @@ export const Graphics: React.FC = () => {
 
   return (
     <>
+      <WorkDetails>
+        <div className="fixed top-28 z-50 flex w-screen flex-row items-center justify-center gap-10">
+          {renderTabs(["Emojies", "Sneakers", "Timestamp Tattoo", "Volcom"])}
+        </div>
+      </WorkDetails>
       {renderTabsBody([
         <Emojies />,
         <Sneakers />,
         <TimestampTattoo />,
         <Volcom />,
       ])}
-      <WorkDetails>
-        <div className="fixed top-28 z-50 flex w-screen flex-row items-center justify-center gap-10">
-          {renderTabs(["Emojies", "Sneakers", "Timestamp Tattoo", "Volcom"])}
-        </div>
-      </WorkDetails>
     </>
   );
 };

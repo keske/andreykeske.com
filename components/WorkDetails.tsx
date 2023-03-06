@@ -9,14 +9,14 @@ type WorkDetailsProps = React.PropsWithChildren;
 export const WorkDetails: React.FC<WorkDetailsProps> = ({ children }) => {
   const onUnmount = React.useRef<() => void>();
 
-  const { selectedCaseId } = useListItems();
+  const { selectedWorkId } = useListItems();
 
   return (
     <Transition
       afterLeave={() => onUnmount.current?.()}
       appear
       as={React.Fragment}
-      show={R.not(R.isNil(selectedCaseId))}
+      show={R.not(R.isNil(selectedWorkId))}
     >
       <Transition.Child
         as={React.Fragment}

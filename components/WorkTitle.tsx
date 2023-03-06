@@ -10,13 +10,13 @@ export const WorkTitle: React.FC = () => {
 
   const { scheme } = useHeader();
 
-  const { items, selectedCaseId } = useListItems();
+  const { items, selectedWorkId } = useListItems();
 
   const title = React.useMemo(
     () =>
-      selectedCaseId &&
-      items.filter((item) => item.id === selectedCaseId)[0].title,
-    [items, selectedCaseId],
+      selectedWorkId &&
+      items.filter((item) => item.id === selectedWorkId)[0].title,
+    [items, selectedWorkId],
   );
 
   return (
@@ -24,7 +24,7 @@ export const WorkTitle: React.FC = () => {
       afterLeave={() => onUnmount.current?.()}
       appear
       as={React.Fragment}
-      show={R.not(R.isNil(selectedCaseId))}
+      show={R.not(R.isNil(selectedWorkId))}
     >
       <Transition.Child
         as={React.Fragment}

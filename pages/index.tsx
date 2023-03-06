@@ -10,42 +10,42 @@ import { useListItems } from "@/stores/index";
 const Home: NextPage = () => {
   const router = useRouter();
 
-  const { selectedCaseId, setSelectedCaseId } = useListItems();
+  const { selectedWorkId, setSelectedWorkId } = useListItems();
 
-  const [preview, setPreview] = React.useState<React.ReactElement<
+  const [work, setWork] = React.useState<React.ReactElement<
     any,
     React.JSXElementConstructor<any> | string
   > | null>(null!);
 
-  const handleShowCase = React.useCallback(
+  const handleShowWork = React.useCallback(
     (id: string) => {
-      if (id === selectedCaseId || R.isNil(selectedCaseId)) {
-        setSelectedCaseId(id);
+      if (id === selectedWorkId || R.isNil(selectedWorkId)) {
+        setSelectedWorkId(id);
       }
     },
-    [selectedCaseId, setSelectedCaseId],
+    [selectedWorkId, setSelectedWorkId],
   );
 
-  const handleCloseCase = React.useCallback(() => {
+  const handleCloseWork = React.useCallback(() => {
     router.push("");
 
-    setPreview(null);
-    setSelectedCaseId(null);
-  }, [router, setSelectedCaseId]);
+    setWork(null);
+    setSelectedWorkId(null);
+  }, [router, setSelectedWorkId]);
 
   const handleMouseOut = React.useCallback(() => {
-    if (R.isNil(selectedCaseId)) {
-      setPreview(null);
+    if (R.isNil(selectedWorkId)) {
+      setWork(null);
     }
-  }, [selectedCaseId]);
+  }, [selectedWorkId]);
 
   const handleMouseOver = React.useCallback(
     (component: React.ReactElement<any, any>) => {
-      if (R.isNil(selectedCaseId)) {
-        setPreview(component);
+      if (R.isNil(selectedWorkId)) {
+        setWork(component);
       }
     },
-    [selectedCaseId],
+    [selectedWorkId],
   );
 
   // React.useEffect(() => {
@@ -56,28 +56,28 @@ const Home: NextPage = () => {
   //       R.propEq("id", router.asPath.replace("/#", "")),
   //     )(itemsWithId) as ItemWithID;
 
-  //     setPreview(component);
-  //     setSelectedCaseId(caseId);
+  //     setWork(component);
+  //     setSelectedWorkId(caseId);
   //   }
   // }, [itemsWithId, router.asPath]);
 
   return (
     <>
       <Head />
-      <Logo onClick={handleCloseCase} />
+      <Logo onClick={handleCloseWork} />
       <CloseButton
-        isShowing={R.not(R.isNil(selectedCaseId))}
-        onClick={handleCloseCase}
+        isShowing={R.not(R.isNil(selectedWorkId))}
+        onClick={handleCloseWork}
       />
       <main>
-        {preview && React.cloneElement(preview)}
+        {work && React.cloneElement(work)}
         <WorkTitle />
         <List
           {...{
-            handleCloseCase,
+            handleCloseWork,
             handleMouseOut,
             handleMouseOver,
-            handleShowCase,
+            handleShowWork,
           }}
         />
       </main>

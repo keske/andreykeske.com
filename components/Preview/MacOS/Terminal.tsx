@@ -29,7 +29,7 @@ const DesktopVideo = () => {
 const Desktop: React.FC = () => {
   const { resetScheme, setScheme } = useHeader();
 
-  const { selectedCaseId } = useListItems();
+  const { selectedWorkId } = useListItems();
 
   React.useEffect(() => {
     setScheme({
@@ -40,7 +40,7 @@ const Desktop: React.FC = () => {
     return () => {
       resetScheme();
     };
-  }, [resetScheme, selectedCaseId, setScheme]);
+  }, [resetScheme, selectedWorkId, setScheme]);
 
   return (
     <div className="h-screen w-screen overflow-hidden bg-black py-40">
