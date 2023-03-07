@@ -1,10 +1,7 @@
+// 3D
 export * from "./3D";
 
-export * from "./Button";
-export * from "./CloseButton";
-export * from "./Controls";
-export * from "./Head";
-export * from "./Logo";
+// NURBS Helpers
 export * from "./NURBSCube/NURBSCube";
 export * from "./NURBSCube/NURBSCube.Dirt";
 export * from "./NURBSCube/NURBSCube.Glass";
@@ -17,6 +14,13 @@ export * from "./NURBSCube/NURBSCube.Sand";
 export * from "./NURBSCube/NURBSCube.Stone";
 export * from "./NURBSCube/NURBSCube.Structure.SmallHouse";
 export * from "./NURBSCube/NURBSLetter";
+
+// UI
+export * from "./Button";
+export * from "./CloseButton";
+export * from "./Controls";
+export * from "./Head";
+export * from "./Logo";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
 export * from "./WaterSurface";
