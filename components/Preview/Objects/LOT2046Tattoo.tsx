@@ -1,6 +1,6 @@
 import React from "react";
 
-import { UploadcareImage } from "@/components/index";
+import { UploadcareImage, WorkDetails } from "@/components/index";
 import { useHeader, useListItems } from "@/stores/index";
 
 export const LOT2046Tattoo: React.FC = () => {
@@ -20,31 +20,24 @@ export const LOT2046Tattoo: React.FC = () => {
   }, [resetScheme, selectedWorkId, setScheme]);
 
   return (
-    <div className="h-screen w-screen bg-black">
-      <div className="flex flex-row justify-center">
-        <div className="w-5/12">
-          <UploadcareImage
-            alt="Side view"
-            src="https://ucarecdn.com/58007ddf-42d7-4892-b431-713538b95b93/"
-          />
-        </div>
-        <div className="w-3/12">
-          <UploadcareImage
-            alt="Up view"
-            src="https://ucarecdn.com/a9e460fb-b621-4e60-9201-06c981ef4d68/"
-          />
-        </div>
+    <div className="flex h-screen w-screen flex-col items-center justify-center gap-10 bg-black">
+      <div className="w-full">
+        <UploadcareImage
+          alt="Side view"
+          src="https://ucarecdn.com/58007ddf-42d7-4892-b431-713538b95b93/"
+        />
       </div>
-      {/* <UploadcareImage
-      alt="some"
-      format="png"
-      src="https://ucarecdn.com/74eebc30-354a-4b5d-86f0-9a45bd74c230/"
-    />
-    <UploadcareImage
-      alt="some"
-      format="png"
-      src="https://ucarecdn.com/f1615601-6fc7-4d05-bdfb-ee78632d451a/"
-    /> */}
+      <div className="absolute">
+        <WorkDetails>
+          <p className="text-xl font-bold uppercase text-white">
+            Tattoo machine which I&#39;ve built from{" "}
+            <a className="font-black" href="https://www.lot2046.com/">
+              LOT 2046
+            </a>{" "}
+            products: hair trimmer and toothbrush
+          </p>
+        </WorkDetails>
+      </div>
     </div>
   );
 };

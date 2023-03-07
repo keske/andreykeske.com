@@ -39,10 +39,8 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
             <Button
               className={clsx(
                 "uppercase tracking-widest",
-                isSelected(index) &&
-                  `bg-${scheme.bg} text-${scheme.text} font-black`,
+                isSelected(index) && `text-${scheme.text} font-black`,
                 `text-${scheme.text} hover:bg-${scheme.bg}`,
-                "hover:font-black",
               )}
               onClick={() => {
                 setSelectedTab(index);

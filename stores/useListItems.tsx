@@ -41,6 +41,10 @@ const DEFAULT_STATE: Work[] = [
     title: "Maps",
   },
   {
+    component: Works.Minecraft,
+    title: "Minecraft",
+  },
+  {
     component: Works.Objects,
     title: "Objects",
   },

@@ -46,7 +46,7 @@ export const Button = React.forwardRef(
             // `variant` states
             "bg-black text-white": variant == "primary",
             "bg-transparent": variant == "transparent",
-            "bg-white": variant == "secondary",
+            "bg-white text-black": variant == "secondary",
           },
           {
             // `size` states

@@ -20,7 +20,7 @@ export const WorkList: React.FC<WorkListProps> = ({
   const { selectedWorkId, works } = useListItems();
 
   return (
-    <div className="fixed bottom-10 ml-12 lg:w-5/6">
+    <div className="fixed bottom-10 ml-10 lg:w-5/6">
       <Transition
         afterLeave={() => onUnmount.current?.()}
         appear
@@ -37,31 +37,26 @@ export const WorkList: React.FC<WorkListProps> = ({
           leaveTo="opacity-0"
         >
           <nav className="flex flex-col gap-2">
-            <div className="flex flex-row gap-3">
-              <ul>
-                {works.map(({ component: Component, id, title }, index) => (
-                  <li
-                    className={
-                      "inline-block list-none text-xl font-black uppercase tracking-wider"
-                    }
-                    key={id}
-                    onClick={() => {
-                      handleShowWork(id);
-                    }}
-                    onMouseOut={handleMouseOut}
-                    onMouseOver={() => {
-                      // @ts-expect-error work in progress
-                      handleMouseOver(<Component />);
-                    }}
-                  >
-                    <a href={`#${id}`}>{title}</a>
-                    {index < works.length - 1 && (
-                      <span className="mx-2">⸻</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul>
+              {works.map(({ component: Component, id, title }) => (
+                <li
+                  className={
+                    "list-none text-3xl font-black uppercase tracking-wider"
+                  }
+                  key={id}
+                  onClick={() => {
+                    handleShowWork(id);
+                  }}
+                  onMouseOut={handleMouseOut}
+                  onMouseOver={() => {
+                    // @ts-expect-error work in progress
+                    handleMouseOver(<Component />);
+                  }}
+                >
+                  <a href={`#${id}`}>{title}</a>
+                </li>
+              ))}
+            </ul>
           </nav>
         </Transition.Child>
       </Transition>
