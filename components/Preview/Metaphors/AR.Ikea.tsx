@@ -43,7 +43,7 @@ const Mobile: React.FC = () => (
   </div>
 );
 
-export const Ikea = () =>
+export const ARIkea = () =>
   typeof window !== "undefined" && window.innerWidth > 768 ? (
     <Desktop />
   ) : (

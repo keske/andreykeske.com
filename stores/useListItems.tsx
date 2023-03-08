@@ -21,24 +21,12 @@ const DEFAULT_STATE: Work[] = [
     title: "About",
   },
   {
-    component: Works.AR,
-    title: "AR",
-  },
-  {
     component: Works.Graphics,
     title: "Graphics",
   },
   {
-    component: Works.IOS,
-    title: "iOS",
-  },
-  {
-    component: Works.MacOS,
-    title: "Mac OS",
-  },
-  {
-    component: Works.Maps,
-    title: "Maps",
+    component: Works.Metaphors,
+    title: "Metaphors",
   },
   {
     component: Works.Minecraft,

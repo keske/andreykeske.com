@@ -2,7 +2,7 @@ import React from "react";
 
 import { UploadcareImage, WorkDetails } from "@/components/index";
 
-export const Ticky: React.FC = () => (
+export const IOSTicky: React.FC = () => (
   <div className="flex flex-col items-center justify-center gap-10 pt-40 pb-20">
     <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/6">
       <UploadcareImage

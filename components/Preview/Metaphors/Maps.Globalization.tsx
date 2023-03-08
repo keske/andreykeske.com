@@ -2,7 +2,7 @@ import React from "react";
 
 import { WorkDetails } from "@/components/index";
 
-export const Globalization: React.FC = () => (
+export const MapsGlobalization: React.FC = () => (
   <div className="h-screen w-screen">
     <iframe
       className="h-screen w-screen border-0"

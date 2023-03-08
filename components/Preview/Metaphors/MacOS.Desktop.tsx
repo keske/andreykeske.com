@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Desktop: React.FC = () => (
+export const MacOSDesktop: React.FC = () => (
   <div className="flex w-screen flex-col items-center gap-20 p-60">
     <div className="flex flex-col gap-10">
       <div className="flex w-full flex-col items-center">

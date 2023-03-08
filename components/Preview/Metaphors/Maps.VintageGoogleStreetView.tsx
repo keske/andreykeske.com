@@ -3,7 +3,7 @@ import React from "react";
 import { WorkDetails } from "@/components/index";
 import { useHeader } from "@/stores/index";
 
-export const VintageGoogleStreetView: React.FC = () => {
+export const MapsVintageGoogleStreetView: React.FC = () => {
   const { setScheme } = useHeader();
 
   // React.useEffect(() => {

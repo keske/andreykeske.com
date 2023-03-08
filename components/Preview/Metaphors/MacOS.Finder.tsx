@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button, UploadcareImage } from "@/components/index";
 
-export const Finder: React.FC = () => (
+export const MacOSFinder: React.FC = () => (
   <div className="flex flex-col gap-40 p-80">
     <div className="flex flex-col gap-10">
       <h4 className="text-center text-3xl">Hydra</h4>

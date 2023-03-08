@@ -99,7 +99,7 @@ const Mobile = () => {
   );
 };
 
-export const Terminal = () =>
+export const MacOSTerminal = () =>
   typeof window !== "undefined" && window.innerWidth > 768 ? (
     <Desktop />
   ) : (
