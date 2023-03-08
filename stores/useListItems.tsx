@@ -53,6 +53,10 @@ const DEFAULT_STATE: Work[] = [
     title: "Streets",
   },
   {
+    component: Works.Typography,
+    title: "Typography",
+  },
+  {
     component: Works.UI,
     title: "UI",
   },

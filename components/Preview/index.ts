@@ -7,4 +7,5 @@ export * from "./Maps";
 export * from "./Minecraft";
 export * from "./Objects";
 export * from "./Streets";
+export * from "./Typography";
 export * from "./UI";
