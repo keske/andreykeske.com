@@ -1,5 +1,4 @@
 export * from "./About";
-export * from "./Graphics";
 export * from "./Metaphors";
 export * from "./Minecraft";
 export * from "./Objects";

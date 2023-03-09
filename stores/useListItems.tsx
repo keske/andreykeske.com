@@ -21,10 +21,6 @@ const DEFAULT_STATE: Work[] = [
     title: "About",
   },
   {
-    component: Works.Graphics,
-    title: "Graphics",
-  },
-  {
     component: Works.Metaphors,
     title: "Metaphors",
   },
