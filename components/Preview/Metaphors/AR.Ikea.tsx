@@ -5,7 +5,7 @@ import { WorkDetails } from "@/components/index";
 
 const Desktop: React.FC = () => (
   <div className="flex flex-col items-center justify-center gap-20 pt-56 pb-20">
-    <div className="flex flex-col items-center justify-center gap-8">
+    <div className="flex flex-col items-center justify-center gap-5">
       <div className="container mx-auto">
         <div className="relative overflow-hidden bg-white">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
@@ -53,10 +53,12 @@ const Desktop: React.FC = () => (
             new possibilities that await us.
           </small>
           <small>
-            Made in{" "}
-            <a href="https://apps.apple.com/us/app/ikea-place/id1279244498">
-              IKEA Place
-            </a>
+            <i>
+              Made in{" "}
+              <a href="https://apps.apple.com/us/app/ikea-place/id1279244498">
+                IKEA Place
+              </a>
+            </i>
           </small>
           <time dateTime="2013">2013</time>
         </div>

@@ -12,7 +12,7 @@ export const MinecraftNURBS: React.FC = () => {
   return (
     <div className="h-screen w-screen">
       <WorkDetails>
-        <div className="fixed top-36 z-50 flex w-screen flex-row items-center justify-center gap-10">
+        <div className="fixed top-40 z-50 flex w-screen flex-row items-center justify-center gap-10">
           {renderTabs(["Blocks", "Small House"])}
         </div>
       </WorkDetails>

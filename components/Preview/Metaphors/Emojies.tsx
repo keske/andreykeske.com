@@ -1,20 +1,25 @@
 import React from "react";
 
-import { UploadcareImage } from "@/components/index";
+import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const Emojies: React.FC = () => (
-  <div className="flex flex-col gap-40 pt-60 pb-20">
-    <div className="flex flex-col items-center gap-5">
-      <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4">
+  <div className="flex flex-col items-center justify-center gap-20 pt-56 pb-20">
+    <div className="flex flex-col items-center justify-center gap-5">
+      <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3">
         <UploadcareImage
           alt="Emojis from behind"
           src="https://ucarecdn.com/f73ebc4a-f1bf-434c-b5b6-f9a8383b82f6/"
         />
       </div>
-      <p>Emojis from behind</p>
+      <WorkDetails>
+        <div className="flex w-1/2 flex-col items-center gap-2">
+          <h3>Emojis from behind</h3>
+          <time dateTime="2018">2018</time>
+        </div>
+      </WorkDetails>
     </div>
 
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex flex-col items-center justify-center gap-5">
       <div className="flex flex-row flex-wrap justify-center gap-2">
         <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/5">
           <UploadcareImage
@@ -41,27 +46,42 @@ export const Emojies: React.FC = () => (
           />
         </div>
       </div>
-      <p>Emoji Tattoo Flashes</p>
+      <WorkDetails>
+        <div className="flex w-1/2 flex-col items-center gap-2">
+          <h3>Emoji Tattoo Flashes</h3>
+          <time dateTime="2017">2017</time>
+        </div>
+      </WorkDetails>
     </div>
 
-    <div className="flex flex-col items-center gap-5">
-      <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4">
+    <div className="flex flex-col items-center justify-center gap-5">
+      <div className="sm:w-1/2 md:w-1/2 lg:w-full xl:w-full">
         <UploadcareImage
           alt="Rolling Stones Emoji Logotype"
           src="https://ucarecdn.com/eea10eaa-ea87-4ecd-ae78-9de9e11b54e9/"
         />
       </div>
-      <p>Rolling Stones Emoji Logotype</p>
+      <WorkDetails>
+        <div className="flex w-full flex-col items-center gap-2">
+          <h3>Rolling Stones Emoji Logotype</h3>
+          <time dateTime="2017">2017</time>
+        </div>
+      </WorkDetails>
     </div>
 
-    <div className="flex flex-col items-center gap-5">
-      <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4">
+    <div className="flex flex-col items-center justify-center gap-5">
+      <div className="sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/2">
         <UploadcareImage
           alt="Pinhead"
           src="https://ucarecdn.com/2a274270-dffd-4b9e-a7ea-72cd7616727c/"
         />
       </div>
-      <p>Pinhead</p>
+      <WorkDetails>
+        <div className="flex w-full flex-col items-center gap-2">
+          <h3>Pinhead</h3>
+          <time dateTime="2016">2016</time>
+        </div>
+      </WorkDetails>
     </div>
   </div>
 );
