@@ -3,11 +3,11 @@ import React from "react";
 import { Button, UploadcareImage } from "@/components/index";
 
 export const MacOSFinder: React.FC = () => (
-  <div className="flex flex-col gap-40 p-80">
+  <div className="flex w-screen flex-col items-center gap-40 p-60">
     <div className="flex flex-col gap-10">
       <h4 className="text-center text-3xl">Hydra</h4>
       <div className="flex flex-col items-center gap-5">
-        <div className="aspect-w-16 aspect-h-4 w-1/2">
+        <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
           <iframe
             allow="loop"
             className="border-0"
@@ -39,7 +39,7 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex flex-col gap-10">
       <h4 className="text-center text-3xl">Dropbox ⟶ iCloud</h4>
       <div className="flex flex-col items-center gap-5">
-        <div className="aspect-w-16 aspect-h-4 w-1/2">
+        <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
           <iframe
             allow="loop"
             className="border-0"
@@ -54,7 +54,7 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex flex-col gap-10">
       <h4 className="text-center text-3xl">Matryoshka</h4>
       <div className="flex flex-col items-center gap-5">
-        <div className="aspect-w-16 aspect-h-4 w-1/2">
+        <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
           <iframe
             allow="loop"
             className="border-0"
@@ -69,7 +69,7 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex flex-col gap-10">
       <h4 className="text-center text-3xl">The Shell Game</h4>
       <div className="flex flex-col items-center gap-5">
-        <div className="aspect-w-16 aspect-h-4 w-1/2">
+        <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
           <iframe
             allow="loop"
             className="border-0"
@@ -84,7 +84,7 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex flex-col gap-10">
       <h4 className="text-center text-3xl">The Dice Game</h4>
       <div className="flex flex-col items-center gap-5">
-        <div className="aspect-w-16 aspect-h-4 w-1/2">
+        <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
           <iframe
             allow="loop"
             className="border-0"
@@ -92,10 +92,10 @@ export const MacOSFinder: React.FC = () => (
             title="The Dice Game"
           />
         </div>
-        <div>
+        <div className="flex w-1/2 flex-col gap-2">
           <p>
-            Very simple. Normal folder in Preview mode shows previews of the
-            image files, two in our case. Script copes such two images
+            Normal folder in Preview mode shows previews of the image files, two
+            in our case. Script copes such two images
             <mark>randomly</mark>
             and gives a combination of two dices.
           </p>
@@ -110,7 +110,7 @@ export const MacOSFinder: React.FC = () => (
             <li>Each roll is a script run</li>
           </ul>
           <a href="https://github.com/keske/Mac-OS-UI-Games/blob/master/dicegame.zip?raw=true">
-            <Button>Download game (34Kb) →</Button>
+            <Button size="sm">Download game (34Kb)</Button>
           </a>
         </div>
         <time dateTime="2011">2011</time>
@@ -120,7 +120,7 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex flex-col gap-10">
       <h4 className="text-center text-3xl">Slot Machines</h4>
       <div className="flex flex-col items-center gap-5">
-        <div className="aspect-w-16 aspect-h-4 w-1/2">
+        <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
           <iframe
             allow="loop"
             className="border-0"
@@ -128,7 +128,7 @@ export const MacOSFinder: React.FC = () => (
             title="Slot Machines"
           />
         </div>
-        <div>
+        <div className="flex w-1/2 flex-col gap-2">
           <p>
             3 slots, each has a set of pictures. The aim of the game is to get 3
             the same pictures. In my game each slot is the simple folder in
@@ -158,7 +158,7 @@ export const MacOSFinder: React.FC = () => (
             </li>
           </ul>
           <a href="https://github.com/keske/Mac-OS-UI-Games/blob/master/slotmachine.zip?raw=true">
-            <Button>Download game (34Kb) →</Button>
+            <Button>Download game (34Kb)</Button>
           </a>
         </div>
         <time dateTime="2011">2011</time>

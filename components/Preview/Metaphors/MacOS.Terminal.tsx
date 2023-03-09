@@ -43,7 +43,7 @@ const Desktop: React.FC = () => {
   }, [resetScheme, selectedWorkId, setScheme]);
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-black py-40">
+    <div className="h-screen w-screen overflow-hidden bg-black pt-60">
       <h4 className="z-10 text-center text-3xl text-white">Tmux Chess</h4>
       <Canvas
         gl={{

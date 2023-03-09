@@ -1,15 +1,28 @@
 import React from "react";
 
 export const MacOSDesktop: React.FC = () => (
-  <div className="flex w-screen flex-col items-center gap-20 p-60">
-    <div className="flex flex-col gap-10">
-      <div className="flex w-full flex-col items-center">
-        <h2>Black hole on my Desktop. Part I</h2>
-        <p>
+  <div className="flex flex-col justify-center gap-40 py-60">
+    <div className="flex flex-col items-center gap-5">
+      <div className="aspect-w-16 aspect-h-4 w-1/2">
+        <iframe
+          allow="loop"
+          className="border-0"
+          src="/videos/blackhole-1.mp4"
+          title="Blackhole"
+        />
+      </div>
+      <p>
+        Black hole on my Desktop. Part I
+        <br />
+        <small>
           In the space of my Desktop was noticed a black hole where the any
           information or object will be removed forever
-        </p>
-      </div>
+        </small>
+      </p>
+      <time dateTime="2013">2013</time>
+    </div>
+
+    <div className="flex flex-col items-center gap-5">
       <div className="aspect-w-2 aspect-h-1 w-screen xl:aspect-w-2 xl:aspect-h-1 2xl:aspect-w-3 2xl:aspect-h-1">
         <iframe
           allow="loop"
@@ -18,8 +31,19 @@ export const MacOSDesktop: React.FC = () => (
           title="Blackhole"
         />
       </div>
+      <div className="flex flex-col items-center gap-5">
+        <small>
+          <p>Black hole on my Desktop. Part I</p>
+          <p>
+            In the space of my Desktop was noticed a black hole where the any
+            information or object will be removed forever
+          </p>
+        </small>
+      </div>
     </div>
+
     <hr />
+
     <div className="flex flex-col gap-10">
       <div className="flex w-full flex-col items-center">
         <h2>Black hole on my Desktop. Part II. With Hawking radiation</h2>
