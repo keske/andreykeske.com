@@ -11,7 +11,7 @@ export const Typography: React.FC = () => {
   return (
     <>
       <WorkDetails>
-        <div className="fixed top-28 z-50 flex w-screen flex-row items-center justify-center gap-10">
+        <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
           {renderTabs(["NURBS"])}
         </div>
       </WorkDetails>

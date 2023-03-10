@@ -15,16 +15,15 @@ const random =
   (min = 0, max: number) => Math.floor(Math.random() * (max - min) + min);
 
 export const Metaphors: React.FC = () => {
-  const { renderTabs, renderTabsBody } =
-    useTabs();
-    //   {
-    //   initialIndex: random(0, 5),
-    // }
+  const { renderTabs, renderTabsBody } = useTabs();
+  //   {
+  //   initialIndex: random(0, 5),
+  // }
 
   return (
     <>
       <WorkDetails>
-        <div className="fixed top-28 z-50 flex w-screen flex-row items-center justify-center gap-10">
+        <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
           {renderTabs(["AR", "Crypto", "Emojies", "IOS", "Mac OS", "Maps"])}
         </div>
       </WorkDetails>
