@@ -1,7 +1,6 @@
 import React from "react";
 
 import { MapsGlobalization } from "./Maps.Globalization";
-import { MapsInvertedManhattan } from "./Maps.InvertedManhattan";
 import { MapsVintageGoogleStreetView } from "./Maps.VintageGoogleStreetView";
 import { MapsWaterOnMars } from "./Maps.WaterOnMars";
 
@@ -17,7 +16,6 @@ export const Maps: React.FC = () => {
         <div className="fixed top-40 z-50 flex w-screen flex-row justify-center gap-10">
           {renderTabs([
             "Globalization",
-            "Manhattan",
             "Vintage Google Street View",
             "Water on Mars",
           ])}
@@ -25,7 +23,6 @@ export const Maps: React.FC = () => {
       </WorkDetails>
       {renderTabsBody([
         <MapsGlobalization />,
-        <MapsInvertedManhattan />,
         <MapsVintageGoogleStreetView />,
         <MapsWaterOnMars />,
       ])}

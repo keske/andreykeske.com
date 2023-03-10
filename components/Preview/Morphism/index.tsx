@@ -1,21 +1,23 @@
 import React from "react";
 
+import { InvertedManhattan } from "./InvertedManhattan";
+import { LegoHTML } from "./LegoHTML";
 import { LOT2046Tattoo } from "./LOT2046Tattoo";
 
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
 
-export const Objects: React.FC = () => {
+export const Morphism: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
 
   return (
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["LOT2046Tattoo"])}
+          {renderTabs(["Manhattan", "Lego HTML", "LOT2046 Tattoo"])}
         </div>
       </WorkDetails>
-      {renderTabsBody([<LOT2046Tattoo />])}
+      {renderTabsBody([<InvertedManhattan />, <LegoHTML />, <LOT2046Tattoo />])}
     </>
   );
 };

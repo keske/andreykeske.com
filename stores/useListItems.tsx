@@ -29,8 +29,8 @@ const DEFAULT_STATE: Work[] = [
     title: "Minecraft",
   },
   {
-    component: Works.Objects,
-    title: "Objects",
+    component: Works.Morphism,
+    title: "Morphism",
   },
   {
     component: Works.Streets,
