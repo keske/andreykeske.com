@@ -1,24 +1,10 @@
 import React from "react";
 
-import { UploadcareImage } from "@/components/index";
+import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const Stickers = () => (
-  <div className="flex flex-col gap-40 py-60">
-    <div className="flex flex-col items-center gap-2 pb-40">
-      <div className="w-1/3 text-center">
-        <p>
-          <strong>Football fans trolling</strong>
-        </p>
-        <p>
-          I took several emblems of my native football clubs and deliberately
-          mingled their colors between them.
-        </p>
-        <p>
-          Maybe one of those truly bullies catch a glimpse of my sticker on a
-          wall and dump his jaw on a sidewalk in bewilderment, at least I hope
-          so.
-        </p>
-      </div>
+  <div className="flex flex-col items-center gap-20 pt-56 pb-20">
+    <div className="flex flex-col items-center gap-5">
       <div className="flex flex-row flex-wrap justify-center gap-2">
         <div className="w-1/3">
           <UploadcareImage
@@ -47,6 +33,21 @@ export const Stickers = () => (
           />
         </div>
       </div>
+      <WorkDetails>
+        <div className="flex w-1/2 flex-col gap-2">
+          <h3>Football fans trolling</h3>
+          <small>
+            I took several emblems of my native football clubs and deliberately
+            mingled their colors between them.
+          </small>
+          <small>
+            Maybe one of those truly bullies catch a glimpse of my sticker on a
+            wall and dump his jaw on a sidewalk in bewilderment, at least I hope
+            so.
+          </small>
+          <time dateTime="2012">2012</time>
+        </div>
+      </WorkDetails>
     </div>
   </div>
 );
