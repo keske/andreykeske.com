@@ -49,7 +49,6 @@ export const WorkList: React.FC<WorkListProps> = ({
                   }}
                   onMouseOut={handleMouseOut}
                   onMouseOver={() => {
-                    // @ts-expect-error work in progress
                     handleMouseOver(<Component />);
                   }}
                 >

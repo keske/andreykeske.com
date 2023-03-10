@@ -3,45 +3,38 @@ import { create } from "zustand";
 import * as Works from "@/components/Preview/index";
 
 export type Work = {
-  component: React.ReactElement<any, React.JSXElementConstructor<any> | string>;
+  component: React.FC;
   id: string;
   title: string;
 };
 
-const DEFAULT_STATE: Work[] = [
+const DEFAULT_STATE: Array<Pick<Work, "component" | "title">> = [
   {
-    component: <Works.About />,
-    id: "about",
+    component: Works.About,
     title: "About",
   },
   {
-    component: <Works.Metaphors />,
-    id: "metaphors",
+    component: Works.Metaphors,
     title: "Metaphors",
   },
   {
-    component: <Works.Minecraft />,
-    id: "minecraft",
+    component: Works.Minecraft,
     title: "Minecraft",
   },
   {
-    component: <Works.Morphism />,
-    id: "morphism",
+    component: Works.Morphism,
     title: "Morphism",
   },
   {
-    component: <Works.Streets />,
-    id: "streets",
+    component: Works.Streets,
     title: "Streets",
   },
   {
-    component: <Works.Typography />,
-    id: "typography",
+    component: Works.Typography,
     title: "Typography",
   },
   {
-    component: <Works.UI />,
-    id: "ui",
+    component: Works.UI,
     title: "UI",
   },
 ];
@@ -62,5 +55,8 @@ export const useListItems = create<Store>((set) => ({
     }));
   },
 
-  works: DEFAULT_STATE,
+  works: DEFAULT_STATE.map((item) => ({
+    ...item,
+    id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
+  })),
 }));
