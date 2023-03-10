@@ -10,10 +10,6 @@ import { Maps } from "./Maps";
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
 
-const random =
-  // eslint-disable-next-line @typescript-eslint/default-param-last
-  (min = 0, max: number) => Math.floor(Math.random() * (max - min) + min);
-
 export const Metaphors: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
   //   {

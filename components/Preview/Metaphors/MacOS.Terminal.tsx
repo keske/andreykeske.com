@@ -1,12 +1,10 @@
-import { MapControls, useVideoTexture } from "@react-three/drei";
+import { useVideoTexture } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
-import { Parallax } from "react-scroll-parallax";
 import { Mesh } from "three";
 
 import { THREEOnMouseRotation } from "@/components/index";
 import { useHeader, useListItems } from "@/stores/index";
-import { interpolate } from "@/utils/index";
 
 const DesktopVideo = () => {
   const mesh = React.useRef<Mesh>(null!);
@@ -26,7 +24,7 @@ const DesktopVideo = () => {
   );
 };
 
-const Desktop: React.FC = () => {
+export const MacOSTerminal = () => {
   const { resetScheme, setScheme } = useHeader();
 
   const { selectedWorkId } = useListItems();
@@ -59,49 +57,3 @@ const Desktop: React.FC = () => {
     </div>
   );
 };
-
-const MobileVideo = () => {
-  const mesh = React.useRef<Mesh>(null!);
-
-  const texture = useVideoTexture("/videos/tmux-chess.mp4", {
-    loop: true,
-    start: true,
-  });
-
-  return (
-    <THREEOnMouseRotation ref={mesh}>
-      <mesh ref={mesh} rotation={[-0.1, 0, 0]} scale={1}>
-        <planeGeometry args={[6, 6, 1]} />
-        <meshBasicMaterial map={texture} toneMapped={false} />
-      </mesh>
-    </THREEOnMouseRotation>
-  );
-};
-
-const Mobile = () => {
-  const [zoom, setZoom] = React.useState(1);
-
-  const handleProgress = React.useCallback((progress: number) => {
-    const newZoom = Math.round(interpolate([0.3, 0.5], [1, 10], progress));
-
-    setZoom(newZoom);
-  }, []);
-
-  return (
-    <div className="h-screen w-full bg-red-900">
-      <Parallax onProgressChange={handleProgress}>
-        <Canvas camera={{ position: [0, 0, 20] }}>
-          <MobileVideo />
-          <MapControls />
-        </Canvas>
-      </Parallax>
-    </div>
-  );
-};
-
-export const MacOSTerminal = () =>
-  typeof window !== "undefined" && window.innerWidth > 768 ? (
-    <Desktop />
-  ) : (
-    <Mobile />
-  );

@@ -2,7 +2,6 @@ import {
   Environment,
   Icosahedron,
   MeshDistortMaterial,
-  MeshWobbleMaterial,
 } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import React from "react";
