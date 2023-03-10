@@ -17,7 +17,7 @@ const Model: React.FC = () => {
       geometry={nodes.box_low.geometry}
       position={[0, -10, 0]}
       ref={mesh}
-      rotation={[-11, 0, -22]}
+      rotation={[-11, 0, -22.3]}
     >
       <meshStandardMaterial
         attach="material"

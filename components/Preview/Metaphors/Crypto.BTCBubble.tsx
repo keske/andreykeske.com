@@ -35,7 +35,7 @@ const CommonMeshDistortMaterial = () => (
   <MeshDistortMaterial
     clearcoat={1.1}
     clearcoatRoughness={0.9}
-    color="rgba(0, 0, 0, 0.0)"
+    color="rgba(0, 0, 0, 1)"
     distort={0.3}
     metalness={1.1}
     radius={2.3}

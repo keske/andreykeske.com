@@ -26,26 +26,26 @@ export const Graffiti = () => (
       <div className="h-screen w-screen">
         <Wall />
       </div>
-      <div className="-mt-28 flex w-full flex-col items-center gap-2">
-        {peaces.map((peace, index) => (
-          <div
-            className="flex w-1/3 flex-col gap-1 sm:w-full sm:p-10 md:w-full lg:w-1/2"
-            key={index}
-          >
-            <img
-              alt={peace}
-              className="w-full"
-              src={`/photos/graffiti/${index}.jpg`}
-            />
-            <WorkDetails>
+      <WorkDetails>
+        <div className="-mt-28 flex w-full flex-col items-center gap-2">
+          {peaces.map((peace, index) => (
+            <div
+              className="flex w-1/3 flex-col gap-1 sm:w-full sm:p-10 md:w-full lg:w-4/6"
+              key={index}
+            >
+              <img
+                alt={peace}
+                className="w-full"
+                src={`/photos/graffiti/${index}.jpg`}
+              />
               <p className="text-black">
                 {peace},{" "}
                 <span className="opacity-30">Yekaterinburg, Russia</span>
               </p>
-            </WorkDetails>
-          </div>
-        ))}
-      </div>
+            </div>
+          ))}
+        </div>
+      </WorkDetails>
     </div>
   </div>
 );

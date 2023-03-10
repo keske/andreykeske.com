@@ -1,9 +1,8 @@
 import React from "react";
-import { Parallax } from "react-scroll-parallax";
 
 import { WorkDetails } from "@/components/index";
 
-const Desktop: React.FC = () => (
+export const ARIkea = () => (
   <div className="flex flex-col items-center gap-20 pt-56 pb-20">
     <div className="flex flex-col items-center gap-5">
       <div className="container mx-auto">
@@ -66,27 +65,3 @@ const Desktop: React.FC = () => (
     </div>
   </div>
 );
-
-const Mobile: React.FC = () => (
-  <div>
-    <video
-      className="w-screen border-0"
-      src="/videos/ikea.mp4"
-      title="The first discarded piece of IKEA furniture in Augmented Reality"
-    />
-    <div className="absolute top-8 left-4">
-      <Parallax speed={-3}>
-        <h2 className="inline bg-white text-black">
-          The first discarded piece of IKEA furniture in Augmented Reality
-        </h2>
-      </Parallax>
-    </div>
-  </div>
-);
-
-export const ARIkea = () =>
-  typeof window !== "undefined" && window.innerWidth > 768 ? (
-    <Desktop />
-  ) : (
-    <Mobile />
-  );

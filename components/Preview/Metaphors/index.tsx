@@ -11,10 +11,9 @@ import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
 
 export const Metaphors: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs();
-  //   {
-  //   initialIndex: random(0, 5),
-  // }
+  const { renderTabs, renderTabsBody } = useTabs({
+    initialIndex: 1,
+  });
 
   return (
     <>
