@@ -20,7 +20,7 @@ export const WorkList: React.FC<WorkListProps> = ({
   const { selectedWorkId, works } = useListItems();
 
   return (
-    <div className="fixed bottom-10 ml-10 lg:w-5/6">
+    <div className="fixed bottom-10 ml-10">
       <Transition
         afterLeave={() => onUnmount.current?.()}
         appear
@@ -36,13 +36,11 @@ export const WorkList: React.FC<WorkListProps> = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <nav className="flex flex-col gap-2">
+          <nav>
             <ul>
               {works.map(({ component: Component, id, title }) => (
                 <li
-                  className={
-                    "list-none text-3xl font-black uppercase tracking-wider"
-                  }
+                  className="list-none text-3xl font-black uppercase tracking-wider"
                   key={id}
                   onClick={() => {
                     handleShowWork(id);

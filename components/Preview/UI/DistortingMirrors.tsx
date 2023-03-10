@@ -6,8 +6,6 @@ import * as THREE from "three";
 
 import { Nurbs } from "../../NURBSVideo";
 
-import { THREEOnMouseRotation } from "@/components/index";
-
 type PaneProps = {
   url: string;
   videoRef: React.RefObject<HTMLVideoElement>;
@@ -186,9 +184,7 @@ export const DistortingMirrors = () => {
       />
       <Canvas camera={{ position: [0, 10, 55] }} className="h-screen w-screen">
         <OrbitControls enableZoom={false} />
-        <THREEOnMouseRotation ref={meshRef} strength={0.0001}>
-          {renderMirrors}
-        </THREEOnMouseRotation>
+        {renderMirrors}
       </Canvas>
     </div>
   );

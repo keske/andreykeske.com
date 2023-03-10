@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Bubble } from "./Bubble";
 import { Cloth } from "./Cloth";
 import { DistortingMirrors } from "./DistortingMirrors";
 import { EsherSwitchButton } from "./EsherSwitchButton";
@@ -18,7 +17,6 @@ export const UI: React.FC = () => {
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
           {renderTabs([
-            "Bubble",
             "Cloth",
             "Distorting Mirrors",
             "Esher's Switch Button",
@@ -28,7 +26,6 @@ export const UI: React.FC = () => {
         </div>
       </WorkDetails>
       {renderTabsBody([
-        <Bubble />,
         <Cloth />,
         <DistortingMirrors />,
         <EsherSwitchButton />,

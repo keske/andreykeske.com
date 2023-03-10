@@ -4,7 +4,7 @@ import React from "react";
 
 import type { ButtonProps } from "@/components/index";
 
-import { Button, ButtonRef } from "@/components/index";
+import { Button } from "@/components/index";
 import { useHeader } from "@/stores/index";
 
 type CloseButtonProps = ButtonProps<HTMLButtonElement> & {
@@ -12,10 +12,11 @@ type CloseButtonProps = ButtonProps<HTMLButtonElement> & {
   onClick: () => void;
 };
 
-export const CloseButton = React.forwardRef<
-  ButtonRef<HTMLButtonElement>,
-  CloseButtonProps
->(({ isShowing, onClick, ...props }, ref) => {
+export const CloseButton: React.FC<CloseButtonProps> = ({
+  isShowing,
+  onClick,
+  ...props
+}) => {
   const onUnmount = React.useRef<() => void>();
 
   const { scheme } = useHeader();
@@ -58,7 +59,6 @@ export const CloseButton = React.forwardRef<
             isShowing ? "opacity-100" : "opacity-0",
           )}
           onClick={onClick}
-          ref={ref}
           size={null}
           variant="transparent"
         >
@@ -67,4 +67,4 @@ export const CloseButton = React.forwardRef<
       </Transition.Child>
     </Transition>
   );
-});
+};

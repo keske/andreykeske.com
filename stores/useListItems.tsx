@@ -29,10 +29,10 @@ const DEFAULT_STATE: Array<Pick<Work, "component" | "title">> = [
     component: Works.Streets,
     title: "Streets",
   },
-  {
-    component: Works.Typography,
-    title: "Typography",
-  },
+  // {
+  //   component: Works.Typography,
+  //   title: "Typography",
+  // },
   {
     component: Works.UI,
     title: "UI",
