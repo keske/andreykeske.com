@@ -3,7 +3,7 @@ import React from "react";
 import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const IOSTicky: React.FC = () => (
-  <div className="flex flex-col items-center justify-center gap-20 pt-56 pb-20">
+  <div className="flex flex-col items-center gap-20 pt-56 pb-20">
     <div className="sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/5">
       <UploadcareImage
         alt="Side view"

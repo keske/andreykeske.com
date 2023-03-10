@@ -3,8 +3,8 @@ import React from "react";
 import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const Emojies: React.FC = () => (
-  <div className="flex flex-col items-center justify-center gap-20 pt-56 pb-20">
-    <div className="flex flex-col items-center justify-center gap-5">
+  <div className="flex flex-col items-center gap-20 pt-56 pb-20">
+    <div className="flex flex-col items-center gap-5">
       <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3">
         <UploadcareImage
           alt="Emojis from behind"
@@ -19,7 +19,7 @@ export const Emojies: React.FC = () => (
       </WorkDetails>
     </div>
 
-    <div className="flex flex-col items-center justify-center gap-5">
+    <div className="flex flex-col items-center gap-5">
       <div className="flex flex-row flex-wrap justify-center gap-2">
         <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/5">
           <UploadcareImage
@@ -54,7 +54,7 @@ export const Emojies: React.FC = () => (
       </WorkDetails>
     </div>
 
-    <div className="flex flex-col items-center justify-center gap-5">
+    <div className="flex flex-col items-center gap-5">
       <div className="sm:w-1/2 md:w-1/2 lg:w-full xl:w-full">
         <UploadcareImage
           alt="Rolling Stones Emoji Logotype"
@@ -69,7 +69,7 @@ export const Emojies: React.FC = () => (
       </WorkDetails>
     </div>
 
-    <div className="flex flex-col items-center justify-center gap-5">
+    <div className="flex flex-col items-center gap-5">
       <div className="sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/2">
         <UploadcareImage
           alt="Pinhead"
