@@ -23,17 +23,19 @@ const Button: React.FC<ButtonProps> = ({ backgroundColor }) => (
 );
 
 export const LegoHTML: React.FC = () => (
-  <div className="relative flex h-screen w-screen  flex-col items-center justify-center gap-5">
+  <div className="relative flex h-screen w-screen flex-col items-center justify-center gap-5">
     <Button backgroundColor="#F3C305" />
-    <WorkDetails>
-      <div className="flex flex-col items-center gap-2">
-        <h3>Lego HTML Element</h3>
-        <small>
-          A classical Lego brick except that this one was made from HTML
-          elements button and input
-        </small>
-        <time dateTime="2021">2021</time>
-      </div>
-    </WorkDetails>
+    <div className="absolute bottom-10 w-1/2">
+      <WorkDetails>
+        <div className="flex flex-col items-center gap-2">
+          <h3>Lego HTML Element</h3>
+          <small className="text-center">
+            A classical Lego brick except that this one was made from HTML
+            elements button and input
+          </small>
+          <time dateTime="2021">2021</time>
+        </div>
+      </WorkDetails>
+    </div>
   </div>
 );
