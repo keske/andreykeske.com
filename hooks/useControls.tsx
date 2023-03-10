@@ -1,6 +1,6 @@
 import * as R from "ramda";
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 import { Controls } from "@/components/index";
 
@@ -68,10 +68,11 @@ export const useControls = (
       Object.assign(document.createElement("div"), { id });
 
     if (document.body) {
+      const root = createRoot(controlsElement);
+
       document.body.appendChild(controlsElement);
-      ReactDOM.render(
+      root.render(
         <Controls {...config} onUpdate={hendleUpdate} options={options} />,
-        controlsElement,
       );
     }
 

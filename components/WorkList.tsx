@@ -15,18 +15,11 @@ export const WorkList: React.FC<WorkListProps> = ({
   handleMouseOver,
   handleShowWork,
 }) => {
-  const onUnmount = React.useRef<() => void>();
-
   const { selectedWorkId, works } = useListItems();
 
   return (
     <div className="fixed bottom-10 ml-10">
-      <Transition
-        afterLeave={() => onUnmount.current?.()}
-        appear
-        as={React.Fragment}
-        show={R.isNil(selectedWorkId)}
-      >
+      <Transition show={R.isNil(selectedWorkId)}>
         <Transition.Child
           as={React.Fragment}
           enter="ease-out duration-500"
@@ -40,7 +33,7 @@ export const WorkList: React.FC<WorkListProps> = ({
             <ul>
               {works.map(({ component: Component, id, title }) => (
                 <li
-                  className="list-none text-3xl font-black uppercase tracking-wider"
+                  className="cursor-pointer list-none text-3xl font-black uppercase tracking-wider"
                   key={id}
                   onClick={() => {
                     handleShowWork(id);
@@ -50,7 +43,7 @@ export const WorkList: React.FC<WorkListProps> = ({
                     handleMouseOver(<Component />);
                   }}
                 >
-                  <a href={`#${id}`}>{title}</a>
+                  {title}
                 </li>
               ))}
             </ul>
