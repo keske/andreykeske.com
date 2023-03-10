@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as THREE from "three";
+
+// @ts-expect-error WIP
 import { ParametricGeometry } from "three/addons/geometries/ParametricGeometry.js";
 
 import { NURBSSurface } from "./NURBSSurface";
@@ -37,7 +39,7 @@ const Nurbs = React.forwardRef<THREE.Group, Props>(
     map.wrapT = THREE.RepeatWrapping;
     map.anisotropy = 32;
 
-    const getSurfacePoint = (u, v, target) =>
+    const getSurfacePoint = (u: any, v: any, target: any) =>
       // eslint-disable-next-line
       nurbsSurface.getPoint(u, v, target);
 

@@ -8,43 +8,50 @@ export type Work = {
   title: string;
 };
 
+const DEFAULT_STATE: Work[] = [
+  {
+    component: <Works.About />,
+    id: "about",
+    title: "About",
+  },
+  {
+    component: <Works.Metaphors />,
+    id: "metaphors",
+    title: "Metaphors",
+  },
+  {
+    component: <Works.Minecraft />,
+    id: "minecraft",
+    title: "Minecraft",
+  },
+  {
+    component: <Works.Morphism />,
+    id: "morphism",
+    title: "Morphism",
+  },
+  {
+    component: <Works.Streets />,
+    id: "streets",
+    title: "Streets",
+  },
+  {
+    component: <Works.Typography />,
+    id: "typography",
+    title: "Typography",
+  },
+  {
+    component: <Works.UI />,
+    id: "ui",
+    title: "UI",
+  },
+];
+
 export type Store = {
   selectedWorkId: string | null;
   setSelectedWorkId: (value: string | null) => void;
 
   readonly works: Work[];
 };
-
-const DEFAULT_STATE: Work[] = [
-  {
-    component: Works.About,
-    title: "About",
-  },
-  {
-    component: Works.Metaphors,
-    title: "Metaphors",
-  },
-  {
-    component: Works.Minecraft,
-    title: "Minecraft",
-  },
-  {
-    component: Works.Morphism,
-    title: "Morphism",
-  },
-  {
-    component: Works.Streets,
-    title: "Streets",
-  },
-  {
-    component: Works.Typography,
-    title: "Typography",
-  },
-  {
-    component: Works.UI,
-    title: "UI",
-  },
-];
 
 export const useListItems = create<Store>((set) => ({
   selectedWorkId: null,
@@ -55,8 +62,5 @@ export const useListItems = create<Store>((set) => ({
     }));
   },
 
-  works: DEFAULT_STATE.map((item) => ({
-    ...item,
-    id: item.title.toLocaleLowerCase().replace(/ /g, "-"),
-  })),
+  works: DEFAULT_STATE,
 }));
