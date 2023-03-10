@@ -57,6 +57,7 @@ export const Button = React.forwardRef(
           },
           {
             // `anchor` styles
+            "inline-block": as === "a",
             "pointer-events-none": as === "a" && disabled,
           },
         ),

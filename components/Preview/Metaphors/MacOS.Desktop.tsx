@@ -3,10 +3,10 @@ import React from "react";
 import { WorkDetails } from "@/components/index";
 
 export const MacOSDesktop: React.FC = () => (
-  <div className="flex flex-col items-center justify-center gap-20 pt-56 pb-20">
-    <div className="flex w-screen flex-col items-center justify-center gap-5">
+  <div className="flex flex-col gap-20 pt-56 pb-20">
+    <div className="flex w-screen flex-col items-center gap-5">
       <div className="container mx-auto">
-        <div className="relative overflow-hidden bg-white">
+        <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
             <iframe
               allow="autoplay"
@@ -34,9 +34,9 @@ export const MacOSDesktop: React.FC = () => (
       </WorkDetails>
     </div>
 
-    <div className="flex w-screen flex-col items-center justify-center gap-5">
+    <div className="flex w-screen flex-col items-center gap-5">
       <div className="container mx-auto">
-        <div className="relative overflow-hidden bg-white">
+        <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
             <iframe
               allow="autoplay"

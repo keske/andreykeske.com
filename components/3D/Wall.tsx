@@ -31,7 +31,7 @@ const Model: React.FC = () => {
 };
 
 export const Wall: React.FC = () => (
-  <Canvas camera={{ position: [0, 0, -30] }}>
+  <Canvas camera={{ position: [0, 0, -30] }} className="h-full w-full">
     <OrbitControls enableZoom={false} />
     <ambientLight intensity={0.2} />
     <spotLight intensity={1.5} position={[20, 20, 30]} />

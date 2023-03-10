@@ -92,8 +92,8 @@ const Course = () => {
 };
 
 export const CryptoBTCBubble: React.FC = () => (
-  <div className="flex flex-col items-center justify-center gap-20 pt-10 pb-20">
-    <div className="flex flex-col items-center justify-center">
+  <div className="flex flex-col gap-20 pt-10 pb-20">
+    <div className="flex flex-col items-center">
       <div className="h-screen w-screen">
         <Canvas
           className="h-full w-full"
