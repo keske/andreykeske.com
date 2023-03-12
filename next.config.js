@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  reactStrictMode: true,
+  distDir: "build",
   experimental: {
     outputStandalone: true,
   },
+  reactStrictMode: true,
 };
 
 const withTM = require("next-transpile-modules")(["three"]);
