@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import { Curve, Vector3, Vector4 } from "three";
-import { NURBSUtils } from "./NURBSUtils";
+import { NURBSUtils } from "./NURBSUtils.ts";
 
 /**
  * NURBS curve object
