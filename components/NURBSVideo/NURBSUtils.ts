@@ -1,4 +1,5 @@
 /* eslint-disable */
+// @ts-nocheck
 
 import { Vector3, Vector4 } from "three";
 

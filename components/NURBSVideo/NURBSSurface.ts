@@ -1,5 +1,5 @@
 /* eslint-disable */
-
+// @ts-nocheck
 import { Vector4 } from "three";
 import { NURBSUtils } from "./NURBSUtils";
 
