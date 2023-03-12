@@ -22,6 +22,10 @@ export const Description: React.FC = () => (
         Andrey currently splits his time between two cities: New York City, NY,
         and Miami, FL, where he resides.
       </p>
+      <small>
+        This site is{" "}
+        <a href="https://github.com/keske/andreykeske.com">open sourced</a>
+      </small>
     </div>
   </div>
 );

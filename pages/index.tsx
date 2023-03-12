@@ -102,7 +102,7 @@ const Home: NextPage = () => {
             Andrey currently splits his time between two cities: New York City,
             NY, and Miami, FL, where he resides.
           </p>
-          <div className="flex flex-row gap-5 text-blue-800">
+          <div className="flex flex-row gap-5">
             <a href="mailto://hello@andreykeske.com">Mail</a>
             <a href="https://github.com/keske">Github</a>
             <a href="https://www.instagram.com/andreykeske/">Instagram</a>

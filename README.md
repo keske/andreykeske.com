@@ -1,4 +1,4 @@
-# Andrey Keske (http://andreykeske.com)
+# Andrey Keske
 
 ## Run
 
