@@ -8,9 +8,9 @@ export const MacOSFinder: React.FC = () => (
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              allow="autoplay"
+            <video
               className="absolute top-0 left-0 h-full w-full"
+              controls
               src="/videos/hydra.mp4"
             />
           </div>
@@ -54,9 +54,9 @@ export const MacOSFinder: React.FC = () => (
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              allow="autoplay"
+            <video
               className="absolute top-0 left-0 h-full w-full"
+              controls
               src="/videos/dropbox-to-iCloud.mp4"
             />
           </div>
@@ -74,9 +74,9 @@ export const MacOSFinder: React.FC = () => (
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              allow="autoplay"
+            <video
               className="absolute top-0 left-0 h-full w-full"
+              controls
               src="/videos/matryoshka.mp4"
             />
           </div>
@@ -94,9 +94,9 @@ export const MacOSFinder: React.FC = () => (
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              allow="autoplay"
+            <video
               className="absolute top-0 left-0 h-full w-full"
+              controls
               src="//player.vimeo.com/video/40102765"
             />
           </div>
@@ -135,9 +135,9 @@ export const MacOSFinder: React.FC = () => (
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              allow="autoplay"
+            <video
               className="absolute top-0 left-0 h-full w-full"
+              controls
               src="//player.vimeo.com/video/40103163"
             />
           </div>

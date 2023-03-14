@@ -8,9 +8,9 @@ export const ARIkea = () => (
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              allow="autoplay"
+            <video
               className="absolute top-0 left-0 h-full w-full"
+              controls
               src="/videos/ikea.mp4"
             />
           </div>
