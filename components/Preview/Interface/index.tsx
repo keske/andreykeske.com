@@ -9,7 +9,7 @@ import { SoftVideoPlayer } from "./SoftVideoPlayer";
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
 
-export const UI: React.FC = () => {
+export const Interface: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
 
   return (

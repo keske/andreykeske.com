@@ -14,6 +14,10 @@ const DEFAULT_STATE: Array<Pick<Work, "component" | "title">> = [
     title: "About",
   },
   {
+    component: Works.Interface,
+    title: "Interface",
+  },
+  {
     component: Works.Metaphors,
     title: "Metaphors",
   },
@@ -33,10 +37,6 @@ const DEFAULT_STATE: Array<Pick<Work, "component" | "title">> = [
   //   component: Works.Typography,
   //   title: "Typography",
   // },
-  {
-    component: Works.UI,
-    title: "UI",
-  },
 ];
 
 export type Store = {
