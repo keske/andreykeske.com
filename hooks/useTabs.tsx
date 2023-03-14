@@ -2,7 +2,6 @@ import clsx from "clsx";
 import React from "react";
 
 import { Button } from "@/components/index";
-import { useHeader } from "@/stores/index";
 
 export type TabsConfig = {
   initialIndex?: number;
@@ -20,8 +19,6 @@ export type UseTabs = {
 };
 
 export const useTabs = (config?: TabsConfig): UseTabs => {
-  const { scheme } = useHeader();
-
   const [selectedTab, setSelectedTab] = React.useState(
     config?.initialIndex ?? 0,
   );
@@ -39,8 +36,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
             <Button
               className={clsx(
                 "uppercase tracking-widest",
-                isSelected(index) && `text-${scheme.text} font-black`,
-                `text-${scheme.text} hover:bg-${scheme.bg}`,
+                isSelected(index) && "font-black",
               )}
               onClick={() => {
                 setSelectedTab(index);
@@ -54,7 +50,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
         ))}
       </>
     ),
-    [isSelected, scheme.bg, scheme.text],
+    [isSelected],
   );
 
   const renderTabsBody = React.useCallback(

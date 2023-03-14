@@ -121,7 +121,7 @@
 				controls.enabled = false;
 
 				renderer = new THREE.WebGLRenderer();
-				renderer.setClearColor(0xffffff);
+				renderer.setClearColor(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 0x000000 : 0xffffff);
 				renderer.setPixelRatio(window.devicePixelRatio);
 				renderer.setSize(window.innerWidth, window.innerHeight);
 				renderer.shadowMap.enabled = true;

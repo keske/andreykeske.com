@@ -6,7 +6,7 @@ export const ARIkea = () => (
   <div className="flex flex-col items-center gap-20 pt-56 pb-20">
     <div className="flex flex-col items-center gap-5">
       <div className="container mx-auto">
-        <div className="relative overflow-hidden bg-white">
+        <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
             <iframe
               allow="autoplay"

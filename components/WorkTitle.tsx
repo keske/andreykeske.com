@@ -1,14 +1,11 @@
 import { Transition } from "@headlessui/react";
-import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
-import { useHeader, useListItems } from "@/stores/index";
+import { useListItems } from "@/stores/index";
 
 export const WorkTitle: React.FC = () => {
   const onUnmount = React.useRef<() => void>();
-
-  const { scheme } = useHeader();
 
   const { selectedWorkId, works } = useListItems();
 
@@ -36,9 +33,9 @@ export const WorkTitle: React.FC = () => {
         leaveTo="opacity-0"
       >
         <div className="fixed top-9 z-10 flex w-full justify-center">
-          <div className={clsx("uppercase", `text-${scheme.text}`)}>
-            <h3 className="text-3xl font-black">{title}</h3>
-          </div>
+          <h3 className="text-3xl font-black uppercase text-black dark:text-white">
+            {title}
+          </h3>
         </div>
       </Transition.Child>
     </Transition>

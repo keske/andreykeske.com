@@ -154,7 +154,7 @@ export const EsherSwitchButton: React.FC = () => {
   }, [on]);
 
   return (
-    <div className="flex w-screen flex-col items-center justify-center gap-20 p-80">
+    <div className="flex w-screen flex-col items-center justify-center gap-36 p-80">
       <div className="flex flex-col gap-5">
         {R.range(0, 12).map((row) => (
           <div
@@ -171,7 +171,6 @@ export const EsherSwitchButton: React.FC = () => {
           </div>
         ))}
       </div>
-      <hr />
       <div className="flex flex-col items-center">
         <strong>Inspiration</strong>
         <div className="mt-4 w-1/4">

@@ -5,7 +5,6 @@ import React from "react";
 import type { ButtonProps } from "@/components/index";
 
 import { Button } from "@/components/index";
-import { useHeader } from "@/stores/index";
 
 type CloseButtonProps = ButtonProps<HTMLButtonElement> & {
   isShowing: boolean;
@@ -18,8 +17,6 @@ export const CloseButton: React.FC<CloseButtonProps> = ({
   ...props
 }) => {
   const onUnmount = React.useRef<() => void>();
-
-  const { scheme } = useHeader();
 
   React.useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -54,8 +51,7 @@ export const CloseButton: React.FC<CloseButtonProps> = ({
         <Button
           {...props}
           className={clsx(
-            "fixed top-7 right-7 z-50 p-3 font-black",
-            `text-${scheme.text}`,
+            "fixed top-7 right-7 z-50 p-3 font-black text-black dark:text-white",
             isShowing ? "opacity-100" : "opacity-0",
           )}
           onClick={onClick}
