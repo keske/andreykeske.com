@@ -12,6 +12,26 @@ const Model: React.FC = () => {
 
   const mesh = React.useRef<THREE.Mesh>(null!);
 
+  const isDarkTheme = React.useMemo(
+    () => window.matchMedia("(prefers-color-scheme: dark)").matches,
+    [],
+  );
+
+  const renderMaterial = React.useMemo(
+    () =>
+      isDarkTheme ? (
+        <meshNormalMaterial attach="material" />
+      ) : (
+        <meshStandardMaterial
+          attach="material"
+          map={texture}
+          metalness={10}
+          roughness={0.2}
+        />
+      ),
+    [isDarkTheme, texture],
+  );
+
   return (
     <mesh
       geometry={nodes.box_low.geometry}
@@ -19,13 +39,7 @@ const Model: React.FC = () => {
       ref={mesh}
       rotation={[-11, 0, -22.3]}
     >
-      <meshStandardMaterial
-        attach="material"
-        color="white"
-        map={texture}
-        metalness={10}
-        roughness={0.2}
-      />
+      {renderMaterial}
     </mesh>
   );
 };
