@@ -5,6 +5,41 @@ import { UploadcareImage, WorkDetails } from "@/components/index";
 export const Emojies: React.FC = () => (
   <div className="flex flex-col items-center gap-20 pt-56 pb-20">
     <div className="flex flex-col items-center gap-5">
+      <div className="flex flex-row flex-wrap justify-center gap-2">
+        <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/5">
+          <img
+            alt="Emoji Tattoo #1"
+            src="/images/emojies-tattoos/tattoo-1.png"
+          />
+        </div>
+        <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/5">
+          <img
+            alt="Emoji Tattoo #2"
+            src="/images/emojies-tattoos/tattoo-2.png"
+          />
+        </div>
+        <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/5">
+          <img
+            alt="Emoji Tattoo #3"
+            src="/images/emojies-tattoos/tattoo-3.png"
+          />
+        </div>
+        <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/5">
+          <img
+            alt="Emoji Tattoo #4"
+            src="/images/emojies-tattoos/tattoo-4.png"
+          />
+        </div>
+      </div>
+      <WorkDetails>
+        <div className="flex w-1/2 flex-col items-center gap-2">
+          <h3>Emojies with Emojies Tattoos</h3>
+          <time dateTime="2023">2023</time>
+        </div>
+      </WorkDetails>
+    </div>
+
+    <div className="flex flex-col items-center gap-5">
       <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3">
         <UploadcareImage
           alt="Emojis from behind"
