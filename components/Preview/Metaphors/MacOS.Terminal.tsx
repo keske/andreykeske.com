@@ -4,7 +4,6 @@ import React from "react";
 import { Mesh } from "three";
 
 import { THREEOnMouseRotation } from "@/components/index";
-import { useHeader, useListItems } from "@/stores/index";
 
 const DesktopVideo = () => {
   const mesh = React.useRef<Mesh>(null!);
@@ -24,36 +23,19 @@ const DesktopVideo = () => {
   );
 };
 
-export const MacOSTerminal = () => {
-  const { resetScheme, setScheme } = useHeader();
-
-  const { selectedWorkId } = useListItems();
-
-  React.useEffect(() => {
-    setScheme({
-      bg: "black",
-      text: "white",
-    });
-
-    return () => {
-      resetScheme();
-    };
-  }, [resetScheme, selectedWorkId, setScheme]);
-
-  return (
-    <div className="h-screen w-screen overflow-hidden bg-black pt-60">
-      <h4 className="z-10 text-center text-3xl text-white">Tmux Chess</h4>
-      <Canvas
-        gl={{
-          alpha: true,
-          antialias: true,
-          depth: false,
-          powerPreference: "high-performance",
-          stencil: false,
-        }}
-      >
-        <DesktopVideo />
-      </Canvas>
-    </div>
-  );
-};
+export const MacOSTerminal = () => (
+  <div className="h-screen w-screen overflow-hidden bg-black pt-60">
+    <h4 className="z-10 text-center text-3xl text-white">Tmux Chess</h4>
+    <Canvas
+      gl={{
+        alpha: true,
+        antialias: true,
+        depth: false,
+        powerPreference: "high-performance",
+        stencil: false,
+      }}
+    >
+      <DesktopVideo />
+    </Canvas>
+  </div>
+);

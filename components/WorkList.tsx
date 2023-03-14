@@ -33,7 +33,7 @@ export const WorkList: React.FC<WorkListProps> = ({
             <ul>
               {works.map(({ component: Component, id, title }) => (
                 <li
-                  className="cursor-pointer list-none text-3xl font-black uppercase tracking-wider"
+                  className="cursor-pointer list-none text-3xl font-black uppercase tracking-wider text-black dark:text-white"
                   key={id}
                   onClick={() => {
                     handleShowWork(id);

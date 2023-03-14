@@ -10,6 +10,12 @@
     body {
       margin: 0;
     }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #000;
+      }
+    }
   </style>
 
 </head>
@@ -187,7 +193,7 @@
             pos,
             quat,
             new THREE.MeshPhongMaterial({
-              color: 0xffffff,
+              color: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 0x000000 : 0xffffff,
             })
           );
         })();

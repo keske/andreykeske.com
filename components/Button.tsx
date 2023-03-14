@@ -41,12 +41,14 @@ export const Button = React.forwardRef(
         ...(as === "button" && { disabled }),
         className: clsx(
           className,
-          "monospace cursor-pointer rounded-full border-none",
+          "monospace cursor-pointer rounded-full border-none duration-100",
           {
             // `variant` states
-            "bg-black text-white": variant == "primary",
+            "bg-black text-white dark:bg-white dark:text-black dark:bg-white":
+              variant == "primary",
             "bg-transparent": variant == "transparent",
-            "bg-white text-black": variant == "secondary",
+            "bg-white text-black dark:bg-black dark:text-white":
+              variant == "secondary",
           },
           {
             // `size` states
