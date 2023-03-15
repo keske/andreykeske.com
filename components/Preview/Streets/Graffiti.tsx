@@ -21,13 +21,13 @@ const peaces = [
 ];
 
 export const Graffiti = () => (
-  <div className="flex flex-col  gap-20 pt-10 pb-20">
+  <div className="flex flex-col gap-20">
     <div className="flex flex-col">
       <div className="h-screen w-screen">
         <Wall />
       </div>
       <WorkDetails>
-        <div className="-mt-28 flex w-full flex-col items-center gap-2">
+        <div className="-mt-28 flex w-full flex-col items-center gap-2 pb-20">
           {peaces.map((peace, index) => (
             <div
               className="flex w-1/3 flex-col gap-1 sm:w-full sm:p-10 md:w-full lg:w-4/6"

@@ -92,7 +92,7 @@ const Course = () => {
 };
 
 export const CryptoBTCBubble: React.FC = () => (
-  <div className="flex flex-col gap-20 pt-10 pb-20">
+  <div className="flex flex-col gap-20">
     <div className="flex flex-col items-center">
       <div className="h-screen w-screen">
         <Canvas
@@ -111,7 +111,7 @@ export const CryptoBTCBubble: React.FC = () => (
         </Canvas>
       </div>
       <WorkDetails>
-        <div className="-mt-28 flex w-1/2 flex-col gap-2">
+        <div className="-mt-28 flex w-1/2 flex-col gap-2 pb-20">
           <h3>
             Bitcoin as a Bubble: Exploring Social Opinion through Digital Art
           </h3>
