@@ -13,7 +13,7 @@ import { useListItems } from "@/stores/index";
 export const MinecraftAtomic: React.FC = () => {
   const { selectedWorkId } = useListItems();
 
-  const { animation, enableColor, showLines } = useControls(
+  const { animation, enableColor, showLines, size } = useControls(
     {
       animation: {
         value: true,
@@ -24,6 +24,12 @@ export const MinecraftAtomic: React.FC = () => {
       showLines: {
         value: true,
       },
+      size: {
+        max: 10000,
+        min: 1,
+        step: 1,
+        value: 70,
+      },
     },
     {
       hidden: R.isNil(selectedWorkId),
@@ -31,8 +37,6 @@ export const MinecraftAtomic: React.FC = () => {
   );
 
   const biom = React.useMemo(() => {
-    const size = 70;
-
     const gen = new SimplexNoise();
 
     function noise(nx: number, ny: number): number {
@@ -41,12 +45,12 @@ export const MinecraftAtomic: React.FC = () => {
 
     const value = [];
 
-    for (let y = -size; y < size; y++) {
+    for (let y = -size.value; y < size.value; y++) {
       value[y] = [];
-      for (let x = -size; x < size; x++) {
-        const nx = x / size - 0.5;
+      for (let x = -size.value; x < size.value; x++) {
+        const nx = x / size.value - 0.5;
 
-        const ny = y / size - 0.5;
+        const ny = y / size.value - 0.5;
 
         // @ts-expect-error wip
         value[y][x] = noise(nx, ny).toFixed(1) * 10;
@@ -54,29 +58,9 @@ export const MinecraftAtomic: React.FC = () => {
     }
 
     return value;
-  }, []);
+  }, [size.value]);
 
   const radius = React.useMemo(() => 0.1, []);
-
-  // const airMatrix = React.useMemo<number[]>(() => [-10, 10], []);
-
-  // const airSurface = React.useMemo(
-  //   () =>
-  //     showAir &&
-  //     R.range(airMatrix[0], airMatrix[1]).map((x) =>
-  //       R.range(airMatrix[0], airMatrix[1]).map((y) =>
-  //         R.range(airMatrix[0], airMatrix[1]).map((z) => (
-  //           <group
-  //             key={`stone-${x}-${y}-${z}`}
-  //             position={[x * radius, y * radius, z * radius]}
-  //           >
-  //             <Air radius={radius} showLines={showLines} />
-  //           </group>
-  //         )),
-  //       ),
-  //     ),
-  //   [airMatrix, radius, showAir, showLines],
-  // );
 
   const renderBlockDependsOnElevation = React.useCallback(
     (elevation: number) => {
@@ -153,14 +137,11 @@ export const MinecraftAtomic: React.FC = () => {
       <Canvas className="h-full w-full">
         <React.Suspense fallback={null}>
           <OrbitControls />
-          <group>
-            {renderBiom}
-            {/* {airSurface} */}
-          </group>
+          {renderBiom}
         </React.Suspense>
       </Canvas>
 
-      <div className="absolute bottom-10 w-screen">
+      <div className="absolute top-48 w-screen">
         <WorkDetails>
           <div className="flex w-full flex-col items-center gap-2">
             <h3>Atomic Minecraft</h3>
