@@ -1,5 +1,6 @@
 import React from "react";
 
+import { MinecraftAtomic } from "./MinecraftAtomic";
 import { MinecraftNURBS } from "./MinecraftNURBS";
 
 import { WorkDetails } from "@/components/index";
@@ -12,10 +13,10 @@ export const Minecraft: React.FC = () => {
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["NURBS"])}
+          {renderTabs(["Atomic", "NURBS"])}
         </div>
       </WorkDetails>
-      {renderTabsBody([<MinecraftNURBS />])}
+      {renderTabsBody([<MinecraftAtomic />, <MinecraftNURBS />])}
     </>
   );
 };
