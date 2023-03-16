@@ -41,8 +41,8 @@ export const useControls = (
 
         return {
           [key]: {
-            label: key,
-            type: "number",
+            label: key.replace(/([0-9A-Z])/g, " $&").toLowerCase(),
+            type: typeof obj === "number" ? "number" : "checkbox",
             ...(typeof obj === "number"
               ? {
                   value: obj,
@@ -57,6 +57,8 @@ export const useControls = (
       R.mergeAll,
     )(initialOptions),
   );
+
+  console.log(options);
 
   const hendleUpdate = React.useCallback((updatedOptions: ControlsOptions) => {
     setOptions(updatedOptions);

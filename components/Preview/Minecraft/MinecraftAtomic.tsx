@@ -6,10 +6,29 @@ import SimplexNoise from "simplex-noise";
 
 import { MinecraftAtomicCube } from "./MinecraftAtomic.Cube";
 
-export const MinecraftAtomic: React.FC = () => {
-  const enableColor = true;
+import { WorkDetails } from "@/components/index";
+import { useControls } from "@/hooks/index";
+import { useListItems } from "@/stores/index";
 
-  const showLines = true;
+export const MinecraftAtomic: React.FC = () => {
+  const { selectedWorkId } = useListItems();
+
+  const { animation, enableColor, showLines } = useControls(
+    {
+      animation: {
+        value: true,
+      },
+      enableColor: {
+        value: true,
+      },
+      showLines: {
+        value: true,
+      },
+    },
+    {
+      hidden: R.isNil(selectedWorkId),
+    },
+  );
 
   const biom = React.useMemo(() => {
     const size = 70;
@@ -66,10 +85,11 @@ export const MinecraftAtomic: React.FC = () => {
         case elevation < -5:
           return (
             <MinecraftAtomicCube
-              color={enableColor ? "rgba(255, 255, 255, 0.5)" : "#FFFFFF"}
+              animation={animation.value}
+              color={enableColor.value ? "rgba(255, 255, 255, 0.5)" : "#FFFFFF"}
               density={5}
               radius={radius}
-              showLines={showLines}
+              showLines={showLines.value}
             />
           );
 
@@ -77,10 +97,11 @@ export const MinecraftAtomic: React.FC = () => {
         case elevation < -2:
           return (
             <MinecraftAtomicCube
-              color={enableColor ? "#d7d8ab" : "#FFFFFF"}
+              animation={animation.value}
+              color={enableColor.value ? "#d7d8ab" : "#FFFFFF"}
               density={25}
               radius={radius}
-              showLines={showLines}
+              showLines={showLines.value}
             />
           );
 
@@ -88,10 +109,11 @@ export const MinecraftAtomic: React.FC = () => {
         case elevation < 2:
           return (
             <MinecraftAtomicCube
-              color={enableColor ? "#AAAAAA" : "#FFFFFF"}
+              animation={animation.value}
+              color={enableColor.value ? "#AAAAAA" : "#FFFFFF"}
               density={250}
               radius={radius}
-              showLines={showLines}
+              showLines={showLines.value}
             />
           );
 
@@ -99,15 +121,16 @@ export const MinecraftAtomic: React.FC = () => {
         case elevation < 9:
           return (
             <MinecraftAtomicCube
-              color={enableColor ? "#9b7653" : "#FFFFFF"}
+              animation={animation.value}
+              color={enableColor.value ? "#9b7653" : "#FFFFFF"}
               density={10}
               radius={radius}
-              showLines={showLines}
+              showLines={showLines.value}
             />
           );
       }
     },
-    [enableColor, radius, showLines],
+    [animation, enableColor.value, radius, showLines.value],
   );
 
   const renderBiom = React.useMemo(
@@ -127,7 +150,7 @@ export const MinecraftAtomic: React.FC = () => {
 
   return (
     <div className="h-screen w-screen">
-      <Canvas>
+      <Canvas className="h-full w-full">
         <React.Suspense fallback={null}>
           <OrbitControls />
           <group>
@@ -136,6 +159,22 @@ export const MinecraftAtomic: React.FC = () => {
           </group>
         </React.Suspense>
       </Canvas>
+
+      <div className="absolute bottom-10 w-screen">
+        <WorkDetails>
+          <div className="flex w-full flex-col items-center gap-2">
+            <h3>Atomic Minecraft</h3>
+            <small className="w-1/2 text-center">
+              Atomic Minecraft is a world created with the blocs as the basic
+              structure where inside of each of them are atoms exist. In this
+              world, atoms play the main role where their amount affects the
+              material of the block. More atoms mean that the block is strong
+              and heavy. Actually, like electrons in the real world.
+            </small>
+            <time dateTime="2022">2022</time>
+          </div>
+        </WorkDetails>
+      </div>
     </div>
   );
 };

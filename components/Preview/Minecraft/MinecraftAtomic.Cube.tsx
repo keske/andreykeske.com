@@ -4,6 +4,11 @@ import * as THREE from "three";
 
 export type MinecraftAtomicCubeProps = {
   /**
+   * Animate or not particles
+   */
+  animation?: boolean;
+
+  /**
    * Color of the cube
    */
   color: THREE.Color | number | string;
@@ -25,6 +30,7 @@ export type MinecraftAtomicCubeProps = {
 };
 
 export const MinecraftAtomicCube: React.FC<MinecraftAtomicCubeProps> = ({
+  animation = true,
   color,
   density,
   radius,
@@ -99,7 +105,7 @@ export const MinecraftAtomicCube: React.FC<MinecraftAtomicCubeProps> = ({
     setPosition();
 
     if (ref.current) {
-      ref.current.geometry.attributes.position.needsUpdate = true;
+      ref.current.geometry.attributes.position.needsUpdate = animation;
     }
   });
 
