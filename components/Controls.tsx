@@ -30,6 +30,19 @@ export const Controls: React.FC<ControlsProps> = ({
     },
   });
 
+  const handleUpdate = React.useCallback(
+    (key: string, value: boolean | string) => {
+      onUpdate({
+        ...options,
+        [key]: {
+          ...options[key],
+          value,
+        },
+      });
+    },
+    [onUpdate, options],
+  );
+
   if (hidden) {
     return <></>;
   }
@@ -44,7 +57,7 @@ export const Controls: React.FC<ControlsProps> = ({
         },
       })}
       className={clsx(
-        "absolute z-50 select-none rounded-xl bg-white p-1 font-sans text-xs dark:bg-gray-900",
+        "absolute z-50 select-none rounded-xl bg-white p-3 font-sans text-xs dark:bg-gray-900",
         {
           // position states
           "bottom-10 left-1/2 flex -translate-x-1/2": position === "bottom",
@@ -59,26 +72,29 @@ export const Controls: React.FC<ControlsProps> = ({
     >
       <div className="flex flex-col gap-4">
         {R.keys(options).map((key, index) => {
-          const { type, value, ...rest } = options[key];
+          const { label, type, value, ...rest } = options[key];
 
-          if (type === "number") {
-            return (
-              <div
-                className="flex flex-row place-content-around items-center gap-2"
-                key={index}
-              >
-                <span className="uppercase">{key}</span>
+          return (
+            <div
+              className="flex  flex-row place-content-between items-center gap-5"
+              key={index}
+            >
+              <span className="first-letter:uppercase">{label}</span>
+              {type === "checkbox" && (
                 <input
-                  className="w-1/2 rounded-lg border-none bg-slate-200 p-1 outline-none dark:bg-gray-800"
+                  checked={value}
+                  onChange={(event) => {
+                    handleUpdate(key, event.target.checked);
+                  }}
+                  type="checkbox"
+                />
+              )}
+              {type === "number" && (
+                <input
+                  className="w-1/3 rounded-lg border-none bg-slate-200 p-1 outline-none dark:bg-gray-800"
                   defaultValue={value}
                   onChange={(event) => {
-                    onUpdate({
-                      ...options,
-                      [key]: {
-                        ...options[key],
-                        value: event.target.value,
-                      },
-                    });
+                    handleUpdate(key, event.target.value);
                   }}
                   type="number"
                   {...{
@@ -87,9 +103,9 @@ export const Controls: React.FC<ControlsProps> = ({
                     ...(rest.step && { step: rest.step }),
                   }}
                 />
-              </div>
-            );
-          }
+              )}
+            </div>
+          );
 
           return <>Unknown type</>;
         })}

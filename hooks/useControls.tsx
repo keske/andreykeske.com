@@ -41,8 +41,8 @@ export const useControls = (
 
         return {
           [key]: {
-            label: key,
-            type: "number",
+            label: key.replace(/([0-9A-Z])/g, " $&").toLowerCase(),
+            type: typeof obj.value === "number" ? "number" : "checkbox",
             ...(typeof obj === "number"
               ? {
                   value: obj,
