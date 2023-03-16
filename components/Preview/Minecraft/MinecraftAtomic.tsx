@@ -134,7 +134,12 @@ export const MinecraftAtomic: React.FC = () => {
 
   return (
     <div className="h-screen w-screen">
-      <Canvas className="h-full w-full">
+      <Canvas
+        camera={{
+          position: [3, 2, 7],
+        }}
+        className="h-full w-full"
+      >
         <React.Suspense fallback={null}>
           <OrbitControls />
           {renderBiom}
@@ -146,11 +151,16 @@ export const MinecraftAtomic: React.FC = () => {
           <div className="flex w-full flex-col items-center gap-2">
             <h3>Atomic Minecraft</h3>
             <small className="w-1/2 text-center">
-              Atomic Minecraft is a world created with the blocs as the basic
-              structure where inside of each of them are atoms exist. In this
-              world, atoms play the main role where their amount affects the
-              material of the block. More atoms mean that the block is strong
-              and heavy. Actually, like electrons in the real world.
+              Atomic Minecraft is a world created with blocks as the basic
+              structure, each containing electrons inside just like atoms have
+              electrons in their orbits in the real world. In this world, the
+              electrons play a crucial role, with their arrangement determining
+              the properties of each block.
+            </small>
+            <small className="w-1/2 text-center">
+              Blocks with more electrons are typically stronger and heavier,
+              just as atoms with more electrons tend to be more reactive and
+              have higher atomic numbers.
             </small>
             <time dateTime="2022">2022</time>
           </div>

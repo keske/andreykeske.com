@@ -7,7 +7,9 @@ import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
 
 export const Minecraft: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs();
+  const { renderTabs, renderTabsBody } = useTabs({
+    initialIndex: 1,
+  });
 
   return (
     <>
