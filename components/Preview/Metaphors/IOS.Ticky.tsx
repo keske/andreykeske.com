@@ -1,15 +1,14 @@
 import React from "react";
 
-import { UploadcareImage, WorkDetails } from "@/components/index";
+import { WorkDetails } from "@/components/index";
 
 export const IOSTicky: React.FC = () => (
   <div className="flex flex-col items-center gap-20 pt-56 pb-20">
-    <div className="sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/5">
-      <UploadcareImage
-        alt="Side view"
-        src="https://ucarecdn.com/d2236b35-bc6a-4e03-a56d-adf3a5d5402e/"
-      />
-    </div>
+    <img
+      alt="Side view"
+      className="sm:w-1/2 md:w-1/4 lg:w-1/5 xl:w-1/5 2xl:w-1/6"
+      src="/images/ticky/ticky.png"
+    />
     <WorkDetails>
       <div className="flex w-1/2 flex-col gap-2">
         <h3>Ticky</h3>
