@@ -3,5 +3,5 @@
 ## Run
 
 ```bash
-$ yarn && yarn dev
+$ yarn && turbo dev
 ```
