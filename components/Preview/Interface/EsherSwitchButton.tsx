@@ -164,6 +164,7 @@ export const EsherSwitchButton: React.FC = () => {
             {R.range(0, 8).map((col) => (
               <Switch
                 handleClick={handleClick}
+                key={col}
                 level={row % 2 ? col : 8 - col}
                 on={row % 2 ? !on : on}
               />
