@@ -1,6 +1,7 @@
 import React from "react";
 
 import { AR } from "./AR";
+import { CrumpledNewspaper } from "./CrumpledNewspaper";
 import { Crypto } from "./Crypto";
 import { Emojies } from "./Emojies";
 import { IOS } from "./IOS";
@@ -19,11 +20,20 @@ export const Metaphors: React.FC = () => {
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["AR", "Crypto", "Emojies", "IOS", "Mac OS", "Maps"])}
+          {renderTabs([
+            "AR",
+            "Crumpled Newspaper",
+            "Crypto",
+            "Emojies",
+            "IOS",
+            "Mac OS",
+            "Maps",
+          ])}
         </div>
       </WorkDetails>
       {renderTabsBody([
         <AR />,
+        <CrumpledNewspaper />,
         <Crypto />,
         <Emojies />,
         <IOS />,
