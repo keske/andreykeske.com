@@ -17,7 +17,7 @@ info  - Generating static pages (3/3)
 info  - Finalizing page optimization...
 
 Route (pages)                              Size     First Load JS
-┌ ○ / (658 ms)                             340 kB          419 kB
+┌ ○ / (664 ms)                             340 kB          419 kB
 ├   /_app                                  0 B            78.9 kB
 ├ ○ /404                                   182 B          79.1 kB
 └ λ /api/hello                             0 B            78.9 kB
@@ -31,4 +31,4 @@ Route (pages)                              Size     First Load JS
 λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
 
-Done in 17.54s.
+Done in 16.79s.
