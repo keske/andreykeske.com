@@ -2,7 +2,7 @@ import * as R from "ramda";
 import React from "react";
 import { DoubleSide, FrontSide, Group, Vector4 } from "three";
 
-import { Nurbs } from "@/components/NURBS";
+import { NURBS } from "@/components/index";
 
 type NURBSCubeProps = JSX.IntrinsicElements["group"] & {
   map: {
@@ -450,7 +450,7 @@ export const NURBSCube = React.forwardRef<Group, NURBSCubeProps>(
     return (
       <group {...rest} ref={ref}>
         {R.values(net).map((obj, index) => (
-          <Nurbs
+          <NURBS
             {...obj}
             key={index}
             side={transparent ? DoubleSide : FrontSide}

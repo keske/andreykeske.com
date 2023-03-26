@@ -2,6 +2,8 @@
 export * from "./3D";
 
 // NURBS Helpers
+export * from "./NURBS";
+export * from "./NURBSVideo";
 export * from "./NURBSCube/NURBSCube";
 export * from "./NURBSCube/NURBSCube.Dirt";
 export * from "./NURBSCube/NURBSCube.Glass";

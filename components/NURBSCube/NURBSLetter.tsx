@@ -1,7 +1,7 @@
 import React from "react";
 import * as THREE from "three";
 
-import { Nurbs } from "@/components/NURBS";
+import { NURBS } from "@/components/index";
 
 type NURBSLetterProps = {
   url: string;
@@ -119,5 +119,5 @@ export const NURBSLetter: React.FC<NURBSLetterProps> = ({ url, warpRatio }) => {
     getRightEdgeOfFrontFace,
   ];
 
-  return <Nurbs nsControlPoints={nsControlPoints} url={url} />;
+  return <NURBS nsControlPoints={nsControlPoints} url={url} />;
 };

@@ -4,7 +4,7 @@ import * as R from "ramda";
 import React from "react";
 import * as THREE from "three";
 
-import { Nurbs } from "../../NURBSVideo";
+import { NURBSVideo } from "@/components/index";
 
 type PaneProps = {
   url: string;
@@ -124,7 +124,11 @@ const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
   ];
 
   return (
-    <Nurbs nsControlPoints={nsControlPoints} url={url} videoRef={videoRef} />
+    <NURBSVideo
+      nsControlPoints={nsControlPoints}
+      url={url}
+      videoRef={videoRef}
+    />
   );
 };
 
