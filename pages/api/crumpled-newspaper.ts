@@ -15,7 +15,7 @@ export default async function handler(
 
   const randomId = Math.random().toString(36).substring(2, 15);
 
-  const imagePath = `./screenshot-${randomId}.jpg`;
+  const imagePath = `/tmp/screenshot-${randomId}.jpg`;
 
   const getScreenshot = async () => {
     console.log("Get screenshot", new Date());
