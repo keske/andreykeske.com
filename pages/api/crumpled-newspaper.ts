@@ -2,7 +2,6 @@ import chromium from "chrome-aws-lambda";
 import { NextApiRequest, NextApiResponse } from "next";
 
 import fs from "fs";
-import path from "path";
 
 export default async function handler(
   req: NextApiRequest,
@@ -73,7 +72,7 @@ export default async function handler(
     }
 
     console.log("Before setviewpost", new Date());
-    await page.setViewport({ height: 10, width: 10 });
+    await page.setViewport({ height: 300, width: 300 });
 
     console.log("Before screenshot", new Date());
     await page.screenshot({
@@ -86,22 +85,7 @@ export default async function handler(
 
   await getScreenshot();
 
-  console.log("Before read file sync", new Date());
   const img = fs.readFileSync(imagePath);
-
-  console.log("Before path.join", new Date());
-  // const filePath = path.join(process.cwd(), imagePath);
-
-  // console.log("Before unlink", new Date());
-  // fs.unlink(filePath, (err) => {
-  //   if (err) {
-  //     throw err;
-  //   }
-
-  //   console.log("File deleted successfully.");
-  // });
-
-  console.log("Before write head", new Date());
 
   res.writeHead(200, { "Content-Type": "image/jpeg" });
   res.end(img, "binary");
