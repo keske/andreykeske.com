@@ -8,6 +8,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
+  console.log("Start", new Date());
+
+  console.log("Init chronium path", new Date());
   const executablePath = await chromium.executablePath;
 
   const randomId = Math.random().toString(36).substring(2, 15);
@@ -15,6 +18,7 @@ export default async function handler(
   const imagePath = `public/images/sites/screenshot-${randomId}.jpg`;
 
   const getScreenshot = async () => {
+    console.log("Get screenshot", new Date());
     const browser = await chromium.puppeteer.launch({
       args: [
         ...chromium.args,
@@ -58,25 +62,33 @@ export default async function handler(
       headless: true,
     });
 
+    console.log("Before new page", new Date());
     const page = await browser.newPage();
 
+    console.log("Before page.goto", new Date());
     await page.goto(req.body.url, { waitUntil: "networkidle2" });
 
+    console.log("Before setviewpost", new Date());
     await page.setViewport({ height: 768, width: 768 });
 
+    console.log("Before screenshot", new Date());
     await page.screenshot({
       path: imagePath,
     });
 
+    console.log("Before close", new Date());
     await browser.close();
   };
 
   await getScreenshot();
 
+  console.log("Before read file sync", new Date());
   const img = fs.readFileSync(imagePath);
 
+  console.log("Before path.join", new Date());
   const filePath = path.join(process.cwd(), imagePath);
 
+  console.log("Before unlink", new Date());
   fs.unlink(filePath, (err) => {
     if (err) {
       throw err;
@@ -84,6 +96,8 @@ export default async function handler(
 
     console.log("File deleted successfully.");
   });
+
+  console.log("Before write head", new Date());
 
   res.writeHead(200, { "Content-Type": "image/jpeg" });
   res.end(img, "binary");
