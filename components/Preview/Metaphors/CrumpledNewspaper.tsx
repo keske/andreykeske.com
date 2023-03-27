@@ -74,24 +74,26 @@ export const CrumpledNewspaper: React.FC = () => {
               <OrbitControls />
               {renderNURBS}
             </Canvas>
-            <WorkDetails>
-              <div className="absolute bottom-10 left-1/2 z-50 flex -translate-x-1/2 select-none gap-2 rounded-xl bg-white p-3 font-sans text-xs dark:bg-gray-900">
-                <input
-                  className="rounded-lg border-none bg-slate-200 p-1 outline-none dark:bg-gray-800"
-                  defaultValue={url}
-                  onChange={handleChange}
-                  type="text"
-                />
-                <Button
-                  disabled={isFetching}
-                  onClick={handleClick}
-                  size="xs"
-                  variant="secondary"
-                >
-                  Go
-                </Button>
-              </div>
-            </WorkDetails>
+            <div className="hidden">
+              <WorkDetails>
+                <div className="absolute bottom-10 left-1/2 z-50 flex -translate-x-1/2 select-none gap-2 rounded-xl bg-white p-3 font-sans text-xs dark:bg-gray-900">
+                  <input
+                    className="rounded-lg border-none bg-slate-200 p-1 outline-none dark:bg-gray-800"
+                    defaultValue={url}
+                    onChange={handleChange}
+                    type="text"
+                  />
+                  <Button
+                    disabled={isFetching}
+                    onClick={handleClick}
+                    size="xs"
+                    variant="secondary"
+                  >
+                    Go
+                  </Button>
+                </div>
+              </WorkDetails>
+            </div>
           </div>
         </div>
       </div>
