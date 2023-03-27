@@ -25,7 +25,7 @@ export default async function handler(
 
     await page.goto(req.body.url);
 
-    await page.setViewport({ height: 1024, width: 1080 });
+    await page.setViewport({ height: 768, width: 768 });
 
     await page.screenshot({
       path: imagePath,
