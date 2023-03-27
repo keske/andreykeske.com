@@ -90,16 +90,16 @@ export default async function handler(
   const img = fs.readFileSync(imagePath);
 
   console.log("Before path.join", new Date());
-  const filePath = path.join(process.cwd(), imagePath);
+  // const filePath = path.join(process.cwd(), imagePath);
 
-  console.log("Before unlink", new Date());
-  fs.unlink(filePath, (err) => {
-    if (err) {
-      throw err;
-    }
+  // console.log("Before unlink", new Date());
+  // fs.unlink(filePath, (err) => {
+  //   if (err) {
+  //     throw err;
+  //   }
 
-    console.log("File deleted successfully.");
-  });
+  //   console.log("File deleted successfully.");
+  // });
 
   console.log("Before write head", new Date());
 
