@@ -62,6 +62,10 @@ export const Button = React.forwardRef(
             "inline-block": as === "a",
             "pointer-events-none": as === "a" && disabled,
           },
+          {
+            // `disabled` styles
+            "opacity-50": disabled,
+          },
         ),
         ref,
         type,

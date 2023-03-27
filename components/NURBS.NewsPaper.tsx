@@ -72,10 +72,17 @@ export const NURBSNewsPaper: React.FC<Props> = ({
   );
 
   React.useEffect(() => {
+    if (material?.map) {
+      material.map.repeat.x = -1;
+    }
+  }, [material]);
+
+  React.useEffect(() => {
     if (map && url) {
+      map.anisotropy = 32;
+
       map.wrapS = THREE.RepeatWrapping;
       map.wrapT = THREE.RepeatWrapping;
-      map.anisotropy = 32;
     }
   }, [map, url]);
 

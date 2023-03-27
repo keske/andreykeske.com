@@ -23,6 +23,7 @@ export * from "./Button";
 export * from "./CloseButton";
 export * from "./Controls";
 export * from "./Head";
+export * from "./Loading";
 export * from "./Logo";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";

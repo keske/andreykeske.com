@@ -27,6 +27,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "next": "13.2.3",
+    "puppeteer": "^19.8.0",
     "ramda": "^0.28.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
