@@ -2,7 +2,6 @@ import React from "react";
 
 import { Cloth } from "./Cloth";
 import { DistortingMirrors } from "./DistortingMirrors";
-import { EsherSwitchButton } from "./EsherSwitchButton";
 import { MandelbrotSet } from "./MandelbrotSet";
 import { SoftVideoPlayer } from "./SoftVideoPlayer";
 
@@ -11,7 +10,7 @@ import { useTabs } from "@/hooks/index";
 
 export const Interface: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 2,
+    initialIndex: 3,
   });
 
   return (
@@ -21,7 +20,6 @@ export const Interface: React.FC = () => {
           {renderTabs([
             "Cloth",
             "Distorting Mirrors",
-            "Esher's Switch Button",
             "Mandelbrot's Set",
             "Soft Video Player",
           ])}
@@ -30,7 +28,6 @@ export const Interface: React.FC = () => {
       {renderTabsBody([
         <Cloth />,
         <DistortingMirrors />,
-        <EsherSwitchButton />,
         <MandelbrotSet />,
         <SoftVideoPlayer />,
       ])}
