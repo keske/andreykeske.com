@@ -1,5 +1,6 @@
+import edgeChromium from "chrome-aws-lambda";
 import { NextApiRequest, NextApiResponse } from "next";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 
 import fs from "fs";
 import path from "path";
@@ -8,12 +9,18 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
+  const executablePath = await edgeChromium.executablePath;
+
   const randomId = Math.random().toString(36).substring(2, 15);
 
   const imagePath = `public/images/sites/screenshot-${randomId}.jpg`;
 
   const getScreenshot = async () => {
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      args: edgeChromium.args,
+      executablePath,
+      headless: false,
+    });
 
     const page = await browser.newPage();
 
