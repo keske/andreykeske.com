@@ -38,7 +38,7 @@ export const Graffiti = () => (
                 className="w-full"
                 src={`/photos/graffiti/${index}.jpg`}
               />
-              <p className="text-black">
+              <p className="text-black dark:text-white">
                 {peace},{" "}
                 <span className="opacity-30">Yekaterinburg, Russia</span>
               </p>
