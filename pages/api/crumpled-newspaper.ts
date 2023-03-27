@@ -66,10 +66,14 @@ export default async function handler(
     const page = await browser.newPage();
 
     console.log("Before page.goto", new Date());
-    await page.goto(req.body.url, { waitUntil: "networkidle2" });
+    try {
+      await page.goto(req.body.url, { waitUntil: "networkidle2" });
+    } catch (error) {
+      console.log("Error", error);
+    }
 
     console.log("Before setviewpost", new Date());
-    await page.setViewport({ height: 768, width: 768 });
+    await page.setViewport({ height: 10, width: 10 });
 
     console.log("Before screenshot", new Date());
     await page.screenshot({
