@@ -1,20 +1,23 @@
 import chromium from "chrome-aws-lambda";
 import { NextApiRequest, NextApiResponse } from "next";
 
-import crypto from "crypto";
 import fs from "fs";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
+  console.log("Start", new Date());
+
+  console.log("Init chronium path", new Date());
   const executablePath = await chromium.executablePath;
 
-  const id = crypto.randomBytes(16).toString("hex");
+  const randomId = Math.random().toString(36).substring(2, 15);
 
-  const imagePath = `/tmp/screenshot-${id}.jpg`;
+  const imagePath = `/tmp/screenshot-${randomId}.jpg`;
 
   const getScreenshot = async () => {
+    console.log("Get screenshot", new Date());
     const browser = await chromium.puppeteer.launch({
       args: [
         ...chromium.args,
@@ -58,12 +61,20 @@ export default async function handler(
       headless: true,
     });
 
+    console.log("Before new page", new Date());
     const page = await browser.newPage();
 
-    await page.goto(req.body.url, { waitUntil: "networkidle2" });
+    console.log("Before page.goto", new Date());
+    try {
+      await page.goto(req.body.url, { waitUntil: "networkidle2" });
+    } catch (error) {
+      console.log("Error", error);
+    }
 
-    await page.setViewport({ height: 1280, width: 1280 });
+    console.log("Before setviewpost", new Date());
+    await page.setViewport({ height: 1024, width: 1024 });
 
+    console.log("Before screenshot", new Date());
     await page.screenshot({
       path: imagePath,
     });
