@@ -79,7 +79,6 @@ export default async function handler(
       path: imagePath,
     });
 
-    console.log("Before close", new Date());
     await browser.close();
   };
 
