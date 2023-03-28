@@ -1,6 +1,7 @@
 import chromium from "chrome-aws-lambda";
 import { NextApiRequest, NextApiResponse } from "next";
 
+import crypto from "crypto";
 import fs from "fs";
 
 export default async function handler(
@@ -9,9 +10,9 @@ export default async function handler(
 ) {
   const executablePath = await chromium.executablePath;
 
-  const randomId = Math.random().toString(36).substring(2, 15);
+  const id = crypto.randomBytes(16).toString("hex");
 
-  const imagePath = `/tmp/screenshot-${randomId}.jpg`;
+  const imagePath = `/tmp/screenshot-${id}.jpg`;
 
   const getScreenshot = async () => {
     const browser = await chromium.puppeteer.launch({
