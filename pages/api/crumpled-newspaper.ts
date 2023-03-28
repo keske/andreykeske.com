@@ -72,7 +72,7 @@ export default async function handler(
     }
 
     console.log("Before setviewpost", new Date());
-    await page.setViewport({ height: 1024, width: 1024 });
+    await page.setViewport({ height: 1280, width: 1280 });
 
     console.log("Before screenshot", new Date());
     await page.screenshot({
