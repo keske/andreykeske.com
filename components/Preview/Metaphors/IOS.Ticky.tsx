@@ -6,7 +6,7 @@ export const IOSTicky: React.FC = () => (
   <div className="flex flex-col items-center gap-20 pt-56 pb-20">
     <img
       alt="Side view"
-      className="sm:w-1/2 md:w-1/4 lg:w-1/5 xl:w-1/5 2xl:w-1/6"
+      className="sm:w-1/2 md:w-1/4 lg:w-1/3 xl:w-1/4 2xl:w-1/6"
       src="/images/ticky/ticky.png"
     />
     <WorkDetails>

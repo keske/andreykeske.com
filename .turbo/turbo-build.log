@@ -9,6 +9,11 @@ warn  - Experimental features are not covered by semver, and may cause unexpecte
 warn  - experimental.outputStandalone has been renamed to "output: 'standalone'", please move the config.
 info  - Linting and checking validity of types...
 warn  - The Next.js plugin was not detected in your ESLint configuration. See https://nextjs.org/docs/basic-features/eslint#migrating-existing-config
+
+./components/Loading.tsx
+1:8  Warning: 'clsx' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
 info  - Creating an optimized production build...
 info  - Compiled successfully
 info  - Collecting page data...
@@ -17,18 +22,18 @@ info  - Generating static pages (3/3)
 info  - Finalizing page optimization...
 
 Route (pages)                              Size     First Load JS
-┌ ○ / (664 ms)                             340 kB          419 kB
+┌ ○ / (755 ms)                             341 kB          419 kB
 ├   /_app                                  0 B            78.9 kB
 ├ ○ /404                                   182 B          79.1 kB
-└ λ /api/hello                             0 B            78.9 kB
+└ λ /api/crumpled-newspaper                0 B            78.9 kB
 + First Load JS shared by all              83.2 kB
   ├ chunks/framework-2bb1844fb22814b3.js   45.2 kB
   ├ chunks/main-0c597b21730512df.js        27 kB
   ├ chunks/pages/_app-d8913d011b7a2d13.js  5.93 kB
   ├ chunks/webpack-ee7e63bc15b31913.js     815 B
-  └ css/58e53c8c1ab59729.css               4.22 kB
+  └ css/a73538f4cd08977e.css               4.23 kB
 
 λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
 
-Done in 16.79s.
+Done in 33.32s.

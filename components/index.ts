@@ -3,7 +3,6 @@ export * from "./3D";
 
 // NURBS Helpers
 export * from "./NURBS";
-export * from "./NURBS.NewsPaper";
 export * from "./NURBS.Video";
 export * from "./NURBSCube/NURBSCube";
 export * from "./NURBSCube/NURBSCube.Dirt";

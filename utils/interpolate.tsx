@@ -1,25 +1,11 @@
 export const interpolate = (
-  xarr: readonly number[],
-  yarr: readonly number[],
-  xpoint: number,
-) => {
-  const xa = [...xarr].reverse().find((x) => x <= xpoint);
+  from: readonly number[],
+  to: readonly number[],
+  x: number,
+): number => {
+  const [x1, x2] = from;
 
-  const xb = xarr.find((x) => x >= xpoint);
+  const [y1, y2] = to;
 
-  if (!xa) {
-    return yarr[0];
-  }
-
-  if (!xb) {
-    return yarr[1];
-  }
-
-  const ya = yarr[xarr.indexOf(xa)];
-
-  const yb = yarr[xarr.indexOf(xb)];
-
-  return (
-    yarr[xarr.indexOf(xpoint)] || ya + ((xpoint - xa) * (yb - ya)) / (xb - xa)
-  );
+  return y1 + ((x - x1) * (y2 - y1)) / (x2 - x1);
 };
