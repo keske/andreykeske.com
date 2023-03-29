@@ -121,7 +121,7 @@ export const NURBSNewsPaper: React.FC<NURBSNewsPaperProps> = ({
 export const CrumpledNewspaper: React.FC = () => {
   const blurOverlayValue = useScrollInterpolation(0, 10, 0);
 
-  const canvasWrapperOpacityValue = useScrollInterpolation(1, 0.2, 1);
+  const canvasWrapperOpacityValue = useScrollInterpolation(1, 0.1, 1);
 
   const controlsOpacityValue = useScrollInterpolation(1, -1, 1);
 
