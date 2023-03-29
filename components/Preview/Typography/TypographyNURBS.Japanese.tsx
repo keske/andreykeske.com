@@ -91,70 +91,66 @@ export const NURBSLetter: React.FC<NURBSLetterProps> = ({
   );
 };
 
-export const TypographyNURBSJapanese: React.FC = () => {
-  console.log();
-
-  return (
-    <>
-      <div className="fixed top-0 left-0 h-screen w-screen">
-        <Canvas className="h-screen w-screen bg-[#b31515]">
-          <React.Suspense fallback={null}>
-            <PerspectiveCamera fov={35} makeDefault position={[0, 0, 30]} />
-            <OrbitControls />
-            <ambientLight intensity={0.7} />
-            <spotLight
-              angle={Math.PI / 6}
-              intensity={1.1}
-              position={[0, 20, 30]}
-            />
-            <group position={[0, 2, 0]}>
-              <group position={[2.7, 2.7, 0]}>
-                <NURBSLetter url="images/japanese-poetry/古.png" />
-              </group>
-              <group position={[2.7, 0, 0]}>
-                <NURBSLetter url="images/japanese-poetry/池.png" />
-              </group>
-              <group position={[2.7, -2.7, 0]}>
-                <NURBSLetter url="images/japanese-poetry/や.png" />
-              </group>
-
-              <group position={[0, 2.7, 0]}>
-                <NURBSLetter url="images/japanese-poetry/蛙.png" />
-              </group>
-              <group position={[0, 0, 0]}>
-                <NURBSLetter url="images/japanese-poetry/飛.png" />
-              </group>
-              <group position={[0, -2.7, 0]}>
-                <NURBSLetter url="images/japanese-poetry/び.png" />
-              </group>
-              <group position={[0, -5.4, 0]}>
-                <NURBSLetter url="images/japanese-poetry/込.png" />
-              </group>
-              <group position={[0, -8.1, 0]}>
-                <NURBSLetter url="images/japanese-poetry/む.png" />
-              </group>
-
-              <group position={[-2.7, 2.7, 0]}>
-                <NURBSLetter url="images/japanese-poetry/水.png" />
-              </group>
-              <group position={[-2.7, 0, 0]}>
-                <NURBSLetter url="images/japanese-poetry/の.png" />
-              </group>
-              <group position={[-2.7, -2.7, 0]}>
-                <NURBSLetter url="images/japanese-poetry/音.png" />
-              </group>
+export const TypographyNURBSJapanese: React.FC = () => (
+  <>
+    <div className="fixed top-0 left-0 h-screen w-screen">
+      <Canvas className="h-screen w-screen bg-[#b31515]">
+        <React.Suspense fallback={null}>
+          <PerspectiveCamera fov={35} makeDefault position={[0, 0, 30]} />
+          <OrbitControls />
+          <ambientLight intensity={0.7} />
+          <spotLight
+            angle={Math.PI / 6}
+            intensity={1.1}
+            position={[0, 20, 30]}
+          />
+          <group position={[0, 2, 0]}>
+            <group position={[2.7, 2.7, 0]}>
+              <NURBSLetter url="images/japanese-poetry/古.png" />
             </group>
-          </React.Suspense>
-        </Canvas>
+            <group position={[2.7, 0, 0]}>
+              <NURBSLetter url="images/japanese-poetry/池.png" />
+            </group>
+            <group position={[2.7, -2.7, 0]}>
+              <NURBSLetter url="images/japanese-poetry/や.png" />
+            </group>
+
+            <group position={[0, 2.7, 0]}>
+              <NURBSLetter url="images/japanese-poetry/蛙.png" />
+            </group>
+            <group position={[0, 0, 0]}>
+              <NURBSLetter url="images/japanese-poetry/飛.png" />
+            </group>
+            <group position={[0, -2.7, 0]}>
+              <NURBSLetter url="images/japanese-poetry/び.png" />
+            </group>
+            <group position={[0, -5.4, 0]}>
+              <NURBSLetter url="images/japanese-poetry/込.png" />
+            </group>
+            <group position={[0, -8.1, 0]}>
+              <NURBSLetter url="images/japanese-poetry/む.png" />
+            </group>
+
+            <group position={[-2.7, 2.7, 0]}>
+              <NURBSLetter url="images/japanese-poetry/水.png" />
+            </group>
+            <group position={[-2.7, 0, 0]}>
+              <NURBSLetter url="images/japanese-poetry/の.png" />
+            </group>
+            <group position={[-2.7, -2.7, 0]}>
+              <NURBSLetter url="images/japanese-poetry/音.png" />
+            </group>
+          </group>
+        </React.Suspense>
+      </Canvas>
+    </div>
+    <div className="pointer-events-none fixed z-20 flex h-screen w-screen items-center justify-center">
+      <div className="flex flex-col border border-white py-2 px-3 text-white">
+        <span>芭</span>
+        <span>蕉</span>
+        <span>松</span>
+        <span>尾</span>
       </div>
-      <div className="pointer-events-none fixed z-20 flex h-screen w-screen items-center justify-center">
-        <div className="flex flex-col border border-white py-2 px-3 text-white">
-          <span>芭</span>
-          <span>蕉</span>
-          <span>松</span>
-          <span>尾</span>
-        </div>
-      </div>
-    </>
-  );
-};
+    </div>
+  </>
+);
