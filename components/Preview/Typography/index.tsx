@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TypographyNURBS } from "./TypographyNURBS";
+import { TypographyNURBSJapanese } from "./TypographyNURBS.Japanese";
 
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
@@ -15,7 +15,7 @@ export const Typography: React.FC = () => {
           {renderTabs(["NURBS"])}
         </div>
       </WorkDetails>
-      {renderTabsBody([<TypographyNURBS />])}
+      {renderTabsBody([<TypographyNURBSJapanese />])}
     </>
   );
 };
