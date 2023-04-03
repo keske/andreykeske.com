@@ -13,81 +13,124 @@ import {
   Mesh,
   Quaternion,
   Vector3,
-  Vector4,
 } from "three";
 
-import { NURBS } from "@/components/index";
-// import { useNSControlPoints, useScrollInterpolation } from "@/hooks/index";
+type LoopOverInstancedBufferAttributeProps = {
+  buffer: InstancedBufferAttribute | undefined;
+  children: (props: LoopOverInstancedBufferAttributeChildProps) => JSX.Element;
+};
 
-export const useNSControlPoints = () => {
-  const getControlPoints = React.useCallback(() => {
-    const controlPoints: THREE.Vector4[][] = [];
+type LoopOverInstancedBufferAttributeChildProps = {
+  key: number;
+  position: Vector3;
+  rotation: Euler;
+  scale: Vector3;
+};
 
-    const radius = 4;
+function LoopOverInstancedBufferAttribute({
+  buffer,
+  children,
+}: LoopOverInstancedBufferAttributeProps) {
+  const [matrix] = React.useState(() => new Matrix4());
 
-    const tubeRadius = 1;
+  return buffer ? (
+    <>
+      {[...new Array(buffer.count)].map((_, i) => {
+        const position = new Vector3();
 
-    const numSegments = 64;
+        const quaternion = new Quaternion();
 
-    const numTubeSegments = 8;
+        const rotation = new Euler();
 
-    const angleDelta = (2 * Math.PI) / numSegments;
+        const scale = new Vector3();
 
-    const tubeAngleDelta = (2 * Math.PI) / numTubeSegments;
+        matrix.fromArray(buffer.array, i * 16);
+        matrix.decompose(position, quaternion, scale);
+        rotation.setFromQuaternion(quaternion);
 
-    for (let i = 0; i <= numSegments; i++) {
-      const angle = i * angleDelta;
+        console.log("rotation", rotation);
 
-      const x = Math.cos(angle) * (radius + tubeRadius * Math.cos(angle * 0.5));
+        const childProps: LoopOverInstancedBufferAttributeChildProps = {
+          key: i,
+          position,
+          rotation,
+          scale,
+        };
 
-      const y = Math.sin(angle) * (radius + tubeRadius * Math.cos(angle * 0.5));
+        return children(childProps);
+      })}
+    </>
+  ) : null;
+}
 
-      const z = tubeRadius * Math.sin(angle * 0.5);
+const Model: React.FC = () => {
+  const ref = React.useRef<any>();
 
-      const row: THREE.Vector4[] = [];
+  const [texture] = useTexture(["textures/minecraft/dirt-bottom.png"]);
 
-      for (let j = 0; j <= numTubeSegments; j++) {
-        const tubeAngle = j * tubeAngleDelta;
+  const transform = React.useCallback(
+    ({
+      dummy,
+      normal,
+      position,
+    }: {
+      dummy: any;
+      normal: any;
+      position: any;
+    }) => {
+      const p = new Vector3();
 
-        const cosTubeAngle = Math.cos(tubeAngle);
+      p.copy(position);
 
-        const sinTubeAngle = Math.sin(tubeAngle);
+      const r = new Euler();
 
-        const cx = x + tubeRadius * cosTubeAngle * Math.cos(angle);
+      r.x = Math.random() * Math.PI;
 
-        const cy = y + tubeRadius * cosTubeAngle * Math.sin(angle);
+      dummy.position.copy(position);
+      dummy.rotation.copy(r);
+      dummy.lookAt(p.add(normal));
+    },
+    [],
+  );
 
-        const cz = z + tubeRadius * sinTubeAngle;
+  const bufferAttribute = useSurfaceSampler(ref, 200, transform);
 
-        const w = 1;
-
-        row.push(new Vector4(cx, cy, cz, w));
-      }
-
-      controlPoints.push(row);
-    }
-
-    return controlPoints;
-  }, []);
-
-  console.log(getControlPoints());
-
-  return getControlPoints();
+  return (
+    <>
+      <mesh ref={ref}>
+        {/* <torusKnotGeometry args={[20, 1.3, 300, 2, 2, 1]} /> */}
+        <sphereGeometry args={[10, 10, 10, 1]} />
+        <meshPhongMaterial color={0xffffff} />
+      </mesh>
+      <LoopOverInstancedBufferAttribute buffer={bufferAttribute}>
+        {({ ...props }) => (
+          <Decal mesh={ref} {...props}>
+            <meshPhysicalMaterial
+              alphaTest={0}
+              depthTest={false}
+              map={texture}
+              polygonOffset={true}
+              polygonOffsetFactor={-10}
+              roughness={0.2}
+              transparent
+            />
+          </Decal>
+        )}
+      </LoopOverInstancedBufferAttribute>
+    </>
+  );
 };
 
 export function Test() {
   console.log("");
-  const nsControlPoints = useNSControlPoints();
-
-  const [imageUrl, setImageUrl] = React.useState("images/new-yorker.png");
 
   return (
     <div className="h-screen w-screen">
-      <Canvas camera={{ position: [0, 0, 10] }}>
+      <Canvas camera={{ position: [0, 0, 50] }}>
         <ambientLight intensity={0.3} />
         <spotLight position={[10, 10, 30]} />
         <OrbitControls />
-        <NURBS nsControlPoints={nsControlPoints} url={imageUrl} />
+        <Model />
       </Canvas>
     </div>
   );
