@@ -2,6 +2,7 @@ import React from "react";
 
 import { Contacts } from "./Contacts";
 import { Description } from "./Description";
+import { Test } from "./Test";
 
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
@@ -13,10 +14,10 @@ export const About: React.FC = () => {
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Description", "Contacts"])}
+          {renderTabs(["Test", "Description", "Contacts"])}
         </div>
       </WorkDetails>
-      {renderTabsBody([<Description />, <Contacts />])}
+      {renderTabsBody([<Test />, <Description />, <Contacts />])}
     </>
   );
 };
