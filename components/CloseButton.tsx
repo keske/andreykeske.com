@@ -51,7 +51,7 @@ export const CloseButton: React.FC<CloseButtonProps> = ({
         <Button
           {...props}
           className={clsx(
-            "fixed top-7 right-7 z-50 p-3 font-black text-black hover:opacity-80 dark:text-white",
+            "fixed right-7 top-7 z-50 p-3 font-black text-black hover:opacity-80 dark:text-white",
             isShowing ? "opacity-100" : "opacity-0",
           )}
           onClick={onClick}

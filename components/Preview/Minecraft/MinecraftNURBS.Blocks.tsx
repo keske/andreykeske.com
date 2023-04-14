@@ -56,10 +56,10 @@ export const MinecraftNURBSBlocks: React.FC = () => {
       <div className="absolute left-1/2 h-1/3 w-1/2" ref={topRight} />
       <div className="absolute top-1/3 h-1/3 w-1/3" ref={middleLeft} />
       <div
-        className="absolute top-1/3 left-1/3 h-1/3 w-1/3"
+        className="absolute left-1/3 top-1/3 h-1/3 w-1/3"
         ref={middleCenter}
       />
-      <div className="absolute top-1/3 right-0 h-1/3 w-1/3" ref={middleRight} />
+      <div className="absolute right-0 top-1/3 h-1/3 w-1/3" ref={middleRight} />
       <div className="absolute bottom-0 h-1/3 w-1/4" ref={bottomOne} />
       <div className="absolute bottom-0 left-1/4 h-1/3 w-1/4" ref={bottomTwo} />
       <div

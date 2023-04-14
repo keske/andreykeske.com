@@ -38,7 +38,7 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
 
 export const Installations: React.FC = () => (
   <>
-    <div className="fixed top-0 left-0 h-full w-screen overflow-hidden">
+    <div className="fixed left-0 top-0 h-full w-screen overflow-hidden">
       <Scene />
     </div>
     <div className="relative z-10 w-screen py-40">
@@ -56,7 +56,7 @@ export const Installations: React.FC = () => (
           />
         </div>
       </div>
-      <p className="fixed right-10 bottom-10 text-right text-white">
+      <p className="fixed bottom-10 right-10 text-right text-white">
         Street installation
         <br />
         The water filter in an unusual situation

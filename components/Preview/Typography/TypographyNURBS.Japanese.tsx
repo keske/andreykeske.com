@@ -1,6 +1,5 @@
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import * as R from "ramda";
 import React from "react";
 import * as THREE from "three";
 
@@ -93,7 +92,7 @@ export const NURBSLetter: React.FC<NURBSLetterProps> = ({
 
 export const TypographyNURBSJapanese: React.FC = () => (
   <>
-    <div className="fixed top-0 left-0 h-screen w-screen">
+    <div className="fixed left-0 top-0 h-screen w-screen">
       <Canvas className="h-screen w-screen bg-[#b31515]">
         <React.Suspense fallback={null}>
           <PerspectiveCamera fov={35} makeDefault position={[0, 0, 30]} />
@@ -145,7 +144,7 @@ export const TypographyNURBSJapanese: React.FC = () => (
       </Canvas>
     </div>
     <div className="pointer-events-none fixed z-20 flex h-screen w-screen items-center justify-center">
-      <div className="flex flex-col border border-white py-2 px-3 text-white">
+      <div className="flex flex-col border border-white px-3 py-2 text-white">
         <span>芭</span>
         <span>蕉</span>
         <span>松</span>

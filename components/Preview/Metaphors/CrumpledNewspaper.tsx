@@ -178,7 +178,7 @@ export const CrumpledNewspaper: React.FC = () => {
     <>
       <Loading isFetching={isFetching} />
       <div
-        className="fixed top-0 left-0 h-screen w-screen"
+        className="fixed left-0 top-0 h-screen w-screen"
         style={{
           opacity: canvasWrapperOpacityValue,
         }}
@@ -190,7 +190,7 @@ export const CrumpledNewspaper: React.FC = () => {
         </Canvas>
       </div>
       <div
-        className="pointer-events-none fixed top-0 left-0 h-screen w-screen"
+        className="pointer-events-none fixed left-0 top-0 h-screen w-screen"
         style={{
           backdropFilter: `blur(${blurOverlayValue}px)`,
         }}
@@ -218,7 +218,7 @@ export const CrumpledNewspaper: React.FC = () => {
       </WorkDetails>
       <WorkDetails>
         <div
-          className="fixed top-40 left-1/2 z-20 flex -translate-x-1/2 select-none gap-2 rounded-3xl bg-gray-200 p-3 font-sans text-xs dark:bg-gray-800"
+          className="fixed left-1/2 top-40 z-20 flex -translate-x-1/2 select-none gap-2 rounded-3xl bg-gray-200 p-3 font-sans text-xs dark:bg-gray-800"
           style={{
             opacity: controlsOpacityValue,
           }}

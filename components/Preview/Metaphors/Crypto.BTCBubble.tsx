@@ -100,7 +100,7 @@ export const CryptoBTCBubble: React.FC = () => {
   return (
     <>
       <div
-        className="fixed top-0 left-0 flex h-screen w-screen flex-col items-center"
+        className="fixed left-0 top-0 flex h-screen w-screen flex-col items-center"
         style={{
           opacity: canvasWrapperOpacityValue,
         }}
@@ -121,7 +121,7 @@ export const CryptoBTCBubble: React.FC = () => {
         </Canvas>
       </div>
       <div
-        className="pointer-events-none fixed top-0 left-0 h-screen w-screen"
+        className="pointer-events-none fixed left-0 top-0 h-screen w-screen"
         style={{
           backdropFilter: `blur(${blurOverlayValue}px)`,
         }}

@@ -13,7 +13,7 @@ export const MapsGlobalization: React.FC = () => (
       title="Globalization"
     />
     <WorkDetails>
-      <div className="absolute right-10 bottom-10">
+      <div className="absolute bottom-10 right-10">
         <p>The world when the boundaries are blurred</p>
       </div>
     </WorkDetails>

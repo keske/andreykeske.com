@@ -3,13 +3,13 @@ import React from "react";
 import { Button, UploadcareImage, WorkDetails } from "@/components/index";
 
 export const MacOSFinder: React.FC = () => (
-  <div className="flex flex-col gap-20 pt-56 pb-20">
+  <div className="flex flex-col gap-20 pb-20 pt-56">
     <div className="flex w-screen flex-col items-center gap-5">
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
             <video
-              className="absolute top-0 left-0 h-full w-full"
+              className="absolute left-0 top-0 h-full w-full"
               controls
               src="/videos/hydra.mp4"
             />
@@ -55,7 +55,7 @@ export const MacOSFinder: React.FC = () => (
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
             <video
-              className="absolute top-0 left-0 h-full w-full"
+              className="absolute left-0 top-0 h-full w-full"
               controls
               src="/videos/dropbox-to-iCloud.mp4"
             />
@@ -75,7 +75,7 @@ export const MacOSFinder: React.FC = () => (
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
             <video
-              className="absolute top-0 left-0 h-full w-full"
+              className="absolute left-0 top-0 h-full w-full"
               controls
               src="/videos/matryoshka.mp4"
             />
@@ -95,7 +95,7 @@ export const MacOSFinder: React.FC = () => (
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
             <video
-              className="absolute top-0 left-0 h-full w-full"
+              className="absolute left-0 top-0 h-full w-full"
               controls
               src="//player.vimeo.com/video/40102765"
             />
@@ -136,7 +136,7 @@ export const MacOSFinder: React.FC = () => (
         <div className="relative overflow-hidden">
           <div className="relative" style={{ paddingBottom: "56.25%" }}>
             <video
-              className="absolute top-0 left-0 h-full w-full"
+              className="absolute left-0 top-0 h-full w-full"
               controls
               src="//player.vimeo.com/video/40103163"
             />

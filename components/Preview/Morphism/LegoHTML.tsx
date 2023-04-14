@@ -8,7 +8,7 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({ backgroundColor }) => (
   <button
-    className="flex flex-row flex-wrap rounded-2xl border-none py-2 px-4"
+    className="flex flex-row flex-wrap rounded-2xl border-none px-4 py-2"
     style={{
       backgroundColor,
     }}
