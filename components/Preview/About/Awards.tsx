@@ -4,13 +4,13 @@ const awards = [
   {
     platform: {
       link: "https://apps.apple.com/us/app/w1d1/id1497155726",
-      name: "Multipy App of the Day on AppStore",
+      name: "Multiply as App of the Day on the App Store",
     },
     product: {
       link: "https://w1d1.com",
       name: "W1D1",
     },
-    role: "React Native Engineer",
+    role: "CTO",
   },
   {
     platform: {
@@ -21,7 +21,7 @@ const awards = [
       link: "https://www.samara.com",
       name: "Samara",
     },
-    role: "Front End Engineer",
+    role: "Full Stack Engineer",
   },
 ];
 
