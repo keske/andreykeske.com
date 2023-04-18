@@ -27,6 +27,7 @@
     "clsx": "^1.2.1",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "face-api.js": "^0.22.2",
     "next": "13.2.3",
     "puppeteer-core": "6.0.0",
     "ramda": "^0.28.0",

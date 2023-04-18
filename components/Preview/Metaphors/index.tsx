@@ -3,6 +3,7 @@ import React from "react";
 import { AR } from "./AR";
 import { CrumpledNewspaper } from "./CrumpledNewspaper";
 import { Crypto } from "./Crypto";
+import { Duality } from "./Duality";
 import { Emojies } from "./Emojies";
 import { IOS } from "./IOS";
 import { MacOS } from "./MacOS";
@@ -24,6 +25,7 @@ export const Metaphors: React.FC = () => {
             "AR",
             "Crumpled Newspaper",
             "Crypto",
+            "Duality",
             "Emojies",
             "IOS",
             "Mac OS",
@@ -35,6 +37,7 @@ export const Metaphors: React.FC = () => {
         <AR />,
         <CrumpledNewspaper />,
         <Crypto />,
+        <Duality />,
         <Emojies />,
         <IOS />,
         <MacOS />,
