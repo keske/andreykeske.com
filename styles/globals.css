@@ -4,6 +4,7 @@
 
 html,
 body {
+  background-color: #fff;
   margin: 0;
   padding: 0;
 }
@@ -54,6 +55,7 @@ time {
 }
 
 @media (prefers-color-scheme: light) {
+  html,
   body {
     background: #fff;
     color: #000;
@@ -64,6 +66,7 @@ time {
 }
 
 @media (prefers-color-scheme: dark) {
+  html,
   body {
     background: #000;
     color: #fff;

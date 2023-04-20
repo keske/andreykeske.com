@@ -1,8 +1,8 @@
 import React from "react";
 
 type Props = {
-  isFetching: boolean;
+  isLoading?: boolean;
 };
 
-export const Loading: React.FC<Props> = ({ isFetching }) =>
-  isFetching ? <div className="fixed bottom-10 right-10 z-50">🐌</div> : null;
+export const Loading: React.FC<Props> = ({ isLoading = true }) =>
+  isLoading ? <div className="fixed bottom-10 right-10 z-50">🐌</div> : null;

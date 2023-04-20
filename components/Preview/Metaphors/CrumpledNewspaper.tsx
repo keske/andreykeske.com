@@ -176,7 +176,7 @@ export const CrumpledNewspaper: React.FC = () => {
 
   return (
     <>
-      <Loading isFetching={isFetching} />
+      <Loading isLoading={isFetching} />
       <div
         className="fixed left-0 top-0 h-screen w-screen"
         style={{

@@ -2,7 +2,7 @@ import React from "react";
 
 const Mobile: React.FC = () => (
   <>
-    <div className="flex h-screen flex-col  justify-center gap-5 p-10 md:hidden">
+    <div className="flex h-screen flex-col justify-center gap-5 p-10 md:hidden">
       <p>
         Andrey Keske is a digital artist and software engineer with a degree in
         computer science. He began his artistic journey in 2006 by creating

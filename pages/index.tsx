@@ -1,24 +1,23 @@
-import dynamic from "next/dynamic";
+import * as R from "ramda";
 import React from "react";
 
 import type { NextPage } from "next";
 
-import { Head } from "@/components/index";
-
-const Mobile = dynamic(() => import("../components/Mobile"), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-});
+import { Head, Loading } from "@/components/index";
 
 const Home: NextPage = () => {
-  const [isMobile, setIsMobile] = React.useState(false);
+  const [Component, setComponent] = React.useState<React.ReactElement | null>(
+    null,
+  );
+
+  const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
   React.useEffect(() => {
-    setIsMobile(window?.innerWidth <= 768);
-
-    function handleResize() {
+    const handleResize = () => {
       setIsMobile(window?.innerWidth <= 768);
-    }
+    };
+
+    handleResize();
 
     window.addEventListener("resize", handleResize);
 
@@ -27,11 +26,26 @@ const Home: NextPage = () => {
     };
   }, []);
 
+  React.useEffect(() => {
+    (async () => {
+      if (R.not(R.isNil(isMobile))) {
+        if (isMobile) {
+          const Mobile = (await import("../components/Mobile")).default;
+
+          setComponent(<Mobile />);
+        } else {
+          const Desktop = (await import("../components/Desktop")).default;
+
+          setComponent(<Desktop />);
+        }
+      }
+    })();
+  }, [isMobile]);
+
   return (
     <>
       <Head />
-      {isMobile && <Mobile />}
-      <main></main>
+      {Component || <Loading />}
     </>
   );
 };
