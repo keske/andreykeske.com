@@ -13,7 +13,7 @@ export const MapsVintageGoogleStreetView: React.FC = () => (
       title="Vintage Google StreetView"
     />
     <WorkDetails>
-      <div className="absolute right-10 bottom-10">
+      <div className="absolute bottom-10 right-10">
         <p className="text-white">
           Black and white with sepia like old photo card
         </p>

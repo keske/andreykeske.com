@@ -38,7 +38,7 @@ export const Head: React.FC<HeadProps> = ({ disableIndex, ...props }) => {
       <meta content={description} name="description" />
       <meta content={props.imageUrl} name="thumbnail" />
       <meta content={description} name="og:description" />
-      <meta content="Studyverse" name="og:site_name" />
+      <meta content="Andrey Keske" name="og:site_name" />
       <meta content={title} name="og:title" />
       <meta content="website" name="og:type" />
       <meta content={url} name="og:url" />

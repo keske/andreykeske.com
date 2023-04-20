@@ -3,7 +3,7 @@ import React from "react";
 import { UploadcareImage, WorkDetails } from "@/components/index";
 
 export const Emojies: React.FC = () => (
-  <div className="flex flex-col items-center gap-20 pt-56 pb-20">
+  <div className="flex flex-col items-center gap-20 pb-20 pt-56">
     <div className="flex flex-col items-center gap-5">
       <div className="flex flex-row flex-wrap justify-center gap-2">
         <div className="sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/5">
