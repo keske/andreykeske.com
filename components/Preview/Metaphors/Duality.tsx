@@ -72,7 +72,7 @@ export const Duality: React.FC = () => {
 
   return (
     <div>
-      <Loading isFetching={!videoLoaded} />
+      <Loading isLoading={!videoLoaded} />
       <video autoPlay className="hidden" muted ref={videoRef} />
       <div className="flex h-screen w-screen flex-col items-center justify-center gap-10">
         <p
