@@ -4,18 +4,21 @@ import * as R from "ramda";
 import React from "react";
 import * as THREE from "three";
 
-import { NURBSVideo } from "@/components/index";
+import type { VideoRef } from "@/hocs/index";
 
-type PaneProps = {
+import { NURBSVideo } from "@/components/index";
+import { withCameraAccess } from "@/hocs/index";
+
+type MirrorProps = {
   url: string;
-  videoRef: React.RefObject<HTMLVideoElement>;
+  videoRef: VideoRef;
 };
 
 const random =
   // eslint-disable-next-line @typescript-eslint/default-param-last
   (min = 0, max: number) => Math.random() * (max - min) + min;
 
-const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
+const Mirror: React.FC<MirrorProps> = ({ url, videoRef }) => {
   const warpRatio = 10;
 
   const getRandomCoords = React.useCallback(
@@ -132,14 +135,12 @@ const Pane: React.FC<PaneProps> = ({ url, videoRef }) => {
   );
 };
 
-export const DistortingMirrors = () => {
+type RootProps = {
+  videoRef: VideoRef;
+};
+
+const Root: React.FC<RootProps> = ({ videoRef }) => {
   const meshRef = React.useRef<THREE.Mesh>(null!);
-
-  const mediaStreamRef = React.useRef<MediaStream | null>(null);
-
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  const [isCameraReady, setIsCameraReady] = React.useState(false);
 
   const renderMirrors = React.useMemo(
     () => (
@@ -150,59 +151,22 @@ export const DistortingMirrors = () => {
             position={[random(-25, 25), random(-25, 25), index * 0.001]}
             scale={[random(-5, 5), random(-5, 5), random(-5, 5)]}
           >
-            <Pane url="" videoRef={videoRef} />
+            <Mirror url="" videoRef={videoRef} />
           </group>
         ))}
       </mesh>
     ),
-    [],
+    [videoRef],
   );
-
-  React.useEffect(() => {
-    navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
-      if (videoRef.current) {
-        mediaStreamRef.current = stream;
-        videoRef.current.srcObject = stream;
-
-        setIsCameraReady(true);
-      }
-    });
-
-    return () => {
-      if (mediaStreamRef.current) {
-        mediaStreamRef.current
-          .getTracks()
-          .forEach((track: MediaStreamTrack) => {
-            track.stop();
-          });
-      }
-    };
-  }, []);
 
   return (
     <div className="h-screen w-screen">
-      <video
-        autoPlay
-        className="absolute opacity-0"
-        controls
-        loop
-        muted
-        playsInline
-        ref={videoRef}
-      />
-      {isCameraReady ? (
-        <Canvas
-          camera={{ position: [0, 10, 55] }}
-          className="h-screen w-screen"
-        >
-          <OrbitControls enableZoom={false} />
-          {renderMirrors}
-        </Canvas>
-      ) : (
-        <div className="flex h-screen w-screen items-center justify-center text-sm opacity-50">
-          Waiting for the camera access
-        </div>
-      )}
+      <Canvas camera={{ position: [0, 10, 55] }} className="h-screen w-screen">
+        <OrbitControls />
+        {renderMirrors}
+      </Canvas>
     </div>
   );
 };
+
+export const DistortingMirrors = withCameraAccess(Root);
