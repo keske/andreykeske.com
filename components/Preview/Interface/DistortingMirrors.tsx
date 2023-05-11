@@ -139,6 +139,8 @@ export const DistortingMirrors = () => {
 
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
+  const [isCameraReady, setIsCameraReady] = React.useState(false);
+
   const renderMirrors = React.useMemo(
     () => (
       <mesh ref={meshRef}>
@@ -161,6 +163,8 @@ export const DistortingMirrors = () => {
       if (videoRef.current) {
         mediaStreamRef.current = stream;
         videoRef.current.srcObject = stream;
+
+        setIsCameraReady(true);
       }
     });
 
@@ -186,10 +190,19 @@ export const DistortingMirrors = () => {
         playsInline
         ref={videoRef}
       />
-      <Canvas camera={{ position: [0, 10, 55] }} className="h-screen w-screen">
-        <OrbitControls enableZoom={false} />
-        {renderMirrors}
-      </Canvas>
+      {isCameraReady ? (
+        <Canvas
+          camera={{ position: [0, 10, 55] }}
+          className="h-screen w-screen"
+        >
+          <OrbitControls enableZoom={false} />
+          {renderMirrors}
+        </Canvas>
+      ) : (
+        <div className="flex h-screen w-screen items-center justify-center text-sm opacity-50">
+          Waiting for the camera access
+        </div>
+      )}
     </div>
   );
 };

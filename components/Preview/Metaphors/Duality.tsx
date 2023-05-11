@@ -10,7 +10,7 @@ export const Duality: React.FC = () => {
 
   const [hasEyes, setHasEyes] = React.useState(false);
 
-  const [videoLoaded, setVideoLoaded] = React.useState(false);
+  const [isCameraReady, setIsCameraReady] = React.useState(false);
 
   React.useEffect(() => {
     const startVideo = async () => {
@@ -22,7 +22,8 @@ export const Duality: React.FC = () => {
         if (videoRef.current) {
           mediaStreamRef.current = stream;
           videoRef.current.srcObject = stream;
-          setVideoLoaded(true);
+
+          setIsCameraReady(true);
         }
       } catch (error) {
         console.log("error", error);
@@ -72,7 +73,7 @@ export const Duality: React.FC = () => {
 
   return (
     <div>
-      <Loading isLoading={!videoLoaded} />
+      <Loading isLoading={!isCameraReady} />
       <video autoPlay className="hidden" muted ref={videoRef} />
       <div className="flex h-screen w-screen flex-col items-center justify-center gap-10">
         <p
@@ -85,7 +86,11 @@ export const Duality: React.FC = () => {
           Light behaves as a wave and as a particle, depending on the
           circumstances and the effect being observed
         </p>
-        <p className="text-xs opacity-30">Look or not at the camera</p>
+        {isCameraReady ? (
+          <p className="text-xs opacity-30">Look or not at the camera</p>
+        ) : (
+          <p className="text-xs opacity-30">Waiting for the camera access</p>
+        )}
       </div>
     </div>
   );
