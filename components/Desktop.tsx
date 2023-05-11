@@ -16,6 +16,8 @@ const inter = Inter({
 const Desktop: NextPage = () => {
   const router = useRouter();
 
+  const [, startTransition] = React.useTransition();
+
   const { selectedWorkId, setSelectedWorkId } = useListItems();
 
   const [work, setWork] = React.useState<React.ReactElement<
@@ -26,7 +28,9 @@ const Desktop: NextPage = () => {
   const handleShowWork = React.useCallback(
     (id: string) => {
       if (id === selectedWorkId || R.isNil(selectedWorkId)) {
-        setSelectedWorkId(id);
+        startTransition(() => {
+          setSelectedWorkId(id);
+        });
       }
     },
     [selectedWorkId, setSelectedWorkId],
