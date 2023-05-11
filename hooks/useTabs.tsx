@@ -19,12 +19,25 @@ export type UseTabs = {
 };
 
 export const useTabs = (config?: TabsConfig): UseTabs => {
+  const [, startTransition] = React.useTransition();
+
   const [selectedTab, setSelectedTab] = React.useState(
     config?.initialIndex ?? 0,
   );
 
   const isSelected = React.useCallback(
     (index: number) => selectedTab === index,
+    [selectedTab],
+  );
+
+  const handleClick = React.useCallback(
+    (index: number) => {
+      if (index !== selectedTab) {
+        startTransition(() => {
+          setSelectedTab(index);
+        });
+      }
+    },
     [selectedTab],
   );
 
@@ -39,7 +52,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
                 isSelected(index) && "font-black",
               )}
               onClick={() => {
-                setSelectedTab(index);
+                handleClick(index);
               }}
               size="xs"
               {...(!isSelected(index) && { variant: "transparent" })}
@@ -50,7 +63,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
         ))}
       </>
     ),
-    [isSelected],
+    [handleClick, isSelected],
   );
 
   const renderTabsBody = React.useCallback(
