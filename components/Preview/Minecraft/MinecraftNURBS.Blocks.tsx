@@ -70,39 +70,57 @@ export const MinecraftNURBSBlocks: React.FC = () => {
       <Canvas className="h-screen w-screen" eventSource={container}>
         <React.Suspense fallback={null}>
           <View index={1} track={topLeft}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeDirt warpRatio={warpRatio.value} />
           </View>
           <View index={2} track={topRight}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeStone warpRatio={warpRatio.value} />
           </View>
           <View index={3} track={middleLeft}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeSand warpRatio={warpRatio.value} />
           </View>
           <View index={4} track={middleCenter}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeRedStone warpRatio={warpRatio.value} />
           </View>
           <View index={5} track={middleRight}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeLog warpRatio={warpRatio.value} />
           </View>
           <View index={6} track={bottomOne}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeLeaves warpRatio={warpRatio.value} />
           </View>
           <View index={7} track={bottomTwo}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeGlass warpRatio={warpRatio.value} />
           </View>
           <View index={8} track={bottomThree}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeGold warpRatio={warpRatio.value} />
           </View>
           <View index={9} track={bottomFour}>
-            <MinecraftNURBSEnvironment />
+            <MinecraftNURBSEnvironment
+              orbitControlsProps={{ enableRotate: true }}
+            />
             <NURBSCubeLava warpRatio={warpRatio.value} />
           </View>
         </React.Suspense>

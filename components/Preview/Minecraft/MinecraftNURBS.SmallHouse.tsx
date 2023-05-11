@@ -4,7 +4,7 @@ import React from "react";
 
 import { MinecraftNURBSEnvironment } from "./MinecraftNURBS.Environment";
 
-import { NURBSCubeStructureSmallHouse } from "@/components/index";
+import { Loading, NURBSCubeStructureSmallHouse } from "@/components/index";
 import { useControls } from "@/hooks/index";
 import { useListItems } from "@/stores/index";
 
@@ -27,8 +27,12 @@ export const MinecraftNURBSSmallHouse: React.FC = () => {
 
   return (
     <Canvas className="h-full w-full">
-      <React.Suspense fallback={null}>
-        <MinecraftNURBSEnvironment />
+      <React.Suspense fallback={<Loading />}>
+        <MinecraftNURBSEnvironment
+          orbitControlsProps={{
+            enableRotate: true,
+          }}
+        />
         <mesh position={[0, -13, -150]}>
           <NURBSCubeStructureSmallHouse warpRatio={warpRatio.value} />
         </mesh>
