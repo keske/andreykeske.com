@@ -71,7 +71,11 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
       components: Array<
         React.ReactElement<any, React.JSXElementConstructor<any> | string>
       >,
-    ) => React.cloneElement(components[selectedTab]),
+    ) => (
+      <React.Suspense>
+        {React.cloneElement(components[selectedTab])}
+      </React.Suspense>
+    ),
     [selectedTab],
   );
 

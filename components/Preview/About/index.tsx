@@ -1,11 +1,25 @@
 import React from "react";
 
-import { Awards } from "./Awards";
-import { Contacts } from "./Contacts";
-import { Description } from "./Description";
-
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
+
+const Awards = React.lazy(() =>
+  import("./Awards").then((module) => ({
+    default: module.Awards,
+  })),
+);
+
+const Contacts = React.lazy(() =>
+  import("./Contacts").then((module) => ({
+    default: module.Contacts,
+  })),
+);
+
+const Description = React.lazy(() =>
+  import("./Description").then((module) => ({
+    default: module.Description,
+  })),
+);
 
 export const About: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs({

@@ -1,11 +1,25 @@
 import React from "react";
 
-import { Graffiti } from "./Graffiti";
-import { Installations } from "./Installations";
-import { Stickers } from "./Stickers";
-
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
+
+const Graffiti = React.lazy(() =>
+  import("./Graffiti").then((module) => ({
+    default: module.Graffiti,
+  })),
+);
+
+const Installations = React.lazy(() =>
+  import("./Installations").then((module) => ({
+    default: module.Installations,
+  })),
+);
+
+const Stickers = React.lazy(() =>
+  import("./Stickers").then((module) => ({
+    default: module.Stickers,
+  })),
+);
 
 export const Streets: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();

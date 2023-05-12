@@ -1,12 +1,31 @@
 import React from "react";
 
-import { MacOSDesktop } from "./MacOS.Desktop";
-import { MacOSDock } from "./MacOS.Dock";
-import { MacOSFinder } from "./MacOS.Finder";
-import { MacOSTerminal } from "./MacOS.Terminal";
-
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
+
+const MacOSDesktop = React.lazy(() =>
+  import("./MacOS.Desktop").then((module) => ({
+    default: module.MacOSDesktop,
+  })),
+);
+
+const MacOSDock = React.lazy(() =>
+  import("./MacOS.Dock").then((module) => ({
+    default: module.MacOSDock,
+  })),
+);
+
+const MacOSFinder = React.lazy(() =>
+  import("./MacOS.Finder").then((module) => ({
+    default: module.MacOSFinder,
+  })),
+);
+
+const MacOSTerminal = React.lazy(() =>
+  import("./MacOS.Terminal").then((module) => ({
+    default: module.MacOSTerminal,
+  })),
+);
 
 export const MacOS: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();

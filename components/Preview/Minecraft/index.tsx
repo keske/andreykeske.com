@@ -1,10 +1,19 @@
 import React from "react";
 
-import { MinecraftAtomic } from "./MinecraftAtomic";
-import { MinecraftNURBS } from "./MinecraftNURBS";
-
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
+
+const MinecraftAtomic = React.lazy(() =>
+  import("./MinecraftAtomic").then((module) => ({
+    default: module.MinecraftAtomic,
+  })),
+);
+
+const MinecraftNURBS = React.lazy(() =>
+  import("./MinecraftNURBS").then((module) => ({
+    default: module.MinecraftNURBS,
+  })),
+);
 
 export const Minecraft: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs({

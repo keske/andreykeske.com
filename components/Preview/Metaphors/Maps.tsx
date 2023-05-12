@@ -1,11 +1,25 @@
 import React from "react";
 
-import { MapsGlobalization } from "./Maps.Globalization";
-import { MapsVintageGoogleStreetView } from "./Maps.VintageGoogleStreetView";
-import { MapsWaterOnMars } from "./Maps.WaterOnMars";
-
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
+
+const MapsGlobalization = React.lazy(() =>
+  import("./Maps.Globalization").then((module) => ({
+    default: module.MapsGlobalization,
+  })),
+);
+
+const MapsVintageGoogleStreetView = React.lazy(() =>
+  import("./Maps.VintageGoogleStreetView").then((module) => ({
+    default: module.MapsVintageGoogleStreetView,
+  })),
+);
+
+const MapsWaterOnMars = React.lazy(() =>
+  import("./Maps.WaterOnMars").then((module) => ({
+    default: module.MapsWaterOnMars,
+  })),
+);
 
 export const Maps: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();

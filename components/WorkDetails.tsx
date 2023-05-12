@@ -11,6 +11,10 @@ export const WorkDetails: React.FC<WorkDetailsProps> = ({ children }) => {
 
   const { selectedWorkId } = useListItems();
 
+  if (R.isNil(selectedWorkId)) {
+    return <></>;
+  }
+
   return (
     <Transition
       afterLeave={() => onUnmount.current?.()}

@@ -1,9 +1,13 @@
 import React from "react";
 
-import { TypographyNURBSJapanese } from "./TypographyNURBS.Japanese";
-
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
+
+const TypographyNURBSJapanese = React.lazy(() =>
+  import("./TypographyNURBS.Japanese").then((module) => ({
+    default: module.TypographyNURBSJapanese,
+  })),
+);
 
 export const Typography: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();

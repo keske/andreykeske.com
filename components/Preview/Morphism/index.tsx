@@ -1,13 +1,37 @@
 import React from "react";
 
-import { EsherSwitchButton } from "./EsherSwitchButton";
-import { InvertedManhattan } from "./InvertedManhattan";
-import { LegoHTML } from "./LegoHTML";
-import { LOT2046Tattoo } from "./LOT2046Tattoo";
-import { Sneakers } from "./Sneakers";
-
 import { WorkDetails } from "@/components/index";
 import { useTabs } from "@/hooks/index";
+
+const EsherSwitchButton = React.lazy(() =>
+  import("./EsherSwitchButton").then((module) => ({
+    default: module.EsherSwitchButton,
+  })),
+);
+
+const InvertedManhattan = React.lazy(() =>
+  import("./InvertedManhattan").then((module) => ({
+    default: module.InvertedManhattan,
+  })),
+);
+
+const LegoHTML = React.lazy(() =>
+  import("./LegoHTML").then((module) => ({
+    default: module.LegoHTML,
+  })),
+);
+
+const LOT2046Tattoo = React.lazy(() =>
+  import("./LOT2046Tattoo").then((module) => ({
+    default: module.LOT2046Tattoo,
+  })),
+);
+
+const Sneakers = React.lazy(() =>
+  import("./Sneakers").then((module) => ({
+    default: module.Sneakers,
+  })),
+);
 
 export const Morphism: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs();
