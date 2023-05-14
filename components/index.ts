@@ -21,6 +21,7 @@ export * from "./NURBSCube/NURBSLetter";
 export * from "./Button";
 export * from "./CloseButton";
 export * from "./Controls";
+export * from "./DistortButton";
 export * from "./Head";
 export * from "./Loading";
 export * from "./Logo";

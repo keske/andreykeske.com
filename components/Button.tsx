@@ -13,7 +13,7 @@ type AsElement<T> = T extends "a" ? AsHTMLAnchorElement : AsHTMLButtonElement;
 
 export type ButtonProps<T> = AsElement<T> & {
   as?: React.ElementType;
-  size?: "lg" | "md" | "sm" | "xl" | "xs" | null;
+  size?: "lg" | "md" | "sm" | "xs" | null;
   variant?: "primary" | "secondary" | "transparent";
 };
 
