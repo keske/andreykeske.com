@@ -2,12 +2,14 @@ import {
   Environment,
   Icosahedron,
   MeshDistortMaterial,
+  OrbitControls,
   RoundedBox,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
 import React from "react";
 import * as THREE from "three";
+import { BufferGeometry } from "three";
 
 import type { ButtonProps } from "./Button";
 
@@ -90,25 +92,31 @@ export const DistortButton = React.forwardRef(
           <div className="h-full w-full">
             <Canvas>
               <Environment preset="sunset" />
-              <Icosahedron
-                args={[1, 30]}
-                position={[0, 0, 0]}
-                scale={scale}
+              <OrbitControls />
+              <RoundedBox
+                // args={[28, 6, 5]}
+                args={[21, 6, 5]}
+                // position={[0, 0, 0]}
+                radius={2.5}
+                // scale={scale}
                 // scale={[8, 3.7, 1]}
               >
                 <MeshDistortMaterial
                   color={
                     isDarkTheme ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)"
                   }
-                  distort={0.2}
-                  metalness={2.1}
-                  roughness={0.7}
+                  distort={0.11}
+                  factor={1}
+                  metalness={1.5}
+                  // radius={1}
+                  roughness={3}
+                  speed={2.5}
                 />
-              </Icosahedron>
+              </RoundedBox>
             </Canvas>
           </div>
         )}
-        <div className="absolute top-0 flex h-full w-full items-center justify-center">
+        <div className="pointer-events-none absolute top-0 flex h-full w-full items-center justify-center">
           <span
             className={clsx(
               className,
