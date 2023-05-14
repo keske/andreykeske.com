@@ -1,24 +1,18 @@
 import {
   Environment,
-  Icosahedron,
   MeshDistortMaterial,
   OrbitControls,
   RoundedBox,
 } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import clsx from "clsx";
 import React from "react";
-import * as THREE from "three";
-import { BufferGeometry } from "three";
+import { useRefComposer } from "react-ref-composer";
 
-import type { ButtonProps } from "./Button";
+import { htmlSizeToMeshSize } from "@/utils/index";
 
-export type DistortButtonProps = Pick<
-  ButtonProps<React.ButtonHTMLAttributes<HTMLButtonElement>>,
-  "disabled"
-> &
+export type DistortButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.HTMLAttributes<HTMLDivElement> & {
-    children: string;
     size?: "lg" | "md" | "sm" | "xs";
     variant?: "primary" | "transparent";
   };
@@ -37,69 +31,77 @@ export const DistortButton = React.forwardRef(
     }: DistortButtonProps,
     ref: DistortButtonRef,
   ) => {
-    const symbolsCount = React.useMemo(
-      () => children.split("").length,
-      [children],
-    );
+    const composeRefs = useRefComposer();
+
+    const wrapperRef = React.useRef<HTMLDivElement>();
+
+    const [args, setArgs] = React.useState({ x: 0, y: 0, z: 0 });
+
+    // const [divSize, setDivSize] = React.useState({ height: 0, width: 0 });
 
     const isDarkTheme = React.useMemo(
       () => window.matchMedia("(prefers-color-scheme: dark)").matches,
       [],
     );
 
-    const scale = React.useMemo<[x: number, y: number, z: number]>(
-      () => [symbolsCount + 2, 3.7, 1],
-      [symbolsCount],
-    );
+    // const gl = useThree((state) => state.gl);
 
-    const wrapperSize = React.useMemo<{
-      [key in "lg" | "md" | "sm" | "xs"]: {
-        height: number | string;
-        width: number | string;
-      };
-    }>(
-      () => ({
-        lg: {
-          height: "3.425rem",
-          width: symbolsCount * 24,
-        },
-        md: {
-          height: "2.925rem",
-          width: symbolsCount * 21,
-        },
-        sm: {
-          height: "2.625rem",
-          width: symbolsCount * 15,
-        },
-        xs: {
-          height: "2.125rem",
-          width: symbolsCount * 12,
-        },
-      }),
-      [symbolsCount],
-    );
+    React.useLayoutEffect(() => {
+      if (wrapperRef.current) {
+        // setDivSize({
+        //   height: wrapperRef.current.offsetHeight,
+        //   width: wrapperRef.current.offsetWidth,
+        // });
+
+        const x = htmlSizeToMeshSize(
+          wrapperRef.current.offsetWidth,
+          wrapperRef.current.offsetHeight,
+          wrapperRef.current.offsetWidth,
+          wrapperRef.current.offsetHeight,
+        );
+
+        setArgs(x);
+      }
+    }, []);
+
+    // console.log("divSize", divSize);
 
     return (
       <div
-        ref={ref}
+        ref={composeRefs(ref, wrapperRef)}
         {...props}
-        className="relative cursor-pointer"
+        className={clsx("relative cursor-pointer", {
+          // `size` states
+          "p-5 text-lg": size == "lg",
+          "py-1 px-3 text-xs": size == "xs",
+          "py-3 px-5 text-sm": size == "sm",
+          "text-md px-5 py-4": size == "md",
+        })}
         style={{
-          ...wrapperSize[`${size}`],
+          border: "1px solid red",
         }}
       >
         {variant !== "transparent" && (
-          <div className="h-full w-full">
-            <Canvas>
-              <Environment preset="sunset" />
+          <div
+            className="absolute left-0 top-0 h-full w-full"
+            style={
+              {
+                // border: "1px solid green",
+                // height: `${divSize.height}px`,
+                // width: `${divSize.width}px`,
+              }
+            }
+          >
+            <Canvas className="h-full w-full">
               <OrbitControls />
+              <Environment preset="sunset" />
               <RoundedBox
-                // args={[28, 6, 5]}
-                args={[21, 6, 5]}
-                // position={[0, 0, 0]}
-                radius={2.5}
-                // scale={scale}
-                // scale={[8, 3.7, 1]}
+                args={[args.x * 4.9, args.y * 3.1, args.z * 3.7]}
+                // args={[divSize.width / 20, divSize.height / 20, 1]}
+                // args={[meshSize, meshSize, meshSize]}
+                radius={0.5}
+                // scale={1 / Math.max(divSize.width, divSize.height)}
+                // scale={4.8}
               >
                 <MeshDistortMaterial
                   color={
@@ -108,7 +110,6 @@ export const DistortButton = React.forwardRef(
                   distort={0.11}
                   factor={1}
                   metalness={1.5}
-                  // radius={1}
                   roughness={3}
                   speed={2.5}
                 />
@@ -116,7 +117,7 @@ export const DistortButton = React.forwardRef(
             </Canvas>
           </div>
         )}
-        <div className="pointer-events-none absolute top-0 flex h-full w-full items-center justify-center">
+        <div className="pointer-events-none relative left-0 top-0 flex h-full w-full items-center justify-center">
           <span
             className={clsx(
               className,
@@ -127,6 +128,9 @@ export const DistortButton = React.forwardRef(
                 "opacity-50": disabled,
               },
             )}
+            // style={{
+            //   color: "red",
+            // }}
           >
             {children}
           </span>

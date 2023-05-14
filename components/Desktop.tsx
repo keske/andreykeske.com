@@ -94,10 +94,18 @@ const Desktop: NextPage = () => {
         }}
       />
       <div className="flex h-screen w-screen flex-col items-center justify-center">
-        <DistortButton size="lg">LG Button here we go</DistortButton>
-        {/* <DistortButton size="md">ARA</DistortButton>
+        <DistortButton onClick={() => {}} size="lg">
+          LG Button here
+        </DistortButton>
+        <DistortButton onClick={() => {}} size="lg">
+          MAPS
+        </DistortButton>
+
+        <DistortButton size="md">Download</DistortButton>
+        <DistortButton size="md">Abcdefgh</DistortButton>
         <DistortButton size="sm">Download</DistortButton>
-        <DistortButton size="xs">Button</DistortButton> */}
+        <DistortButton size="xs">Crumpled Newspaper</DistortButton>
+        <DistortButton size="xs">Maps</DistortButton>
       </div>
     </div>
   );
