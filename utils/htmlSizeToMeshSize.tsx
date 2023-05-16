@@ -1,11 +1,9 @@
-import * as THREE from "three";
-
 export const htmlSizeToMeshSize = (
   htmlWidth: number,
   htmlHeight: number,
   canvasWidth: number,
   canvasHeight: number,
-): THREE.Vector3 => {
+): [width: number, height: number, depth: number] => {
   const aspectRatioHtml = htmlWidth / htmlHeight;
 
   const aspectRatioCanvas = canvasWidth / canvasHeight;
@@ -24,5 +22,5 @@ export const htmlSizeToMeshSize = (
     scaleX = scaleY * aspectRatioHtml;
   }
 
-  return new THREE.Vector3(scaleX, scaleY, 1);
+  return [scaleX, scaleY, 1];
 };

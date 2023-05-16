@@ -1,7 +1,6 @@
 import {
   Environment,
   MeshDistortMaterial,
-  OrbitControls,
   RoundedBox,
 } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
@@ -13,6 +12,7 @@ import { htmlSizeToMeshSize } from "@/utils/index";
 
 export type DistortButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.HTMLAttributes<HTMLDivElement> & {
+    children: string;
     size?: "lg" | "md" | "sm" | "xs";
     variant?: "primary" | "transparent";
   };
@@ -36,6 +36,11 @@ export const DistortButton = React.forwardRef(
     const wrapperRef = React.useRef<HTMLDivElement>();
 
     const [args, setArgs] = React.useState({ x: 0, y: 0, z: 0 });
+
+    const countedSymbols = React.useMemo(
+      () => children.split("").length,
+      [children],
+    );
 
     // const [divSize, setDivSize] = React.useState({ height: 0, width: 0 });
 
@@ -77,9 +82,9 @@ export const DistortButton = React.forwardRef(
           "py-3 px-5 text-sm": size == "sm",
           "text-md px-5 py-4": size == "md",
         })}
-        style={{
-          border: "1px solid red",
-        }}
+        // style={{
+        //   border: "1px solid red",
+        // }}
       >
         {variant !== "transparent" && (
           <div
@@ -93,21 +98,17 @@ export const DistortButton = React.forwardRef(
             }
           >
             <Canvas className="h-full w-full">
-              <OrbitControls />
               <Environment preset="sunset" />
               <RoundedBox
-                args={[args.x * 4.9, args.y * 3.1, args.z * 3.7]}
-                // args={[divSize.width / 20, divSize.height / 20, 1]}
-                // args={[meshSize, meshSize, meshSize]}
-                radius={0.5}
-                // scale={1 / Math.max(divSize.width, divSize.height)}
-                // scale={4.8}
+                args={[args.x * 5.7, args.y * 4.3, args.z * 2.7]}
+                // args={[args.x * 5.3, args.y * 3.1, args.z * 3.7]}
+                radius={0.8}
               >
                 <MeshDistortMaterial
                   color={
                     isDarkTheme ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)"
                   }
-                  distort={0.11}
+                  distort={0.33}
                   factor={1}
                   metalness={1.5}
                   roughness={3}

@@ -6,8 +6,10 @@ import React from "react";
 import type { NextPage } from "next";
 
 import {
+  Button,
   CloseButton,
   DistortButton,
+  DistortSurface,
   Logo,
   Work,
   WorkList,
@@ -93,19 +95,32 @@ const Desktop: NextPage = () => {
           handleShowWork,
         }}
       />
-      <div className="flex h-screen w-screen flex-col items-center justify-center">
-        <DistortButton onClick={() => {}} size="lg">
+      <div className="flex h-screen w-screen flex-col items-center justify-center gap-3">
+        {/* <DistortButton onClick={() => {}} size="lg">
           LG Button here
         </DistortButton>
         <DistortButton onClick={() => {}} size="lg">
           MAPS
-        </DistortButton>
+        </DistortButton> */}
 
-        <DistortButton size="md">Download</DistortButton>
+        {/* <DistortButton size="md">Download</DistortButton>
         <DistortButton size="md">Abcdefgh</DistortButton>
         <DistortButton size="sm">Download</DistortButton>
         <DistortButton size="xs">Crumpled Newspaper</DistortButton>
-        <DistortButton size="xs">Maps</DistortButton>
+        <DistortButton size="xs">Maps</DistortButton> */}
+
+        <>
+          <Button size="lg">Hey</Button>
+          <Button size="md">Hey</Button>
+          <Button size="sm">Hey</Button>
+          <Button size="xs">Hey</Button>
+        </>
+        <>
+          <DistortSurface size="lg">Button</DistortSurface>
+          <DistortSurface size="md">Button</DistortSurface>
+          <DistortSurface size="sm">Button</DistortSurface>
+          <DistortSurface size="xs">Button</DistortSurface>
+        </>
       </div>
     </div>
   );

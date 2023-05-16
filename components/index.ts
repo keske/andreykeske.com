@@ -22,6 +22,7 @@ export * from "./Button";
 export * from "./CloseButton";
 export * from "./Controls";
 export * from "./DistortButton";
+export * from "./DistortSurface";
 export * from "./Head";
 export * from "./Loading";
 export * from "./Logo";

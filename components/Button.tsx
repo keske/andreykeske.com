@@ -11,13 +11,13 @@ type AsHTMLAnchorElement = Pick<
 
 type AsElement<T> = T extends "a" ? AsHTMLAnchorElement : AsHTMLButtonElement;
 
-export type ButtonProps<T> = AsElement<T> & {
+export type ButtonProps<T = HTMLButtonElement> = AsElement<T> & {
   as?: React.ElementType;
   size?: "lg" | "md" | "sm" | "xs" | null;
   variant?: "primary" | "secondary" | "transparent";
 };
 
-export type ButtonRef<T> = T extends "a"
+export type ButtonRef<T = "button"> = T extends "a"
   ? HTMLAnchorElement
   : HTMLButtonElement;
 
@@ -52,10 +52,10 @@ export const Button = React.forwardRef(
           },
           {
             // `size` states
-            "p-5 text-lg": size == "lg",
-            "py-1 px-3 text-xs": size == "xs",
-            "py-3 px-5 text-sm": size == "sm",
-            "text-md px-5 py-4": size == "md",
+            "text-lg px-6 py-3": size == "lg",
+            "text-md px-5 py-3": size == "md",
+            "text-sm px-4 py-2": size == "sm",
+            "text-xs px-2 py-1": size == "xs",
           },
           {
             // `anchor` styles
