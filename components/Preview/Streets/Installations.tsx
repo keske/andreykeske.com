@@ -7,7 +7,7 @@ import { UploadcareImage, WaterSurface } from "@/components/index";
 type SceneProps = any;
 
 export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
-  (props, ref) => {
+  (props, forwardedRef) => {
     const handleAnimateUniform = React.useCallback(
       (delta: number) => delta / 7,
       [],

@@ -12,7 +12,7 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
   JSX.IntrinsicElements["group"] & {
     warpRatio: number;
   }
->(({ ...props }, ref) => {
+>(({ ...props }, forwardedRef) => {
   const radius = 4;
 
   const renderFirstLayer = React.useMemo(
