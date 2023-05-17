@@ -15,7 +15,7 @@ type NURBSCubeProps = JSX.IntrinsicElements["group"] & {
 };
 
 export const NURBSCube = React.forwardRef<Group, NURBSCubeProps>(
-  ({ map, transparent = false, warpRatio = 0.4, ...rest }, ref) => {
+  ({ map, transparent = false, warpRatio = 0.4, ...rest }, forwardedRef) => {
     const random = React.useCallback(
       (min: number, max: number) => Math.random() * (max - min) + min,
       [],

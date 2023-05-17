@@ -8,7 +8,7 @@ export const NURBSCubeDirt = React.forwardRef<
   JSX.IntrinsicElements["group"] & {
     warpRatio: number;
   }
->(({ ...props }, ref) => (
+>(({ ...props }, forwardedRef) => (
   <NURBSCube
     ref={ref}
     {...{
