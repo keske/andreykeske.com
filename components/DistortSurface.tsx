@@ -13,7 +13,7 @@ import * as THREE from "three";
 import type { ButtonProps, ButtonRef } from "@/components/Button";
 
 import { Button } from "@/components/Button";
-import { useSize } from "@/hooks/index";
+import { useSize, useVector3 } from "@/hooks/index";
 import { htmlSizeToMeshSize } from "@/utils/index";
 
 type CommonMeshDistortMaterialProps = {
@@ -23,7 +23,7 @@ type CommonMeshDistortMaterialProps = {
 const CommonMeshDistortMaterial = React.forwardRef<
   unknown | undefined,
   CommonMeshDistortMaterialProps
->(({ distort = 0.2, ...props }, forwardedRef) => (
+>(({ distort = 0.4, ...props }, forwardedRef) => (
   <MeshDistortMaterial
     {...props}
     distort={distort}
@@ -31,6 +31,7 @@ const CommonMeshDistortMaterial = React.forwardRef<
     metalness={1.5}
     ref={forwardedRef}
     roughness={3}
+    // TODO: random
     speed={2.5}
   />
 ));
@@ -48,9 +49,7 @@ const DistortPane = React.forwardRef<DistortPaneRef, DistortPaneProps>(
   ({ htmlButtonRef }, forwardedRef) => {
     const gl = useThree((state) => state.gl);
 
-    const [roundedBoxArgs, setRoundedBoxArgs] = React.useState<
-      [width: number, height: number, depth: number]
-    >([0, 0, 0]);
+    const [roundedBoxArgs, setRoundedBoxArgs] = useVector3();
 
     React.useEffect(() => {
       if (htmlButtonRef.current) {
@@ -63,7 +62,12 @@ const DistortPane = React.forwardRef<DistortPaneRef, DistortPaneProps>(
           ),
         );
       }
-    }, [gl.domElement.offsetHeight, gl.domElement.offsetWidth, htmlButtonRef]);
+    }, [
+      gl.domElement.offsetHeight,
+      gl.domElement.offsetWidth,
+      htmlButtonRef,
+      setRoundedBoxArgs,
+    ]);
 
     return (
       <RoundedBox
@@ -86,7 +90,7 @@ const DistortText = React.forwardRef<unknown | undefined, DistortTextProps>(
   ({ children }, forwardedRef) => (
     <Text color="black" position={[0, 0, 3]} ref={forwardedRef}>
       {children}
-      <CommonMeshDistortMaterial distort={0.23} />
+      <CommonMeshDistortMaterial distort={0.4} />
     </Text>
   ),
 );
