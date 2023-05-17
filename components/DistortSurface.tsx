@@ -1,20 +1,39 @@
 import {
-  Bounds,
   Environment,
   MeshDistortMaterial,
   OrbitControls,
   RoundedBox,
-  useBounds,
+  Text,
 } from "@react-three/drei";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import clsx from "clsx";
 import React from "react";
+import * as THREE from "three";
 
 import type { ButtonProps, ButtonRef } from "@/components/Button";
 
 import { Button } from "@/components/Button";
 import { useSize } from "@/hooks/index";
 import { htmlSizeToMeshSize } from "@/utils/index";
+
+type CommonMeshDistortMaterialProps = {
+  distort?: number;
+};
+
+const CommonMeshDistortMaterial = React.forwardRef<
+  unknown | undefined,
+  CommonMeshDistortMaterialProps
+>(({ distort = 0.2, ...props }, forwardedRef) => (
+  <MeshDistortMaterial
+    {...props}
+    distort={distort}
+    factor={1}
+    metalness={1.5}
+    ref={forwardedRef}
+    roughness={3}
+    speed={2.5}
+  />
+));
 
 type DistortPaneProps = {
   htmlButtonRef: React.RefObject<ButtonRef>;
@@ -29,20 +48,9 @@ const DistortPane = React.forwardRef<DistortPaneRef, DistortPaneProps>(
   ({ htmlButtonRef }, forwardedRef) => {
     const gl = useThree((state) => state.gl);
 
-    const materialRef = React.useRef<React.Ref<unknown> | undefined>(null!);
-
-    const roundedBoxRef = React.useRef<DistortPaneRef>(null!);
-
     const [roundedBoxArgs, setRoundedBoxArgs] = React.useState<
       [width: number, height: number, depth: number]
     >([0, 0, 0]);
-
-    // useFrame((state, delta) => {
-    //   if (materialRef) {
-    //     materialRef.current.distort += delta * 100;
-    //   }
-    //   // ref.current.rotation.x += delta;
-    // });
 
     React.useEffect(() => {
       if (htmlButtonRef.current) {
@@ -57,25 +65,36 @@ const DistortPane = React.forwardRef<DistortPaneRef, DistortPaneProps>(
       }
     }, [gl.domElement.offsetHeight, gl.domElement.offsetWidth, htmlButtonRef]);
 
-    React.useImperativeHandle(forwardedRef, () => roundedBoxRef.current);
-
     return (
-      <RoundedBox args={roundedBoxArgs} ref={roundedBoxRef} scale={4.3}>
-        <MeshDistortMaterial
-          distort={0.13}
-          factor={1}
-          metalness={1.5}
-          ref={materialRef}
-          roughness={3}
-          speed={2.5}
-        />
+      <RoundedBox
+        args={roundedBoxArgs}
+        radius={roundedBoxArgs[0] / 5}
+        ref={forwardedRef}
+        scale={4.5}
+      >
+        <CommonMeshDistortMaterial />
       </RoundedBox>
     );
   },
 );
 
-export type DistortSurfaceProps = ButtonProps &
-  React.HTMLAttributes<HTMLDivElement>;
+type DistortTextProps = {
+  children: string;
+};
+
+const DistortText = React.forwardRef<unknown | undefined, DistortTextProps>(
+  ({ children }, forwardedRef) => (
+    <Text color="black" position={[0, 0, 3]} ref={forwardedRef}>
+      {children}
+      <CommonMeshDistortMaterial distort={0.23} />
+    </Text>
+  ),
+);
+
+export type DistortSurfaceProps = Omit<ButtonProps, "children"> &
+  Omit<React.HTMLAttributes<HTMLDivElement>, "children"> & {
+    children: string;
+  };
 
 export type DistortSurfaceRef = DistortPaneRef;
 
@@ -101,7 +120,7 @@ export const DistortSurface = React.forwardRef<
   React.useImperativeHandle(forwardedRef, () => distorPaneRef.current);
 
   return (
-    <div>
+    <div className="cursor-pointer">
       <Button
         {...props}
         className={clsx(className, "absolute left-[-9999px] top-[-9999px]")}
@@ -109,12 +128,12 @@ export const DistortSurface = React.forwardRef<
       >
         {children}
       </Button>
-      <div className={className} style={canvasSize}>
-        <Canvas className="h-full w-full">
-          <Environment preset="sunset" />
-          <DistortPane htmlButtonRef={htmlButtonRef} ref={distorPaneRef} />
-        </Canvas>
-      </div>
+      <Canvas className={className} style={canvasSize}>
+        <Environment preset="sunset" />
+        <OrbitControls />
+        <DistortPane htmlButtonRef={htmlButtonRef} ref={distorPaneRef} />
+        <DistortText>{children}</DistortText>
+      </Canvas>
     </div>
   );
 });
