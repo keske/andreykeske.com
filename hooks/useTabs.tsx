@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-import { Button } from "@/components/index";
+import { Button, DistortButton } from "@/components/index";
 
 export type TabsConfig = {
   initialIndex?: number;
@@ -49,7 +49,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
       <>
         {tabs.map((label, index) => (
           <React.Fragment key={index}>
-            <Button
+            <DistortButton
               className={clsx(
                 "uppercase tracking-widest",
                 isSelected(index) && "font-black",
@@ -61,7 +61,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
               {...(!isSelected(index) && { variant: "transparent" })}
             >
               {label}
-            </Button>
+            </DistortButton>
           </React.Fragment>
         ))}
       </>
