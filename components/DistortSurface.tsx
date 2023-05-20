@@ -7,7 +7,7 @@ import {
 } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
 import clsx from "clsx";
-import React from "react";
+import React, { forwardRef } from "react";
 import * as THREE from "three";
 
 import type { ButtonProps, ButtonRef } from "@/components/Button";
@@ -31,7 +31,6 @@ const CommonMeshDistortMaterial = React.forwardRef<
     metalness={1.5}
     ref={forwardedRef}
     roughness={3}
-    // TODO: random
     speed={2.5}
   />
 ));
@@ -139,5 +138,24 @@ export const DistortSurface = React.forwardRef<
         <DistortText>{children}</DistortText>
       </Canvas>
     </div>
+  );
+});
+
+export type DistortCanvasProps = React.PropsWithChildren;
+
+export type DistortCanvasRef = HTMLCanvasElement;
+
+export const DistortCanvas = React.forwardRef<
+  DistortCanvasRef,
+  DistortCanvasProps
+>(({ children, ...props }, forwardedRef) => {
+  console.log("children", children);
+
+  return (
+    <>
+      <Canvas ref={forwardedRef}>
+        <OrbitControls />
+      </Canvas>
+    </>
   );
 });
