@@ -26,6 +26,10 @@ const DEFAULT_STATE: Array<Pick<Work, "component" | "title">> = [
     title: "Minecraft",
   },
   {
+    component: Works.Mimicry,
+    title: "Mimicry",
+  },
+  {
     component: Works.Morphism,
     title: "Morphism",
   },
