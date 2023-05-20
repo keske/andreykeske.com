@@ -17,7 +17,7 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
       <Canvas
         camera={{ position: [0, 10, 10] }}
         className="h-screen w-screen"
-        ref={ref}
+        ref={forwardedRef}
       >
         <Sky
           azimuth={0.15}

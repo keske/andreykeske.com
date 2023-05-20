@@ -10,7 +10,7 @@ export const NURBSCubeDirt = React.forwardRef<
   }
 >(({ ...props }, forwardedRef) => (
   <NURBSCube
-    ref={ref}
+    ref={forwardedRef}
     {...{
       ...props,
       map: {

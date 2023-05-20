@@ -536,7 +536,7 @@ export const NURBSCubeStructureSmallHouse = React.forwardRef<
   }, [radius, props]);
 
   return (
-    <group ref={ref}>
+    <group ref={forwardedRef}>
       {renderFirstLayer}
       {renderSecondLayer}
       {renderThirdLayer}

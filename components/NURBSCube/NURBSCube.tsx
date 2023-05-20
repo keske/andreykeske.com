@@ -448,7 +448,7 @@ export const NURBSCube = React.forwardRef<Group, NURBSCubeProps>(
     );
 
     return (
-      <group {...rest} ref={ref}>
+      <group {...rest} ref={forwardedRef}>
         {R.values(net).map((obj, index) => (
           <NURBS
             {...obj}
