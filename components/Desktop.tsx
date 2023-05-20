@@ -5,14 +5,7 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import {
-  Button,
-  CloseButton,
-  DistortSurface,
-  Logo,
-  Work,
-  WorkList,
-} from "@/components/index";
+import { CloseButton, Logo, Work, WorkList } from "@/components/index";
 import { useListItems } from "@/stores/index";
 
 const inter = Inter({
@@ -94,14 +87,6 @@ const Desktop: NextPage = () => {
           handleShowWork,
         }}
       />
-      <div className="flex h-screen w-screen flex-col items-center justify-center gap-3">
-        <>
-          <DistortSurface size="lg">Button</DistortSurface>
-          <DistortSurface size="md">Button</DistortSurface>
-          <DistortSurface size="sm">Button</DistortSurface>
-          <DistortSurface size="xs">Button</DistortSurface>
-        </>
-      </div>
     </div>
   );
 };
