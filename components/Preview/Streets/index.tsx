@@ -31,7 +31,11 @@ export const Streets: React.FC = () => {
           {renderTabs(["Graffiti", "Installations", "Stickers"])}
         </div>
       </WorkDetails>
-      {renderTabsBody([<Graffiti />, <Installations />, <Stickers />])}
+      {renderTabsBody([
+        <Graffiti />,
+        <Installations />,
+        <Stickers />,
+      ])}
     </>
   );
 };

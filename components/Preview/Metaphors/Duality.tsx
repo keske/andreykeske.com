@@ -53,7 +53,10 @@ export const Duality: React.FC = () => {
           const video = videoRef.current;
 
           const detection = await faceapi
-            .detectSingleFace(video, new faceapi.TinyFaceDetectorOptions())
+            .detectSingleFace(
+              video,
+              new faceapi.TinyFaceDetectorOptions(),
+            )
             .withFaceLandmarks();
 
           setHasEyes(
@@ -87,9 +90,13 @@ export const Duality: React.FC = () => {
           circumstances and the effect being observed
         </p>
         {isCameraReady ? (
-          <p className="text-xs opacity-30">Look or not at the camera</p>
+          <p className="text-xs opacity-30">
+            Look or not at the camera
+          </p>
         ) : (
-          <p className="text-xs opacity-30">Waiting for the camera access</p>
+          <p className="text-xs opacity-30">
+            Waiting for the camera access
+          </p>
         )}
       </div>
     </div>

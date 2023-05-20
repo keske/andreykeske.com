@@ -10,7 +10,11 @@ type SwitchProps = {
   on: boolean;
 };
 
-const Switch: React.FC<SwitchProps> = ({ handleClick, level, on }) => {
+const Switch: React.FC<SwitchProps> = ({
+  handleClick,
+  level,
+  on,
+}) => {
   if (level === 1) {
     return (
       <div

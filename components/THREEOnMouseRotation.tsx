@@ -4,7 +4,10 @@ import * as THREE from "three";
 
 type Props = React.PropsWithChildren & {
   ref: React.MutableRefObject<
-    THREE.Mesh<THREE.BufferGeometry, THREE.Material | THREE.Material[]>
+    THREE.Mesh<
+      THREE.BufferGeometry,
+      THREE.Material | THREE.Material[]
+    >
   >;
   strength?: number;
 };

@@ -42,7 +42,8 @@ export const useControls = (
         return {
           [key]: {
             label: key.replace(/([0-9A-Z])/g, " $&").toLowerCase(),
-            type: typeof obj.value === "number" ? "number" : "checkbox",
+            type:
+              typeof obj.value === "number" ? "number" : "checkbox",
             ...(typeof obj === "number"
               ? {
                   value: obj,
@@ -58,9 +59,12 @@ export const useControls = (
     )(initialOptions),
   );
 
-  const hendleUpdate = React.useCallback((updatedOptions: ControlsOptions) => {
-    setOptions(updatedOptions);
-  }, []);
+  const hendleUpdate = React.useCallback(
+    (updatedOptions: ControlsOptions) => {
+      setOptions(updatedOptions);
+    },
+    [],
+  );
 
   React.useEffect(() => {
     const controlsElement =
@@ -72,7 +76,11 @@ export const useControls = (
 
       document.body.appendChild(controlsElement);
       root.render(
-        <Controls {...config} onUpdate={hendleUpdate} options={options} />,
+        <Controls
+          {...config}
+          onUpdate={hendleUpdate}
+          options={options}
+        />,
       );
     }
 

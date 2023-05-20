@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import React from "react";
 
-type AsHTMLButtonElement = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type AsHTMLButtonElement =
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 type AsHTMLAnchorElement = Pick<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -9,7 +10,9 @@ type AsHTMLAnchorElement = Pick<
 > &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type AsElement<T> = T extends "a" ? AsHTMLAnchorElement : AsHTMLButtonElement;
+type AsElement<T> = T extends "a"
+  ? AsHTMLAnchorElement
+  : AsHTMLButtonElement;
 
 export type ButtonProps<T> = AsElement<T> & {
   as?: React.ElementType;

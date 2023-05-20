@@ -32,7 +32,13 @@ export const NURBSLetter: React.FC<NURBSLetterProps> = ({
 
     const knots2 = [0, 0, 0, 0, 1, 1, 1, 1];
 
-    return new NURBSSurface(degree1, degree2, knots1, knots2, nsControlPoints);
+    return new NURBSSurface(
+      degree1,
+      degree2,
+      knots1,
+      knots2,
+      nsControlPoints,
+    );
   }, [nsControlPoints]);
 
   const map = React.useMemo(
@@ -41,7 +47,11 @@ export const NURBSLetter: React.FC<NURBSLetterProps> = ({
   );
 
   const geometry = React.useMemo(() => {
-    const getSurfacePoint = (u: number, v: number, target: THREE.Vector3) => {
+    const getSurfacePoint = (
+      u: number,
+      v: number,
+      target: THREE.Vector3,
+    ) => {
       const point = nurbsSurface.getPoint(u, v, target);
 
       const noise = new THREE.Vector3(
@@ -95,7 +105,11 @@ export const TypographyNURBSJapanese: React.FC = () => (
     <div className="fixed left-0 top-0 h-screen w-screen">
       <Canvas className="h-screen w-screen bg-[#b31515]">
         <React.Suspense fallback={null}>
-          <PerspectiveCamera fov={35} makeDefault position={[0, 0, 30]} />
+          <PerspectiveCamera
+            fov={35}
+            makeDefault
+            position={[0, 0, 30]}
+          />
           <OrbitControls />
           <ambientLight intensity={0.7} />
           <spotLight

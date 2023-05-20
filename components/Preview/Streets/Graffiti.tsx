@@ -40,7 +40,9 @@ export const Graffiti = () => (
               />
               <p className="text-black dark:text-white">
                 {peace},{" "}
-                <span className="opacity-30">Yekaterinburg, Russia</span>
+                <span className="opacity-30">
+                  Yekaterinburg, Russia
+                </span>
               </p>
             </div>
           ))}

@@ -13,8 +13,9 @@ export const IOSTicky: React.FC = () => (
       <div className="flex w-1/2 flex-col gap-2">
         <h3>Ticky</h3>
         <small>
-          Ticky is an application that shows the current time (or selected
-          timezone&rsquo;s time) through the notification badge.
+          Ticky is an application that shows the current time (or
+          selected timezone&rsquo;s time) through the notification
+          badge.
         </small>
         <small>
           <i>Soon on the AppStore</i>

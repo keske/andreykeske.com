@@ -148,7 +148,11 @@ const Root: React.FC<RootProps> = ({ videoRef }) => {
         {R.range(0, 10).map((index) => (
           <group
             key={index}
-            position={[random(-25, 25), random(-25, 25), index * 0.001]}
+            position={[
+              random(-25, 25),
+              random(-25, 25),
+              index * 0.001,
+            ]}
             scale={[random(-5, 5), random(-5, 5), random(-5, 5)]}
           >
             <Mirror url="" videoRef={videoRef} />
@@ -161,7 +165,10 @@ const Root: React.FC<RootProps> = ({ videoRef }) => {
 
   return (
     <div className="h-screen w-screen">
-      <Canvas camera={{ position: [0, 10, 55] }} className="h-screen w-screen">
+      <Canvas
+        camera={{ position: [0, 10, 55] }}
+        className="h-screen w-screen"
+      >
         <OrbitControls />
         {renderMirrors}
       </Canvas>

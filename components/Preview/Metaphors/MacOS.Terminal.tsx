@@ -25,7 +25,9 @@ const DesktopVideo = () => {
 
 export const MacOSTerminal = () => (
   <div className="h-screen w-screen overflow-hidden bg-black pt-60">
-    <h4 className="z-10 text-center text-3xl text-white">Tmux Chess</h4>
+    <h4 className="z-10 text-center text-3xl text-white">
+      Tmux Chess
+    </h4>
     <Canvas
       gl={{
         alpha: true,

@@ -10,10 +10,15 @@ type HeadProps = {
 
 export type HeadRef = any;
 
-export const Head: React.FC<HeadProps> = ({ disableIndex, ...props }) => {
+export const Head: React.FC<HeadProps> = ({
+  disableIndex,
+  ...props
+}) => {
   const title = props.title ? props.title : "Andrey Keske";
 
-  const description = props.description ? props.description : "Artworks";
+  const description = props.description
+    ? props.description
+    : "Artworks";
 
   const url =
     typeof window !== "undefined"

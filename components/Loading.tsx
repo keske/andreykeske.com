@@ -5,4 +5,6 @@ type Props = {
 };
 
 export const Loading: React.FC<Props> = ({ isLoading = true }) =>
-  isLoading ? <div className="fixed bottom-10 right-10 z-50">🐌</div> : null;
+  isLoading ? (
+    <div className="fixed bottom-10 right-10 z-50">🐌</div>
+  ) : null;

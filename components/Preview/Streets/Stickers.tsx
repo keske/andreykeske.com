@@ -37,13 +37,13 @@ export const Stickers = () => (
         <div className="flex w-1/2 flex-col gap-2">
           <h3>Football fans trolling</h3>
           <small>
-            I took several emblems of my native football clubs and deliberately
-            mingled their colors between them.
+            I took several emblems of my native football clubs and
+            deliberately mingled their colors between them.
           </small>
           <small>
-            Maybe one of those truly bullies catch a glimpse of my sticker on a
-            wall and dump his jaw on a sidewalk in bewilderment, at least I hope
-            so.
+            Maybe one of those truly bullies catch a glimpse of my
+            sticker on a wall and dump his jaw on a sidewalk in
+            bewilderment, at least I hope so.
           </small>
           <time dateTime="2012">2012</time>
         </div>

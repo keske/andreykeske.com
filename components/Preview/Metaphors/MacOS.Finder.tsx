@@ -1,13 +1,20 @@
 import React from "react";
 
-import { Button, UploadcareImage, WorkDetails } from "@/components/index";
+import {
+  Button,
+  UploadcareImage,
+  WorkDetails,
+} from "@/components/index";
 
 export const MacOSFinder: React.FC = () => (
   <div className="flex flex-col gap-20 pb-20 pt-56">
     <div className="flex w-screen flex-col items-center gap-5">
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
-          <div className="relative" style={{ paddingBottom: "56.25%" }}>
+          <div
+            className="relative"
+            style={{ paddingBottom: "56.25%" }}
+          >
             <video
               className="absolute left-0 top-0 h-full w-full"
               controls
@@ -20,14 +27,21 @@ export const MacOSFinder: React.FC = () => (
         <div className="flex w-1/2 flex-col gap-2">
           <h3>Hydra</h3>
           <small>
-            Hydra&apos;s representation of head regeneration through UI
+            Hydra&apos;s representation of head regeneration through
+            UI
           </small>
           <small>
-            The black hole on the desktop represents an intriguing intersection
-            between technology and the unknown, raising questions about the
-            nature of information and its relationship to physical space.
+            The black hole on the desktop represents an intriguing
+            intersection between technology and the unknown, raising
+            questions about the nature of information and its
+            relationship to physical space.
           </small>
-          <Button as="a" href="/files/hydra.zip" size="sm" variant="primary">
+          <Button
+            as="a"
+            href="/files/hydra.zip"
+            size="sm"
+            variant="primary"
+          >
             Download script (zip 2.9 KB)
           </Button>
           <time dateTime="2014">2014</time>
@@ -53,7 +67,10 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex w-screen flex-col items-center gap-5">
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
-          <div className="relative" style={{ paddingBottom: "56.25%" }}>
+          <div
+            className="relative"
+            style={{ paddingBottom: "56.25%" }}
+          >
             <video
               className="absolute left-0 top-0 h-full w-full"
               controls
@@ -73,7 +90,10 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex w-screen flex-col items-center gap-5">
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
-          <div className="relative" style={{ paddingBottom: "56.25%" }}>
+          <div
+            className="relative"
+            style={{ paddingBottom: "56.25%" }}
+          >
             <video
               className="absolute left-0 top-0 h-full w-full"
               controls
@@ -93,7 +113,10 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex w-screen flex-col items-center gap-5">
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
-          <div className="relative" style={{ paddingBottom: "56.25%" }}>
+          <div
+            className="relative"
+            style={{ paddingBottom: "56.25%" }}
+          >
             <video
               className="absolute left-0 top-0 h-full w-full"
               controls
@@ -106,8 +129,8 @@ export const MacOSFinder: React.FC = () => (
         <div className="flex w-1/2 flex-col gap-2">
           <h3>The Dice Game</h3>
           <small>
-            Normal folder in Preview mode shows previews of the image files, two
-            in our case. Script copes such two images
+            Normal folder in Preview mode shows previews of the image
+            files, two in our case. Script copes such two images
             <mark>randomly</mark>
             and gives a combination of two dices.
           </small>
@@ -134,7 +157,10 @@ export const MacOSFinder: React.FC = () => (
     <div className="flex w-screen flex-col items-center gap-5">
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
-          <div className="relative" style={{ paddingBottom: "56.25%" }}>
+          <div
+            className="relative"
+            style={{ paddingBottom: "56.25%" }}
+          >
             <video
               className="absolute left-0 top-0 h-full w-full"
               controls
@@ -147,11 +173,12 @@ export const MacOSFinder: React.FC = () => (
         <div className="flex w-1/2 flex-col gap-2">
           <h3>Slot Machines</h3>
           <small>
-            3 slots, each has a set of pictures. The aim of the game is to get 3
-            the same pictures. In my game each slot is the simple folder in
+            3 slots, each has a set of pictures. The aim of the game
+            is to get 3 the same pictures. In my game each slot is the
+            simple folder in
             <mark>Cover Flow</mark>
-            mode and in contrast WI the original game the movement of the slots
-            is horizontal.
+            mode and in contrast WI the original game the movement of
+            the slots is horizontal.
           </small>
           <small>
             <p>How to play</p>
@@ -169,9 +196,9 @@ export const MacOSFinder: React.FC = () => (
                 <br />$ open third/
               </li>
               <li>
-                Run game.php script. After that pictures from the source folder
-                will be randomly copied 600 times to the folders first, second
-                mad third
+                Run game.php script. After that pictures from the
+                source folder will be randomly copied 600 times to the
+                folders first, second mad third
                 <br />$ php game.php
               </li>
             </ul>

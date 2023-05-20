@@ -26,7 +26,9 @@ export const WaterSurface: React.FC<WaterSurfaceProps> = ({
   waterOptions = {},
 }) => {
   const ref =
-    React.useRef<THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>>();
+    React.useRef<
+      THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>
+    >();
 
   const waterNormals = useLoader(
     THREE.TextureLoader,
@@ -51,12 +53,17 @@ export const WaterSurface: React.FC<WaterSurfaceProps> = ({
 
   useFrame((state, delta) => {
     if (ref.current) {
-      ref.current.material.uniforms.time.value += animateUniform(delta);
+      ref.current.material.uniforms.time.value +=
+        animateUniform(delta);
     }
   });
 
   return (
-    <water args={[geometry, options]} ref={ref} rotation-x={-Math.PI / 2} />
+    <water
+      args={[geometry, options]}
+      ref={ref}
+      rotation-x={-Math.PI / 2}
+    />
   );
 };
 

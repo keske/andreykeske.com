@@ -49,8 +49,9 @@ const Recent: NextPage = () => {
                   Stack
                 </p>
                 <h3>
-                  Typescript, React, Zustand, Styled Components, Three, React
-                  Fiber, React DREI, Vercel Serverless Functions
+                  Typescript, React, Zustand, Styled Components,
+                  Three, React Fiber, React DREI, Vercel Serverless
+                  Functions
                 </h3>
               </div>
               <div>
@@ -92,8 +93,8 @@ const Recent: NextPage = () => {
                   Stack
                 </p>
                 <h3>
-                  Typescript, React, Tailwind, Headlessui, Node.JS, Apollo
-                  GraphQL, Mongodb, Mongoose, Typegoose
+                  Typescript, React, Tailwind, Headlessui, Node.JS,
+                  Apollo GraphQL, Mongodb, Mongoose, Typegoose
                 </h3>
               </div>
             </div>
@@ -125,8 +126,8 @@ const Recent: NextPage = () => {
                   Stack
                 </p>
                 <h3>
-                  Typescript, React, Zustand, Styled Components, Bootstrap,
-                  Vercel Serverless Functions
+                  Typescript, React, Zustand, Styled Components,
+                  Bootstrap, Vercel Serverless Functions
                 </h3>
               </div>
             </div>
@@ -146,7 +147,9 @@ const Recent: NextPage = () => {
                   Company
                 </p>
                 <h3>
-                  <a href="https://untitledinbrackets.com">[untitled]</a>
+                  <a href="https://untitledinbrackets.com">
+                    [untitled]
+                  </a>
                 </h3>
               </div>
               <div>
@@ -160,8 +163,8 @@ const Recent: NextPage = () => {
                   Stack
                 </p>
                 <h3>
-                  Typescript, React, React Native, Reanimated, Fastimage, Styled
-                  Components
+                  Typescript, React, React Native, Reanimated,
+                  Fastimage, Styled Components
                 </h3>
               </div>
             </div>
@@ -195,9 +198,9 @@ const Recent: NextPage = () => {
                   Stack
                 </p>
                 <h3>
-                  Typescript, React, React Native, Reanimated, Fastimage, Styled
-                  Components, Bootstrap, Node.JS, Express, Apollo GraphQL,
-                  Swift, Docker, Swarm
+                  Typescript, React, React Native, Reanimated,
+                  Fastimage, Styled Components, Bootstrap, Node.JS,
+                  Express, Apollo GraphQL, Swift, Docker, Swarm
                 </h3>
               </div>
               <div>

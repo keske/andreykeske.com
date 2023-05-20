@@ -63,9 +63,12 @@ const Course = () => {
     (async () => {
       const request = axios.CancelToken.source();
 
-      const { data } = await axios.get("https://blockchain.info/ticker", {
-        cancelToken: request.token,
-      });
+      const { data } = await axios.get(
+        "https://blockchain.info/ticker",
+        {
+          cancelToken: request.token,
+        },
+      );
 
       setPrice(
         data.USD["15m"].toLocaleString("en-US", {
@@ -135,43 +138,47 @@ export const CryptoBTCBubble: React.FC = () => {
         >
           <div className="flex w-1/2 flex-col gap-2 pb-20">
             <h3>
-              Bitcoin as a Bubble: Exploring Social Opinion through Digital Art
+              Bitcoin as a Bubble: Exploring Social Opinion through
+              Digital Art
             </h3>
             <small>
-              This innovative digital artwork explores the idea that Bitcoin,
-              the world's most popular cryptocurrency, is a bubble that is bound
-              to burst. The piece presents the current BTC course, depicted
-              through text, as a symbol of the volatile nature of
-              cryptocurrency.
+              This innovative digital artwork explores the idea that
+              Bitcoin, the world's most popular cryptocurrency, is a
+              bubble that is bound to burst. The piece presents the
+              current BTC course, depicted through text, as a symbol
+              of the volatile nature of cryptocurrency.
             </small>
             <small>
-              Through the use of digital art, the piece explores the social
-              opinions and concerns surrounding Bitcoin's legitimacy and future
-              sustainability. The text that makes up the artwork's centerpiece
-              reflects the constantly fluctuating value of BTC and the debate
+              Through the use of digital art, the piece explores the
+              social opinions and concerns surrounding Bitcoin's
+              legitimacy and future sustainability. The text that
+              makes up the artwork's centerpiece reflects the
+              constantly fluctuating value of BTC and the debate
               around its status as a reliable investment.
             </small>
             <small>
-              The artwork invites us to question our understanding of money and
-              the impact of new technologies on our financial systems. By
-              presenting the current BTC course as the focal point of the piece,
-              it highlights the rapid pace of change and the uncertainty that
-              comes with new forms of currency.
+              The artwork invites us to question our understanding of
+              money and the impact of new technologies on our
+              financial systems. By presenting the current BTC course
+              as the focal point of the piece, it highlights the rapid
+              pace of change and the uncertainty that comes with new
+              forms of currency.
             </small>
             <small>
-              This work challenges us to consider our relationship with money
-              and the ways in which we invest and consume. As we navigate an
-              increasingly digital world, works like this remind us of the
-              importance of critical thinking and reflection on the potential
-              impact of new technologies.
+              This work challenges us to consider our relationship
+              with money and the ways in which we invest and consume.
+              As we navigate an increasingly digital world, works like
+              this remind us of the importance of critical thinking
+              and reflection on the potential impact of new
+              technologies.
             </small>
             <small>
-              In this way, Bitcoin as a Bubble: Exploring Social Opinion through
-              Digital Art offers a unique perspective on the world of
-              cryptocurrency and its place in our society. Through the
-              intersection of technology and art, the piece invites us to
-              explore the complex relationship between money, value, and
-              perception in the digital age.
+              In this way, Bitcoin as a Bubble: Exploring Social
+              Opinion through Digital Art offers a unique perspective
+              on the world of cryptocurrency and its place in our
+              society. Through the intersection of technology and art,
+              the piece invites us to explore the complex relationship
+              between money, value, and perception in the digital age.
             </small>
             <time dateTime="2021">2021</time>
           </div>

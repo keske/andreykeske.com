@@ -1,4 +1,8 @@
-import { OrbitControls, useGLTF, useTexture } from "@react-three/drei";
+import {
+  OrbitControls,
+  useGLTF,
+  useTexture,
+} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
 import * as THREE from "three";
@@ -45,7 +49,10 @@ const Model: React.FC = () => {
 };
 
 export const Wall: React.FC = () => (
-  <Canvas camera={{ position: [0, 0, -30] }} className="h-full w-full">
+  <Canvas
+    camera={{ position: [0, 0, -30] }}
+    className="h-full w-full"
+  >
     <OrbitControls enableZoom={false} />
     <ambientLight intensity={0.2} />
     <spotLight intensity={1.5} position={[20, 20, 30]} />

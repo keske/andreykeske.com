@@ -11,7 +11,10 @@ export type UseTabs = {
   renderTabs: (tabs: string[]) => JSX.Element;
   renderTabsBody: (
     tabs: Array<
-      React.ReactElement<any, React.JSXElementConstructor<any> | string>
+      React.ReactElement<
+        any,
+        React.JSXElementConstructor<any> | string
+      >
     >,
   ) => JSX.Element;
   selectedTab: number;
@@ -69,7 +72,10 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
   const renderTabsBody = React.useCallback(
     (
       components: Array<
-        React.ReactElement<any, React.JSXElementConstructor<any> | string>
+        React.ReactElement<
+          any,
+          React.JSXElementConstructor<any> | string
+        >
       >,
     ) => (
       <React.Suspense>

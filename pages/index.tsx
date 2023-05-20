@@ -6,11 +6,12 @@ import type { NextPage } from "next";
 import { Head, Loading } from "@/components/index";
 
 const Home: NextPage = () => {
-  const [Component, setComponent] = React.useState<React.ReactElement | null>(
+  const [Component, setComponent] =
+    React.useState<React.ReactElement | null>(null);
+
+  const [isMobile, setIsMobile] = React.useState<boolean | null>(
     null,
   );
-
-  const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -30,11 +31,13 @@ const Home: NextPage = () => {
     (async () => {
       if (R.not(R.isNil(isMobile))) {
         if (isMobile) {
-          const Mobile = (await import("../components/Mobile")).default;
+          const Mobile = (await import("../components/Mobile"))
+            .default;
 
           setComponent(<Mobile />);
         } else {
-          const Desktop = (await import("../components/Desktop")).default;
+          const Desktop = (await import("../components/Desktop"))
+            .default;
 
           setComponent(<Desktop />);
         }

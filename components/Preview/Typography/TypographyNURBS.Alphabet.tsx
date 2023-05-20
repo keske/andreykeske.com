@@ -67,7 +67,11 @@ export const TypographyNURBSAlphabet: React.FC = () => {
         className="h-screen w-screen bg-[#ccff00]"
       >
         <React.Suspense fallback={null}>
-          <PerspectiveCamera fov={35} makeDefault position={[0, 0, 30]} />
+          <PerspectiveCamera
+            fov={35}
+            makeDefault
+            position={[0, 0, 30]}
+          />
           <OrbitControls />
           <ambientLight intensity={0.3} />
           {renderAlphabet}

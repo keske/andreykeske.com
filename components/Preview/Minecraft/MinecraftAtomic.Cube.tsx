@@ -29,13 +29,9 @@ export type MinecraftAtomicCubeProps = {
   showLines: boolean;
 };
 
-export const MinecraftAtomicCube: React.FC<MinecraftAtomicCubeProps> = ({
-  animation = true,
-  color,
-  density,
-  radius,
-  showLines,
-}) => {
+export const MinecraftAtomicCube: React.FC<
+  MinecraftAtomicCubeProps
+> = ({ animation = true, color, density, radius, showLines }) => {
   const ref = React.useRef<
     HTMLDivElement & {
       geometry: THREE.BoxGeometry;
@@ -105,12 +101,17 @@ export const MinecraftAtomicCube: React.FC<MinecraftAtomicCubeProps> = ({
     setPosition();
 
     if (ref.current) {
-      ref.current.geometry.attributes.position.needsUpdate = animation;
+      ref.current.geometry.attributes.position.needsUpdate =
+        animation;
     }
   });
 
   const outer = React.useMemo(() => {
-    const cubeGeometry = new THREE.BoxGeometry(radius, radius, radius);
+    const cubeGeometry = new THREE.BoxGeometry(
+      radius,
+      radius,
+      radius,
+    );
 
     const cubeMaterial = new THREE.MeshLambertMaterial({
       blending: THREE.AdditiveBlending,

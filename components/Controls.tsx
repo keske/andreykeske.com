@@ -60,7 +60,8 @@ export const Controls: React.FC<ControlsProps> = ({
         "absolute z-50 select-none rounded-xl bg-white p-3 font-sans text-xs dark:bg-gray-900",
         {
           // position states
-          "bottom-10 left-1/2 flex -translate-x-1/2": position === "bottom",
+          "bottom-10 left-1/2 flex -translate-x-1/2":
+            position === "bottom",
           "bottom-10 left-10": position === "bottom-left",
           "bottom-10 right-10": position === "bottom-right",
         },

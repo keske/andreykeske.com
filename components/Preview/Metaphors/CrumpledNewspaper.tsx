@@ -8,7 +8,10 @@ import { ParametricGeometry } from "three/addons/geometries/ParametricGeometry.j
 import { NURBSSurface } from "three/examples/jsm/curves/NURBSSurface";
 
 import { Button, Loading, WorkDetails } from "@/components/index";
-import { useNSControlPoints, useScrollInterpolation } from "@/hooks/index";
+import {
+  useNSControlPoints,
+  useScrollInterpolation,
+} from "@/hooks/index";
 
 type NURBSNewsPaperProps = {
   side?: THREE.Side;
@@ -30,7 +33,13 @@ export const NURBSNewsPaper: React.FC<NURBSNewsPaperProps> = ({
 
     const knots2 = [0, 0, 0, 0, 1, 1, 1, 1];
 
-    return new NURBSSurface(degree1, degree2, knots1, knots2, nsControlPoints);
+    return new NURBSSurface(
+      degree1,
+      degree2,
+      knots1,
+      knots2,
+      nsControlPoints,
+    );
   }, [nsControlPoints]);
 
   const map = React.useMemo(
@@ -39,7 +48,11 @@ export const NURBSNewsPaper: React.FC<NURBSNewsPaperProps> = ({
   );
 
   const geometry = React.useMemo(() => {
-    const getSurfacePoint = (u: number, v: number, target: THREE.Vector3) => {
+    const getSurfacePoint = (
+      u: number,
+      v: number,
+      target: THREE.Vector3,
+    ) => {
       const point = nurbsSurface.getPoint(u, v, target);
 
       const noise = new THREE.Vector3(
@@ -127,7 +140,9 @@ export const CrumpledNewspaper: React.FC = () => {
 
   const [isFetching, setIsFetching] = React.useState(false);
 
-  const [imageUrl, setImageUrl] = React.useState("images/new-yorker.png");
+  const [imageUrl, setImageUrl] = React.useState(
+    "images/new-yorker.png",
+  );
 
   const [url, setUrl] = React.useState("https://newyorker.com");
 
@@ -183,7 +198,10 @@ export const CrumpledNewspaper: React.FC = () => {
           opacity: canvasWrapperOpacityValue,
         }}
       >
-        <Canvas camera={{ position: [0, -2, -3.3] }} className="h-full w-full">
+        <Canvas
+          camera={{ position: [0, -2, -3.3] }}
+          className="h-full w-full"
+        >
           <ambientLight intensity={0.8} />
           <OrbitControls enableZoom={false} />
           {renderNURBS}
@@ -205,12 +223,13 @@ export const CrumpledNewspaper: React.FC = () => {
           <div className="flex w-1/2 flex-col gap-2 pb-20">
             <h3>Crumpled Newspaper</h3>
             <small>
-              Crumpled Newspaper is an interactive web application that
-              generates an image of a crumpled newspaper from a specified URL.
+              Crumpled Newspaper is an interactive web application
+              that generates an image of a crumpled newspaper from a
+              specified URL.
             </small>
             <small>
-              Which is to say metaphor on real life newspaper and news became
-              garbage
+              Which is to say metaphor on real life newspaper and news
+              became garbage
             </small>
             <time dateTime="2023">2023</time>
           </div>

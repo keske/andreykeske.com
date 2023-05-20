@@ -6,7 +6,9 @@ import { useListItems } from "@/stores/index";
 
 type WorkDetailsProps = React.PropsWithChildren;
 
-export const WorkDetails: React.FC<WorkDetailsProps> = ({ children }) => {
+export const WorkDetails: React.FC<WorkDetailsProps> = ({
+  children,
+}) => {
   const onUnmount = React.useRef<() => void>();
 
   const { selectedWorkId } = useListItems();

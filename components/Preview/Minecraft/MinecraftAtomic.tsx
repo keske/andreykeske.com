@@ -70,7 +70,11 @@ export const MinecraftAtomic: React.FC = () => {
           return (
             <MinecraftAtomicCube
               animation={animation.value}
-              color={enableColor.value ? "rgba(255, 255, 255, 0.5)" : "#FFFFFF"}
+              color={
+                enableColor.value
+                  ? "rgba(255, 255, 255, 0.5)"
+                  : "#FFFFFF"
+              }
               density={5}
               radius={radius}
               showLines={showLines.value}
@@ -151,16 +155,17 @@ export const MinecraftAtomic: React.FC = () => {
           <div className="flex w-full flex-col items-center gap-2">
             <h3>Atomic Minecraft</h3>
             <small className="w-1/2 text-center">
-              Atomic Minecraft is a world created with blocks as the basic
-              structure, each containing electrons inside just like atoms have
-              electrons in their orbits in the real world. In this world, the
-              electrons play a crucial role, with their arrangement determining
-              the properties of each block.
+              Atomic Minecraft is a world created with blocks as the
+              basic structure, each containing electrons inside just
+              like atoms have electrons in their orbits in the real
+              world. In this world, the electrons play a crucial role,
+              with their arrangement determining the properties of
+              each block.
             </small>
             <small className="w-1/2 text-center">
-              Blocks with more electrons are typically stronger and heavier,
-              just as atoms with more electrons tend to be more reactive and
-              have higher atomic numbers.
+              Blocks with more electrons are typically stronger and
+              heavier, just as atoms with more electrons tend to be
+              more reactive and have higher atomic numbers.
             </small>
             <time dateTime="2022">2022</time>
           </div>

@@ -24,7 +24,11 @@ export const MinecraftNURBSEnvironment: React.FC<Props> = ({
   return (
     <>
       {isDarkTheme ? <Stars /> : <Sky />}
-      <OrbitControls enableRotate={false} enableZoom {...orbitControlsProps} />
+      <OrbitControls
+        enableRotate={false}
+        enableZoom
+        {...orbitControlsProps}
+      />
       <ambientLight intensity={0.3} />
       <PerspectiveCamera fov={15} makeDefault position={[0, 0, 30]} />
     </>

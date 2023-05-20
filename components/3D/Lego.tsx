@@ -13,9 +13,17 @@ export const Lego: React.FC = () => {
   return (
     <Canvas>
       <ambientLight intensity={0.2} />
-      <spotLight angle={Math.PI / 6} intensity={0.1} position={[20, 20, 30]} />
+      <spotLight
+        angle={Math.PI / 6}
+        intensity={0.1}
+        position={[20, 20, 30]}
+      />
       <THREEOnMouseRotation ref={mesh}>
-        <mesh geometry={nodes.Cube128.geometry} position={[0, 0, 3]} ref={mesh}>
+        <mesh
+          geometry={nodes.Cube128.geometry}
+          position={[0, 0, 3]}
+          ref={mesh}
+        >
           <meshStandardMaterial metalness={3} roughness={3} />
           <MeshWobbleMaterial
             bumpScale={0.005}

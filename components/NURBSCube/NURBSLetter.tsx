@@ -8,7 +8,10 @@ type NURBSLetterProps = {
   warpRatio: number;
 };
 
-export const NURBSLetter: React.FC<NURBSLetterProps> = ({ url, warpRatio }) => {
+export const NURBSLetter: React.FC<NURBSLetterProps> = ({
+  url,
+  warpRatio,
+}) => {
   const nsControlPoints = useNSControlPoints(warpRatio);
 
   return <NURBS nsControlPoints={nsControlPoints} url={url} />;

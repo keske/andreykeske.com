@@ -30,8 +30,8 @@ export const LegoHTML: React.FC = () => (
         <div className="flex flex-col items-center gap-2">
           <h3>Lego HTML Element</h3>
           <small className="text-center">
-            A classical Lego brick except that this one was made from HTML
-            elements button and input
+            A classical Lego brick except that this one was made from
+            HTML elements button and input
           </small>
           <time dateTime="2021">2021</time>
         </div>

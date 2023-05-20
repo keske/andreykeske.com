@@ -15,8 +15,8 @@ export const Sneakers: React.FC = () => (
         <div className="flex flex-col items-center gap-2">
           <h3>Sneakers</h3>
           <small className="text-center">
-            I took the popular model of both brands — Nike Dunk and Adidas
-            Superstar — and crossed them.
+            I took the popular model of both brands — Nike Dunk and
+            Adidas Superstar — and crossed them.
           </small>
           <time dateTime="2011">2011</time>
         </div>

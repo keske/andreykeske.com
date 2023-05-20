@@ -54,19 +54,34 @@ export const MinecraftNURBSBlocks: React.FC = () => {
     <div className="h-full w-full" ref={container}>
       <div className="absolute h-1/3 w-1/2" ref={topLeft} />
       <div className="absolute left-1/2 h-1/3 w-1/2" ref={topRight} />
-      <div className="absolute top-1/3 h-1/3 w-1/3" ref={middleLeft} />
+      <div
+        className="absolute top-1/3 h-1/3 w-1/3"
+        ref={middleLeft}
+      />
       <div
         className="absolute left-1/3 top-1/3 h-1/3 w-1/3"
         ref={middleCenter}
       />
-      <div className="absolute right-0 top-1/3 h-1/3 w-1/3" ref={middleRight} />
-      <div className="absolute bottom-0 h-1/3 w-1/4" ref={bottomOne} />
-      <div className="absolute bottom-0 left-1/4 h-1/3 w-1/4" ref={bottomTwo} />
+      <div
+        className="absolute right-0 top-1/3 h-1/3 w-1/3"
+        ref={middleRight}
+      />
+      <div
+        className="absolute bottom-0 h-1/3 w-1/4"
+        ref={bottomOne}
+      />
+      <div
+        className="absolute bottom-0 left-1/4 h-1/3 w-1/4"
+        ref={bottomTwo}
+      />
       <div
         className="absolute bottom-0 right-1/4 h-1/3 w-1/4"
         ref={bottomThree}
       />
-      <div className="absolute bottom-0 right-0 h-1/3 w-1/4" ref={bottomFour} />
+      <div
+        className="absolute bottom-0 right-0 h-1/3 w-1/4"
+        ref={bottomFour}
+      />
       <Canvas className="h-screen w-screen" eventSource={container}>
         <React.Suspense fallback={null}>
           <View index={1} track={topLeft}>

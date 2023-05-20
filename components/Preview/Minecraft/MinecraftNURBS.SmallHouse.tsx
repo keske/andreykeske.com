@@ -4,7 +4,10 @@ import React from "react";
 
 import { MinecraftNURBSEnvironment } from "./MinecraftNURBS.Environment";
 
-import { Loading, NURBSCubeStructureSmallHouse } from "@/components/index";
+import {
+  Loading,
+  NURBSCubeStructureSmallHouse,
+} from "@/components/index";
 import { useControls } from "@/hooks/index";
 import { useListItems } from "@/stores/index";
 
