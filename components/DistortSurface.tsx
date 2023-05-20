@@ -7,7 +7,7 @@ import {
 } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
 import clsx from "clsx";
-import React, { forwardRef } from "react";
+import React from "react";
 import * as THREE from "three";
 
 import type { ButtonProps, ButtonRef } from "@/components/Button";
@@ -44,55 +44,57 @@ type DistortPaneRef = THREE.Mesh<
   THREE.Material | THREE.Material[]
 >;
 
-const DistortPane = React.forwardRef<DistortPaneRef, DistortPaneProps>(
-  ({ htmlButtonRef }, forwardedRef) => {
-    const gl = useThree((state) => state.gl);
+const DistortPane = React.forwardRef<
+  DistortPaneRef,
+  DistortPaneProps
+>(({ htmlButtonRef }, forwardedRef) => {
+  const gl = useThree((state) => state.gl);
 
-    const [roundedBoxArgs, setRoundedBoxArgs] = useVector3();
+  const [roundedBoxArgs, setRoundedBoxArgs] = useVector3();
 
-    React.useEffect(() => {
-      if (htmlButtonRef.current) {
-        setRoundedBoxArgs(
-          htmlSizeToMeshSize(
-            htmlButtonRef.current.offsetWidth,
-            htmlButtonRef.current.offsetHeight,
-            gl.domElement.offsetWidth,
-            gl.domElement.offsetHeight,
-          ),
-        );
-      }
-    }, [
-      gl.domElement.offsetHeight,
-      gl.domElement.offsetWidth,
-      htmlButtonRef,
-      setRoundedBoxArgs,
-    ]);
+  React.useEffect(() => {
+    if (htmlButtonRef.current) {
+      setRoundedBoxArgs(
+        htmlSizeToMeshSize(
+          htmlButtonRef.current.offsetWidth,
+          htmlButtonRef.current.offsetHeight,
+          gl.domElement.offsetWidth,
+          gl.domElement.offsetHeight,
+        ),
+      );
+    }
+  }, [
+    gl.domElement.offsetHeight,
+    gl.domElement.offsetWidth,
+    htmlButtonRef,
+    setRoundedBoxArgs,
+  ]);
 
-    return (
-      <RoundedBox
-        args={roundedBoxArgs}
-        radius={roundedBoxArgs[0] / 5}
-        ref={forwardedRef}
-        scale={4.5}
-      >
-        <CommonMeshDistortMaterial />
-      </RoundedBox>
-    );
-  },
-);
+  return (
+    <RoundedBox
+      args={roundedBoxArgs}
+      radius={roundedBoxArgs[0] / 5}
+      ref={forwardedRef}
+      scale={4.5}
+    >
+      <CommonMeshDistortMaterial />
+    </RoundedBox>
+  );
+});
 
 type DistortTextProps = {
   children: string;
 };
 
-const DistortText = React.forwardRef<unknown | undefined, DistortTextProps>(
-  ({ children }, forwardedRef) => (
-    <Text color="black" position={[0, 0, 3]} ref={forwardedRef}>
-      {children}
-      <CommonMeshDistortMaterial distort={0.4} />
-    </Text>
-  ),
-);
+const DistortText = React.forwardRef<
+  unknown | undefined,
+  DistortTextProps
+>(({ children }, forwardedRef) => (
+  <Text color="black" position={[0, 0, 3]} ref={forwardedRef}>
+    {children}
+    <CommonMeshDistortMaterial distort={0.4} />
+  </Text>
+));
 
 export type DistortSurfaceProps = Omit<ButtonProps, "children"> &
   Omit<React.HTMLAttributes<HTMLDivElement>, "children"> & {
@@ -120,13 +122,19 @@ export const DistortSurface = React.forwardRef<
     }
   }, [htmlButtonRef, setCanvasSize]);
 
-  React.useImperativeHandle(forwardedRef, () => distorPaneRef.current);
+  React.useImperativeHandle(
+    forwardedRef,
+    () => distorPaneRef.current,
+  );
 
   return (
     <div className="cursor-pointer">
       <Button
         {...props}
-        className={clsx(className, "absolute left-[-9999px] top-[-9999px]")}
+        className={clsx(
+          className,
+          "absolute left-[-9999px] top-[-9999px]",
+        )}
         ref={htmlButtonRef}
       >
         {children}
@@ -134,7 +142,10 @@ export const DistortSurface = React.forwardRef<
       <Canvas className={className} style={canvasSize}>
         <Environment preset="sunset" />
         <OrbitControls />
-        <DistortPane htmlButtonRef={htmlButtonRef} ref={distorPaneRef} />
+        <DistortPane
+          htmlButtonRef={htmlButtonRef}
+          ref={distorPaneRef}
+        />
         <DistortText>{children}</DistortText>
       </Canvas>
     </div>
@@ -148,7 +159,7 @@ export type DistortCanvasRef = HTMLCanvasElement;
 export const DistortCanvas = React.forwardRef<
   DistortCanvasRef,
   DistortCanvasProps
->(({ children, ...props }, forwardedRef) => {
+>(({ children }, forwardedRef) => {
   console.log("children", children);
 
   return (
