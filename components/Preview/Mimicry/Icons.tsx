@@ -20,7 +20,7 @@ export const Icons = () => (
         </div>
       </div>
       <WorkDetails>
-        <div className="flex w-1/2 flex-col gap-2">
+        <div className="flex w-1/2 flex-col gap-4">
           <h3>Invisible icons on the iPad</h3>
           <small>
             I&#39;ve created 20 apps. Each imitating
