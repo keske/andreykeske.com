@@ -17,7 +17,7 @@ const Piano = React.lazy(() =>
 
 export const Mimicry: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 0,
+    initialIndex: 1,
   });
 
   return (
