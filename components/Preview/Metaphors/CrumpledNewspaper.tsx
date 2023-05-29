@@ -199,7 +199,7 @@ export const CrumpledNewspaper: React.FC = () => {
         }}
       >
         <Canvas
-          camera={{ position: [0, -2, -3.3] }}
+          camera={{ position: [0, 0, -3.3] }}
           className="h-full w-full"
         >
           <ambientLight intensity={0.8} />
@@ -237,7 +237,7 @@ export const CrumpledNewspaper: React.FC = () => {
       </WorkDetails>
       <WorkDetails>
         <div
-          className="fixed left-1/2 top-40 z-20 flex -translate-x-1/2 select-none gap-2 rounded-3xl bg-gray-200 p-3 font-sans text-xs dark:bg-gray-800"
+          className="fixed left-1/2 top-40 z-20 hidden -translate-x-1/2 select-none gap-2 rounded-3xl bg-gray-200 p-3 font-sans text-xs dark:bg-gray-800"
           style={{
             opacity: controlsOpacityValue,
           }}
