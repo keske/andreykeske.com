@@ -176,4 +176,4 @@ const Root: React.FC<RootProps> = ({ videoRef }) => {
   );
 };
 
-export const DistortingMirrors = withCameraAccess(Root);
+export const Mirrors = withCameraAccess(Root);

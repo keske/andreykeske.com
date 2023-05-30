@@ -159,14 +159,8 @@ export type DistortCanvasRef = HTMLCanvasElement;
 export const DistortCanvas = React.forwardRef<
   DistortCanvasRef,
   DistortCanvasProps
->(({ children }, forwardedRef) => {
-  console.log("children", children);
-
-  return (
-    <>
-      <Canvas ref={forwardedRef}>
-        <OrbitControls />
-      </Canvas>
-    </>
-  );
-});
+>(({ children }, forwardedRef) => (
+  <Canvas ref={forwardedRef}>
+    <OrbitControls />
+  </Canvas>
+));
