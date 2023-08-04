@@ -1,13 +1,18 @@
-import { Transition } from "@headlessui/react";
+import { animated, config, useTransition } from "@react-spring/web";
 import * as R from "ramda";
 import React from "react";
 
 import { useListItems } from "@/stores/index";
 
 export const WorkTitle: React.FC = () => {
-  const onUnmount = React.useRef<() => void>();
-
   const { selectedWorkId, works } = useListItems();
+
+  const transitions = useTransition(R.not(R.isNil(selectedWorkId)), {
+    config: config.stiff,
+    enter: { opacity: 1 },
+    from: { opacity: 0 },
+    leave: { opacity: 0 },
+  });
 
   const title = React.useMemo(
     () =>
@@ -16,28 +21,19 @@ export const WorkTitle: React.FC = () => {
     [works, selectedWorkId],
   );
 
-  return (
-    <Transition
-      afterLeave={() => onUnmount.current?.()}
-      appear
-      as={React.Fragment}
-      show={R.not(R.isNil(selectedWorkId))}
-    >
-      <Transition.Child
-        as={React.Fragment}
-        enter="ease-out duration-700"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="ease-in duration-150"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
+  return transitions((styles, item) =>
+    item ? (
+      <animated.div
+        style={{
+          opacity: styles.opacity,
+        }}
       >
         <div className="fixed top-9 z-10 flex w-full justify-center">
           <h3 className="text-3xl font-black uppercase text-black dark:text-white">
             {title}
           </h3>
         </div>
-      </Transition.Child>
-    </Transition>
+      </animated.div>
+    ) : null,
   );
 };

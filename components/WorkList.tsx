@@ -1,4 +1,4 @@
-import { Transition } from "@headlessui/react";
+import { animated, config, useTransition } from "@react-spring/web";
 import * as R from "ramda";
 import React from "react";
 
@@ -17,18 +17,21 @@ export const WorkList: React.FC<WorkListProps> = ({
 }) => {
   const { selectedWorkId, works } = useListItems();
 
-  return (
-    <div className="fixed bottom-10 ml-10">
-      <Transition show={R.isNil(selectedWorkId)}>
-        <Transition.Child
-          as={React.Fragment}
-          enter="ease-out duration-500"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-150"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
+  const transitions = useTransition(R.isNil(selectedWorkId), {
+    config: config.stiff,
+    enter: { opacity: 1 },
+    from: { opacity: 0 },
+    leave: { opacity: 0 },
+  });
+
+  return transitions((styles, item) =>
+    item ? (
+      <animated.div
+        style={{
+          opacity: styles.opacity,
+        }}
+      >
+        <div className="fixed bottom-10 ml-10">
           <nav>
             <ul>
               {works.map(({ component: Component, id, title }) => (
@@ -48,8 +51,8 @@ export const WorkList: React.FC<WorkListProps> = ({
               ))}
             </ul>
           </nav>
-        </Transition.Child>
-      </Transition>
-    </div>
+        </div>
+      </animated.div>
+    ) : null,
   );
 };

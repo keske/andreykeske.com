@@ -1,4 +1,4 @@
-import { Transition } from "@headlessui/react";
+import { animated, config, useTransition } from "@react-spring/web";
 import clsx from "clsx";
 import React from "react";
 
@@ -16,7 +16,12 @@ export const CloseButton: React.FC<CloseButtonProps> = ({
   onClick,
   ...props
 }) => {
-  const onUnmount = React.useRef<() => void>();
+  const transitions = useTransition(isShowing, {
+    config: config.stiff,
+    enter: { opacity: 1 },
+    from: { opacity: 0 },
+    leave: { opacity: 0 },
+  });
 
   React.useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -32,27 +37,17 @@ export const CloseButton: React.FC<CloseButtonProps> = ({
     };
   }, [onClick]);
 
-  return (
-    <Transition
-      afterLeave={() => onUnmount.current?.()}
-      appear
-      as={React.Fragment}
-      show={isShowing}
-    >
-      <Transition.Child
-        as={React.Fragment}
-        enter="ease-out duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="ease-in duration-150"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
+  return transitions((styles, item) =>
+    item ? (
+      <animated.div
+        style={{
+          opacity: styles.opacity,
+        }}
       >
         <Button
           {...props}
           className={clsx(
-            "fixed right-7 top-7 z-50 p-3 font-black text-black hover:opacity-80 dark:text-white",
-            isShowing ? "opacity-100" : "opacity-0",
+            "fixed right-7 top-7 z-50 p-3 font-black text-black dark:text-white",
           )}
           onClick={onClick}
           size={null}
@@ -60,7 +55,7 @@ export const CloseButton: React.FC<CloseButtonProps> = ({
         >
           ⛌
         </Button>
-      </Transition.Child>
-    </Transition>
+      </animated.div>
+    ) : null,
   );
 };

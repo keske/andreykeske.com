@@ -1,4 +1,4 @@
-import { Transition } from "@headlessui/react";
+import { animated, config, useTransition } from "@react-spring/web";
 import * as R from "ramda";
 import React from "react";
 
@@ -9,28 +9,24 @@ type WorkDetailsProps = React.PropsWithChildren;
 export const WorkDetails: React.FC<WorkDetailsProps> = ({
   children,
 }) => {
-  const onUnmount = React.useRef<() => void>();
-
   const { selectedWorkId } = useListItems();
 
-  return (
-    <Transition
-      afterLeave={() => onUnmount.current?.()}
-      appear
-      as={React.Fragment}
-      show={R.not(R.isNil(selectedWorkId))}
-    >
-      <Transition.Child
-        as={React.Fragment}
-        enter="ease-out duration-700"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="ease-in duration-150"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
+  const transitions = useTransition(R.not(R.isNil(selectedWorkId)), {
+    config: config.stiff,
+    enter: { opacity: 1 },
+    from: { opacity: 0 },
+    leave: { opacity: 0 },
+  });
+
+  return transitions((styles, item) =>
+    item ? (
+      <animated.div
+        style={{
+          opacity: styles.opacity,
+        }}
       >
         {children}
-      </Transition.Child>
-    </Transition>
+      </animated.div>
+    ) : null,
   );
 };

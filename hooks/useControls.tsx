@@ -56,7 +56,7 @@ export const useControls = (
         };
       }),
       R.mergeAll,
-    )(initialOptions),
+    )(initialOptions) as ControlsOptions,
   );
 
   const hendleUpdate = React.useCallback(
