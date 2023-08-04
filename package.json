@@ -11,9 +11,7 @@
   },
   "dependencies": {
     "@next/font": "^13.4.12",
-    "@react-spring/three": "^9.7.3",
     "@react-spring/web": "^9.7.3",
-    "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.80.1",
     "@react-three/fiber": "^8.13.6",
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -32,8 +30,6 @@
     "ramda": "^0.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-ref-composer": "^1.0.1",
-    "react-scroll-parallax": "^3.4.2",
     "react-use-refs": "^1.0.1",
     "simplex-noise": "^3.0.1",
     "three": "^0.155.0",
