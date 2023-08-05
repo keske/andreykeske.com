@@ -47,9 +47,9 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head />
+      {/* <Head /> */}
       <SegmentedControl items={["Mac OS", "Minecraft"]} />
-      {Component || <Loading />}
+      {/* {Component || <Loading />} */}
     </>
   );
 };
