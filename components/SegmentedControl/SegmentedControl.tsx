@@ -24,7 +24,7 @@ export const SegmentedControl = React.forwardRef<
     const [getItemRef] = useRefs<HTMLButtonElement>();
 
     const [indicatorPositionStyles, setIndicatorPositionStyles] =
-      React.useState<React.CSSProperties>({});
+      React.useState<React.CSSProperties>();
 
     const [value, setValue] = React.useState(
       defaultValue || items[0],
@@ -54,7 +54,7 @@ export const SegmentedControl = React.forwardRef<
         top: activeItemElement.offsetTop,
         width: activeItemRect.width,
       });
-    }, [value, getItemRef]);
+    }, [getItemRef, value]);
 
     const { ref } = useResizeObserver<HTMLDivElement>({
       onResize: recalculateIndicatorPosition,
@@ -74,9 +74,7 @@ export const SegmentedControl = React.forwardRef<
       >
         <SegmentedControlIndicator
           className="absolute h-full w-full transition-all duration-200"
-          style={{
-            ...indicatorPositionStyles,
-          }}
+          style={indicatorPositionStyles}
         />
         {items.map((item, index) => (
           <SegmentedControlItem

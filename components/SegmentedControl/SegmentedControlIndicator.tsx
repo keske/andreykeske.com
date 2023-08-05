@@ -44,10 +44,7 @@ const Buble = () => {
   );
 };
 
-export type SegmentedControlIndicatorProps = Pick<
-  CanvasProps,
-  "className" | "gl" | "style"
->;
+export type SegmentedControlIndicatorProps = Partial<CanvasProps>;
 
 export const SegmentedControlIndicator = React.forwardRef<
   HTMLCanvasElement,
