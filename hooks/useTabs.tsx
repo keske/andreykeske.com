@@ -9,14 +9,7 @@ export type TabsConfig = {
 
 export type UseTabs = {
   renderTabs: (tabs: string[]) => JSX.Element;
-  renderTabsBody: (
-    tabs: Array<
-      React.ReactElement<
-        any,
-        React.JSXElementConstructor<any> | string
-      >
-    >,
-  ) => JSX.Element;
+  renderTabsBody: (tabs: any[]) => JSX.Element;
   selectedTab: number;
   setSelectedTab: (value: number) => void;
 };
@@ -70,14 +63,7 @@ export const useTabs = (config?: TabsConfig): UseTabs => {
   );
 
   const renderTabsBody = React.useCallback(
-    (
-      components: Array<
-        React.ReactElement<
-          any,
-          React.JSXElementConstructor<any> | string
-        >
-      >,
-    ) => (
+    (components: any[]) => (
       <React.Suspense>
         {React.cloneElement(components[selectedTab])}
       </React.Suspense>

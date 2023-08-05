@@ -25,6 +25,7 @@ export * from "./DistortSurface";
 export * from "./Head";
 export * from "./Loading";
 export * from "./Logo";
+export * from "./SegmentedControl";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
 export * from "./WaterSurface";

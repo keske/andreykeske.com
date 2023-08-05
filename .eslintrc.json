@@ -8,6 +8,19 @@
     "plugin:typescript-sort-keys/recommended",
     "plugin:react-hooks/recommended"
   ],
+  "overrides": [
+    {
+      "files": ["graphql/*.tsx", "utilities/*.[ts,tsx]"],
+      "rules": {
+        "sort-exports/sort-exports": [
+          "error",
+          {
+            "sortDir": "asc"
+          }
+        ]
+      }
+    }
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -25,19 +38,6 @@
     "sort-exports"
   ],
   "root": true,
-  "overrides": [
-    {
-      "files": ["graphql/*.tsx", "utilities/*.[ts,tsx]"],
-      "rules": {
-        "sort-exports/sort-exports": [
-          "error",
-          {
-            "sortDir": "asc"
-          }
-        ]
-      }
-    }
-  ],
   "rules": {
     "@typescript-eslint/array-type": [
       "error",
@@ -57,7 +57,7 @@
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/quotes": 0,
-    "@typescript-eslint/sort-type-union-intersection-members": "error",
+    "@typescript-eslint/sort-type-constituents": "error",
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "arrow-body-style": ["error", "as-needed"],
     "comma-dangle": ["error", "always-multiline"],

@@ -3,7 +3,7 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { Head, Loading } from "@/components/index";
+import { Head, Loading, SegmentedControl } from "@/components/index";
 
 const Home: NextPage = () => {
   const [Component, setComponent] =
@@ -47,8 +47,9 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head />
-      {Component || <Loading />}
+      {/* <Head /> */}
+      <SegmentedControl items={["Mac OS", "Minecraft"]} />
+      {/* {Component || <Loading />} */}
     </>
   );
 };
