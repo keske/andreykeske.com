@@ -11,7 +11,7 @@ export const SegmentedControlItem = React.forwardRef<
 >(({ children, value, ...toggleGroupItemProps }, forwardedRef) => (
   <ToggleGroup.Item
     className={clsx(
-      "relative p-4 text-xs font-black uppercase tracking-widest",
+      "relative p-2 px-4 text-xs font-black uppercase tracking-widest",
       // `on` state
       "data-[state=on]:text-black",
     )}

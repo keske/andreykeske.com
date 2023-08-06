@@ -11,6 +11,10 @@ export type SegmentedControlProps = Omit<
   "children" | "type"
 > & {
   items: string[];
+  segmentedControlIndicatorElement?: React.ReactElement<
+    any,
+    React.JSXElementConstructor<any> | string
+  >;
 };
 
 export const SegmentedControl = React.forwardRef<
@@ -18,7 +22,13 @@ export const SegmentedControl = React.forwardRef<
   SegmentedControlProps
 >(
   (
-    { defaultValue, items, onValueChange, ...toggleGroupRootProps },
+    {
+      defaultValue,
+      items,
+      onValueChange,
+      segmentedControlIndicatorElement,
+      ...toggleGroupRootProps
+    },
     forwardedRef,
   ) => {
     const [getItemRef] = useRefs<HTMLButtonElement>();
@@ -60,6 +70,20 @@ export const SegmentedControl = React.forwardRef<
       onResize: recalculateIndicatorPosition,
     });
 
+    const segmentedControlIndicator = React.useMemo(
+      () =>
+        segmentedControlIndicatorElement ? (
+          React.cloneElement(segmentedControlIndicatorElement, {
+            indicatorPositionStyles,
+          })
+        ) : (
+          <SegmentedControlIndicator
+            styles={indicatorPositionStyles}
+          />
+        ),
+      [indicatorPositionStyles, segmentedControlIndicatorElement],
+    );
+
     React.useEffect(() => {
       recalculateIndicatorPosition();
     }, [recalculateIndicatorPosition, value]);
@@ -72,10 +96,7 @@ export const SegmentedControl = React.forwardRef<
         type="single"
         {...toggleGroupRootProps}
       >
-        <SegmentedControlIndicator
-          className="absolute h-full w-full transition-all duration-200"
-          indicatorPositionStyles={indicatorPositionStyles}
-        />
+        {segmentedControlIndicator}
         {items.map((item, index) => (
           <SegmentedControlItem
             key={index}
