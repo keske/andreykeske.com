@@ -2,20 +2,32 @@ import React from "react";
 
 import { IOSTicky } from "./IOS.Ticky";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
+
+const segmentedControlItems: string[] = ["Ticky"];
 
 export const IOS: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs();
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Ticky":
+        return <IOSTicky />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <div className="h-screen w-screen">
       <WorkDetails>
         <div className="fixed top-40 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Ticky"])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([<IOSTicky />])}
+      {renderContent()}
     </div>
   );
 };

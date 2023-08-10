@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const MapsGlobalization = React.lazy(() =>
   import("./Maps.Globalization").then((module) => ({
@@ -21,25 +20,38 @@ const MapsWaterOnMars = React.lazy(() =>
   })),
 );
 
+const segmentedControlItems: string[] = [
+  "Globalization",
+  "Vintage Google Street View",
+  "Water on Mars",
+];
+
 export const Maps: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs();
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Globalization":
+        return <MapsGlobalization />;
+      case "Vintage Google Street View":
+        return <MapsVintageGoogleStreetView />;
+      case "Water on Mars":
+        return <MapsWaterOnMars />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <div className="h-screen w-screen">
       <WorkDetails>
         <div className="fixed top-40 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs([
-            "Globalization",
-            "Vintage Google Street View",
-            "Water on Mars",
-          ])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([
-        <MapsGlobalization />,
-        <MapsVintageGoogleStreetView />,
-        <MapsWaterOnMars />,
-      ])}
+      {renderContent()}
     </div>
   );
 };

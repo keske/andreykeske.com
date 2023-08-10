@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const Cloth = React.lazy(() =>
   import("./Cloth").then((module) => ({
@@ -27,29 +26,38 @@ const SoftVideoPlayer = React.lazy(() =>
   })),
 );
 
+const segmentedControlItems: string[] = [
+  "Cloth",
+  "Distorting Mirrors",
+  "Soft Video Player",
+];
+
 export const Interface: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 3,
-  });
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Cloth":
+        return <Cloth />;
+      case "Distorting Mirrors":
+        return <DistortingMirrors />;
+      case "Soft Video Player":
+        return <SoftVideoPlayer />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs([
-            "Cloth",
-            "Distorting Mirrors",
-            "Mandelbrot's Set",
-            "Soft Video Player",
-          ])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([
-        <Cloth />,
-        <DistortingMirrors />,
-        <MandelbrotSet />,
-        <SoftVideoPlayer />,
-      ])}
+      {renderContent()}
     </>
   );
 };

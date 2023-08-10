@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const Icons = React.lazy(() =>
   import("./Icons").then((module) => ({
@@ -15,19 +14,31 @@ const Piano = React.lazy(() =>
   })),
 );
 
-export const Mimicry: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 1,
-  });
+const segmentedControlItems: string[] = ["Piano", "iPad icons"];
 
+export const Mimicry: React.FC = () => {
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Piano":
+        return <Piano />;
+      case "iPad icons":
+        return <Icons />;
+    }
+  }, [segmentedControlAtiveItem]);
   return (
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Piano", "iPad icons"])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([<Piano />, <Icons />])}
+      {renderContent()}
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const Awards = React.lazy(() =>
   import("./Awards").then((module) => ({
@@ -21,19 +20,38 @@ const Description = React.lazy(() =>
   })),
 );
 
+const segmentedControlItems: string[] = [
+  "Awards",
+  "Contacts",
+  "Description",
+];
+
 export const About: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 2,
-  });
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Awards":
+        return <Awards />;
+      case "Contacts":
+        return <Contacts />;
+      case "Description":
+        return <Description />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Awards", "Contacts", "Description"])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([<Awards />, <Contacts />, <Description />])}
+      {renderContent()}
     </>
   );
 };

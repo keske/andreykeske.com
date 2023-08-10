@@ -2,20 +2,32 @@ import React from "react";
 
 import { TypographyNURBSAlphabet } from "./TypographyNURBS.Alphabet";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
+
+const segmentedControlItems: string[] = ["Alphabet"];
 
 export const TypographyNURBS: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs();
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Alphabet":
+        return <TypographyNURBSAlphabet />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <>
       <WorkDetails>
         <div className="fixed top-40 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Alphabet"])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([<TypographyNURBSAlphabet />])}
+      {renderContent()}
     </>
   );
 };

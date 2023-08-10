@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const AR = React.lazy(() =>
   import("./AR").then((module) => ({
@@ -51,37 +50,53 @@ const Maps = React.lazy(() =>
   })),
 );
 
+const segmentedControlItems: string[] = [
+  "AR",
+  "Crumpled Newspaper",
+  "Crypto",
+  "Duality",
+  "Emojies",
+  "IOS",
+  "Mac OS",
+  "Maps",
+];
+
 export const Metaphors: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 1,
-  });
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "AR":
+        return <AR />;
+      case "Crumpled Newspaper":
+        return <CrumpledNewspaper />;
+      case "Crypto":
+        return <Crypto />;
+      case "Duality":
+        return <Duality />;
+      case "Emojies":
+        return <Emojies />;
+      case "IOS":
+        return <IOS />;
+      case "Mac OS":
+        return <MacOS />;
+      case "Maps":
+        return <Maps />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs([
-            "AR",
-            "Crumpled Newspaper",
-            "Crypto",
-            "Duality",
-            "Emojies",
-            "IOS",
-            "Mac OS",
-            "Maps",
-          ])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([
-        <AR />,
-        <CrumpledNewspaper />,
-        <Crypto />,
-        <Duality />,
-        <Emojies />,
-        <IOS />,
-        <MacOS />,
-        <Maps />,
-      ])}
+      {renderContent()}
     </>
   );
 };

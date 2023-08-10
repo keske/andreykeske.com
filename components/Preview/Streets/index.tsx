@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const Graffiti = React.lazy(() =>
   import("./Graffiti").then((module) => ({
@@ -21,21 +20,38 @@ const Stickers = React.lazy(() =>
   })),
 );
 
+const segmentedControlItems: string[] = [
+  "Graffiti",
+  "Installations",
+  "Stickers",
+];
+
 export const Streets: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs();
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Graffiti":
+        return <Graffiti />;
+      case "Installations":
+        return <Installations />;
+      case "Stickers":
+        return <Stickers />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Graffiti", "Installations", "Stickers"])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([
-        <Graffiti />,
-        <Installations />,
-        <Stickers />,
-      ])}
+      {renderContent()}
     </>
   );
 };

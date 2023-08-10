@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const EsherSwitchButton = React.lazy(() =>
   import("./EsherSwitchButton").then((module) => ({
@@ -33,29 +32,44 @@ const Sneakers = React.lazy(() =>
   })),
 );
 
+const segmentedControlItems: string[] = [
+  "Esher's Switch Button",
+  "Manhattan",
+  "Lego HTML",
+  "LOT2046 Tattoo",
+  "Sneakers",
+];
+
 export const Morphism: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs();
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Esher's Switch Button":
+        return <EsherSwitchButton />;
+      case "Manhattan":
+        return <InvertedManhattan />;
+      case "Lego HTML":
+        return <LegoHTML />;
+      case "LOT2046 Tattoo":
+        return <LOT2046Tattoo />;
+      case "Sneakers":
+        return <Sneakers />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs([
-            "Esher's Switch Button",
-            "Manhattan",
-            "Lego HTML",
-            "LOT2046 Tattoo",
-            "Sneakers",
-          ])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([
-        <EsherSwitchButton />,
-        <InvertedManhattan />,
-        <LegoHTML />,
-        <LOT2046Tattoo />,
-        <Sneakers />,
-      ])}
+      {renderContent()}
     </>
   );
 };

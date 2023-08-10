@@ -6,6 +6,5 @@ export * from "./useRefs";
 export * from "./useResizeObserver";
 export * from "./useScrollInterpolation";
 export * from "./useSize";
-export * from "./useTabs";
 export * from "./useValueRef";
 export * from "./useVector3";

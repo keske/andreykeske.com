@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const MacOSDesktop = React.lazy(() =>
   import("./MacOS.Desktop").then((module) => ({
@@ -27,22 +26,41 @@ const MacOSTerminal = React.lazy(() =>
   })),
 );
 
+const segmentedControlItems: string[] = [
+  "Desktop",
+  "Dock",
+  "Finder",
+  "Terminal",
+];
+
 export const MacOS: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs();
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Desktop":
+        return <MacOSDesktop />;
+      case "Dock":
+        return <MacOSDock />;
+      case "Finder":
+        return <MacOSFinder />;
+      case "Terminal":
+        return <MacOSTerminal />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <div className="h-screen w-screen">
       <WorkDetails>
         <div className="fixed top-40 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Desktop", "Dock", "Finder", "Terminal"])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([
-        <MacOSDesktop />,
-        <MacOSDock />,
-        <MacOSFinder />,
-        <MacOSTerminal />,
-      ])}
+      {renderContent()}
     </div>
   );
 };

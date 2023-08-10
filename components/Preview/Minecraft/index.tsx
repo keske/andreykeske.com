@@ -1,7 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
-import { useTabs } from "@/hooks/index";
+import { SegmentedControl, WorkDetails } from "@/components/index";
 
 const MinecraftAtomic = React.lazy(() =>
   import("./MinecraftAtomic").then((module) => ({
@@ -15,19 +14,32 @@ const MinecraftNURBS = React.lazy(() =>
   })),
 );
 
+const segmentedControlItems: string[] = ["Atomic", "NURBS"];
+
 export const Minecraft: React.FC = () => {
-  const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 1,
-  });
+  const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
+    React.useState(segmentedControlItems[0]);
+
+  const renderContent = React.useCallback(() => {
+    switch (segmentedControlAtiveItem) {
+      case "Atomic":
+        return <MinecraftAtomic />;
+      case "NURBS":
+        return <MinecraftNURBS />;
+    }
+  }, [segmentedControlAtiveItem]);
 
   return (
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Atomic", "NURBS"])}
+          <SegmentedControl
+            items={segmentedControlItems}
+            onValueChange={setSegmentedControlAtiveItem}
+          />
         </div>
       </WorkDetails>
-      {renderTabsBody([<MinecraftAtomic />, <MinecraftNURBS />])}
+      {renderContent()}
     </>
   );
 };
