@@ -8,26 +8,12 @@
     "plugin:typescript-sort-keys/recommended",
     "plugin:react-hooks/recommended"
   ],
-  "overrides": [
-    {
-      "files": ["graphql/*.tsx", "utilities/*.[ts,tsx]"],
-      "rules": {
-        "sort-exports/sort-exports": [
-          "error",
-          {
-            "sortDir": "asc"
-          }
-        ]
-      }
-    }
-  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
   },
   "plugins": [
     "@typescript-eslint",
-    "sort-exports",
     "hooks",
     "import",
     "sort-keys-fix",
@@ -35,8 +21,7 @@
     "react-hooks",
     "sort-destructure-keys",
     "tailwindcss",
-    "typescript-sort-keys",
-    "sort-exports"
+    "typescript-sort-keys"
   ],
   "root": true,
   "rules": {
@@ -168,13 +153,6 @@
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": 0,
     "sort-destructure-keys/sort-destructure-keys": "error",
-    "sort-exports/sort-exports": [
-      "error",
-      {
-        "sortDir": "asc",
-        "sortExportKindFirst": "type"
-      }
-    ],
     "sort-imports": [
       "error",
       {

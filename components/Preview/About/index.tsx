@@ -34,8 +34,10 @@ export const About: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Awards":
         return <Awards />;
+
       case "Contacts":
         return <Contacts />;
+
       case "Description":
         return <Description />;
     }

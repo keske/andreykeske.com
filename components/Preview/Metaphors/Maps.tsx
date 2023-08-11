@@ -34,8 +34,10 @@ export const Maps: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Globalization":
         return <MapsGlobalization />;
+
       case "Vintage Google Street View":
         return <MapsVintageGoogleStreetView />;
+
       case "Water on Mars":
         return <MapsWaterOnMars />;
     }

@@ -20,8 +20,10 @@ export const MinecraftNURBS: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Dirt":
         return <MinecraftNURBSDirt />;
+
       case "Blocks":
         return <MinecraftNURBSBlocks />;
+
       case "Small House":
         return <MinecraftNURBSSmallHouse />;
     }

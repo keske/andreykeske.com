@@ -48,12 +48,16 @@ export const Morphism: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Esher's Switch Button":
         return <EsherSwitchButton />;
+
       case "Manhattan":
         return <InvertedManhattan />;
+
       case "Lego HTML":
         return <LegoHTML />;
+
       case "LOT2046 Tattoo":
         return <LOT2046Tattoo />;
+
       case "Sneakers":
         return <Sneakers />;
     }

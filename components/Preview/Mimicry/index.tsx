@@ -24,10 +24,12 @@ export const Mimicry: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Piano":
         return <Piano />;
+
       case "iPad icons":
         return <Icons />;
     }
   }, [segmentedControlAtiveItem]);
+
   return (
     <>
       <WorkDetails>

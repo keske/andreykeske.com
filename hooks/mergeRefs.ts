@@ -1,7 +1,7 @@
 import React from "react";
 
 export const mergeRefs =
-  <T>(...refs: React.Ref<T>[]) =>
+  <T>(...refs: Array<React.Ref<T>>) =>
   (node: T | null) => {
     refs.forEach((ref) => {
       if (ref instanceof Function) {

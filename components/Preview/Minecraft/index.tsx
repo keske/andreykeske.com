@@ -24,6 +24,7 @@ export const Minecraft: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Atomic":
         return <MinecraftAtomic />;
+
       case "NURBS":
         return <MinecraftNURBS />;
     }

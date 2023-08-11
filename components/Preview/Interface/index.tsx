@@ -14,12 +14,6 @@ const DistortingMirrors = React.lazy(() =>
   })),
 );
 
-const MandelbrotSet = React.lazy(() =>
-  import("./MandelbrotSet").then((module) => ({
-    default: module.MandelbrotSet,
-  })),
-);
-
 const SoftVideoPlayer = React.lazy(() =>
   import("./SoftVideoPlayer").then((module) => ({
     default: module.SoftVideoPlayer,
@@ -40,8 +34,10 @@ export const Interface: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Cloth":
         return <Cloth />;
+
       case "Distorting Mirrors":
         return <DistortingMirrors />;
+
       case "Soft Video Player":
         return <SoftVideoPlayer />;
     }

@@ -34,8 +34,10 @@ export const Streets: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Graffiti":
         return <Graffiti />;
+
       case "Installations":
         return <Installations />;
+
       case "Stickers":
         return <Stickers />;
     }

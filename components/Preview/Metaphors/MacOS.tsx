@@ -41,10 +41,13 @@ export const MacOS: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "Desktop":
         return <MacOSDesktop />;
+
       case "Dock":
         return <MacOSDock />;
+
       case "Finder":
         return <MacOSFinder />;
+
       case "Terminal":
         return <MacOSTerminal />;
     }

@@ -69,18 +69,25 @@ export const Metaphors: React.FC = () => {
     switch (segmentedControlAtiveItem) {
       case "AR":
         return <AR />;
+
       case "Crumpled Newspaper":
         return <CrumpledNewspaper />;
+
       case "Crypto":
         return <Crypto />;
+
       case "Duality":
         return <Duality />;
+
       case "Emojies":
         return <Emojies />;
+
       case "IOS":
         return <IOS />;
+
       case "Mac OS":
         return <MacOS />;
+
       case "Maps":
         return <Maps />;
     }

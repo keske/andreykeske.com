@@ -2,10 +2,11 @@ import { create } from "zustand";
 
 import * as Works from "@/components/Preview/index";
 
-export type Work = {
-  component: React.FC;
-  id: string;
-  title: string;
+export type Store = {
+  selectedWorkId: string | null;
+  setSelectedWorkId: (value: string | null) => void;
+
+  readonly works: Work[];
 };
 
 const DEFAULT_STATE: Array<Pick<Work, "component" | "title">> = [
@@ -43,11 +44,10 @@ const DEFAULT_STATE: Array<Pick<Work, "component" | "title">> = [
   },
 ];
 
-export type Store = {
-  selectedWorkId: string | null;
-  setSelectedWorkId: (value: string | null) => void;
-
-  readonly works: Work[];
+export type Work = {
+  component: React.FC;
+  id: string;
+  title: string;
 };
 
 export const useListItems = create<Store>((set) => ({
