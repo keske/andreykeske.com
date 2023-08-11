@@ -4,18 +4,18 @@ import { createRoot } from "react-dom/client";
 
 import { Controls } from "@/components/index";
 
-export type ControlsConfig = {
-  draggable?: boolean;
-  hidden?: boolean;
-  position?: "bottom-left" | "bottom-right" | "bottom";
-};
-
 export type ControlInputNumber = {
   label: string;
   max?: number;
   min?: number;
   step?: number;
   value: number;
+};
+
+export type ControlsConfig = {
+  draggable?: boolean;
+  hidden?: boolean;
+  position?: "bottom-left" | "bottom-right" | "bottom";
 };
 
 export type ControlsOptions = Record<

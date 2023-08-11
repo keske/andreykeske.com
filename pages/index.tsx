@@ -35,13 +35,14 @@ const Home: NextPage = () => {
     (async () => {
       if (R.not(R.isNil(isMobile))) {
         if (isMobile) {
-          const Mobile = (await import("../components/Mobile"))
+          const Mobile = (await import("../components/Mobile/Mobile"))
             .default;
 
           setComponent(<Mobile />);
         } else {
-          const Desktop = (await import("../components/Desktop"))
-            .default;
+          const Desktop = (
+            await import("../components/Desktop/Desktop")
+          ).default;
 
           setComponent(<Desktop />);
         }

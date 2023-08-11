@@ -4,10 +4,8 @@ import * as R from "ramda";
 import React from "react";
 import * as THREE from "three";
 
-import type { VideoRef } from "@/hocs/index";
-
 import { NURBSVideo } from "@/components/index";
-import { withCameraAccess } from "@/hocs/index";
+import { VideoRef, withCameraAccess } from "@/hocs/index";
 
 type MirrorProps = {
   url: string;

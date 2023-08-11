@@ -27,6 +27,7 @@
   },
   "plugins": [
     "@typescript-eslint",
+    "sort-exports",
     "hooks",
     "import",
     "sort-keys-fix",
@@ -167,6 +168,13 @@
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": 0,
     "sort-destructure-keys/sort-destructure-keys": "error",
+    "sort-exports/sort-exports": [
+      "error",
+      {
+        "sortDir": "asc",
+        "sortExportKindFirst": "type"
+      }
+    ],
     "sort-imports": [
       "error",
       {

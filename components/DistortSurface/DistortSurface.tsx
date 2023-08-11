@@ -10,9 +10,7 @@ import clsx from "clsx";
 import React from "react";
 import * as THREE from "three";
 
-import type { ButtonProps, ButtonRef } from "@/components/Button";
-
-import { Button } from "@/components/Button";
+import { Button, ButtonProps, ButtonRef } from "@/components/index";
 import { useSize, useVector3 } from "@/hooks/index";
 import { htmlSizeToMeshSize } from "@/utils/index";
 
@@ -96,12 +94,31 @@ const DistortText = React.forwardRef<
   </Text>
 ));
 
+export type DistortCanvasProps = React.PropsWithChildren;
+
+export type DistortCanvasRef = HTMLCanvasElement;
+
 export type DistortSurfaceProps = Omit<ButtonProps, "children"> &
   Omit<React.HTMLAttributes<HTMLDivElement>, "children"> & {
     children: string;
   };
 
 export type DistortSurfaceRef = DistortPaneRef;
+
+export const DistortCanvas = React.forwardRef<
+  DistortCanvasRef,
+  DistortCanvasProps
+>(({ children }, forwardedRef) => {
+  console.log("children", children);
+
+  return (
+    <>
+      <Canvas ref={forwardedRef}>
+        <OrbitControls />
+      </Canvas>
+    </>
+  );
+});
 
 export const DistortSurface = React.forwardRef<
   DistortSurfaceRef,
@@ -149,24 +166,5 @@ export const DistortSurface = React.forwardRef<
         <DistortText>{children}</DistortText>
       </Canvas>
     </div>
-  );
-});
-
-export type DistortCanvasProps = React.PropsWithChildren;
-
-export type DistortCanvasRef = HTMLCanvasElement;
-
-export const DistortCanvas = React.forwardRef<
-  DistortCanvasRef,
-  DistortCanvasProps
->(({ children }, forwardedRef) => {
-  console.log("children", children);
-
-  return (
-    <>
-      <Canvas ref={forwardedRef}>
-        <OrbitControls />
-      </Canvas>
-    </>
   );
 });
