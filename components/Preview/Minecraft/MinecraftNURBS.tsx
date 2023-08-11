@@ -4,7 +4,7 @@ import { MinecraftNURBSBlocks } from "./MinecraftNURBS.Blocks";
 import { MinecraftNURBSDirt } from "./MinecraftNURBS.Dirt";
 import { MinecraftNURBSSmallHouse } from "./MinecraftNURBS.SmallHouse";
 
-import { SegmentedControl, WorkDetails } from "@/components/index";
+import { SegmentedControl, WorkDetails } from "@/components";
 
 const segmentedControlItems: string[] = [
   "Dirt",

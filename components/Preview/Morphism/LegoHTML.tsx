@@ -1,6 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
+import { WorkDetails } from "@/components";
 
 type ButtonProps = {
   backgroundColor: string;

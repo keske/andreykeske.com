@@ -9,8 +9,8 @@ import axios from "axios";
 import React from "react";
 import * as THREE from "three";
 
-import { WorkDetails } from "@/components/index";
-import { useScrollInterpolation } from "@/hooks/index";
+import { WorkDetails } from "@/components";
+import { useScrollInterpolation } from "@/hooks";
 
 const useAnimation = (ref: React.MutableRefObject<THREE.Mesh>) => {
   useFrame(({ mouse }) => {

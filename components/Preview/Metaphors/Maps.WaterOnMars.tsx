@@ -1,6 +1,6 @@
 import React from "react";
 
-import { UploadcareImage } from "@/components/index";
+import { UploadcareImage } from "@/components";
 
 export const MapsWaterOnMars: React.FC = () => (
   <div className="flex h-screen w-screen items-center justify-center">

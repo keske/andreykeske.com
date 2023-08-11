@@ -1,6 +1,6 @@
 import React from "react";
 
-import { WorkTitle } from "@/components/index";
+import { WorkTitle } from "@/components";
 
 type WorkProps = React.PropsWithChildren;
 

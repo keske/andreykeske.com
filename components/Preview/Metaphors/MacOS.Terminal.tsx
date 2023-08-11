@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import React from "react";
 import { Mesh } from "three";
 
-import { THREEOnMouseRotation } from "@/components/index";
+import { THREEOnMouseRotation } from "@/components";
 
 const DesktopVideo = () => {
   const mesh = React.useRef<Mesh>(null!);

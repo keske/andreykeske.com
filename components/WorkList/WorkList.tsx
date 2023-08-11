@@ -2,7 +2,7 @@ import { animated, config, useTransition } from "@react-spring/web";
 import * as R from "ramda";
 import React from "react";
 
-import { useListItems } from "@/stores/index";
+import { useListItems } from "@/stores";
 
 type WorkListProps = {
   handleMouseOut: () => void;

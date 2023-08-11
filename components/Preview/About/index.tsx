@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SegmentedControl, WorkDetails } from "@/components/index";
+import { SegmentedControl, WorkDetails } from "@/components";
 
 const Awards = React.lazy(() =>
   import("./Awards").then((module) => ({

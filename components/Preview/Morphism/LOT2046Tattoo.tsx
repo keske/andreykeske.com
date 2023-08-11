@@ -1,6 +1,6 @@
 import React from "react";
 
-import { UploadcareImage, WorkDetails } from "@/components/index";
+import { UploadcareImage, WorkDetails } from "@/components";
 
 export const LOT2046Tattoo: React.FC = () => (
   <div className="flex h-screen flex-col items-center justify-center gap-20">

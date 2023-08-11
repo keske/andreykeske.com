@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import * as Works from "@/components/Preview/index";
+import * as Works from "@/components";
 
 export type Store = {
   selectedWorkId: string | null;

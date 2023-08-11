@@ -1,6 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
+import { WorkDetails } from "@/components";
 
 export const MapsVintageGoogleStreetView: React.FC = () => (
   <div className="h-screen w-screen">

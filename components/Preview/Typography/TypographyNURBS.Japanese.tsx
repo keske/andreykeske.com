@@ -7,7 +7,7 @@ import * as THREE from "three";
 import { ParametricGeometry } from "three/addons/geometries/ParametricGeometry.js";
 import { NURBSSurface } from "three/examples/jsm/curves/NURBSSurface";
 
-import { useNSControlPoints } from "@/hooks/index";
+import { useNSControlPoints } from "@/hooks";
 
 type NURBSLetterProps = {
   side?:

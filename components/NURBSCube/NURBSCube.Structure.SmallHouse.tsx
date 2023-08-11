@@ -5,7 +5,7 @@ import {
   NURBSCubeDirt,
   NURBSCubeLog,
   NURBSCubeStone,
-} from "@/components/index";
+} from "@/components";
 
 export const NURBSCubeStructureSmallHouse = React.forwardRef<
   Group,

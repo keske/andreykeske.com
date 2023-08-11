@@ -2,7 +2,7 @@ import React from "react";
 
 import { CryptoBTCBubble } from "./Crypto.BTCBubble";
 
-import { SegmentedControl, WorkDetails } from "@/components/index";
+import { SegmentedControl, WorkDetails } from "@/components";
 
 const segmentedControlItems: string[] = ["Bitcoin Bubble"];
 

@@ -9,6 +9,7 @@ export * from "./Logo";
 export * from "./NURBS";
 export * from "./NURBSCube";
 export * from "./NURBSCube";
+export * from "./Preview";
 export * from "./SegmentedControl";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";

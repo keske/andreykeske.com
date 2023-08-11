@@ -3,7 +3,7 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { Button, Head, Logo } from "@/components/index";
+import { Button, Head, Logo } from "@/components";
 
 const Recent: NextPage = () => {
   const router = useRouter();

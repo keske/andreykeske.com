@@ -8,9 +8,9 @@ import { Canvas } from "@react-three/fiber";
 import * as R from "ramda";
 import React from "react";
 
-import { NURBSCubeDirt } from "@/components/index";
-import { useControls } from "@/hooks/index";
-import { useListItems } from "@/stores/index";
+import { NURBSCubeDirt } from "@/components";
+import { useControls } from "@/hooks";
+import { useListItems } from "@/stores";
 
 const Environment: React.FC = () => {
   const isDarkTheme = React.useMemo(

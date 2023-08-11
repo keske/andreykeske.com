@@ -1,6 +1,6 @@
 import React from "react";
 
-import { UploadcareImage, WorkDetails } from "@/components/index";
+import { UploadcareImage, WorkDetails } from "@/components";
 
 export const Emojies: React.FC = () => (
   <div className="flex flex-col items-center gap-20 pb-20 pt-56">

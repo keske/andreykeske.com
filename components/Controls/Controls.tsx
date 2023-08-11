@@ -4,7 +4,7 @@ import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
-import type { ControlsConfig, ControlsOptions } from "@/hooks/index";
+import type { ControlsConfig, ControlsOptions } from "@/hooks";
 
 type ControlsProps = ControlsConfig & {
   onUpdate: (options: ControlsOptions) => void;

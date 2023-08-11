@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, WorkDetails } from "@/components/index";
+import { Button, WorkDetails } from "@/components";
 
 export const Piano = () => {
   const handleClick = React.useCallback(() => {

@@ -2,7 +2,7 @@ import React from "react";
 
 import { TypographyNURBSAlphabet } from "./TypographyNURBS.Alphabet";
 
-import { SegmentedControl, WorkDetails } from "@/components/index";
+import { SegmentedControl, WorkDetails } from "@/components";
 
 const segmentedControlItems: string[] = ["Alphabet"];
 

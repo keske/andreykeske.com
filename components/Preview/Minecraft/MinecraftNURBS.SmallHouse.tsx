@@ -4,12 +4,9 @@ import React from "react";
 
 import { MinecraftNURBSEnvironment } from "./MinecraftNURBS.Environment";
 
-import {
-  Loading,
-  NURBSCubeStructureSmallHouse,
-} from "@/components/index";
-import { useControls } from "@/hooks/index";
-import { useListItems } from "@/stores/index";
+import { Loading, NURBSCubeStructureSmallHouse } from "@/components";
+import { useControls } from "@/hooks";
+import { useListItems } from "@/stores";
 
 export const MinecraftNURBSSmallHouse: React.FC = () => {
   const { selectedWorkId } = useListItems();

@@ -5,13 +5,8 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import {
-  CloseButton,
-  Logo,
-  Work,
-  WorkList,
-} from "@/components/index";
-import { useListItems } from "@/stores/index";
+import { CloseButton, Logo, Work, WorkList } from "@/components";
+import { useListItems } from "@/stores";
 
 const inter = Inter({
   subsets: ["latin"],

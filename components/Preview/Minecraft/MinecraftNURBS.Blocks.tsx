@@ -16,9 +16,9 @@ import {
   NURBSCubeRedStone,
   NURBSCubeSand,
   NURBSCubeStone,
-} from "@/components/index";
-import { useControls } from "@/hooks/index";
-import { useListItems } from "@/stores/index";
+} from "@/components";
+import { useControls } from "@/hooks";
+import { useListItems } from "@/stores";
 
 export const MinecraftNURBSBlocks: React.FC = () => {
   const { selectedWorkId } = useListItems();

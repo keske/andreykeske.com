@@ -1,6 +1,6 @@
 import React from "react";
 
-import { WorkDetails } from "@/components/index";
+import { WorkDetails } from "@/components";
 
 export const IOSTicky: React.FC = () => (
   <div className="flex flex-col items-center gap-20 pb-20 pt-56">

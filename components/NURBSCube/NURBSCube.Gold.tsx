@@ -1,7 +1,7 @@
 import React from "react";
 import { Group } from "three";
 
-import { NURBSCube } from "@/components/index";
+import { NURBSCube } from "@/components";
 
 export const NURBSCubeGold = React.forwardRef<
   Group,

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "@/components/index";
+import { Button } from "@/components";
 
 type LogoProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 

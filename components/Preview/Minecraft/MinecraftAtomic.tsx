@@ -6,9 +6,9 @@ import SimplexNoise from "simplex-noise";
 
 import { MinecraftAtomicCube } from "./MinecraftAtomic.Cube";
 
-import { WorkDetails } from "@/components/index";
-import { useControls } from "@/hooks/index";
-import { useListItems } from "@/stores/index";
+import { WorkDetails } from "@/components";
+import { useControls } from "@/hooks";
+import { useListItems } from "@/stores";
 
 export const MinecraftAtomic: React.FC = () => {
   const { selectedWorkId } = useListItems();

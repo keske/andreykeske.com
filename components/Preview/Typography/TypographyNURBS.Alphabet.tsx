@@ -3,9 +3,9 @@ import { Canvas } from "@react-three/fiber";
 import * as R from "ramda";
 import React from "react";
 
-import { NURBSLetter } from "@/components/index";
-import { useControls } from "@/hooks/index";
-import { useListItems } from "@/stores/index";
+import { NURBSLetter } from "@/components";
+import { useControls } from "@/hooks";
+import { useListItems } from "@/stores";
 
 export const TypographyNURBSAlphabet: React.FC = () => {
   const { selectedWorkId } = useListItems();

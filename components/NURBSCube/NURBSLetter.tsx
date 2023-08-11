@@ -1,7 +1,7 @@
 import React from "react";
 
-import { NURBS } from "@/components/index";
-import { useNSControlPoints } from "@/hooks/index";
+import { NURBS } from "@/components";
+import { useNSControlPoints } from "@/hooks";
 
 type NURBSLetterProps = {
   url: string;

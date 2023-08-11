@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SegmentedControl, WorkDetails } from "@/components/index";
+import { SegmentedControl, WorkDetails } from "@/components";
 
 const EsherSwitchButton = React.lazy(() =>
   import("./EsherSwitchButton").then((module) => ({

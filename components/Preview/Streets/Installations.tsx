@@ -2,7 +2,7 @@ import { Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
 
-import { UploadcareImage, WaterSurface } from "@/components/index";
+import { UploadcareImage, WaterSurface } from "@/components";
 
 type SceneProps = any;
 

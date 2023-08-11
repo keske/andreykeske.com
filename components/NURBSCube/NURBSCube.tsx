@@ -2,7 +2,7 @@ import * as R from "ramda";
 import React from "react";
 import { DoubleSide, FrontSide, Group, Vector4 } from "three";
 
-import { NURBS } from "@/components/index";
+import { NURBS } from "@/components";
 
 type NURBSCubeProps = JSX.IntrinsicElements["group"] & {
   map: {

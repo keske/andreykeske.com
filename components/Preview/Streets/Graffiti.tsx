@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Wall, WorkDetails } from "@/components/index";
+import { Wall, WorkDetails } from "@/components";
 
 const peaces = [
   "Keske, Kaze, 2007",

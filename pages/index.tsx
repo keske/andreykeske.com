@@ -7,7 +7,7 @@ import {
   Head,
   Loading,
   // SegmentedControl
-} from "@/components/index";
+} from "@/components";
 
 const Home: NextPage = () => {
   const [Component, setComponent] =

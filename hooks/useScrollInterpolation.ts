@@ -1,7 +1,7 @@
 import { useGesture } from "@use-gesture/react";
 import React from "react";
 
-import { interpolate } from "@/utils/index";
+import { interpolate } from "@/utils";
 
 export const useScrollInterpolation = (
   from: number,

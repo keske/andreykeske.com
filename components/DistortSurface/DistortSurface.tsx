@@ -10,9 +10,9 @@ import clsx from "clsx";
 import React from "react";
 import * as THREE from "three";
 
-import { Button, ButtonProps, ButtonRef } from "@/components/index";
-import { useSize, useVector3 } from "@/hooks/index";
-import { htmlSizeToMeshSize } from "@/utils/index";
+import { Button, ButtonProps, ButtonRef } from "@/components";
+import { useSize, useVector3 } from "@/hooks";
+import { htmlSizeToMeshSize } from "@/utils";
 
 type CommonMeshDistortMaterialProps = {
   distort?: number;
