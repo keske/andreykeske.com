@@ -1,10 +1,10 @@
 import React from "react";
 
-import { WorkDetails } from "@/components";
+import { Stack, WorkDetails } from "@/components";
 
 export const ARIkea = () => (
-  <div className="flex flex-col items-center gap-20 pb-20 pt-56">
-    <div className="flex flex-col items-center gap-5">
+  <Stack className="items-center pb-20 pt-56" gap={20}>
+    <Stack className="items-center" gap={5}>
       <div className="container mx-auto">
         <div className="relative overflow-hidden">
           <div
@@ -20,7 +20,7 @@ export const ARIkea = () => (
         </div>
       </div>
       <WorkDetails>
-        <div className="flex w-1/2 flex-col gap-2">
+        <Stack className="flex w-1/2" gap={4}>
           <h3>
             The first discarded piece of IKEA furniture in Augmented
             Reality
@@ -66,8 +66,8 @@ export const ARIkea = () => (
             </i>
           </small>
           <time dateTime="2013">2013</time>
-        </div>
+        </Stack>
       </WorkDetails>
-    </div>
-  </div>
+    </Stack>
+  </Stack>
 );

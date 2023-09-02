@@ -1,7 +1,12 @@
 import React from "react";
 
+import { Stack } from "@/components";
+
 export const Contacts: React.FC = () => (
-  <div className="flex h-screen flex-col items-center justify-center gap-3 text-2xl font-black uppercase">
+  <Stack
+    className="h-screen items-center justify-center text-2xl font-black uppercase"
+    gap={4}
+  >
     <a href="mailto://hello@andreykeske.com">Mail</a>{" "}
     <a href="https://github.com/keske">Github</a>{" "}
     <a href="https://www.instagram.com/andreykeske/">Instagram</a>{" "}
@@ -9,5 +14,5 @@ export const Contacts: React.FC = () => (
     <a href="https://www.goodreads.com/user/show/63547727-andrey-keske">
       Good Reads
     </a>
-  </div>
+  </Stack>
 );

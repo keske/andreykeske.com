@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Stack } from "@/components";
+
 const awards = [
   {
     platform: {
@@ -26,10 +28,10 @@ const awards = [
 ];
 
 export const Awards: React.FC = () => (
-  <div className="flex h-screen flex-col items-center justify-center gap-10">
+  <Stack className="h-screen items-center justify-center" gap={10}>
     {awards.map((award, index) => (
-      <div className="flex w-1/3 flex-col gap-2" key={index}>
-        <div className="flex flex-col">
+      <Stack className="w-1/3" gap={2} key={index}>
+        <Stack>
           <p className="font-thin opacity-70">Name</p>
           <a className="text-white" href={award.product.link}>
             <h3>
@@ -37,8 +39,8 @@ export const Awards: React.FC = () => (
               {/* <sup className="ml-1 mt-1 text-[8px]">↗︎</sup> */}
             </h3>
           </a>
-        </div>
-        <div className="flex flex-col">
+        </Stack>
+        <Stack>
           <p className="font-thin opacity-70">Platform</p>
           <a href={award.platform.link}>
             <a className="text-white">
@@ -46,12 +48,12 @@ export const Awards: React.FC = () => (
               {/* <sup className="ml-1 mt-1 text-[8px]">↗︎</sup> */}
             </a>
           </a>
-        </div>
-        <div className="flex flex-col">
+        </Stack>
+        <Stack>
           <p className="font-thin opacity-70">Role</p>
           <h3>{award.role}</h3>
-        </div>
-      </div>
+        </Stack>
+      </Stack>
     ))}
-  </div>
+  </Stack>
 );

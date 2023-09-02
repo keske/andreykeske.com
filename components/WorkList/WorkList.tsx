@@ -2,6 +2,7 @@ import { animated, config, useTransition } from "@react-spring/web";
 import * as R from "ramda";
 import React from "react";
 
+import { Stack } from "@/components";
 import { useListItems } from "@/stores";
 
 type WorkListProps = {
@@ -31,27 +32,23 @@ export const WorkList: React.FC<WorkListProps> = ({
           opacity: styles.opacity,
         }}
       >
-        <div className="fixed bottom-10 ml-10">
-          <nav>
-            <ul>
-              {works.map(({ component: Component, id, title }) => (
-                <li
-                  className="cursor-pointer list-none text-5xl font-black uppercase tracking-wider text-black hover:text-[#ccff00] dark:text-white"
-                  key={id}
-                  onClick={() => {
-                    handleShowWork(id);
-                  }}
-                  onMouseOut={handleMouseOut}
-                  onMouseOver={() => {
-                    handleMouseOver(<Component />);
-                  }}
-                >
-                  {title}
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+        <Stack className="fixed bottom-10 ml-10">
+          {works.map(({ component: Component, id, title }) => (
+            <span
+              className="cursor-pointer list-none text-5xl font-black uppercase tracking-wider text-black hover:text-[#ccff00] dark:text-white"
+              key={id}
+              onClick={() => {
+                handleShowWork(id);
+              }}
+              onMouseOut={handleMouseOut}
+              onMouseOver={() => {
+                handleMouseOver(<Component />);
+              }}
+            >
+              {title}
+            </span>
+          ))}
+        </Stack>
       </animated.div>
     ) : null,
   );

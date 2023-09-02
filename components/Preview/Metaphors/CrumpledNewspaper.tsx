@@ -7,7 +7,7 @@ import * as THREE from "three";
 import { ParametricGeometry } from "three/addons/geometries/ParametricGeometry.js";
 import { NURBSSurface } from "three/examples/jsm/curves/NURBSSurface";
 
-import { Button, Loading, WorkDetails } from "@/components";
+import { Button, Loading, Stack, WorkDetails } from "@/components";
 import { useNSControlPoints, useScrollInterpolation } from "@/hooks";
 
 type NURBSNewsPaperProps = {
@@ -217,7 +217,7 @@ export const CrumpledNewspaper: React.FC = () => {
             top: window.innerHeight - 100,
           }}
         >
-          <div className="flex w-1/2 flex-col gap-2 pb-20">
+          <Stack className="w-1/2 pb-20" gap={2}>
             <h3>Crumpled Newspaper</h3>
             <small>
               Crumpled Newspaper is an interactive web application
@@ -229,7 +229,7 @@ export const CrumpledNewspaper: React.FC = () => {
               became garbage
             </small>
             <time dateTime="2023">2023</time>
-          </div>
+          </Stack>
         </div>
       </WorkDetails>
       <WorkDetails>

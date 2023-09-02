@@ -9,7 +9,7 @@ import axios from "axios";
 import React from "react";
 import * as THREE from "three";
 
-import { WorkDetails } from "@/components";
+import { Stack, WorkDetails } from "@/components";
 import { useScrollInterpolation } from "@/hooks";
 
 const useAnimation = (ref: React.MutableRefObject<THREE.Mesh>) => {
@@ -102,8 +102,8 @@ export const CryptoBTCBubble: React.FC = () => {
 
   return (
     <>
-      <div
-        className="fixed left-0 top-0 flex h-screen w-screen flex-col items-center"
+      <Stack
+        className="fixed left-0 top-0 h-screen w-screen items-center"
         style={{
           opacity: canvasWrapperOpacityValue,
         }}
@@ -122,7 +122,7 @@ export const CryptoBTCBubble: React.FC = () => {
           <Buble />
           <Course />
         </Canvas>
-      </div>
+      </Stack>
       <div
         className="pointer-events-none fixed left-0 top-0 h-screen w-screen"
         style={{
@@ -130,13 +130,13 @@ export const CryptoBTCBubble: React.FC = () => {
         }}
       />
       <WorkDetails>
-        <div
-          className="absolute  flex h-1/2 w-screen justify-center"
+        <Stack
+          className="absolute h-1/2 w-screen justify-center"
           style={{
             top: window.innerHeight - 100,
           }}
         >
-          <div className="flex w-1/2 flex-col gap-2 pb-20">
+          <Stack className="w-1/2 gap-2 pb-20">
             <h3>
               Bitcoin as a Bubble: Exploring Social Opinion through
               Digital Art
@@ -181,8 +181,8 @@ export const CryptoBTCBubble: React.FC = () => {
               between money, value, and perception in the digital age.
             </small>
             <time dateTime="2021">2021</time>
-          </div>
-        </div>
+          </Stack>
+        </Stack>
       </WorkDetails>
     </>
   );

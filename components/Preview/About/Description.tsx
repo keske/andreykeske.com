@@ -1,8 +1,16 @@
 import React from "react";
 
+import { Stack } from "@/components";
+
 export const Description: React.FC = () => (
-  <div className="flex h-screen flex-col items-center justify-center gap-10 py-60">
-    <div className="flex w-1/2 flex-col gap-5 px-10 text-2xl font-black uppercase md:w-2/3 lg:w-1/2 xl:w-1/2">
+  <Stack
+    className="h-screen items-center justify-center py-60"
+    gap={10}
+  >
+    <Stack
+      className="w-1/2 px-10 text-2xl font-black uppercase md:w-2/3 lg:w-1/2 xl:w-1/2"
+      gap={5}
+    >
       <p>
         Andrey Keske is a digital artist and software engineer with a
         degree in computer science.
@@ -34,12 +42,12 @@ export const Description: React.FC = () => (
         <a href="https://joinstorkclub.com">Stork Club</a>,{" "}
         <a href="https://www.fridgenomore.com">Fridge No More</a>
       </p>
-    </div>
+    </Stack>
     <small>
       This site is{" "}
       <a href="https://github.com/keske/andreykeske.com">
         open sourced
       </a>
     </small>
-  </div>
+  </Stack>
 );
