@@ -1,8 +1,6 @@
-export * from "./3D";
 export * from "./Button";
 export * from "./CloseButton";
 export * from "./Controls";
-export * from "./DistortSurface";
 export * from "./Head";
 export * from "./Loading";
 export * from "./Logo";
@@ -11,7 +9,6 @@ export * from "./NURBSCube";
 export * from "./NURBSCube";
 export * from "./Preview";
 export * from "./SegmentedControl";
-export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
 export * from "./WaterSurface";
 export * from "./WorkDetails";

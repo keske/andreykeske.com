@@ -1,6 +1,66 @@
+import {
+  OrbitControls,
+  useGLTF,
+  useTexture,
+} from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import React from "react";
+import * as THREE from "three";
 
-import { Wall, WorkDetails } from "@/components";
+const WallModel: React.FC = () => {
+  const { nodes } = useGLTF("/gltfs/wall.gltf") as GLTFResult;
+
+  const texture = useTexture("/photos/graffiti/wall.png");
+
+  texture.repeat.set(2.5, 3);
+
+  const mesh = React.useRef<THREE.Mesh>(null!);
+
+  const isDarkTheme = React.useMemo(
+    () => window.matchMedia("(prefers-color-scheme: dark)").matches,
+    [],
+  );
+
+  const renderMaterial = React.useMemo(
+    () =>
+      isDarkTheme ? (
+        <meshNormalMaterial attach="material" />
+      ) : (
+        <meshStandardMaterial
+          attach="material"
+          map={texture}
+          metalness={10}
+          roughness={0.2}
+        />
+      ),
+    [isDarkTheme, texture],
+  );
+
+  return (
+    <mesh
+      geometry={nodes.box_low.geometry}
+      position={[0, -10, 0]}
+      ref={mesh}
+      rotation={[-11, 0, -22.3]}
+    >
+      {renderMaterial}
+    </mesh>
+  );
+};
+
+const Wall: React.FC = () => (
+  <Canvas
+    camera={{ position: [0, 0, -30] }}
+    className="h-full w-full"
+  >
+    <OrbitControls enableZoom={false} />
+    <ambientLight intensity={0.2} />
+    <spotLight intensity={1.5} position={[20, 20, 30]} />
+    <WallModel />
+  </Canvas>
+);
+
+import { WorkDetails } from "@/components";
 
 const peaces = [
   "Keske, Kaze, 2007",

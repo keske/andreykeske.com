@@ -3,8 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import React from "react";
 import { Mesh } from "three";
 
-import { THREEOnMouseRotation } from "@/components";
-
 const DesktopVideo = () => {
   const mesh = React.useRef<Mesh>(null!);
 
@@ -14,12 +12,10 @@ const DesktopVideo = () => {
   });
 
   return (
-    <THREEOnMouseRotation ref={mesh}>
-      <mesh ref={mesh} rotation={[-0.8, 0, 0]} scale={1}>
-        <planeGeometry args={[6, 6, 1]} />
-        <meshBasicMaterial map={texture} toneMapped={false} />
-      </mesh>
-    </THREEOnMouseRotation>
+    <mesh ref={mesh} rotation={[-0.8, 0, 0]} scale={1}>
+      <planeGeometry args={[6, 6, 1]} />
+      <meshBasicMaterial map={texture} toneMapped={false} />
+    </mesh>
   );
 };
 
