@@ -9,7 +9,7 @@ export const SegmentedControlIndicator = React.forwardRef<
   SegmentedControlIndicatorProps
 >(({ styles, ...props }, forwardedRef) => (
   <div
-    className="absolute rounded-xl bg-white transition-all duration-200"
+    className="absolute rounded-2xl bg-white transition-all duration-200"
     ref={forwardedRef}
     style={styles}
     {...props}
