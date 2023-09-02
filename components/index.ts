@@ -14,7 +14,6 @@ export * from "./SegmentedControl";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
 export * from "./WaterSurface";
-export * from "./Work";
 export * from "./WorkDetails";
 export * from "./WorkList";
 export * from "./WorkTitle";

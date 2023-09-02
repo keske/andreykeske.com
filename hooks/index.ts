@@ -4,6 +4,7 @@ export * from "./useControls";
 export * from "./useNSControlPoints";
 export * from "./useRefs";
 export * from "./useResizeObserver";
+export * from "./useResponsive";
 export * from "./useScrollInterpolation";
 export * from "./useSize";
 export * from "./useValueRef";

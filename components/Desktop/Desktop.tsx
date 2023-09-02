@@ -5,7 +5,7 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { CloseButton, Logo, Work, WorkList } from "@/components";
+import { CloseButton, Logo, WorkList, WorkTitle } from "@/components";
 import { useListItems } from "@/stores";
 
 const inter = Inter({
@@ -78,7 +78,8 @@ const Desktop: NextPage = () => {
         isShowing={R.not(R.isNil(selectedWorkId))}
         onClick={handleCloseWork}
       />
-      <Work>{work && React.cloneElement(work)}</Work>
+      <WorkTitle />
+      {work && React.cloneElement(work)}
       <WorkList
         {...{
           handleCloseWork,

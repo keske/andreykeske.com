@@ -3,33 +3,14 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import {
-  Head,
-  Loading,
-  // SegmentedControl
-} from "@/components";
+import { Head, Loading } from "@/components";
+import { useResponsive } from "@/hooks";
 
 const Home: NextPage = () => {
+  const isMobile = useResponsive();
+
   const [Component, setComponent] =
     React.useState<React.ReactElement | null>(null);
-
-  const [isMobile, setIsMobile] = React.useState<boolean | null>(
-    null,
-  );
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window?.innerWidth <= 768);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   React.useEffect(() => {
     (async () => {
@@ -53,7 +34,6 @@ const Home: NextPage = () => {
   return (
     <>
       <Head />
-      {/* <SegmentedControl items={["Mac OS", "Minecraft"]} /> */}
       {Component || <Loading />}
     </>
   );

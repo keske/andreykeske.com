@@ -36,7 +36,7 @@ export const Button = React.forwardRef(
       variant = "primary",
       ...props
     }: ButtonProps<T>,
-    ref: React.ForwardedRef<ButtonRef<T>>,
+    forwardedRef: React.ForwardedRef<ButtonRef<T>>,
   ) =>
     React.createElement(
       as,
@@ -70,7 +70,7 @@ export const Button = React.forwardRef(
             "opacity-50": disabled,
           },
         ),
-        ref,
+        ref: forwardedRef,
         type,
         ...props,
       },
