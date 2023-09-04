@@ -48,7 +48,7 @@ export const SegmentedControl = React.forwardRef<
       [onValueChange],
     );
 
-    const recalculateIndicatorPosition = React.useCallback(() => {
+    const calculateIndicatorStyles = React.useCallback(() => {
       const activeItemElement = getItemRef(value).current;
 
       if (!activeItemElement) {
@@ -67,7 +67,7 @@ export const SegmentedControl = React.forwardRef<
     }, [getItemRef, value]);
 
     const { ref } = useResizeObserver<HTMLDivElement>({
-      onResize: recalculateIndicatorPosition,
+      onResize: calculateIndicatorStyles,
     });
 
     const segmentedControlIndicator = React.useMemo(
@@ -83,8 +83,8 @@ export const SegmentedControl = React.forwardRef<
     );
 
     React.useEffect(() => {
-      recalculateIndicatorPosition();
-    }, [recalculateIndicatorPosition, value]);
+      calculateIndicatorStyles();
+    }, [calculateIndicatorStyles, value]);
 
     return (
       <ToggleGroup.Root
