@@ -2,7 +2,7 @@ import { animated, config, useTransition } from "@react-spring/web";
 import clsx from "clsx";
 import React from "react";
 
-import { Button, ButtonProps } from "@/components";
+import { Button, ButtonProps } from "@/packages/ui-kit";
 
 type CloseButtonProps = ButtonProps<HTMLButtonElement> & {
   isShowing: boolean;

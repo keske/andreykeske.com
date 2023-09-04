@@ -9,7 +9,7 @@ import * as R from "ramda";
 import React from "react";
 
 import { NURBSCubeDirt } from "@/components";
-import { useControls } from "@/hooks";
+import { useControls } from "@/packages/controls";
 import { useListItems } from "@/stores";
 
 const Environment: React.FC = () => {

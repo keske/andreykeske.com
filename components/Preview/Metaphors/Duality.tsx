@@ -1,7 +1,7 @@
 import * as faceapi from "face-api.js";
 import React from "react";
 
-import { Loading } from "@/components";
+import { Loading } from "@/packages/ui-kit";
 
 export const Duality: React.FC = () => {
   const mediaStreamRef = React.useRef<MediaStream | null>(null);

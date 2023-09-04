@@ -1,6 +1,7 @@
 import React from "react";
 
-import { UploadcareImage, WorkDetails } from "@/components";
+import { WorkDetails } from "@/components";
+import { UploadcareImage } from "@/packages/ui-kit";
 
 export const Sneakers: React.FC = () => (
   <div className="flex h-screen flex-col items-center justify-center gap-20">

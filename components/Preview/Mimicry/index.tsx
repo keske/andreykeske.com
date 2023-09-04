@@ -1,6 +1,7 @@
 import React from "react";
 
-import { SegmentedControl, WorkDetails } from "@/components";
+import { WorkDetails } from "@/components";
+import { SegmentedControl } from "@/packages/ui-kit";
 
 const Icons = React.lazy(() =>
   import("./Icons").then((module) => ({

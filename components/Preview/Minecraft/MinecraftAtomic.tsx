@@ -7,7 +7,7 @@ import SimplexNoise from "simplex-noise";
 import { MinecraftAtomicCube } from "./MinecraftAtomic.Cube";
 
 import { WorkDetails } from "@/components";
-import { useControls } from "@/hooks";
+import { useControls } from "@/packages/controls";
 import { useListItems } from "@/stores";
 
 export const MinecraftAtomic: React.FC = () => {

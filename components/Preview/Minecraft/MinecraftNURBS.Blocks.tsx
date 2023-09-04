@@ -17,7 +17,7 @@ import {
   NURBSCubeSand,
   NURBSCubeStone,
 } from "@/components";
-import { useControls } from "@/hooks";
+import { useControls } from "@/packages/controls";
 import { useListItems } from "@/stores";
 
 export const MinecraftNURBSBlocks: React.FC = () => {

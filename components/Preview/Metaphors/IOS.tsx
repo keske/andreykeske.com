@@ -2,7 +2,8 @@ import React from "react";
 
 import { IOSTicky } from "./IOS.Ticky";
 
-import { SegmentedControl, WorkDetails } from "@/components";
+import { WorkDetails } from "@/components";
+import { SegmentedControl } from "@/packages/ui-kit";
 
 const segmentedControlItems: string[] = ["Ticky"];
 

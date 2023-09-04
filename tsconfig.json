@@ -13,6 +13,8 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
+      "@/packages/controls": ["@packages/controls/index"],
+      "@/packages/ui-kit": ["@packages/ui-kit/index"],
       "@/components": ["components/index"],
       "@/hocs": ["hocs/index"],
       "@/hooks": ["hooks/index"],

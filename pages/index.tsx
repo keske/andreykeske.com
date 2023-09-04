@@ -3,8 +3,9 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { Head, Loading } from "@/components";
+import { Head } from "@/components";
 import { useResponsive } from "@/hooks";
+import { Loading } from "@/packages/ui-kit";
 
 const Home: NextPage = () => {
   const isMobile = useResponsive();

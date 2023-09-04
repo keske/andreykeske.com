@@ -3,7 +3,8 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { Button, Head, Logo } from "@/components";
+import { Head, Logo } from "@/components";
+import { Button } from "@/packages/ui-kit";
 
 const Recent: NextPage = () => {
   const router = useRouter();

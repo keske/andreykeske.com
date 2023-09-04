@@ -4,8 +4,9 @@ import React from "react";
 
 import { MinecraftNURBSEnvironment } from "./MinecraftNURBS.Environment";
 
-import { Loading, NURBSCubeStructureSmallHouse } from "@/components";
-import { useControls } from "@/hooks";
+import { NURBSCubeStructureSmallHouse } from "@/components";
+import { useControls } from "@/packages/controls";
+import { Loading } from "@/packages/ui-kit";
 import { useListItems } from "@/stores";
 
 export const MinecraftNURBSSmallHouse: React.FC = () => {

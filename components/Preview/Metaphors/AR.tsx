@@ -2,7 +2,8 @@ import React from "react";
 
 import { ARIkea } from "./AR.Ikea";
 
-import { SegmentedControl, WorkDetails } from "@/components";
+import { WorkDetails } from "@/components";
+import { SegmentedControl } from "@/packages/ui-kit";
 
 const segmentedControlItems: string[] = ["Ikea"];
 

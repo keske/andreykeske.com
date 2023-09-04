@@ -7,8 +7,9 @@ import * as THREE from "three";
 import { ParametricGeometry } from "three/addons/geometries/ParametricGeometry.js";
 import { NURBSSurface } from "three/examples/jsm/curves/NURBSSurface";
 
-import { Button, Loading, WorkDetails } from "@/components";
+import { WorkDetails } from "@/components";
 import { useNSControlPoints, useScrollInterpolation } from "@/hooks";
+import { Button, Loading } from "@/packages/ui-kit";
 
 type NURBSNewsPaperProps = {
   side?: THREE.Side;

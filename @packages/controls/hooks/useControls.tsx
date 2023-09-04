@@ -2,7 +2,7 @@ import * as R from "ramda";
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-import { Controls } from "@/components";
+import { Controls } from "../components";
 
 export type ControlInputNumber = {
   label: string;

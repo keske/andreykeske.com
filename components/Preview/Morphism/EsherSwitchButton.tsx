@@ -2,7 +2,8 @@ import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
-import { UploadcareImage, WorkDetails } from "@/components";
+import { WorkDetails } from "@/components";
+import { UploadcareImage } from "@/packages/ui-kit";
 
 type SwitchProps = {
   handleClick: () => void;

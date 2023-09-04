@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Button, UploadcareImage, WorkDetails } from "@/components";
+import { WorkDetails } from "@/components";
+import { Button, UploadcareImage } from "@/packages/ui-kit";
 
 export const MacOSFinder: React.FC = () => (
   <div className="flex flex-col gap-20 pb-20 pt-56">

@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Button, WorkDetails } from "@/components";
+import { WorkDetails } from "@/components";
+import { Button } from "@/packages/ui-kit";
 
 export const Piano = () => {
   const handleClick = React.useCallback(() => {

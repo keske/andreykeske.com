@@ -1,6 +1,5 @@
 export * from "./isBrowser";
 export * from "./mergeRefs";
-export * from "./useControls";
 export * from "./useNSControlPoints";
 export * from "./useRefs";
 export * from "./useResizeObserver";
