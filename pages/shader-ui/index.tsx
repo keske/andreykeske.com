@@ -122,7 +122,7 @@ const NoiseRoundedBox = React.forwardRef<
   THREE.Mesh,
   NoiseSphereRoundedBox
 >((props, forwardedRef) => {
-  const material = useStarfieldMaterial();
+  const material = usePlasmaMaterial();
 
   return (
     <RoundedBox material={material} ref={forwardedRef} {...props} />

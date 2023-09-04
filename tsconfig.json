@@ -19,7 +19,6 @@
       "@/pages": ["pages/index"],
       "@/public": ["public/index"],
       "@/stores": ["stores/index"],
-      "@/styles": ["styles/index"],
       "@/utils": ["utils/index"]
     },
     "resolveJsonModule": true,
