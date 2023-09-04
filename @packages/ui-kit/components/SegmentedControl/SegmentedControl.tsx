@@ -33,7 +33,7 @@ export const SegmentedControl = React.forwardRef<
   ) => {
     const [getItemRef] = useRefs<HTMLButtonElement>();
 
-    const [indicatorPositionStyles, setIndicatorPositionStyles] =
+    const [indicatorStyles, setIndicatorStyles] =
       React.useState<React.CSSProperties>({});
 
     const [value, setValue] = React.useState(
@@ -58,7 +58,7 @@ export const SegmentedControl = React.forwardRef<
       const activeItemRect =
         activeItemElement.getBoundingClientRect();
 
-      setIndicatorPositionStyles({
+      setIndicatorStyles({
         height: activeItemRect.height,
         left: activeItemElement.offsetLeft,
         top: activeItemElement.offsetTop,
@@ -74,14 +74,12 @@ export const SegmentedControl = React.forwardRef<
       () =>
         segmentedControlIndicatorElement ? (
           React.cloneElement(segmentedControlIndicatorElement, {
-            indicatorPositionStyles,
+            indicatorStyles,
           })
         ) : (
-          <SegmentedControlIndicator
-            styles={indicatorPositionStyles}
-          />
+          <SegmentedControlIndicator styles={indicatorStyles} />
         ),
-      [indicatorPositionStyles, segmentedControlIndicatorElement],
+      [indicatorStyles, segmentedControlIndicatorElement],
     );
 
     React.useEffect(() => {

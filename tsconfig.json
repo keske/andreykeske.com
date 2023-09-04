@@ -14,6 +14,7 @@
     "noEmit": true,
     "paths": {
       "@/packages/controls": ["@packages/controls/index"],
+      "@/packages/shader-ui": ["@packages/shader-ui/index"],
       "@/packages/ui-kit": ["@packages/ui-kit/index"],
       "@/components": ["components/index"],
       "@/hocs": ["hocs/index"],
