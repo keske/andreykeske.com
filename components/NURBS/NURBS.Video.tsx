@@ -7,13 +7,13 @@ import { NURBSSurface } from "three/examples/jsm/curves/NURBSSurface";
 
 type Props = {
   nsControlPoints: THREE.Vector4[][];
-  url: string;
+  url?: string;
   videoRef: React.RefObject<any>;
 };
 
 export const NURBSVideo: React.FC<Props> = ({
   nsControlPoints,
-  url,
+  url = "",
   videoRef,
 }) => {
   const degree1 = 2;

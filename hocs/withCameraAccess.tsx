@@ -46,8 +46,12 @@ export const withCameraAccess =
       <>
         <video
           autoPlay
-          className="absolute opacity-0"
           ref={videoRef}
+          style={{
+            left: "-999px",
+            position: "absolute",
+            top: "-999px",
+          }}
         />
         {isCameraReady ? (
           <Component videoRef={videoRef} />

@@ -1,21 +1,16 @@
 import React from "react";
 import * as THREE from "three";
 
-export const useNSControlPoints = (warpRatio = 1.1) => {
-  const random = React.useCallback(
-    // eslint-disable-next-line @typescript-eslint/default-param-last
-    (min = 0, max: number) => Math.random() * (max - min) + min,
-    [],
-  );
+import { random } from "@/utils";
 
+export const useNSControlPoints = (warpRatio = 1.1) => {
   const getRandomCoords = React.useCallback(
-    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     (x: number, y: number, z: number) => [
       random(x - warpRatio, x + warpRatio),
       random(y - warpRatio, y + warpRatio),
       random(z - warpRatio, z + warpRatio),
     ],
-    [random, warpRatio],
+    [warpRatio],
   );
 
   const x0y0z0 = React.useMemo(

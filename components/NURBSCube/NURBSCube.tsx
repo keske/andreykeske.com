@@ -3,6 +3,7 @@ import React from "react";
 import { DoubleSide, FrontSide, Group, Vector4 } from "three";
 
 import { NURBS } from "@/components";
+import { random } from "@/utils";
 
 type NURBSCubeProps = JSX.IntrinsicElements["group"] & {
   map: {
@@ -19,18 +20,13 @@ export const NURBSCube = React.forwardRef<Group, NURBSCubeProps>(
     { map, transparent = false, warpRatio = 0.4, ...rest },
     forwardedRef,
   ) => {
-    const random = React.useCallback(
-      (min: number, max: number) => Math.random() * (max - min) + min,
-      [],
-    );
-
     const getRandomCoords = React.useCallback(
       (x: number, y: number, z: number) => [
         random(x - warpRatio, x + warpRatio),
         random(y - warpRatio, y + warpRatio),
         random(z - warpRatio, z + warpRatio),
       ],
-      [random, warpRatio],
+      [warpRatio],
     );
 
     const x0y0z0 = React.useMemo(
