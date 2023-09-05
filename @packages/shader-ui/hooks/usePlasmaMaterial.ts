@@ -34,10 +34,10 @@ export const usePlasmaMaterial = (
         vec3 color = vec3(
           sin(vUv.x * frequency.x + time),
           cos(vUv.y * frequency.y + time),
-          sin(vUv.x * vUv.y * frequency.z + time)
+          cos(vUv.x * vUv.y * frequency.z + time)
         );
 
-        float plasmaIndex = (color.x + color.y + color.z) / 2.0;
+        float plasmaIndex = (color.x / 17.0 + color.y / 2.0 + color.z / 10.0);
 
         vec3 finalColor = colors[0];
 
@@ -48,17 +48,16 @@ export const usePlasmaMaterial = (
           }
         }
 
-        // Apply blur effect (if intensivity > 0)
-        float blur = intensivity * 0.01; // Scale intensivity for effect
-        vec3 blurredColor = finalColor;
+        float intens = intensivity * 0.01;
+        vec3 intensColor = finalColor;
         if (intensivity > 0.0) {
           for (int i = 0; i < 5; i++) {
-            blurredColor += finalColor * blur;
+            intensColor += finalColor * intens;
           }
-          blurredColor /= 5.0;
+          intensColor /= 5.0;
         }
 
-        gl_FragColor = vec4(blurredColor, 1.0);
+        gl_FragColor = vec4(intensColor, 1.0);
       }
     `,
     uniforms: {
@@ -72,7 +71,7 @@ export const usePlasmaMaterial = (
 
       void main() {
         vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        gl_Position = projectionMatrix * modelViewMatrix *vec4(position , 0.9);
       }
     `,
   });

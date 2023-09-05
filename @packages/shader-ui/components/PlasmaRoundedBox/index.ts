@@ -1,2 +1,1 @@
-export * from "./PlasmaButton";
 export * from "./PlasmaRoundedBox";

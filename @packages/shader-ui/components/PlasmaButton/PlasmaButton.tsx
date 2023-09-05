@@ -1,59 +1,26 @@
-import { Bounds, RoundedBox } from "@react-three/drei";
+import { Bounds } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import clsx from "clsx";
 import React from "react";
-import * as THREE from "three";
 
 import {
   PlasmaMaterialOptions,
-  usePlasmaMaterial,
+  PlasmaRoundedBox,
 } from "@/packages/shader-ui";
 import { mergeRefs } from "@/packages/ui-kit";
 
-const PlasmaRoundedBox = React.forwardRef<
-  React.ElementRef<typeof RoundedBox>,
-  PlasmaMaterialOptions
->(
-  ({
-    colors = [
-      new THREE.Color("#000"),
-      new THREE.Color("green"),
-      new THREE.Color("#F03"),
-      new THREE.Color("green"),
-      new THREE.Color("blue"),
-      new THREE.Color("magenta"),
-    ],
-    frequency = { x: 10.0, y: 100.0, z: 10.0 },
-    intensivity = 10000,
-    time = 0.3,
-  }) => {
-    const buttonMaterial = usePlasmaMaterial({
-      colors,
-      frequency,
-      intensivity,
-      time,
-    });
-
-    return (
-      <RoundedBox
-        args={[0.8, 0.2, 0.1]}
-        material={buttonMaterial}
-        position={[0, 0, 0]}
-        radius={0.1}
-      />
-    );
-  },
-);
-
 export type PlasmaButtonProps = PlasmaMaterialOptions &
-  React.PropsWithChildren;
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    size?: "lg" | "md" | "sm" | "xs";
+  };
 
 export const PlasmaButton = React.forwardRef<
-  HTMLDivElement,
+  HTMLButtonElement,
   PlasmaButtonProps
->(({ children }, forwardedRef) => {
-  const ref = React.useRef<HTMLDivElement>(null);
+>(({ children, className, size = "md", ...props }, forwardedRef) => {
+  const ref = React.useRef<HTMLButtonElement>(null);
 
-  const [indicatorStyles, setIndicatorStyles] =
+  const [rootStyles, setRootStyles] =
     React.useState<React.CSSProperties>({});
 
   const calculateIndicatorStyles = React.useCallback(() => {
@@ -65,7 +32,7 @@ export const PlasmaButton = React.forwardRef<
 
     const rect = element.getBoundingClientRect();
 
-    setIndicatorStyles({
+    setRootStyles({
       height: rect.height,
       left: element.offsetLeft,
       top: element.offsetTop,
@@ -78,21 +45,40 @@ export const PlasmaButton = React.forwardRef<
   }, [calculateIndicatorStyles]);
 
   return (
-    <>
-      <div
-        className="absolute z-10 px-10 py-20"
+    <div
+      className={clsx("relative", {
+        // `size` states
+        "-translate-x-0.5": size == "xs",
+        "-translate-x-2": size == "sm",
+        "-translate-x-3": size == "md",
+        "-translate-x-4": size == "lg",
+      })}
+    >
+      <button
+        className={clsx(
+          className,
+          "relative z-10",
+          "font-medium leading-none text-white",
+          {
+            // `size` states
+            "text-lg px-8 py-4": size == "lg",
+            "text-md px-6 py-3": size == "md",
+            "text-sm px-4 py-2": size == "sm",
+            "text-xs px-4 py-1": size == "xs",
+          },
+        )}
         ref={mergeRefs(forwardedRef, ref)}
+        {...props}
       >
-        <p className="text-white">{children}</p>
+        {children}
+      </button>
+      <div className="f-full absolute left-0 top-0 h-full overflow-hidden rounded-full">
+        <Canvas className="f-full h-full" style={rootStyles}>
+          <Bounds clip fit margin={0.23}>
+            <PlasmaRoundedBox />
+          </Bounds>
+        </Canvas>
       </div>
-      <Canvas
-        className="f-full absolute h-full"
-        style={indicatorStyles}
-      >
-        <Bounds clip fit margin={0.95}>
-          <PlasmaRoundedBox />
-        </Bounds>
-      </Canvas>
-    </>
+    </div>
   );
 });
