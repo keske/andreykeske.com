@@ -1,6 +1,23 @@
 import clsx from "clsx";
 import React from "react";
 
+// type OptionsA = {
+//   foo: string;
+// };
+
+// type OptionsB = {
+//   foo: string;
+// };
+
+// type ButtonProps = {
+//   options: any; // Here should be OptionsA or OptionsB depends on variant
+//   variant: "a" | "b";
+// };
+
+// const Button = React.FC<ButtonProps> => {
+//   <></>
+// }
+
 type AsHTMLButtonElement =
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 

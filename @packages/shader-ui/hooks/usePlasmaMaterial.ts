@@ -37,7 +37,7 @@ export const usePlasmaMaterial = (
           cos(vUv.x * vUv.y * frequency.z + time)
         );
 
-        float plasmaIndex = (color.x / 1.0 + color.y / 3.0 + color.z / 1.0);
+        float plasmaIndex = (color.x / 1.0 + color.y / 1.0 + color.z / 1.0);
 
         vec3 finalColor = colors[0];
 
@@ -71,7 +71,7 @@ export const usePlasmaMaterial = (
 
       void main() {
         vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix *vec4(position , 0.9);
+        gl_Position = projectionMatrix * modelViewMatrix *vec4(position , 0.6);
       }
     `,
   });

@@ -1,2 +1,2 @@
-export * from "./PlasmaButton";
-export * from "./PlasmaRoundedBox";
+export * from "./Button";
+export * from "./Surface";

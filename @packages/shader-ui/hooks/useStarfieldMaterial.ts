@@ -1,13 +1,15 @@
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-export type Options = {
+export type StarfieldMaterialOptions = {
   density?: number;
   threshold?: number;
   time?: number;
 };
 
-export const useStarfieldMaterial = (options: Options = {}) => {
+export const useStarfieldMaterial = (
+  options: StarfieldMaterialOptions = {},
+) => {
   const { density = 1000.0, threshold = 0.1, time = 0.1 } = options;
 
   const material = new THREE.ShaderMaterial({

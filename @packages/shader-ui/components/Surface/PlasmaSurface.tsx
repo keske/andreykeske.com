@@ -7,21 +7,19 @@ import {
   usePlasmaMaterial,
 } from "@/packages/shader-ui";
 
-export const PlasmaRoundedBox = React.forwardRef<
+export const PlasmaSurface = React.forwardRef<
   React.ElementRef<typeof RoundedBox>,
   PlasmaMaterialOptions
 >(
   ({
     colors = [
       new THREE.Color("#000"),
-      // new THREE.Color("yellow"),
       new THREE.Color("green"),
-      new THREE.Color("#062E20"),
       new THREE.Color("red"),
       new THREE.Color("black"),
       new THREE.Color("blue"),
     ],
-    frequency = { x: 10.0, y: 10.0, z: 10.0 },
+    frequency = { x: 10.0, y: 30.0, z: 6.0 },
     intensivity = 200,
     time = 0.7,
   }) => {
