@@ -14,14 +14,15 @@ export const PlasmaRoundedBox = React.forwardRef<
   ({
     colors = [
       new THREE.Color("#000"),
-      new THREE.Color("#191050"),
-      new THREE.Color("#501036"),
+      // new THREE.Color("yellow"),
+      new THREE.Color("green"),
       new THREE.Color("#062E20"),
+      new THREE.Color("red"),
       new THREE.Color("black"),
       new THREE.Color("blue"),
     ],
-    frequency = { x: 10.0, y: 100.0, z: 10.0 },
-    intensivity = 700,
+    frequency = { x: 10.0, y: 10.0, z: 10.0 },
+    intensivity = 200,
     time = 0.7,
   }) => {
     const material = usePlasmaMaterial({
@@ -33,10 +34,10 @@ export const PlasmaRoundedBox = React.forwardRef<
 
     return (
       <RoundedBox
-        args={[0.8, 0.2, 0.1]}
+        args={[3.8, 3.2, 3.1]}
         material={material}
         position={[0, 0, 0]}
-        radius={0.1}
+        radius={3.1}
       />
     );
   },

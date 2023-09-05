@@ -37,7 +37,7 @@ export const usePlasmaMaterial = (
           cos(vUv.x * vUv.y * frequency.z + time)
         );
 
-        float plasmaIndex = (color.x / 17.0 + color.y / 2.0 + color.z / 10.0);
+        float plasmaIndex = (color.x / 1.0 + color.y / 3.0 + color.z / 1.0);
 
         vec3 finalColor = colors[0];
 
