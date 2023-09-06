@@ -19,7 +19,7 @@ export const PlasmaSurface = React.forwardRef<
       new THREE.Color("black"),
       new THREE.Color("blue"),
     ],
-    frequency = { x: 10.0, y: 30.0, z: 6.0 },
+    frequency = { x: 1.0, y: 30.0, z: 6.0 },
     intensivity = 200,
     time = 0.7,
   }) => {

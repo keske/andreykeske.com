@@ -4,6 +4,8 @@ import clsx from "clsx";
 import React from "react";
 
 import {
+  NoiseMaterialOptions,
+  NoiseSurface,
   PlasmaMaterialOptions,
   PlasmaSurface,
   StarfieldMaterialOptions,
@@ -11,13 +13,15 @@ import {
 } from "@/packages/shader-ui";
 import { mergeRefs } from "@/packages/ui-kit";
 
-type Variant = "plasma" | "starfield";
+type Variant = "noise" | "plasma" | "starfield";
 
 export type ButtonProps<V extends Variant> =
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
     materialOptions?: V extends "plasma"
       ? PlasmaMaterialOptions
-      : StarfieldMaterialOptions;
+      : V extends "starfield"
+      ? StarfieldMaterialOptions
+      : NoiseMaterialOptions;
     size?: "lg" | "md" | "sm" | "xs";
     variant?: Variant;
   };
@@ -46,6 +50,9 @@ export const Button = React.forwardRef<
 
         case "starfield":
           return <StarfieldSurface {...materialOptions} />;
+
+        case "noise":
+          return <NoiseSurface {...materialOptions} />;
       }
     }, [materialOptions, variant]);
 
@@ -69,15 +76,7 @@ export const Button = React.forwardRef<
     }, [calculateStyles]);
 
     return (
-      <div
-        className={clsx("relative", {
-          // `size` states
-          "-translate-x-0.5": size == "xs",
-          "-translate-x-2": size == "sm",
-          "-translate-x-3": size == "md",
-          "-translate-x-4": size == "lg",
-        })}
-      >
+      <div className="relative">
         <button
           className={clsx(
             className,
@@ -96,10 +95,7 @@ export const Button = React.forwardRef<
         >
           {children}
         </button>
-        <div
-          className="f-full absolute left-0 top-0 h-full overflow-hidden rounded-full"
-          // style={{ border: "1px solid rgba(255, 255, 255, 0.7)" }}
-        >
+        <div className="f-full absolute left-0 top-0 h-full overflow-hidden rounded-full">
           <Canvas className="f-full h-full" style={{ ...rootSize }}>
             <Bounds clip fit margin={0.23}>
               {surface}

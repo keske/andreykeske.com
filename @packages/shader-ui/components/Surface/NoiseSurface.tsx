@@ -2,17 +2,16 @@ import { RoundedBox } from "@react-three/drei";
 import React from "react";
 
 import {
-  StarfieldMaterialOptions,
-  useStarfieldMaterial,
+  NoiseMaterialOptions,
+  useNoiseMaterial,
 } from "@/packages/shader-ui";
 
-export const StarfieldSurface = React.forwardRef<
+export const NoiseSurface = React.forwardRef<
   React.ElementRef<typeof RoundedBox>,
-  StarfieldMaterialOptions
->(({ density = 107, threshold = 0.1, time = 0.05 }) => {
-  const material = useStarfieldMaterial({
+  NoiseMaterialOptions
+>(({ density = 0.0000005, time = 0.1 }) => {
+  const material = useNoiseMaterial({
     density,
-    threshold,
     time,
   });
 

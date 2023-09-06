@@ -26,6 +26,19 @@ const AtomicUI: NextPage = () => (
       <Button size="lg" variant="starfield">
         Button
       </Button>
+
+      <Button size="xs" variant="noise">
+        Button
+      </Button>
+      <Button size="sm" variant="noise">
+        Button
+      </Button>
+      <Button size="md" variant="noise">
+        Button
+      </Button>
+      <Button size="lg" variant="noise">
+        Button
+      </Button>
     </div>
   </div>
 );
