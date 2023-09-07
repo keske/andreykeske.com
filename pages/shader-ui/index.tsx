@@ -10,33 +10,33 @@ const AtomicUI: NextPage = () => (
       <Button size="xs">Button</Button>
       <Button size="sm">Button</Button>
       <Button size="md">Button</Button>
-      <Button size="lg" variant="plasma">
+      <Button shader="plasma" size="lg">
         Button
       </Button>
 
-      <Button size="xs" variant="starfield">
+      <Button shader="starfield" size="xs">
         Button
       </Button>
-      <Button size="sm" variant="starfield">
+      <Button shader="starfield" size="sm">
         Button
       </Button>
-      <Button size="md" variant="starfield">
+      <Button shader="starfield" size="md">
         Button
       </Button>
-      <Button size="lg" variant="starfield">
+      <Button shader="starfield" size="lg">
         Button
       </Button>
 
-      <Button size="xs" variant="noise">
+      <Button shader="noise" size="xs">
         Button
       </Button>
-      <Button size="sm" variant="noise">
+      <Button shader="noise" size="sm">
         Button
       </Button>
-      <Button size="md" variant="noise">
+      <Button shader="noise" size="md">
         Button
       </Button>
-      <Button size="lg" variant="noise">
+      <Button shader="noise" size="lg">
         Button
       </Button>
     </div>

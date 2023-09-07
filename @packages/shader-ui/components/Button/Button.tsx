@@ -13,30 +13,30 @@ import {
 } from "@/packages/shader-ui";
 import { mergeRefs } from "@/packages/ui-kit";
 
-type Variant = "noise" | "plasma" | "starfield";
+type Shader = "noise" | "plasma" | "starfield";
 
-export type ButtonProps<V extends Variant> =
+export type ButtonProps<S extends Shader> =
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    materialOptions?: V extends "plasma"
+    materialOptions?: S extends "plasma"
       ? PlasmaMaterialOptions
-      : V extends "starfield"
+      : S extends "starfield"
       ? StarfieldMaterialOptions
       : NoiseMaterialOptions;
+    shader?: Shader;
     size?: "lg" | "md" | "sm" | "xs";
-    variant?: Variant;
   };
 
 export const Button = React.forwardRef<
   HTMLButtonElement,
-  ButtonProps<Variant>
+  ButtonProps<Shader>
 >(
   (
     {
       children,
       className,
       materialOptions,
+      shader = "plasma",
       size = "md",
-      variant = "plasma",
       ...props
     },
     forwardedRef,
@@ -44,29 +44,27 @@ export const Button = React.forwardRef<
     const ref = React.useRef<HTMLButtonElement>(null);
 
     const surface = React.useMemo(() => {
-      switch (variant) {
+      switch (shader) {
+        case "noise":
+          return <NoiseSurface {...materialOptions} />;
+
         case "plasma":
           return <PlasmaSurface {...materialOptions} />;
 
         case "starfield":
           return <StarfieldSurface {...materialOptions} />;
-
-        case "noise":
-          return <NoiseSurface {...materialOptions} />;
       }
-    }, [materialOptions, variant]);
+    }, [materialOptions, shader]);
 
     const [rootSize, setRootSize] =
       React.useState<React.CSSProperties>({});
 
     const calculateStyles = React.useCallback(() => {
-      const element = ref.current;
-
-      if (!element) {
+      if (!ref.current) {
         return;
       }
 
-      const { height, width } = element.getBoundingClientRect();
+      const { height, width } = ref.current.getBoundingClientRect();
 
       setRootSize({ height, width });
     }, [ref]);
