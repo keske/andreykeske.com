@@ -10,11 +10,11 @@ export type SegmentedControlProps = Omit<
   ToggleGroup.ToggleGroupSingleProps,
   "children" | "type"
 > & {
-  items: string[];
-  segmentedControlIndicatorElement?: React.ReactElement<
+  indicatorElement?: React.ReactElement<
     any,
     React.JSXElementConstructor<any> | string
   >;
+  items: string[];
 };
 
 export const SegmentedControl = React.forwardRef<
@@ -24,9 +24,9 @@ export const SegmentedControl = React.forwardRef<
   (
     {
       defaultValue,
+      indicatorElement,
       items,
       onValueChange,
-      segmentedControlIndicatorElement,
       ...toggleGroupRootProps
     },
     forwardedRef,
@@ -72,14 +72,14 @@ export const SegmentedControl = React.forwardRef<
 
     const segmentedControlIndicator = React.useMemo(
       () =>
-        segmentedControlIndicatorElement ? (
-          React.cloneElement(segmentedControlIndicatorElement, {
+        indicatorElement ? (
+          React.cloneElement(indicatorElement, {
             indicatorStyles,
           })
         ) : (
           <SegmentedControlIndicator styles={indicatorStyles} />
         ),
-      [indicatorStyles, segmentedControlIndicatorElement],
+      [indicatorStyles, indicatorElement],
     );
 
     React.useEffect(() => {

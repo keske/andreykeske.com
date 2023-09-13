@@ -74,7 +74,7 @@ export const Button = React.forwardRef<
     }, [calculateStyles]);
 
     return (
-      <div className="relative">
+      <div className="absolute">
         <button
           className={clsx(
             className,
