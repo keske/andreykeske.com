@@ -15,7 +15,17 @@ const MinecraftNURBS = React.lazy(() =>
   })),
 );
 
-const segmentedControlItems: string[] = ["Atomic", "NURBS"];
+const MinecraftShaders = React.lazy(() =>
+  import("./MinecraftShaders").then((module) => ({
+    default: module.MinecraftShaders,
+  })),
+);
+
+const segmentedControlItems: string[] = [
+  "Atomic",
+  "NURBS",
+  "Shaders",
+];
 
 export const Minecraft: React.FC = () => {
   const [segmentedControlAtiveItem, setSegmentedControlAtiveItem] =
@@ -28,6 +38,9 @@ export const Minecraft: React.FC = () => {
 
       case "NURBS":
         return <MinecraftNURBS />;
+
+      case "Shaders":
+        return <MinecraftShaders />;
     }
   }, [segmentedControlAtiveItem]);
 
