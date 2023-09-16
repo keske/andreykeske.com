@@ -10,11 +10,9 @@ export type SegmentedControlProps = Omit<
   ToggleGroup.ToggleGroupSingleProps,
   "children" | "type"
 > & {
-  indicatorElement?: React.ReactElement<
-    any,
-    React.JSXElementConstructor<any> | string
-  >;
+  indicatorElement?: React.ReactElement;
   items: string[];
+  rootElement?: React.ReactElement;
 };
 
 export const SegmentedControl = React.forwardRef<
@@ -27,13 +25,19 @@ export const SegmentedControl = React.forwardRef<
       indicatorElement,
       items,
       onValueChange,
+      rootElement,
       ...toggleGroupRootProps
     },
     forwardedRef,
   ) => {
+    const rootRef = React.useRef<HTMLDivElement>(null);
+
     const [getItemRef] = useRefs<HTMLButtonElement>();
 
     const [indicatorStyles, setIndicatorStyles] =
+      React.useState<React.CSSProperties>({});
+
+    const [rootStyles, setRootStyles] =
       React.useState<React.CSSProperties>({});
 
     const [value, setValue] = React.useState(
@@ -48,36 +52,68 @@ export const SegmentedControl = React.forwardRef<
       [onValueChange],
     );
 
+    const calculateStyles = React.useCallback(
+      <T extends HTMLElement>(
+        ref: React.RefObject<T>,
+        callback: (styles: React.CSSProperties) => void,
+      ) => {
+        const element = ref.current;
+
+        if (!element) {
+          return;
+        }
+
+        const rect = element.getBoundingClientRect();
+
+        callback({
+          height: rect.height,
+          left: element.offsetLeft,
+          top: element.offsetTop,
+          width: rect.width,
+        });
+      },
+      [],
+    );
+
     const calculateIndicatorStyles = React.useCallback(() => {
-      const activeItemElement = getItemRef(value).current;
+      calculateStyles(getItemRef(value), setIndicatorStyles);
+    }, [calculateStyles, getItemRef, value]);
 
-      if (!activeItemElement) {
-        return;
+    const calculateRootStyles = React.useCallback(() => {
+      if (rootElement) {
+        calculateStyles(rootRef, setRootStyles);
       }
+    }, [calculateStyles, rootElement]);
 
-      const activeItemRect =
-        activeItemElement.getBoundingClientRect();
-
-      setIndicatorStyles({
-        height: activeItemRect.height,
-        left: activeItemElement.offsetLeft,
-        top: activeItemElement.offsetTop,
-        width: activeItemRect.width,
-      });
-    }, [getItemRef, value]);
+    const calculateAllStyles = React.useCallback(() => {
+      calculateIndicatorStyles();
+      calculateRootStyles();
+    }, [calculateIndicatorStyles, calculateRootStyles]);
 
     const { ref } = useResizeObserver<HTMLDivElement>({
-      onResize: calculateIndicatorStyles,
+      onResize: calculateAllStyles,
     });
+
+    const rootControlIndicator = React.useMemo(
+      () =>
+        rootElement ? (
+          React.cloneElement(rootElement, {
+            style: rootStyles,
+          })
+        ) : (
+          <></>
+        ),
+      [rootElement, rootStyles],
+    );
 
     const segmentedControlIndicator = React.useMemo(
       () =>
         indicatorElement ? (
           React.cloneElement(indicatorElement, {
-            indicatorStyles,
+            style: indicatorStyles,
           })
         ) : (
-          <SegmentedControlIndicator styles={indicatorStyles} />
+          <SegmentedControlIndicator style={indicatorStyles} />
         ),
       [indicatorStyles, indicatorElement],
     );
@@ -88,12 +124,14 @@ export const SegmentedControl = React.forwardRef<
 
     return (
       <ToggleGroup.Root
+        className="relative"
         defaultValue={value}
         onValueChange={handleValueChange}
-        ref={mergeRefs(ref, forwardedRef)}
+        ref={mergeRefs(forwardedRef, ref, rootRef)}
         type="single"
         {...toggleGroupRootProps}
       >
+        {rootControlIndicator}
         {segmentedControlIndicator}
         {items.map((item, index) => (
           <SegmentedControlItem
