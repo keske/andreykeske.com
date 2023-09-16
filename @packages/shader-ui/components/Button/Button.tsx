@@ -1,9 +1,8 @@
-import { Bounds } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
 import React from "react";
 
 import {
+  Canvas,
   NoiseMaterialOptions,
   NoiseSurface,
   PlasmaMaterialOptions,
@@ -37,6 +36,7 @@ export const Button = React.forwardRef<
       materialOptions,
       shader = "plasma",
       size = "md",
+      style = {},
       ...props
     },
     forwardedRef,
@@ -56,25 +56,10 @@ export const Button = React.forwardRef<
       }
     }, [materialOptions, shader]);
 
-    const [rootSize, setRootSize] =
-      React.useState<React.CSSProperties>({});
-
-    const calculateStyles = React.useCallback(() => {
-      if (!ref.current) {
-        return;
-      }
-
-      const { height, width } = ref.current.getBoundingClientRect();
-
-      setRootSize({ height, width });
-    }, [ref]);
-
-    React.useEffect(() => {
-      calculateStyles();
-    }, [calculateStyles]);
+    console.log("style", style);
 
     return (
-      <div className="absolute">
+      <div className="relative">
         <button
           className={clsx(
             className,
@@ -89,16 +74,16 @@ export const Button = React.forwardRef<
             },
           )}
           ref={mergeRefs(forwardedRef, ref)}
+          // style={style}
           {...props}
         >
           {children}
         </button>
-        <div className="f-full absolute left-0 top-0 h-full overflow-hidden rounded-full">
-          <Canvas className="f-full h-full" style={{ ...rootSize }}>
-            <Bounds clip fit margin={0.23}>
-              {surface}
-            </Bounds>
-          </Canvas>
+        <div
+          className="f-full absolute left-0 top-0 z-0 h-full overflow-hidden rounded-full"
+          // style={style}
+        >
+          <Canvas style={style}>{surface}</Canvas>
         </div>
       </div>
     );
