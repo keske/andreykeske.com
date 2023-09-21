@@ -1,5 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import * as R from "ramda";
 import React from "react";
 import SimplexNoise from "simplex-noise";
 import * as THREE from "three";
@@ -7,11 +8,27 @@ import * as THREE from "three";
 import { MinecraftShaderCube } from "./MinecraftShader.Cube";
 
 import { WorkDetails } from "@/components";
+import { useControls } from "@/packages/controls";
+import { useListItems } from "@/stores";
 
 export const MinecraftShaders: React.FC = () => {
-  const radius = 10;
+  const { selectedWorkId } = useListItems();
 
-  const biomSize = 70;
+  const { size } = useControls(
+    {
+      size: {
+        max: 10000,
+        min: 1,
+        step: 1,
+        value: 70,
+      },
+    },
+    {
+      hidden: R.isNil(selectedWorkId),
+    },
+  );
+
+  const radius = 1;
 
   const biom = React.useMemo(() => {
     const gen = new SimplexNoise();
@@ -22,12 +39,12 @@ export const MinecraftShaders: React.FC = () => {
 
     const value = [];
 
-    for (let y = -biomSize; y < biomSize; y++) {
+    for (let y = -size.value; y < size.value; y++) {
       value[y] = [];
-      for (let x = -biomSize; x < biomSize; x++) {
-        const nx = x / biomSize - 0.5;
+      for (let x = -size.value; x < size.value; x++) {
+        const nx = x / size.value - 0.5;
 
-        const ny = y / biomSize - 0.5;
+        const ny = y / size.value - 0.5;
 
         // @ts-expect-error wip
         value[y][x] = noise(nx, ny).toFixed(1) * 10;
@@ -35,7 +52,12 @@ export const MinecraftShaders: React.FC = () => {
     }
 
     return value;
-  }, [biomSize]);
+  }, [size.value]);
+
+  const frequency = React.useCallback(
+    (value: number = 113.9) => ({ x: value, y: value, z: value }),
+    [],
+  );
 
   const renderBlockDependsOnElevation = React.useCallback(
     (elevation: number) => {
@@ -45,12 +67,10 @@ export const MinecraftShaders: React.FC = () => {
           return (
             <MinecraftShaderCube
               colors={[
-                new THREE.Color("#000"),
-                new THREE.Color("blue"),
-                new THREE.Color("aqua"),
-                new THREE.Color("purple"),
+                new THREE.Color("#0F235E"),
+                new THREE.Color("#223168"),
               ]}
-              frequency={{ x: 100.0, y: 300.0, z: 100.0 }}
+              frequency={frequency()}
               radius={radius}
             />
           );
@@ -60,12 +80,13 @@ export const MinecraftShaders: React.FC = () => {
           return (
             <MinecraftShaderCube
               colors={[
-                new THREE.Color("#000"),
-                new THREE.Color("yellow"),
-                new THREE.Color("red"),
-                new THREE.Color("green"),
+                new THREE.Color("#C3BE8A"),
+                new THREE.Color("#CFC29D"),
+                new THREE.Color("#737052"),
+                new THREE.Color("#7B725B"),
               ]}
-              frequency={{ x: 100.0, y: 300.0, z: 100.0 }}
+              frequency={frequency()}
+              intensivity={100}
               radius={radius}
             />
           );
@@ -75,10 +96,13 @@ export const MinecraftShaders: React.FC = () => {
           return (
             <MinecraftShaderCube
               colors={[
-                new THREE.Color("#000"),
-                new THREE.Color("gray"),
+                new THREE.Color("#444643"),
+                new THREE.Color("#323330"),
+                new THREE.Color("#4C4D4B"),
+                new THREE.Color("#3E403D"),
               ]}
-              frequency={{ x: 100.0, y: 300.0, z: 100.0 }}
+              frequency={frequency()}
+              intensivity={300}
               radius={radius}
             />
           );
@@ -88,16 +112,18 @@ export const MinecraftShaders: React.FC = () => {
           return (
             <MinecraftShaderCube
               colors={[
-                new THREE.Color("#000"),
-                new THREE.Color("brown"),
+                new THREE.Color("#2F2115"),
+                new THREE.Color("#513A2A"),
+                new THREE.Color("#563E28"),
+                new THREE.Color("#422D1D"),
               ]}
-              frequency={{ x: 100.0, y: 300.0, z: 100.0 }}
+              frequency={frequency()}
               radius={radius}
             />
           );
       }
     },
-    [radius],
+    [frequency],
   );
 
   const renderBiom = React.useMemo(
