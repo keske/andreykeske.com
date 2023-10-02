@@ -56,7 +56,22 @@ export const Button = React.forwardRef<
       }
     }, [materialOptions, shader]);
 
-    console.log("style", style);
+    const [rootSize, setRootSize] =
+      React.useState<React.CSSProperties>({});
+
+    const calculateStyles = React.useCallback(() => {
+      if (!ref.current) {
+        return;
+      }
+
+      const { height, width } = ref.current.getBoundingClientRect();
+
+      setRootSize({ height, width });
+    }, [ref]);
+
+    React.useEffect(() => {
+      calculateStyles();
+    }, [calculateStyles]);
 
     return (
       <div className="relative">
@@ -74,16 +89,15 @@ export const Button = React.forwardRef<
             },
           )}
           ref={mergeRefs(forwardedRef, ref)}
-          // style={style}
           {...props}
         >
           {children}
         </button>
         <div
           className="f-full absolute left-0 top-0 z-0 h-full overflow-hidden rounded-full"
-          // style={style}
+          style={style}
         >
-          <Canvas style={style}>{surface}</Canvas>
+          <Canvas style={rootSize}>{surface}</Canvas>
         </div>
       </div>
     );
