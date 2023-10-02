@@ -13,6 +13,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
+      "@/packages/atomic-ui": ["@packages/atomic-ui/index"],
       "@/packages/controls": ["@packages/controls/index"],
       "@/packages/shader-ui": ["@packages/shader-ui/index"],
       "@/packages/ui-kit": ["@packages/ui-kit/index"],
