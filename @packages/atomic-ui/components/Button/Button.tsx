@@ -1,4 +1,3 @@
-import { Bounds } from "@react-three/drei";
 import { Canvas as FiberCanvas } from "@react-three/fiber";
 import clsx from "clsx";
 import React from "react";
@@ -59,9 +58,7 @@ export const Button = React.forwardRef<
         style={style}
       >
         <FiberCanvas className="h-full w-full">
-          <Bounds>
-            <AtomicSurface radius={style?.width} />
-          </Bounds>
+          <AtomicSurface radius={style?.width} />
         </FiberCanvas>
       </div>
     </div>

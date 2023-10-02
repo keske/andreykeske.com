@@ -94,11 +94,16 @@ export const SegmentedControl = React.forwardRef<
       onResize: calculateAllStyles,
     });
 
+    console.log("rootStyles", rootStyles);
+
     const rootControlIndicator = React.useMemo(
       () =>
         rootElement ? (
           React.cloneElement(rootElement, {
-            style: rootStyles,
+            style: {
+              ...rootStyles,
+              position: "absolute",
+            },
           })
         ) : (
           <></>
