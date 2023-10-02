@@ -2,6 +2,8 @@ import { useFrame } from "@react-three/fiber";
 import React from "react";
 import * as THREE from "three";
 
+import { random } from "@/utils";
+
 export type AtomicSurfaceProps = {
   /**
    * Animate or not particles
@@ -26,7 +28,7 @@ export type AtomicSurfaceProps = {
 
 export const AtomicSurface: React.FC<AtomicSurfaceProps> = ({
   animation = true,
-  color = "rgba(255,255,255,0.1)",
+  color = "#FFF",
   density = 3000,
   radius = 100,
 }) => {
@@ -42,15 +44,13 @@ export const AtomicSurface: React.FC<AtomicSurfaceProps> = ({
   );
 
   const setPosition = React.useCallback(() => {
-    const min = -radius / 2;
-
     [...Array(density)].forEach((_, i) => {
-      particlePositions[i] = Math.random() * radius + min;
+      particlePositions[i] = random(-radius, radius);
     });
   }, [density, particlePositions, radius]);
 
   const cloud = React.useMemo(() => {
-    const pMaterial = new THREE.PointsMaterial({
+    const material = new THREE.PointsMaterial({
       blending: THREE.AdditiveBlending,
       color,
       size: 1,
@@ -67,7 +67,7 @@ export const AtomicSurface: React.FC<AtomicSurfaceProps> = ({
       ),
     );
 
-    return new THREE.Points(particles, pMaterial);
+    return new THREE.Points(particles, material);
   }, [color, particlePositions]);
 
   useFrame(() => {

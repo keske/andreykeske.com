@@ -2,18 +2,30 @@ import React from "react";
 
 import type { NextPage } from "next";
 
-import { Button, SegmentedControl, View } from "@/packages/atomic-ui";
+import {
+  Button,
+  ButtonProps,
+  SegmentedControl,
+  View,
+} from "@/packages/atomic-ui";
 
-const AtomicUI: NextPage = () => (
-  <div className="w-scree h-screen bg-black p-10">
-    <SegmentedControl items={["List", "Grid"]} />
-    <View className="flex flex-col gap-8 p-10">
-      <Button size="xs">Button</Button>
-      <Button size="sm">Button</Button>
-      <Button size="md">Button</Button>
-      <Button size="lg">Button</Button>
-    </View>
-  </div>
-);
+const AtomicUI: NextPage = () => {
+  const segmentedControlItems = ["lg", "md", "sm", "xs"];
+
+  const [buttonSize, setButtonSize] =
+    React.useState<ButtonProps["size"]>("md");
+
+  return (
+    <div className="w-scree h-screen bg-black p-10">
+      <View className="flex flex-col gap-10 p-10">
+        <SegmentedControl
+          items={segmentedControlItems}
+          onValueChange={setButtonSize}
+        />
+        <Button size={buttonSize}>Button</Button>
+      </View>
+    </div>
+  );
+};
 
 export default AtomicUI;

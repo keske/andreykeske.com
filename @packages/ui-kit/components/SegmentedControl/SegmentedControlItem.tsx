@@ -17,7 +17,7 @@ export const SegmentedControlItem = React.forwardRef<
       className={clsx(
         "relative p-2 px-4 text-xs font-black uppercase tracking-widest",
         // `on` state
-        "data-[state=on]:text-black",
+        // "data-[state=on]:text-black",
         className,
       )}
       ref={forwardedRef}

@@ -2,7 +2,7 @@ import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { Canvas as FiberCanvas } from "@react-three/fiber";
 import React from "react";
 
-import { AtomicSurface, AtomicSurfaceProps } from "../AtomicSurface";
+import { AtomicSurface } from "../AtomicSurface";
 
 import {
   SegmentedControl as UIKitSegmentedControl,
@@ -18,15 +18,15 @@ export const SegmentedControl = React.forwardRef<
   <UIKitSegmentedControl
     ref={forwardedRef}
     {...props}
-    // indicatorElement={
-    //   <FiberCanvas className="h-full w-full rounded-full">
-    //     <AtomicSurface />
-    //   </FiberCanvas>
-    // }
+    indicatorElement={
+      (<FiberCanvas className="h-full w-full rounded-full border border-white/10">
+        <AtomicSurface density={3000} />
+      </FiberCanvas>)
+    }
     rootElement={
-      <FiberCanvas className="h-full w-full rounded-full">
-        <AtomicSurface />
-      </FiberCanvas>
+      (<FiberCanvas className=" h-full w-full rounded-full border border-white/10">
+        <AtomicSurface density={1000} />
+      </FiberCanvas>)
     }
   />
 ));

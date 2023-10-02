@@ -32,15 +32,17 @@ export const View = React.forwardRef<HTMLDivElement, ViewProps>(
     return (
       <div className="relative">
         <div
-          className={clsx(className, "relative z-10")}
+          className={clsx(
+            className,
+            "relative z-10 overflow-hidden rounded-lg border border-white/10",
+          )}
           ref={mergeRefs(forwardedRef, ref)}
-          // style={{ border: "1px solid red" }}
           {...props}
         >
           {children}
         </div>
         <div
-          className="f-full absolute left-0 top-0 z-0 h-full overflow-hidden rounded-lg opacity-70"
+          className="f-full absolute left-0 top-0 z-0 h-full opacity-70"
           style={style}
         >
           <FiberCanvas className="h-full w-full">

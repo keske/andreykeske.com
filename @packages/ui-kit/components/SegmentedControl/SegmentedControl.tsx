@@ -94,15 +94,14 @@ export const SegmentedControl = React.forwardRef<
       onResize: calculateAllStyles,
     });
 
-    console.log("rootStyles", rootStyles);
-
     const rootControlIndicator = React.useMemo(
       () =>
         rootElement ? (
           React.cloneElement(rootElement, {
             style: {
-              ...rootStyles,
+              height: rootStyles.height,
               position: "absolute",
+              width: rootStyles.width,
             },
           })
         ) : (
@@ -115,7 +114,10 @@ export const SegmentedControl = React.forwardRef<
       () =>
         indicatorElement ? (
           React.cloneElement(indicatorElement, {
-            style: indicatorStyles,
+            style: {
+              ...indicatorStyles,
+              position: "absolute",
+            },
           })
         ) : (
           <SegmentedControlIndicator style={indicatorStyles} />
@@ -128,26 +130,28 @@ export const SegmentedControl = React.forwardRef<
     }, [calculateIndicatorStyles, value]);
 
     return (
-      <ToggleGroup.Root
-        className="relative"
-        defaultValue={value}
-        onValueChange={handleValueChange}
-        ref={mergeRefs(forwardedRef, ref, rootRef)}
-        type="single"
-        {...toggleGroupRootProps}
-      >
-        {rootControlIndicator}
-        {segmentedControlIndicator}
-        {items.map((item, index) => (
-          <SegmentedControlItem
-            key={index}
-            ref={getItemRef(item)}
-            value={item}
-          >
-            {item}
-          </SegmentedControlItem>
-        ))}
-      </ToggleGroup.Root>
+      <div className="relative">
+        <ToggleGroup.Root
+          className="absolute"
+          defaultValue={value}
+          onValueChange={handleValueChange}
+          ref={mergeRefs(forwardedRef, ref, rootRef)}
+          type="single"
+          {...toggleGroupRootProps}
+        >
+          {rootControlIndicator}
+          {segmentedControlIndicator}
+          {items.map((item, index) => (
+            <SegmentedControlItem
+              key={index}
+              ref={getItemRef(item)}
+              value={item}
+            >
+              {item}
+            </SegmentedControlItem>
+          ))}
+        </ToggleGroup.Root>
+      </div>
     );
   },
 );

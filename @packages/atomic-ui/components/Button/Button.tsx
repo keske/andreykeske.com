@@ -27,7 +27,8 @@ export const Button = React.forwardRef<
     const { height, width } = ref.current.getBoundingClientRect();
 
     setStyle({ height, width });
-  }, [ref]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref, size]);
 
   React.useEffect(() => {
     calculateStyles();
@@ -38,7 +39,7 @@ export const Button = React.forwardRef<
       <button
         className={clsx(
           className,
-          "relative z-10",
+          "relative z-10 overflow-hidden rounded-full border border-white/10",
           "font-medium leading-none text-white",
           {
             // `size` states
@@ -54,7 +55,7 @@ export const Button = React.forwardRef<
         {children}
       </button>
       <div
-        className="f-full absolute left-0 top-0 z-0 h-full overflow-hidden rounded-full opacity-70"
+        className="f-full absolute left-0 top-0 z-0 h-full opacity-70"
         style={style}
       >
         <FiberCanvas className="h-full w-full">
