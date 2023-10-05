@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import {
   Button,
   ButtonProps,
+  Input,
   SegmentedControl,
   View,
 } from "@/packages/atomic-ui";
@@ -23,6 +24,10 @@ const AtomicUI: NextPage = () => {
           onValueChange={setButtonSize}
         />
         <Button size={buttonSize}>Button</Button>
+        <Input
+          placeholder="hello@andreykeske.com"
+          type="email"
+        ></Input>
       </View>
     </div>
   );

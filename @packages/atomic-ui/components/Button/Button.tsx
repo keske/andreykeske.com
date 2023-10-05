@@ -39,7 +39,7 @@ export const Button = React.forwardRef<
       <button
         className={clsx(
           className,
-          "relative z-10 overflow-hidden rounded-full border border-white/10",
+          "relative z-10 rounded-full border border-white/10",
           "font-medium leading-none text-white",
           {
             // `size` states

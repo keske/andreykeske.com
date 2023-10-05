@@ -12,7 +12,7 @@ const AtomicUI: NextPage = () => (
       <Button size="md">Button</Button>
       <Button size="lg">Button</Button>
 
-      {/* <Button shader="starfield" size="xs">
+      <Button shader="starfield" size="xs">
         Button
       </Button>
       <Button shader="starfield" size="sm">
@@ -36,7 +36,7 @@ const AtomicUI: NextPage = () => (
       </Button>
       <Button shader="noise" size="lg">
         Button
-      </Button> */}
+      </Button>
     </div>
   </div>
 );

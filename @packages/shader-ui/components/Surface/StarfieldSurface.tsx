@@ -9,7 +9,7 @@ import {
 export const StarfieldSurface = React.forwardRef<
   React.ElementRef<typeof RoundedBox>,
   StarfieldMaterialOptions
->(({ density = 107, threshold = 0.1, time = 0.05 }) => {
+>(({ density = 707, threshold = 0.1, time = 1.05 }) => {
   const material = useStarfieldMaterial({
     density,
     threshold,
