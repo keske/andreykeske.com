@@ -8,7 +8,8 @@ import { AtomicSurfaceProps } from "../AtomicSurface";
 import { mergeRefs } from "@/packages/ui-kit";
 
 export type InputProps = AtomicSurfaceProps &
-  React.InputHTMLAttributes<HTMLInputElement> & {
+  React.InputHTMLAttributes<HTMLInputElement> &
+  WithLoading & {
     endAdornment?: React.ReactNode;
     size?: "lg" | "md" | "sm" | "xs";
     startAdornment?: React.ReactNode;
@@ -21,6 +22,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       className,
       disabled,
       endAdornment,
+      loading,
       size = "md",
       startAdornment,
       ...props
@@ -34,7 +36,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           className={clsx(
             className,
-            "relative z-10 rounded-full border border-white/10 bg-transparent text-black outline-none focus:border-white/30",
+            "relative z-10 rounded-full border border-white/10 bg-transparent text-white outline-none",
+            {
+              "focus:border-white/30": !disabled,
+              "opacity-80": disabled,
+            },
             {
               // `size` states
               "text-lg px-10 py-5": size == "lg",
@@ -43,6 +49,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               "text-xs px-4 py-2": size == "xs",
             },
           )}
+          disabled={disabled || loading}
           ref={mergeRefs(forwardedRef, ref)}
           {...props}
         />

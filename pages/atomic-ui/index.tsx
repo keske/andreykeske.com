@@ -7,6 +7,7 @@ import {
   ButtonProps,
   Input,
   SegmentedControl,
+  Switch,
   View,
 } from "@/packages/atomic-ui";
 // import { BookmarkFilled24Icon } from "@/packages/icons";
@@ -48,10 +49,12 @@ const AtomicUI: NextPage = () => {
         >
           Button
         </Button>
-        <Input
-          placeholder="hello@andreykeske.com"
-          type="email"
-        ></Input>
+        <Button disabled size={buttonSize}>
+          Disabled Button
+        </Button>
+        <Input placeholder="hello@andreykeske.com" type="email" />
+        <Input disabled placeholder="password" type="password" />
+        <Switch />
       </View>
     </div>
   );

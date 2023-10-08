@@ -16,3 +16,9 @@ declare global {
     }
   }
 }
+
+declare global {
+  type WithLoading = {
+    loading?: boolean;
+  };
+}

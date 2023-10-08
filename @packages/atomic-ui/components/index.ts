@@ -3,4 +3,5 @@ export * from "./Button";
 export * from "./Canvas";
 export * from "./Input";
 export * from "./SegmentedControl";
+export * from "./Switch";
 export * from "./View";

@@ -8,7 +8,8 @@ import { AtomicSurfaceProps } from "../AtomicSurface";
 import { mergeRefs } from "@/packages/ui-kit";
 
 export type ButtonProps = AtomicSurfaceProps &
-  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
+  WithLoading & {
     endIcon?: React.ReactNode;
     size?: "lg" | "md" | "sm" | "xs";
     startIcon?: React.ReactNode;
@@ -28,7 +29,9 @@ export const Button = React.forwardRef<
     {
       children,
       className,
+      disabled,
       endIcon,
+      loading,
       size = "md",
       startIcon,
       variant = "primary",
@@ -38,8 +41,6 @@ export const Button = React.forwardRef<
   ) => {
     const ref = React.useRef<HTMLButtonElement>(null);
 
-    console.log("startIcon", startIcon);
-
     return (
       <div className="relative">
         <button
@@ -48,6 +49,10 @@ export const Button = React.forwardRef<
             "row relative z-10 flex items-center gap-2 rounded-full border border-white/10",
             "font-medium leading-none text-white",
             {
+              "hover:border-white/20": !disabled,
+              "opacity-80": disabled,
+            },
+            {
               // `size` states
               "text-lg px-10 py-5": size == "lg",
               "text-md px-8 py-4": size == "md",
@@ -55,6 +60,7 @@ export const Button = React.forwardRef<
               "text-xs px-4 py-2": size == "xs",
             },
           )}
+          disabled={disabled || loading}
           ref={mergeRefs(forwardedRef, ref)}
           {...props}
         >
