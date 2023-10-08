@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-import { Canvas } from "../";
+import { Canvas } from "..";
 
 import { AtomicSurfaceProps } from "../AtomicSurface";
 

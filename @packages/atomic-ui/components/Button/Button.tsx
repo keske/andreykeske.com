@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-import { Canvas } from "../";
+import { Canvas } from "..";
 
 import { AtomicSurfaceProps } from "../AtomicSurface";
 
@@ -38,12 +38,14 @@ export const Button = React.forwardRef<
   ) => {
     const ref = React.useRef<HTMLButtonElement>(null);
 
+    console.log("startIcon", startIcon);
+
     return (
       <div className="relative">
         <button
           className={clsx(
             className,
-            "relative z-10 rounded-full border border-white/10",
+            "row relative z-10 flex items-center gap-2 rounded-full border border-white/10",
             "font-medium leading-none text-white",
             {
               // `size` states
@@ -56,7 +58,9 @@ export const Button = React.forwardRef<
           ref={mergeRefs(forwardedRef, ref)}
           {...props}
         >
+          {startIcon}
           {children}
+          {endIcon}
         </button>
         <Canvas
           className={clsx({
