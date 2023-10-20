@@ -73,10 +73,10 @@ export const AtomicSurface: React.FC<AtomicSurfaceProps> = ({
   useFrame(() => {
     setPosition();
 
-    if (ref.current) {
-      ref.current.geometry.attributes.position.needsUpdate =
-        animation;
-    }
+    // if (ref.current) {
+    //   ref.current.geometry.attributes.position.needsUpdate =
+    //     animation;
+    // }
   });
 
   return <primitive object={cloud} ref={ref} />;
