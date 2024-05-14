@@ -21,6 +21,12 @@ const Crypto = React.lazy(() =>
   })),
 );
 
+const DistortingMirrors = React.lazy(() =>
+  import("./DistortingMirrors").then((module) => ({
+    default: module.DistortingMirrors,
+  })),
+);
+
 const Duality = React.lazy(() =>
   import("./Duality").then((module) => ({
     default: module.Duality,
@@ -53,7 +59,7 @@ const Maps = React.lazy(() =>
 
 export const Metaphors: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 1,
+    initialIndex: 2,
   });
 
   return (
@@ -62,6 +68,7 @@ export const Metaphors: React.FC = () => {
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
           {renderTabs([
             "AR",
+            "DistortingMirrors",
             "Crumpled Newspaper",
             "Crypto",
             "Duality",
@@ -74,6 +81,7 @@ export const Metaphors: React.FC = () => {
       </WorkDetails>
       {renderTabsBody([
         <AR />,
+        <DistortingMirrors />,
         <CrumpledNewspaper />,
         <Crypto />,
         <Duality />,

@@ -9,17 +9,11 @@ const Cloth = React.lazy(() =>
   })),
 );
 
-const DistortingMirrors = React.lazy(() =>
-  import("./DistortingMirrors").then((module) => ({
-    default: module.DistortingMirrors,
-  })),
-);
-
-const MandelbrotSet = React.lazy(() =>
-  import("./MandelbrotSet").then((module) => ({
-    default: module.MandelbrotSet,
-  })),
-);
+// const MandelbrotSet = React.lazy(() =>
+//   import("./MandelbrotSet").then((module) => ({
+//     default: module.MandelbrotSet,
+//   })),
+// );
 
 const SoftVideoPlayer = React.lazy(() =>
   import("./SoftVideoPlayer").then((module) => ({
@@ -29,7 +23,7 @@ const SoftVideoPlayer = React.lazy(() =>
 
 export const Interface: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs({
-    initialIndex: 3,
+    initialIndex: 1,
   });
 
   return (
@@ -38,16 +32,14 @@ export const Interface: React.FC = () => {
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
           {renderTabs([
             "Cloth",
-            "Distorting Mirrors",
-            "Mandelbrot's Set",
+            // "Mandelbrot's Set",
             "Soft Video Player",
           ])}
         </div>
       </WorkDetails>
       {renderTabsBody([
         <Cloth />,
-        <DistortingMirrors />,
-        <MandelbrotSet />,
+        // <MandelbrotSet />,
         <SoftVideoPlayer />,
       ])}
     </>
