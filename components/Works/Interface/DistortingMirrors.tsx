@@ -1,140 +1,179 @@
+import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import * as R from "ramda";
+import React from "react";
+import * as THREE from "three";
 
-import {
-  Button,
-  Checkbox,
-  CheckboxGroup,
-  FormControlLabel,
-  Input,
-  Stack,
-  Text,
-  theme,
-} from '@material-bank/ds-uikit';
-import { ArrowLeft24Icon } from '@material-bank/mb-icons';
+import type { VideoRef } from "@/hocs/index";
 
-import { CarbonImpactProgramLeftSide } from 'modules/carbon-impact-program/components/CarbonImpactProgramLeftSide';
-import { ReactElement } from 'react';
+import { NURBSVideo } from "@/components/index";
+import { withCameraAccess } from "@/hocs/index";
 
-const CarbonImpactProgramFormPage = () => (
-  <Stack direction="row">
-    <CarbonImpactProgramLeftSide />
-    <Stack sx={{ height: '100vh', width: '50vw' }}>
-      <Stack direction="row" sx={{ p: 2 }}>
-        <Button startIcon={<ArrowLeft24Icon />} variant="ghost">
-          Back
-        </Button>
-      </Stack>
-      <Stack sx={{ alignItems: 'center' }}>
-        <Stack sx={{ width: '70%' }}>
-          <Stack gap={8}>
-            <Stack>
-              <Text variant="title3">Request a CEU presentation</Text>
-              <Text>Become a sustainable design change maker!</Text>
-            </Stack>
-            <Stack gap={6}>
-              <Stack direction="row" gap={4}>
-                <Input placeholder="First name" required variant="ghost" />
-                <Input placeholder="Last name" required variant="ghost" />
-              </Stack>
-              <Stack direction="row" gap={4}>
-                <Input placeholder="Work email" required variant="ghost" />
-                <Input placeholder="Job title" required variant="ghost" />
-              </Stack>
-              <Stack direction="row" gap={4}>
-                <Input placeholder="Company name" required variant="ghost" />
-                <Input placeholder="Office location" required variant="ghost" />
-              </Stack>
-              <Input
-                placeholder="Industry association (If applicable)"
-                variant="ghost"
-              />
-            </Stack>
-            <Stack gap={2}>
-              <Text sx={{ fontWeight: theme.fontWeights.bold }}>
-                CEU(s) of interest:
-              </Text>
-              <CheckboxGroup gap={1}>
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label={
-                    (<Text>
-                      <Text sx={{ fontWeight: theme.fontWeights.bold }}>
-                        Course 1:
-                      </Text>{' '}
-                      How Much Carbon is Embodied In Your Interiors?
-                    </Text>)
-                  }
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label={
-                    (<Text>
-                      <Text sx={{ fontWeight: theme.fontWeights.bold }}>
-                        Course 2:
-                      </Text>{' '}
-                      Demystifying Sustainability Certifications & the Common
-                      Materials Framework: Part 1
-                      <Text
-                        sx={{
-                          bg: theme.colors.cardOverlay,
-                          borderRadius: 'xl',
-                          color: theme.colors.primary,
-                          fontSize: 10,
-                          ml: 1,
-                          px: 1,
-                          py: 2,
-                        }}
-                      >
-                        Available in May 2024
-                      </Text>
-                    </Text>)
-                  }
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label={
-                    (<Text>
-                      <Text sx={{ fontWeight: theme.fontWeights.bold }}>
-                        Course 2:
-                      </Text>{' '}
-                      Demystifying Sustainability Certifications & the Common
-                      Materials Framework: Part 2
-                      <Text>Available in May 2024</Text>
-                    </Text>)
-                  }
-                />
-              </CheckboxGroup>
-              <Text
-                sx={{
-                  color: theme.colors.secondaryText,
-                  fontSize: 12,
-                  lineHeight: theme.lineHeights.label,
-                }}
-              >
-                *Available in Atlanta, Austin, Boston, Chicago, Dallas, Houston,
-                LA, Orange County, San DiegoAll other cities for in-person
-                presentations might be accommodated on special request
-              </Text>
-            </Stack>
-            <Stack>
-              <Input
-                placeholder="Enter preferred date (If applicable)"
-                variant="ghost"
-              />
-              <Text>
-                <Text>Get prepared!</Text> Share a free Material Bank membership
-                link with your expected CEU attendees. All attendees should be
-                Material Bank members. Free membership is open to professional
-                in the architecture and design industry.
-              </Text>
-            </Stack>
-          </Stack>
-          <Button>Submit</Button>
-        </Stack>
-      </Stack>
-    </Stack>
-  </Stack>
-);
+type MirrorProps = {
+  url: string;
+  videoRef: VideoRef;
+};
 
-CarbonImpactProgramFormPage.getLayout = (page: ReactElement) => page;
+const random =
+  // eslint-disable-next-line @typescript-eslint/default-param-last
+  (min = 0, max: number) => Math.random() * (max - min) + min;
 
-export default CarbonImpactProgramFormPage;
+const Mirror: React.FC<MirrorProps> = ({ url, videoRef }) => {
+  const warpRatio = 10;
+
+  const getRandomCoords = React.useCallback(
+    (x: number, y: number, z: number) => [
+      random(x - warpRatio, x + warpRatio),
+      random(y - warpRatio, y + warpRatio),
+      random(z - warpRatio, z + warpRatio),
+    ],
+    [warpRatio],
+  );
+
+  const x0y0z0 = React.useMemo(
+    () => getRandomCoords(-2, -2, 0),
+    [getRandomCoords],
+  );
+
+  const x0y1z0 = React.useMemo(
+    () => getRandomCoords(-2, -1, 0),
+    [getRandomCoords],
+  );
+
+  const x0y2z0 = React.useMemo(
+    () => getRandomCoords(-2, 1, 0),
+    [getRandomCoords],
+  );
+
+  const x0y3z0 = React.useMemo(
+    () => getRandomCoords(-2, 2, 0),
+    [getRandomCoords],
+  );
+
+  const getLeftEdgeOfFrontFace = React.useMemo(
+    () => [
+      new THREE.Vector4(...x0y0z0, 0.1),
+      new THREE.Vector4(...x0y1z0, 0.1),
+      new THREE.Vector4(...x0y2z0, 0.1),
+      new THREE.Vector4(...x0y3z0, 0.1),
+    ],
+    [x0y0z0, x0y1z0, x0y2z0, x0y3z0],
+  );
+
+  const x1y0z0 = React.useMemo(
+    () => getRandomCoords(0, -2, 0),
+    [getRandomCoords],
+  );
+
+  const x1y1z0 = React.useMemo(
+    () => getRandomCoords(0, -1, 0),
+    [getRandomCoords],
+  );
+
+  const x1y2z0 = React.useMemo(
+    () => getRandomCoords(0, 1, 0),
+    [getRandomCoords],
+  );
+
+  const x1y3z0 = React.useMemo(
+    () => getRandomCoords(0, 2, 0),
+    [getRandomCoords],
+  );
+
+  const getMiddleEdgeOfFrontFace = React.useMemo(
+    () => [
+      new THREE.Vector4(...x1y0z0, 0.1),
+      new THREE.Vector4(...x1y1z0, 0.1),
+      new THREE.Vector4(...x1y2z0, 0.1),
+      new THREE.Vector4(...x1y3z0, 0.1),
+    ],
+    [x1y0z0, x1y1z0, x1y2z0, x1y3z0],
+  );
+
+  const x2y0z0 = React.useMemo(
+    () => getRandomCoords(2, -2, 0),
+    [getRandomCoords],
+  );
+
+  const x2y1z0 = React.useMemo(
+    () => getRandomCoords(2, -1, 0),
+    [getRandomCoords],
+  );
+
+  const x2y2z0 = React.useMemo(
+    () => getRandomCoords(2, 1, 0),
+    [getRandomCoords],
+  );
+
+  const x2y3z0 = React.useMemo(
+    () => getRandomCoords(2, 2, 0),
+    [getRandomCoords],
+  );
+
+  const getRightEdgeOfFrontFace = React.useMemo(
+    () => [
+      new THREE.Vector4(...x2y0z0, 0.1),
+      new THREE.Vector4(...x2y1z0, 0.1),
+      new THREE.Vector4(...x2y2z0, 0.1),
+      new THREE.Vector4(...x2y3z0, 0.1),
+    ],
+    [x2y0z0, x2y1z0, x2y2z0, x2y3z0],
+  );
+
+  const nsControlPoints = [
+    getLeftEdgeOfFrontFace,
+    getMiddleEdgeOfFrontFace,
+    getRightEdgeOfFrontFace,
+  ];
+
+  return (
+    <NURBSVideo
+      nsControlPoints={nsControlPoints}
+      url={url}
+      videoRef={videoRef}
+    />
+  );
+};
+
+type RootProps = {
+  videoRef: VideoRef;
+};
+
+const Root: React.FC<RootProps> = ({ videoRef }) => {
+  const meshRef = React.useRef<THREE.Mesh>(null!);
+
+  const renderMirrors = React.useMemo(
+    () => (
+      <mesh ref={meshRef}>
+        {R.range(0, 10).map((index) => (
+          <group
+            key={index}
+            position={[
+              random(-25, 25),
+              random(-25, 25),
+              index * 0.001,
+            ]}
+            scale={[random(-5, 5), random(-5, 5), random(-5, 5)]}
+          >
+            <Mirror url="" videoRef={videoRef} />
+          </group>
+        ))}
+      </mesh>
+    ),
+    [videoRef],
+  );
+
+  return (
+    <div className="h-screen w-screen">
+      <Canvas
+        camera={{ position: [0, 10, 55] }}
+        className="h-screen w-screen"
+      >
+        <OrbitControls />
+        {renderMirrors}
+      </Canvas>
+    </div>
+  );
+};
+
+export const DistortingMirrors = withCameraAccess(Root);

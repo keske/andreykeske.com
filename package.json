@@ -56,9 +56,6 @@
   "browser": {
     "fs": false
   },
-  "engines": {
-    "node": "20.x"
-  },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
