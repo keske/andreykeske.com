@@ -1,5 +1,7 @@
 import React from "react";
 
+import { CenteredBox } from "@/components/index";
+
 export type VideoRef = React.RefObject<HTMLVideoElement>;
 
 export const withCameraAccess =
@@ -44,15 +46,21 @@ export const withCameraAccess =
 
     return (
       <>
-        <video
-          autoPlay
-          className="absolute opacity-0"
-          ref={videoRef}
-        />
+        <div
+          style={{
+            left: -1000,
+            position: "absolute",
+            top: -1000,
+          }}
+        >
+          <video autoPlay ref={videoRef} />
+        </div>
         {isCameraReady ? (
           <Component videoRef={videoRef} />
         ) : (
-          <div>Waiting for the camera access</div>
+          <CenteredBox className="absolute h-screen w-screen">
+            Waiting for the camera access
+          </CenteredBox>
         )}
       </>
     );

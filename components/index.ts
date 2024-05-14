@@ -19,12 +19,14 @@ export * from "./NURBSCube/NURBSLetter";
 
 // UI
 export * from "./Button";
+export * from "./CenteredBox";
 export * from "./CloseButton";
 export * from "./Controls";
 export * from "./DistortSurface";
 export * from "./Head";
 export * from "./Loading";
 export * from "./Logo";
+export * from "./Stack";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
 export * from "./WaterSurface";
