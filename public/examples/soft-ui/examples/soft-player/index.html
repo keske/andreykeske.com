@@ -33,7 +33,6 @@
   <script src="../webgl_demo_softbody_cloth/js/three/three.min.js"></script>
   <script src="../webgl_demo_softbody_cloth/js/three/OrbitControls.js"></script>
   <script src="../webgl_demo_softbody_cloth/js/three/Detector.js"></script>
-  <script src="../webgl_demo_softbody_cloth/js/three/stats.min.js"></script>
 
   <script>
     Ammo().then((Ammo) => {
@@ -47,8 +46,6 @@
 
       // Graphics variables
       let container;
-
-      let stats;
 
       let camera;
 
@@ -540,7 +537,6 @@
         requestAnimationFrame(animate);
 
         render();
-        stats.update();
       }
 
       function render() {
