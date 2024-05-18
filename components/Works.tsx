@@ -84,13 +84,13 @@ const usePlasmaMaterial = (options: PlasmaMaterialOptions = {}) => {
       time: { value: time },
     },
     vertexShader: `
-      varying vec2 vUv;
+  varying vec2 vUv;
 
-      void main() {
-        vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix *vec4(position , 0.6);
-      }
-    `,
+  void main() {
+    vUv = uv;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); // Ensure z-component is 1.0, not 0.6
+  }
+`,
   });
 
   useFrame(({ clock }) => {
@@ -179,7 +179,7 @@ const Word: React.FC<WordProps> = ({
       onClick={handleShowWork}
       onPointerOut={handleMouseOut}
       onPointerOver={handleMouseOver}
-      position={[0, index * 1.7, 0]}
+      position={[0, index * 1.1, 0]}
     />
   );
 };
@@ -195,7 +195,7 @@ const List: React.FC<WorkListProps> = ({ ...props }) => {
     const bottom = -viewport.height / 2;
 
     return (
-      <group position={[left + 0.7, bottom + 2, 0]}>
+      <group position={[left + 0.7, bottom + 1.3, 0]}>
         {[...works]
           .reverse()
           .map(({ component, id, title }, index) => (
@@ -215,18 +215,22 @@ const List: React.FC<WorkListProps> = ({ ...props }) => {
   return content;
 };
 
-export const WorksList: React.FC<WorkListProps> = ({ ...props }) => (
-  <Canvas
-    camera={{ position: [0, 0, 15] }}
-    style={{
-      height: "100vh",
-      left: 0,
-      position: "fixed",
-      top: 0,
-    }}
-  >
-    <React.Suspense fallback={null}>
-      <List {...props} />
-    </React.Suspense>
-  </Canvas>
-);
+export const WorksList: React.FC<WorkListProps> = ({ ...props }) => {
+  const { selectedWorkId, works } = useListItems();
+
+  return (
+    <Canvas
+      camera={{ position: [0, 0, 15] }}
+      style={{
+        height: "100vh",
+        left: selectedWorkId ? -9999 : 0,
+        position: "fixed",
+        top: selectedWorkId ? -9999 : 0,
+      }}
+    >
+      <React.Suspense fallback={null}>
+        <List {...props} />
+      </React.Suspense>
+    </Canvas>
+  );
+};
