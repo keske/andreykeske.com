@@ -11,35 +11,35 @@ export type Work = {
 const DEFAULT_STATE: Array<Pick<Work, "component" | "title">> = [
   {
     component: Works.About,
-    title: "About",
+    title: "ABOUT",
   },
   {
     component: Works.Interface,
-    title: "Interface",
+    title: "INTERFACE",
   },
   {
     component: Works.Metaphors,
-    title: "Metaphors",
+    title: "METAPHORS",
   },
   {
     component: Works.Minecraft,
-    title: "Minecraft",
+    title: "MINECRAFT",
   },
   {
     component: Works.Mimicry,
-    title: "Mimicry",
+    title: "MIMICRY",
   },
   {
     component: Works.Morphism,
-    title: "Morphism",
+    title: "MORPHISM",
   },
   {
     component: Works.Streets,
-    title: "Streets",
+    title: "STREETS",
   },
   {
     component: Works.Typography,
-    title: "Typography",
+    title: "TYPOGRAPHY",
   },
 ];
 
