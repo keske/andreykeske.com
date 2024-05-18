@@ -29,6 +29,7 @@ const CommonMeshDistortMaterial = React.forwardRef<
     distort={distort}
     factor={1}
     metalness={1.5}
+    // @ts-expect-error WIP
     ref={forwardedRef}
     roughness={3}
     speed={2.5}

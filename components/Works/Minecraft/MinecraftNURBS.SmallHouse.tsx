@@ -29,7 +29,7 @@ export const MinecraftNURBSSmallHouse: React.FC = () => {
   );
 
   return (
-    <Canvas className="h-full w-full">
+    <Canvas className="size-full">
       <React.Suspense fallback={<Loading />}>
         <MinecraftNURBSEnvironment
           orbitControlsProps={{

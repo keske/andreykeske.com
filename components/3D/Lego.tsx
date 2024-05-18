@@ -8,6 +8,7 @@ import { THREEOnMouseRotation } from "@/components/index";
 export const Lego: React.FC = () => {
   const mesh = React.useRef<Mesh>(null!);
 
+  // @ts-expect-error WIP
   const { nodes } = useGLTF("/gltfs/lego.gltf") as GLTFResult;
 
   return (

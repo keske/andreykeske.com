@@ -216,7 +216,7 @@ const List: React.FC<WorkListProps> = ({ ...props }) => {
 };
 
 export const WorksList: React.FC<WorkListProps> = ({ ...props }) => {
-  const { selectedWorkId, works } = useListItems();
+  const { selectedWorkId } = useListItems();
 
   return (
     <Canvas

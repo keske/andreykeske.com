@@ -8,6 +8,7 @@ import React from "react";
 import * as THREE from "three";
 
 const Model: React.FC = () => {
+  // @ts-expect-error WIP
   const { nodes } = useGLTF("/gltfs/wall.gltf") as GLTFResult;
 
   const texture = useTexture("/photos/graffiti/wall.png");
@@ -49,10 +50,7 @@ const Model: React.FC = () => {
 };
 
 export const Wall: React.FC = () => (
-  <Canvas
-    camera={{ position: [0, 0, -30] }}
-    className="h-full w-full"
-  >
+  <Canvas camera={{ position: [0, 0, -30] }} className="size-full">
     <OrbitControls enableZoom={false} />
     <ambientLight intensity={0.2} />
     <spotLight intensity={1.5} position={[20, 20, 30]} />

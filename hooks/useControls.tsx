@@ -37,12 +37,15 @@ export const useControls = (
     R.pipe(
       R.keys,
       R.map((key) => {
+        // @ts-expect-error WIP
         const obj = R.prop(key, initialOptions);
 
         return {
           [key]: {
+            // @ts-expect-error WIP
             label: key.replace(/([0-9A-Z])/g, " $&").toLowerCase(),
             type:
+              // @ts-expect-error WIP
               typeof obj.value === "number" ? "number" : "checkbox",
             ...(typeof obj === "number"
               ? {
@@ -50,6 +53,7 @@ export const useControls = (
                 }
               : {
                   ...obj,
+                  // @ts-expect-error WIP
                   value: obj.value,
                 }),
           },

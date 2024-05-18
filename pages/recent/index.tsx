@@ -136,7 +136,7 @@ const Recent: NextPage = () => {
           <div className="flex flex-row">
             <div className="flex w-1/2 items-center justify-center">
               <video
-                className="mx-6 h-full w-full rounded-xl"
+                className="mx-6 size-full rounded-xl"
                 controls
                 src="/videos/untitled.mp4"
               />

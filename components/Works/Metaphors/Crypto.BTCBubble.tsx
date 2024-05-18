@@ -109,7 +109,7 @@ export const CryptoBTCBubble: React.FC = () => {
         }}
       >
         <Canvas
-          className="h-full w-full"
+          className="size-full"
           gl={{
             alpha: true,
             antialias: true,

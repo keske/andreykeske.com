@@ -16,7 +16,7 @@ export const MacOSFinder: React.FC = () => (
             style={{ paddingBottom: "56.25%" }}
           >
             <video
-              className="absolute left-0 top-0 h-full w-full"
+              className="absolute left-0 top-0 size-full"
               controls
               src="/videos/hydra.mp4"
             />
@@ -72,7 +72,7 @@ export const MacOSFinder: React.FC = () => (
             style={{ paddingBottom: "56.25%" }}
           >
             <video
-              className="absolute left-0 top-0 h-full w-full"
+              className="absolute left-0 top-0 size-full"
               controls
               src="/videos/dropbox-to-iCloud.mp4"
             />
@@ -95,7 +95,7 @@ export const MacOSFinder: React.FC = () => (
             style={{ paddingBottom: "56.25%" }}
           >
             <video
-              className="absolute left-0 top-0 h-full w-full"
+              className="absolute left-0 top-0 size-full"
               controls
               src="/videos/matryoshka.mp4"
             />
@@ -118,7 +118,7 @@ export const MacOSFinder: React.FC = () => (
             style={{ paddingBottom: "56.25%" }}
           >
             <video
-              className="absolute left-0 top-0 h-full w-full"
+              className="absolute left-0 top-0 size-full"
               controls
               src="//player.vimeo.com/video/40102765"
             />
@@ -162,7 +162,7 @@ export const MacOSFinder: React.FC = () => (
             style={{ paddingBottom: "56.25%" }}
           >
             <video
-              className="absolute left-0 top-0 h-full w-full"
+              className="absolute left-0 top-0 size-full"
               controls
               src="//player.vimeo.com/video/40103163"
             />

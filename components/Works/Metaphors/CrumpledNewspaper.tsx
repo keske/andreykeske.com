@@ -200,7 +200,7 @@ export const CrumpledNewspaper: React.FC = () => {
       >
         <Canvas
           camera={{ position: [0, 0, -3.3] }}
-          className="h-full w-full"
+          className="size-full"
         >
           <ambientLight intensity={0.8} />
           <OrbitControls enableZoom={false} />

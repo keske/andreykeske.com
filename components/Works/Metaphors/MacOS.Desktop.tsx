@@ -12,7 +12,7 @@ export const MacOSDesktop: React.FC = () => (
             style={{ paddingBottom: "56.25%" }}
           >
             <video
-              className="absolute left-0 top-0 h-full w-full"
+              className="absolute left-0 top-0 size-full"
               controls
               src="/videos/blackhole-1.mp4"
             />
@@ -46,7 +46,7 @@ export const MacOSDesktop: React.FC = () => (
             style={{ paddingBottom: "56.25%" }}
           >
             <video
-              className="absolute left-0 top-0 h-full w-full"
+              className="absolute left-0 top-0 size-full"
               controls
               src="/videos/blackhole-2.mp4"
             />

@@ -51,19 +51,16 @@ export const MinecraftNURBSBlocks: React.FC = () => {
   ] = useRefs() as Array<React.MutableRefObject<HTMLInputElement>>;
 
   return (
-    <div className="h-full w-full" ref={container}>
+    <div className="size-full" ref={container}>
       <div className="absolute h-1/3 w-1/2" ref={topLeft} />
       <div className="absolute left-1/2 h-1/3 w-1/2" ref={topRight} />
+      <div className="absolute top-1/3 size-1/3" ref={middleLeft} />
       <div
-        className="absolute top-1/3 h-1/3 w-1/3"
-        ref={middleLeft}
-      />
-      <div
-        className="absolute left-1/3 top-1/3 h-1/3 w-1/3"
+        className="absolute left-1/3 top-1/3 size-1/3"
         ref={middleCenter}
       />
       <div
-        className="absolute right-0 top-1/3 h-1/3 w-1/3"
+        className="absolute right-0 top-1/3 size-1/3"
         ref={middleRight}
       />
       <div

@@ -57,7 +57,6 @@
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/quotes": 0,
-    "@typescript-eslint/sort-type-union-intersection-members": "error",
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "arrow-body-style": ["error", "as-needed"],
     "comma-dangle": ["error", "always-multiline"],

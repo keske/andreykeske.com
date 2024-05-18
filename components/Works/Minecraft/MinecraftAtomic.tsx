@@ -64,6 +64,7 @@ export const MinecraftAtomic: React.FC = () => {
 
   const renderBlockDependsOnElevation = React.useCallback(
     (elevation: number) => {
+      // eslint-disable-next-line
       switch (true) {
         // Water
         case elevation < -5:
@@ -142,7 +143,7 @@ export const MinecraftAtomic: React.FC = () => {
         camera={{
           position: [3, 2, 7],
         }}
-        className="h-full w-full"
+        className="size-full"
       >
         <React.Suspense fallback={null}>
           <OrbitControls />

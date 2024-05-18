@@ -12,7 +12,7 @@ export const ARIkea = () => (
             style={{ paddingBottom: "56.25%" }}
           >
             <video
-              className="absolute left-0 top-0 h-full w-full"
+              className="absolute left-0 top-0 size-full"
               controls
               src="/videos/ikea.mp4"
             />

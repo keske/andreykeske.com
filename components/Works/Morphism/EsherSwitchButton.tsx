@@ -20,14 +20,14 @@ const Switch: React.FC<SwitchProps> = ({
       <div
         className={clsx(
           on ? "bg-blue-500" : "bg-gray-100 shadow-inner",
-          "relative inline-flex h-4 w-4 cursor-pointer items-center justify-center rounded-full",
+          "relative inline-flex size-4 cursor-pointer items-center justify-center rounded-full",
         )}
         onClick={handleClick}
       >
         {on && (
           <span
             className={clsx(
-              "h-[6px] w-[6px] rounded-full bg-white shadow-md duration-200",
+              "size-[6px] rounded-full bg-white shadow-md duration-200",
             )}
           />
         )}
@@ -40,13 +40,13 @@ const Switch: React.FC<SwitchProps> = ({
       <div
         className={clsx(
           on ? "bg-[#3B88F7]" : "bg-gray-100 shadow-inner",
-          "relative inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-lg",
+          "relative inline-flex size-5 cursor-pointer items-center justify-center rounded-lg",
         )}
         onClick={handleClick}
       >
         <span
           className={clsx(
-            "h-2 w-2 rounded-full bg-white shadow-md duration-200",
+            "size-2 rounded-full bg-white shadow-md duration-200",
           )}
         />
       </div>
@@ -58,13 +58,13 @@ const Switch: React.FC<SwitchProps> = ({
       <div
         className={clsx(
           on ? "bg-[#539EEB]" : "bg-gray-200",
-          "relative inline-flex h-6 w-6 cursor-pointer items-center justify-center rounded-lg",
+          "relative inline-flex size-6 cursor-pointer items-center justify-center rounded-lg",
         )}
         onClick={handleClick}
       >
         <span
           className={clsx(
-            "h-3 w-3 rounded-full bg-white shadow-md duration-200",
+            "size-3 rounded-full bg-white shadow-md duration-200",
           )}
         />
       </div>
@@ -76,14 +76,14 @@ const Switch: React.FC<SwitchProps> = ({
       <div
         className={clsx(
           on ? "bg-[#38A4C0]" : "bg-gray-200",
-          "relative inline-flex h-8 w-8 cursor-pointer items-center rounded-xl",
+          "relative inline-flex size-8 cursor-pointer items-center rounded-xl",
         )}
         onClick={handleClick}
       >
         <span
           className={clsx(
             on ? "translate-x-2" : "translate-x-1",
-            "h-4 w-4 rounded-full bg-white shadow-md duration-200",
+            "size-4 rounded-full bg-white shadow-md duration-200",
           )}
         />
       </div>
@@ -102,7 +102,7 @@ const Switch: React.FC<SwitchProps> = ({
         <span
           className={clsx(
             on ? "translate-x-4" : "translate-x-1",
-            "h-6 w-6 rounded-full bg-white shadow-md duration-200",
+            "size-6 rounded-full bg-white shadow-md duration-200",
           )}
         />
       </div>
@@ -121,7 +121,7 @@ const Switch: React.FC<SwitchProps> = ({
         <span
           className={clsx(
             on ? "translate-x-4" : "translate-x-1",
-            "h-8 w-8 rounded-full bg-white shadow-md duration-200",
+            "size-8 rounded-full bg-white shadow-md duration-200",
           )}
         />
       </div>
@@ -140,7 +140,7 @@ const Switch: React.FC<SwitchProps> = ({
         <span
           className={clsx(
             on ? "translate-x-7" : "translate-x-1",
-            "h-8 w-8 rounded-full bg-white shadow-md duration-200",
+            "size-8 rounded-full bg-white shadow-md duration-200",
           )}
         />
       </div>
