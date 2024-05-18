@@ -3,16 +3,11 @@ import { useRouter } from "next/router";
 import * as R from "ramda";
 import React from "react";
 
-import { Works } from "./Works";
+import { WorksList } from "./Works";
 
 import type { NextPage } from "next";
 
-import {
-  CloseButton,
-  Logo,
-  Work,
-  WorkList,
-} from "@/components/index";
+import { CloseButton, Logo, Work } from "@/components/index";
 import { useListItems } from "@/stores/index";
 
 const inter = Inter({
@@ -86,7 +81,7 @@ const Desktop: NextPage = () => {
         onClick={handleCloseWork}
       />
       <Work>{work && React.cloneElement(work)}</Work>
-      <Works
+      <WorksList
         {...{
           handleCloseWork,
           handleMouseOut,

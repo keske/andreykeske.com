@@ -100,14 +100,32 @@ const usePlasmaMaterial = (options: PlasmaMaterialOptions = {}) => {
   return material;
 };
 
-const Word: React.FC<WorkListProps> = ({
+type WordProps = WorkListProps & {
+  component: React.JSXElementConstructor<any>;
+  id: string;
+  index: number;
+  title: string;
+};
+
+const Word: React.FC<WordProps> = ({
+  component: Component,
   handleMouseOut: incomingHandleMouseOut,
   handleMouseOver: incomingHandleMouseOver,
   handleShowWork: incomingHandleShowWork,
+  id,
+  index,
+  title,
 }) => {
-  const { viewport } = useThree();
+  const [hovered, setHovered] = React.useState(false);
 
-  const { selectedWorkId, works } = useListItems();
+  const frequencies = React.useMemo(
+    () => ({
+      x: random(-10.0, 10.0),
+      y: random(-70.0, 70.0),
+      z: random(-10.0, 10.0),
+    }),
+    [],
+  );
 
   const material = usePlasmaMaterial({
     colors: [
@@ -118,23 +136,18 @@ const Word: React.FC<WorkListProps> = ({
       new THREE.Color("blue"),
       new THREE.Color("pink"),
     ],
-    frequency: { x: 10.0, y: 70.0, z: 10.0 },
+    frequency: frequencies,
     intensivity: 500,
     time: 0.1,
   });
 
-  const [hovered, setHovered] = React.useState(false);
-
   const handleMouseOver = React.useCallback(
-    (
-      event: ThreeEvent<PointerEvent>,
-      component: React.ReactElement<any, any>,
-    ) => {
-      incomingHandleMouseOver(component);
+    (event: ThreeEvent<PointerEvent>) => {
+      incomingHandleMouseOver(<Component />);
       event.stopPropagation();
       setHovered(true);
     },
-    [incomingHandleMouseOver],
+    [Component, incomingHandleMouseOver],
   );
 
   const handleMouseOut = React.useCallback(() => {
@@ -142,47 +155,9 @@ const Word: React.FC<WorkListProps> = ({
     setHovered(false);
   }, [incomingHandleMouseOut]);
 
-  const handleShowWork = React.useCallback(
-    (id: string) => {
-      incomingHandleShowWork(id);
-    },
-    [incomingHandleShowWork],
-  );
-
-  const content = React.useMemo(() => {
-    const left = -viewport.width / 2;
-
-    const bottom = -viewport.height / 2;
-
-    return (
-      <group position={[left + 0.7, bottom + 2, 0]}>
-        {[...works]
-          .reverse()
-          .map(({ component: Component, id, title }, index) => (
-            <Text
-              anchorX="left"
-              children={title}
-              font={"/Inter-Bold.woff"}
-              fontSize={1.3}
-              key={id}
-              material={material}
-              onClick={() => handleShowWork(id)}
-              onPointerOut={handleMouseOut}
-              onPointerOver={(e) => handleMouseOver(e, <Component />)}
-              position={[0, index * 1.7, 0]}
-            />
-          ))}
-      </group>
-    );
-  }, [
-    handleMouseOut,
-    handleMouseOver,
-    handleShowWork,
-    material,
-    viewport.height,
-    viewport.width,
-    works,
-  ]);
+  const handleShowWork = React.useCallback(() => {
+    incomingHandleShowWork(id);
+  }, [id, incomingHandleShowWork]);
 
   React.useEffect(() => {
     if (hovered) {
@@ -194,10 +169,53 @@ const Word: React.FC<WorkListProps> = ({
     };
   }, [hovered]);
 
+  return (
+    <Text
+      anchorX="left"
+      children={title}
+      font={"/Inter-Bold.woff"}
+      fontSize={1.3}
+      material={material}
+      onClick={handleShowWork}
+      onPointerOut={handleMouseOut}
+      onPointerOver={handleMouseOver}
+      position={[0, index * 1.7, 0]}
+    />
+  );
+};
+
+const List: React.FC<WorkListProps> = ({ ...props }) => {
+  const { viewport } = useThree();
+
+  const { works } = useListItems();
+
+  const content = React.useMemo(() => {
+    const left = -viewport.width / 2;
+
+    const bottom = -viewport.height / 2;
+
+    return (
+      <group position={[left + 0.7, bottom + 2, 0]}>
+        {[...works]
+          .reverse()
+          .map(({ component, id, title }, index) => (
+            <Word
+              {...props}
+              component={component}
+              id={id}
+              index={index}
+              key={id}
+              title={title}
+            />
+          ))}
+      </group>
+    );
+  }, [props, viewport.height, viewport.width, works]);
+
   return content;
 };
 
-export const Works: React.FC<WorkListProps> = ({ ...props }) => (
+export const WorksList: React.FC<WorkListProps> = ({ ...props }) => (
   <Canvas
     camera={{ position: [0, 0, 15] }}
     style={{
@@ -208,7 +226,7 @@ export const Works: React.FC<WorkListProps> = ({ ...props }) => (
     }}
   >
     <React.Suspense fallback={null}>
-      <Word {...props} />
+      <List {...props} />
     </React.Suspense>
   </Canvas>
 );
