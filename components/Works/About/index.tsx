@@ -21,6 +21,12 @@ const Description = React.lazy(() =>
   })),
 );
 
+const Me = React.lazy(() =>
+  import("./Me").then((module) => ({
+    default: module.Me,
+  })),
+);
+
 export const About: React.FC = () => {
   const { renderTabs, renderTabsBody } = useTabs({
     initialIndex: 2,
@@ -30,10 +36,15 @@ export const About: React.FC = () => {
     <>
       <WorkDetails>
         <div className="fixed top-28 z-50 flex w-screen flex-row justify-center gap-10">
-          {renderTabs(["Awards", "Contacts", "Description"])}
+          {renderTabs(["Awards", "Contacts", "Description", "Me"])}
         </div>
       </WorkDetails>
-      {renderTabsBody([<Awards />, <Contacts />, <Description />])}
+      {renderTabsBody([
+        <Awards />,
+        <Contacts />,
+        <Description />,
+        <Me />,
+      ])}
     </>
   );
 };
