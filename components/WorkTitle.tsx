@@ -29,7 +29,7 @@ export const WorkTitle: React.FC = () => {
         }}
       >
         <div className="fixed top-9 z-10 flex w-full justify-center">
-          <h3 className="text-3xl font-black uppercase text-black dark:text-white">
+          <h3 className="text-3xl font-black uppercase text-white">
             {title}
           </h3>
         </div>

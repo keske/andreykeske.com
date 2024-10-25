@@ -47,7 +47,7 @@ export const CloseButton: React.FC<CloseButtonProps> = ({
         <Button
           {...props}
           className={clsx(
-            "fixed right-7 top-7 z-50 p-3 font-black text-black dark:text-white",
+            "fixed right-7 top-7 z-50 p-3 font-black text-white",
           )}
           onClick={onClick}
           size={null}
