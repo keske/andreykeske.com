@@ -8,15 +8,12 @@ import type { VideoRef } from "@/hocs/index";
 
 import { NURBSVideo } from "@/components/index";
 import { withCameraAccess } from "@/hocs/index";
+import { random } from "@/utils/index";
 
 type MirrorProps = {
   url: string;
   videoRef: VideoRef;
 };
-
-const random =
-  // eslint-disable-next-line @typescript-eslint/default-param-last
-  (min = 0, max: number) => Math.random() * (max - min) + min;
 
 const Mirror: React.FC<MirrorProps> = ({ url, videoRef }) => {
   const warpRatio = 10;
