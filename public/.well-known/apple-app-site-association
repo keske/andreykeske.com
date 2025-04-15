@@ -1,0 +1,20 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["G7VZ6UFLUX.ai.ariadna.app"],
+        "components": [
+          {
+            "/": "/inbox*"
+          }
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": ["G7VZ6UFLUX.ai.ariadna.app"]
+  },
+  "webcredentials": {
+    "apps": ["G7VZ6UFLUX.ai.ariadna.app"]
+  }
+}
