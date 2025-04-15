@@ -5,7 +5,7 @@
         "appIDs": ["G7VZ6UFLUX.ai.ariadna.app"],
         "components": [
           {
-            "/home/inbox": "/home/inbox*"
+            "/home/": "/home/inbox*"
           }
         ]
       }
