@@ -1,19 +1,56 @@
 import { Inter } from "@next/font/google";
+import { Plane } from "@react-three/drei";
+import { Canvas, ThreeEvent, useThree } from "@react-three/fiber";
 import { useRouter } from "next/router";
 import * as R from "ramda";
-import React from "react";
-
-import { WorksList } from "./Works";
+import * as React from "react";
+import * as THREE from "three";
 
 import type { NextPage } from "next";
 
-import { CloseButton, Logo, Work } from "@/components/index";
+import {
+  CloseButton,
+  Logo,
+  Work,
+  WorkList,
+} from "@/components/index";
+import { usePlasmaMaterial } from "@/hooks/index";
 import { useListItems } from "@/stores/index";
+import { random } from "@/utils/index";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "400", "600", "700", "800", "900"],
 });
+
+const Background = () => {
+  const frequencies = React.useMemo(
+    () => ({
+      x: 100,
+      y: 100,
+      z: 100,
+    }),
+    [],
+  );
+
+  const material = usePlasmaMaterial({
+    colors: [
+      new THREE.Color("black"),
+      new THREE.Color("green"),
+      new THREE.Color("red"),
+      new THREE.Color("pink"),
+      new THREE.Color("blue"),
+      new THREE.Color("pink"),
+    ],
+    frequency: frequencies,
+    intensivity: 1,
+    time: 0.1,
+  });
+
+  return (
+    <Plane args={[30, 60]} material={material} position={[0, 0, 0]} />
+  );
+};
 
 const Desktop: NextPage = () => {
   const router = useRouter();
@@ -60,43 +97,39 @@ const Desktop: NextPage = () => {
     [selectedWorkId],
   );
 
-  // React.useEffect(() => {
-  //   if (router.asPath !== "/") {
-  //     const caseId = router.asPath.replace("/#", "");
-
-  //     const { component } = R.find(
-  //       R.propEq("id", router.asPath.replace("/#", "")),
-  //     )(itemsWithId) as ItemWithID;
-
-  //     setWork(component);
-  //     setSelectedWorkId(caseId);
-  //   }
-  // }, [itemsWithId, router.asPath]);
-
   return (
     <div className={inter.className}>
-      <Logo onClick={handleCloseWork} />
-      <CloseButton
-        isShowing={R.not(R.isNil(selectedWorkId))}
-        onClick={handleCloseWork}
-      />
-      <Work>{work && React.cloneElement(work)}</Work>
-      <WorksList
-        {...{
-          handleCloseWork,
-          handleMouseOut,
-          handleMouseOver,
-          handleShowWork,
+      <div className="fixed z-30">
+        <Logo onClick={handleCloseWork} />
+        <CloseButton
+          isShowing={R.not(R.isNil(selectedWorkId))}
+          onClick={handleCloseWork}
+        />
+        <Work>{work && React.cloneElement(work)}</Work>
+        <WorkList
+          {...{
+            handleCloseWork,
+            handleMouseOut,
+            handleMouseOver,
+            handleShowWork,
+          }}
+        />
+      </div>
+      {/* <Canvas
+        camera={{ position: [0, 0, 5] }}
+        className="fixed z-0"
+        style={{
+          height: "100vh",
+          left: selectedWorkId ? -9999 : 0,
+          position: "fixed",
+          top: selectedWorkId ? -9999 : 0,
+          width: "100vw",
         }}
-      />
-      {/* <WorkList
-        {...{
-          handleCloseWork,
-          handleMouseOut,
-          handleMouseOver,
-          handleShowWork,
-        }}
-      /> */}
+      >
+        <React.Suspense fallback={null}>
+          <Background />
+        </React.Suspense>
+      </Canvas> */}
     </div>
   );
 };

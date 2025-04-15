@@ -27,6 +27,7 @@ export * from "./Head";
 export * from "./Loading";
 export * from "./Logo";
 export * from "./Stack";
+export * from "./TextWithShader";
 export * from "./THREEOnMouseRotation";
 export * from "./UploadcareImage";
 export * from "./WaterSurface";

@@ -1,4 +1,6 @@
 export * from "./useControls";
+export * from "./useJellyfishMaterial";
+export * from "./useNebulaMaterial";
 export * from "./useNSControlPoints";
 export * from "./usePlasmaMaterial";
 export * from "./useScrollInterpolation";

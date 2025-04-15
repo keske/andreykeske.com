@@ -1,7 +1,8 @@
-import { Text } from "@react-three/drei";
 import { Canvas, ThreeEvent, useThree } from "@react-three/fiber";
 import * as React from "react";
 import * as THREE from "three";
+
+import { TextWithShader } from "./TextWithShader";
 
 import { usePlasmaMaterial } from "@/hooks/index";
 import { useListItems } from "@/stores/index";
@@ -13,22 +14,15 @@ type WorkListProps = {
   handleShowWork: (id: string) => void;
 };
 
-type WordProps = WorkListProps & {
-  component: React.JSXElementConstructor<any>;
-  id: string;
-  index: number;
-  title: string;
-};
-
-const Word: React.FC<WordProps> = ({
-  component: Component,
+const List: React.FC<WorkListProps> = ({
   handleMouseOut: incomingHandleMouseOut,
   handleMouseOver: incomingHandleMouseOver,
   handleShowWork: incomingHandleShowWork,
-  id,
-  index,
-  title,
 }) => {
+  const { viewport } = useThree();
+
+  const { works } = useListItems();
+
   const [hovered, setHovered] = React.useState(false);
 
   const frequencies = React.useMemo(
@@ -55,22 +49,27 @@ const Word: React.FC<WordProps> = ({
   });
 
   const handleMouseOver = React.useCallback(
-    (event: ThreeEvent<PointerEvent>) => {
+    (
+      event: ThreeEvent<PointerEvent>,
+      Component: React.JSXElementConstructor<any>,
+    ) => {
       incomingHandleMouseOver(<Component />);
       event.stopPropagation();
       setHovered(true);
     },
-    [Component, incomingHandleMouseOver],
+    [incomingHandleMouseOver],
   );
 
   const handleMouseOut = React.useCallback(() => {
-    incomingHandleMouseOut();
     setHovered(false);
-  }, [incomingHandleMouseOut]);
+  }, []);
 
-  const handleShowWork = React.useCallback(() => {
-    incomingHandleShowWork(id);
-  }, [id, incomingHandleShowWork]);
+  const handleShowWork = React.useCallback(
+    (id: string) => {
+      incomingHandleShowWork(id);
+    },
+    [incomingHandleShowWork],
+  );
 
   React.useEffect(() => {
     if (hovered) {
@@ -82,26 +81,6 @@ const Word: React.FC<WordProps> = ({
     };
   }, [hovered]);
 
-  return (
-    <Text
-      anchorX="left"
-      children={title}
-      font={"/Inter-Bold.woff"}
-      fontSize={1.3}
-      material={material}
-      onClick={handleShowWork}
-      onPointerOut={handleMouseOut}
-      onPointerOver={handleMouseOver}
-      position={[0, index * 1.1, 0]}
-    />
-  );
-};
-
-const List: React.FC<WorkListProps> = ({ ...props }) => {
-  const { viewport } = useThree();
-
-  const { works } = useListItems();
-
   const content = React.useMemo(() => {
     const left = -viewport.width / 2;
 
@@ -109,21 +88,31 @@ const List: React.FC<WorkListProps> = ({ ...props }) => {
 
     return (
       <group position={[left + 0.7, bottom + 1.3, 0]}>
-        {[...works]
-          .reverse()
-          .map(({ component, id, title }, index) => (
-            <Word
-              {...props}
-              component={component}
-              id={id}
-              index={index}
-              key={id}
-              title={title}
-            />
-          ))}
+        {[...works].reverse().map(({ component, id, title }) => (
+          <group
+            key={id}
+            onClick={() => {
+              handleShowWork(id);
+            }}
+            onPointerOut={handleMouseOut}
+            onPointerOver={(event: ThreeEvent<PointerEvent>) => {
+              handleMouseOver(event, component);
+            }}
+          >
+            <TextWithShader material={material} value={title} />
+          </group>
+        ))}
       </group>
     );
-  }, [props, viewport.height, viewport.width, works]);
+  }, [
+    handleMouseOut,
+    handleMouseOver,
+    handleShowWork,
+    material,
+    viewport.height,
+    viewport.width,
+    works,
+  ]);
 
   return content;
 };
