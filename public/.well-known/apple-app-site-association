@@ -3,7 +3,11 @@
     "details": [
       {
         "appIDs": ["G7VZ6UFLUX.ai.ariadna.app"],
-        "paths": ["*"]
+        "components": [
+          {
+            "/home/": "/home/universal-links/inbox*"
+          }
+        ]
       }
     ]
   },
