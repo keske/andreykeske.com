@@ -2,15 +2,24 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["G7VZ6UFLUX.ai.ariadna.app"],
+        "appIDs": [
+          "G7VZ6UFLUX.ai.ariadna.app",
+          "G7VZ6UFLUX.ai.ariadna.stage"
+        ],
         "paths": ["/home/universal-links/inbox*"]
       }
     ]
   },
   "activitycontinuation": {
-    "apps": ["G7VZ6UFLUX.ai.ariadna.app"]
+    "apps": [
+      "G7VZ6UFLUX.ai.ariadna.app",
+      "G7VZ6UFLUX.ai.ariadna.stage"
+    ]
   },
   "webcredentials": {
-    "apps": ["G7VZ6UFLUX.ai.ariadna.app"]
+    "apps": [
+      "G7VZ6UFLUX.ai.ariadna.app",
+      "G7VZ6UFLUX.ai.ariadna.stage"
+    ]
   }
 }
