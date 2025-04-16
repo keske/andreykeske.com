@@ -2,19 +2,19 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["G7VZ6UFLUX.ai.ariadna.app"],
+        "appIDs": ["G7VZ6UFLUX.ai.ariadna.stage"],
         "components": [
           {
-            "/home/": "/home/inbox*"
+            "/home/": "/home/universal-links/inbox/*"
           }
         ]
       }
     ]
   },
   "activitycontinuation": {
-    "apps": ["G7VZ6UFLUX.ai.ariadna.app"]
+    "apps": ["G7VZ6UFLUX.ai.ariadna.stage"]
   },
   "webcredentials": {
-    "apps": ["G7VZ6UFLUX.ai.ariadna.app"]
+    "apps": ["G7VZ6UFLUX.ai.ariadna.stage"]
   }
 }
