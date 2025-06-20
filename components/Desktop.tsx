@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import * as R from "ramda";
 import React from "react";
 
-import { WorksList } from "./Works";
+import { WorkList } from "./WorkList";
 
 import type { NextPage } from "next";
 
@@ -81,15 +81,7 @@ const Desktop: NextPage = () => {
         onClick={handleCloseWork}
       />
       <Work>{work && React.cloneElement(work)}</Work>
-      <WorksList
-        {...{
-          handleCloseWork,
-          handleMouseOut,
-          handleMouseOver,
-          handleShowWork,
-        }}
-      />
-      {/* <WorkList
+      {/* <WorksList
         {...{
           handleCloseWork,
           handleMouseOut,
@@ -97,6 +89,14 @@ const Desktop: NextPage = () => {
           handleShowWork,
         }}
       /> */}
+      <WorkList
+        {...{
+          handleCloseWork,
+          handleMouseOut,
+          handleMouseOver,
+          handleShowWork,
+        }}
+      />
     </div>
   );
 };
