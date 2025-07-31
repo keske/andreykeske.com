@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import * as R from "ramda";
 import React from "react";
 
-import { WorkList } from "./WorkList";
+import { WorksList } from "./Works";
 
 import type { NextPage } from "next";
 
@@ -60,19 +60,6 @@ const Desktop: NextPage = () => {
     [selectedWorkId],
   );
 
-  // React.useEffect(() => {
-  //   if (router.asPath !== "/") {
-  //     const caseId = router.asPath.replace("/#", "");
-
-  //     const { component } = R.find(
-  //       R.propEq("id", router.asPath.replace("/#", "")),
-  //     )(itemsWithId) as ItemWithID;
-
-  //     setWork(component);
-  //     setSelectedWorkId(caseId);
-  //   }
-  // }, [itemsWithId, router.asPath]);
-
   return (
     <div className={inter.className}>
       <Logo onClick={handleCloseWork} />
@@ -81,15 +68,7 @@ const Desktop: NextPage = () => {
         onClick={handleCloseWork}
       />
       <Work>{work && React.cloneElement(work)}</Work>
-      {/* <WorksList
-        {...{
-          handleCloseWork,
-          handleMouseOut,
-          handleMouseOver,
-          handleShowWork,
-        }}
-      /> */}
-      <WorkList
+      <WorksList
         {...{
           handleCloseWork,
           handleMouseOut,
