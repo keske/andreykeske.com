@@ -71,6 +71,8 @@ const Recent: NextPage = () => {
               "Expo",
               "React Native",
               "Zustand",
+              "React Hook Form",
+              "Yup",
               "React Native Fiber",
               "Reanimated",
               "ThreeJS",
@@ -127,6 +129,9 @@ const Recent: NextPage = () => {
               "Next.js",
               "React",
               "TypeScript",
+              "React Query",
+              "React Hook Form",
+              "Yup",
               "Radix UI",
               "Storybook",
             ]}
@@ -252,10 +257,78 @@ const Recent: NextPage = () => {
           >
             <Stack direction="row" gap={4}>
               <Stack className="w-1/2">
-                <img src="recent/images/samara/1.png" />
+                <img
+                  className="rounded-xl border-[1.1px] border-black/20"
+                  src="recent/images/samara/1.png"
+                />
               </Stack>
               <Stack className="w-1/2">
-                <img src="recent/images/samara/2.png" />
+                <img
+                  className="rounded-xl border-[1.1px] border-black/20"
+                  src="recent/images/samara/2.png"
+                />
+              </Stack>
+            </Stack>
+          </WorkDescription>
+
+          <Devider />
+
+          <WorkDescription
+            description={
+              <Stack gap={10}>
+                <Text variant="title">
+                  At{" "}
+                  <Text as="span" className="font-bold">
+                    Fridge No More
+                  </Text>{" "}
+                  — a New York–based startup offering 15-minute
+                  grocery delivery through a network of
+                  micro-warehouses — I led front-end development as a{" "}
+                  <Text as="span" className="font-bold">
+                    Senior Engineer
+                  </Text>
+                  , building an internal web application that
+                  supported warehouse staff throughout the entire
+                  fulfillment flow, from packing to dispatch.
+                </Text>
+                <Text variant="title">
+                  Partnering closely with the founders and
+                  on-the-ground employees, I designed and implemented
+                  a React-based system built for the demands of
+                  high-speed, high-volume operations. The app included
+                  offline support for low-connectivity environments
+                  and integrated directly with hardware APIs to handle
+                  barcode scanning and real-time inventory tracking.
+                </Text>
+              </Stack>
+            }
+            techStack={["Next.js", "React", "TypeScript", "MobX"]}
+            years="2021"
+          >
+            <Stack direction="row" gap={4}>
+              <Stack className="w-1/4">
+                <img
+                  className="rounded-xl border-[1.1px] border-black/20"
+                  src="recent/images/fnm/3.jpeg"
+                />
+              </Stack>
+              <Stack className="w-1/4">
+                <img
+                  className="rounded-xl border-[1.1px] border-black/20"
+                  src="recent/images/fnm/1.jpeg"
+                />
+              </Stack>
+              <Stack className="w-1/4">
+                <img
+                  className="rounded-xl border-[1.1px] border-black/20"
+                  src="recent/images/fnm/2.jpeg"
+                />
+              </Stack>
+              <Stack className="w-1/4">
+                <img
+                  className="rounded-xl border-[1.1px] border-black/20"
+                  src="recent/images/fnm/4.jpeg"
+                />
               </Stack>
             </Stack>
           </WorkDescription>
@@ -289,15 +362,26 @@ const Recent: NextPage = () => {
                 </Text>
               </Stack>
             }
-            techStack={["Next.js", "React", "TypeScript"]}
+            techStack={[
+              "Next.js",
+              "React",
+              "TypeScript",
+              "Styled Components",
+            ]}
             years="2021"
           >
             <Stack direction="row" gap={4}>
               <Stack className="w-1/2">
-                <img src="recent/images/jupe/1.png" />
+                <img
+                  className="rounded-xl border-[1.1px] border-black/20"
+                  src="recent/images/jupe/jupe-1.png"
+                />
               </Stack>
               <Stack className="w-1/2">
-                <img src="recent/images/jupe/2.png" />
+                <img
+                  className="rounded-xl border-[1.1px] border-black/20"
+                  src="recent/images/jupe/jupe-2.png"
+                />
               </Stack>
             </Stack>
           </WorkDescription>
@@ -330,7 +414,10 @@ const Recent: NextPage = () => {
           >
             <Stack direction="row">
               <Stack className="w-full">
-                <img src="recent/images/w1d1/main.png" />
+                <img
+                  className="rounded-3xl"
+                  src="recent/images/w1d1/main.png"
+                />
               </Stack>
             </Stack>
             <Stack
