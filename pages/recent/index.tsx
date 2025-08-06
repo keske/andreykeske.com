@@ -216,6 +216,32 @@ const Recent: NextPage = () => {
               <>
                 <Text variant="title">
                   <Text as="span" className="font-bold">
+                    As a Fullstack Engineer at Untitled
+                  </Text>
+                  — an AI platform that helps creative teams find the
+                  right people through a simple chat.
+                </Text>
+              </>
+            }
+            techStack={["React Native", "TypeScript", "Redux"]}
+            years="2023"
+          >
+            <Stack className="self-center" direction="row">
+              <video
+                className="mx-6 size-full rounded-xl"
+                controls
+                src="/videos/untitled.mp4"
+              />
+            </Stack>
+          </WorkDescription>
+
+          <Devider />
+
+          <WorkDescription
+            description={
+              <>
+                <Text variant="title">
+                  <Text as="span" className="font-bold">
                     As a Fullstack Engineer at Samara
                   </Text>
                   — an AI platform that helps creative teams find the
@@ -224,7 +250,7 @@ const Recent: NextPage = () => {
               </>
             }
             techStack={["Next.js", "React", "TypeScript"]}
-            years="2021"
+            years="2022"
           >
             <Stack direction="row" gap={4}>
               <Stack className="w-1/2">
@@ -243,59 +269,6 @@ const Recent: NextPage = () => {
               <>
                 <Text variant="title">
                   <Text as="span" className="font-bold">
-                    As a Fullstack Engineer at Jupe
-                  </Text>
-                  — an AI platform that helps creative teams find the
-                  right people through a simple chat.
-                </Text>
-              </>
-            }
-            techStack={["Next.js", "React", "TypeScript"]}
-            years="2022"
-          >
-            <Stack direction="row" gap={4}>
-              <Stack className="w-1/2">
-                <img src="recent/images/jupe/1.png" />
-              </Stack>
-              <Stack className="w-1/2">
-                <img src="recent/images/jupe/2.png" />
-              </Stack>
-            </Stack>
-          </WorkDescription>
-
-          <Devider />
-
-          <WorkDescription
-            description={
-              <>
-                <Text variant="title">
-                  <Text as="span" className="font-bold">
-                    As a Fullstack Engineer at Untitled
-                  </Text>
-                  — an AI platform that helps creative teams find the
-                  right people through a simple chat.
-                </Text>
-              </>
-            }
-            techStack={["Next.js", "React", "TypeScript"]}
-            years="2022"
-          >
-            <Stack className="self-center" direction="row">
-              <video
-                className="mx-6 size-full rounded-xl"
-                controls
-                src="/videos/untitled.mp4"
-              />
-            </Stack>
-          </WorkDescription>
-
-          <Devider />
-
-          <WorkDescription
-            description={
-              <>
-                <Text variant="title">
-                  <Text as="span" className="font-bold">
                     As a Fullstack Engineer at W1D1
                   </Text>
                   — an AI platform that helps creative teams find the
@@ -303,7 +276,7 @@ const Recent: NextPage = () => {
                 </Text>
               </>
             }
-            techStack={["Next.js", "React", "TypeScript"]}
+            techStack={["React Native", "TypeScript", "MobX"]}
             years="2022"
           >
             <Stack direction="row">
