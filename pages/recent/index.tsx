@@ -18,6 +18,16 @@ const Devider: React.FC = () => (
   <Text className="self-center text-7xl">✌︎</Text>
 );
 
+const Footer: React.FC = () => (
+  <Stack className="self-center">
+    <Text variant="title">
+      <a className="font-" href="#">
+        hello@andreykeske.com
+      </a>
+    </Text>
+  </Stack>
+);
+
 const ResponsiveTextWrapper = React.forwardRef<
   HTMLDivElement,
   StackProps
@@ -55,7 +65,7 @@ const WorkDescription = React.forwardRef<
     { children, description, techStack, years, ...props },
     forwardedRef,
   ) => (
-    <Stack gap={10} ref={forwardedRef} {...props}>
+    <Stack gap={16} ref={forwardedRef} {...props}>
       <Years>{years}</Years>
       <ResponsiveTextWrapper gap={10}>
         {description}
@@ -82,12 +92,12 @@ const Recent: NextPage = () => {
       <Head disableIndex />
       <main className="bg-white p-20">
         <Stack gap={130}>
-          <SegmentedControl
+          {/* <SegmentedControl
             className="fixed bottom-10 self-center rounded-[16px] p-1 backdrop-blur-2xl"
             defaultValue={segmentedControlValue}
             items={["All", "iOS", "Web"]}
             onValueChange={handleSegmentedControlValueChange}
-          />
+          /> */}
 
           <Stack gap={20}>
             <Text className="font-bold" variant="title">
@@ -117,26 +127,35 @@ const Recent: NextPage = () => {
 
           <WorkDescription
             description={
-              <Text variant="title">
-                At{" "}
-                <Text as="span" className="font-bold">
-                  Ariadna as a founding engineer
-                </Text>{" "}
-                — designed and built the entire interface from the
-                ground up, developed a scalable UI kit, brought
-                interactions to life with smooth animations and custom
-                shaders, led all App Store deployments, and worked
-                closely with designers and machine learning engineers
-                to shape the product end-to-end.
-              </Text>
+              <Stack gap={10}>
+                <Text variant="title">
+                  At{" "}
+                  <Text as="span" className="font-bold">
+                    Ariadna
+                  </Text>{" "}
+                  as a{" "}
+                  <Text as="span" className="font-bold">
+                    Founding Engineer
+                  </Text>{" "}
+                  — designed and built the entire interface from the
+                  ground up, developed a scalable UI kit, brought
+                  interactions to life with smooth animations and
+                  custom shaders.
+                </Text>
+                <Text variant="title">
+                  I led all App Store deployments, and worked closely
+                  with designers and machine learning engineers to
+                  shape the product end-to-end.
+                </Text>
+              </Stack>
             }
             techStack={[
               "TypeScript",
-              "Next.js",
               "Expo",
               "React Native",
               "Zustand",
               "React Native Fiber",
+              "Reanimated",
               "ThreeJS",
             ]}
             years="2024—2025"
@@ -161,21 +180,31 @@ const Recent: NextPage = () => {
 
           <WorkDescription
             description={
-              <>
+              <Stack gap={10}>
                 <Text variant="title">
+                  As a{" "}
                   <Text as="span" className="font-bold">
-                    As a Senior Front-End Engineer at Material Bank
+                    Senior Front-End Engineer
+                  </Text>{" "}
+                  at{" "}
+                  <Text as="span" className="font-bold">
+                    Material Bank
                   </Text>
                   , I worked on a high-performance Next.js platform
-                  for next-day delivery of material samples. I
-                  contributed to core user-facing flows using SSG,
+                  for next-day delivery of material samples.
+                </Text>
+                <Text variant="title">
+                  I contributed to core user-facing flows using SSG,
                   SSR, and dynamic modules, and helped implement a
                   scalable UI kit with a custom Theme UI fork, Radix
-                  UI, and Storybook. Collaborating closely with
-                  designers and backend engineers, I focused on
-                  shipping polished, fast, and reliable features.
+                  UI, and Storybook.
                 </Text>
-              </>
+                <Text variant="title">
+                  Collaborating closely with designers and backend
+                  engineers, I focused on shipping polished, fast, and
+                  reliable features.
+                </Text>
+              </Stack>
             }
             techStack={[
               "Next.js",
@@ -213,17 +242,38 @@ const Recent: NextPage = () => {
 
           <WorkDescription
             description={
-              <>
+              <Stack gap={10}>
                 <Text variant="title">
+                  At{" "}
                   <Text as="span" className="font-bold">
-                    As a Fullstack Engineer at Untitled
+                    [untitled]
                   </Text>
-                  — an AI platform that helps creative teams find the
-                  right people through a simple chat.
+                  , I worked as a{" "}
+                  <Text as="span" className="font-bold">
+                    React Native Engineer
+                  </Text>{" "}
+                  to shape the mobile experience for artists managing
+                  their work-in-progress tracks.
                 </Text>
-              </>
+                <Text variant="title">
+                  I developed core screens and reusable components,
+                  crafted smooth 60FPS animations for fluid
+                  interactions.
+                </Text>
+                <Text variant="title">
+                  I also focused on performance — significantly
+                  reducing the number of views per screen and
+                  optimizing memory usage, CPU load, and battery
+                  efficiency.
+                </Text>
+              </Stack>
             }
-            techStack={["React Native", "TypeScript", "Redux"]}
+            techStack={[
+              "React Native",
+              "TypeScript",
+              "Reanimated",
+              "Zustand",
+            ]}
             years="2023"
           >
             <Stack className="self-center" direction="row">
@@ -239,17 +289,48 @@ const Recent: NextPage = () => {
 
           <WorkDescription
             description={
-              <>
+              <Stack gap={10}>
                 <Text variant="title">
+                  At{" "}
                   <Text as="span" className="font-bold">
-                    As a Fullstack Engineer at Samara
+                    Samara
                   </Text>
-                  — an AI platform that helps creative teams find the
-                  right people through a simple chat.
+                  , the forward-thinking company behind the Backyard
+                  ADU—a design‑driven, end‑to‑end prefab home platform
+                  backed by Airbnb co‑founder Joe Gebbia and Thrive
+                  Capital — I served as a{" "}
+                  <Text as="span" className="font-bold">
+                    Full-Stack Engineer
+                  </Text>{" "}
+                  focused on building their internal web store.
                 </Text>
-              </>
+                <Text variant="title">
+                  I developed the core React interface where employees
+                  could purchase Samara’s products. I collaborated
+                  closely with the art director to bring product value
+                  to life through complex, visually rich animations.
+                  As part of the front-end team, I helped deliver an
+                  online builder that allowed users to customize
+                  product models and I worked to optimize the loading
+                  of over two thousand 3D product models for
+                  performance and scalability.
+                </Text>
+                <Text variant="title">
+                  On the backend, I built serverless handle functions
+                  to securely process and store user purchase data,
+                  ensuring privacy and efficiency throughout the app
+                  experience.
+                </Text>
+              </Stack>
             }
-            techStack={["Next.js", "React", "TypeScript"]}
+            techStack={[
+              "Node.js",
+              "React",
+              "TypeScript",
+              "Styled Components",
+              "Zustand",
+              "ThreeJS",
+            ]}
             years="2022"
           >
             <Stack direction="row" gap={4}>
@@ -266,18 +347,69 @@ const Recent: NextPage = () => {
 
           <WorkDescription
             description={
+              <Stack gap={10}>
+                <Text variant="title">
+                  At{" "}
+                  <Text as="span" className="font-bold">
+                    Jupe
+                  </Text>{" "}
+                  — a visionary company delivering nature‑ready
+                  pod‑shelters built for rapid deployment and
+                  sustainable hospitality — I served as a{" "}
+                  <Text as="span" className="font-bold">
+                    Front-End Engineer
+                  </Text>{" "}
+                  creating a responsive web app where customers
+                  interact with the product and eventually purchase
+                  Jupe units.
+                </Text>
+                <Text variant="title">
+                  I designed and implemented ESLint configurations, UI
+                  Kit, and serverless cloud functions to support the
+                  app’s dynamic behaviors, while also contributing to
+                  CI/CD setups that allow the team to deploy features
+                  smoothly.
+                </Text>
+              </Stack>
+            }
+            techStack={["Next.js", "React", "TypeScript"]}
+            years="2021"
+          >
+            <Stack direction="row" gap={4}>
+              <Stack className="w-1/2">
+                <img src="recent/images/jupe/1.png" />
+              </Stack>
+              <Stack className="w-1/2">
+                <img src="recent/images/jupe/2.png" />
+              </Stack>
+            </Stack>
+          </WorkDescription>
+
+          <Devider />
+
+          <WorkDescription
+            description={
               <>
                 <Text variant="title">
+                  At{" "}
                   <Text as="span" className="font-bold">
-                    As a Fullstack Engineer at W1D1
+                    W1D1
                   </Text>
-                  — an AI platform that helps creative teams find the
-                  right people through a simple chat.
+                  , I co-founded and served as{" "}
+                  <Text as="span" className="font-bold">
+                    CTO
+                  </Text>{" "}
+                  — led the product from concept to launch, designed
+                  and built the entire app, created a privacy-first
+                  architecture with anonymous user flows, and crafted
+                  a creative challenge system inspired by historic
+                  artistic techniques. Focused on building a
+                  distraction-free space for everyday creativity.
                 </Text>
               </>
             }
             techStack={["React Native", "TypeScript", "MobX"]}
-            years="2022"
+            years="2018—2021"
           >
             <Stack direction="row">
               <Stack className="w-full">
@@ -294,6 +426,7 @@ const Recent: NextPage = () => {
               />
             </Stack>
           </WorkDescription>
+          <Footer />
         </Stack>
       </main>
     </>
