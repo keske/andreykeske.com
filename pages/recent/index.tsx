@@ -3,78 +3,18 @@
 import React from "react";
 
 import {
+  Devider,
+  Footer,
+  Intro,
   SegmentedControl,
   Stack,
-  StackProps,
   Text,
-  TextProps,
+  WorkDescription,
 } from "./components";
 
 import type { NextPage } from "next";
 
 import { Head } from "@/components/index";
-
-const Devider: React.FC = () => (
-  <Text className="self-center text-7xl">✌︎</Text>
-);
-
-const Footer: React.FC = () => (
-  <Stack className="self-center">
-    <Text variant="title">
-      <a className="text-blue-700" href="#">
-        hello@andreykeske.com
-      </a>
-    </Text>
-  </Stack>
-);
-
-const ResponsiveTextWrapper = React.forwardRef<
-  HTMLDivElement,
-  StackProps
->(({ children, ...props }, forwardedRef) => (
-  <Stack
-    className="xl:w-10/12 2xl:w-6/12"
-    ref={forwardedRef}
-    {...props}
-  >
-    {children}
-  </Stack>
-));
-
-const Years = React.forwardRef<HTMLDivElement, TextProps>(
-  ({ children, ...props }, forwardedRef) => (
-    <Text
-      className="self-start rounded-lg border-[1.7px] border-black/50 px-2 text-sm font-bold"
-      ref={forwardedRef}
-      {...props}
-    >
-      {children}
-    </Text>
-  ),
-);
-
-const WorkDescription = React.forwardRef<
-  HTMLDivElement,
-  StackProps & {
-    description: React.ReactNode;
-    techStack?: string[];
-    years: string;
-  }
->(
-  (
-    { children, description, techStack, years, ...props },
-    forwardedRef,
-  ) => (
-    <Stack gap={16} ref={forwardedRef} {...props}>
-      <Years>{years}</Years>
-      <ResponsiveTextWrapper gap={10}>
-        {description}
-      </ResponsiveTextWrapper>
-      <Text variant="headline">Stack: {techStack?.join(", ")}</Text>
-      {children}
-    </Stack>
-  ),
-);
 
 const Recent: NextPage = () => {
   const [segmentedControlValue, setSegmentedControlValue] =
@@ -98,30 +38,7 @@ const Recent: NextPage = () => {
             items={["All", "iOS", "Web"]}
             onValueChange={handleSegmentedControlValueChange}
           /> */}
-
-          <Stack gap={20}>
-            <Text className="font-bold" variant="title">
-              Andrey Keske
-            </Text>
-            <ResponsiveTextWrapper gap={10}>
-              <Text variant="title">
-                I’m a{" "}
-                <Text as="span" className="font-bold">
-                  founding full-stack engineer
-                </Text>{" "}
-                who loves building polished products—with a sharp eye
-                on UX, simplicity, and design. I’ve helped YC-backed
-                startups turn early ideas into real, user-facing
-                products.
-              </Text>
-              <Text variant="title">
-                I’ve helped build award-winning products featured on
-                Siteinspire, the App Store (App of the Day), and
-                Product Hunt (Product of the Day), working as part of
-                fast-paced, high-performing teams.
-              </Text>
-            </ResponsiveTextWrapper>
-          </Stack>
+          <Intro />
 
           <Devider />
 
