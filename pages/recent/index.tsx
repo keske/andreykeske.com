@@ -30,7 +30,7 @@ const Recent: NextPage = () => {
   return (
     <>
       <Head disableIndex />
-      <main className="bg-white p-20">
+      <main className="bg-white p-4 lg:p-10">
         <Stack gap={130}>
           {/* <SegmentedControl
             className="fixed bottom-10 self-center rounded-[16px] p-1 backdrop-blur-2xl"
@@ -425,7 +425,7 @@ const Recent: NextPage = () => {
               direction="row"
             >
               <img
-                className="w-11/12"
+                className="w-12/12"
                 src="recent/images/w1d1/w1d1.png"
               />
             </Stack>

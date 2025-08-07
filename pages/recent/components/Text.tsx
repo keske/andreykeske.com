@@ -35,9 +35,8 @@ export const Text = React.forwardRef<TextRef, TextProps>(
           },
           {
             // `variant` states
-            "text-2xl": variant == "title",
             "text-md": variant == "body",
-            "text-sm": variant == "headline",
+            "text-md lg:text-2xl": variant == "title",
           },
         ),
         ref: forwardedRef,
