@@ -4,7 +4,7 @@ import React from "react";
 import { SegmentedControlIndicator } from "./SegmentedControlIndicator";
 import { SegmentedControlItem } from "./SegmentedControlItem";
 
-import { mergeRefs, useRefs, useResizeObserver } from "../../hooks";
+import { mergeRefs, useRefs, useResizeObserver } from "@/hooks/index";
 
 export type SegmentedControlRef = typeof ToggleGroup.Root;
 

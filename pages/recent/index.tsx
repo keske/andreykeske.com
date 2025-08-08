@@ -2,6 +2,9 @@
 
 import React from "react";
 
+import type { NextPage } from "next";
+
+import { Head } from "@/components/index";
 import {
   Devider,
   Footer,
@@ -10,11 +13,7 @@ import {
   Stack,
   Text,
   WorkDescription,
-} from "./components";
-
-import type { NextPage } from "next";
-
-import { Head } from "@/components/index";
+} from "@/components/recent";
 
 const Recent: NextPage = () => (
   // const [segmentedControlValue, setSegmentedControlValue] =
