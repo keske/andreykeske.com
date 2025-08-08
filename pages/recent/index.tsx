@@ -432,4 +432,5 @@ const Recent: NextPage = () => (
     </main>
   </>
 );
+
 export default Recent;
