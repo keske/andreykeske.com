@@ -2,6 +2,13 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  redirects: async () => [
+    {
+      destination: "/recent",
+      permanent: false,
+      source: "/",
+    },
+  ],
 };
 
 const withTM = require("next-transpile-modules")(["three"]);
